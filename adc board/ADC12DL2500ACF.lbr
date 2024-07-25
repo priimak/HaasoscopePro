@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--/19664671/79915/2.50/256/3/Integrated Circuit/-->
+<!DOCTYPE curve SYSTEM "eagle.dtd">
+<eagle version="7.7.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>&lt;12 Bit Analog to Digital Converter 1, 2 Input 2 Folding Interpolating 256-FCBGA (17x17)&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="BGA256C100P16X16_1700X1700X331">
+<description>&lt;b&gt;ACF0256A_2021&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="A1" x="-7.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A2" x="-6.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A3" x="-5.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A4" x="-4.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A5" x="-3.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A6" x="-2.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A7" x="-1.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A8" x="-0.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A9" x="0.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A10" x="1.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A11" x="2.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A12" x="3.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A13" x="4.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A14" x="5.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A15" x="6.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="A16" x="7.5" y="7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B1" x="-7.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B2" x="-6.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B3" x="-5.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B4" x="-4.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B5" x="-3.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B6" x="-2.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B7" x="-1.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B8" x="-0.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B9" x="0.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B10" x="1.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B11" x="2.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B12" x="3.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B13" x="4.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B14" x="5.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B15" x="6.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="B16" x="7.5" y="6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C1" x="-7.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C2" x="-6.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C3" x="-5.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C4" x="-4.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C5" x="-3.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C6" x="-2.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C7" x="-1.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C8" x="-0.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C9" x="0.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C10" x="1.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C11" x="2.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C12" x="3.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C13" x="4.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C14" x="5.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C15" x="6.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="C16" x="7.5" y="5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D1" x="-7.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D2" x="-6.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D3" x="-5.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D4" x="-4.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D5" x="-3.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D6" x="-2.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D7" x="-1.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D8" x="-0.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D9" x="0.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D10" x="1.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D11" x="2.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D12" x="3.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D13" x="4.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D14" x="5.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D15" x="6.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="D16" x="7.5" y="4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E1" x="-7.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E2" x="-6.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E3" x="-5.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E4" x="-4.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E5" x="-3.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E6" x="-2.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E7" x="-1.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E8" x="-0.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E9" x="0.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E10" x="1.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E11" x="2.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E12" x="3.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E13" x="4.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E14" x="5.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E15" x="6.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="E16" x="7.5" y="3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F1" x="-7.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F2" x="-6.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F3" x="-5.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F4" x="-4.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F5" x="-3.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F6" x="-2.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F7" x="-1.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F8" x="-0.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F9" x="0.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F10" x="1.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F11" x="2.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F12" x="3.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F13" x="4.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F14" x="5.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F15" x="6.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="F16" x="7.5" y="2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G1" x="-7.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G2" x="-6.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G3" x="-5.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G4" x="-4.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G5" x="-3.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G6" x="-2.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G7" x="-1.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G8" x="-0.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G9" x="0.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G10" x="1.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G11" x="2.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G12" x="3.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G13" x="4.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G14" x="5.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G15" x="6.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="G16" x="7.5" y="1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H1" x="-7.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H2" x="-6.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H3" x="-5.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H4" x="-4.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H5" x="-3.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H6" x="-2.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H7" x="-1.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H8" x="-0.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H9" x="0.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H10" x="1.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H11" x="2.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H12" x="3.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H13" x="4.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H14" x="5.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H15" x="6.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="H16" x="7.5" y="0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J1" x="-7.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J2" x="-6.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J3" x="-5.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J4" x="-4.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J5" x="-3.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J6" x="-2.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J7" x="-1.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J8" x="-0.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J9" x="0.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J10" x="1.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J11" x="2.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J12" x="3.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J13" x="4.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J14" x="5.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J15" x="6.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="J16" x="7.5" y="-0.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K1" x="-7.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K2" x="-6.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K3" x="-5.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K4" x="-4.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K5" x="-3.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K6" x="-2.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K7" x="-1.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K8" x="-0.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K9" x="0.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K10" x="1.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K11" x="2.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K12" x="3.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K13" x="4.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K14" x="5.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K15" x="6.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="K16" x="7.5" y="-1.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L1" x="-7.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L2" x="-6.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L3" x="-5.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L4" x="-4.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L5" x="-3.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L6" x="-2.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L7" x="-1.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L8" x="-0.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L9" x="0.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L10" x="1.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L11" x="2.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L12" x="3.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L13" x="4.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L14" x="5.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L15" x="6.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="L16" x="7.5" y="-2.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M1" x="-7.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M2" x="-6.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M3" x="-5.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M4" x="-4.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M5" x="-3.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M6" x="-2.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M7" x="-1.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M8" x="-0.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M9" x="0.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M10" x="1.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M11" x="2.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M12" x="3.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M13" x="4.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M14" x="5.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M15" x="6.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="M16" x="7.5" y="-3.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N1" x="-7.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N2" x="-6.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N3" x="-5.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N4" x="-4.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N5" x="-3.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N6" x="-2.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N7" x="-1.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N8" x="-0.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N9" x="0.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N10" x="1.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N11" x="2.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N12" x="3.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N13" x="4.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N14" x="5.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N15" x="6.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="N16" x="7.5" y="-4.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P1" x="-7.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P2" x="-6.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P3" x="-5.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P4" x="-4.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P5" x="-3.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P6" x="-2.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P7" x="-1.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P8" x="-0.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P9" x="0.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P10" x="1.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P11" x="2.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P12" x="3.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P13" x="4.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P14" x="5.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P15" x="6.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="P16" x="7.5" y="-5.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R1" x="-7.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R2" x="-6.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R3" x="-5.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R4" x="-4.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R5" x="-3.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R6" x="-2.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R7" x="-1.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R8" x="-0.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R9" x="0.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R10" x="1.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R11" x="2.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R12" x="3.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R13" x="4.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R14" x="5.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R15" x="6.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="R16" x="7.5" y="-6.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T1" x="-7.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T2" x="-6.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T3" x="-5.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T4" x="-4.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T5" x="-3.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T6" x="-2.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T7" x="-1.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T8" x="-0.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T9" x="0.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T10" x="1.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T11" x="2.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T12" x="3.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T13" x="4.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T14" x="5.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T15" x="6.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<smd name="T16" x="7.5" y="-7.5" dx="0.53" dy="0.53" layer="1" roundness="100" rot="R0"/>
+<text x="0" y="0" align="center" size="1.27" layer="25" rot="R0" >&gt;NAME</text>
+<text x="0" y="0" align="center" size="1.27" layer="27" rot="R0" >&gt;VALUE</text>
+<wire x1="-10.6" y1="10.6" x2="10.6" y2="10.6" width="0.05" layer="51"/>
+<wire x1="10.6" y1="10.6" x2="10.6" y2="-10.6" width="0.05" layer="51"/>
+<wire x1="10.6" y1="-10.6" x2="-10.6" y2="-10.6" width="0.05" layer="51"/>
+<wire x1="-10.6" y1="-10.6" x2="-10.6" y2="10.6" width="0.05" layer="51"/>
+<wire x1="-8.5" y1="8.5" x2="8.5" y2="8.5" width="0.1" layer="51"/>
+<wire x1="8.5" y1="8.5" x2="8.5" y2="-8.5" width="0.1" layer="51"/>
+<wire x1="8.5" y1="-8.5" x2="-8.5" y2="-8.5" width="0.1" layer="51"/>
+<wire x1="-8.5" y1="-8.5" x2="-8.5" y2="8.5" width="0.1" layer="51"/>
+<wire x1="-8.5" y1="4.2" x2="-4.2" y2="8.5" width="0.1" layer="51"/>
+<wire x1="-7.5" y1="8.5" x2="8.5" y2="8.5" width="0.2" layer="21"/>
+<wire x1="8.5" y1="8.5" x2="8.5" y2="-8.5" width="0.2" layer="21"/>
+<wire x1="8.5" y1="-8.5" x2="-8.5" y2="-8.5" width="0.2" layer="21"/>
+<wire x1="-8.5" y1="-8.5" x2="-8.5" y2="7.5" width="0.2" layer="21"/>
+<wire x1="-8.5" y1="7.5" x2="-7.5" y2="8.5" width="0.2" layer="21"/>
+<circle x="-8.5" y="8.5" radius="0.1" width="0.2" layer="25"/>
+</package>
+</packages>
+<symbols>
+<symbol name="ADC12DL2500ACF">
+<wire x1="5.08" y1="2.54" x2="33.02" y2="2.54" width="0.254" layer="94"/>
+<wire x1="33.02" y1="-325.12" x2="33.02" y2="2.54" width="0.254" layer="94"/>
+<wire x1="33.02" y1="-325.12" x2="5.08" y2="-325.12" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-325.12" width="0.254" layer="94"/>
+<text x="34.29" y="7.62" align="center-left" size="1.778" layer="95">&gt;NAME</text>
+<text x="34.29" y="5.08" align="center-left" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="AGND_1" x="0" y="0" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_2" x="0" y="-2.54" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_3" x="0" y="-5.08" length="middle" direction="io" rot="R0"/>
+<pin name="INA+" x="0" y="-7.62" length="middle" direction="io" rot="R0"/>
+<pin name="INA-" x="0" y="-10.16" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_4" x="0" y="-12.7" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_5" x="0" y="-15.24" length="middle" direction="io" rot="R0"/>
+<pin name="ORA1" x="0" y="-17.78" length="middle" direction="io" rot="R0"/>
+<pin name="DA0+" x="0" y="-20.32" length="middle" direction="io" rot="R0"/>
+<pin name="DA0-" x="0" y="-22.86" length="middle" direction="io" rot="R0"/>
+<pin name="DA6+" x="0" y="-25.4" length="middle" direction="io" rot="R0"/>
+<pin name="DA6-" x="0" y="-27.94" length="middle" direction="io" rot="R0"/>
+<pin name="DC0+" x="0" y="-30.48" length="middle" direction="io" rot="R0"/>
+<pin name="DC0-" x="0" y="-33.02" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_1" x="0" y="-35.56" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_2" x="0" y="-38.1" length="middle" direction="io" rot="R0"/>
+<pin name="CALSTAT" x="0" y="-40.64" length="middle" direction="io" rot="R0"/>
+<pin name="CALTRIG" x="0" y="-43.18" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_6" x="0" y="-45.72" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_7" x="0" y="-48.26" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_8" x="0" y="-50.8" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_9" x="0" y="-53.34" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_10" x="0" y="-55.88" length="middle" direction="io" rot="R0"/>
+<pin name="ORA0" x="0" y="-58.42" length="middle" direction="io" rot="R0"/>
+<pin name="DA1+" x="0" y="-60.96" length="middle" direction="io" rot="R0"/>
+<pin name="DA1-" x="0" y="-63.5" length="middle" direction="io" rot="R0"/>
+<pin name="DA7+" x="0" y="-66.04" length="middle" direction="io" rot="R0"/>
+<pin name="DA7-" x="0" y="-68.58" length="middle" direction="io" rot="R0"/>
+<pin name="DC1+" x="0" y="-71.12" length="middle" direction="io" rot="R0"/>
+<pin name="DC1-" x="0" y="-73.66" length="middle" direction="io" rot="R0"/>
+<pin name="DC7+" x="0" y="-76.2" length="middle" direction="io" rot="R0"/>
+<pin name="DC7-" x="0" y="-78.74" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_11" x="0" y="-81.28" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_12" x="0" y="-83.82" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_13" x="0" y="-86.36" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_14" x="0" y="-88.9" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_15" x="0" y="-91.44" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_16" x="0" y="-93.98" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_17" x="0" y="-96.52" length="middle" direction="io" rot="R0"/>
+<pin name="ORB1" x="0" y="-99.06" length="middle" direction="io" rot="R0"/>
+<pin name="DA2+" x="0" y="-101.6" length="middle" direction="io" rot="R0"/>
+<pin name="DA2-" x="0" y="-104.14" length="middle" direction="io" rot="R0"/>
+<pin name="DA8+" x="0" y="-106.68" length="middle" direction="io" rot="R0"/>
+<pin name="DA8-" x="0" y="-109.22" length="middle" direction="io" rot="R0"/>
+<pin name="DC2+" x="0" y="-111.76" length="middle" direction="io" rot="R0"/>
+<pin name="DC2-" x="0" y="-114.3" length="middle" direction="io" rot="R0"/>
+<pin name="DC8+" x="0" y="-116.84" length="middle" direction="io" rot="R0"/>
+<pin name="DC8-" x="0" y="-119.38" length="middle" direction="io" rot="R0"/>
+<pin name="TMSTP+" x="0" y="-121.92" length="middle" direction="io" rot="R0"/>
+<pin name="BG" x="0" y="-124.46" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_18" x="0" y="-127" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_19" x="0" y="-129.54" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_20" x="0" y="-132.08" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_21" x="0" y="-134.62" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_3" x="0" y="-137.16" length="middle" direction="io" rot="R0"/>
+<pin name="ORB0" x="0" y="-139.7" length="middle" direction="io" rot="R0"/>
+<pin name="DA3+" x="0" y="-142.24" length="middle" direction="io" rot="R0"/>
+<pin name="DA3-" x="0" y="-144.78" length="middle" direction="io" rot="R0"/>
+<pin name="DA9+" x="0" y="-147.32" length="middle" direction="io" rot="R0"/>
+<pin name="DA9-" x="0" y="-149.86" length="middle" direction="io" rot="R0"/>
+<pin name="DC3+" x="0" y="-152.4" length="middle" direction="io" rot="R0"/>
+<pin name="DC3-" x="0" y="-154.94" length="middle" direction="io" rot="R0"/>
+<pin name="DC9+" x="0" y="-157.48" length="middle" direction="io" rot="R0"/>
+<pin name="DC9-" x="0" y="-160.02" length="middle" direction="io" rot="R0"/>
+<pin name="TMSTP-" x="0" y="-162.56" length="middle" direction="io" rot="R0"/>
+<pin name="SYNCSE" x="0" y="-165.1" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_22" x="0" y="-167.64" length="middle" direction="io" rot="R0"/>
+<pin name="VA11_1" x="0" y="-170.18" length="middle" direction="io" rot="R0"/>
+<pin name="VA11_2" x="0" y="-172.72" length="middle" direction="io" rot="R0"/>
+<pin name="VA11_3" x="0" y="-175.26" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_4" x="0" y="-177.8" length="middle" direction="io" rot="R0"/>
+<pin name="VD11_1" x="0" y="-180.34" length="middle" direction="io" rot="R0"/>
+<pin name="DA4+" x="0" y="-182.88" length="middle" direction="io" rot="R0"/>
+<pin name="DA4-" x="0" y="-185.42" length="middle" direction="io" rot="R0"/>
+<pin name="DA10+" x="0" y="-187.96" length="middle" direction="io" rot="R0"/>
+<pin name="DA10-" x="0" y="-190.5" length="middle" direction="io" rot="R0"/>
+<pin name="DC4+" x="0" y="-193.04" length="middle" direction="io" rot="R0"/>
+<pin name="DC4-" x="0" y="-195.58" length="middle" direction="io" rot="R0"/>
+<pin name="DC10+" x="0" y="-198.12" length="middle" direction="io" rot="R0"/>
+<pin name="DC10-" x="0" y="-200.66" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_23" x="0" y="-203.2" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_24" x="0" y="-205.74" length="middle" direction="io" rot="R0"/>
+<pin name="VA11_4" x="0" y="-208.28" length="middle" direction="io" rot="R0"/>
+<pin name="VA11_5" x="0" y="-210.82" length="middle" direction="io" rot="R0"/>
+<pin name="VA11_6" x="0" y="-213.36" length="middle" direction="io" rot="R0"/>
+<pin name="VA11_7" x="0" y="-215.9" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_5" x="0" y="-218.44" length="middle" direction="io" rot="R0"/>
+<pin name="VD11_2" x="0" y="-220.98" length="middle" direction="io" rot="R0"/>
+<pin name="DA5+" x="0" y="-223.52" length="middle" direction="io" rot="R0"/>
+<pin name="DA5-" x="0" y="-226.06" length="middle" direction="io" rot="R0"/>
+<pin name="DA11+" x="0" y="-228.6" length="middle" direction="io" rot="R0"/>
+<pin name="DA11-" x="0" y="-231.14" length="middle" direction="io" rot="R0"/>
+<pin name="DC5+" x="0" y="-233.68" length="middle" direction="io" rot="R0"/>
+<pin name="DC5-" x="0" y="-236.22" length="middle" direction="io" rot="R0"/>
+<pin name="DC11+" x="0" y="-238.76" length="middle" direction="io" rot="R0"/>
+<pin name="DC11-" x="0" y="-241.3" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_25" x="0" y="-243.84" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_26" x="0" y="-246.38" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_1" x="0" y="-248.92" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_2" x="0" y="-251.46" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_3" x="0" y="-254" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_4" x="0" y="-256.54" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_6" x="0" y="-259.08" length="middle" direction="io" rot="R0"/>
+<pin name="VD11_3" x="0" y="-261.62" length="middle" direction="io" rot="R0"/>
+<pin name="DACLK+" x="0" y="-264.16" length="middle" direction="io" rot="R0"/>
+<pin name="DACLK-" x="0" y="-266.7" length="middle" direction="io" rot="R0"/>
+<pin name="VLVDS_1" x="0" y="-269.24" length="middle" direction="io" rot="R0"/>
+<pin name="VLVDS_2" x="0" y="-271.78" length="middle" direction="io" rot="R0"/>
+<pin name="DC6+" x="0" y="-274.32" length="middle" direction="io" rot="R0"/>
+<pin name="DC6-" x="0" y="-276.86" length="middle" direction="io" rot="R0"/>
+<pin name="DCCLK+" x="0" y="-279.4" length="middle" direction="io" rot="R0"/>
+<pin name="DCCLK-" x="0" y="-281.94" length="middle" direction="io" rot="R0"/>
+<pin name="CLK+" x="0" y="-284.48" length="middle" direction="io" rot="R0"/>
+<pin name="AGND_27" x="0" y="-287.02" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_5" x="0" y="-289.56" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_6" x="0" y="-292.1" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_7" x="0" y="-294.64" length="middle" direction="io" rot="R0"/>
+<pin name="VA19_8" x="0" y="-297.18" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_7" x="0" y="-299.72" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_8" x="0" y="-302.26" length="middle" direction="io" rot="R0"/>
+<pin name="DASTR+" x="0" y="-304.8" length="middle" direction="io" rot="R0"/>
+<pin name="DASTR-" x="0" y="-307.34" length="middle" direction="io" rot="R0"/>
+<pin name="VLVDS_3" x="0" y="-309.88" length="middle" direction="io" rot="R0"/>
+<pin name="VLVDS_4" x="0" y="-312.42" length="middle" direction="io" rot="R0"/>
+<pin name="VLVDS_5" x="0" y="-314.96" length="middle" direction="io" rot="R0"/>
+<pin name="DGND_9" x="0" y="-317.5" length="middle" direction="io" rot="R0"/>
+<pin name="DCSTR+" x="0" y="-320.04" length="middle" direction="io" rot="R0"/>
+<pin name="DCSTR-" x="0" y="-322.58" length="middle" direction="io" rot="R0"/>
+<pin name="CLK-" x="38.1" y="0" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_28" x="38.1" y="-2.54" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_9" x="38.1" y="-5.08" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_10" x="38.1" y="-7.62" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_11" x="38.1" y="-10.16" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_12" x="38.1" y="-12.7" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_10" x="38.1" y="-15.24" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_11" x="38.1" y="-17.78" length="middle" direction="io" rot="R180"/>
+<pin name="DBSTR+" x="38.1" y="-20.32" length="middle" direction="io" rot="R180"/>
+<pin name="DBSTR-" x="38.1" y="-22.86" length="middle" direction="io" rot="R180"/>
+<pin name="VLVDS_6" x="38.1" y="-25.4" length="middle" direction="io" rot="R180"/>
+<pin name="VLVDS_7" x="38.1" y="-27.94" length="middle" direction="io" rot="R180"/>
+<pin name="VLVDS_8" x="38.1" y="-30.48" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_12" x="38.1" y="-33.02" length="middle" direction="io" rot="R180"/>
+<pin name="DDSTR+" x="38.1" y="-35.56" length="middle" direction="io" rot="R180"/>
+<pin name="DDSTR-" x="38.1" y="-38.1" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_29" x="38.1" y="-40.64" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_30" x="38.1" y="-43.18" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_13" x="38.1" y="-45.72" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_14" x="38.1" y="-48.26" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_15" x="38.1" y="-50.8" length="middle" direction="io" rot="R180"/>
+<pin name="VA19_16" x="38.1" y="-53.34" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_13" x="38.1" y="-55.88" length="middle" direction="io" rot="R180"/>
+<pin name="VD11_4" x="38.1" y="-58.42" length="middle" direction="io" rot="R180"/>
+<pin name="DBCLK+" x="38.1" y="-60.96" length="middle" direction="io" rot="R180"/>
+<pin name="DBCLK-" x="38.1" y="-63.5" length="middle" direction="io" rot="R180"/>
+<pin name="VLVDS_9" x="38.1" y="-66.04" length="middle" direction="io" rot="R180"/>
+<pin name="VLVDS_10" x="38.1" y="-68.58" length="middle" direction="io" rot="R180"/>
+<pin name="DD6+" x="38.1" y="-71.12" length="middle" direction="io" rot="R180"/>
+<pin name="DD6-" x="38.1" y="-73.66" length="middle" direction="io" rot="R180"/>
+<pin name="DDCLK+" x="38.1" y="-76.2" length="middle" direction="io" rot="R180"/>
+<pin name="DDCLK-" x="38.1" y="-78.74" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_31" x="38.1" y="-81.28" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_32" x="38.1" y="-83.82" length="middle" direction="io" rot="R180"/>
+<pin name="VA11_8" x="38.1" y="-86.36" length="middle" direction="io" rot="R180"/>
+<pin name="VA11_9" x="38.1" y="-88.9" length="middle" direction="io" rot="R180"/>
+<pin name="VA11_10" x="38.1" y="-91.44" length="middle" direction="io" rot="R180"/>
+<pin name="VA11_11" x="38.1" y="-93.98" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_14" x="38.1" y="-96.52" length="middle" direction="io" rot="R180"/>
+<pin name="VD11_5" x="38.1" y="-99.06" length="middle" direction="io" rot="R180"/>
+<pin name="DB5+" x="38.1" y="-101.6" length="middle" direction="io" rot="R180"/>
+<pin name="DB5-" x="38.1" y="-104.14" length="middle" direction="io" rot="R180"/>
+<pin name="DB11+" x="38.1" y="-106.68" length="middle" direction="io" rot="R180"/>
+<pin name="DB11-" x="38.1" y="-109.22" length="middle" direction="io" rot="R180"/>
+<pin name="DD5+" x="38.1" y="-111.76" length="middle" direction="io" rot="R180"/>
+<pin name="DD5-" x="38.1" y="-114.3" length="middle" direction="io" rot="R180"/>
+<pin name="DD11+" x="38.1" y="-116.84" length="middle" direction="io" rot="R180"/>
+<pin name="DD11-" x="38.1" y="-119.38" length="middle" direction="io" rot="R180"/>
+<pin name="SYSREF+" x="38.1" y="-121.92" length="middle" direction="io" rot="R180"/>
+<pin name="TDIODE+" x="38.1" y="-124.46" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_33" x="38.1" y="-127" length="middle" direction="io" rot="R180"/>
+<pin name="VA11_12" x="38.1" y="-129.54" length="middle" direction="io" rot="R180"/>
+<pin name="VA11_13" x="38.1" y="-132.08" length="middle" direction="io" rot="R180"/>
+<pin name="VA11_14" x="38.1" y="-134.62" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_15" x="38.1" y="-137.16" length="middle" direction="io" rot="R180"/>
+<pin name="VD11_6" x="38.1" y="-139.7" length="middle" direction="io" rot="R180"/>
+<pin name="DB4+" x="38.1" y="-142.24" length="middle" direction="io" rot="R180"/>
+<pin name="DB4-" x="38.1" y="-144.78" length="middle" direction="io" rot="R180"/>
+<pin name="DB10+" x="38.1" y="-147.32" length="middle" direction="io" rot="R180"/>
+<pin name="DB10-" x="38.1" y="-149.86" length="middle" direction="io" rot="R180"/>
+<pin name="DD4+" x="38.1" y="-152.4" length="middle" direction="io" rot="R180"/>
+<pin name="DD4-" x="38.1" y="-154.94" length="middle" direction="io" rot="R180"/>
+<pin name="DD10+" x="38.1" y="-157.48" length="middle" direction="io" rot="R180"/>
+<pin name="DD10-" x="38.1" y="-160.02" length="middle" direction="io" rot="R180"/>
+<pin name="SYSREF-" x="38.1" y="-162.56" length="middle" direction="io" rot="R180"/>
+<pin name="TDIODE-" x="38.1" y="-165.1" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_34" x="38.1" y="-167.64" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_35" x="38.1" y="-170.18" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_36" x="38.1" y="-172.72" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_37" x="38.1" y="-175.26" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_16" x="38.1" y="-177.8" length="middle" direction="io" rot="R180"/>
+<pin name="SDO" x="38.1" y="-180.34" length="middle" direction="io" rot="R180"/>
+<pin name="DB3+" x="38.1" y="-182.88" length="middle" direction="io" rot="R180"/>
+<pin name="DB3-" x="38.1" y="-185.42" length="middle" direction="io" rot="R180"/>
+<pin name="DB9+" x="38.1" y="-187.96" length="middle" direction="io" rot="R180"/>
+<pin name="DB9-" x="38.1" y="-190.5" length="middle" direction="io" rot="R180"/>
+<pin name="DD3+" x="38.1" y="-193.04" length="middle" direction="io" rot="R180"/>
+<pin name="DD3-" x="38.1" y="-195.58" length="middle" direction="io" rot="R180"/>
+<pin name="DD9+" x="38.1" y="-198.12" length="middle" direction="io" rot="R180"/>
+<pin name="DD9-" x="38.1" y="-200.66" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_38" x="38.1" y="-203.2" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_39" x="38.1" y="-205.74" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_40" x="38.1" y="-208.28" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_41" x="38.1" y="-210.82" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_42" x="38.1" y="-213.36" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_43" x="38.1" y="-215.9" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_44" x="38.1" y="-218.44" length="middle" direction="io" rot="R180"/>
+<pin name="SDI" x="38.1" y="-220.98" length="middle" direction="io" rot="R180"/>
+<pin name="DB2+" x="38.1" y="-223.52" length="middle" direction="io" rot="R180"/>
+<pin name="DB2-" x="38.1" y="-226.06" length="middle" direction="io" rot="R180"/>
+<pin name="DB8+" x="38.1" y="-228.6" length="middle" direction="io" rot="R180"/>
+<pin name="DB8-" x="38.1" y="-231.14" length="middle" direction="io" rot="R180"/>
+<pin name="DD2+" x="38.1" y="-233.68" length="middle" direction="io" rot="R180"/>
+<pin name="DD2-" x="38.1" y="-236.22" length="middle" direction="io" rot="R180"/>
+<pin name="DD8+" x="38.1" y="-238.76" length="middle" direction="io" rot="R180"/>
+<pin name="DD8-" x="38.1" y="-241.3" length="middle" direction="io" rot="R180"/>
+<pin name="PD" x="38.1" y="-243.84" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_45" x="38.1" y="-246.38" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_46" x="38.1" y="-248.92" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_47" x="38.1" y="-251.46" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_48" x="38.1" y="-254" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_49" x="38.1" y="-256.54" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_50" x="38.1" y="-259.08" length="middle" direction="io" rot="R180"/>
+<pin name="SCS" x="38.1" y="-261.62" length="middle" direction="io" rot="R180"/>
+<pin name="DB1+" x="38.1" y="-264.16" length="middle" direction="io" rot="R180"/>
+<pin name="DB1-" x="38.1" y="-266.7" length="middle" direction="io" rot="R180"/>
+<pin name="DB7+" x="38.1" y="-269.24" length="middle" direction="io" rot="R180"/>
+<pin name="DB7-" x="38.1" y="-271.78" length="middle" direction="io" rot="R180"/>
+<pin name="DD1+" x="38.1" y="-274.32" length="middle" direction="io" rot="R180"/>
+<pin name="DD1-" x="38.1" y="-276.86" length="middle" direction="io" rot="R180"/>
+<pin name="DD7+" x="38.1" y="-279.4" length="middle" direction="io" rot="R180"/>
+<pin name="DD7-" x="38.1" y="-281.94" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_51" x="38.1" y="-284.48" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_52" x="38.1" y="-287.02" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_53" x="38.1" y="-289.56" length="middle" direction="io" rot="R180"/>
+<pin name="INB+" x="38.1" y="-292.1" length="middle" direction="io" rot="R180"/>
+<pin name="INB-" x="38.1" y="-294.64" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_54" x="38.1" y="-297.18" length="middle" direction="io" rot="R180"/>
+<pin name="AGND_55" x="38.1" y="-299.72" length="middle" direction="io" rot="R180"/>
+<pin name="SCLK" x="38.1" y="-302.26" length="middle" direction="io" rot="R180"/>
+<pin name="DB0+" x="38.1" y="-304.8" length="middle" direction="io" rot="R180"/>
+<pin name="DB0-" x="38.1" y="-307.34" length="middle" direction="io" rot="R180"/>
+<pin name="DB6+" x="38.1" y="-309.88" length="middle" direction="io" rot="R180"/>
+<pin name="DB6-" x="38.1" y="-312.42" length="middle" direction="io" rot="R180"/>
+<pin name="DD0+" x="38.1" y="-314.96" length="middle" direction="io" rot="R180"/>
+<pin name="DD0-" x="38.1" y="-317.5" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_17" x="38.1" y="-320.04" length="middle" direction="io" rot="R180"/>
+<pin name="DGND_18" x="38.1" y="-322.58" length="middle" direction="io" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ADC12DL2500ACF" prefix="IC">
+<description>&lt;b&gt;12 Bit Analog to Digital Converter 1, 2 Input 2 Folding Interpolating 256-FCBGA (17x17)&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.ti.com/lit/ds/symlink/adc12dl2500.pdf?ts=1717147635434&amp;ref_url=https%3A%2F%2Fwww.ti.com%2Fproduct%2FADC12DL2500%2Fpart-details%2FADC12DL2500ACF"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="ADC12DL2500ACF" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BGA256C100P16X16_1700X1700X331">
+<connects>
+<connect gate="G$1" pin="AGND_1" pad="A1"/>
+<connect gate="G$1" pin="AGND_2" pad="A2"/>
+<connect gate="G$1" pin="AGND_3" pad="A3"/>
+<connect gate="G$1" pin="INA+" pad="A4"/>
+<connect gate="G$1" pin="INA-" pad="A5"/>
+<connect gate="G$1" pin="AGND_4" pad="A6"/>
+<connect gate="G$1" pin="AGND_5" pad="A7"/>
+<connect gate="G$1" pin="ORA1" pad="A8"/>
+<connect gate="G$1" pin="DA0+" pad="A9"/>
+<connect gate="G$1" pin="DA0-" pad="A10"/>
+<connect gate="G$1" pin="DA6+" pad="A11"/>
+<connect gate="G$1" pin="DA6-" pad="A12"/>
+<connect gate="G$1" pin="DC0+" pad="A13"/>
+<connect gate="G$1" pin="DC0-" pad="A14"/>
+<connect gate="G$1" pin="DGND_1" pad="A15"/>
+<connect gate="G$1" pin="DGND_2" pad="A16"/>
+<connect gate="G$1" pin="CALSTAT" pad="B1"/>
+<connect gate="G$1" pin="CALTRIG" pad="B2"/>
+<connect gate="G$1" pin="AGND_6" pad="B3"/>
+<connect gate="G$1" pin="AGND_7" pad="B4"/>
+<connect gate="G$1" pin="AGND_8" pad="B5"/>
+<connect gate="G$1" pin="AGND_9" pad="B6"/>
+<connect gate="G$1" pin="AGND_10" pad="B7"/>
+<connect gate="G$1" pin="ORA0" pad="B8"/>
+<connect gate="G$1" pin="DA1+" pad="B9"/>
+<connect gate="G$1" pin="DA1-" pad="B10"/>
+<connect gate="G$1" pin="DA7+" pad="B11"/>
+<connect gate="G$1" pin="DA7-" pad="B12"/>
+<connect gate="G$1" pin="DC1+" pad="B13"/>
+<connect gate="G$1" pin="DC1-" pad="B14"/>
+<connect gate="G$1" pin="DC7+" pad="B15"/>
+<connect gate="G$1" pin="DC7-" pad="B16"/>
+<connect gate="G$1" pin="AGND_11" pad="C1"/>
+<connect gate="G$1" pin="AGND_12" pad="C2"/>
+<connect gate="G$1" pin="AGND_13" pad="C3"/>
+<connect gate="G$1" pin="AGND_14" pad="C4"/>
+<connect gate="G$1" pin="AGND_15" pad="C5"/>
+<connect gate="G$1" pin="AGND_16" pad="C6"/>
+<connect gate="G$1" pin="AGND_17" pad="C7"/>
+<connect gate="G$1" pin="ORB1" pad="C8"/>
+<connect gate="G$1" pin="DA2+" pad="C9"/>
+<connect gate="G$1" pin="DA2-" pad="C10"/>
+<connect gate="G$1" pin="DA8+" pad="C11"/>
+<connect gate="G$1" pin="DA8-" pad="C12"/>
+<connect gate="G$1" pin="DC2+" pad="C13"/>
+<connect gate="G$1" pin="DC2-" pad="C14"/>
+<connect gate="G$1" pin="DC8+" pad="C15"/>
+<connect gate="G$1" pin="DC8-" pad="C16"/>
+<connect gate="G$1" pin="TMSTP+" pad="D1"/>
+<connect gate="G$1" pin="BG" pad="D2"/>
+<connect gate="G$1" pin="AGND_18" pad="D3"/>
+<connect gate="G$1" pin="AGND_19" pad="D4"/>
+<connect gate="G$1" pin="AGND_20" pad="D5"/>
+<connect gate="G$1" pin="AGND_21" pad="D6"/>
+<connect gate="G$1" pin="DGND_3" pad="D7"/>
+<connect gate="G$1" pin="ORB0" pad="D8"/>
+<connect gate="G$1" pin="DA3+" pad="D9"/>
+<connect gate="G$1" pin="DA3-" pad="D10"/>
+<connect gate="G$1" pin="DA9+" pad="D11"/>
+<connect gate="G$1" pin="DA9-" pad="D12"/>
+<connect gate="G$1" pin="DC3+" pad="D13"/>
+<connect gate="G$1" pin="DC3-" pad="D14"/>
+<connect gate="G$1" pin="DC9+" pad="D15"/>
+<connect gate="G$1" pin="DC9-" pad="D16"/>
+<connect gate="G$1" pin="TMSTP-" pad="E1"/>
+<connect gate="G$1" pin="SYNCSE" pad="E2"/>
+<connect gate="G$1" pin="AGND_22" pad="E3"/>
+<connect gate="G$1" pin="VA11_1" pad="E4"/>
+<connect gate="G$1" pin="VA11_2" pad="E5"/>
+<connect gate="G$1" pin="VA11_3" pad="E6"/>
+<connect gate="G$1" pin="DGND_4" pad="E7"/>
+<connect gate="G$1" pin="VD11_1" pad="E8"/>
+<connect gate="G$1" pin="DA4+" pad="E9"/>
+<connect gate="G$1" pin="DA4-" pad="E10"/>
+<connect gate="G$1" pin="DA10+" pad="E11"/>
+<connect gate="G$1" pin="DA10-" pad="E12"/>
+<connect gate="G$1" pin="DC4+" pad="E13"/>
+<connect gate="G$1" pin="DC4-" pad="E14"/>
+<connect gate="G$1" pin="DC10+" pad="E15"/>
+<connect gate="G$1" pin="DC10-" pad="E16"/>
+<connect gate="G$1" pin="AGND_23" pad="F1"/>
+<connect gate="G$1" pin="AGND_24" pad="F2"/>
+<connect gate="G$1" pin="VA11_4" pad="F3"/>
+<connect gate="G$1" pin="VA11_5" pad="F4"/>
+<connect gate="G$1" pin="VA11_6" pad="F5"/>
+<connect gate="G$1" pin="VA11_7" pad="F6"/>
+<connect gate="G$1" pin="DGND_5" pad="F7"/>
+<connect gate="G$1" pin="VD11_2" pad="F8"/>
+<connect gate="G$1" pin="DA5+" pad="F9"/>
+<connect gate="G$1" pin="DA5-" pad="F10"/>
+<connect gate="G$1" pin="DA11+" pad="F11"/>
+<connect gate="G$1" pin="DA11-" pad="F12"/>
+<connect gate="G$1" pin="DC5+" pad="F13"/>
+<connect gate="G$1" pin="DC5-" pad="F14"/>
+<connect gate="G$1" pin="DC11+" pad="F15"/>
+<connect gate="G$1" pin="DC11-" pad="F16"/>
+<connect gate="G$1" pin="AGND_25" pad="G1"/>
+<connect gate="G$1" pin="AGND_26" pad="G2"/>
+<connect gate="G$1" pin="VA19_1" pad="G3"/>
+<connect gate="G$1" pin="VA19_2" pad="G4"/>
+<connect gate="G$1" pin="VA19_3" pad="G5"/>
+<connect gate="G$1" pin="VA19_4" pad="G6"/>
+<connect gate="G$1" pin="DGND_6" pad="G7"/>
+<connect gate="G$1" pin="VD11_3" pad="G8"/>
+<connect gate="G$1" pin="DACLK+" pad="G9"/>
+<connect gate="G$1" pin="DACLK-" pad="G10"/>
+<connect gate="G$1" pin="VLVDS_1" pad="G11"/>
+<connect gate="G$1" pin="VLVDS_2" pad="G12"/>
+<connect gate="G$1" pin="DC6+" pad="G13"/>
+<connect gate="G$1" pin="DC6-" pad="G14"/>
+<connect gate="G$1" pin="DCCLK+" pad="G15"/>
+<connect gate="G$1" pin="DCCLK-" pad="G16"/>
+<connect gate="G$1" pin="CLK+" pad="H1"/>
+<connect gate="G$1" pin="AGND_27" pad="H2"/>
+<connect gate="G$1" pin="VA19_5" pad="H3"/>
+<connect gate="G$1" pin="VA19_6" pad="H4"/>
+<connect gate="G$1" pin="VA19_7" pad="H5"/>
+<connect gate="G$1" pin="VA19_8" pad="H6"/>
+<connect gate="G$1" pin="DGND_7" pad="H7"/>
+<connect gate="G$1" pin="DGND_8" pad="H8"/>
+<connect gate="G$1" pin="DASTR+" pad="H9"/>
+<connect gate="G$1" pin="DASTR-" pad="H10"/>
+<connect gate="G$1" pin="VLVDS_3" pad="H11"/>
+<connect gate="G$1" pin="VLVDS_4" pad="H12"/>
+<connect gate="G$1" pin="VLVDS_5" pad="H13"/>
+<connect gate="G$1" pin="DGND_9" pad="H14"/>
+<connect gate="G$1" pin="DCSTR+" pad="H15"/>
+<connect gate="G$1" pin="DCSTR-" pad="H16"/>
+<connect gate="G$1" pin="CLK-" pad="J1"/>
+<connect gate="G$1" pin="AGND_28" pad="J2"/>
+<connect gate="G$1" pin="VA19_9" pad="J3"/>
+<connect gate="G$1" pin="VA19_10" pad="J4"/>
+<connect gate="G$1" pin="VA19_11" pad="J5"/>
+<connect gate="G$1" pin="VA19_12" pad="J6"/>
+<connect gate="G$1" pin="DGND_10" pad="J7"/>
+<connect gate="G$1" pin="DGND_11" pad="J8"/>
+<connect gate="G$1" pin="DBSTR+" pad="J9"/>
+<connect gate="G$1" pin="DBSTR-" pad="J10"/>
+<connect gate="G$1" pin="VLVDS_6" pad="J11"/>
+<connect gate="G$1" pin="VLVDS_7" pad="J12"/>
+<connect gate="G$1" pin="VLVDS_8" pad="J13"/>
+<connect gate="G$1" pin="DGND_12" pad="J14"/>
+<connect gate="G$1" pin="DDSTR+" pad="J15"/>
+<connect gate="G$1" pin="DDSTR-" pad="J16"/>
+<connect gate="G$1" pin="AGND_29" pad="K1"/>
+<connect gate="G$1" pin="AGND_30" pad="K2"/>
+<connect gate="G$1" pin="VA19_13" pad="K3"/>
+<connect gate="G$1" pin="VA19_14" pad="K4"/>
+<connect gate="G$1" pin="VA19_15" pad="K5"/>
+<connect gate="G$1" pin="VA19_16" pad="K6"/>
+<connect gate="G$1" pin="DGND_13" pad="K7"/>
+<connect gate="G$1" pin="VD11_4" pad="K8"/>
+<connect gate="G$1" pin="DBCLK+" pad="K9"/>
+<connect gate="G$1" pin="DBCLK-" pad="K10"/>
+<connect gate="G$1" pin="VLVDS_9" pad="K11"/>
+<connect gate="G$1" pin="VLVDS_10" pad="K12"/>
+<connect gate="G$1" pin="DD6+" pad="K13"/>
+<connect gate="G$1" pin="DD6-" pad="K14"/>
+<connect gate="G$1" pin="DDCLK+" pad="K15"/>
+<connect gate="G$1" pin="DDCLK-" pad="K16"/>
+<connect gate="G$1" pin="AGND_31" pad="L1"/>
+<connect gate="G$1" pin="AGND_32" pad="L2"/>
+<connect gate="G$1" pin="VA11_8" pad="L3"/>
+<connect gate="G$1" pin="VA11_9" pad="L4"/>
+<connect gate="G$1" pin="VA11_10" pad="L5"/>
+<connect gate="G$1" pin="VA11_11" pad="L6"/>
+<connect gate="G$1" pin="DGND_14" pad="L7"/>
+<connect gate="G$1" pin="VD11_5" pad="L8"/>
+<connect gate="G$1" pin="DB5+" pad="L9"/>
+<connect gate="G$1" pin="DB5-" pad="L10"/>
+<connect gate="G$1" pin="DB11+" pad="L11"/>
+<connect gate="G$1" pin="DB11-" pad="L12"/>
+<connect gate="G$1" pin="DD5+" pad="L13"/>
+<connect gate="G$1" pin="DD5-" pad="L14"/>
+<connect gate="G$1" pin="DD11+" pad="L15"/>
+<connect gate="G$1" pin="DD11-" pad="L16"/>
+<connect gate="G$1" pin="SYSREF+" pad="M1"/>
+<connect gate="G$1" pin="TDIODE+" pad="M2"/>
+<connect gate="G$1" pin="AGND_33" pad="M3"/>
+<connect gate="G$1" pin="VA11_12" pad="M4"/>
+<connect gate="G$1" pin="VA11_13" pad="M5"/>
+<connect gate="G$1" pin="VA11_14" pad="M6"/>
+<connect gate="G$1" pin="DGND_15" pad="M7"/>
+<connect gate="G$1" pin="VD11_6" pad="M8"/>
+<connect gate="G$1" pin="DB4+" pad="M9"/>
+<connect gate="G$1" pin="DB4-" pad="M10"/>
+<connect gate="G$1" pin="DB10+" pad="M11"/>
+<connect gate="G$1" pin="DB10-" pad="M12"/>
+<connect gate="G$1" pin="DD4+" pad="M13"/>
+<connect gate="G$1" pin="DD4-" pad="M14"/>
+<connect gate="G$1" pin="DD10+" pad="M15"/>
+<connect gate="G$1" pin="DD10-" pad="M16"/>
+<connect gate="G$1" pin="SYSREF-" pad="N1"/>
+<connect gate="G$1" pin="TDIODE-" pad="N2"/>
+<connect gate="G$1" pin="AGND_34" pad="N3"/>
+<connect gate="G$1" pin="AGND_35" pad="N4"/>
+<connect gate="G$1" pin="AGND_36" pad="N5"/>
+<connect gate="G$1" pin="AGND_37" pad="N6"/>
+<connect gate="G$1" pin="DGND_16" pad="N7"/>
+<connect gate="G$1" pin="SDO" pad="N8"/>
+<connect gate="G$1" pin="DB3+" pad="N9"/>
+<connect gate="G$1" pin="DB3-" pad="N10"/>
+<connect gate="G$1" pin="DB9+" pad="N11"/>
+<connect gate="G$1" pin="DB9-" pad="N12"/>
+<connect gate="G$1" pin="DD3+" pad="N13"/>
+<connect gate="G$1" pin="DD3-" pad="N14"/>
+<connect gate="G$1" pin="DD9+" pad="N15"/>
+<connect gate="G$1" pin="DD9-" pad="N16"/>
+<connect gate="G$1" pin="AGND_38" pad="P1"/>
+<connect gate="G$1" pin="AGND_39" pad="P2"/>
+<connect gate="G$1" pin="AGND_40" pad="P3"/>
+<connect gate="G$1" pin="AGND_41" pad="P4"/>
+<connect gate="G$1" pin="AGND_42" pad="P5"/>
+<connect gate="G$1" pin="AGND_43" pad="P6"/>
+<connect gate="G$1" pin="AGND_44" pad="P7"/>
+<connect gate="G$1" pin="SDI" pad="P8"/>
+<connect gate="G$1" pin="DB2+" pad="P9"/>
+<connect gate="G$1" pin="DB2-" pad="P10"/>
+<connect gate="G$1" pin="DB8+" pad="P11"/>
+<connect gate="G$1" pin="DB8-" pad="P12"/>
+<connect gate="G$1" pin="DD2+" pad="P13"/>
+<connect gate="G$1" pin="DD2-" pad="P14"/>
+<connect gate="G$1" pin="DD8+" pad="P15"/>
+<connect gate="G$1" pin="DD8-" pad="P16"/>
+<connect gate="G$1" pin="PD" pad="R1"/>
+<connect gate="G$1" pin="AGND_45" pad="R2"/>
+<connect gate="G$1" pin="AGND_46" pad="R3"/>
+<connect gate="G$1" pin="AGND_47" pad="R4"/>
+<connect gate="G$1" pin="AGND_48" pad="R5"/>
+<connect gate="G$1" pin="AGND_49" pad="R6"/>
+<connect gate="G$1" pin="AGND_50" pad="R7"/>
+<connect gate="G$1" pin="SCS" pad="R8"/>
+<connect gate="G$1" pin="DB1+" pad="R9"/>
+<connect gate="G$1" pin="DB1-" pad="R10"/>
+<connect gate="G$1" pin="DB7+" pad="R11"/>
+<connect gate="G$1" pin="DB7-" pad="R12"/>
+<connect gate="G$1" pin="DD1+" pad="R13"/>
+<connect gate="G$1" pin="DD1-" pad="R14"/>
+<connect gate="G$1" pin="DD7+" pad="R15"/>
+<connect gate="G$1" pin="DD7-" pad="R16"/>
+<connect gate="G$1" pin="AGND_51" pad="T1"/>
+<connect gate="G$1" pin="AGND_52" pad="T2"/>
+<connect gate="G$1" pin="AGND_53" pad="T3"/>
+<connect gate="G$1" pin="INB+" pad="T4"/>
+<connect gate="G$1" pin="INB-" pad="T5"/>
+<connect gate="G$1" pin="AGND_54" pad="T6"/>
+<connect gate="G$1" pin="AGND_55" pad="T7"/>
+<connect gate="G$1" pin="SCLK" pad="T8"/>
+<connect gate="G$1" pin="DB0+" pad="T9"/>
+<connect gate="G$1" pin="DB0-" pad="T10"/>
+<connect gate="G$1" pin="DB6+" pad="T11"/>
+<connect gate="G$1" pin="DB6-" pad="T12"/>
+<connect gate="G$1" pin="DD0+" pad="T13"/>
+<connect gate="G$1" pin="DD0-" pad="T14"/>
+<connect gate="G$1" pin="DGND_17" pad="T15"/>
+<connect gate="G$1" pin="DGND_18" pad="T16"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="Mouser_Part_Number" value="" constant="no"/>
+<attribute name="Mouser_Price-Stock" value="" constant="no"/>
+<attribute name="Manufacturer_Name" value="Texas Instruments" constant="no"/>
+<attribute name="Manufacturer_Part_Number" value="ADC12DL2500ACF" constant="no"/>
+<attribute name="Description" value="12 Bit Analog to Digital Converter 1, 2 Input 2 Folding Interpolating 256-FCBGA (17x17)" constant="no"/>
+<attribute name="Height" value="3.31mm" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>

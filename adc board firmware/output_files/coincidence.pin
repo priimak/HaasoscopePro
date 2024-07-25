@@ -1,0 +1,326 @@
+ -- Copyright (C) 2018  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1:       2.5V
+ --                  Bank 2:       2.5V
+ --                  Bank 3:       2.5V
+ --                  Bank 4:       2.5V
+ --                  Bank 5:       2.5V
+ --                  Bank 6:       2.5V
+ --                  Bank 7:       2.5V
+ --                  Bank 8:       2.5V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+CHIP  "coincidence"  ASSIGNED TO AN: EP4CE10F17C8
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
+io_extra[1]                  : A2        : input  : 2.5 V             :         : 8         : Y              
+io_extra[2]                  : A3        : input  : 2.5 V             :         : 8         : Y              
+io_extra[3]                  : A4        : input  : 2.5 V             :         : 8         : Y              
+io_extra[4]                  : A5        : input  : 2.5 V             :         : 8         : Y              
+io_extra[5]                  : A6        : input  : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[11]         : A7        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[26]         : A8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[25]         : A9        : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[17]         : A10       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[16]         : A11       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[0]          : A12       : output : 2.5 V             :         : 7         : Y              
+coax_out_extra[15]           : A13       : output : 2.5 V             :         : 7         : Y              
+coax_out_extra[14]           : A14       : output : 2.5 V             :         : 7         : Y              
+coax_out_extra[0]            : A15       : output : 2.5 V             :         : 7         : Y              
+VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
+io_extra[8]                  : B1        : input  : 2.5 V             :         : 1         : Y              
+GND                          : B2        : gnd    :                   :         :           :                
+io_extra[9]                  : B3        : input  : 2.5 V             :         : 8         : Y              
+io_extra[10]                 : B4        : input  : 2.5 V             :         : 8         : Y              
+io_extra[11]                 : B5        : input  : 2.5 V             :         : 8         : Y              
+io_extra[12]                 : B6        : input  : 2.5 V             :         : 8         : Y              
+led[3]                       : B7        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[10]         : B8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[9]          : B9        : output : 2.5 V             :         : 7         : Y              
+led[2]                       : B10       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[1]          : B11       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[15]         : B12       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[14]         : B13       : output : 2.5 V             :         : 7         : Y              
+coax_out_extra[12]           : B14       : output : 2.5 V             :         : 7         : Y              
+GND                          : B15       : gnd    :                   :         :           :                
+reset                        : B16       : input  : 2.5 V             :         : 6         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C1        :        :                   :         : 1         :                
+io_extra[0]                  : C2        : input  : 2.5 V             :         : 1         : Y              
+coax_out_extra[7]            : C3        : output : 2.5 V             :         : 8         : Y              
+VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
+GND                          : C5        : gnd    :                   :         :           :                
+ep4ce10_io_extra[24]         : C6        : output : 2.5 V             :         : 8         : Y              
+VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
+ep4ce10_io_extra[19]         : C8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[18]         : C9        : output : 2.5 V             :         : 7         : Y              
+VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
+led[1]                       : C11       : output : 2.5 V             :         : 7         : Y              
+GND                          : C12       : gnd    :                   :         :           :                
+VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
+coax_out_extra[1]            : C14       : output : 2.5 V             :         : 7         : Y              
+coax_in[63]                  : C15       : input  : 2.5 V             :         : 6         : Y              
+coax_in[1]                   : C16       : input  : 2.5 V             :         : 6         : Y              
+io_extra[7]                  : D1        : input  : 2.5 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1         :                
+io_extra[6]                  : D3        : input  : 2.5 V             :         : 8         : Y              
+coax_out_extra[2]            : D4        : output : 2.5 V             :         : 1         : Y              
+ep4ce10_io_extra[8]          : D5        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[7]          : D6        : output : 2.5 V             :         : 8         : Y              
+GND                          : D7        : gnd    :                   :         :           :                
+ep4ce10_io_extra[3]          : D8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[2]          : D9        : output : 2.5 V             :         : 7         : Y              
+GND                          : D10       : gnd    :                   :         :           :                
+ep4ce10_io_extra[12]         : D11       : output : 2.5 V             :         : 7         : Y              
+led[0]                       : D12       : output : 2.5 V             :         : 7         : Y              
+VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
+coax_in[0]                   : D14       : input  : 2.5 V             :         : 7         : Y              
+coax_in[62]                  : D15       : input  : 2.5 V             :         : 6         : Y              
+coax_in[2]                   : D16       : input  : 2.5 V             :         : 6         : Y              
+clk50_in                     : E1        : input  : 2.5 V             :         : 1         : Y              
+GND                          : E2        : gnd    :                   :         :           :                
+VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
+GND                          : E4        : gnd    :                   :         :           :                
+coax_out_extra[6]            : E5        : output : 2.5 V             :         : 1         : Y              
+ep4ce10_io_extra[27]         : E6        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[23]         : E7        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[6]          : E8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[4]          : E9        : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[20]         : E10       : output : 2.5 V             :         : 7         : Y              
+coax_out_extra[13]           : E11       : output : 2.5 V             :         : 7         : Y              
+GNDA2                        : E12       : gnd    :                   :         :           :                
+GND                          : E13       : gnd    :                   :         :           :                
+VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
+GND+                         : E15       :        :                   :         : 6         :                
+clk50                        : E16       : input  : 2.5 V             :         : 6         : Y              
+ext_trig_out(n)              : F1        : output : LVDS_E_3R         :         : 1         : Y              
+ext_trig_out                 : F2        : output : LVDS_E_3R         :         : 1         : Y              
+io_extra[13]                 : F3        : input  : 2.5 V             :         : 1         : Y              
+nSTATUS                      : F4        :        :                   :         : 1         :                
+coax_out_extra[5]            : F5        : output : 2.5 V             :         : 1         : Y              
+coax_out_extra[11]           : F6        : output : 2.5 V             :         : 8         : Y              
+coax_out_extra[10]           : F7        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[22]         : F8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[21]         : F9        : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[13]         : F10       : output : 2.5 V             :         : 7         : Y              
+coax_in[4]                   : F11       : input  : 2.5 V             :         : 7         : Y              
+VCCA2                        : F12       : power  :                   : 2.5V    :           :                
+coax_in[3]                   : F13       : input  : 2.5 V             :         : 6         : Y              
+coax_in[61]                  : F14       : input  : 2.5 V             :         : 6         : Y              
+coax_in[13]                  : F15       : input  : 2.5 V             :         : 6         : Y              
+coax_in[50]                  : F16       : input  : 2.5 V             :         : 6         : Y              
+enable_outputs               : G1        : output : 2.5 V             :         : 1         : Y              
+coax_out[15]                 : G2        : output : 2.5 V             :         : 1         : Y              
+VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
+GND                          : G4        : gnd    :                   :         :           :                
+coax_out_extra[4]            : G5        : output : 2.5 V             :         : 1         : Y              
+VCCINT                       : G6        : power  :                   : 1.2V    :           :                
+VCCINT                       : G7        : power  :                   : 1.2V    :           :                
+VCCINT                       : G8        : power  :                   : 1.2V    :           :                
+VCCINT                       : G9        : power  :                   : 1.2V    :           :                
+VCCINT                       : G10       : power  :                   : 1.2V    :           :                
+ep4ce10_io_extra[5]          : G11       : output : 2.5 V             :         : 6         : Y              
+MSEL2                        : G12       :        :                   :         : 6         :                
+GND                          : G13       : gnd    :                   :         :           :                
+VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
+coax_in[14]                  : G15       : input  : 2.5 V             :         : 6         : Y              
+coax_in[49]                  : G16       : input  : 2.5 V             :         : 6         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H2        :        :                   :         : 1         :                
+TCK                          : H3        : input  :                   :         : 1         :                
+TDI                          : H4        : input  :                   :         : 1         :                
+nCONFIG                      : H5        :        :                   :         : 1         :                
+VCCINT                       : H6        : power  :                   : 1.2V    :           :                
+GND                          : H7        : gnd    :                   :         :           :                
+GND                          : H8        : gnd    :                   :         :           :                
+GND                          : H9        : gnd    :                   :         :           :                
+GND                          : H10       : gnd    :                   :         :           :                
+VCCINT                       : H11       : power  :                   : 1.2V    :           :                
+MSEL1                        : H12       :        :                   :         : 6         :                
+MSEL0                        : H13       :        :                   :         : 6         :                
+CONF_DONE                    : H14       :        :                   :         : 6         :                
+GND                          : H15       : gnd    :                   :         :           :                
+GND                          : H16       : gnd    :                   :         :           :                
+io_top_extra[4]              : J1        : input  : 2.5 V             :         : 2         : Y              
+coax_out[14]                 : J2        : output : 2.5 V             :         : 2         : Y              
+nCE                          : J3        :        :                   :         : 1         :                
+TDO                          : J4        : output :                   :         : 1         :                
+TMS                          : J5        : input  :                   :         : 1         :                
+coax_out_extra[9]            : J6        : output : 2.5 V             :         : 2         : Y              
+GND                          : J7        : gnd    :                   :         :           :                
+GND                          : J8        : gnd    :                   :         :           :                
+GND                          : J9        : gnd    :                   :         :           :                
+GND                          : J10       : gnd    :                   :         :           :                
+coax_in[5]                   : J11       : input  : 2.5 V             :         : 5         : Y              
+coax_in[6]                   : J12       : input  : 2.5 V             :         : 5         : Y              
+coax_in[56]                  : J13       : input  : 2.5 V             :         : 5         : Y              
+coax_in[60]                  : J14       : input  : 2.5 V             :         : 5         : Y              
+coax_in[48]                  : J15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[15]                  : J16       : input  : 2.5 V             :         : 5         : Y              
+io_top_extra[3]              : K1        : input  : 2.5 V             :         : 2         : Y              
+coax_out[13]                 : K2        : output : 2.5 V             :         : 2         : Y              
+VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
+GND                          : K4        : gnd    :                   :         :           :                
+coax_out_extra[3]            : K5        : output : 2.5 V             :         : 2         : Y              
+coax_out_extra[8]            : K6        : output : 2.5 V             :         : 2         : Y              
+VCCINT                       : K7        : power  :                   : 1.2V    :           :                
+coax_in_extra[13]            : K8        : input  : 2.5 V             :         : 3         : Y              
+coax_in[36]                  : K9        : input  : 2.5 V             :         : 4         : Y              
+coax_in[59]                  : K10       : input  : 2.5 V             :         : 4         : Y              
+coax_in[58]                  : K11       : input  : 2.5 V             :         : 5         : Y              
+coax_in[57]                  : K12       : input  : 2.5 V             :         : 5         : Y              
+GND                          : K13       : gnd    :                   :         :           :                
+VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
+coax_in[47]                  : K15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[16]                  : K16       : input  : 2.5 V             :         : 5         : Y              
+io_top_extra[2]              : L1        : input  : 2.5 V             :         : 2         : Y              
+coax_out[12]                 : L2        : output : 2.5 V             :         : 2         : Y              
+io_top_extra[0]              : L3        : input  : 2.5 V             :         : 2         : Y              
+coax_out[8]                  : L4        : output : 2.5 V             :         : 2         : Y              
+VCCA1                        : L5        : power  :                   : 2.5V    :           :                
+coax_out[7]                  : L6        : output : 2.5 V             :         : 2         : Y              
+coax_in_extra[15]            : L7        : input  : 2.5 V             :         : 3         : Y              
+coax_in[37]                  : L8        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[12]            : L9        : input  : 2.5 V             :         : 4         : Y              
+coax_in[51]                  : L10       : input  : 2.5 V             :         : 4         : Y              
+coax_in[7]                   : L11       : input  : 2.5 V             :         : 4         : Y              
+coax_in[55]                  : L12       : input  : 2.5 V             :         : 5         : Y              
+coax_in[54]                  : L13       : input  : 2.5 V             :         : 5         : Y              
+coax_in[8]                   : L14       : input  : 2.5 V             :         : 5         : Y              
+coax_in[46]                  : L15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[17]                  : L16       : input  : 2.5 V             :         : 5         : Y              
+GND+                         : M1        :        :                   :         : 2         :                
+GND+                         : M2        :        :                   :         : 2         :                
+VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
+GND                          : M4        : gnd    :                   :         :           :                
+GNDA1                        : M5        : gnd    :                   :         :           :                
+coax_in[39]                  : M6        : input  : 2.5 V             :         : 3         : Y              
+coax_in[38]                  : M7        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[14]            : M8        : input  : 2.5 V             :         : 3         : Y              
+coax_in[35]                  : M9        : input  : 2.5 V             :         : 4         : Y              
+coax_in[12]                  : M10       : input  : 2.5 V             :         : 4         : Y              
+coax_in[52]                  : M11       : input  : 2.5 V             :         : 4         : Y              
+coax_in[9]                   : M12       : input  : 2.5 V             :         : 5         : Y              
+GND                          : M13       : gnd    :                   :         :           :                
+VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
+GND+                         : M15       :        :                   :         : 5         :                
+GND+                         : M16       :        :                   :         : 5         :                
+serial_out                   : N1        : output : 2.5 V             :         : 2         : Y              
+coax_out[11]                 : N2        : output : 2.5 V             :         : 2         : Y              
+coax_out[0]                  : N3        : output : 2.5 V             :         : 3         : Y              
+VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
+coax_out[1]                  : N5        : output : 2.5 V             :         : 3         : Y              
+coax_out[5]                  : N6        : output : 2.5 V             :         : 3         : Y              
+GND                          : N7        : gnd    :                   :         :           :                
+coax_out[3]                  : N8        : output : 2.5 V             :         : 3         : Y              
+coax_in_extra[2]             : N9        : input  : 2.5 V             :         : 4         : Y              
+GND                          : N10       : gnd    :                   :         :           :                
+coax_in_extra[1]             : N11       : input  : 2.5 V             :         : 4         : Y              
+coax_in_extra[0]             : N12       : input  : 2.5 V             :         : 4         : Y              
+coax_in[11]                  : N13       : input  : 2.5 V             :         : 5         : Y              
+coax_in[10]                  : N14       : input  : 2.5 V             :         : 5         : Y              
+coax_in[45]                  : N15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[18]                  : N16       : input  : 2.5 V             :         : 5         : Y              
+serial_in                    : P1        : input  : 2.5 V             :         : 2         : Y              
+coax_out[10]                 : P2        : output : 2.5 V             :         : 2         : Y              
+coax_out[4]                  : P3        : output : 2.5 V             :         : 3         : Y              
+VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
+GND                          : P5        : gnd    :                   :         :           :                
+coax_out[2]                  : P6        : output : 2.5 V             :         : 3         : Y              
+VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
+coax_out[6]                  : P8        : output : 2.5 V             :         : 3         : Y              
+coax_in[26]                  : P9        : input  : 2.5 V             :         : 4         : Y              
+VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
+coax_in[25]                  : P11       : input  : 2.5 V             :         : 4         : Y              
+GND                          : P12       : gnd    :                   :         :           :                
+VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
+coax_in[53]                  : P14       : input  : 2.5 V             :         : 4         : Y              
+coax_in[44]                  : P15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[19]                  : P16       : input  : 2.5 V             :         : 5         : Y              
+io_top_extra[1]              : R1        : input  : 2.5 V             :         : 2         : Y              
+GND                          : R2        : gnd    :                   :         :           :                
+coax_in[34]                  : R3        : input  : 2.5 V             :         : 3         : Y              
+coax_in[33]                  : R4        : input  : 2.5 V             :         : 3         : Y              
+coax_in[32]                  : R5        : input  : 2.5 V             :         : 3         : Y              
+coax_in[31]                  : R6        : input  : 2.5 V             :         : 3         : Y              
+coax_in[30]                  : R7        : input  : 2.5 V             :         : 3         : Y              
+coax_in[29]                  : R8        : input  : 2.5 V             :         : 3         : Y              
+coax_in[28]                  : R9        : input  : 2.5 V             :         : 4         : Y              
+coax_in[27]                  : R10       : input  : 2.5 V             :         : 4         : Y              
+coax_in[24]                  : R11       : input  : 2.5 V             :         : 4         : Y              
+coax_in[23]                  : R12       : input  : 2.5 V             :         : 4         : Y              
+coax_in[22]                  : R13       : input  : 2.5 V             :         : 4         : Y              
+coax_in[21]                  : R14       : input  : 2.5 V             :         : 4         : Y              
+GND                          : R15       : gnd    :                   :         :           :                
+coax_in[20]                  : R16       : input  : 2.5 V             :         : 5         : Y              
+VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
+coax_out[9]                  : T2        : output : 2.5 V             :         : 3         : Y              
+coax_in_extra[11]            : T3        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[10]            : T4        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[9]             : T5        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[8]             : T6        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[7]             : T7        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[6]             : T8        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[5]             : T9        : input  : 2.5 V             :         : 4         : Y              
+coax_in_extra[4]             : T10       : input  : 2.5 V             :         : 4         : Y              
+coax_in_extra[3]             : T11       : input  : 2.5 V             :         : 4         : Y              
+coax_in[40]                  : T12       : input  : 2.5 V             :         : 4         : Y              
+coax_in[41]                  : T13       : input  : 2.5 V             :         : 4         : Y              
+coax_in[42]                  : T14       : input  : 2.5 V             :         : 4         : Y              
+coax_in[43]                  : T15       : input  : 2.5 V             :         : 4         : Y              
+VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                
