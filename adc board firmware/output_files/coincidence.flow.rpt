@@ -1,5 +1,5 @@
 Flow report for coincidence
-Fri Jul 26 18:53:53 2024
+Fri Jul 26 19:01:16 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jul 26 18:53:48 2024       ;
+; Flow Status                        ; Successful - Fri Jul 26 19:01:12 2024       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; coincidence                                 ;
 ; Top-level Entity Name              ; coincidence                                 ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/26/2024 18:53:22 ;
+; Start date & time ; 07/26/2024 19:00:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; coincidence         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 159303461227190.172203440218984        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 159303461227190.172203484715124        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; pll2.bsf                               ; --            ; --          ; --         ;
@@ -101,11 +101,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4789 MB             ; 00:00:13                           ;
-; Fitter               ; 00:00:08     ; 1.1                     ; 5519 MB             ; 00:00:05                           ;
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4788 MB             ; 00:00:14                           ;
+; Fitter               ; 00:00:07     ; 1.1                     ; 5511 MB             ; 00:00:05                           ;
 ; Assembler            ; 00:00:01     ; 1.0                     ; 4672 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.4                     ; 4768 MB             ; 00:00:02                           ;
-; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:21                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.4                     ; 4769 MB             ; 00:00:02                           ;
+; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
