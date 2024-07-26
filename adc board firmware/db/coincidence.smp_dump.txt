@@ -1,11 +1,17 @@
 
 State Machine - |coincidence|processor:instpro|state
-Name state.CLKSWITCH state.PLLCLOCK state.READMORE state.WRITE2 state.WRITE1 state.SOLVING state.READ state.RESETHIST 
-state.READ 0 0 0 0 0 0 0 0 
-state.SOLVING 0 0 0 0 0 1 1 0 
-state.WRITE1 0 0 0 0 1 0 1 0 
-state.WRITE2 0 0 0 1 0 0 1 0 
-state.READMORE 0 0 1 0 0 0 1 0 
-state.PLLCLOCK 0 1 0 0 0 0 1 0 
-state.CLKSWITCH 1 0 0 0 0 0 1 0 
-state.RESETHIST 0 0 0 0 0 0 1 1 
+Name state.PLLCLOCK state.PHASE1 state.PHASEALL state.CLKSWITCH2 state.CLKSWITCH1 state.START 
+state.START 0 0 0 0 0 0 
+state.CLKSWITCH1 0 0 0 0 1 1 
+state.CLKSWITCH2 0 0 0 1 0 1 
+state.PHASEALL 0 0 1 0 0 1 
+state.PHASE1 0 1 0 0 0 1 
+state.PLLCLOCK 1 0 0 0 0 1 
+
+State Machine - |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|state
+Name state.RX_BYTE3 state.RX_BYTE2 state.RX_BYTE1 state.RX_BYTE0 state.TX_DATA 
+state.RX_BYTE0 0 0 0 0 0 
+state.RX_BYTE1 0 0 1 1 0 
+state.RX_BYTE2 0 1 0 1 0 
+state.RX_BYTE3 1 0 0 1 0 
+state.TX_DATA 0 0 0 1 1 
