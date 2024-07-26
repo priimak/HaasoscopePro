@@ -1,5 +1,5 @@
 Analysis & Synthesis report for coincidence
-Fri Jul 26 18:18:43 2024
+Fri Jul 26 18:53:37 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -111,7 +111,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 26 18:18:43 2024       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 26 18:53:37 2024       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; coincidence                                 ;
 ; Top-level Entity Name              ; coincidence                                 ;
@@ -228,52 +228,52 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                  ;
-+---------------------------------------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                    ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                     ; Library ;
-+---------------------------------------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
-; coincidence.bdf                                                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/coincidence.bdf                                                     ;         ;
-; FPGA-ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v         ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v         ;         ;
-; FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v  ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v  ;         ;
-; FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v ;         ;
-; FPGA-ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v               ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v               ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v                     ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v                     ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v                ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v                ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v                ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v                ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo4.v                           ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo4.v                           ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo2.v                           ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo2.v                           ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v               ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v               ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v                      ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v                      ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v             ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v             ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v              ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v              ;         ;
-; FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v           ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v           ;         ;
-; serialprocessor.v                                                   ; yes             ; User Verilog HDL File              ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/serialprocessor.v                                                   ;         ;
-; pll2.v                                                              ; yes             ; User Wizard-Generated File         ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/pll2.v                                                              ;         ;
-; altpll.tdf                                                          ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altpll.tdf                                                                        ;         ;
-; aglobal180.inc                                                      ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/aglobal180.inc                                                                    ;         ;
-; stratix_pll.inc                                                     ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/stratix_pll.inc                                                                   ;         ;
-; stratixii_pll.inc                                                   ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/stratixii_pll.inc                                                                 ;         ;
-; cycloneii_pll.inc                                                   ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                 ;         ;
-; db/pll2_altpll.v                                                    ; yes             ; Auto-Generated Megafunction        ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v                                                    ;         ;
-; altsyncram.tdf                                                      ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altsyncram.tdf                                                                    ;         ;
-; stratix_ram_block.inc                                               ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                                             ;         ;
-; lpm_mux.inc                                                         ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/lpm_mux.inc                                                                       ;         ;
-; lpm_decode.inc                                                      ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/lpm_decode.inc                                                                    ;         ;
-; a_rdenreg.inc                                                       ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                                     ;         ;
-; altrom.inc                                                          ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altrom.inc                                                                        ;         ;
-; altram.inc                                                          ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altram.inc                                                                        ;         ;
-; altdpram.inc                                                        ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altdpram.inc                                                                      ;         ;
-; db/altsyncram_i2h1.tdf                                              ; yes             ; Auto-Generated Megafunction        ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/altsyncram_i2h1.tdf                                              ;         ;
-; db/altsyncram_g0d1.tdf                                              ; yes             ; Auto-Generated Megafunction        ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/altsyncram_g0d1.tdf                                              ;         ;
-; db/altsyncram_o8d1.tdf                                              ; yes             ; Auto-Generated Megafunction        ; C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/altsyncram_o8d1.tdf                                              ;         ;
-+---------------------------------------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                              ;
++----------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                               ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                      ; Library ;
++----------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v         ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v         ;         ;
+; ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v  ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v  ;         ;
+; ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v ;         ;
+; ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v               ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v               ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v                     ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v                     ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v                ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v                ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v                ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v                ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/fifo4.v                           ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo4.v                           ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/fifo2.v                           ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo2.v                           ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v               ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v               ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v                      ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v                      ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v             ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v             ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v              ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v              ;         ;
+; ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v           ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v           ;         ;
+; coincidence.bdf                                                ; yes             ; User Block Diagram/Schematic File  ; C:/gitwork/master/HaasoscopePro/adc board firmware/coincidence.bdf                                                ;         ;
+; serialprocessor.v                                              ; yes             ; User Verilog HDL File              ; C:/gitwork/master/HaasoscopePro/adc board firmware/serialprocessor.v                                              ;         ;
+; pll2.v                                                         ; yes             ; User Wizard-Generated File         ; C:/gitwork/master/HaasoscopePro/adc board firmware/pll2.v                                                         ;         ;
+; altpll.tdf                                                     ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altpll.tdf                                                         ;         ;
+; aglobal180.inc                                                 ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/aglobal180.inc                                                     ;         ;
+; stratix_pll.inc                                                ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/stratix_pll.inc                                                    ;         ;
+; stratixii_pll.inc                                              ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/stratixii_pll.inc                                                  ;         ;
+; cycloneii_pll.inc                                              ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/cycloneii_pll.inc                                                  ;         ;
+; db/pll2_altpll.v                                               ; yes             ; Auto-Generated Megafunction        ; C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v                                               ;         ;
+; altsyncram.tdf                                                 ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altsyncram.tdf                                                     ;         ;
+; stratix_ram_block.inc                                          ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                              ;         ;
+; lpm_mux.inc                                                    ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/lpm_mux.inc                                                        ;         ;
+; lpm_decode.inc                                                 ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/lpm_decode.inc                                                     ;         ;
+; a_rdenreg.inc                                                  ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                      ;         ;
+; altrom.inc                                                     ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altrom.inc                                                         ;         ;
+; altram.inc                                                     ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altram.inc                                                         ;         ;
+; altdpram.inc                                                   ; yes             ; Megafunction                       ; c:/altera/18.0/quartus/libraries/megafunctions/altdpram.inc                                                       ;         ;
+; db/altsyncram_i2h1.tdf                                         ; yes             ; Auto-Generated Megafunction        ; C:/gitwork/master/HaasoscopePro/adc board firmware/db/altsyncram_i2h1.tdf                                         ;         ;
+; db/altsyncram_g0d1.tdf                                         ; yes             ; Auto-Generated Megafunction        ; C:/gitwork/master/HaasoscopePro/adc board firmware/db/altsyncram_g0d1.tdf                                         ;         ;
+; db/altsyncram_o8d1.tdf                                         ; yes             ; Auto-Generated Megafunction        ; C:/gitwork/master/HaasoscopePro/adc board firmware/db/altsyncram_o8d1.tdf                                         ;         ;
++----------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -1794,81 +1794,81 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Fri Jul 26 18:18:26 2024
+    Info: Processing started: Fri Jul 26 18:53:21 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off coincidence -c coincidence
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/fpga_ft232h_example/tx_specified_len.v
+    Info (12023): Found entity 1: tx_specified_len File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/fpga_ft232h_example/rx_calc_crc.v
+    Info (12023): Found entity 1: rx_calc_crc File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/rx_calc_crc.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v
+    Info (12023): Found entity 1: fpga_top_ft232h_tx_mass File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/fpga_ft232h_example/fpga_top_ft232h_rx_crc.v
+    Info (12023): Found entity 1: fpga_top_ft232h_rx_crc File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_rx_crc.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/fpga_ft232h_example/fpga_top_ft232h_loopback.v
+    Info (12023): Found entity 1: fpga_top_ft232h_loopback File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/fpga_ft232h_example/clock_beat.v
+    Info (12023): Found entity 1: clock_beat File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/resetn_sync.v
+    Info (12023): Found entity 1: resetn_sync File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/ftdi_245fifo_top.v
+    Info (12023): Found entity 1: ftdi_245fifo_top File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/ftdi_245fifo_fsm.v
+    Info (12023): Found entity 1: ftdi_245fifo_fsm File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/fifo4.v
+    Info (12023): Found entity 1: fifo4 File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo4.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/fifo2.v
+    Info (12023): Found entity 1: fifo2 File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo2.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/fifo_delay_submit.v
+    Info (12023): Found entity 1: fifo_delay_submit File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/fifo_async.v
+    Info (12023): Found entity 1: fifo_async File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/axi_stream_upsizing.v
+    Info (12023): Found entity 1: axi_stream_upsizing File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_upsizing.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/axi_stream_resizing.v
+    Info (12023): Found entity 1: axi_stream_resizing File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/axi_stream_packing.v
+    Info (12023): Found entity 1: axi_stream_packing File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/axi_stream_downsizing.v
+    Info (12023): Found entity 1: axi_stream_downsizing File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file ftdi245fifo/rtl/ftdi_245fifo/axi_stream_assert.v
+    Info (12023): Found entity 1: axi_stream_assert File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_assert.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file coincidence.bdf
     Info (12023): Found entity 1: coincidence
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/fpga_ft232h_example/tx_specified_len.v
-    Info (12023): Found entity 1: tx_specified_len File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/fpga_ft232h_example/rx_calc_crc.v
-    Info (12023): Found entity 1: rx_calc_crc File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/rx_calc_crc.v Line: 12
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v
-    Info (12023): Found entity 1: fpga_top_ft232h_tx_mass File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/fpga_ft232h_example/fpga_top_ft232h_rx_crc.v
-    Info (12023): Found entity 1: fpga_top_ft232h_rx_crc File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_rx_crc.v Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/fpga_ft232h_example/fpga_top_ft232h_loopback.v
-    Info (12023): Found entity 1: fpga_top_ft232h_loopback File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/fpga_ft232h_example/clock_beat.v
-    Info (12023): Found entity 1: clock_beat File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/resetn_sync.v
-    Info (12023): Found entity 1: resetn_sync File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/ftdi_245fifo_top.v
-    Info (12023): Found entity 1: ftdi_245fifo_top File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/ftdi_245fifo_fsm.v
-    Info (12023): Found entity 1: ftdi_245fifo_fsm File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/fifo4.v
-    Info (12023): Found entity 1: fifo4 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo4.v Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/fifo2.v
-    Info (12023): Found entity 1: fifo2 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo2.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/fifo_delay_submit.v
-    Info (12023): Found entity 1: fifo_delay_submit File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/fifo_async.v
-    Info (12023): Found entity 1: fifo_async File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/axi_stream_upsizing.v
-    Info (12023): Found entity 1: axi_stream_upsizing File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_upsizing.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/axi_stream_resizing.v
-    Info (12023): Found entity 1: axi_stream_resizing File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/axi_stream_packing.v
-    Info (12023): Found entity 1: axi_stream_packing File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/axi_stream_downsizing.v
-    Info (12023): Found entity 1: axi_stream_downsizing File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file fpga-ftdi245fifo/rtl/ftdi_245fifo/axi_stream_assert.v
-    Info (12023): Found entity 1: axi_stream_assert File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_assert.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file serialprocessor.v
-    Info (12023): Found entity 1: processor File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/serialprocessor.v Line: 1
+    Info (12023): Found entity 1: processor File: C:/gitwork/master/HaasoscopePro/adc board firmware/serialprocessor.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pll2.v
-    Info (12023): Found entity 1: pll2 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/pll2.v Line: 39
+    Info (12023): Found entity 1: pll2 File: C:/gitwork/master/HaasoscopePro/adc board firmware/pll2.v Line: 39
 Info (12127): Elaborating entity "coincidence" for the top level hierarchy
 Warning (275013): Port "clk" of type fpga_top_ft232h_loopback and instance "inst" is missing source signal
 Info (12128): Elaborating entity "fpga_top_ft232h_tx_mass" for hierarchy "fpga_top_ft232h_tx_mass:inst3"
-Warning (10034): Output port "LED[1..0]" at fpga_top_ft232h_tx_mass.v(13) has no driver File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 13
-Info (12128): Elaborating entity "ftdi_245fifo_top" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 72
-Info (12128): Elaborating entity "resetn_sync" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_usb" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 98
-Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_1" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 204
-Info (12128): Elaborating entity "axi_stream_packing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 223
-Info (12128): Elaborating entity "axi_stream_resizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_upsizing" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 242
-Info (12128): Elaborating entity "fifo_async" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 259
-Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_2" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 273
-Info (12128): Elaborating entity "axi_stream_resizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 292
-Info (12128): Elaborating entity "axi_stream_downsizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing|axi_stream_downsizing:u_axi_stream_downsizing" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v Line: 69
-Info (12128): Elaborating entity "fifo_delay_submit" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_delay_submit:u_tx_fifo_delay_submit" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 306
-Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_3" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 320
-Info (12128): Elaborating entity "ftdi_245fifo_fsm" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|ftdi_245fifo_fsm:u_ftdi_245fifo_fsm" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 348
-Info (12128): Elaborating entity "fifo4" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 363
-Info (12128): Elaborating entity "axi_stream_packing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_rx_packing" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 381
-Info (12128): Elaborating entity "axi_stream_resizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_rx_upsizing" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 400
-Info (12128): Elaborating entity "fifo_async" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 417
-Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_rx_fifo2" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 450
-Info (12128): Elaborating entity "tx_specified_len" for hierarchy "fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 86
-Info (10264): Verilog HDL Case Statement information at tx_specified_len.v(43): all case item expressions in this case statement are onehot File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v Line: 43
-Info (12128): Elaborating entity "clock_beat" for hierarchy "fpga_top_ft232h_tx_mass:inst3|clock_beat:u_ftdi_clk_beat" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 95
-Info (12128): Elaborating entity "clock_beat" for hierarchy "fpga_top_ft232h_tx_mass:inst3|clock_beat:u_clk_beat" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 104
+Warning (10034): Output port "LED[1..0]" at fpga_top_ft232h_tx_mass.v(13) has no driver File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 13
+Info (12128): Elaborating entity "ftdi_245fifo_top" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 72
+Info (12128): Elaborating entity "resetn_sync" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_usb" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 98
+Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_1" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 204
+Info (12128): Elaborating entity "axi_stream_packing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 223
+Info (12128): Elaborating entity "axi_stream_resizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_upsizing" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 242
+Info (12128): Elaborating entity "fifo_async" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 259
+Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_2" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 273
+Info (12128): Elaborating entity "axi_stream_resizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 292
+Info (12128): Elaborating entity "axi_stream_downsizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing|axi_stream_downsizing:u_axi_stream_downsizing" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v Line: 69
+Info (12128): Elaborating entity "fifo_delay_submit" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_delay_submit:u_tx_fifo_delay_submit" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 306
+Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_3" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 320
+Info (12128): Elaborating entity "ftdi_245fifo_fsm" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|ftdi_245fifo_fsm:u_ftdi_245fifo_fsm" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 348
+Info (12128): Elaborating entity "fifo4" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 363
+Info (12128): Elaborating entity "axi_stream_packing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_rx_packing" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 381
+Info (12128): Elaborating entity "axi_stream_resizing" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_rx_upsizing" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 400
+Info (12128): Elaborating entity "fifo_async" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 417
+Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_rx_fifo2" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 450
+Info (12128): Elaborating entity "tx_specified_len" for hierarchy "fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 86
+Info (10264): Verilog HDL Case Statement information at tx_specified_len.v(43): all case item expressions in this case statement are onehot File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v Line: 43
+Info (12128): Elaborating entity "clock_beat" for hierarchy "fpga_top_ft232h_tx_mass:inst3|clock_beat:u_ftdi_clk_beat" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 95
+Info (12128): Elaborating entity "clock_beat" for hierarchy "fpga_top_ft232h_tx_mass:inst3|clock_beat:u_clk_beat" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 104
 Info (12128): Elaborating entity "pll2" for hierarchy "pll2:inst2pll"
-Info (12128): Elaborating entity "altpll" for hierarchy "pll2:inst2pll|altpll:altpll_component" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/pll2.v Line: 131
-Info (12130): Elaborated megafunction instantiation "pll2:inst2pll|altpll:altpll_component" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/pll2.v Line: 131
-Info (12133): Instantiated megafunction "pll2:inst2pll|altpll:altpll_component" with the following parameter: File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/pll2.v Line: 131
+Info (12128): Elaborating entity "altpll" for hierarchy "pll2:inst2pll|altpll:altpll_component" File: C:/gitwork/master/HaasoscopePro/adc board firmware/pll2.v Line: 131
+Info (12130): Elaborated megafunction instantiation "pll2:inst2pll|altpll:altpll_component" File: C:/gitwork/master/HaasoscopePro/adc board firmware/pll2.v Line: 131
+Info (12133): Instantiated megafunction "pll2:inst2pll|altpll:altpll_component" with the following parameter: File: C:/gitwork/master/HaasoscopePro/adc board firmware/pll2.v Line: 131
     Info (12134): Parameter "bandwidth_type" = "LOW"
     Info (12134): Parameter "clk0_divide_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1935,31 +1935,31 @@ Info (12133): Instantiated megafunction "pll2:inst2pll|altpll:altpll_component" 
     Info (12134): Parameter "width_clock" = "5"
     Info (12134): Parameter "width_phasecounterselect" = "3"
 Info (12021): Found 8 design units, including 8 entities, in source file db/pll2_altpll.v
-    Info (12023): Found entity 1: pll2_altpll_dyn_phase_le File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 34
-    Info (12023): Found entity 2: pll2_altpll_dyn_phase_le1 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 77
-    Info (12023): Found entity 3: pll2_altpll_dyn_phase_le12 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 120
-    Info (12023): Found entity 4: pll2_cmpr File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 170
-    Info (12023): Found entity 5: pll2_cntr File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 204
-    Info (12023): Found entity 6: pll2_cmpr1 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 308
-    Info (12023): Found entity 7: pll2_cntr1 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 342
-    Info (12023): Found entity 8: pll2_altpll File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 445
+    Info (12023): Found entity 1: pll2_altpll_dyn_phase_le File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 34
+    Info (12023): Found entity 2: pll2_altpll_dyn_phase_le1 File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 77
+    Info (12023): Found entity 3: pll2_altpll_dyn_phase_le12 File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 120
+    Info (12023): Found entity 4: pll2_cmpr File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 170
+    Info (12023): Found entity 5: pll2_cntr File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 204
+    Info (12023): Found entity 6: pll2_cmpr1 File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 308
+    Info (12023): Found entity 7: pll2_cntr1 File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 342
+    Info (12023): Found entity 8: pll2_altpll File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 445
 Info (12128): Elaborating entity "pll2_altpll" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated" File: c:/altera/18.0/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "pll2_altpll_dyn_phase_le" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le:altpll_dyn_phase_le2" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 514
-Info (12128): Elaborating entity "pll2_altpll_dyn_phase_le1" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le1:altpll_dyn_phase_le4" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 521
-Info (12128): Elaborating entity "pll2_altpll_dyn_phase_le12" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le12:altpll_dyn_phase_le5" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 528
-Info (12128): Elaborating entity "pll2_cntr" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr:phasestep_counter" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 572
-Info (12128): Elaborating entity "pll2_cmpr" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr:phasestep_counter|pll2_cmpr:cmpr12" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 272
-Info (12128): Elaborating entity "pll2_cntr1" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr1:pll_internal_phasestep" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 578
-Info (12128): Elaborating entity "pll2_cmpr1" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr1:pll_internal_phasestep|pll2_cmpr1:cmpr14" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 420
+Info (12128): Elaborating entity "pll2_altpll_dyn_phase_le" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le:altpll_dyn_phase_le2" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 514
+Info (12128): Elaborating entity "pll2_altpll_dyn_phase_le1" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le1:altpll_dyn_phase_le4" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 521
+Info (12128): Elaborating entity "pll2_altpll_dyn_phase_le12" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le12:altpll_dyn_phase_le5" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 528
+Info (12128): Elaborating entity "pll2_cntr" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr:phasestep_counter" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 572
+Info (12128): Elaborating entity "pll2_cmpr" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr:phasestep_counter|pll2_cmpr:cmpr12" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 272
+Info (12128): Elaborating entity "pll2_cntr1" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr1:pll_internal_phasestep" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 578
+Info (12128): Elaborating entity "pll2_cmpr1" for hierarchy "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr1:pll_internal_phasestep|pll2_cmpr1:cmpr14" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 420
 Info (12128): Elaborating entity "processor" for hierarchy "processor:instpro"
-Warning (10230): Verilog HDL assignment warning at serialprocessor.v(31): truncated value with size 32 to match size of target (8) File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/serialprocessor.v Line: 31
-Warning (10230): Verilog HDL assignment warning at serialprocessor.v(58): truncated value with size 32 to match size of target (8) File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/serialprocessor.v Line: 58
-Warning (10230): Verilog HDL assignment warning at serialprocessor.v(62): truncated value with size 32 to match size of target (8) File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/serialprocessor.v Line: 62
+Warning (10230): Verilog HDL assignment warning at serialprocessor.v(31): truncated value with size 32 to match size of target (8) File: C:/gitwork/master/HaasoscopePro/adc board firmware/serialprocessor.v Line: 31
+Warning (10230): Verilog HDL assignment warning at serialprocessor.v(58): truncated value with size 32 to match size of target (8) File: C:/gitwork/master/HaasoscopePro/adc board firmware/serialprocessor.v Line: 58
+Warning (10230): Verilog HDL assignment warning at serialprocessor.v(62): truncated value with size 32 to match size of target (8) File: C:/gitwork/master/HaasoscopePro/adc board firmware/serialprocessor.v Line: 62
 Info (12128): Elaborating entity "fpga_top_ft232h_loopback" for hierarchy "fpga_top_ft232h_loopback:inst"
-Warning (10034): Output port "LED[1..0]" at fpga_top_ft232h_loopback.v(13) has no driver File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v Line: 13
-Info (12128): Elaborating entity "ftdi_245fifo_top" for hierarchy "fpga_top_ft232h_loopback:inst|ftdi_245fifo_top:u_ftdi_245fifo_top" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v Line: 69
-Info (12128): Elaborating entity "axi_stream_packing" for hierarchy "fpga_top_ft232h_loopback:inst|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 223
-Info (12128): Elaborating entity "fifo_async" for hierarchy "fpga_top_ft232h_loopback:inst|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 259
+Warning (10034): Output port "LED[1..0]" at fpga_top_ft232h_loopback.v(13) has no driver File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v Line: 13
+Info (12128): Elaborating entity "ftdi_245fifo_top" for hierarchy "fpga_top_ft232h_loopback:inst|ftdi_245fifo_top:u_ftdi_245fifo_top" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v Line: 69
+Info (12128): Elaborating entity "axi_stream_packing" for hierarchy "fpga_top_ft232h_loopback:inst|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 223
+Info (12128): Elaborating entity "fifo_async" for hierarchy "fpga_top_ft232h_loopback:inst|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 259
 Warning (276027): Inferred dual-clock RAM node "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async|buffer_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async|buffer_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (19000): Inferred 3 megafunctions from design logic
@@ -2027,7 +2027,7 @@ Info (12133): Instantiated megafunction "fpga_top_ft232h_tx_mass:inst3|ftdi_245f
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i2h1.tdf
-    Info (12023): Found entity 1: altsyncram_i2h1 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/altsyncram_i2h1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_i2h1 File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/altsyncram_i2h1.tdf Line: 27
 Info (12130): Elaborated megafunction instantiation "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async|altsyncram:buffer_rtl_0"
 Info (12133): Instantiated megafunction "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async|altsyncram:buffer_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -2045,7 +2045,7 @@ Info (12133): Instantiated megafunction "fpga_top_ft232h_tx_mass:inst3|ftdi_245f
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_g0d1.tdf
-    Info (12023): Found entity 1: altsyncram_g0d1 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/altsyncram_g0d1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_g0d1 File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/altsyncram_g0d1.tdf Line: 27
 Info (12130): Elaborated megafunction instantiation "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async|altsyncram:buffer_rtl_0"
 Info (12133): Instantiated megafunction "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async|altsyncram:buffer_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -2063,8 +2063,8 @@ Info (12133): Instantiated megafunction "fpga_top_ft232h_tx_mass:inst3|ftdi_245f
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_o8d1.tdf
-    Info (12023): Found entity 1: altsyncram_o8d1 File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/altsyncram_o8d1.tdf Line: 27
-Info (13000): Registers with preset signals will power-up high File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v Line: 97
+    Info (12023): Found entity 1: altsyncram_o8d1 File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/altsyncram_o8d1.tdf Line: 27
+Info (13000): Registers with preset signals will power-up high File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v Line: 97
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led0" is stuck at GND
@@ -2075,20 +2075,20 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 19 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le:altpll_dyn_phase_le2|wire_le_comb8_combout" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 58
-    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le1:altpll_dyn_phase_le4|wire_le_comb9_combout" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 101
-    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le12:altpll_dyn_phase_le5|wire_le_comb10_combout" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 144
-    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|remap_decoy_le3a_0" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 559
-    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|remap_decoy_le3a_1" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 563
-    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|remap_decoy_le3a_2" File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 567
-Info (144001): Generated suppressed messages file C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/output_files/coincidence.map.smsg
+    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le:altpll_dyn_phase_le2|wire_le_comb8_combout" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 58
+    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le1:altpll_dyn_phase_le4|wire_le_comb9_combout" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 101
+    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le12:altpll_dyn_phase_le5|wire_le_comb10_combout" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 144
+    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|remap_decoy_le3a_0" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 559
+    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|remap_decoy_le3a_1" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 563
+    Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|remap_decoy_le3a_2" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 567
+Info (144001): Generated suppressed messages file C:/gitwork/master/HaasoscopePro/adc board firmware/output_files/coincidence.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 6 LCELL
-Warning (15899): PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-Warning (15903): PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" has parameter switch_over_type set to Manual, but CLKSWITCH port is disconnected or stuck at VCC/GND File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Info (15024): Input port CLKSWITCH of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by GND File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Info (15024): Input port INCLK[0] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Info (15024): Input port INCLK[1] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+Warning (15899): PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+Warning (15903): PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" has parameter switch_over_type set to Manual, but CLKSWITCH port is disconnected or stuck at VCC/GND File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Info (15024): Input port CLKSWITCH of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by GND File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Info (15024): Input port INCLK[0] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Info (15024): Input port INCLK[1] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
 Info (21057): Implemented 1251 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 10 output pins
@@ -2097,15 +2097,15 @@ Info (21057): Implemented 1251 device resources after synthesis - the final reso
     Info (21064): Implemented 53 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4806 megabytes
-    Info: Processing ended: Fri Jul 26 18:18:43 2024
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Fri Jul 26 18:53:37 2024
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:14
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/output_files/coincidence.map.smsg.
+The suppressed messages can be found in C:/gitwork/master/HaasoscopePro/adc board firmware/output_files/coincidence.map.smsg.
 
 

@@ -1,5 +1,5 @@
 Fitter report for coincidence
-Fri Jul 26 18:18:55 2024
+Fri Jul 26 18:53:46 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -71,7 +71,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jul 26 18:18:55 2024       ;
+; Fitter Status                      ; Successful - Fri Jul 26 18:53:46 2024       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; coincidence                                 ;
 ; Top-level Entity Name              ; coincidence                                 ;
@@ -158,14 +158,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
+; Average used               ; 1.07        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.8%      ;
-;     Processor 3            ;   1.6%      ;
-;     Processor 4            ;   1.6%      ;
+;     Processor 2            ;   2.7%      ;
+;     Processor 3            ;   2.3%      ;
+;     Processor 4            ;   2.2%      ;
 +----------------------------+-------------+
 
 
@@ -207,7 +207,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/output_files/coincidence.pin.
+The pin-out file can be found in C:/gitwork/master/HaasoscopePro/adc board firmware/output_files/coincidence.pin.
 
 
 +-------------------------------------------------------------------------+
@@ -1736,13 +1736,13 @@ Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors
 Info (119006): Selected device EP4CE10F17C8 for design "coincidence"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (15536): Implemented PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" as Cyclone IV E PLL type, but with warnings File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Warning (15520): Can't achieve requested value 1 ps of parameter vco_phase_shift_step -- achieved value of 96 ps File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of 0 degrees (0 ps) for pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] port File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-Warning (15903): PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" has parameter switch_over_type set to Manual, but CLKSWITCH port is disconnected or stuck at VCC/GND File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Info (15024): Input port CLKSWITCH of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by GND File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Info (15024): Input port INCLK[0] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-    Info (15024): Input port INCLK[1] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+Warning (15536): Implemented PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" as Cyclone IV E PLL type, but with warnings File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Warning (15520): Can't achieve requested value 1 ps of parameter vco_phase_shift_step -- achieved value of 96 ps File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of 0 degrees (0 ps) for pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] port File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+Warning (15903): PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" has parameter switch_over_type set to Manual, but CLKSWITCH port is disconnected or stuck at VCC/GND File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Info (15024): Input port CLKSWITCH of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by GND File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Info (15024): Input port INCLK[0] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
+    Info (15024): Input port INCLK[1] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1777,11 +1777,11 @@ Info (332111): Found 2 clocks
     Info (332111): ======== ============
     Info (332111):   20.000        clk50
     Info (332111):   16.667     ftdi_clk
-Info (176353): Automatically promoted node pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_2) File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 610
+Info (176353): Automatically promoted node pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_2) File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 610
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
-Info (176353): Automatically promoted node fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_usb|rstn_shift[0]  File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v Line: 22
+Info (176353): Automatically promoted node fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_usb|rstn_shift[0]  File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v Line: 22
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_tx|rstn_shift[0]  File: C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/FPGA-ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v Line: 22
+Info (176353): Automatically promoted node fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_tx|rstn_shift[0]  File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v Line: 22
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1800,7 +1800,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.88 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.96 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1819,17 +1819,17 @@ Warning (169177): 12 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin ftdi_rxf_n uses I/O standard 3.3-V LVTTL at L15
     Info (169178): Pin ftdi_txe_n uses I/O standard 3.3-V LVTTL at L16
     Info (169178): Pin clk50 uses I/O standard 3.3-V LVTTL at E16
-Info (144001): Generated suppressed messages file C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/output_files/coincidence.fit.smsg
+Info (144001): Generated suppressed messages file C:/gitwork/master/HaasoscopePro/adc board firmware/output_files/coincidence.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 5516 megabytes
-    Info: Processing ended: Fri Jul 26 18:18:55 2024
-    Info: Elapsed time: 00:00:11
+    Info: Peak virtual memory: 5519 megabytes
+    Info: Processing ended: Fri Jul 26 18:53:46 2024
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:05
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/ahaas/Dropbox/temp/HaasoscopePro/adc board firmware/output_files/coincidence.fit.smsg.
+The suppressed messages can be found in C:/gitwork/master/HaasoscopePro/adc board firmware/output_files/coincidence.fit.smsg.
 
 
