@@ -9,13 +9,20 @@ from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT
 from random import randint
 import time
 
-TEST_COUNT = 20
+TEST_COUNT = 1000
 if __name__ == '__main__':
     usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=
         (('FTX232H', 'Haasoscope USB2'),
          ('FTX232H', 'USB <-> Serial Converter'),           # firstly try to open FTX232H (FT232H or FT2232H) device named 'USB <-> Serial Converter'. Note that 'USB <-> Serial Converter' is the default name of FT232H or FT2232H chip unless the user has modified it. If the chip's name has been modified, you can use FT_Prog software to look up it.
          ('FT60X', 'FTDI SuperSpeed-FIFO Bridge'))           # secondly try to open FT60X (FT600 or FT601) device named 'FTDI SuperSpeed-FIFO Bridge'. Note that 'FTDI SuperSpeed-FIFO Bridge' is the default name of FT600 or FT601 chip unless the user has modified it.
     )
+
+    print("starting")
+    while True:
+        olddata = usb.recv(10000000)
+        print("got",len(olddata),"old bytes")
+        if len(olddata)==0: break
+        print(olddata[0])
 
     total_rx_len = 0
     time_start = time.time()
@@ -28,7 +35,8 @@ if __name__ == '__main__':
         total_rx_len += rx_len
         time_total = time.time() - time_start
         data_rate = total_rx_len / (time_total + 0.001) / 1e3
-        print('[%d/%d]   rx_len=%d   total_rx_len=%d   avg_data_rate=%.0f kB/s' % (i+1, TEST_COUNT, rx_len, total_rx_len, data_rate) )
+        evt_rate = i / (time_total + 0.001)
+        if i%2==0: print('[%d/%d]   rx_len=%d   total_rx_len=%d   avg_evt_rate=%f Hz   avg_data_rate=%.0f kB/s' % (i, TEST_COUNT, rx_len, total_rx_len, evt_rate, data_rate) )
         if expect_len != rx_len:
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len) )
             break
