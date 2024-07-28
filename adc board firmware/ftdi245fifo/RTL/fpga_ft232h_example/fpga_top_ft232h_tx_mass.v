@@ -9,6 +9,7 @@
 //--------------------------------------------------------------------------------------------------------
 
 module fpga_top_ft232h_tx_mass (
+	 input  wire         rstn,
     input  wire         clk,            // main clock, connect to on-board crystal oscillator
     output wire  [ 3:0] LED,
     
@@ -22,23 +23,23 @@ module fpga_top_ft232h_tx_mass (
     output wire         ftdi_oe_n,      // to FT232H's pin30 (OE#)
     output wire         ftdi_rd_n,      // to FT232H's pin26 (RD#)
     output wire         ftdi_wr_n,      // to FT232H's pin27 (WR#)
-    inout        [ 7:0] ftdi_data       // to FT232H's pin20~13 (ADBUS7~ADBUS0)
+    inout        [ 7:0] ftdi_data,      // to FT232H's pin20~13 (ADBUS7~ADBUS0)
+	 
+	// user AXI-stream signals
+	input  wire        rx_tready,
+	output wire        rx_tvalid,
+	output wire [ 7:0] rx_tdata,
+
+	output wire        tx_tready,
+	input  wire        tx_tvalid,
+	input  wire [31:0] tx_tdata,
+	input  wire [ 3:0] tx_tkeep,
+	input  wire        tx_tlast
 );
 
 assign ftdi_resetn = 1'b1;  // 1=normal operation , !!!!!! UnComment this line if this signal is connected to FPGA !!!!!!
 assign ftdi_pwrsav = 1'b1;  // 1=normal operation , !!!!!! UnComment this line if this signal is connected to FPGA !!!!!!
 assign ftdi_siwu   = 1'b1;  // 1=send immidiently , !!!!!! UnComment this line if this signal is connected to FPGA !!!!!!
-
-// user AXI-stream signals (loopback)
-wire        rx_tready;
-wire        rx_tvalid;
-wire [ 7:0] rx_tdata;
-
-wire        tx_tready;
-wire        tx_tvalid;
-wire [31:0] tx_tdata;
-wire [ 3:0] tx_tkeep;
-wire        tx_tlast;
 
 // FTDI USB chip's 245fifo mode controller
 ftdi_245fifo_top #(
@@ -48,7 +49,7 @@ ftdi_245fifo_top #(
     .RX_EA                 ( 8                  ),   // RX FIFO depth = 2^RX_AEXP = 2^10 = 1024
     .CHIP_TYPE             ( "FTx232H"          )
 ) u_ftdi_245fifo_top (
-    .rstn_async            ( 1'b1               ),
+    .rstn_async            ( rstn               ),
     .tx_clk                ( clk                ),
     .tx_tready             ( tx_tready          ),
     .tx_tvalid             ( tx_tvalid          ),
@@ -71,33 +72,6 @@ ftdi_245fifo_top #(
     .ftdi_be               (                    )    // FT232H do not have BE signals
 );
 
-// New command processor
-command_processor u_processor (
-    .rstn                  ( 1'b1               ),
-    .clk                   ( clk                ),
-    .i_tready              ( rx_tready          ),
-    .i_tvalid              ( rx_tvalid          ),
-    .i_tdata               ( rx_tdata           ),
-    .o_tready              ( tx_tready          ),
-    .o_tvalid              ( tx_tvalid          ),
-    .o_tdata               ( tx_tdata           ),
-    .o_tkeep               ( tx_tkeep           ),
-    .o_tlast               ( tx_tlast           )
-);
-
-// Original
-//tx_specified_len u_tx_specified_len (
-//    .rstn                  ( 1'b1               ),
-//    .clk                   ( clk                ),
-//    .i_tready              ( rx_tready          ),
-//    .i_tvalid              ( rx_tvalid          ),
-//    .i_tdata               ( rx_tdata           ),
-//    .o_tready              ( tx_tready          ),
-//    .o_tvalid              ( tx_tvalid          ),
-//    .o_tdata               ( tx_tdata           ),
-//    .o_tkeep               ( tx_tkeep           ),
-//    .o_tlast               ( tx_tlast           )
-//);
 
 // if ftdi_clk continuous run, then beat will blink. The function of this module is to observe whether ftdi_clk is running
 clock_beat # (

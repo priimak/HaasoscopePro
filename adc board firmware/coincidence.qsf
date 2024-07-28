@@ -119,11 +119,7 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE command_processor.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/rx_calc_crc.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_rx_crc.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_loopback.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v
@@ -139,7 +135,6 @@ set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_assert.v
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
-set_global_assignment -name VERILOG_FILE serialprocessor.v
 set_global_assignment -name QIP_FILE pll2.qip
 set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
