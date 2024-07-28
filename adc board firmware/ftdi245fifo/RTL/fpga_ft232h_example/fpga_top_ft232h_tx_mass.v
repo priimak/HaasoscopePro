@@ -71,8 +71,8 @@ ftdi_245fifo_top #(
     .ftdi_be               (                    )    // FT232H do not have BE signals
 );
 
-
-tx_specified_len u_tx_specified_len (
+// New command processor
+command_processor u_processor (
     .rstn                  ( 1'b1               ),
     .clk                   ( clk                ),
     .i_tready              ( rx_tready          ),
@@ -84,6 +84,20 @@ tx_specified_len u_tx_specified_len (
     .o_tkeep               ( tx_tkeep           ),
     .o_tlast               ( tx_tlast           )
 );
+
+// Original
+//tx_specified_len u_tx_specified_len (
+//    .rstn                  ( 1'b1               ),
+//    .clk                   ( clk                ),
+//    .i_tready              ( rx_tready          ),
+//    .i_tvalid              ( rx_tvalid          ),
+//    .i_tdata               ( rx_tdata           ),
+//    .o_tready              ( tx_tready          ),
+//    .o_tvalid              ( tx_tvalid          ),
+//    .o_tdata               ( tx_tdata           ),
+//    .o_tkeep               ( tx_tkeep           ),
+//    .o_tlast               ( tx_tlast           )
+//);
 
 // if ftdi_clk continuous run, then beat will blink. The function of this module is to observe whether ftdi_clk is running
 clock_beat # (
