@@ -21,34 +21,44 @@ module command_processor (
     output wire        o_tvalid,
     output wire [31:0] o_tdata,
     output wire [ 3:0] o_tkeep,
-    output wire        o_tlast
+    output wire        o_tlast,
+	 
+	 output reg clkswitch // sets which input clk the pll uses
 );
 
+integer version = 2;
 
-localparam [2:0] RX = 3'd0,
-                 PROCESS = 3'd1,
+
+localparam [2:0] INIT = 3'd0,
+					  RX = 3'd1,
+                 PROCESS = 3'd2,
+					  TX_DATA_CONST = 3'd3,
                  TX_DATA  = 3'd4;
 
-reg [ 2:0]       state = RX;
+reg [ 2:0]       state = INIT;
 reg [ 3:0]       rx_counter = 0;
 reg [ 7:0]       rx_data[7:0];
 reg [31:0]       length = 0;
 
 always @ (posedge clk or negedge rstn)
  if (~rstn) begin
-	  state  <= RX;
-	  rx_counter <= 0;
-	  length <= 0;
+	state  <= INIT;
  end else begin
   case (state)
+   INIT : begin
+		clkswitch <= 1'b0;
+   	rx_counter <= 0;
+		length <= 0;
+		state <= RX;
+	end
   
 	RX : if (i_tvalid) begin // get 8 bytes
-		 rx_data[rx_counter] <= i_tdata;
-		 if (rx_counter==7) begin
-			  state <= PROCESS;
-			  rx_counter <= 0;
-		 end
-		 else rx_counter <= rx_counter+4'd1;
+		rx_data[rx_counter] <= i_tdata;
+		if (rx_counter==7) begin
+			 state <= PROCESS;
+			 rx_counter <= 0;
+		end
+		else rx_counter <= rx_counter+4'd1;
 	end
 	
 	PROCESS : begin // do something, based on the command in the first byte
@@ -56,7 +66,24 @@ always @ (posedge clk or negedge rstn)
 			
 			0 : begin // send a length of bytes given by the last 4 bytes of the command
 				length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
+				o_tdata  <= {rx_data[4] - 8'd4,
+								rx_data[4] - 8'd3,
+								rx_data[4] - 8'd2,
+								rx_data[4] - 8'd1 };
 				state <= TX_DATA;
+			end
+			
+			1 : begin // toggles clkswitch
+				clkswitch <= ~clkswitch;
+				o_tdata <= 0+clkswitch;
+				length <= 4;
+				state <= TX_DATA_CONST;
+			end
+			
+			2 : begin // reads version
+				o_tdata <= version;
+				length <= 4;
+				state <= TX_DATA_CONST;
 			end
 			
 			default: // some command we didn't know
@@ -65,29 +92,37 @@ always @ (posedge clk or negedge rstn)
 		endcase
 	end
 	
-	TX_DATA : if (o_tready) begin
-		 if (length >= 4) begin
+	TX_DATA_CONST : if (o_tready) begin
+		if (length >= 4) begin
 			length <= length - 4;
-		 end else begin
+		end else begin
 			length <= 0;
 			state <= RX;
-		 end
+		end
+	end
+	
+	TX_DATA : if (o_tready) begin
+		o_tdata  <= {length[7:0] - 8'd4,
+						length[7:0] - 8'd3,
+						length[7:0] - 8'd2,
+						length[7:0] - 8'd1 };
+		if (length >= 4) begin
+			length <= length - 4;
+		end else begin
+			length <= 0;
+			state <= RX;
+		end
 	end
 	
 	default :
-		 state <= RX;
+		state <= RX;
 	
   endcase
  end
 
-assign i_tready = (state != TX_DATA);
+assign i_tready = (state == RX);
 
-assign o_tvalid = (state == TX_DATA);
-
-assign o_tdata  = {length[7:0] - 8'd4,
-                   length[7:0] - 8'd3,
-                   length[7:0] - 8'd2,
-                   length[7:0] - 8'd1 };
+assign o_tvalid = (state == TX_DATA || state == TX_DATA_CONST);
 
 assign o_tkeep  = (length>=4) ? 4'b1111 :
                   (length==3) ? 4'b0111 :

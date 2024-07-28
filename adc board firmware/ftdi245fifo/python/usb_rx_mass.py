@@ -9,6 +9,13 @@ from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT
 from random import randint
 import time
 
+def oldbytes():
+    while True:
+        olddata = usb.recv(10000000)
+        print("got",len(olddata),"old bytes")
+        if len(olddata)==0: break
+        print("old byte0:",olddata[0])
+
 TEST_COUNT = 1000
 if __name__ == '__main__':
     usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=
@@ -18,11 +25,11 @@ if __name__ == '__main__':
     )
 
     print("starting")
-    while True:
-        olddata = usb.recv(10000000)
-        print("got",len(olddata),"old bytes")
-        if len(olddata)==0: break
-        print(olddata[0])
+    oldbytes()
+
+    usb.send(bytes([2, 99, 99, 99, 100, 100, 100, 100])) #get version
+    res = usb.recv(4)
+    print("version",res[3],res[2],res[1],res[0])
 
     debug=True
     total_rx_len = 0

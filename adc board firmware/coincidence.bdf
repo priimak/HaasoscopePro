@@ -104,6 +104,22 @@ refer to the applicable agreement for further details.
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect -224 640 -56 656)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "clkext" (rect 5 0 35 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 984 496 1160 512)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -521,7 +537,7 @@ refer to the applicable agreement for further details.
 		(text "0.00" (rect 184 161 205 173)(font "Arial" ))
 		(text "50.00" (rect 216 161 243 173)(font "Arial" ))
 		(text "c1" (rect 134 175 145 187)(font "Arial" ))
-		(text "5/2" (rect 157 175 172 187)(font "Arial" ))
+		(text "1/1" (rect 157 175 172 187)(font "Arial" ))
 		(text "0.00" (rect 184 175 205 187)(font "Arial" ))
 		(text "50.00" (rect 216 175 243 187)(font "Arial" ))
 		(line (pt 0 0)(pt 353 0))
@@ -777,28 +793,19 @@ refer to the applicable agreement for further details.
 		(text "o_tlast" (rect 152 91 179 103)(font "Arial" ))
 		(line (pt 200 96)(pt 184 96))
 	)
+	(port
+		(pt 200 112)
+		(output)
+		(text "clkswitch" (rect 0 0 44 12)(font "Arial" ))
+		(text "clkswitch" (rect 142 107 179 119)(font "Arial" ))
+		(line (pt 200 112)(pt 184 112))
+	)
 	(drawing
 		(rectangle (rect 16 16 184 128))
 	)
 )
 (connector
 	(pt 0 632)
-	(pt 0 624)
-)
-(connector
-	(pt -48 648)
-	(pt 0 648)
-)
-(connector
-	(pt -48 648)
-	(pt -48 624)
-)
-(connector
-	(pt -64 624)
-	(pt -48 624)
-)
-(connector
-	(pt -48 624)
 	(pt 0 624)
 )
 (connector
@@ -974,6 +981,23 @@ refer to the applicable agreement for further details.
 	(pt 648 928)
 	(pt 584 928)
 )
-(junction (pt -48 624))
+(connector
+	(text "clksw" (rect 893 992 920 1009)(font "Intel Clear" ))
+	(pt 848 1008)
+	(pt 960 1008)
+)
+(connector
+	(pt -64 624)
+	(pt 0 624)
+)
+(connector
+	(pt -56 648)
+	(pt 0 648)
+)
+(connector
+	(text "clksw" (rect -80 728 -53 745)(font "Intel Clear" ))
+	(pt 0 744)
+	(pt -120 744)
+)
 (text "This is the main pll, chooses between internal and external clock" (rect 0 528 376 547)(font "Intel Clear" (font_size 8)))
 (text "Has adjustable phase for each clock output, relative to the chosen input" (rect 0 544 420 563)(font "Intel Clear" (font_size 8)))
