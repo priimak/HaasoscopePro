@@ -1,2 +1,5 @@
 /adc board firmware/db/
 /adc board firmware/incremental_db/
+/adc board firmware/*.rpt
+/adc board firmware/*.summary
+/adc board firmware/*.bak
