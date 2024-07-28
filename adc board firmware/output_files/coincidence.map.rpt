@@ -1,5 +1,5 @@
 Analysis & Synthesis report for coincidence
-Sat Jul 27 06:48:04 2024
+Sun Jul 28 05:48:32 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -111,15 +111,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 27 06:48:04 2024       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 28 05:48:32 2024       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; coincidence                                 ;
 ; Top-level Entity Name              ; coincidence                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,081                                       ;
-;     Total combinational functions  ; 907                                         ;
-;     Dedicated logic registers      ; 691                                         ;
-; Total registers                    ; 691                                         ;
+; Total logic elements               ; 1,103                                       ;
+;     Total combinational functions  ; 891                                         ;
+;     Dedicated logic registers      ; 732                                         ;
+; Total registers                    ; 732                                         ;
 ; Total pins                         ; 22                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 48,128                                      ;
@@ -281,20 +281,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 1,081          ;
+; Estimated Total logic elements              ; 1,103          ;
 ;                                             ;                ;
-; Total combinational functions               ; 907            ;
+; Total combinational functions               ; 891            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 384            ;
-;     -- 3 input functions                    ; 253            ;
-;     -- <=2 input functions                  ; 270            ;
+;     -- 4 input functions                    ; 363            ;
+;     -- 3 input functions                    ; 256            ;
+;     -- <=2 input functions                  ; 272            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 723            ;
+;     -- normal mode                          ; 707            ;
 ;     -- arithmetic mode                      ; 184            ;
 ;                                             ;                ;
-; Total registers                             ; 691            ;
-;     -- Dedicated logic registers            ; 691            ;
+; Total registers                             ; 732            ;
+;     -- Dedicated logic registers            ; 732            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 22             ;
@@ -307,8 +307,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; ftdi_clk~input ;
 ; Maximum fan-out                             ; 426            ;
-; Total fan-out                               ; 6644           ;
-; Average fan-out                             ; 3.89           ;
+; Total fan-out                               ; 6783           ;
+; Average fan-out                             ; 3.92           ;
 +---------------------------------------------+----------------+
 
 
@@ -317,13 +317,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
 ; Compilation Hierarchy Node                                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                            ; Entity Name                ; Library Name ;
 +---------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
-; |coincidence                                                  ; 907 (1)             ; 691 (0)                   ; 48128       ; 0            ; 0       ; 0         ; 22   ; 0            ; |coincidence                                                                                                                                                                   ; coincidence                ; work         ;
-;    |fpga_top_ft232h_tx_mass:inst3|                            ; 903 (0)             ; 691 (0)                   ; 48128       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3                                                                                                                                     ; fpga_top_ft232h_tx_mass    ; work         ;
+; |coincidence                                                  ; 891 (1)             ; 732 (0)                   ; 48128       ; 0            ; 0       ; 0         ; 22   ; 0            ; |coincidence                                                                                                                                                                   ; coincidence                ; work         ;
+;    |fpga_top_ft232h_tx_mass:inst3|                            ; 887 (0)             ; 732 (0)                   ; 48128       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3                                                                                                                                     ; fpga_top_ft232h_tx_mass    ; work         ;
 ;       |clock_beat:u_clk_beat|                                 ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|clock_beat:u_clk_beat                                                                                                               ; clock_beat                 ; work         ;
 ;       |clock_beat:u_ftdi_clk_beat|                            ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|clock_beat:u_ftdi_clk_beat                                                                                                          ; clock_beat                 ; work         ;
-;       |ftdi_245fifo_top:u_ftdi_245fifo_top|                   ; 701 (0)             ; 588 (0)                   ; 48128       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top                                                                                                 ; ftdi_245fifo_top           ; work         ;
+;       |ftdi_245fifo_top:u_ftdi_245fifo_top|                   ; 705 (0)             ; 588 (0)                   ; 48128       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top                                                                                                 ; ftdi_245fifo_top           ; work         ;
 ;          |axi_stream_packing:u_rx_packing|                    ; 34 (34)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_rx_packing                                                                 ; axi_stream_packing         ; work         ;
-;          |axi_stream_packing:u_tx_packing|                    ; 256 (256)           ; 73 (73)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing                                                                 ; axi_stream_packing         ; work         ;
+;          |axi_stream_packing:u_tx_packing|                    ; 258 (258)           ; 73 (73)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing                                                                 ; axi_stream_packing         ; work         ;
 ;          |axi_stream_resizing:u_tx_downsizing|                ; 40 (0)              ; 36 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing                                                             ; axi_stream_resizing        ; work         ;
 ;             |axi_stream_downsizing:u_axi_stream_downsizing|   ; 40 (40)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing|axi_stream_downsizing:u_axi_stream_downsizing               ; axi_stream_downsizing      ; work         ;
 ;          |fifo2:u_rx_fifo2|                                   ; 12 (12)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_rx_fifo2                                                                                ; fifo2                      ; work         ;
@@ -334,7 +334,7 @@ refer to the applicable agreement for further details.
 ;          |fifo_async:u_rx_fifo_async|                         ; 49 (49)             ; 73 (73)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async                                                                      ; fifo_async                 ; work         ;
 ;             |altsyncram:buffer_rtl_0|                         ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async|altsyncram:buffer_rtl_0                                              ; altsyncram                 ; work         ;
 ;                |altsyncram_g0d1:auto_generated|               ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async|altsyncram:buffer_rtl_0|altsyncram_g0d1:auto_generated               ; altsyncram_g0d1            ; work         ;
-;          |fifo_async:u_tx_fifo_async|                         ; 62 (62)             ; 89 (89)                   ; 36864       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async                                                                      ; fifo_async                 ; work         ;
+;          |fifo_async:u_tx_fifo_async|                         ; 64 (64)             ; 89 (89)                   ; 36864       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async                                                                      ; fifo_async                 ; work         ;
 ;             |altsyncram:buffer_rtl_0|                         ; 0 (0)               ; 0 (0)                     ; 36864       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async|altsyncram:buffer_rtl_0                                              ; altsyncram                 ; work         ;
 ;                |altsyncram_o8d1:auto_generated|               ; 0 (0)               ; 0 (0)                     ; 36864       ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_tx_fifo_async|altsyncram:buffer_rtl_0|altsyncram_o8d1:auto_generated               ; altsyncram_o8d1            ; work         ;
 ;          |fifo_delay_submit:u_tx_fifo_delay_submit|           ; 69 (69)             ; 56 (56)                   ; 9216        ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_delay_submit:u_tx_fifo_delay_submit                                                        ; fifo_delay_submit          ; work         ;
@@ -344,7 +344,7 @@ refer to the applicable agreement for further details.
 ;          |resetn_sync:u_resetn_sync_rx|                       ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_rx                                                                    ; resetn_sync                ; work         ;
 ;          |resetn_sync:u_resetn_sync_tx|                       ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_tx                                                                    ; resetn_sync                ; work         ;
 ;          |resetn_sync:u_resetn_sync_usb|                      ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|resetn_sync:u_resetn_sync_usb                                                                   ; resetn_sync                ; work         ;
-;       |tx_specified_len:u_tx_specified_len|                   ; 114 (114)           ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len                                                                                                 ; tx_specified_len           ; work         ;
+;       |tx_specified_len:u_tx_specified_len|                   ; 94 (94)             ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len                                                                                                 ; tx_specified_len           ; work         ;
 ;    |pll2:inst2pll|                                            ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|pll2:inst2pll                                                                                                                                                     ; pll2                       ; work         ;
 ;       |altpll:altpll_component|                               ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|pll2:inst2pll|altpll:altpll_component                                                                                                                             ; altpll                     ; work         ;
 ;          |pll2_altpll:auto_generated|                         ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |coincidence|pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated                                                                                                  ; pll2_altpll                ; work         ;
@@ -393,15 +393,13 @@ Encoding Type:  One-Hot
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------+
 ; State Machine - |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|state ;
-+----------------+----------------+----------------+----------------+----------------+-----------------+
-; Name           ; state.RX_BYTE3 ; state.RX_BYTE2 ; state.RX_BYTE1 ; state.RX_BYTE0 ; state.TX_DATA   ;
-+----------------+----------------+----------------+----------------+----------------+-----------------+
-; state.RX_BYTE0 ; 0              ; 0              ; 0              ; 0              ; 0               ;
-; state.RX_BYTE1 ; 0              ; 0              ; 1              ; 1              ; 0               ;
-; state.RX_BYTE2 ; 0              ; 1              ; 0              ; 1              ; 0               ;
-; state.RX_BYTE3 ; 1              ; 0              ; 0              ; 1              ; 0               ;
-; state.TX_DATA  ; 0              ; 0              ; 0              ; 1              ; 1               ;
-+----------------+----------------+----------------+----------------+----------------+-----------------+
++---------------+----------+---------------+-----------------------------------------------------------+
+; Name          ; state.RX ; state.TX_DATA ; state.PROCESS                                             ;
++---------------+----------+---------------+-----------------------------------------------------------+
+; state.RX      ; 0        ; 0             ; 0                                                         ;
+; state.PROCESS ; 1        ; 0             ; 1                                                         ;
+; state.TX_DATA ; 1        ; 1             ; 0                                                         ;
++---------------+----------+---------------+-----------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -433,8 +431,7 @@ Encoding Type:  One-Hot
 ; processor:instpro|state~13                                                                                               ; Lost fanout                                                                                                              ;
 ; processor:instpro|state~14                                                                                               ; Lost fanout                                                                                                              ;
 ; processor:instpro|state~15                                                                                               ; Lost fanout                                                                                                              ;
-; fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|state~8                                                ; Lost fanout                                                                                                              ;
-; fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|state~9                                                ; Lost fanout                                                                                                              ;
+; fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|state~7                                                ; Lost fanout                                                                                                              ;
 ; processor:instpro|state.CLKSWITCH1                                                                                       ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; processor:instpro|state.PLLCLOCK                                                                                         ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; processor:instpro|state.CLKSWITCH2                                                                                       ; Stuck at GND due to stuck port data_in                                                                                   ;
@@ -450,6 +447,7 @@ Encoding Type:  One-Hot
 ; processor:instpro|pllclock_counter[5..7]                                                                                 ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; processor:instpro|pllclock_counter[0..3]                                                                                 ; Lost fanout                                                                                                              ;
 ; processor:instpro|state.START                                                                                            ; Lost fanout                                                                                                              ;
+; fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|rx_counter[3]                                          ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; Total Number of Removed Registers = 56                                                                                   ;                                                                                                                          ;
 +--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
@@ -472,7 +470,8 @@ Encoding Type:  One-Hot
 ;                                       ;                           ; pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll_internal_phasestep_reg,                           ;
 ;                                       ;                           ; pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr:phasestep_counter|counter_reg_bit[1],       ;
 ;                                       ;                           ; pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_cntr:phasestep_counter|counter_reg_bit[0],       ;
-;                                       ;                           ; pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|internal_phasestep                                    ;
+;                                       ;                           ; pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|internal_phasestep,                                   ;
+;                                       ;                           ; fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|rx_counter[3]                                        ;
 ; processor:instpro|pllclock_counter[3] ; Lost Fanouts              ; processor:instpro|pllclock_counter[2], processor:instpro|pllclock_counter[1],                                          ;
 ;                                       ;                           ; processor:instpro|pllclock_counter[0]                                                                                  ;
 ; processor:instpro|state.CLKSWITCH2    ; Stuck at GND              ; processor:instpro|pllclock_counter[4]                                                                                  ;
@@ -485,12 +484,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 691   ;
-; Number of registers using Synchronous Clear  ; 102   ;
-; Number of registers using Synchronous Load   ; 31    ;
+; Total registers                              ; 732   ;
+; Number of registers using Synchronous Clear  ; 132   ;
+; Number of registers using Synchronous Load   ; 61    ;
 ; Number of registers using Asynchronous Clear ; 580   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 413   ;
+; Number of registers using Clock Enable       ; 451   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -505,7 +504,7 @@ Encoding Type:  One-Hot
 ; fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_3|data2_en_n                ; 13      ;
 ; fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_2|data2_en_n                ; 41      ;
 ; fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_rx_fifo2|data2_en_n                  ; 13      ;
-; fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_1|data2_en_n                ; 46      ;
+; fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_1|data2_en_n                ; 39      ;
 ; Total number of inverted registers = 6                                                                         ;         ;
 +----------------------------------------------------------------------------------------------------------------+---------+
 
@@ -526,35 +525,33 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 35 bits   ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_1|data1[15]                                                                   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_rx_fifo2|data1[0]                                                                      ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4|data3[4]                                                                      ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_delay_submit:u_tx_fifo_delay_submit|count[10]                                             ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_2|data1[2]                                                                    ;
+; 3:1                ; 35 bits   ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_1|data1[6]                                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_rx_fifo2|data1[6]                                                                      ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4|data3[7]                                                                      ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_delay_submit:u_tx_fifo_delay_submit|count[3]                                              ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_2|data1[29]                                                                   ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|r_count[0]                                                     ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_rx_packing|o_tdata[7]                                                     ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|o_tdata[10]                                                    ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing|axi_stream_downsizing:u_axi_stream_downsizing|tmp_data[31] ;
-; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing|axi_stream_downsizing:u_axi_stream_downsizing|tmp_data[14] ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |coincidence|processor:instpro|pllclock_counter[7]                                                                                                                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|length[1]                                                                                      ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|r_bytes[27]                                                    ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_rx_packing|r_bytes[1]                                                     ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4|data1[8]                                                                      ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4|data2[4]                                                                      ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|r_bytes[17]                                                    ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|r_bytes[2]                                                     ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|length[8]                                                                                      ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|length[22]                                                                                     ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|length[31]                                                                                     ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|length[3]                                                                                      ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 12 LEs               ; 76 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|ftdi_245fifo_fsm:u_ftdi_245fifo_fsm|state[2]                                                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_rx_packing|o_tdata[0]                                                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|o_tdata[24]                                                    ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing|axi_stream_downsizing:u_axi_stream_downsizing|tmp_data[26] ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_resizing:u_tx_downsizing|axi_stream_downsizing:u_axi_stream_downsizing|tmp_data[9]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |coincidence|processor:instpro|pllclock_counter[1]                                                                                                                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|length[0]                                                                                      ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|r_bytes[31]                                                    ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_rx_packing|r_bytes[4]                                                     ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4|data1[6]                                                                      ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4|data2[5]                                                                      ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|r_bytes[23]                                                    ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|r_bytes[4]                                                     ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|length[6]                                                                                      ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 12 LEs               ; 76 LEs                 ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|ftdi_245fifo_fsm:u_ftdi_245fifo_fsm|state[3]                                                   ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_tx_fifo2_3|data1[0]                                                                    ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo4:u_rx_fifo4|data3                                                                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|i_bytes[31]                                                    ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|i_bytes[16]                                                    ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|i_bytes[8]                                                     ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |coincidence|processor:instpro|Selector13                                                                                                                                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|i_bytes[19]                                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len|Selector2                                                                                      ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|i_bytes[14]                                                    ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |coincidence|processor:instpro|Selector9                                                                                                                                      ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |coincidence|fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|axi_stream_packing:u_tx_packing|i_bytes[7]                                                     ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |coincidence|processor:instpro|Selector14                                                                                                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1749,33 +1746,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 22                          ;
-; cycloneiii_ff         ; 691                         ;
+; cycloneiii_ff         ; 732                         ;
 ;     CLR               ; 186                         ;
 ;     CLR SCLR          ; 11                          ;
 ;     CLR SLD           ; 5                           ;
-;     ENA               ; 35                          ;
+;     ENA               ; 43                          ;
 ;     ENA CLR           ; 349                         ;
 ;     ENA CLR SCLR      ; 3                           ;
 ;     ENA CLR SCLR SLD  ; 24                          ;
 ;     ENA CLR SLD       ; 2                           ;
+;     ENA SCLR SLD      ; 30                          ;
 ;     SCLR              ; 64                          ;
-;     plain             ; 12                          ;
+;     plain             ; 15                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 913                         ;
+; cycloneiii_lcell_comb ; 897                         ;
 ;     arith             ; 184                         ;
 ;         2 data inputs ; 168                         ;
 ;         3 data inputs ; 16                          ;
-;     normal            ; 729                         ;
+;     normal            ; 713                         ;
 ;         0 data inputs ; 5                           ;
 ;         1 data inputs ; 21                          ;
-;         2 data inputs ; 79                          ;
-;         3 data inputs ; 237                         ;
-;         4 data inputs ; 387                         ;
+;         2 data inputs ; 81                          ;
+;         3 data inputs ; 240                         ;
+;         4 data inputs ; 366                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 53                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.80                       ;
-; Average LUT depth     ; 3.46                        ;
+; Average LUT depth     ; 3.32                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1794,7 +1792,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat Jul 27 06:47:47 2024
+    Info: Processing started: Sun Jul 28 05:48:15 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off coincidence -c coincidence
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1862,7 +1860,6 @@ Info (12128): Elaborating entity "axi_stream_resizing" for hierarchy "fpga_top_f
 Info (12128): Elaborating entity "fifo_async" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo_async:u_rx_fifo_async" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 417
 Info (12128): Elaborating entity "fifo2" for hierarchy "fpga_top_ft232h_tx_mass:inst3|ftdi_245fifo_top:u_ftdi_245fifo_top|fifo2:u_rx_fifo2" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v Line: 450
 Info (12128): Elaborating entity "tx_specified_len" for hierarchy "fpga_top_ft232h_tx_mass:inst3|tx_specified_len:u_tx_specified_len" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 86
-Info (10264): Verilog HDL Case Statement information at tx_specified_len.v(43): all case item expressions in this case statement are onehot File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/tx_specified_len.v Line: 43
 Info (12128): Elaborating entity "clock_beat" for hierarchy "fpga_top_ft232h_tx_mass:inst3|clock_beat:u_ftdi_clk_beat" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 95
 Info (12128): Elaborating entity "clock_beat" for hierarchy "fpga_top_ft232h_tx_mass:inst3|clock_beat:u_clk_beat" File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v Line: 104
 Info (12128): Elaborating entity "pll2" for hierarchy "pll2:inst2pll"
@@ -2073,7 +2070,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ftdi_pwrsav" is stuck at VCC
     Warning (13410): Pin "ftdi_siwu" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 19 registers lost all their fanouts during netlist optimizations.
+Info (17049): 18 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le:altpll_dyn_phase_le2|wire_le_comb8_combout" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 58
     Info (17048): Logic cell "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll2_altpll_dyn_phase_le1:altpll_dyn_phase_le4|wire_le_comb9_combout" File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 101
@@ -2089,16 +2086,16 @@ Warning (15903): PLL "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_gen
     Info (15024): Input port CLKSWITCH of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by GND File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
     Info (15024): Input port INCLK[0] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
     Info (15024): Input port INCLK[1] of node "pll2:inst2pll|altpll:altpll_component|pll2_altpll:auto_generated|pll1" is driven by clk50~input which is O output port of I/O Input Buffer type node clk50~input File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll2_altpll.v Line: 496
-Info (21057): Implemented 1251 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1274 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 10 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 1175 logic cells
+    Info (21061): Implemented 1198 logic cells
     Info (21064): Implemented 53 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
     Info: Peak virtual memory: 4789 megabytes
-    Info: Processing ended: Sat Jul 27 06:48:04 2024
+    Info: Processing ended: Sun Jul 28 05:48:32 2024
     Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:15
 

@@ -1,5 +1,5 @@
 Flow report for coincidence
-Sat Jul 27 06:48:19 2024
+Sun Jul 28 05:48:48 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Jul 27 06:48:15 2024       ;
+; Flow Status                        ; Successful - Sun Jul 28 05:48:43 2024       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; coincidence                                 ;
 ; Top-level Entity Name              ; coincidence                                 ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10F17C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,051 / 10,320 ( 10 % )                     ;
-;     Total combinational functions  ; 912 / 10,320 ( 9 % )                        ;
-;     Dedicated logic registers      ; 691 / 10,320 ( 7 % )                        ;
-; Total registers                    ; 691                                         ;
+; Total logic elements               ; 1,064 / 10,320 ( 10 % )                     ;
+;     Total combinational functions  ; 896 / 10,320 ( 9 % )                        ;
+;     Dedicated logic registers      ; 732 / 10,320 ( 7 % )                        ;
+; Total registers                    ; 732                                         ;
 ; Total pins                         ; 22 / 180 ( 12 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 48,128 / 423,936 ( 11 % )                   ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/27/2024 06:47:48 ;
+; Start date & time ; 07/28/2024 05:48:16 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; coincidence         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 159303461227190.172207726817464        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 159303461227190.172216009508376        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; pll2.bsf                               ; --            ; --          ; --         ;
@@ -101,11 +101,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4789 MB             ; 00:00:15                           ;
-; Fitter               ; 00:00:07     ; 1.1                     ; 5512 MB             ; 00:00:05                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4672 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.4                     ; 4768 MB             ; 00:00:02                           ;
-; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:23                           ;
+; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4789 MB             ; 00:00:14                           ;
+; Fitter               ; 00:00:07     ; 1.1                     ; 5515 MB             ; 00:00:05                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4673 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.4                     ; 4767 MB             ; 00:00:02                           ;
+; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

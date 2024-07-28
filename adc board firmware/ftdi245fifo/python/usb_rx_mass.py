@@ -24,13 +24,13 @@ if __name__ == '__main__':
         if len(olddata)==0: break
         print(olddata[0])
 
-    debug=False
+    debug=True
     total_rx_len = 0
     time_start = time.time()
     for i in range (TEST_COUNT):
-        expect_len = 50000#randint(1, 10000000) # length to request
+        expect_len = 50000 # randint(1, 10000000) # length to request
         if debug: print(expect_len%256) # length in first byte
-        txdata = bytes( [ expect_len&0xff, (expect_len>>8)&0xff, (expect_len>>16)&0xff, (expect_len>>24)&0xff ] )   # convert length number to a 4-byte byte array (with type of 'bytes')
+        txdata = bytes( [ 0,99,99,99, expect_len&0xff, (expect_len>>8)&0xff, (expect_len>>16)&0xff, (expect_len>>24)&0xff ] )   # convert length number to a 4-byte byte array (with type of 'bytes')
         usb.send(txdata)                                                                                            # send the 4 bytes to usb
         data = usb.recv(expect_len)                                                                                 # recv from usb
         rx_len = len(data)

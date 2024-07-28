@@ -1,1 +1,2 @@
-/adc board firmware/db/*.flock
+/adc board firmware/db/
+/adc board firmware/incremental_db/

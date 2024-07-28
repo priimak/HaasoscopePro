@@ -24,60 +24,55 @@ module tx_specified_len (
 );
 
 
-localparam [2:0] RX = 3'd0,
-                 PROCESS = 3'd1,
+localparam [2:0] RX_BYTE0 = 3'd0,
+                 RX_BYTE1 = 3'd1,
+                 RX_BYTE2 = 3'd2,
+                 RX_BYTE3 = 3'd3,
                  TX_DATA  = 3'd4;
 
-reg [ 2:0]       state = RX;
-reg [ 3:0]       rx_counter = 0;
-reg [ 7:0]       rx_data[7:0];
+reg [ 2:0]       state = RX_BYTE0;
+
 reg [31:0]       length = 0;
 
+
 always @ (posedge clk or negedge rstn)
- if (~rstn) begin
-	  state  <= RX;
-	  rx_counter <= 0;
-	  length <= 0;
- end else begin
-  case (state)
-  
-	RX : if (i_tvalid) begin // get 8 bytes
-		 rx_data[rx_counter] <= i_tdata;
-		 if (rx_counter==7) begin
-			  state <= PROCESS;
-			  rx_counter <= 0;
-		 end
-		 else rx_counter <= rx_counter+4'd1;
-	end
-	
-	PROCESS : begin // do something, based on the command in the first byte
-		case (rx_data[0])
-			
-			0 : begin // send a length of bytes given by the last 4 bytes of the command
-				length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
-				state <= TX_DATA;
-			end
-			
-			default: // some command we didn't know
-				state <= RX;
-			
-		endcase
-	end
-	
-	TX_DATA : if (o_tready) begin
-		 if (length >= 4) begin
-			length <= length - 4;
-		 end else begin
-			length <= 0;
-			state <= RX;
-		 end
-	end
-	
-	default :
-		 state <= RX;
-	
-  endcase
- end
+    if (~rstn) begin
+        state  <= RX_BYTE0;
+        length <= 0;
+    end else begin
+        case (state)
+            RX_BYTE0 : if (i_tvalid) begin
+                length[ 7: 0] <= i_tdata;
+                state <= RX_BYTE1;
+            end
+            
+            RX_BYTE1 : if (i_tvalid) begin
+                length[15: 8] <= i_tdata;
+                state <= RX_BYTE2;
+            end
+            
+            RX_BYTE2 : if (i_tvalid) begin
+                length[23:16] <= i_tdata;
+                state <= RX_BYTE3;
+            end
+            
+            RX_BYTE3 : if (i_tvalid) begin
+                length[31:24] <= i_tdata;
+                state <= TX_DATA;
+            end
+            
+            default :  // TX_DATA :
+                if (o_tready) begin
+                    if (length >= 4) begin
+                        length <= length - 4;
+                    end else begin
+                        length <= 0;
+                        state <= RX_BYTE0;
+                    end
+                end
+        endcase
+    end
+
 
 assign i_tready = (state != TX_DATA);
 
