@@ -31,7 +31,11 @@ if __name__ == '__main__':
     res = usb.recv(4)
     print("version",res[3],res[2],res[1],res[0])
 
-    usb.send(bytes([3, 99, 99, 99, 100, 100, 100, 100]))  # get SPI from command
+    cs=1 #which chip to select, ignored for now
+    first=0x80 #first byte to send
+    second=0x0c #second byte to send (device id byte 0, should return "4", 0x0d should return "51")
+    third=0 #third byte to send, ignored during read
+    usb.send(bytes([3, cs, first, second, third, 100, 100, 100]))  # get SPI from command
     res = usb.recv(4)
     print("SPI read", res[3], res[2], res[1], res[0])
 
