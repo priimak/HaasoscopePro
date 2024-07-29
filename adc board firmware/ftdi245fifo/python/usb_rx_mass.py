@@ -16,7 +16,7 @@ def oldbytes():
         if len(olddata)==0: break
         print("old byte0:",olddata[0])
 
-TEST_COUNT = 1000
+TEST_COUNT = 10
 if __name__ == '__main__':
     usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=
         (('FTX232H', 'Haasoscope USB2'),

@@ -34,7 +34,6 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -304 632 -240 656))
 )
 (pin
 	(input)
@@ -51,7 +50,6 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 392 672 456 696))
 )
 (pin
 	(input)
@@ -68,7 +66,6 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 392 688 456 712))
 )
 (pin
 	(input)
@@ -85,7 +82,6 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 392 704 456 728))
 )
 (pin
 	(input)
@@ -105,19 +101,35 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -224 640 -56 656)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clkext" (rect 5 0 35 12)(font "Arial" ))
-	(pt 168 8)
+	(rect -224 640 -48 656)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "clkext" (rect 9 0 38 12)(font "Arial" ))
+	(pt 176 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 1104 960 1280 976)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "spi_miso" (rect 9 0 52 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -134,7 +146,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1160 512 1224 536))
 )
 (pin
 	(output)
@@ -151,7 +162,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1160 528 1224 552))
 )
 (pin
 	(output)
@@ -168,7 +178,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1160 544 1224 568))
 )
 (pin
 	(output)
@@ -185,7 +194,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1160 560 1216 584))
 )
 (pin
 	(output)
@@ -202,7 +210,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 704 1192 728))
 )
 (pin
 	(output)
@@ -219,7 +226,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 720 1192 744))
 )
 (pin
 	(output)
@@ -236,7 +242,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 736 1192 760))
 )
 (pin
 	(output)
@@ -253,7 +258,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 656 1184 680))
 )
 (pin
 	(output)
@@ -270,7 +274,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 672 1192 696))
 )
 (pin
 	(output)
@@ -287,7 +290,54 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1128 688 1192 712))
+)
+(pin
+	(output)
+	(rect 1544 944 1720 960)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "spi_clk" (rect 90 0 124 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1544 960 1720 976)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "spi_mosi" (rect 90 0 133 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 864 1048 1040 1064)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "spicsadc" (rect 90 0 133 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
 )
 (pin
 	(bidir)
@@ -305,7 +355,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 352 1216 376))
 )
 (pin
 	(bidir)
@@ -323,7 +372,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 368 1216 392))
 )
 (pin
 	(bidir)
@@ -341,7 +389,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 384 1216 408))
 )
 (pin
 	(bidir)
@@ -359,7 +406,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 400 1216 424))
 )
 (pin
 	(bidir)
@@ -377,7 +423,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 416 1216 440))
 )
 (pin
 	(bidir)
@@ -395,7 +440,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 432 1216 456))
 )
 (pin
 	(bidir)
@@ -413,7 +457,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 464 1216 488))
 )
 (pin
 	(bidir)
@@ -431,7 +474,6 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1160 448 1216 472))
 )
 (symbol
 	(rect 0 568 352 784)
@@ -720,9 +762,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 648 896 848 1040)
+	(rect 648 896 848 1104)
 	(text "command_processor" (rect 5 0 107 12)(font "Arial" ))
-	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
+	(text "inst1" (rect 8 192 31 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -757,6 +799,27 @@ refer to the applicable agreement for further details.
 		(text "o_tready" (rect 0 0 43 12)(font "Arial" ))
 		(text "o_tready" (rect 21 91 64 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "spirx[7..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "spirx[7..0]" (rect 21 107 70 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "spitxready" (rect 0 0 51 12)(font "Arial" ))
+		(text "spitxready" (rect 21 123 72 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "spirxdv" (rect 0 0 36 12)(font "Arial" ))
+		(text "spirxdv" (rect 21 139 57 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144))
 	)
 	(port
 		(pt 200 32)
@@ -800,9 +863,119 @@ refer to the applicable agreement for further details.
 		(text "clkswitch" (rect 142 107 179 119)(font "Arial" ))
 		(line (pt 200 112)(pt 184 112))
 	)
-	(drawing
-		(rectangle (rect 16 16 184 128))
+	(port
+		(pt 200 128)
+		(output)
+		(text "spitx[7..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "spitx[7..0]" (rect 138 123 179 135)(font "Arial" ))
+		(line (pt 200 128)(pt 184 128)(line_width 3))
 	)
+	(port
+		(pt 200 144)
+		(output)
+		(text "spitxdv" (rect 0 0 36 12)(font "Arial" ))
+		(text "spitxdv" (rect 149 139 179 151)(font "Arial" ))
+		(line (pt 200 144)(pt 184 144))
+	)
+	(port
+		(pt 200 160)
+		(output)
+		(text "spicsadc" (rect 0 0 43 12)(font "Arial" ))
+		(text "spicsadc" (rect 143 155 179 167)(font "Arial" ))
+		(line (pt 200 160)(pt 184 160))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 192))
+	)
+)
+(symbol
+	(rect 1296 872 1528 1016)
+	(text "SPI_Master" (rect 5 0 61 12)(font "Arial" ))
+	(text "inst" (rect 8 128 25 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "i_Rst_L" (rect 0 0 37 12)(font "Arial" ))
+		(text "i_Rst_L" (rect 21 27 58 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "i_Clk" (rect 0 0 24 12)(font "Arial" ))
+		(text "i_Clk" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "i_TX_Byte[7..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "i_TX_Byte[7..0]" (rect 21 59 96 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "i_TX_DV" (rect 0 0 42 12)(font "Arial" ))
+		(text "i_TX_DV" (rect 21 75 63 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "i_SPI_MISO" (rect 0 0 59 12)(font "Arial" ))
+		(text "i_SPI_MISO" (rect 21 91 80 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "o_TX_Ready" (rect 0 0 62 12)(font "Arial" ))
+		(text "o_TX_Ready" (rect 159 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "o_RX_DV" (rect 0 0 48 12)(font "Arial" ))
+		(text "o_RX_DV" (rect 171 43 211 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "o_RX_Byte[7..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "o_RX_Byte[7..0]" (rect 143 59 211 71)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 3))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "o_SPI_Clk" (rect 0 0 51 12)(font "Arial" ))
+		(text "o_SPI_Clk" (rect 168 75 211 87)(font "Arial" ))
+		(line (pt 232 80)(pt 216 80))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "o_SPI_MOSI" (rect 0 0 62 12)(font "Arial" ))
+		(text "o_SPI_MOSI" (rect 159 91 211 103)(font "Arial" ))
+		(line (pt 232 96)(pt 216 96))
+	)
+	(parameter
+		"SPI_MODE"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"CLKS_PER_HALF_BIT"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 216 128))
+	)
+	(annotation_block (parameter)(rect 1296 808 1522 865))
 )
 (connector
 	(pt 0 632)
@@ -982,22 +1155,107 @@ refer to the applicable agreement for further details.
 	(pt 584 928)
 )
 (connector
-	(text "clksw" (rect 893 992 920 1009)(font "Intel Clear" ))
-	(pt 848 1008)
-	(pt 960 1008)
-)
-(connector
 	(pt -64 624)
 	(pt 0 624)
-)
-(connector
-	(pt -56 648)
-	(pt 0 648)
 )
 (connector
 	(text "clksw" (rect -80 728 -53 745)(font "Intel Clear" ))
 	(pt 0 744)
 	(pt -120 744)
 )
+(connector
+	(text "rstn" (rect 1237 888 1254 905)(font "Intel Clear" ))
+	(pt 1296 904)
+	(pt 1216 904)
+)
+(connector
+	(text "clk0" (rect 1241 904 1261 921)(font "Intel Clear" ))
+	(pt 1296 920)
+	(pt 1216 920)
+)
+(connector
+	(text "spitxdv" (rect 1243 936 1276 953)(font "Intel Clear" ))
+	(pt 1296 952)
+	(pt 1216 952)
+)
+(connector
+	(text "spitx[7..0]" (rect 1248 920 1292 937)(font "Intel Clear" ))
+	(pt 1296 936)
+	(pt 1216 936)
+	(bus)
+)
+(connector
+	(text "spitxready" (rect 1569 888 1617 905)(font "Intel Clear" ))
+	(pt 1528 904)
+	(pt 1624 904)
+)
+(connector
+	(text "spirxdv" (rect 1560 904 1593 921)(font "Intel Clear" ))
+	(pt 1624 920)
+	(pt 1528 920)
+)
+(connector
+	(text "spirx[7..0]" (rect 1557 920 1601 937)(font "Intel Clear" ))
+	(pt 1528 936)
+	(pt 1624 936)
+	(bus)
+)
+(connector
+	(text "clksw" (rect 893 992 920 1009)(font "Intel Clear" ))
+	(pt 848 1008)
+	(pt 960 1008)
+)
+(connector
+	(text "spirx[7..0]" (rect 607 992 651 1009)(font "Intel Clear" ))
+	(pt 648 1008)
+	(pt 576 1008)
+	(bus)
+)
+(connector
+	(text "spitxready" (rect 607 1008 655 1025)(font "Intel Clear" ))
+	(pt 648 1024)
+	(pt 576 1024)
+)
+(connector
+	(text "spirxdv" (rect 602 1024 635 1041)(font "Intel Clear" ))
+	(pt 648 1040)
+	(pt 576 1040)
+)
+(connector
+	(text "spitx[7..0]" (rect 878 1008 922 1025)(font "Intel Clear" ))
+	(pt 848 1024)
+	(pt 952 1024)
+	(bus)
+)
+(connector
+	(text "spitxdv" (rect 878 1024 911 1041)(font "Intel Clear" ))
+	(pt 848 1040)
+	(pt 952 1040)
+)
+(connector
+	(pt -56 648)
+	(pt -48 648)
+)
+(connector
+	(pt -48 648)
+	(pt 0 648)
+)
+(connector
+	(pt 1280 968)
+	(pt 1296 968)
+)
+(connector
+	(pt 1528 952)
+	(pt 1544 952)
+)
+(connector
+	(pt 1528 968)
+	(pt 1544 968)
+)
+(connector
+	(pt 848 1056)
+	(pt 864 1056)
+)
+(junction (pt -48 648))
 (text "This is the main pll, chooses between internal and external clock" (rect 0 528 376 547)(font "Intel Clear" (font_size 8)))
 (text "Has adjustable phase for each clock output, relative to the chosen input" (rect 0 544 420 563)(font "Intel Clear" (font_size 8)))
