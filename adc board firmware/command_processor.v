@@ -161,7 +161,7 @@ always @ (posedge clk or negedge rstn)
 		//o_tdata  <= {length[7:0]-8'd4,length[7:0]-8'd3,length[7:0]-8'd2,length[7:0]-8'd1 };
 		o_tdata  <= {lvds1bits[1:0],lvds1bits[11:10],lvds1bits[21:20],lvds1bits[31:30],lvds1bits[41:40],lvds1bits[51:50],lvds1bits[61:60],
 						 lvds1bits[71:70],lvds1bits[81:80],lvds1bits[91:90],lvds1bits[101:100],lvds1bits[111:110],lvds1bits[121:120],lvds1bits[131:130],
-						 4'd0};
+						 4'hf};
 		if (length >= 4) begin
 			length <= length - 4;
 		end else begin

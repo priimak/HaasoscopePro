@@ -37,9 +37,9 @@ if __name__ == '__main__':
     third=0 #third byte to send, ignored during read
     usb.send(bytes([3, cs, first, second, third, 100, 100, 100]))  # get SPI from command
     res = usb.recv(4)
-    print("SPI read", res[3], res[2], res[1], res[0])
+    print("SPI read", hex(res[3]), hex(res[2]), hex(res[1]), hex(res[0]))
 
-    debug=True
+    debug=False
     total_rx_len = 0
     time_start = time.time()
     for i in range (TEST_COUNT):
@@ -51,7 +51,9 @@ if __name__ == '__main__':
         rx_len = len(data)
         if debug:
             print(data[0],data[1],data[2],data[3])
-            print(data[4], data[5], data[6], data[7])
+        print(data[4],data[5],data[6],data[7])
+        print(data[8], data[9], data[10], data[11])
+        print(data[12], data[13], data[14], data[15])
         total_rx_len += rx_len
         time_total = time.time() - time_start
         data_rate = total_rx_len / (time_total + 0.001) / 1e3

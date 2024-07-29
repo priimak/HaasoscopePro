@@ -77,21 +77,21 @@ set_location_assignment PIN_D12 -to led0
 set_location_assignment PIN_C11 -to led1
 set_location_assignment PIN_B10 -to led2
 set_location_assignment PIN_B7 -to led3
-set_location_assignment PIN_E6 -to ftdi_clk
-set_location_assignment PIN_A10 -to ftdi_data0
+set_location_assignment PIN_A7 -to ftdi_clk
+set_location_assignment PIN_B11 -to ftdi_data0
 set_location_assignment PIN_A5 -to ftdi_data1
-set_location_assignment PIN_A7 -to ftdi_data2
+set_location_assignment PIN_E6 -to ftdi_data2
 set_location_assignment PIN_B1 -to ftdi_data3
 set_location_assignment PIN_C2 -to ftdi_data4
-set_location_assignment PIN_C6 -to ftdi_data5
-set_location_assignment PIN_C8 -to ftdi_data6
+set_location_assignment PIN_D5 -to ftdi_data5
+set_location_assignment PIN_D8 -to ftdi_data6
 set_location_assignment PIN_D1 -to ftdi_data7
-set_location_assignment PIN_D11 -to ftdi_rxf_n
+set_location_assignment PIN_B14 -to ftdi_rxf_n
 set_location_assignment PIN_D4 -to ftdi_txe_n
-set_location_assignment PIN_D8 -to ftdi_rd_n
-set_location_assignment PIN_E10 -to ftdi_wr_n
-set_location_assignment PIN_E7 -to ftdi_oe_n
-set_location_assignment PIN_E9 -to ftdi_pwrsav
+set_location_assignment PIN_C8 -to ftdi_rd_n
+set_location_assignment PIN_E9 -to ftdi_wr_n
+set_location_assignment PIN_D6 -to ftdi_oe_n
+set_location_assignment PIN_E10 -to ftdi_pwrsav
 set_location_assignment PIN_E5 -to ftdi_siwu
 set_instance_assignment -name IO_STANDARD "2.5 V" -to led3
 set_instance_assignment -name IO_STANDARD "2.5 V" -to led2
@@ -167,8 +167,6 @@ set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[5]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[6]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[7]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[8]
-set_location_assignment PIN_F9 -to lvds1in[11]
-set_location_assignment PIN_F10 -to "lvds1in[11](n)"
 set_location_assignment PIN_T14 -to lvds1in[9]
 set_location_assignment PIN_T15 -to "lvds1in[9](n)"
 set_location_assignment PIN_K6 -to lvds1in[8]

@@ -4966,8 +4966,8 @@ IPC Nominal Density</description>
 <part name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="R4_CLKOUT+" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="T4_CLKOUT-" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
-<part name="B14_CLKOUT2+" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
-<part name="A14_CLKOUT2-" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="D11_CLKOUT2+" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="B13_CLKOUT2-" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="IC2" library="SN74AVC4T774PWR" deviceset="SN74AVC4T774PWR" device=""/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="R1" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100"/>
@@ -5267,24 +5267,26 @@ IPC Nominal Density</description>
 <text x="-30.48" y="180.34" size="1.778" layer="90" rot="R90">R9</text>
 <text x="-33.02" y="180.34" size="1.778" layer="90" rot="R90">R10</text>
 <text x="-40.64" y="180.34" size="1.778" layer="90" rot="R90">R11</text>
-<text x="7.62" y="-17.78" size="1.778" layer="90" rot="R90">B8</text>
-<text x="5.08" y="-17.78" size="1.778" layer="90" rot="R90">B9</text>
-<text x="2.54" y="-17.78" size="1.778" layer="90" rot="R90">D5</text>
-<text x="0" y="-17.78" size="1.778" layer="90" rot="R90">D6</text>
-<text x="-2.54" y="-17.78" size="1.778" layer="90" rot="R90">E8</text>
-<text x="-15.24" y="-17.78" size="1.778" layer="90" rot="R90">D9</text>
-<text x="-17.78" y="-17.78" size="1.778" layer="90" rot="R90">B11</text>
-<text x="-20.32" y="-17.78" size="1.778" layer="90" rot="R90">A12</text>
-<text x="-22.86" y="-17.78" size="1.778" layer="90" rot="R90">A13</text>
-<text x="7.62" y="-88.9" size="1.778" layer="90" rot="R90">A8</text>
-<text x="5.08" y="-88.9" size="1.778" layer="90" rot="R90">A9</text>
-<text x="-2.54" y="-88.9" size="1.778" layer="90" rot="R90">F8</text>
-<text x="-5.08" y="-88.9" size="1.778" layer="90" rot="R90">F9</text>
-<text x="-15.24" y="-88.9" size="1.778" layer="90" rot="R90">C9</text>
-<text x="-20.32" y="-88.9" size="1.778" layer="90" rot="R90">A11</text>
-<text x="-22.86" y="-88.9" size="1.778" layer="90" rot="R90">B12</text>
-<text x="-25.4" y="-88.9" size="1.778" layer="90" rot="R90">B13</text>
-<text x="-27.94" y="-88.9" size="1.778" layer="90" rot="R90">F10</text>
+<text x="7.62" y="-17.78" size="1.778" layer="90" rot="R90">A8</text>
+<text x="5.08" y="-17.78" size="1.778" layer="90" rot="R90">A9</text>
+<text x="2.54" y="-17.78" size="1.778" layer="90" rot="R90">C6</text>
+<text x="0" y="-17.78" size="1.778" layer="90" rot="R90">E7</text>
+<text x="-2.54" y="-17.78" size="1.778" layer="90" rot="R90">F8</text>
+<text x="-15.24" y="-17.78" size="1.778" layer="90" rot="R90">C9</text>
+<text x="-17.78" y="-17.78" size="1.778" layer="90" rot="R90">A10</text>
+<text x="-20.32" y="-17.78" size="1.778" layer="90" rot="R90">A11</text>
+<text x="-22.86" y="-17.78" size="1.778" layer="90" rot="R90">B12</text>
+<text x="7.62" y="-88.9" size="1.778" layer="90" rot="R90">B8</text>
+<text x="5.08" y="-88.9" size="1.778" layer="90" rot="R90">B9</text>
+<text x="-2.54" y="-88.9" size="1.778" layer="90" rot="R90">E8</text>
+<text x="-5.08" y="-88.9" size="1.778" layer="90" rot="R90">G11</text>
+<text x="-15.24" y="-88.9" size="1.778" layer="90" rot="R90">D9</text>
+<text x="-20.32" y="-88.9" size="1.778" layer="90" rot="R90">A12</text>
+<text x="-22.86" y="-88.9" size="1.778" layer="90" rot="R90">A13</text>
+<text x="-25.4" y="-88.9" size="1.778" layer="90" rot="R90">A14</text>
+<text x="-27.94" y="-88.9" size="1.778" layer="90" rot="R90">E11</text>
+<text x="-27.94" y="-17.78" size="1.778" layer="90" rot="R90">DIFF44!</text>
+<text x="-5.08" y="-17.78" size="1.778" layer="90" rot="R90">DIFF44!</text>
 </plain>
 <instances>
 <instance part="X13" gate="-1" x="50.8" y="91.44" smashed="yes">
@@ -6357,21 +6359,21 @@ IPC Nominal Density</description>
 <label x="-15.24" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="D8" class="0">
+<net name="C8" class="0">
 <segment>
 <wire x1="-12.7" y1="-38.1" x2="-12.7" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-16" pin="S"/>
 <label x="-12.7" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="E9" class="0">
+<net name="E10" class="0">
 <segment>
 <wire x1="-7.62" y1="-38.1" x2="-7.62" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-2" pin="S"/>
 <label x="-7.62" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="G11" class="0">
+<net name="F9" class="0">
 <segment>
 <wire x1="-5.08" y1="-38.1" x2="-5.08" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-4" pin="S"/>
@@ -6413,14 +6415,14 @@ IPC Nominal Density</description>
 <label x="7.62" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="A7" class="0">
+<net name="E6" class="0">
 <segment>
 <wire x1="10.16" y1="-38.1" x2="10.16" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-16" pin="S"/>
 <label x="10.16" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="D11" class="0">
+<net name="B14" class="0">
 <segment>
 <wire x1="-30.48" y1="-68.58" x2="-30.48" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-1" pin="S"/>
@@ -6455,7 +6457,7 @@ IPC Nominal Density</description>
 <label x="-20.32" y="-76.2" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="A10" class="0">
+<net name="B11" class="0">
 <segment>
 <wire x1="-17.78" y1="-68.58" x2="-17.78" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-11" pin="S"/>
@@ -6469,14 +6471,14 @@ IPC Nominal Density</description>
 <label x="-15.24" y="-76.2" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="C8" class="0">
+<net name="D8" class="0">
 <segment>
 <wire x1="-12.7" y1="-68.58" x2="-12.7" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-15" pin="S"/>
 <label x="-12.7" y="-76.2" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="E10" class="0">
+<net name="E9" class="0">
 <segment>
 <wire x1="-7.62" y1="-68.58" x2="-7.62" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-1" pin="S"/>
@@ -6497,14 +6499,14 @@ IPC Nominal Density</description>
 <label x="-2.54" y="-76.2" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="E7" class="0">
+<net name="D6" class="0">
 <segment>
 <wire x1="0" y1="-68.58" x2="0" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-7" pin="S"/>
 <label x="0" y="-76.2" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="C6" class="0">
+<net name="D5" class="0">
 <segment>
 <wire x1="2.54" y1="-68.58" x2="2.54" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-9" pin="S"/>
@@ -6525,7 +6527,7 @@ IPC Nominal Density</description>
 <label x="7.62" y="-76.2" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="E6" class="0">
+<net name="A7" class="0">
 <segment>
 <wire x1="10.16" y1="-68.58" x2="10.16" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="X2" gate="-15" pin="S"/>
@@ -6994,14 +6996,14 @@ IPC Nominal Density</description>
 <label x="-22.86" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="A14_CLKOUT2N" class="3">
+<net name="B13_CLKOUT2N" class="3">
 <segment>
 <wire x1="-25.4" y1="-38.1" x2="-25.4" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-6" pin="S"/>
 <label x="-25.4" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="B14_CLKOUT2P" class="3">
+<net name="D11_CLKOUT2P" class="3">
 <segment>
 <wire x1="-30.48" y1="-38.1" x2="-30.48" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-2" pin="S"/>
@@ -7022,7 +7024,7 @@ IPC Nominal Density</description>
 <label x="-86.36" y="22.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="E11_SYNCSE" class="0">
+<net name="F10_SYNCSE" class="0">
 <segment>
 <wire x1="-27.94" y1="-38.1" x2="-27.94" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-4" pin="S"/>
@@ -7076,10 +7078,10 @@ IPC Nominal Density</description>
 <instance part="T4_CLKOUT-" gate="G1" x="-53.34" y="248.92" smashed="yes">
 <attribute name="NAME" x="-55.88" y="252.222" size="1.778" layer="95"/>
 </instance>
-<instance part="B14_CLKOUT2+" gate="G1" x="-22.86" y="264.16" smashed="yes">
+<instance part="D11_CLKOUT2+" gate="G1" x="-22.86" y="264.16" smashed="yes">
 <attribute name="NAME" x="-25.4" y="267.462" size="1.778" layer="95"/>
 </instance>
-<instance part="A14_CLKOUT2-" gate="G1" x="-22.86" y="248.92" smashed="yes">
+<instance part="B13_CLKOUT2-" gate="G1" x="-22.86" y="248.92" smashed="yes">
 <attribute name="NAME" x="-25.4" y="252.222" size="1.778" layer="95"/>
 </instance>
 <instance part="IC2" gate="G$1" x="-101.6" y="119.38" smashed="yes">
@@ -7641,12 +7643,12 @@ IPC Nominal Density</description>
 <label x="-45.72" y="246.38" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="B14_CLKOUT2+" gate="G1" pin="2"/>
+<pinref part="D11_CLKOUT2+" gate="G1" pin="2"/>
 <wire x1="-20.32" y1="261.62" x2="-15.24" y2="261.62" width="0.1524" layer="91"/>
 <label x="-15.24" y="261.62" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="A14_CLKOUT2-" gate="G1" pin="2"/>
+<pinref part="B13_CLKOUT2-" gate="G1" pin="2"/>
 <wire x1="-20.32" y1="246.38" x2="-15.24" y2="246.38" width="0.1524" layer="91"/>
 <label x="-15.24" y="246.38" size="1.778" layer="95" rot="R180"/>
 </segment>
@@ -8215,7 +8217,7 @@ IPC Nominal Density</description>
 <label x="99.06" y="345.44" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="E11_SYNCSE" class="0">
+<net name="F10_SYNCSE" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="SYNCSE"/>
 <wire x1="60.96" y1="180.34" x2="40.64" y2="180.34" width="0.1524" layer="91"/>
@@ -8691,16 +8693,16 @@ IPC Nominal Density</description>
 <label x="-50.8" y="248.92" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="B14_CLKOUT2P" class="3">
+<net name="D11_CLKOUT2P" class="3">
 <segment>
-<pinref part="B14_CLKOUT2+" gate="G1" pin="1"/>
+<pinref part="D11_CLKOUT2+" gate="G1" pin="1"/>
 <wire x1="-20.32" y1="264.16" x2="-15.24" y2="264.16" width="0.1524" layer="91"/>
 <label x="-20.32" y="264.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="A14_CLKOUT2N" class="3">
+<net name="B13_CLKOUT2N" class="3">
 <segment>
-<pinref part="A14_CLKOUT2-" gate="G1" pin="1"/>
+<pinref part="B13_CLKOUT2-" gate="G1" pin="1"/>
 <wire x1="-20.32" y1="248.92" x2="-15.24" y2="248.92" width="0.1524" layer="91"/>
 <label x="-20.32" y="248.92" size="1.778" layer="95"/>
 </segment>
@@ -9025,7 +9027,7 @@ IPC Nominal Density</description>
 <label x="104.14" y="220.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="C8" class="0">
+<net name="D8" class="0">
 <segment>
 <label x="-43.942" y="308.61" size="1.778" layer="95"/>
 <pinref part="PINOUT1" gate="G$1" pin="4"/>
@@ -9039,7 +9041,7 @@ IPC Nominal Density</description>
 <wire x1="-46.99" y1="306.07" x2="-38.1" y2="306.07" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="C6" class="0">
+<net name="D5" class="0">
 <segment>
 <label x="-43.942" y="311.15" size="1.778" layer="95"/>
 <pinref part="PINOUT1" gate="G$1" pin="5"/>
@@ -9060,7 +9062,7 @@ IPC Nominal Density</description>
 <wire x1="-46.99" y1="316.23" x2="-38.1" y2="316.23" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="A7" class="0">
+<net name="E6" class="0">
 <segment>
 <pinref part="PINOUT1" gate="G$1" pin="8"/>
 <wire x1="-46.99" y1="318.77" x2="-38.1" y2="318.77" width="0.1524" layer="91"/>
@@ -9074,28 +9076,28 @@ IPC Nominal Density</description>
 <label x="-43.942" y="321.31" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="A10" class="0">
+<net name="B11" class="0">
 <segment>
 <pinref part="PINOUT1" gate="G$1" pin="10"/>
 <wire x1="-46.99" y1="323.85" x2="-38.1" y2="323.85" width="0.1524" layer="91"/>
 <label x="-43.942" y="323.85" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D11" class="0">
+<net name="B14" class="0">
 <segment>
 <pinref part="PINOUT2" gate="G$1" pin="10"/>
 <wire x1="-16.51" y1="323.85" x2="-5.08" y2="323.85" width="0.1524" layer="91"/>
 <label x="-15.24" y="323.85" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D8" class="0">
+<net name="C8" class="0">
 <segment>
 <pinref part="PINOUT2" gate="G$1" pin="8"/>
 <wire x1="-16.51" y1="318.77" x2="-5.334" y2="318.77" width="0.1524" layer="91"/>
 <label x="-15.24" y="318.77" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="E10" class="0">
+<net name="E9" class="0">
 <segment>
 <pinref part="PINOUT2" gate="G$1" pin="7"/>
 <wire x1="-16.51" y1="316.23" x2="-5.334" y2="316.23" width="0.1524" layer="91"/>
@@ -9109,21 +9111,21 @@ IPC Nominal Density</description>
 <label x="-15.24" y="313.69" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="E7" class="0">
+<net name="D6" class="0">
 <segment>
 <pinref part="PINOUT2" gate="G$1" pin="4"/>
 <wire x1="-16.51" y1="308.61" x2="-5.334" y2="308.61" width="0.1524" layer="91"/>
 <label x="-15.24" y="308.61" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="E9" class="0">
+<net name="E10" class="0">
 <segment>
 <pinref part="PINOUT2" gate="G$1" pin="3"/>
 <wire x1="-16.51" y1="306.07" x2="-5.334" y2="306.07" width="0.1524" layer="91"/>
 <label x="-15.24" y="306.07" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="E6" class="0">
+<net name="A7" class="0">
 <segment>
 <pinref part="PINOUT2" gate="G$1" pin="5"/>
 <wire x1="-16.51" y1="311.15" x2="-5.334" y2="311.15" width="0.1524" layer="91"/>
@@ -9215,7 +9217,7 @@ IPC Nominal Density</description>
 <junction x="-134.62" y="299.72"/>
 </segment>
 </net>
-<net name="G11" class="0">
+<net name="F9" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="4"/>
 <wire x1="-134.62" y1="297.18" x2="-142.24" y2="297.18" width="0.1524" layer="91"/>
