@@ -47,7 +47,7 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk50
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk50
 set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
 set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
@@ -77,44 +77,43 @@ set_location_assignment PIN_D12 -to led0
 set_location_assignment PIN_C11 -to led1
 set_location_assignment PIN_B10 -to led2
 set_location_assignment PIN_B7 -to led3
-set_location_assignment PIN_J16 -to ftdi_clk
-set_location_assignment PIN_P1 -to ftdi_data0
-set_location_assignment PIN_P2 -to ftdi_data1
-set_location_assignment PIN_N1 -to ftdi_data2
-set_location_assignment PIN_N2 -to ftdi_data3
-set_location_assignment PIN_L1 -to ftdi_data4
-set_location_assignment PIN_L2 -to ftdi_data5
-set_location_assignment PIN_K1 -to ftdi_data6
-set_location_assignment PIN_K2 -to ftdi_data7
-set_location_assignment PIN_L15 -to ftdi_rxf_n
-set_location_assignment PIN_L16 -to ftdi_txe_n
-set_location_assignment PIN_K15 -to ftdi_rd_n
-set_location_assignment PIN_K16 -to ftdi_wr_n
-set_location_assignment PIN_G16 -to ftdi_oe_n
-set_location_assignment PIN_J1 -to ftdi_resetn
-set_location_assignment PIN_G15 -to ftdi_pwrsav
-set_location_assignment PIN_J15 -to ftdi_siwu
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led3
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led2
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led0
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led1
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_wr_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_txe_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_siwu
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_rxf_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_resetn
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_rd_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_pwrsav
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_oe_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data7
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data6
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data5
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data4
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data3
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data2
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data1
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data0
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_clk
+set_location_assignment PIN_E6 -to ftdi_clk
+set_location_assignment PIN_A10 -to ftdi_data0
+set_location_assignment PIN_A5 -to ftdi_data1
+set_location_assignment PIN_A7 -to ftdi_data2
+set_location_assignment PIN_B1 -to ftdi_data3
+set_location_assignment PIN_C2 -to ftdi_data4
+set_location_assignment PIN_C6 -to ftdi_data5
+set_location_assignment PIN_C8 -to ftdi_data6
+set_location_assignment PIN_D1 -to ftdi_data7
+set_location_assignment PIN_D11 -to ftdi_rxf_n
+set_location_assignment PIN_D4 -to ftdi_txe_n
+set_location_assignment PIN_D8 -to ftdi_rd_n
+set_location_assignment PIN_E10 -to ftdi_wr_n
+set_location_assignment PIN_E7 -to ftdi_oe_n
+set_location_assignment PIN_E9 -to ftdi_pwrsav
+set_location_assignment PIN_E5 -to ftdi_siwu
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led3
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led2
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led0
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_wr_n
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_txe_n
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_siwu
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_rxf_n
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_resetn
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_rd_n
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_pwrsav
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_oe_n
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data7
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data6
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data5
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data4
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data3
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data2
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_data0
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ftdi_clk
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -123,12 +122,12 @@ set_location_assignment PIN_N14 -to spi_clk
 set_location_assignment PIN_N13 -to spi_miso
 set_location_assignment PIN_N11 -to spi_mosi
 set_location_assignment PIN_M6 -to spicsadc
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clkext
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to reset
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spi_clk
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spicsadc
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spi_miso
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spi_mosi
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clkext
+set_instance_assignment -name IO_STANDARD "2.5 V" -to reset
+set_instance_assignment -name IO_STANDARD "2.5 V" -to spi_clk
+set_instance_assignment -name IO_STANDARD "2.5 V" -to spicsadc
+set_instance_assignment -name IO_STANDARD "2.5 V" -to spi_miso
+set_instance_assignment -name IO_STANDARD "2.5 V" -to spi_mosi
 set_global_assignment -name VERILOG_FILE SPI_Master.v
 set_global_assignment -name VERILOG_FILE command_processor.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v
@@ -151,4 +150,56 @@ set_global_assignment -name QIP_FILE pll2.qip
 set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
 set_global_assignment -name QIP_FILE lvds1.qip
+set_location_assignment PIN_R4 -to clk0out
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[10]
+set_location_assignment PIN_A15 -to lvds1in[10]
+set_location_assignment PIN_F11 -to "lvds1in[10](n)"
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[9]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[11]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[13]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[12]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[0]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[1]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[2]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[3]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[4]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[5]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[6]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[7]
+set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[8]
+set_location_assignment PIN_F9 -to lvds1in[11]
+set_location_assignment PIN_F10 -to "lvds1in[11](n)"
+set_location_assignment PIN_T14 -to lvds1in[9]
+set_location_assignment PIN_T15 -to "lvds1in[9](n)"
+set_location_assignment PIN_K6 -to lvds1in[8]
+set_location_assignment PIN_L6 -to "lvds1in[8](n)"
+set_location_assignment PIN_R5 -to lvds1in[6]
+set_location_assignment PIN_T5 -to "lvds1in[6](n)"
+set_location_assignment PIN_M9 -to lvds1in[5]
+set_location_assignment PIN_N9 -to "lvds1in[5](n)"
+set_location_assignment PIN_M7 -to lvds1in[4]
+set_location_assignment PIN_K8 -to "lvds1in[4](n)"
+set_location_assignment PIN_N8 -to lvds1in[3]
+set_location_assignment PIN_P8 -to "lvds1in[3](n)"
+set_location_assignment PIN_N5 -to lvds1in[2]
+set_location_assignment PIN_N6 -to "lvds1in[2](n)"
+set_location_assignment PIN_R9 -to lvds1in[0]
+set_location_assignment PIN_T9 -to "lvds1in[0](n)"
+set_instance_assignment -name SLEW_RATE 0 -to clk0out
+set_location_assignment PIN_K15 -to lvds1in[13]
+set_location_assignment PIN_K16 -to "lvds1in[13](n)"
+set_location_assignment PIN_L15 -to lvds1in[12]
+set_location_assignment PIN_L16 -to "lvds1in[12](n)"
+set_location_assignment PIN_L2 -to lvds1in[1]
+set_location_assignment PIN_L1 -to "lvds1in[1](n)"
+set_location_assignment PIN_N2 -to lvds1in[7]
+set_location_assignment PIN_N1 -to "lvds1in[7](n)"
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to ftdi_data0
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spicsadc
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spi_mosi
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to led0
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to led1
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to led2
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to led3
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to clk0out
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

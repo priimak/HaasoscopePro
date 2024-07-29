@@ -91,5 +91,8 @@ clock_beat # (
     .beat                  ( LED[2]             )
 );
 
+assign LED[0] = rstn;
+assign LED[1] = tx_tready;
+
 
 endmodule
