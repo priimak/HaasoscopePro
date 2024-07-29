@@ -31,6 +31,10 @@ if __name__ == '__main__':
     res = usb.recv(4)
     print("version",res[3],res[2],res[1],res[0])
 
+    usb.send(bytes([3, 99, 99, 99, 100, 100, 100, 100]))  # get SPI from command
+    res = usb.recv(4)
+    print("SPI read", res[3], res[2], res[1], res[0])
+
     debug=True
     total_rx_len = 0
     time_start = time.time()
