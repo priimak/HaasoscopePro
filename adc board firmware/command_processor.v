@@ -29,10 +29,13 @@ module command_processor (
 	input  reg 			spitxready,
 	output reg			spitxdv,
 	input  reg			spirxdv,
-	output reg			spicsadc
+	output reg			spicsadc,
+	
+	input wire [139:0] lvds1bits 	// rx_in[(n-1)..0] is deserialized and driven on rx_out[(J * n)-1 ..0], where J is the deserialization factor and n is the number of channels.
+											// rx_in[0] drives data to rx_out[(J-1)..0]. rx_in[1] drives data to the next J number of bits on rx_out.
 );
 
-integer version = 3; // firmware version
+integer version = 4; // firmware version
 
 
 localparam [2:0] INIT = 3'd0, RX = 3'd1, PROCESS = 3'd2, TX_DATA_CONST = 3'd3, TX_DATA  = 3'd4;
@@ -73,7 +76,7 @@ always @ (posedge clk or negedge rstn)
 			
 		0 : begin // send a length of bytes given by the last 4 bytes of the command
 			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
-			o_tdata  <= {rx_data[4] - 8'd4, rx_data[4] - 8'd3, rx_data[4] - 8'd2, rx_data[4] - 8'd1 }; // dummy data
+			o_tdata  <= {rx_data[4]-8'd4, rx_data[4]-8'd3, rx_data[4]-8'd2, rx_data[4]-8'd1 }; // dummy data
 			state <= TX_DATA;
 		end
 		
@@ -155,10 +158,10 @@ always @ (posedge clk or negedge rstn)
 	end
 	
 	TX_DATA : if (o_tready) begin
-		o_tdata  <= {length[7:0] - 8'd4,
-						length[7:0] - 8'd3,
-						length[7:0] - 8'd2,
-						length[7:0] - 8'd1 };
+		//o_tdata  <= {length[7:0]-8'd4,length[7:0]-8'd3,length[7:0]-8'd2,length[7:0]-8'd1 };
+		o_tdata  <= {lvds1bits[1:0],lvds1bits[11:10],lvds1bits[21:20],lvds1bits[31:30],lvds1bits[41:40],lvds1bits[51:50],lvds1bits[61:60],
+						 lvds1bits[71:70],lvds1bits[81:80],lvds1bits[91:90],lvds1bits[101:100],lvds1bits[111:110],lvds1bits[121:120],lvds1bits[131:130],
+						 4'd0};
 		if (length >= 4) begin
 			length <= length - 4;
 		end else begin

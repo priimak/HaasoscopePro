@@ -43,13 +43,15 @@ if __name__ == '__main__':
     total_rx_len = 0
     time_start = time.time()
     for i in range (TEST_COUNT):
-        expect_len = randint(1, 10000000) # length to request
+        expect_len = 50000 # randint(1, 10000000) # length to request
         if debug: print(expect_len%256) # length in first byte
         txdata = bytes( [ 0,99,99,99, expect_len&0xff, (expect_len>>8)&0xff, (expect_len>>16)&0xff, (expect_len>>24)&0xff ] )   # convert length number to a 4-byte byte array (with type of 'bytes')
         usb.send(txdata)                                                                                            # send the 4 bytes to usb
         data = usb.recv(expect_len)                                                                                 # recv from usb
         rx_len = len(data)
-        if debug: print(data[0],data[1],data[2],data[3])
+        if debug:
+            print(data[0],data[1],data[2],data[3])
+            print(data[4], data[5], data[6], data[7])
         total_rx_len += rx_len
         time_total = time.time() - time_start
         data_rate = total_rx_len / (time_total + 0.001) / 1e3
