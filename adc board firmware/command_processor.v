@@ -31,6 +31,8 @@ module command_processor (
 	input  reg			spirxdv,
 	output reg			spicsadc,
 	
+	input wire			syncse, // can't drive with 3.3V, so set as input (use TMSTP+- inputs instead)
+	
 	input wire [139:0] lvds1bits 	// rx_in[(n-1)..0] is deserialized and driven on rx_out[(J * n)-1 ..0], where J is the deserialization factor and n is the number of channels.
 											// rx_in[0] drives data to rx_out[(J-1)..0]. rx_in[1] drives data to the next J number of bits on rx_out.
 );
