@@ -18,13 +18,28 @@ def oldbytes():
 
 def spicommand(name,first,second,third,read):
     cs = 1  # which chip to select, ignored for now
-    #first = 0x80  # first byte to send (set the highest bit for read, i.e. add 0x80), start of address
-    #second = 0x0c  # second byte to send, rest of address
-    #third = 0x00  # third byte to send, value to write, ignored during read
+    # first byte to send, start of address
+    # second byte to send, rest of address
+    # third byte to send, value to write, ignored during read
+    if read: first = first + 0x80 #set the highest bit for read, i.e. add 0x80
     usb.send(bytes([3, cs, first, second, third, 100, 100, 100]))  # get SPI result from command
     spires = usb.recv(4)
     if read: print("SPI read:"+name, "(",hex(first),hex(second),")",hex(spires[0]))
     else: print("SPI write:"+name, "(",hex(first),hex(second),")",hex(third))
+
+def spicommand2(name,first,second,third,fourth,read):
+    cs = 1  # which chip to select, ignored for now
+    # first byte to send, start of address
+    # second byte to send, rest of address
+    # third byte to send, value to write, ignored during read
+    # fourth byte to send, value to write, ignored during read, to address +1 (the higher 8 bits)
+    if read: first = first + 0x80  # set the highest bit for read, i.e. add 0x80
+    usb.send(bytes([3, cs, first, second, third, 100, 100, 100]))  # get SPI result from command
+    spires = usb.recv(4)
+    usb.send(bytes([3, cs, first, second+0x01, fourth, 100, 100, 100]))  # get SPI result from command for next byte
+    spires2 = usb.recv(4)
+    if read: print("SPI read:"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
+    else: print("SPI write:"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
 TEST_COUNT = 10
 if __name__ == '__main__':
@@ -41,10 +56,24 @@ if __name__ == '__main__':
     res = usb.recv(4)
     print("Version",res[3],res[2],res[1],res[0])
 
-    spicommand("VENDOR", 0x80, 0x0c, 0x00, True)
-    spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)
-    #spicommand("LVDS_EN", 0x02, 0x00, 0x00, False) #disable LVDS interface
-    spicommand("LVDS_EN", 0x02, 0x00, 0x01, False) #endable LVDS interface
+    spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
+    spicommand("LVDS_EN", 0x02, 0x00, 0x00, False) #disable LVDS interface
+
+    # spicommand("PAT_SEL", 0x02, 0x05, 0x02, False)  # normal ADC data
+    spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
+
+    spicommand2("UPAT0", 0x01, 0x80, 0xff, 0xff,False)  # set pattern sample 0
+    spicommand2("UPAT1", 0x01, 0x82, 0xff, 0xff, False)  # set pattern sample 1
+    spicommand2("UPAT2", 0x01, 0x84, 0xff, 0xff, False)  # set pattern sample 2
+    spicommand2("UPAT3", 0x01, 0x86, 0xff, 0xff, False)  # set pattern sample 3
+    spicommand2("UPAT4", 0x01, 0x88, 0xff, 0xff, False)  # set pattern sample 4
+    spicommand2("UPAT5", 0x01, 0x8a, 0xff, 0xff, False)  # set pattern sample 5
+    spicommand2("UPAT6", 0x01, 0x8c, 0xff, 0xff, False)  # set pattern sample 6
+    spicommand2("UPAT7", 0x01, 0x8e, 0xff, 0xff, False)  # set pattern sample 7
+    #spicommand("UPAT_CTRL", 0x01, 0x90, 0x1e, False)  # set lane pattern to default
+    spicommand("UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user
+
+    spicommand("LVDS_EN", 0x02, 0x00, 0x01, False)  # enable LVDS interface
 
     debug=False
     total_rx_len = 0
@@ -58,9 +87,8 @@ if __name__ == '__main__':
         rx_len = len(data)
         if debug:
             print(data[0],data[1],data[2],data[3])
-        print(data[4],data[5],data[6],data[7])
-        print(data[8], data[9], data[10], data[11])
-        print(data[12], data[13], data[14], data[15])
+        for p in range(1,1000):
+            print(data[4*p],data[4*p+1],data[4*p+2],data[4*p+3])
         total_rx_len += rx_len
         time_total = time.time() - time_start
         data_rate = total_rx_len / (time_total + 0.001) / 1e3
