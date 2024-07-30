@@ -12,9 +12,19 @@ import time
 def oldbytes():
     while True:
         olddata = usb.recv(10000000)
-        print("got",len(olddata),"old bytes")
+        print("Got",len(olddata),"old bytes")
         if len(olddata)==0: break
-        print("old byte0:",olddata[0])
+        print("Old byte0:",olddata[0])
+
+def spicommand(name,first,second,third,read):
+    cs = 1  # which chip to select, ignored for now
+    #first = 0x80  # first byte to send (set the highest bit for read, i.e. add 0x80), start of address
+    #second = 0x0c  # second byte to send, rest of address
+    #third = 0x00  # third byte to send, value to write, ignored during read
+    usb.send(bytes([3, cs, first, second, third, 100, 100, 100]))  # get SPI result from command
+    spires = usb.recv(4)
+    if read: print("SPI read:"+name, "(",hex(first),hex(second),")",hex(spires[0]))
+    else: print("SPI write:"+name, "(",hex(first),hex(second),")",hex(third))
 
 TEST_COUNT = 10
 if __name__ == '__main__':
@@ -24,20 +34,17 @@ if __name__ == '__main__':
          ('FT60X', 'FTDI SuperSpeed-FIFO Bridge'))           # secondly try to open FT60X (FT600 or FT601) device named 'FTDI SuperSpeed-FIFO Bridge'. Note that 'FTDI SuperSpeed-FIFO Bridge' is the default name of FT600 or FT601 chip unless the user has modified it.
     )
 
-    print("starting")
+    print("Starting")
     oldbytes()
 
     usb.send(bytes([2, 99, 99, 99, 100, 100, 100, 100])) #get version
     res = usb.recv(4)
-    print("version",res[3],res[2],res[1],res[0])
+    print("Version",res[3],res[2],res[1],res[0])
 
-    cs=1 #which chip to select, ignored for now
-    first=0x80 #first byte to send
-    second=0x0c #second byte to send (device id byte 0, should return "4", 0x0d should return "51")
-    third=0 #third byte to send, ignored during read
-    usb.send(bytes([3, cs, first, second, third, 100, 100, 100]))  # get SPI from command
-    res = usb.recv(4)
-    print("SPI read", hex(res[3]), hex(res[2]), hex(res[1]), hex(res[0]))
+    spicommand("VENDOR", 0x80, 0x0c, 0x00, True)
+    spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)
+    #spicommand("LVDS_EN", 0x02, 0x00, 0x00, False) #disable LVDS interface
+    spicommand("LVDS_EN", 0x02, 0x00, 0x01, False) #endable LVDS interface
 
     debug=False
     total_rx_len = 0

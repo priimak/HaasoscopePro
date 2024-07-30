@@ -139,7 +139,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -408 1000 -232 1016)
+	(rect -416 1000 -240 1016)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "lvds1in[13..0]" (rect 9 0 76 12)(font "Arial" ))
 	(pt 176 8)
@@ -152,7 +152,7 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -472 1016 -408 1040))
+	(annotation_block (location)(rect -480 1016 -416 1040))
 )
 (pin
 	(input)
@@ -1357,17 +1357,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt -240 1008)
-	(pt -232 1008)
-	(bus)
-)
-(connector
-	(text "lvds1in[13..0]" (rect -223 992 -160 1009)(font "Intel Clear" ))
-	(pt -232 1008)
-	(pt -152 1008)
-	(bus)
-)
-(connector
 	(text "clksw" (rect 909 992 936 1009)(font "Intel Clear" ))
 	(pt 864 1008)
 	(pt 976 1008)
@@ -1419,6 +1408,11 @@ refer to the applicable agreement for further details.
 	(pt 544 1072)
 	(bus)
 )
-(junction (pt -232 1008))
+(connector
+	(text "lvds1in[13..0]" (rect -231 992 -168 1009)(font "Intel Clear" ))
+	(pt -240 1008)
+	(pt -152 1008)
+	(bus)
+)
 (text "This is the main pll, chooses between internal and external clock" (rect 0 528 376 547)(font "Intel Clear" (font_size 8)))
 (text "Has adjustable phase for each clock output, relative to the chosen input" (rect 0 544 420 563)(font "Intel Clear" (font_size 8)))
