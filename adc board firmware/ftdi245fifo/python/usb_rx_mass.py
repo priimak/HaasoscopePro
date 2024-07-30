@@ -62,14 +62,15 @@ if __name__ == '__main__':
     # spicommand("PAT_SEL", 0x02, 0x05, 0x02, False)  # normal ADC data
     spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
 
-    spicommand2("UPAT0", 0x01, 0x80, 0xff, 0xff,False)  # set pattern sample 0
-    spicommand2("UPAT1", 0x01, 0x82, 0xff, 0xff, False)  # set pattern sample 1
-    spicommand2("UPAT2", 0x01, 0x84, 0xff, 0xff, False)  # set pattern sample 2
-    spicommand2("UPAT3", 0x01, 0x86, 0xff, 0xff, False)  # set pattern sample 3
-    spicommand2("UPAT4", 0x01, 0x88, 0xff, 0xff, False)  # set pattern sample 4
-    spicommand2("UPAT5", 0x01, 0x8a, 0xff, 0xff, False)  # set pattern sample 5
-    spicommand2("UPAT6", 0x01, 0x8c, 0xff, 0xff, False)  # set pattern sample 6
-    spicommand2("UPAT7", 0x01, 0x8e, 0xff, 0xff, False)  # set pattern sample 7
+    usrval=0x00
+    spicommand2("UPAT0", 0x01, 0x80, usrval, usrval,False)  # set pattern sample 0
+    spicommand2("UPAT1", 0x01, 0x82, usrval, usrval, False)  # set pattern sample 1
+    spicommand2("UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
+    spicommand2("UPAT3", 0x01, 0x86, usrval, usrval, False)  # set pattern sample 3
+    spicommand2("UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
+    spicommand2("UPAT5", 0x01, 0x8a, usrval, usrval, False)  # set pattern sample 5
+    spicommand2("UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
+    spicommand2("UPAT7", 0x01, 0x8e, usrval, usrval, False)  # set pattern sample 7
     #spicommand("UPAT_CTRL", 0x01, 0x90, 0x1e, False)  # set lane pattern to default
     spicommand("UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user
 
@@ -88,7 +89,7 @@ if __name__ == '__main__':
         if debug:
             print(data[0],data[1],data[2],data[3])
         for p in range(1,1000):
-            print(data[4*p],data[4*p+1],data[4*p+2],data[4*p+3])
+            print(hex(data[4*p]),hex(data[4*p+1]),hex(data[4*p+2]),hex(data[4*p+3]))
         total_rx_len += rx_len
         time_total = time.time() - time_start
         data_rate = total_rx_len / (time_total + 0.001) / 1e3
