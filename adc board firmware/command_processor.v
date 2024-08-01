@@ -33,8 +33,13 @@ module command_processor (
 	
 	input wire			syncse, // can't drive with 3.3V, so set as input (use TMSTP+- inputs instead)
 	
-	input wire [139:0] lvds1bits 	// rx_in[(n-1)..0] is deserialized and driven on rx_out[(J * n)-1 ..0], where J is the deserialization factor and n is the number of channels.
-											// rx_in[0] drives data to rx_out[(J-1)..0]. rx_in[1] drives data to the next J number of bits on rx_out.
+	input wire [139:0] lvds1bitsout, // rx_in[0] drives data to rx_out[(J-1)..0], rx_in[1] drives data to the next J number of bits on rx_out
+	input wire			clklvds, // clk1, runs at LVDS bit rate (ADC clk input rate) / 2
+	
+	output reg			lvds1wr,
+	output reg			lvds1rd,
+	input wire			lvds1wrfull,
+	input wire			lvds1rdempty
 );
 
 integer version = 4; // firmware version
@@ -167,8 +172,8 @@ always @ (posedge clk or negedge rstn)
 //						 lvds1bits[111:110],lvds1bits[101:100],lvds1bits[91:90],lvds1bits[81:80],
 //						 4'hf, lvds1bits[131:130],lvds1bits[121:120] };
 		
-		o_tdata  <= {6'h0,lvds1bits[89:80],
-						 6'h0,lvds1bits[109:100]};
+		o_tdata  <= {6'h0,lvds1bitsout[89:80],
+						 6'h0,lvds1bitsout[109:100]};
 		if (length >= 4) begin
 			length <= length - 4;
 		end else begin
