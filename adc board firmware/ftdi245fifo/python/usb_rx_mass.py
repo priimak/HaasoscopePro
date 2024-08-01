@@ -45,7 +45,6 @@ def spicommand2(name,first,second,third,fourth,read):
     if read: print("SPI read:"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
     else: print("SPI write:"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
-TEST_COUNT = 100000
 if __name__ == '__main__':
     usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=
         (('FTX232H', 'Haasoscope USB2'),
@@ -71,7 +70,7 @@ if __name__ == '__main__':
     spicommand("SYNC_SEL", 0x00, 0x60, 0x11, False)  # swap inputs
     #spicommand("SYNC_SEL", 0x00, 0x60, 0x01, False)  # unswap inputs
 
-    dotest=False
+    dotest=True
     if dotest:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval=0x00
@@ -95,11 +94,15 @@ if __name__ == '__main__':
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x00, False)
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x01, False)
 
+    #oldbytes()
     debug=False
+    dotest=False
+    last=0
     total_rx_len = 0
     time_start = time.time()
-    for i in range (TEST_COUNT):
-        expect_len = 50000 # randint(1, 10000000) # length to request
+    testn = 100000
+    for i in range (testn):
+        expect_len = 4*randint(1, 1000000) # length to request
         if debug: print(expect_len%256) # length in first byte
         txdata = bytes( [ 0,99,99,99,
             expect_len&0xff, (expect_len>>8)&0xff, (expect_len>>16)&0xff, (expect_len>>24)&0xff ] ) # convert length number to a 4-byte byte array (with type of 'bytes')
@@ -108,16 +111,26 @@ if __name__ == '__main__':
         rx_len = len(data)
         if debug:
             print(data[3],data[2],data[1],data[0])
-        for p in range(1,1000):
-            print(bin(data[4*p+3])[2:].zfill(8),binprint(data[4*p+2]),bin(data[4*p+1])[2:].zfill(8),bin(data[4*p+0])[2:].zfill(8))
+        if dotest:
+            for p in range(0,int(expect_len/4)):
+                #print(binprint(data[4*p+3]),binprint(data[4*p+2]),binprint(data[4*p+1]),binprint(data[4*p+0])
+                #if True:
+                if data[4 * p + 1]*256+data[4 * p + 0] -1 != last and last!=255*256+255:
+                    print(int(last/256),last%256)
+                    print(data[4 * p + 3], data[4 * p + 2], data[4 * p + 1], data[4 * p + 0])
+                last = data[4 * p + 1]*256+data[4 * p + 0]
         total_rx_len += rx_len
         time_total = time.time() - time_start
         data_rate = total_rx_len / (time_total + 0.001) / 1e3
         evt_rate = i / (time_total + 0.001)
-        if i%2==0: print('[%d/%d]   rx_len=%d   total_rx_len=%d   avg_evt_rate=%f Hz   avg_data_rate=%.0f kB/s' % (i, TEST_COUNT, rx_len, total_rx_len, evt_rate, data_rate) )
+        if i%1==0:
+            print(data[3], data[2], data[1], data[0])
+            print('[%d/%d]   rx_len=%d   total_rx_len=%d   avg_evt_rate=%f Hz   avg_data_rate=%.0f kB/s' % (i, testn, rx_len, total_rx_len, evt_rate, data_rate) )
         if expect_len != rx_len:
+            print(data[3],data[2],data[1],data[0])
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len) )
             break
-        time.sleep(1)
+        #time.sleep(1)
 
+    oldbytes()
     usb.close()

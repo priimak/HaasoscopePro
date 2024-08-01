@@ -40,8 +40,10 @@ module fifo1 (
 	q,
 	rdempty,
 	rdfull,
+	rdusedw,
 	wrempty,
-	wrfull);
+	wrfull,
+	wrusedw);
 
 	input	[139:0]  data;
 	input	  rdclk;
@@ -51,8 +53,10 @@ module fifo1 (
 	output	[139:0]  q;
 	output	  rdempty;
 	output	  rdfull;
+	output	[10:0]  rdusedw;
 	output	  wrempty;
 	output	  wrfull;
+	output	[10:0]  wrusedw;
 
 endmodule
 
@@ -81,23 +85,24 @@ endmodule
 // Retrieval info: PRIVATE: Width NUMERIC "140"
 // Retrieval info: PRIVATE: dc_aclr NUMERIC "0"
 // Retrieval info: PRIVATE: diff_widths NUMERIC "0"
-// Retrieval info: PRIVATE: msb_usedw NUMERIC "0"
+// Retrieval info: PRIVATE: msb_usedw NUMERIC "1"
 // Retrieval info: PRIVATE: output_width NUMERIC "140"
 // Retrieval info: PRIVATE: rsEmpty NUMERIC "1"
 // Retrieval info: PRIVATE: rsFull NUMERIC "1"
-// Retrieval info: PRIVATE: rsUsedW NUMERIC "0"
+// Retrieval info: PRIVATE: rsUsedW NUMERIC "1"
 // Retrieval info: PRIVATE: sc_aclr NUMERIC "0"
 // Retrieval info: PRIVATE: sc_sclr NUMERIC "0"
 // Retrieval info: PRIVATE: wsEmpty NUMERIC "1"
 // Retrieval info: PRIVATE: wsFull NUMERIC "1"
-// Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
+// Retrieval info: PRIVATE: wsUsedW NUMERIC "1"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
+// Retrieval info: CONSTANT: ADD_USEDW_MSB_BIT STRING "ON"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "1024"
 // Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "ON"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
 // Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "140"
-// Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "10"
+// Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "11"
 // Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
 // Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "4"
 // Retrieval info: CONSTANT: UNDERFLOW_CHECKING STRING "ON"
@@ -109,10 +114,12 @@ endmodule
 // Retrieval info: USED_PORT: rdempty 0 0 0 0 OUTPUT NODEFVAL "rdempty"
 // Retrieval info: USED_PORT: rdfull 0 0 0 0 OUTPUT NODEFVAL "rdfull"
 // Retrieval info: USED_PORT: rdreq 0 0 0 0 INPUT NODEFVAL "rdreq"
+// Retrieval info: USED_PORT: rdusedw 0 0 11 0 OUTPUT NODEFVAL "rdusedw[10..0]"
 // Retrieval info: USED_PORT: wrclk 0 0 0 0 INPUT NODEFVAL "wrclk"
 // Retrieval info: USED_PORT: wrempty 0 0 0 0 OUTPUT NODEFVAL "wrempty"
 // Retrieval info: USED_PORT: wrfull 0 0 0 0 OUTPUT NODEFVAL "wrfull"
 // Retrieval info: USED_PORT: wrreq 0 0 0 0 INPUT NODEFVAL "wrreq"
+// Retrieval info: USED_PORT: wrusedw 0 0 11 0 OUTPUT NODEFVAL "wrusedw[10..0]"
 // Retrieval info: CONNECT: @data 0 0 140 0 data 0 0 140 0
 // Retrieval info: CONNECT: @rdclk 0 0 0 0 rdclk 0 0 0 0
 // Retrieval info: CONNECT: @rdreq 0 0 0 0 rdreq 0 0 0 0
@@ -121,8 +128,10 @@ endmodule
 // Retrieval info: CONNECT: q 0 0 140 0 @q 0 0 140 0
 // Retrieval info: CONNECT: rdempty 0 0 0 0 @rdempty 0 0 0 0
 // Retrieval info: CONNECT: rdfull 0 0 0 0 @rdfull 0 0 0 0
+// Retrieval info: CONNECT: rdusedw 0 0 11 0 @rdusedw 0 0 11 0
 // Retrieval info: CONNECT: wrempty 0 0 0 0 @wrempty 0 0 0 0
 // Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
+// Retrieval info: CONNECT: wrusedw 0 0 11 0 @wrusedw 0 0 11 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL fifo1.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL fifo1.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL fifo1.cmp FALSE
