@@ -167,8 +167,8 @@ always @ (posedge clk or negedge rstn)
 //						 lvds1bits[111:110],lvds1bits[101:100],lvds1bits[91:90],lvds1bits[81:80],
 //						 4'hf, lvds1bits[131:130],lvds1bits[121:120] };
 		
-		o_tdata  <= {6'h0,lvds1bits[99:90],
-						 6'h0,lvds1bits[49:40]};
+		o_tdata  <= {6'h0,lvds1bits[89:80],
+						 6'h0,lvds1bits[109:100]};
 		if (length >= 4) begin
 			length <= length - 4;
 		end else begin

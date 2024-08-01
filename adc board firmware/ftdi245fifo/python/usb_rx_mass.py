@@ -62,9 +62,16 @@ if __name__ == '__main__':
 
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False) #disable LVDS interface
-    spicommand("LMODE",0x02,0x01,0x01,False,True) # LVDS mode
+    spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
+    spicommand("LMODE",0x02,0x01,0x01,False) # LVDS mode
 
-    dotest=True
+    #spicommand("SYNC_SEL",0x02,0x01,0x0a,False) # use LSYNC_N (software), 2's complement
+    spicommand("SYNC_SEL",0x02,0x01,0x08,False) # use LSYNC_N (software), offset binary
+
+    spicommand("SYNC_SEL", 0x00, 0x60, 0x11, False)  # swap inputs
+    #spicommand("SYNC_SEL", 0x00, 0x60, 0x01, False)  # unswap inputs
+
+    dotest=False
     if dotest:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval=0x00
@@ -76,12 +83,15 @@ if __name__ == '__main__':
         spicommand2("UPAT5", 0x01, 0x8a, usrval, usrval, False)  # set pattern sample 5
         spicommand2("UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
         spicommand2("UPAT7", 0x01, 0x8e, usrval, usrval, False)  # set pattern sample 7
-        #spicommand("UPAT_CTRL", 0x01, 0x90, 0x1e, False)  # set lane pattern to default
         spicommand("UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user
     else:
         spicommand("PAT_SEL", 0x02, 0x05, 0x02, False)  # normal ADC data
+        spicommand("UPAT_CTRL", 0x01, 0x90, 0x1e, False)  # set lane pattern to default
 
+    spicommand("CAL_EN", 0x00, 0x61, 0x01, False)  # enable calibration
     spicommand("LVDS_EN", 0x02, 0x00, 0x01, False)  # enable LVDS interface
+    spicommand("LSYNC_N",0x02,0x03,0x00,False) #assert ~sync signal
+    spicommand("LSYNC_N",0x02,0x03,0x01,False) #deassert ~sync signal
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x00, False)
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x01, False)
 

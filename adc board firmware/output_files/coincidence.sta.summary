@@ -3,15 +3,15 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'ftdi_clk'
-Slack : 7.496
+Slack : 6.454
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'clk50'
-Slack : 7.701
+Slack : 7.826
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk50'
-Slack : 0.452
+Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'ftdi_clk'
@@ -19,23 +19,23 @@ Slack : 0.485
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'ftdi_clk'
-Slack : 11.646
+Slack : 11.728
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clk50'
-Slack : 15.148
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Removal 'ftdi_clk'
-Slack : 3.261
+Slack : 15.850
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'clk50'
-Slack : 3.715
+Slack : 3.072
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'ftdi_clk'
+Slack : 3.115
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ftdi_clk'
-Slack : 7.916
+Slack : 7.921
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
@@ -43,11 +43,11 @@ Slack : 9.659
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'ftdi_clk'
-Slack : 8.088
+Slack : 7.082
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk50'
-Slack : 8.436
+Slack : 8.589
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk50'
@@ -59,23 +59,23 @@ Slack : 0.430
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'ftdi_clk'
-Slack : 11.990
+Slack : 12.051
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clk50'
-Slack : 15.506
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Removal 'ftdi_clk'
-Slack : 2.917
+Slack : 16.166
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'clk50'
-Slack : 3.339
+Slack : 2.762
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'ftdi_clk'
+Slack : 2.808
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ftdi_clk'
-Slack : 7.788
+Slack : 7.782
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50'
@@ -87,11 +87,11 @@ Slack : 9.155
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'ftdi_clk'
-Slack : 12.773
+Slack : 12.274
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk50'
-Slack : 0.176
+Slack : 0.164
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ftdi_clk'
@@ -99,23 +99,23 @@ Slack : 0.201
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'ftdi_clk'
-Slack : 14.361
+Slack : 14.398
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clk50'
-Slack : 17.750
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'ftdi_clk'
-Slack : 1.465
+Slack : 18.089
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'clk50'
-Slack : 1.668
+Slack : 1.366
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ftdi_clk'
+Slack : 1.381
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ftdi_clk'
-Slack : 7.668
+Slack : 7.664
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
