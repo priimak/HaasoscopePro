@@ -39,6 +39,8 @@ module fifo1 (
 	wrreq,
 	q,
 	rdempty,
+	rdfull,
+	wrempty,
 	wrfull);
 
 	input	[139:0]  data;
@@ -48,6 +50,8 @@ module fifo1 (
 	input	  wrreq;
 	output	[139:0]  q;
 	output	  rdempty;
+	output	  rdfull;
+	output	  wrempty;
 	output	  wrfull;
 
 endmodule
@@ -80,11 +84,11 @@ endmodule
 // Retrieval info: PRIVATE: msb_usedw NUMERIC "0"
 // Retrieval info: PRIVATE: output_width NUMERIC "140"
 // Retrieval info: PRIVATE: rsEmpty NUMERIC "1"
-// Retrieval info: PRIVATE: rsFull NUMERIC "0"
+// Retrieval info: PRIVATE: rsFull NUMERIC "1"
 // Retrieval info: PRIVATE: rsUsedW NUMERIC "0"
 // Retrieval info: PRIVATE: sc_aclr NUMERIC "0"
 // Retrieval info: PRIVATE: sc_sclr NUMERIC "0"
-// Retrieval info: PRIVATE: wsEmpty NUMERIC "0"
+// Retrieval info: PRIVATE: wsEmpty NUMERIC "1"
 // Retrieval info: PRIVATE: wsFull NUMERIC "1"
 // Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
@@ -103,8 +107,10 @@ endmodule
 // Retrieval info: USED_PORT: q 0 0 140 0 OUTPUT NODEFVAL "q[139..0]"
 // Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"
 // Retrieval info: USED_PORT: rdempty 0 0 0 0 OUTPUT NODEFVAL "rdempty"
+// Retrieval info: USED_PORT: rdfull 0 0 0 0 OUTPUT NODEFVAL "rdfull"
 // Retrieval info: USED_PORT: rdreq 0 0 0 0 INPUT NODEFVAL "rdreq"
 // Retrieval info: USED_PORT: wrclk 0 0 0 0 INPUT NODEFVAL "wrclk"
+// Retrieval info: USED_PORT: wrempty 0 0 0 0 OUTPUT NODEFVAL "wrempty"
 // Retrieval info: USED_PORT: wrfull 0 0 0 0 OUTPUT NODEFVAL "wrfull"
 // Retrieval info: USED_PORT: wrreq 0 0 0 0 INPUT NODEFVAL "wrreq"
 // Retrieval info: CONNECT: @data 0 0 140 0 data 0 0 140 0
@@ -114,6 +120,8 @@ endmodule
 // Retrieval info: CONNECT: @wrreq 0 0 0 0 wrreq 0 0 0 0
 // Retrieval info: CONNECT: q 0 0 140 0 @q 0 0 140 0
 // Retrieval info: CONNECT: rdempty 0 0 0 0 @rdempty 0 0 0 0
+// Retrieval info: CONNECT: rdfull 0 0 0 0 @rdfull 0 0 0 0
+// Retrieval info: CONNECT: wrempty 0 0 0 0 @wrempty 0 0 0 0
 // Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL fifo1.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL fifo1.inc FALSE

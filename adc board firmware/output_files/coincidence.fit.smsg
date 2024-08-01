@@ -1,7 +1,5 @@
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
-Warning (332049): Ignored set_false_path at qfit2_legacy_fmain_fitter_flow.tcl(117): Argument <to> is not an object ID File: C:/altera/18.0/quartus/common/tcl/internal/qfit2_legacy_fmain_fitter_flow.tcl Line: 117
-Warning (332049): Ignored set_false_path at qfit2_legacy_fmain_fitter_flow.tcl(117): Argument <to> is not an object ID File: C:/altera/18.0/quartus/common/tcl/internal/qfit2_legacy_fmain_fitter_flow.tcl Line: 117
 Warning (332174): Ignored filter at qfit2_legacy_fmain_fitter_flow.tcl(117): *phasedone_state* could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/altera/18.0/quartus/common/tcl/internal/qfit2_legacy_fmain_fitter_flow.tcl Line: 117
 Warning (332049): Ignored set_false_path at qfit2_legacy_fmain_fitter_flow.tcl(117): Argument <to> is not an object ID File: C:/altera/18.0/quartus/common/tcl/internal/qfit2_legacy_fmain_fitter_flow.tcl Line: 117
 Warning (332174): Ignored filter at qfit2_legacy_fmain_fitter_flow.tcl(117): *internal_phasestep* could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/altera/18.0/quartus/common/tcl/internal/qfit2_legacy_fmain_fitter_flow.tcl Line: 117

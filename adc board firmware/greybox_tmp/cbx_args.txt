@@ -17,4 +17,6 @@ wrclk
 wrreq
 q
 rdempty
+rdfull
+wrempty
 wrfull

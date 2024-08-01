@@ -39,6 +39,8 @@ module command_processor (
 	output reg			lvds1wr,
 	output reg			lvds1rd,
 	input wire			lvds1wrfull,
+	input wire			lvds1wrempty,
+	input wire			lvds1rdfull,
 	input wire			lvds1rdempty
 );
 
@@ -52,12 +54,39 @@ reg [ 3:0]	rx_counter = 0;
 reg [ 7:0]	rx_data[7:0];
 reg [31:0]	length = 0;
 reg [ 2:0]	spistate = 0;
+reg 			sendingevent = 0;
+reg 			writingevent = 0;
 
+always @ (posedge clklvds or negedge rstn)
+ if (~rstn) begin
+	writingevent <= 1'b0;
+	lvds1wr <= 1'b0;
+ end else begin
+	if (lvds1wrempty) begin
+		writingevent <= 1'b1;
+	end
+	if (writingevent) begin
+		if (lvds1wrfull) begin
+			writingevent <= 1'b0;
+			lvds1wr <= 1'b0;
+		end
+		else begin
+			lvds1wr <= 1'b1;
+		end
+	end
+ end
 
 always @ (posedge clk or negedge rstn)
  if (~rstn) begin
 	state  <= INIT;
+	sendingevent <= 1'b0;
+	lvds1rd <= 1'b0;
  end else begin
+ 
+	if (lvds1rdfull) begin
+		sendingevent <= 1'b1;
+	end
+ 
   case (state)
    INIT : begin
 		clkswitch <= 1'b0;
@@ -165,21 +194,30 @@ always @ (posedge clk or negedge rstn)
 	end
 	
 	TX_DATA : if (o_tready) begin
-		//o_tdata  <= {length[7:0]-8'd4,length[7:0]-8'd3,length[7:0]-8'd2,length[7:0]-8'd1 };
-		
-//		o_tdata  <= {lvds1bits[31:30],lvds1bits[21:20],lvds1bits[11:10],lvds1bits[1:0],
-//						 lvds1bits[71:70],lvds1bits[61:60],lvds1bits[51:50],lvds1bits[41:40],
-//						 lvds1bits[111:110],lvds1bits[101:100],lvds1bits[91:90],lvds1bits[81:80],
-//						 4'hf, lvds1bits[131:130],lvds1bits[121:120] };
-		
-		o_tdata  <= {6'h0,lvds1bitsout[89:80],
-						 6'h0,lvds1bitsout[109:100]};
-		if (length >= 4) begin
-			length <= length - 4;
-		end else begin
-			length <= 0;
-			state <= RX;
+		if (sendingevent) begin
+			if (lvds1rdempty) begin
+				sendingevent <= 1'b0;
+				lvds1rd <= 0;
+			end
+			else begin
+				lvds1rd <= 1;
+		//		o_tdata  <= {lvds1bits[31:30],lvds1bits[21:20],lvds1bits[11:10],lvds1bits[1:0],
+		//						 lvds1bits[71:70],lvds1bits[61:60],lvds1bits[51:50],lvds1bits[41:40],
+		//						 lvds1bits[111:110],lvds1bits[101:100],lvds1bits[91:90],lvds1bits[81:80],
+		//						 4'hf, lvds1bits[131:130],lvds1bits[121:120] };
+				o_tdata  <= {6'h0,lvds1bitsout[89:80],
+								 6'h0,lvds1bitsout[109:100]};
+				if (length >= 4) begin
+					length <= length - 4;
+				end else begin
+					length <= 0;
+					state <= RX;
+				end
+			end
 		end
+	end
+	else begin
+		lvds1rd <= 1'b0;
 	end
 	
 	default :

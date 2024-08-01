@@ -960,9 +960,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -136 1024 40 1240)
+	(rect -136 1024 40 1256)
 	(text "fifo1" (rect 77 0 104 16)(font "Arial" (font_size 10)))
-	(text "inst2" (rect 8 200 31 212)(font "Arial" ))
+	(text "inst2" (rect 8 216 31 228)(font "Arial" ))
 	(port
 		(pt 0 48)
 		(input)
@@ -1006,6 +1006,13 @@ refer to the applicable agreement for further details.
 		(line (pt 176 56)(pt 160 56))
 	)
 	(port
+		(pt 176 72)
+		(output)
+		(text "wrempty" (rect 0 0 50 14)(font "Arial" (font_size 8)))
+		(text "wrempty" (rect 114 65 164 79)(font "Arial" (font_size 8)))
+		(line (pt 176 72)(pt 160 72))
+	)
+	(port
 		(pt 176 112)
 		(output)
 		(text "q[139..0]" (rect 0 0 49 14)(font "Arial" (font_size 8)))
@@ -1015,23 +1022,30 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 176 136)
 		(output)
-		(text "rdempty" (rect 0 0 46 14)(font "Arial" (font_size 8)))
-		(text "rdempty" (rect 118 129 164 143)(font "Arial" (font_size 8)))
+		(text "rdfull" (rect 0 0 28 14)(font "Arial" (font_size 8)))
+		(text "rdfull" (rect 133 129 161 143)(font "Arial" (font_size 8)))
 		(line (pt 176 136)(pt 160 136))
+	)
+	(port
+		(pt 176 152)
+		(output)
+		(text "rdempty" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "rdempty" (rect 118 145 164 159)(font "Arial" (font_size 8)))
+		(line (pt 176 152)(pt 160 152))
 	)
 	(drawing
 		(text "(ack)" (rect 50 115 74 127)(font "Arial" ))
-		(text "140 bits x 1024 words" (rect 68 157 175 169)(font "Arial" ))
+		(text "140 bits x 1024 words" (rect 68 173 175 185)(font "Arial" ))
 		(line (pt 16 100)(pt 160 100))
-		(line (pt 16 148)(pt 160 148))
+		(line (pt 16 164)(pt 160 164))
 		(line (pt 16 32)(pt 160 32))
-		(line (pt 160 32)(pt 160 202))
-		(line (pt 160 202)(pt 16 202))
-		(line (pt 16 202)(pt 16 32))
+		(line (pt 160 32)(pt 160 218))
+		(line (pt 160 218)(pt 16 218))
+		(line (pt 16 218)(pt 16 32))
 		(line (pt 0 0)(pt 177 0))
-		(line (pt 177 0)(pt 177 220))
-		(line (pt 0 220)(pt 177 220))
-		(line (pt 0 0)(pt 0 220))
+		(line (pt 177 0)(pt 177 236))
+		(line (pt 0 236)(pt 177 236))
+		(line (pt 0 0)(pt 0 236))
 		(line (pt 0 0)(pt 0 0))
 		(line (pt 0 0)(pt 0 0))
 		(line (pt 0 0)(pt 0 0))
@@ -1039,9 +1053,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 648 896 880 1168)
+	(rect 648 896 880 1200)
 	(text "command_processor" (rect 5 0 107 12)(font "Arial" ))
-	(text "inst1" (rect 8 256 31 268)(font "Arial" ))
+	(text "inst1" (rect 8 288 31 300)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1129,9 +1143,23 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 224)
 		(input)
-		(text "lvds1rdempty" (rect 0 0 68 12)(font "Arial" ))
-		(text "lvds1rdempty" (rect 21 219 89 231)(font "Arial" ))
+		(text "lvds1wrempty" (rect 0 0 69 12)(font "Arial" ))
+		(text "lvds1wrempty" (rect 21 219 90 231)(font "Arial" ))
 		(line (pt 0 224)(pt 16 224))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "lvds1rdfull" (rect 0 0 51 12)(font "Arial" ))
+		(text "lvds1rdfull" (rect 21 235 72 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "lvds1rdempty" (rect 0 0 68 12)(font "Arial" ))
+		(text "lvds1rdempty" (rect 21 251 89 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256))
 	)
 	(port
 		(pt 232 32)
@@ -1211,7 +1239,7 @@ refer to the applicable agreement for further details.
 		(line (pt 232 192)(pt 216 192))
 	)
 	(drawing
-		(rectangle (rect 16 16 216 256))
+		(rectangle (rect 16 16 216 288))
 	)
 )
 (connector
@@ -1416,12 +1444,6 @@ refer to the applicable agreement for further details.
 	(pt 1544 968)
 )
 (connector
-	(text "lvds1bits[139..0]" (rect 567 1056 644 1073)(font "Intel Clear" ))
-	(pt 648 1072)
-	(pt 544 1072)
-	(bus)
-)
-(connector
 	(pt 536 1056)
 	(pt 648 1056)
 )
@@ -1456,11 +1478,6 @@ refer to the applicable agreement for further details.
 	(text "clklvdsout" (rect 240 648 289 665)(font "Intel Clear" ))
 	(pt 216 664)
 	(pt 320 664)
-)
-(connector
-	(text "clklvdsout" (rect 584 1072 633 1089)(font "Intel Clear" ))
-	(pt 648 1088)
-	(pt 544 1088)
 )
 (connector
 	(text "spitxready" (rect 599 1008 647 1025)(font "Intel Clear" ))
@@ -1517,12 +1534,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "lvds1bitsout" (rect 62 1120 119 1137)(font "Intel Clear" ))
-	(pt 40 1136)
-	(pt 144 1136)
-	(bus)
-)
-(connector
 	(text "lvds1wr" (rect -192 1080 -155 1097)(font "Intel Clear" ))
 	(pt -136 1096)
 	(pt -216 1096)
@@ -1533,14 +1544,9 @@ refer to the applicable agreement for further details.
 	(pt -216 1144)
 )
 (connector
-	(text "lvds1wrfull" (rect 50 1064 104 1081)(font "Intel Clear" ))
+	(text "lvds1wrfull" (rect 58 1064 112 1081)(font "Intel Clear" ))
 	(pt 40 1080)
 	(pt 120 1080)
-)
-(connector
-	(text "lvds1rdempty" (rect 54 1144 120 1161)(font "Intel Clear" ))
-	(pt 40 1160)
-	(pt 120 1160)
 )
 (connector
 	(text "spitx[7..0]" (rect 894 1008 938 1025)(font "Intel Clear" ))
@@ -1552,10 +1558,6 @@ refer to the applicable agreement for further details.
 	(text "spitxdv" (rect 894 1024 927 1041)(font "Intel Clear" ))
 	(pt 880 1040)
 	(pt 968 1040)
-)
-(connector
-	(pt 944 1008)
-	(pt 880 1008)
 )
 (connector
 	(pt 648 712)
@@ -1595,13 +1597,60 @@ refer to the applicable agreement for further details.
 	(pt 528 1104)
 )
 (connector
-	(text "lvds1rdempty" (rect 567 1104 633 1121)(font "Intel Clear" ))
+	(pt 880 1056)
+	(pt 984 1056)
+)
+(connector
+	(text "lvds1wrempty" (rect 56 1080 124 1097)(font "Intel Clear" ))
+	(pt 40 1096)
+	(pt 120 1096)
+)
+(connector
+	(text "lvds1rdfull" (rect 60 1144 111 1161)(font "Intel Clear" ))
+	(pt 40 1160)
+	(pt 120 1160)
+)
+(connector
+	(text "lvds1rdempty" (rect 58 1160 124 1177)(font "Intel Clear" ))
+	(pt 40 1176)
+	(pt 120 1176)
+)
+(connector
+	(text "lvds1wrempty" (rect 567 1104 635 1121)(font "Intel Clear" ))
 	(pt 648 1120)
 	(pt 528 1120)
 )
 (connector
-	(pt 880 1056)
-	(pt 984 1056)
+	(text "lvds1rdfull" (rect 567 1120 618 1137)(font "Intel Clear" ))
+	(pt 648 1136)
+	(pt 528 1136)
+)
+(connector
+	(text "lvds1rdempty" (rect 565 1136 631 1153)(font "Intel Clear" ))
+	(pt 648 1152)
+	(pt 528 1152)
+)
+(connector
+	(text "clksw" (rect 892 992 919 1009)(font "Intel Clear" ))
+	(pt 944 1008)
+	(pt 880 1008)
+)
+(connector
+	(text "lvds1bitsout[139..0]" (rect 551 1056 644 1073)(font "Intel Clear" ))
+	(pt 648 1072)
+	(pt 528 1072)
+	(bus)
+)
+(connector
+	(text "clklvdsout" (rect 568 1072 617 1089)(font "Intel Clear" ))
+	(pt 648 1088)
+	(pt 528 1088)
+)
+(connector
+	(text "lvds1bitsout[139..0]" (rect 62 1120 155 1137)(font "Intel Clear" ))
+	(pt 160 1136)
+	(pt 40 1136)
+	(bus)
 )
 (junction (pt -176 624))
 (text "This is the main pll, chooses between internal and external clock" (rect -128 528 248 547)(font "Intel Clear" (font_size 8)))
