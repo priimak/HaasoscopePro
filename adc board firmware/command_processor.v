@@ -56,12 +56,14 @@ reg [ 7:0]	rx_data[7:0];
 reg [31:0]	length = 0;
 reg [ 2:0]	spistate = 0;
 integer		lvds1bitsfifoout_count = 0;
+reg [16:0]	triggercounter = 0;
+reg 			triggeron = 0;
 
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
 	lvds1wr <= 1'b0;
  end else begin
-	if (lvds1wrused<1020) begin //
+	if (lvds1wrused<1020 && triggeron) begin //
 		lvds1wr <= 1'b1;
 		//lvds1bitsfifoout <= lvds1bits;
 		lvds1bitsfifoout <= {12'd0,lvds1bitsfifoout_count,lvds1bitsfifoout_count,lvds1bitsfifoout_count,lvds1bitsfifoout_count};
@@ -70,6 +72,14 @@ always @ (posedge clklvds or negedge rstn)
 	else begin
 		lvds1wr <= 1'b0;
 	end
+	
+	if (triggercounter<10000) begin
+		triggeron<=1'b1;
+	end
+	else begin
+		triggeron<=1'b0;
+	end
+	triggercounter<=triggercounter+1;
  end
 
 always @ (posedge clk or negedge rstn)
