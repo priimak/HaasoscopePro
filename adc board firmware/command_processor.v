@@ -246,7 +246,7 @@ always @ (posedge clk or negedge rstn)
 		//						 lvds1bits[111:110],lvds1bits[101:100],lvds1bits[91:90],lvds1bits[81:80],
 		//						 4'hf, lvds1bits[131:130],lvds1bits[121:120] };
 				if (~fifotest) begin
-					o_tdata  <= {6'h0, lvds1bitsfifoin[89:80], 6'h0, lvds1bitsfifoin[109:100]};
+					o_tdata  <= {6'h0, lvds1bitsfifoin[129:120], 6'h0, lvds1bitsfifoin[109:100]};
 				end else begin
 					o_tdata  <= {5'd0,lvds1rdused[10:0],lvds1bitsfifoin[15:0]};
 				end
