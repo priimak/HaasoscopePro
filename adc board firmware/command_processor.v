@@ -44,7 +44,9 @@ module command_processor (
 	output reg [139:0] lvds1bitsfifoout, //output bits to fifo
 	input wire [139:0] lvds1bitsfifoin, // input bits from fifo
 	input wire [10:0]	lvds1wrused,
-	input wire [10:0]	lvds1rdused
+	input wire [10:0]	lvds1rdused,
+	
+	input wire			activeclock, clkbad1, clkbad0
 );
 
 integer version = 4; // firmware version
@@ -129,7 +131,7 @@ always @ (posedge clk or negedge rstn)
 		
 		1 : begin // toggles clkswitch
 			clkswitch <= ~clkswitch;
-			o_tdata <= 0+clkswitch;
+			o_tdata <= {7'd0,clkbad1,7'd0,clkbad0,7'd0,activeclock,7'd0,clkswitch};
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
