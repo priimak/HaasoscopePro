@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at rx_calc_crc.v(55): always construct contains both blocking and non-blocking assignments File: C:/gitwork/master/HaasoscopePro/adc board firmware/ftdi245fifo/RTL/fpga_ft232h_example/rx_calc_crc.v Line: 55
+Warning (10268): Verilog HDL information at command_processor.v(94): always construct contains both blocking and non-blocking assignments File: C:/gitwork/master/HaasoscopePro/adc board firmware/command_processor.v Line: 94

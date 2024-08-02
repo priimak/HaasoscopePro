@@ -54,32 +54,42 @@ reg [ 3:0]	state = INIT;
 reg [ 3:0]	rx_counter = 0;
 reg [ 7:0]	rx_data[7:0];
 reg [31:0]	length = 0;
+reg [31:0]	lengthtotake = 0;
 reg [ 2:0]	spistate = 0;
 integer		lvds1bitsfifoout_count = 0;
-reg [16:0]	triggercounter = 0;
-reg 			triggeron = 0;
+reg [31:0]	triggercounter = 0;
+reg 			takingdata = 0;
+reg 			fifotest = 0;
+reg 			triggerlive=0;
 
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
 	lvds1wr <= 1'b0;
  end else begin
-	if (lvds1wrused<1020 && triggeron) begin //
+	if (lvds1wrused<1020 && takingdata) begin //
 		lvds1wr <= 1'b1;
-		//lvds1bitsfifoout <= lvds1bits;
-		lvds1bitsfifoout <= {12'd0,lvds1bitsfifoout_count,lvds1bitsfifoout_count,lvds1bitsfifoout_count,lvds1bitsfifoout_count};
-		lvds1bitsfifoout_count <= lvds1bitsfifoout_count+1;
+		triggercounter<=triggercounter+1;
+		if (~fifotest) begin
+			lvds1bitsfifoout <= lvds1bits;
+		end
+		else begin
+			lvds1bitsfifoout <= {12'd0,lvds1bitsfifoout_count,lvds1bitsfifoout_count,lvds1bitsfifoout_count,lvds1bitsfifoout_count};
+			lvds1bitsfifoout_count <= lvds1bitsfifoout_count+1;
+		end
 	end
 	else begin
 		lvds1wr <= 1'b0;
 	end
 	
-	if (triggercounter<10000) begin
-		triggeron<=1'b1;
+	if (triggercounter<lengthtotake) begin
+		takingdata<=1'b1;
 	end
 	else begin
-		triggeron<=1'b0;
+		takingdata<=1'b0;
+		if (triggerlive) triggercounter<=0;
+		else triggercounter<=1000000000;
 	end
-	triggercounter<=triggercounter+1;
+
  end
 
 always @ (posedge clk or negedge rstn)
@@ -113,7 +123,7 @@ always @ (posedge clk or negedge rstn)
 			
 		0 : begin // send a length of bytes given by the last 4 bytes of the command
 			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
-			o_tdata  <= {rx_data[4]-8'd4, rx_data[4]-8'd3, rx_data[4]-8'd2, rx_data[4]-8'd1 }; // dummy data
+			//o_tdata  <= {rx_data[4]-8'd4, rx_data[4]-8'd3, rx_data[4]-8'd2, rx_data[4]-8'd1 }; // dummy data
 			state <= TX_DATA1;
 		end
 		
@@ -182,6 +192,28 @@ always @ (posedge clk or negedge rstn)
 			endcase
 		end
 		
+		4 : begin // sets fifo test
+			fifotest <= rx_data[1][0]; // last bit of second read byte
+			state <= RX;
+		end
+		
+		5 : begin // sets length to take
+			lengthtotake <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
+			if (triggercounter!=0) begin
+				triggerlive <= 1'b1;
+			end else begin
+				triggerlive <= 1'b0;
+				state <= RX;
+			end
+		end
+		
+		6 : begin // reads fifo used
+			o_tdata <= lvds1rdused;
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
+		end
+		
 		default: // some command we didn't know
 			state <= RX;
 			
@@ -200,20 +232,23 @@ always @ (posedge clk or negedge rstn)
 	
 	TX_DATA1 : begin
 		if (o_tready) begin
-			if (lvds1rdused<4) begin //
+			if (lvds1rdempty) begin //
 				lvds1rd <= 1'b0;
 				o_tvalid <= 1'b0;
 			end
 			else begin
-					lvds1rd <= 1'b1;
-					o_tvalid <= 1'b1;
-		//			o_tdata  <= {lvds1bits[31:30],lvds1bits[21:20],lvds1bits[11:10],lvds1bits[1:0],
-		//							 lvds1bits[71:70],lvds1bits[61:60],lvds1bits[51:50],lvds1bits[41:40],
-		//							 lvds1bits[111:110],lvds1bits[101:100],lvds1bits[91:90],lvds1bits[81:80],
-		//							 4'hf, lvds1bits[131:130],lvds1bits[121:120] };
-		//			o_tdata  <= {6'h0, lvds1bitsfifoin[89:80], 6'h0, lvds1bitsfifoin[109:100]};
+				lvds1rd <= 1'b1;
+				o_tvalid <= 1'b1;
+		//		o_tdata  <= {lvds1bits[31:30],lvds1bits[21:20],lvds1bits[11:10],lvds1bits[1:0],
+		//						 lvds1bits[71:70],lvds1bits[61:60],lvds1bits[51:50],lvds1bits[41:40],
+		//						 lvds1bits[111:110],lvds1bits[101:100],lvds1bits[91:90],lvds1bits[81:80],
+		//						 4'hf, lvds1bits[131:130],lvds1bits[121:120] };
+				if (~fifotest) begin
+					o_tdata  <= {6'h0, lvds1bitsfifoin[89:80], 6'h0, lvds1bitsfifoin[109:100]};
+				end else begin
 					o_tdata  <= {5'd0,lvds1rdused[10:0],lvds1bitsfifoin[15:0]};
-					state <= TX_DATA2;
+				end
+				state <= TX_DATA2;
 			end
 		end
 	end

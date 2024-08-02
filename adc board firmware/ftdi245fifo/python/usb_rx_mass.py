@@ -18,6 +18,8 @@ def oldbytes():
         if len(olddata)==0: break
         print("Old byte0:",olddata[0])
 
+def inttobytes(i): #convert length number to a 4-byte byte array (with type of 'bytes')
+    return [i&0xff, (i>>8)&0xff, (i>>16)&0xff, (i>>24)&0xff]
 def spicommand(name,first,second,third,read,bin=False):
     cs = 1  # which chip to select, ignored for now
     # first byte to send, start of address
@@ -59,6 +61,8 @@ if __name__ == '__main__':
     res = usb.recv(4)
     print("Version",res[3],res[2],res[1],res[0])
 
+    usb.send(bytes([4, 1, 99, 99, 100, 100, 100, 100])) #fifo test (1 is on, 0 is off)
+
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False) #disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
@@ -70,7 +74,7 @@ if __name__ == '__main__':
     spicommand("SYNC_SEL", 0x00, 0x60, 0x11, False)  # swap inputs
     #spicommand("SYNC_SEL", 0x00, 0x60, 0x01, False)  # unswap inputs
 
-    dotest=True
+    dotest=False
     if dotest:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval=0x00
@@ -97,40 +101,45 @@ if __name__ == '__main__':
     #oldbytes()
     debug=False
     dotest=False
+    showbinarydata=False
     last=0
     total_rx_len = 0
     time_start = time.time()
-    testn = 100000
+    testn = 10000
     for i in range (testn):
-        expect_len = 4*randint(1, 1000000) # length to request
-        if debug: print(expect_len%256) # length in first byte
-        txdata = bytes( [ 0,99,99,99,
-            expect_len&0xff, (expect_len>>8)&0xff, (expect_len>>16)&0xff, (expect_len>>24)&0xff ] ) # convert length number to a 4-byte byte array (with type of 'bytes')
+        expect_len = 4*1000 # 4*randint(1, 1000000) # length to request
+
+        usb.send(bytes([5, 99, 99, 99]+ inttobytes(int(expect_len/4)-1)))  # length to take (last 4 bytes)
+
+        usb.send(bytes([6, 99, 99, 99, 100, 100, 100, 100]))  # get fifo used
+        res = usb.recv(4)
+        print("Fifo used", res[3], res[2], res[1]*256+ res[0])
+
+        txdata = bytes([0,99,99,99]+ inttobytes(expect_len)) # length to read
         usb.send(txdata) # send the 4 bytes to usb
         data = usb.recv(expect_len) # recv from usb
         rx_len = len(data)
-        if debug:
-            print(data[3],data[2],data[1],data[0])
         if dotest:
             for p in range(0,int(expect_len/4)):
-                #print(binprint(data[4*p+3]),binprint(data[4*p+2]),binprint(data[4*p+1]),binprint(data[4*p+0])
-                #if True:
-                if data[4 * p + 1]*256+data[4 * p + 0] -1 != last and last!=255*256+255:
-                    print(int(last/256),last%256)
+                if showbinarydata:
+                    print(binprint(data[4*p+3]),binprint(data[4*p+2]),binprint(data[4*p+1]),binprint(data[4*p+0]))
+                if debug:
+                #if data[4 * p + 1]*256+data[4 * p + 0] -1 != last and last!=255*256+255 and debug:
+                    #print(int(last/256),last%256)
                     print(data[4 * p + 3], data[4 * p + 2], data[4 * p + 1], data[4 * p + 0])
-                last = data[4 * p + 1]*256+data[4 * p + 0]
+                #if debug: last = data[4 * p + 1]*256+data[4 * p + 0]
         total_rx_len += rx_len
         time_total = time.time() - time_start
         data_rate = total_rx_len / (time_total + 0.001) / 1e3
         evt_rate = i / (time_total + 0.001)
         if i%1==0:
-            print(data[3], data[2], data[1], data[0])
+            #print(data[3], data[2], data[1], data[0])
             print('[%d/%d]   rx_len=%d   total_rx_len=%d   avg_evt_rate=%f Hz   avg_data_rate=%.0f kB/s' % (i, testn, rx_len, total_rx_len, evt_rate, data_rate) )
         if expect_len != rx_len:
             print(data[3],data[2],data[1],data[0])
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len) )
             break
-        #time.sleep(1)
+        #time.sleep(.1)
 
     oldbytes()
     usb.close()
