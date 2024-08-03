@@ -78,7 +78,7 @@ always @ (posedge clklvds or negedge rstn)
  end else begin
 	if (lvds1wrused<1020 && takingdata) begin //
 		lvds1wr <= 1'b1;
-		triggercounter<=triggercounter+1;
+		triggercounter<=triggercounter+16'd1;
 		if (~fifotest) begin
 			lvds1bitsfifoout <= lvds1bits;
 		end
@@ -97,7 +97,7 @@ always @ (posedge clklvds or negedge rstn)
 	else begin
 		takingdata<=1'b0;
 		if (triggerlive2) triggercounter<=0;
-		else triggercounter<=-1;
+		else triggercounter<=-16'd1;
 	end
 
  end
@@ -232,7 +232,7 @@ always @ (posedge clk or negedge rstn)
 	
 	TX_DATA_CONST : if (o_tready) begin
 		if (length >= 4) begin
-			length <= length - 4;
+			length <= length - 16'd4;
 		end else begin
 			length <= 0;
 			o_tvalid <= 1'b0;
@@ -268,7 +268,7 @@ always @ (posedge clk or negedge rstn)
 		if (o_tready) begin
 			o_tvalid <= 1'b0;
 			if (length >= 5) begin
-				length <= length - 4;
+				length <= length - 16'd4;
 				state <= TX_DATA1;
 			end 
 			else begin
