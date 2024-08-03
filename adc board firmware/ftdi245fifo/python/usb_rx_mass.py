@@ -110,12 +110,12 @@ if __name__ == '__main__':
     for i in range (testn):
         expect_len = 4*1000 # length to request
 
+        usb.send(bytes([5, 99, 99, 99]+ inttobytes(int(expect_len/4)-1)))  # length to take (last 4 bytes)
+
         if debug:
             usb.send(bytes([6, 99, 99, 99, 100, 100, 100, 100]))  # get fifo used
             res = usb.recv(4)
             print("Fifo used", res[3], res[2], res[1] * 256 + res[0])
-
-        usb.send(bytes([5, 99, 99, 99]+ inttobytes(int(expect_len/4)-1)))  # length to take (last 4 bytes)
 
         txdata = bytes([0,99,99,99]+ inttobytes(expect_len)) # length to read
         usb.send(txdata) # send the 4 bytes to usb
@@ -140,7 +140,7 @@ if __name__ == '__main__':
             print(data[3],data[2],data[1],data[0])
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len) )
             #break
-        time.sleep(1)
+        time.sleep(2)
 
     oldbytes()
     usb.close()

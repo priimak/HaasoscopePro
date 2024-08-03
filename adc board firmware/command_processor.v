@@ -51,18 +51,26 @@ module command_processor (
 
 integer version = 4; // firmware version
 
+//variables in clk domain
 localparam [3:0] INIT = 4'd0, RX = 4'd1, PROCESS = 4'd2, TX_DATA_CONST = 4'd3, TX_DATA1  = 4'd4, TX_DATA2  = 4'd5;
 reg [ 3:0]	state = INIT;
 reg [ 3:0]	rx_counter = 0;
 reg [ 7:0]	rx_data[7:0];
-reg [31:0]	length = 0;
-reg [31:0]	lengthtotake = 0;
+reg [15:0]	length = 0;
 reg [ 2:0]	spistate = 0;
+
+//variables in clklvds domain
 integer		lvds1bitsfifoout_count = 0;
-reg [31:0]	triggercounter = 0;
+reg [15:0]	triggercounter = 0;
 reg 			takingdata = 0;
 reg 			fifotest = 0;
-reg 			triggerlive=0;
+reg [15:0]	lengthtotake=0, lengthtotake2=0;
+reg 			triggerlive=0, triggerlive2=0;
+
+always @ (posedge clklvds) begin
+	triggerlive2 <= triggerlive;
+	lengthtotake2 <= lengthtotake;
+end
 
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
@@ -83,13 +91,13 @@ always @ (posedge clklvds or negedge rstn)
 		lvds1wr <= 1'b0;
 	end
 	
-	if (triggercounter<lengthtotake) begin
+	if (triggercounter<lengthtotake2) begin
 		takingdata<=1'b1;
 	end
 	else begin
 		takingdata<=1'b0;
-		if (triggerlive) triggercounter<=0;
-		else triggercounter<=1000000000;
+		if (triggerlive2) triggercounter<=0;
+		else triggercounter<=-1;
 	end
 
  end
@@ -124,7 +132,7 @@ always @ (posedge clk or negedge rstn)
 		case (rx_data[0])
 			
 		0 : begin // send a length of bytes given by the last 4 bytes of the command
-			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
+			length <= {rx_data[5],rx_data[4]};
 			//o_tdata  <= {rx_data[4]-8'd4, rx_data[4]-8'd3, rx_data[4]-8'd2, rx_data[4]-8'd1 }; // dummy data
 			state <= TX_DATA1;
 		end
@@ -200,7 +208,7 @@ always @ (posedge clk or negedge rstn)
 		end
 		
 		5 : begin // sets length to take
-			lengthtotake <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
+			lengthtotake <= {rx_data[5],rx_data[4]};
 			if (triggercounter!=0) begin
 				triggerlive <= 1'b1;
 			end else begin

@@ -13,5 +13,9 @@ derive_clock_uncertainty -add
 set_clock_groups -asynchronous -group {clk50 *pll1|clk[0]* *pll1|clk[1]* *pll1|clk[2]*} -group {ftdi_clk}
 
 #IO constraints
-set_max_delay -to [get_ports ftdi_*] 8.333
+set_max_delay -to [get_ports ftdi_*] 10
 set_min_delay -to [get_ports ftdi_*] 0
+set_max_delay -from [get_ports ftdi_*] 10
+set_min_delay -from [get_ports ftdi_*] 0
+set_max_delay -from [get_ports lvds1in*] 10
+set_min_delay -from [get_ports lvds1in*] 0

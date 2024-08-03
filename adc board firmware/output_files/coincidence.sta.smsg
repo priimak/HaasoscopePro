@@ -1,4 +1,2 @@
-Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *phasedone_state* could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/altera/18.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
 Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is not an object ID File: C:/altera/18.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
-Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *internal_phasestep* could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/altera/18.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
 Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is not an object ID File: C:/altera/18.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
