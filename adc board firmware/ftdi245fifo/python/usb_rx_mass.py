@@ -19,8 +19,8 @@ def oldbytes():
 
 def fifoused():
     usb.send(bytes([4, 99, 99, 99, 100, 100, 100, 100]))  # get fifo used
-    res = usb.recv(4)
-    print("Fifo used", res[3], res[2], res[1] * 256 + res[0])
+    tres = usb.recv(4)
+    print("Fifo used", tres[3], tres[2], tres[1] * 256 + tres[0])
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
 def spicommand(name, first, second, third, read, show_bin=False):
