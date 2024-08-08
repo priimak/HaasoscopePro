@@ -5,6 +5,10 @@
 <pin name="clkswitch" direction="input" scope="external"  />
 <pin name="inclk0" direction="input" scope="external" source="clock"  />
 <pin name="inclk1" direction="input" scope="external" source="clock"  />
+<pin name="phasecounterselect[2..0]" direction="input" scope="external"  />
+<pin name="phasestep" direction="input" scope="external"  />
+<pin name="phaseupdown" direction="input" scope="external"  />
+<pin name="scanclk" direction="input" scope="external" source="clock"  />
 <pin name="activeclock" direction="output" scope="external"  />
 <pin name="c0" direction="output" scope="external" source="clock"  />
 <pin name="c1" direction="output" scope="external" source="clock"  />
@@ -12,6 +16,7 @@
 <pin name="clkbad0" direction="output" scope="external"  />
 <pin name="clkbad1" direction="output" scope="external"  />
 <pin name="locked" direction="output" scope="external"  />
+<pin name="phasedone" direction="output" scope="external"  />
 
 </global>
 </pinplan>

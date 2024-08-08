@@ -104,13 +104,13 @@ if __name__ == '__main__':
 
     debug=True
     debugprint=True
-    showbinarydata=False
+    showbinarydata=True
     last=0
     total_rx_len = 0
     time_start = time.time()
-    testn = 5
+    testn = 5000
     for i in range (testn):
-        expect_samples = 4
+        expect_samples = 40
         expect_len = expect_samples*2*16 # length to request
 
         if debug: fifoused()
