@@ -448,15 +448,15 @@ class MainWindow(TemplateBaseClass):
                     if n<8: bit=getbit(data[2*p+0], n)
                     else: bit=getbit(data[2*p+1], n-8)
                     #if bit and bb<12: val=val+pow(2,bb)
-                    if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
+                    if bit and bb < 11: val = val + pow(2, bb)
                     bb=bb+1
                     if self.debug and self.debugprint:
                         if self.showbinarydata:
                             print(binprint(data[2 * p + 1]), binprint(data[2 * p + 0]), val)
                         else:
                             print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
-                self.xydata[chan][1][s*10+n] = val
-        time.sleep(.1)
+                self.xydata[chan][1][s*10+(9-n)] = val
+        time.sleep(1)
 
         self.xydata[chan][0] = np.array([range(0,1000)])
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
