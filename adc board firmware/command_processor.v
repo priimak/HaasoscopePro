@@ -223,9 +223,8 @@ always @ (posedge clk or negedge rstn)
 		end
 		
 		6 : begin
-			//phasecounterselect=3'b000; // all clocks - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10
-			phasecounterselect=3'b011;// 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. 
-			phaseupdown=1'b1; // up
+			phasecounterselect=rx_data[2][2:0];// 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. 
+			phaseupdown=rx_data[3][0]; // up or down
 			scanclk=1'b0; // start low
 			phasestep=1'b1; // assert!
 			pllclock_counter=0;
@@ -299,11 +298,11 @@ always @ (posedge clk or negedge rstn)
 	end
 	
 	PLLCLOCK : begin // to step the clock phase, you have to toggle scanclk a few times
-		pllclock_counter=pllclock_counter+1;
+		pllclock_counter=pllclock_counter+8'd1;
 		if (pllclock_counter[4]) begin
 			scanclk = ~scanclk;
 			pllclock_counter=0;
-			scanclk_cycles=scanclk_cycles+1;
+			scanclk_cycles=scanclk_cycles+8'd1;
 			if (scanclk_cycles>5) phasestep=1'b0; // deassert!
 			if (scanclk_cycles>7) state=RX;
 		end

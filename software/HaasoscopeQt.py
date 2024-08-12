@@ -73,11 +73,11 @@ def board_setup(dopattern=False):
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval = 0x00
         usrval2 = 0xff
-        spicommand2("UPAT0", 0x01, 0x80, usrval, usrval, False)  # set pattern sample 0
-        spicommand2("UPAT1", 0x01, 0x82, usrval, usrval, False)  # set pattern sample 1
+        spicommand2("UPAT0", 0x01, 0x80, usrval2, usrval2, False)  # set pattern sample 0
+        spicommand2("UPAT1", 0x01, 0x82, usrval2, usrval2, False)  # set pattern sample 1
         spicommand2("UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
-        spicommand2("UPAT3", 0x01, 0x86, usrval2, usrval2, False)  # set pattern sample 3
-        spicommand2("UPAT4", 0x01, 0x88, usrval2, usrval2, False)  # set pattern sample 4
+        spicommand2("UPAT3", 0x01, 0x86, usrval, usrval, False)  # set pattern sample 3
+        spicommand2("UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
         spicommand2("UPAT5", 0x01, 0x8a, usrval, usrval, False)  # set pattern sample 5
         spicommand2("UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
         spicommand2("UPAT7", 0x01, 0x8e, usrval, usrval, False)  # set pattern sample 7
@@ -103,7 +103,7 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     total_rx_len = 0
     time_start = time.time()
-    dopattern = False
+    dopattern = True
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -189,11 +189,16 @@ class MainWindow(TemplateBaseClass):
             if not self.gain[self.selectedchannel]:
                 self.tellswitchgain(self.selectedchannel)
 
+    # for 3rd byte, 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4
+    # for 4th byte, 1 is up, 0 is down
     def uppos(self):
-        usb.send(bytes([6, 99, 99, 99, 100, 100, 100, 100]))  # get fifo used
+        usb.send(bytes([6, 99, 3, 1, 100, 100, 100, 100])) #c1
+        #usb.send(bytes([6, 99, 4, 1, 100, 100, 100, 100])) #c2
         print("phase up")
     def downpos(self):
-        self.ui.dacBox.setValue(self.chanlevel[self.selectedchannel].astype(int))
+        usb.send(bytes([6, 99, 3, 0, 100, 100, 100, 100])) #c1
+        #usb.send(bytes([6, 99, 4, 0, 100, 100, 100, 100])) #c2
+        print("phase down")
 
 
     def wheelEvent(self, event): #QWheelEvent
@@ -440,26 +445,31 @@ class MainWindow(TemplateBaseClass):
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len))
             # break
         for n in range(10): # the bit to get
+            nbadclk=0
             for s in range(0, int(expect_samples)):
-                if self.debug and self.debugprint: print("sample", s, "bit", n, "------------------------------------")
+                if self.debug and self.debugprint and s==99 and n==9: print("sample", s, "bit", n, "------------------------------------")
                 bb=0
                 val=0
-                for p in range(16 * s, 16 * (s + 1)):
+                for p in range(16 * s, 16 * (s + 1)): #loop over the 16 channels of the sample
                     if n<8: bit=getbit(data[2*p+0], n)
                     else: bit=getbit(data[2*p+1], n-8)
                     #if bit and bb<12: val=val+pow(2,bb)
-                    if bit and bb < 11: val = val + pow(2, bb)
+                    if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
                     bb=bb+1
                     if self.debug and self.debugprint:
-                        if self.showbinarydata:
-                            print(binprint(data[2 * p + 1]), binprint(data[2 * p + 0]), val)
-                        else:
-                            print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
+                        if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: nbadclk=nbadclk+1
+                        if s==99 and n==9:
+                            if self.showbinarydata:
+                                print(binprint(data[2 * p + 1]), binprint(data[2 * p + 0]), val,nbadclk)
+                            else:
+                                print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
                 self.xydata[chan][1][s*10+(9-n)] = val
         time.sleep(1)
 
         self.xydata[chan][0] = np.array([range(0,1000)])
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
+
+        return rx_len
 
     def chantext(self):
         return "some texttttt"
@@ -485,7 +495,7 @@ class MainWindow(TemplateBaseClass):
         if self.paused: time.sleep(.1)
         else:
             try:
-                self.getchannels()
+                rx_len=self.getchannels()
             except DeviceError:
                 print("Device error")
                 sys.exit(1)
@@ -497,7 +507,7 @@ class MainWindow(TemplateBaseClass):
                 self.oldtime=now
                 lastrate = round(self.tinterval/elapsedtime,2)
                 nchan = self.num_chan_per_board
-                print(self.nevents,"events,",lastrate,"Hz",round(lastrate*self.num_board*self.num_samples*nchan/1e6,3),"MB/s")
+                print(self.nevents,"events,",lastrate,"Hz",round(lastrate*rx_len/1e6,3),"MB/s")
                 if lastrate>40: self.tinterval=500.
                 else: self.tinterval=100.
                 self.oldnevents=self.nevents
