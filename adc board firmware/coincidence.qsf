@@ -202,7 +202,6 @@ set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_assert.v
-set_global_assignment -name QSYS_FILE clkcontrol1.qsys
 set_global_assignment -name QIP_FILE pll2.qip
 set_global_assignment -name QIP_FILE lvds1.qip
 set_global_assignment -name QIP_FILE fifo1.qip
