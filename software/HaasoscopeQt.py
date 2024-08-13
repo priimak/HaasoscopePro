@@ -425,6 +425,7 @@ class MainWindow(TemplateBaseClass):
     oldnevents=0
     tinterval=100.
     oldtime=time.time()
+    nbadclk = 0
 
     def getchannels(self):
         chan=0
@@ -445,7 +446,7 @@ class MainWindow(TemplateBaseClass):
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len))
             # break
         for n in range(10): # the bit to get
-            nbadclk=0
+            self.nbadclk=0
             for s in range(0, int(expect_samples)):
                 if self.debug and self.debugprint and s==99 and n==9: print("sample", s, "bit", n, "------------------------------------")
                 bb=0
@@ -457,11 +458,11 @@ class MainWindow(TemplateBaseClass):
                     #if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
                     if bit and bb==11: val = val - pow(2,bb)
                     bb=bb+1
+                    if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
                     if self.debug and self.debugprint:
-                        if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: nbadclk=nbadclk+1
                         if s==99 and n==9:
                             if self.showbinarydata:
-                                print(binprint(data[2 * p + 1]), binprint(data[2 * p + 0]), val,nbadclk)
+                                print(binprint(data[2 * p + 1]), binprint(data[2 * p + 0]), val,self.nbadclk)
                             else:
                                 print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
                 self.xydata[chan][1][s*10+(9-n)] = val
@@ -475,7 +476,7 @@ class MainWindow(TemplateBaseClass):
         return rx_len
 
     def chantext(self):
-        return "some texttttt"
+        return "nbadclk "+str(self.nbadclk)
 
     def setup_connections(self):
         print("Starting")
