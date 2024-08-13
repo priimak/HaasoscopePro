@@ -71,10 +71,11 @@ reg [ 2:0]	spistate = 0;
 reg [3:0]	channel = 0;
 
 //variables in clklvds domain
+reg [ 2:0]  acqstate = 0;
 reg [15:0]	triggercounter = 0;
-reg 			takingdata = 0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
+reg signed [11:0]  samplevalue =0, lowerthresh=-10, upperthresh=10;
 
 always @ (posedge clklvds) begin
 	triggerlive2 <= triggerlive;
@@ -84,26 +85,40 @@ end
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
 	lvds1wr <= 1'b0;
+	acqstate <= 3'd0;
  end else begin
-	if (lvds1wrused<1020 && takingdata) begin //
-		lvds1wr <= 1'b1;
-		triggercounter<=triggercounter+16'd1;
+	samplevalue <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
+	case (acqstate)
+	0 : begin // ready
+		triggercounter <= -16'd1;
+		lvds1wr <= 1'b0;
+		if (triggerlive2) begin
+			triggercounter<=0;
+			acqstate <= 3'd1;
+		end
+	end
+	1 : begin // ready for first part of trigger condition to be met
+		if (samplevalue<lowerthresh) acqstate <= 3'd2;
+	end
+	2 : begin // ready for second part of trigger condition to be met
+		if (samplevalue>upperthresh) acqstate <= 3'd3;
+	end
+	3 : begin // taking data
 		lvds1bitsfifoout <= lvds1bits;
 		//lvds1bitsfifoout <= {14{triggercounter[9:0]}}; // for testing the queue
+		if (lvds1wrused<1020 && triggercounter<lengthtotake2) begin
+			lvds1wr <= 1'b1;
+			triggercounter<=triggercounter+16'd1;
+		end
+		else begin
+			lvds1wr <= 1'b0;
+			acqstate <= 3'd0;
+		end
 	end
-	else begin
-		lvds1wr <= 1'b0;
+	default : begin
+		acqstate <= 3'd0;
 	end
-	
-	if (triggercounter<lengthtotake2) begin
-		takingdata<=1'b1;
-	end
-	else begin
-		takingdata<=1'b0;
-		if (triggerlive2) triggercounter<=0;
-		else triggercounter<=-16'd1;
-	end
-
+	endcase
  end
 
 always @ (posedge clk or negedge rstn)
@@ -214,7 +229,7 @@ always @ (posedge clk or negedge rstn)
 		
 		5 : begin // sets length to take
 			lengthtotake <= {rx_data[5],rx_data[4]};
-			if (triggercounter!=0) begin
+			if (triggercounter == -16'd1) begin
 				triggerlive <= 1'b1;
 			end else begin
 				triggerlive <= 1'b0;

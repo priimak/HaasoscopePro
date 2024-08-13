@@ -433,7 +433,7 @@ class MainWindow(TemplateBaseClass):
         expect_len = expect_samples * 2 * 16  # length to request
 
         if self.debug: fifoused()
-        usb.send(bytes([5, 99, 99, 99] + inttobytes(expect_samples)))  # length to take (last 4 bytes)
+        usb.send(bytes([5, 99, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
         if self.debug: fifoused()
 
         usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
