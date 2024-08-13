@@ -276,22 +276,6 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 952 640 1128 656)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "ftdi_resetn" (rect 90 0 143 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
 	(rect 952 656 1128 672)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "ftdi_pwrsav" (rect 90 0 147 12)(font "Arial" ))
@@ -391,23 +375,6 @@ refer to the applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 	(annotation_block (location)(rect 456 552 512 576))
-)
-(pin
-	(output)
-	(rect 304 592 480 608)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "clk1out" (rect 90 0 125 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 480 608 544 632))
 )
 (pin
 	(bidir)
@@ -1871,14 +1838,6 @@ refer to the applicable agreement for further details.
 	(text "clklvds" (rect 240 632 274 649)(font "Intel Clear" ))
 	(pt 216 648)
 	(pt 288 648)
-)
-(connector
-	(pt 288 648)
-	(pt 288 600)
-)
-(connector
-	(pt 288 600)
-	(pt 304 600)
 )
 (connector
 	(text "clk0" (rect 240 616 260 633)(font "Intel Clear" ))

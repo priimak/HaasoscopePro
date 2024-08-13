@@ -103,7 +103,7 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     total_rx_len = 0
     time_start = time.time()
-    dopattern = True
+    dopattern = False
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -453,8 +453,9 @@ class MainWindow(TemplateBaseClass):
                 for p in range(16 * s, 16 * (s + 1)): #loop over the 16 channels of the sample
                     if n<8: bit=getbit(data[2*p+0], n)
                     else: bit=getbit(data[2*p+1], n-8)
-                    #if bit and bb<12: val=val+pow(2,bb)
-                    if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
+                    if bit and bb<11: val=val+pow(2,bb)
+                    #if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
+                    if bit and bb==11: val = val - pow(2,bb)
                     bb=bb+1
                     if self.debug and self.debugprint:
                         if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: nbadclk=nbadclk+1
@@ -464,7 +465,7 @@ class MainWindow(TemplateBaseClass):
                             else:
                                 print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
                 self.xydata[chan][1][s*10+(9-n)] = val
-        time.sleep(1)
+        time.sleep(.1); oldbytes()
 
         self.xydata[chan][0] = np.array([range(0,1000)])
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
