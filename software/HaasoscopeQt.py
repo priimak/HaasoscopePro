@@ -7,10 +7,7 @@ from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 #################
 
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
-usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=
-                                        (('FTX232H', 'Haasoscope USB2'),
-                                         ('FTX232H', 'USB <-> Serial Converter'),
-                                         ('FT60X', 'FTDI SuperSpeed-FIFO Bridge')))
+usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','Haasoscope USB2'),('FT60X','Haasoscope USB3')))
 
 def binprint(x):
     return bin(x)[2:].zfill(8)
@@ -57,11 +54,14 @@ def spicommand2(name,first,second,third,fourth,read):
     if read: print("SPI read:"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
     else: print("SPI write:"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
+#address 1 2, value 1 (2)
 def board_setup(dopattern=False):
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
     spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode
+    spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
+    #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
 
     # spicommand("SYNC_SEL",0x02,0x01,0x0a,False) # use LSYNC_N (software), 2's complement
     spicommand("SYNC_SEL", 0x02, 0x01, 0x08, False)  # use LSYNC_N (software), offset binary
@@ -98,7 +98,7 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
-    debug = True
+    debug = False
     debugprint = True
     showbinarydata = True
     total_rx_len = 0
@@ -465,7 +465,9 @@ class MainWindow(TemplateBaseClass):
                             else:
                                 print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
                 self.xydata[chan][1][s*10+(9-n)] = val
-        time.sleep(.1); oldbytes()
+        if self.debug:
+            time.sleep(.1)
+            oldbytes()
 
         self.xydata[chan][0] = np.array([range(0,1000)])
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
