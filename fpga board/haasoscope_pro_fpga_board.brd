@@ -3,26 +3,26 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.01" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="top" color="12" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="topgnd" color="12" fill="5" visible="no" active="yes"/>
+<layer number="2" name="topgnd" color="12" fill="5" visible="yes" active="yes"/>
 <layer number="3" name="sig2" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="4" name="sig2gnd" color="4" fill="5" visible="no" active="yes"/>
-<layer number="5" name="pow1" color="7" fill="8" visible="no" active="yes"/>
+<layer number="4" name="sig2gnd" color="4" fill="5" visible="yes" active="yes"/>
+<layer number="5" name="pow1" color="7" fill="8" visible="yes" active="yes"/>
 <layer number="6" name="pwr2" color="16" fill="8" visible="no" active="no"/>
 <layer number="7" name="sig7gnd" color="15" fill="5" visible="no" active="no"/>
 <layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
 <layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
 <layer number="10" name="sig7" color="31" fill="1" visible="no" active="no"/>
 <layer number="11" name="sig6gnd" color="11" fill="5" visible="no" active="no"/>
-<layer number="12" name="pow2" color="30" fill="8" visible="no" active="yes"/>
-<layer number="13" name="sig4gnd" color="1" fill="5" visible="no" active="yes"/>
+<layer number="12" name="pow2" color="30" fill="8" visible="yes" active="yes"/>
+<layer number="13" name="sig4gnd" color="1" fill="5" visible="yes" active="yes"/>
 <layer number="14" name="sig4" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="15" name="sig5gnd" color="5" fill="5" visible="no" active="yes"/>
+<layer number="15" name="sig5gnd" color="5" fill="5" visible="yes" active="yes"/>
 <layer number="16" name="sig5" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -58,8 +58,8 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="3" fill="1" visible="no" active="no"/>
@@ -2697,6 +2697,14 @@ Example Datasheet</description>
 <element name="JP342" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X01" package3d_urn="urn:adsk.eagle:package:22485/2" value="1" x="51.5" y="-35.5" smashed="yes">
 <attribute name="POPULARITY" value="64" x="38.5" y="-80.5" size="1.778" layer="27" display="off"/>
 </element>
+<element name="R10" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="-28" y="-11.5" smashed="yes">
+<attribute name="NAME" x="-29.27" y="-10" size="0.8128" layer="25" font="vector"/>
+<attribute name="VALUE" x="-29.27" y="-11" size="0.8128" layer="27" font="vector"/>
+</element>
+<element name="R11" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="-28" y="-14.5" smashed="yes">
+<attribute name="NAME" x="-29.27" y="-13" size="0.8128" layer="25" font="vector"/>
+<attribute name="VALUE" x="-29.27" y="-14" size="0.8128" layer="27" font="vector"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -3200,9 +3208,10 @@ Example Datasheet</description>
 <wire x1="-38.5" y1="10.5" x2="-38.5" y2="6" width="0.1524" layer="1"/>
 <wire x1="-34.5" y1="14.5" x2="-38.5" y2="10.5" width="0.1524" layer="1"/>
 <wire x1="-33" y1="14.5" x2="-34.5" y2="14.5" width="0.1524" layer="1"/>
-<wire x1="-35.25" y1="-10.75" x2="-35.25" y2="-11.25" width="0.1524" layer="1"/>
-<wire x1="-36.5" y1="-9.5" x2="-35.25" y2="-10.75" width="0.1524" layer="1"/>
-<wire x1="-36.5" y1="0.5" x2="-36.5" y2="-9.5" width="0.1524" layer="1"/>
+<wire x1="-35.25" y1="-10.88" x2="-35.25" y2="-11.25" width="0.1524" layer="1"/>
+<wire x1="-36.5" y1="-9.63" x2="-35.5" y2="-10.63" width="0.1524" layer="1"/>
+<wire x1="-35.5" y1="-10.63" x2="-35.25" y2="-10.88" width="0.1524" layer="1"/>
+<wire x1="-36.5" y1="0.5" x2="-36.5" y2="-9.63" width="0.1524" layer="1"/>
 <wire x1="-38" y1="2" x2="-36.5" y2="0.5" width="0.1524" layer="1"/>
 <wire x1="-38" y1="5.5" x2="-38" y2="2" width="0.1524" layer="1"/>
 <wire x1="-38.5" y1="6" x2="-38" y2="5.5" width="0.1524" layer="1"/>
@@ -3235,6 +3244,11 @@ Example Datasheet</description>
 <wire x1="-23" y1="24.5" x2="-33" y2="14.5" width="0.1524" layer="1"/>
 <via x="14" y="18.5" extent="1-16" drill="0.2"/>
 <via x="22" y="54.5" extent="1-16" drill="0.2"/>
+<contactref element="R10" pad="P$2"/>
+<contactref element="R11" pad="P$2"/>
+<wire x1="-27.5" y1="-14.5" x2="-27.5" y2="-11.5" width="0.1524" layer="1"/>
+<wire x1="-27.5" y1="-11.5" x2="-28.37" y2="-10.63" width="0.1524" layer="1"/>
+<wire x1="-28.37" y1="-10.63" x2="-35.5" y2="-10.63" width="0.1524" layer="1"/>
 </signal>
 <signal name="IO153">
 <contactref element="IC1" pad="M1"/>
@@ -6114,6 +6128,10 @@ Example Datasheet</description>
 <wire x1="-37.75" y1="-14" x2="-36.75" y2="-13" width="0.0889" layer="5"/>
 <wire x1="-37.75" y1="-14" x2="-37.77" y2="-14" width="0.0889" layer="5"/>
 <via x="2.75" y="11.25" extent="1-16" drill="0.2"/>
+<contactref element="R10" pad="P$1"/>
+<wire x1="-28.5" y1="-11.5" x2="-29.733" y2="-12.733" width="0.1524" layer="1"/>
+<wire x1="-36.503" y1="-12.733" x2="-37.77" y2="-14" width="0.1524" layer="1"/>
+<wire x1="-29.733" y1="-12.733" x2="-36.503" y2="-12.733" width="0.1524" layer="1"/>
 </signal>
 <signal name="TCK">
 <contactref element="IC1" pad="L2"/>
@@ -6196,8 +6214,6 @@ Example Datasheet</description>
 <wire x1="17.8222" y1="12.1778" x2="17.5" y2="12.5" width="0.0889" layer="3"/>
 <wire x1="18.57365" y1="12.1778" x2="17.8222" y2="12.1778" width="0.0889" layer="3"/>
 <wire x1="24.5745625" y1="12.04925" x2="18.7022" y2="12.04925" width="0.0889" layer="3"/>
-<wire x1="-37.77" y1="-17.8601" x2="-37.77" y2="-19.08" width="0.0889" layer="3"/>
-<wire x1="-36.83655" y1="-16.92665" x2="-37.77" y2="-17.8601" width="0.0889" layer="3"/>
 <wire x1="25" y1="12" x2="25.5" y2="12.5" width="0.0889" layer="5"/>
 <wire x1="14.5" y1="12" x2="25" y2="12" width="0.0889" layer="5"/>
 <wire x1="12" y1="14.5" x2="14.5" y2="12" width="0.0889" layer="5"/>
@@ -6208,6 +6224,12 @@ Example Datasheet</description>
 <wire x1="-37.75" y1="-19" x2="-36.75" y2="-18" width="0.0889" layer="14"/>
 <wire x1="-37.75" y1="-19" x2="-37.77" y2="-19.08" width="0.0889" layer="14"/>
 <via x="12" y="14.5" extent="1-16" drill="0.2"/>
+<contactref element="R11" pad="P$1"/>
+<wire x1="-33.19" y1="-14.5" x2="-28.5" y2="-14.5" width="0.1524" layer="1"/>
+<wire x1="-37.77" y1="-19.08" x2="-36.503" y2="-17.813" width="0.1524" layer="1"/>
+<wire x1="-33.977" y1="-15.287" x2="-33.19" y2="-14.5" width="0.1524" layer="1"/>
+<wire x1="-36.503" y1="-17.813" x2="-36.503" y2="-15.287" width="0.1524" layer="1"/>
+<wire x1="-36.503" y1="-15.287" x2="-33.977" y2="-15.287" width="0.1524" layer="1"/>
 </signal>
 <signal name="IO148">
 <contactref element="IC1" pad="L6"/>
