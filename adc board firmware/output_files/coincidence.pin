@@ -231,10 +231,10 @@ lvds1in[13](n)               : K16       : input  : LVDS              :         
 lvds1in[1](n)                : L1        : input  : LVDS              :         : 2         : Y              
 lvds1in[1]                   : L2        : input  : LVDS              :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 2         :                
+spiampmiso                   : L4        : input  : 2.5 V             :         : 2         : Y              
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
 lvds1in[8](n)                : L6        : input  : LVDS              :         : 2         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 3         :                
+spiampsdi                    : L7        : output : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L9        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L10       :        :                   :         : 4         :                
@@ -249,13 +249,13 @@ GND+                         : M2        :        :                   :         
 VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
-spicsadc                     : M6        : output : 2.5 V             :         : 3         : Y              
+spiadccs                     : M6        : output : 2.5 V             :         : 3         : Y              
 lvds1in[4]                   : M7        : input  : LVDS              :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 3         :                
 lvds1in[5]                   : M9        : input  : LVDS              :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M10       :        :                   :         : 4         :                
+spiampscs                    : M10       : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M11       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M12       :        :                   :         : 5         :                
+spiampsclk                   : M12       : output : 2.5 V             :         : 5         : Y              
 GND                          : M13       : gnd    :                   :         :           :                
 VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
 GND+                         : M15       :        :                   :         : 5         :                
@@ -272,7 +272,7 @@ lvds1in[5](n)                : N9        : input  : LVDS              :         
 GND                          : N10       : gnd    :                   :         :           :                
 spi_mosi                     : N11       : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 4         :                
-spi_miso                     : N13       : input  : 2.5 V             :         : 5         : Y              
+spiadcmiso                   : N13       : input  : 2.5 V             :         : 5         : Y              
 spi_clk                      : N14       : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N15       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 5         :                
