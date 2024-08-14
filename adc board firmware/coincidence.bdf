@@ -255,6 +255,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -448 528 -384 552))
 )
 (pin
 	(output)
@@ -1605,7 +1606,7 @@ refer to the applicable agreement for further details.
 	(drawing
 		(text "Cyclone IV E" (rect 276 201 342 213)(font "Arial" ))
 		(text "inclk0 frequency: 50.000 MHz" (rect 130 84 277 96)(font "Arial" ))
-		(text "inclk1 frequency: 60.000 MHz" (rect 130 97 277 109)(font "Arial" ))
+		(text "inclk1 frequency: 50.000 MHz" (rect 130 97 277 109)(font "Arial" ))
 		(text "Operation Mode: Normal" (rect 130 110 249 122)(font "Arial" ))
 		(text "Clk " (rect 131 131 151 143)(font "Arial" ))
 		(text "Ratio" (rect 152 131 177 143)(font "Arial" ))

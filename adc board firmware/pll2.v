@@ -155,7 +155,7 @@ module pll2 (
 		altpll_component.clk2_phase_shift = "1",
 		altpll_component.compensate_clock = "CLK0",
 		altpll_component.inclk0_input_frequency = 20000,
-		altpll_component.inclk1_input_frequency = 16666,
+		altpll_component.inclk1_input_frequency = 20000,
 		altpll_component.intended_device_family = "Cyclone IV E",
 		altpll_component.lpm_hint = "CBX_MODULE_PREFIX=pll2",
 		altpll_component.lpm_type = "altpll",
@@ -248,7 +248,7 @@ endmodule
 // Retrieval info: PRIVATE: HAS_MANUAL_SWITCHOVER STRING "1"
 // Retrieval info: PRIVATE: INCLK0_FREQ_EDIT STRING "50.000"
 // Retrieval info: PRIVATE: INCLK0_FREQ_UNIT_COMBO STRING "MHz"
-// Retrieval info: PRIVATE: INCLK1_FREQ_EDIT STRING "60.000"
+// Retrieval info: PRIVATE: INCLK1_FREQ_EDIT STRING "50.000"
 // Retrieval info: PRIVATE: INCLK1_FREQ_EDIT_CHANGED STRING "1"
 // Retrieval info: PRIVATE: INCLK1_FREQ_UNIT_CHANGED STRING "1"
 // Retrieval info: PRIVATE: INCLK1_FREQ_UNIT_COMBO STRING "MHz"
@@ -338,7 +338,7 @@ endmodule
 // Retrieval info: CONSTANT: CLK2_PHASE_SHIFT STRING "1"
 // Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
 // Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
-// Retrieval info: CONSTANT: INCLK1_INPUT_FREQUENCY NUMERIC "16666"
+// Retrieval info: CONSTANT: INCLK1_INPUT_FREQUENCY NUMERIC "20000"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altpll"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "NORMAL"
