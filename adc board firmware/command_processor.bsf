@@ -229,9 +229,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 160)
 		(output)
-		(text "spicsadc" (rect 0 0 34 12)(font "Arial" ))
-		(text "spicsadc" (rect 225 155 259 167)(font "Arial" ))
-		(line (pt 280 160)(pt 264 160)(line_width 1))
+		(text "spics[7..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "spics[7..0]" (rect 219 155 259 167)(font "Arial" ))
+		(line (pt 280 160)(pt 264 160)(line_width 3))
 	)
 	(port
 		(pt 280 176)
@@ -281,6 +281,13 @@ refer to the applicable agreement for further details.
 		(text "scanclk" (rect 0 0 29 12)(font "Arial" ))
 		(text "scanclk" (rect 230 267 259 279)(font "Arial" ))
 		(line (pt 280 272)(pt 264 272)(line_width 1))
+	)
+	(port
+		(pt 280 288)
+		(output)
+		(text "spimisossel[2..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "spimisossel[2..0]" (rect 195 283 259 295)(font "Arial" ))
+		(line (pt 280 288)(pt 264 288)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 264 384)(line_width 1))

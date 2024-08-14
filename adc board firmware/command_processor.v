@@ -29,7 +29,7 @@ module command_processor (
 	input  reg 			spitxready,
 	output reg			spitxdv,
 	input  reg			spirxdv,
-	output reg			spicsadc,
+	output reg [7:0]	spics, // which chip to talk to
 	
 	input wire			syncse, // can't drive with 3.3V, so set as input (use TMSTP+- inputs instead)
 	
@@ -51,7 +51,9 @@ module command_processor (
   output reg[2:0] phasecounterselect, // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
   output reg phaseupdown=1, // Dynamic phase shift direction; 1:UP, 0:DOWN. Registered in the PLL on the rising edge of scanclk.
   output reg phasestep=0,
-  output reg scanclk=0
+  output reg scanclk=0,
+  
+  output reg [2:0] spimisossel=0 //which spimiso to listen to
 );
 
 integer version = 4; // firmware version
@@ -75,7 +77,7 @@ reg [ 2:0]  acqstate = 0;
 reg [15:0]	triggercounter = 0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
-reg signed [11:0]  samplevalue =0, lowerthresh=-10, upperthresh=10;
+reg signed [11:0]  samplevalue=0, lowerthresh=-12'd10, upperthresh=12'd10;
 
 always @ (posedge clklvds) begin
 	triggerlive2 <= triggerlive;
@@ -134,7 +136,7 @@ always @ (posedge clk or negedge rstn)
 		length <= 0;
 		spistate <= 0;
 		spitxdv <= 1'b0;
-		spicsadc <= 1'b1;
+		spics <= 8'hff;
 		state <= RX;
 	end
   
@@ -173,14 +175,16 @@ always @ (posedge clk or negedge rstn)
 		3 : begin // SPI command
 			case (spistate)			
 			0 : begin
-				spicsadc <= 1'b0;//select adc chip
+				spimisossel <= rx_data[1][2:0]; // select requested data from chip
+				spics[rx_data[1][2:0]]<=1'b0; //select requested chip
 				spitx <= rx_data[2];//first byte to send
 				spistate <= 3'd1;
 			end
 			1 : begin
 				if (spitxready) begin
 					spitxdv <= 1'b1;
-					spistate <= 3'd2;
+					if (rx_data[7]==2) spistate <= 3'd4; //sending 2 bytes
+					else spistate <= 3'd2; // sending 3 bytes
 				end
 			end
 			2 : begin
@@ -208,7 +212,7 @@ always @ (posedge clk or negedge rstn)
 			6 : begin
 				spitxdv <= 1'b0;
 				if (spirxdv) begin
-					spicsadc <= 1'b1;//unselect adc chip
+					spics <= 8'hff;//unselect chip
 					spistate <= 3'd0;
 					o_tdata <= spirx; // send back the SPI data read
 					length <= 4;

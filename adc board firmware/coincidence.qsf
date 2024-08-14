@@ -118,13 +118,9 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_B16 -to reset
 set_location_assignment PIN_N14 -to spi_clk
-set_location_assignment PIN_N13 -to spi_miso
 set_location_assignment PIN_N11 -to spi_mosi
-set_location_assignment PIN_M6 -to spicsadc
 set_instance_assignment -name IO_STANDARD "2.5 V" -to reset
 set_instance_assignment -name IO_STANDARD "2.5 V" -to spi_clk
-set_instance_assignment -name IO_STANDARD "2.5 V" -to spicsadc
-set_instance_assignment -name IO_STANDARD "2.5 V" -to spi_miso
 set_instance_assignment -name IO_STANDARD "2.5 V" -to spi_mosi
 set_location_assignment PIN_B13 -to clk0out
 set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[10]
@@ -168,7 +164,6 @@ set_location_assignment PIN_L1 -to "lvds1in[1](n)"
 set_location_assignment PIN_N2 -to lvds1in[7]
 set_location_assignment PIN_N1 -to "lvds1in[7](n)"
 set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to ftdi_data0
-set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spicsadc
 set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spi_mosi
 set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to led0
 set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to led1
@@ -205,4 +200,17 @@ set_global_assignment -name CDF_FILE Chain2.cdf
 set_location_assignment PIN_D9 -to lvds1in[11]
 set_location_assignment PIN_C9 -to "lvds1in[11](n)"
 set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to ftdi_wr_n
+set_location_assignment PIN_M12 -to spiampsclk
+set_location_assignment PIN_M10 -to spiampscs
+set_location_assignment PIN_L7 -to spiampsdi
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spiampsclk
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spiampscs
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spiampsdi
+set_location_assignment PIN_M6 -to spiadccs
+set_instance_assignment -name IO_STANDARD "2.5 V" -to spiadccs
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spiadccs
+set_location_assignment PIN_N13 -to spiadcmiso
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spiadcmiso
+set_location_assignment PIN_L4 -to spiampmiso
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to spiampmiso
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

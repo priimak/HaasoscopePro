@@ -27,32 +27,34 @@ def fifoused():
     print("Fifo used", tres[3], tres[2], tres[1] * 256 + tres[0])
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
-def spicommand(name, first, second, third, read, show_bin=False):
-    cs = 1  # which chip to select, ignored for now
+def spicommand(name, first, second, third, read, show_bin=False, cs=0, nbyte=3):
     # first byte to send, start of address
     # second byte to send, rest of address
     # third byte to send, value to write, ignored during read
+    # cs is which chip to select, adc 0 by default
+    # nbyte is 2 or 3, second byte is ignored in case of 2 bytes
     if read: first = first + 0x80 #set the highest bit for read, i.e. add 0x80
-    usb.send(bytes([3, cs, first, second, third, 100, 100, 100]))  # get SPI result from command
+    usb.send(bytes([3, cs, first, second, third, 100, 100, nbyte]))  # get SPI result from command
     spires = usb.recv(4)
     if read:
-        if show_bin: print("SPI read:" + name, "(", hex(first), hex(second), ")", binprint(spires[0]))
-        else: print("SPI read:"+name, "(",hex(first),hex(second),")",hex(spires[0]))
-    else: print("SPI write:"+name, "(",hex(first),hex(second),")",hex(third))
+        if show_bin: print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[0]))
+        else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[0]))
+    else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third))
 
-def spicommand2(name,first,second,third,fourth,read):
-    cs = 1  # which chip to select, ignored for now
+def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     # first byte to send, start of address
     # second byte to send, rest of address
     # third byte to send, value to write, ignored during read, to address +1 (the higher 8 bits)
     # fourth byte to send, value to write, ignored during read
+    # cs is which chip to select, adc 0 by default
+    # nbyte is 2 or 3, second byte is ignored in case of 2 bytes
     if read: first = first + 0x80  # set the highest bit for read, i.e. add 0x80
-    usb.send(bytes([3, cs, first, second, fourth, 100, 100, 100]))  # get SPI result from command
+    usb.send(bytes([3, cs, first, second, fourth, 100, 100, nbyte]))  # get SPI result from command
     spires = usb.recv(4)
-    usb.send(bytes([3, cs, first, second+0x01, third, 100, 100, 100]))  # get SPI result from command for next byte
+    usb.send(bytes([3, cs, first, second+0x01, third, 100, 100, nbyte]))  # get SPI result from command for next byte
     spires2 = usb.recv(4)
-    if read: print("SPI read:"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
-    else: print("SPI write:"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
+    if read: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
+    else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
 #address 1 2, value 1 (2)
 def board_setup(dopattern=False):
@@ -92,6 +94,12 @@ def board_setup(dopattern=False):
     spicommand("LSYNC_N", 0x02, 0x03, 0x01, False)  # deassert ~sync signal
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x00, False)
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x01, False)
+
+    spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
+    spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
+    gain=0x10 #00 to 20 is 26 to -6 dB
+    spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2) # gain -6dB
+    spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
 #################
 
