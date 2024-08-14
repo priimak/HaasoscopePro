@@ -73,8 +73,8 @@ reg [ 2:0]	spistate = 0;
 reg [3:0]	channel = 0;
 
 //variables in clklvds domain
-reg [ 2:0]  acqstate = 0;
-reg [15:0]	triggercounter = 0;
+reg [ 2:0]  acqstate=0;
+reg [15:0]	triggercounter=0, triggercounter2=0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
 reg signed [11:0]  samplevalue=0, lowerthresh=-12'd10, upperthresh=12'd10;
@@ -122,6 +122,10 @@ always @ (posedge clklvds or negedge rstn)
 	end
 	endcase
  end
+ 
+always @ (posedge clk) begin
+	triggercounter2 <= triggercounter;
+end
 
 always @ (posedge clk or negedge rstn)
  if (~rstn) begin
@@ -233,7 +237,7 @@ always @ (posedge clk or negedge rstn)
 		
 		5 : begin // sets length to take
 			lengthtotake <= {rx_data[5],rx_data[4]};
-			if (triggercounter == -16'd1) begin
+			if (triggercounter2 == -16'd1) begin
 				triggerlive <= 1'b1;
 			end else begin
 				triggerlive <= 1'b0;
