@@ -98,7 +98,7 @@ def board_setup(dopattern=False):
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
     gain=0x10 #00 to 20 is 26 to -6 dB
-    spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2) # gain -6dB
+    spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2) # gain
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
 #################
@@ -106,13 +106,14 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
-    debug = False
+    debug = True
     debugprint = True
     showbinarydata = True
     total_rx_len = 0
     time_start = time.time()
     dopattern = False
     triggertype = 1 # 0 no trigger, 1 threshold trigger
+    if dopattern: triggertype=0
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -463,8 +464,8 @@ class MainWindow(TemplateBaseClass):
                 for p in range(16 * s, 16 * (s + 1)): #loop over the 16 channels of the sample
                     if n<8: bit=getbit(data[2*p+0], n)
                     else: bit=getbit(data[2*p+1], n-8)
-                    #if bit and bb<11: val=val+pow(2,bb)
-                    if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
+                    if bit and bb<11: val=val+pow(2,bb)
+                    #if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
                     if bit and bb==11: val = val - pow(2,bb)
                     bb=bb+1
                     if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
