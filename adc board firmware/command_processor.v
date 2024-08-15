@@ -77,6 +77,7 @@ reg [ 2:0]  acqstate=0;
 reg [15:0]	triggercounter=0, triggercounter2=0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
+reg [ 7:0]	triggertype=0;
 reg signed [11:0]  samplevalue=0, lowerthresh=-12'd10, upperthresh=12'd10;
 
 always @ (posedge clklvds) begin
@@ -96,7 +97,8 @@ always @ (posedge clklvds or negedge rstn)
 		lvds1wr <= 1'b0;
 		if (triggerlive2) begin
 			triggercounter<=0;
-			acqstate <= 3'd1;
+			if (triggertype==8'd1) acqstate <= 3'd1; // threshold trigger
+			else acqstate <= 3'd3; // go straight to taking data, no trigger, triggertype==0
 		end
 	end
 	1 : begin // ready for first part of trigger condition to be met
@@ -236,6 +238,7 @@ always @ (posedge clk or negedge rstn)
 		end
 		
 		5 : begin // sets length to take
+			triggertype <= rx_data[1];
 			lengthtotake <= {rx_data[5],rx_data[4]};
 			if (triggercounter2 == -16'd1) begin
 				triggerlive <= 1'b1;
