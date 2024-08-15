@@ -74,9 +74,9 @@ def board_setup(dopattern=False):
     if dopattern:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval = 0x00
-        usrval2 = 0xff
-        spicommand2("UPAT0", 0x01, 0x80, usrval2, usrval2, False)  # set pattern sample 0
-        spicommand2("UPAT1", 0x01, 0x82, usrval2, usrval2, False)  # set pattern sample 1
+        usrval3 = 0x08;  usrval2 = 0x00
+        spicommand2("UPAT0", 0x01, 0x80, usrval3, usrval2, False)  # set pattern sample 0
+        spicommand2("UPAT1", 0x01, 0x82, usrval3, usrval2, False)  # set pattern sample 1
         spicommand2("UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
         spicommand2("UPAT3", 0x01, 0x86, usrval, usrval, False)  # set pattern sample 3
         spicommand2("UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
@@ -112,6 +112,7 @@ class MainWindow(TemplateBaseClass):
     total_rx_len = 0
     time_start = time.time()
     dopattern = False
+    triggertype = 1 # 0 no trigger, 1 threshold trigger
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -442,7 +443,7 @@ class MainWindow(TemplateBaseClass):
         expect_len = expect_samples * 2 * 16  # length to request
 
         if self.debug: fifoused()
-        usb.send(bytes([5, 99, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
+        usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
         if self.debug: fifoused()
 
         usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
@@ -462,8 +463,8 @@ class MainWindow(TemplateBaseClass):
                 for p in range(16 * s, 16 * (s + 1)): #loop over the 16 channels of the sample
                     if n<8: bit=getbit(data[2*p+0], n)
                     else: bit=getbit(data[2*p+1], n-8)
-                    if bit and bb<11: val=val+pow(2,bb)
-                    #if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
+                    #if bit and bb<11: val=val+pow(2,bb)
+                    if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
                     if bit and bb==11: val = val - pow(2,bb)
                     bb=bb+1
                     if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
