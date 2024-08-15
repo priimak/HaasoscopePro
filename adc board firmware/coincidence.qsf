@@ -144,8 +144,8 @@ set_location_assignment PIN_G7 -to spiampsclk
 set_location_assignment PIN_G8 -to spiampscs
 set_location_assignment PIN_G9 -to spiampsdi
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to io2
-set_location_assignment PIN_F21 -to lvds1in[13]
-set_location_assignment PIN_F22 -to "lvds1in[13](n)"
+set_location_assignment PIN_T14 -to lvds1in[13]
+set_location_assignment PIN_T15 -to "lvds1in[13](n)"
 set_location_assignment PIN_H21 -to lvds1in[12]
 set_location_assignment PIN_H22 -to "lvds1in[12](n)"
 set_location_assignment PIN_J21 -to lvds1in[11]
@@ -154,7 +154,7 @@ set_location_assignment PIN_K21 -to lvds1in[10]
 set_location_assignment PIN_K22 -to "lvds1in[10](n)"
 set_location_assignment PIN_N18 -to lvds4in[13]
 set_location_assignment PIN_R19 -to lvds4in[12]
-set_location_assignment PIN_P16 -to lvds4in[11]
+set_location_assignment PIN_N19 -to lvds4in[11]
 set_location_assignment PIN_U16 -to lvds4in[10]
 set_location_assignment PIN_V14 -to lvds4in[9]
 set_location_assignment PIN_T12 -to lvds4in[8]
@@ -203,7 +203,7 @@ set_location_assignment PIN_N17 -to "lvds4in[13](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to lvds4in[12]
 set_location_assignment PIN_R18 -to "lvds4in[12](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to lvds4in[11]
-set_location_assignment PIN_P15 -to "lvds4in[11](n)"
+set_location_assignment PIN_N20 -to "lvds4in[11](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to lvds4in[10]
 set_location_assignment PIN_U17 -to "lvds4in[10](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to lvds4in[9]
@@ -281,12 +281,12 @@ set_location_assignment PIN_N2 -to lvds3in[11]
 set_location_assignment PIN_N1 -to "lvds3in[11](n)"
 set_location_assignment PIN_M2 -to lvds3in[10]
 set_location_assignment PIN_M1 -to "lvds3in[10](n)"
-set_location_assignment PIN_J2 -to lvds3in[9]
-set_location_assignment PIN_J1 -to "lvds3in[9](n)"
-set_location_assignment PIN_H2 -to lvds3in[8]
-set_location_assignment PIN_H1 -to "lvds3in[8](n)"
-set_location_assignment PIN_M8 -to lvds3in[7]
-set_location_assignment PIN_N8 -to "lvds3in[7](n)"
+set_location_assignment PIN_U15 -to lvds3in[9]
+set_location_assignment PIN_V15 -to "lvds3in[9](n)"
+set_location_assignment PIN_W6 -to lvds3in[8]
+set_location_assignment PIN_V7 -to "lvds3in[8](n)"
+set_location_assignment PIN_U7 -to lvds3in[7]
+set_location_assignment PIN_U8 -to "lvds3in[7](n)"
 set_location_assignment PIN_L6 -to lvds3in[6]
 set_location_assignment PIN_M6 -to "lvds3in[6](n)"
 set_location_assignment PIN_R7 -to lvds3in[5]
