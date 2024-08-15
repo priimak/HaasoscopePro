@@ -17,12 +17,14 @@ derive_clock_uncertainty -add
 
 
 ## Declare that these two clocks are asynchronous
-set_clock_groups -asynchronous -group {clk50 clk_ext *pll1|clk[0]* *pll1|clk[1]* *pll1|clk[2]*} -group {ftdi_clk} -group {scanclk}
+set_clock_groups -asynchronous -group {clk50 *pll1|clk[*]} -group {clk_ext *pll1|clk[*]~1*} -group {ftdi_clk} -group {scanclk}
 
 #IO constraints
+set_max_delay -to [get_ports clk*] 10
+set_min_delay -to [get_ports clk*] 0
 set_max_delay -to [get_ports ftdi_*] 10
 set_min_delay -to [get_ports ftdi_*] 0
 set_max_delay -from [get_ports ftdi_*] 10
 set_min_delay -from [get_ports ftdi_*] 0
-set_max_delay -from [get_ports lvds1in*] 10
-set_min_delay -from [get_ports lvds1in*] 0
+set_max_delay -from [get_ports lvds*in*] 10
+set_min_delay -from [get_ports lvds*in*] 0

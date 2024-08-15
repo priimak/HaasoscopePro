@@ -31,7 +31,7 @@ module command_processor (
 	input  reg			spirxdv,
 	output reg [7:0]	spics, // which chip to talk to
 	
-	input wire			syncse, // can't drive with 3.3V, so set as input (use TMSTP+- inputs instead)
+	input wire			locked, // clock is locked
 	
 	input wire [139:0] lvds1bits, // rx_in[0] drives data to rx_out[(J-1)..0], rx_in[1] drives data to the next J number of bits on rx_out
 	input wire			clklvds, // clk1, runs at LVDS bit rate (ADC clk input rate) / 2
@@ -53,10 +53,13 @@ module command_processor (
   output reg phasestep=0,
   output reg scanclk=0,
   
-  output reg [2:0] spimisossel=0 //which spimiso to listen to
+  output reg [2:0] spimisossel=0, //which spimiso to listen to
+  output reg 			io2  // for debugging
 );
 
 integer version = 4; // firmware version
+
+assign io2 = locked;
 
 //for clock phase
 reg[7:0] pllclock_counter=0;
@@ -246,13 +249,13 @@ always @ (posedge clk or negedge rstn)
 		end
 		
 		6 : begin
-			phasecounterselect=rx_data[2][2:0];// 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. 
-			phaseupdown=rx_data[3][0]; // up or down
-			scanclk=1'b0; // start low
-			phasestep=1'b1; // assert!
-			pllclock_counter=0;
-			scanclk_cycles=0;
-			state=PLLCLOCK;
+			phasecounterselect<=rx_data[2][2:0];// 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. 
+			phaseupdown<=rx_data[3][0]; // up or down
+			scanclk<=1'b0; // start low
+			phasestep<=1'b1; // assert!
+			pllclock_counter<=0;
+			scanclk_cycles<=0;
+			state<=PLLCLOCK;
 		end
 		
 		default: // some command we didn't know

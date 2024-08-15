@@ -82,10 +82,8 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led0
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led1
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_wr_n
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_txe_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_siwu
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_rxf_n
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_rd_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_pwrsav
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_oe_n
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data7
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ftdi_data6
@@ -121,14 +119,11 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiadccs
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
-set_location_assignment PIN_A3 -to io1
 set_location_assignment PIN_A4 -to io2
 set_location_assignment PIN_B3 -to ftdi_wr_n
 set_location_assignment PIN_B4 -to ftdi_txe_n
-set_location_assignment PIN_B6 -to ftdi_siwu
 set_location_assignment PIN_B7 -to ftdi_rxf_n
 set_location_assignment PIN_B8 -to ftdi_rd_n
-set_location_assignment PIN_B9 -to ftdi_pwrsav
 set_location_assignment PIN_E6 -to ftdi_oe_n
 set_location_assignment PIN_A11 -to ftdi_clk
 set_location_assignment PIN_C3 -to ftdi_data7
@@ -138,9 +133,8 @@ set_location_assignment PIN_C7 -to ftdi_data4
 set_location_assignment PIN_C8 -to ftdi_data3
 set_location_assignment PIN_D7 -to ftdi_data2
 set_location_assignment PIN_A9 -to ftdi_data1
-set_location_assignment PIN_E5 -to ftdi_data0
+set_location_assignment PIN_G10 -to ftdi_data0
 set_location_assignment PIN_D10 -to reset
-set_location_assignment PIN_A10 -to syncse
 set_location_assignment PIN_E10 -to spi_clk
 set_location_assignment PIN_F7 -to spi_mosi
 set_location_assignment PIN_F8 -to spiadccs
@@ -149,7 +143,6 @@ set_location_assignment PIN_G11 -to spiampmiso
 set_location_assignment PIN_G7 -to spiampsclk
 set_location_assignment PIN_G8 -to spiampscs
 set_location_assignment PIN_G9 -to spiampsdi
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to io1
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to io2
 set_location_assignment PIN_F21 -to lvds1in[13]
 set_location_assignment PIN_F22 -to "lvds1in[13](n)"
@@ -177,7 +170,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampmiso
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampsclk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampscs
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampsdi
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to syncse
 set_instance_assignment -name IO_STANDARD LVDS -to lvds2in[13]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds2in[12]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds2in[11]
@@ -311,7 +303,9 @@ set_location_assignment PIN_K18 -to lvds3in[0]
 set_location_assignment PIN_K17 -to "lvds3in[0](n)"
 set_location_assignment PIN_T10 -to lvds4in[0]
 set_location_assignment PIN_T11 -to "lvds4in[0](n)"
-set_location_assignment PIN_B20 -to clk50out
+set_location_assignment PIN_E5 -to clk50out
+set_location_assignment PIN_A12 -to clk_ext
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk50out
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
 set_global_assignment -name VERILOG_FILE command_processor.v
@@ -335,5 +329,4 @@ set_global_assignment -name QIP_FILE lvds1.qip
 set_global_assignment -name QIP_FILE fifo1.qip
 set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
-set_location_assignment PIN_A12 -to clk_ext
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
