@@ -98,8 +98,6 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to reset
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spi_clk
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spi_mosi
 set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[10]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[9]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[11]
@@ -117,7 +115,6 @@ set_instance_assignment -name IO_STANDARD LVDS -to lvds1in[8]
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiadccs
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_location_assignment PIN_B3 -to ftdi_wr_n
 set_location_assignment PIN_B4 -to ftdi_txe_n
@@ -134,14 +131,6 @@ set_location_assignment PIN_D7 -to ftdi_data2
 set_location_assignment PIN_A9 -to ftdi_data1
 set_location_assignment PIN_G10 -to ftdi_data0
 set_location_assignment PIN_D10 -to reset
-set_location_assignment PIN_E10 -to spi_clk
-set_location_assignment PIN_F7 -to spi_mosi
-set_location_assignment PIN_F8 -to spiadccs
-set_location_assignment PIN_F10 -to spiadcmiso
-set_location_assignment PIN_G11 -to spiampmiso
-set_location_assignment PIN_G7 -to spiampsclk
-set_location_assignment PIN_G8 -to spiampscs
-set_location_assignment PIN_G9 -to spiampsdi
 set_location_assignment PIN_T10 -to lvds1in[13]
 set_location_assignment PIN_T11 -to "lvds1in[13](n)"
 set_location_assignment PIN_T8 -to lvds1in[12]
@@ -163,11 +152,6 @@ set_location_assignment PIN_V21 -to lvds4in[4]
 set_location_assignment PIN_U21 -to lvds4in[3]
 set_location_assignment PIN_R21 -to lvds4in[2]
 set_location_assignment PIN_P21 -to lvds4in[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiadcmiso
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampmiso
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampsclk
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampscs
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiampsdi
 set_instance_assignment -name IO_STANDARD LVDS -to lvds2in[13]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds2in[12]
 set_instance_assignment -name IO_STANDARD LVDS -to lvds2in[11]
@@ -329,10 +313,65 @@ set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
 set_location_assignment PIN_E6 -to clkout2
 set_location_assignment PIN_B12 -to clkext2
-set_location_assignment PIN_A4 -to debugout[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugout[0]
+set_location_assignment PIN_A13 -to debugout[0]
 set_location_assignment PIN_B1 -to overrange[3]
 set_location_assignment PIN_B2 -to overrange[2]
 set_location_assignment PIN_C1 -to overrange[1]
 set_location_assignment PIN_C2 -to overrange[0]
+set_location_assignment PIN_A14 -to debugout[1]
+set_location_assignment PIN_A15 -to debugout[2]
+set_location_assignment PIN_A16 -to debugout[3]
+set_location_assignment PIN_A17 -to debugout[4]
+set_location_assignment PIN_A18 -to debugout[5]
+set_location_assignment PIN_A19 -to debugout[6]
+set_location_assignment PIN_A20 -to debugout[7]
+set_location_assignment PIN_B13 -to debugout[8]
+set_location_assignment PIN_B14 -to debugout[9]
+set_location_assignment PIN_B15 -to debugout[10]
+set_location_assignment PIN_B16 -to debugout[11]
+set_location_assignment PIN_B17 -to debugout[12]
+set_location_assignment PIN_B18 -to debugout[13]
+set_location_assignment PIN_B19 -to debugout[14]
+set_location_assignment PIN_B20 -to debugout[15]
+set_location_assignment PIN_F13 -to debugout[16]
+set_location_assignment PIN_F14 -to debugout[17]
+set_location_assignment PIN_C13 -to debugout[18]
+set_location_assignment PIN_C15 -to debugout[19]
+set_location_assignment PIN_C17 -to debugout[20]
+set_location_assignment PIN_D13 -to debugout[21]
+set_location_assignment PIN_D15 -to debugout[22]
+set_location_assignment PIN_D17 -to debugout[23]
+set_location_assignment PIN_E16 -to debugout[24]
+set_location_assignment PIN_E15 -to debugout[25]
+set_location_assignment PIN_E12 -to debugout[26]
+set_location_assignment PIN_E14 -to debugout[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiclk
+set_location_assignment PIN_E10 -to spiclk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[0]
+set_location_assignment PIN_F8 -to spics[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimosi
+set_location_assignment PIN_F7 -to spimosi
+set_location_assignment PIN_G7 -to spics[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[1]
+set_location_assignment PIN_G11 -to spics[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[3]
+set_location_assignment PIN_G8 -to spics[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[2]
+set_location_assignment PIN_G9 -to spics[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[4]
+set_location_assignment PIN_A4 -to spics[5]
+set_location_assignment PIN_B5 -to spics[6]
+set_location_assignment PIN_B6 -to spics[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spics[5]
+set_location_assignment PIN_F10 -to spimisos[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[0]
+set_location_assignment PIN_A10 -to spimisos[1]
+set_location_assignment PIN_B9 -to spimisos[2]
+set_location_assignment PIN_B10 -to spimisos[3]
+set_location_assignment PIN_C10 -to spimisos[4]
+set_location_assignment PIN_D6 -to spimisos[5]
+set_location_assignment PIN_E7 -to spimisos[6]
+set_location_assignment PIN_E9 -to spimisos[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
