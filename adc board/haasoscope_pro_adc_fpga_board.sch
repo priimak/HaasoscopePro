@@ -11118,20 +11118,6 @@ Example Datasheet</description>
 <label x="284.48" y="330.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DA4_P" class="2">
-<segment>
-<wire x1="292.1" y1="317.5" x2="279.4" y2="317.5" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_223"/>
-<label x="284.48" y="317.5" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="DA4_N" class="2">
-<segment>
-<wire x1="292.1" y1="314.96" x2="279.4" y2="314.96" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_224"/>
-<label x="284.48" y="314.96" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="IO225" class="0">
 <segment>
 <wire x1="292.1" y1="312.42" x2="279.4" y2="312.42" width="0.1524" layer="91"/>
@@ -11253,16 +11239,16 @@ Example Datasheet</description>
 </net>
 <net name="DA5_N" class="2">
 <segment>
-<wire x1="292.1" y1="266.7" x2="279.4" y2="266.7" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_242"/>
-<label x="284.48" y="266.7" size="1.778" layer="95"/>
+<wire x1="292.1" y1="314.96" x2="279.4" y2="314.96" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_224"/>
+<label x="284.48" y="314.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DA5_P" class="2">
 <segment>
-<wire x1="292.1" y1="264.16" x2="279.4" y2="264.16" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_243"/>
-<label x="284.48" y="264.16" size="1.778" layer="95"/>
+<wire x1="292.1" y1="317.5" x2="279.4" y2="317.5" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_223"/>
+<label x="284.48" y="317.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DC2_N" class="2">
@@ -11897,6 +11883,20 @@ Example Datasheet</description>
 <wire x1="292.1" y1="167.64" x2="279.4" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_269"/>
 <label x="284.48" y="167.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="DA4_N" class="2">
+<segment>
+<wire x1="292.1" y1="266.7" x2="279.4" y2="266.7" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_242"/>
+<label x="284.48" y="266.7" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="DA4_P" class="2">
+<segment>
+<wire x1="292.1" y1="264.16" x2="279.4" y2="264.16" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_243"/>
+<label x="284.48" y="264.16" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
