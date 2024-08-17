@@ -8195,6 +8195,7 @@ Example Datasheet</description>
 <part name="INA-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
 <part name="INA+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
 <part name="R17" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100"/>
+<part name="R18" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="0"/>
 </parts>
 <sheets>
 <sheet>
@@ -8387,6 +8388,10 @@ Example Datasheet</description>
 <instance part="R93" gate="G$1" x="180.34" y="444.5" smashed="yes" rot="R180">
 <attribute name="NAME" x="184.15" y="443.0014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="184.15" y="447.802" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R18" gate="G$1" x="25.4" y="314.96" smashed="yes" rot="R180">
+<attribute name="NAME" x="29.21" y="313.4614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="29.21" y="318.262" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -8921,33 +8926,13 @@ Example Datasheet</description>
 <label x="139.7" y="441.96" size="1.778" layer="95"/>
 <wire x1="139.7" y1="441.96" x2="147.32" y2="441.96" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R18" gate="G$1" pin="P$1"/>
+<wire x1="30.48" y1="314.96" x2="48.26" y2="314.96" width="0.1524" layer="91"/>
+<label x="43.18" y="314.96" size="1.778" layer="95"/>
+</segment>
 </net>
-<net name="VCCIO" class="1">
-<segment>
-<pinref part="IC5" gate="G$1" pin="VCCIO8_1"/>
-<wire x1="238.76" y1="609.6" x2="226.06" y2="609.6" width="0.1524" layer="91"/>
-<label x="226.06" y="609.6" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="238.76" y1="434.34" x2="226.06" y2="434.34" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="VCCIO8_2"/>
-<label x="226.06" y="434.34" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="238.76" y1="424.18" x2="226.06" y2="424.18" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="VCCIO8_3"/>
-<label x="226.06" y="424.18" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="238.76" y1="419.1" x2="226.06" y2="419.1" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="VCCIO8_4"/>
-<label x="226.06" y="419.1" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="238.76" y1="370.84" x2="226.06" y2="370.84" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="VCCIO8_5"/>
-<label x="226.06" y="370.84" size="1.778" layer="95"/>
-</segment>
+<net name="VCCIO2V5" class="1">
 <segment>
 <wire x1="2.54" y1="307.34" x2="20.32" y2="307.34" width="0.1524" layer="91"/>
 <pinref part="R87" gate="G$1" pin="P$2"/>
@@ -11881,6 +11866,38 @@ Example Datasheet</description>
 <pinref part="R88" gate="G$1" pin="P$1"/>
 <wire x1="30.48" y1="294.64" x2="48.26" y2="294.64" width="0.1524" layer="91"/>
 <label x="43.18" y="294.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="VCCIO3V3" class="1">
+<segment>
+<pinref part="IC5" gate="G$1" pin="VCCIO8_1"/>
+<wire x1="238.76" y1="609.6" x2="226.06" y2="609.6" width="0.1524" layer="91"/>
+<label x="226.06" y="609.6" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="2.54" y1="314.96" x2="20.32" y2="314.96" width="0.1524" layer="91"/>
+<pinref part="R18" gate="G$1" pin="P$2"/>
+<label x="5.08" y="314.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="434.34" x2="226.06" y2="434.34" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="VCCIO8_2"/>
+<label x="226.06" y="434.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="424.18" x2="226.06" y2="424.18" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="VCCIO8_3"/>
+<label x="226.06" y="424.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="419.1" x2="226.06" y2="419.1" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="VCCIO8_4"/>
+<label x="226.06" y="419.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="370.84" x2="226.06" y2="370.84" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="VCCIO8_5"/>
+<label x="226.06" y="370.84" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
