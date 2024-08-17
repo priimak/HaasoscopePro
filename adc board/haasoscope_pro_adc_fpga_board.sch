@@ -9098,11 +9098,6 @@ Example Datasheet</description>
 <label x="284.48" y="50.8" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="C63" gate="C$1" pin="2"/>
-<wire x1="106.68" y1="363.22" x2="106.68" y2="373.38" width="0.1524" layer="91"/>
-<label x="106.68" y="365.76" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
 <wire x1="292.1" y1="193.04" x2="279.4" y2="193.04" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="VCCIO4_1"/>
 <label x="284.48" y="193.04" size="1.778" layer="95"/>
@@ -9116,11 +9111,6 @@ Example Datasheet</description>
 <wire x1="292.1" y1="2.54" x2="279.4" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="VCCIO4_5"/>
 <label x="284.48" y="2.54" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="C64" gate="C$1" pin="2"/>
-<wire x1="81.28" y1="332.74" x2="81.28" y2="342.9" width="0.1524" layer="91"/>
-<label x="81.28" y="335.28" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <wire x1="292.1" y1="177.8" x2="279.4" y2="177.8" width="0.1524" layer="91"/>
@@ -11438,16 +11428,16 @@ Example Datasheet</description>
 </net>
 <net name="DD5_P" class="2">
 <segment>
-<wire x1="292.1" y1="170.18" x2="279.4" y2="170.18" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_268"/>
-<label x="284.48" y="170.18" size="1.778" layer="95"/>
+<wire x1="292.1" y1="114.3" x2="279.4" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_280"/>
+<label x="284.48" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DD5_N" class="2">
 <segment>
-<wire x1="292.1" y1="167.64" x2="279.4" y2="167.64" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_269"/>
-<label x="284.48" y="167.64" size="1.778" layer="95"/>
+<wire x1="292.1" y1="111.76" x2="279.4" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_281"/>
+<label x="284.48" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DC7_N" class="2">
@@ -11518,20 +11508,6 @@ Example Datasheet</description>
 <wire x1="292.1" y1="124.46" x2="279.4" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_279"/>
 <label x="284.48" y="124.46" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="DD6_P" class="2">
-<segment>
-<wire x1="292.1" y1="114.3" x2="279.4" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_280"/>
-<label x="284.48" y="114.3" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="DD6_N" class="2">
-<segment>
-<wire x1="292.1" y1="111.76" x2="279.4" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_281"/>
-<label x="284.48" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO282" class="0">
@@ -11897,6 +11873,30 @@ Example Datasheet</description>
 <wire x1="238.76" y1="370.84" x2="226.06" y2="370.84" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="VCCIO8_5"/>
 <label x="226.06" y="370.84" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C63" gate="C$1" pin="2"/>
+<wire x1="106.68" y1="363.22" x2="106.68" y2="373.38" width="0.1524" layer="91"/>
+<label x="106.68" y="365.76" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="C64" gate="C$1" pin="2"/>
+<wire x1="81.28" y1="332.74" x2="81.28" y2="342.9" width="0.1524" layer="91"/>
+<label x="81.28" y="335.28" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="DD6_P" class="2">
+<segment>
+<wire x1="292.1" y1="170.18" x2="279.4" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_268"/>
+<label x="284.48" y="170.18" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="DD6_N" class="2">
+<segment>
+<wire x1="292.1" y1="167.64" x2="279.4" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_269"/>
+<label x="284.48" y="167.64" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
