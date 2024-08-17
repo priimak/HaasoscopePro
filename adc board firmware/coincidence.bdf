@@ -224,6 +224,22 @@ refer to the applicable agreement for further details.
 	(annotation_block (location)(rect -448 528 -384 552))
 )
 (pin
+	(input)
+	(rect 312 1256 488 1272)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "overrange[3..0]" (rect 5 0 81 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 984 496 1160 512)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -465,7 +481,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 1080 1192 1256 1208)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "led5" (rect 90 0 111 17)(font "Intel Clear" ))
+	(text "debugout[27..0]" (rect 90 0 164 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -1462,6 +1478,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 352)(pt 16 352))
 	)
 	(port
+		(pt 0 368)
+		(input)
+		(text "overrange[3..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "overrange[3..0]" (rect 21 363 96 375)(font "Arial" ))
+		(line (pt 0 368)(pt 16 368)(line_width 3))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "i_tready" (rect 0 0 40 12)(font "Arial" ))
@@ -1583,9 +1606,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 304)
 		(output)
-		(text "led5" (rect 0 0 20 12)(font "Arial" ))
-		(text "led5" (rect 243 299 259 311)(font "Arial" ))
-		(line (pt 280 304)(pt 264 304))
+		(text "debugout[27..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "debugout[27..0]" (rect 195 299 259 311)(font "Arial" ))
+		(line (pt 280 304)(pt 264 304)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 264 384))
@@ -2240,4 +2263,10 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 928 1200)
 	(pt 1080 1200)
+	(bus)
+)
+(connector
+	(pt 488 1264)
+	(pt 648 1264)
+	(bus)
 )

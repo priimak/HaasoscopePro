@@ -8475,8 +8475,8 @@ Example Datasheet</description>
 <attribute name="VALUE" x="127.762" y="435.61" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C60" gate="C$1" x="132.08" y="426.72" smashed="yes" rot="R180">
-<attribute name="NAME" x="130.556" y="431.419" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="130.556" y="428.879" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="130.556" y="428.879" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="130.556" y="426.339" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND76" gate="1" x="132.08" y="421.64" smashed="yes">
 <attribute name="VALUE" x="129.54" y="419.1" size="1.778" layer="96"/>
@@ -9586,47 +9586,36 @@ Example Datasheet</description>
 <wire x1="238.76" y1="607.06" x2="226.06" y2="607.06" width="0.1524" layer="91"/>
 <label x="226.06" y="607.06" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="SW4" gate="G$1" pin="A1"/>
-<wire x1="123.19" y1="431.8" x2="124.46" y2="431.8" width="0.1524" layer="91"/>
-<label x="132.08" y="431.8" size="1.778" layer="95"/>
-<pinref part="C60" gate="C$1" pin="2"/>
-<wire x1="124.46" y1="431.8" x2="132.08" y2="431.8" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="431.8" x2="134.62" y2="431.8" width="0.1524" layer="91"/>
-<junction x="132.08" y="431.8"/>
-<pinref part="R78" gate="G$1" pin="P$1"/>
-<junction x="124.46" y="431.8"/>
-</segment>
 </net>
-<net name="IO2" class="0">
+<net name="DEBUGOUT0" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="IO_2"/>
 <wire x1="238.76" y1="604.52" x2="226.06" y2="604.52" width="0.1524" layer="91"/>
 <label x="226.06" y="604.52" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO3" class="0">
+<net name="LED0" class="0">
 <segment>
 <wire x1="238.76" y1="601.98" x2="226.06" y2="601.98" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_3"/>
 <label x="226.06" y="601.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO4" class="0">
+<net name="LED1" class="0">
 <segment>
 <wire x1="238.76" y1="599.44" x2="226.06" y2="599.44" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_4"/>
 <label x="226.06" y="599.44" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO5" class="0">
+<net name="LED2" class="0">
 <segment>
 <wire x1="238.76" y1="596.9" x2="226.06" y2="596.9" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_5"/>
 <label x="226.06" y="596.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO6" class="0">
+<net name="LED3" class="0">
 <segment>
 <wire x1="238.76" y1="594.36" x2="226.06" y2="594.36" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_6"/>
@@ -9717,14 +9706,14 @@ Example Datasheet</description>
 <label x="226.06" y="563.88" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO17" class="0">
+<net name="ORB1" class="0">
 <segment>
 <wire x1="238.76" y1="556.26" x2="226.06" y2="556.26" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_17"/>
 <label x="226.06" y="556.26" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO18" class="0">
+<net name="ORB0" class="0">
 <segment>
 <wire x1="238.76" y1="553.72" x2="226.06" y2="553.72" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_18"/>
@@ -9876,14 +9865,14 @@ Example Datasheet</description>
 <label x="226.06" y="502.92" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO37" class="0">
+<net name="ORA1" class="0">
 <segment>
 <wire x1="238.76" y1="500.38" x2="226.06" y2="500.38" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_37"/>
 <label x="226.06" y="500.38" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO38" class="0">
+<net name="ORA0" class="0">
 <segment>
 <wire x1="238.76" y1="497.84" x2="226.06" y2="497.84" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_38"/>
@@ -9995,11 +9984,22 @@ Example Datasheet</description>
 <label x="226.06" y="429.26" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO56" class="0">
+<net name="RESET_IN" class="0">
 <segment>
 <wire x1="238.76" y1="421.64" x2="226.06" y2="421.64" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_56"/>
 <label x="226.06" y="421.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SW4" gate="G$1" pin="A1"/>
+<wire x1="123.19" y1="431.8" x2="124.46" y2="431.8" width="0.1524" layer="91"/>
+<label x="127" y="431.8" size="1.778" layer="95"/>
+<pinref part="C60" gate="C$1" pin="2"/>
+<wire x1="124.46" y1="431.8" x2="132.08" y2="431.8" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="431.8" x2="134.62" y2="431.8" width="0.1524" layer="91"/>
+<junction x="132.08" y="431.8"/>
+<pinref part="R78" gate="G$1" pin="P$1"/>
+<junction x="124.46" y="431.8"/>
 </segment>
 </net>
 <net name="IO57" class="0">
@@ -14012,14 +14012,6 @@ Example Datasheet</description>
 <pinref part="J1" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="J13" gate="G$1" pin="8"/>
-<wire x1="-182.88" y1="325.12" x2="-190.5" y2="325.12" width="0.1524" layer="91"/>
-<label x="-190.5" y="325.12" size="1.778" layer="95"/>
-<pinref part="R46" gate="G$1" pin="P$1"/>
-<wire x1="-170.18" y1="325.12" x2="-182.88" y2="325.12" width="0.1524" layer="91"/>
-<junction x="-182.88" y="325.12"/>
-</segment>
-<segment>
 <pinref part="LED9" gate="G$1" pin="C"/>
 <wire x1="-81.28" y1="190.5" x2="-76.2" y2="190.5" width="0.1524" layer="91"/>
 <pinref part="GND58" gate="1" pin="GND"/>
@@ -14925,7 +14917,7 @@ Example Datasheet</description>
 <pinref part="LED8" gate="G$1" pin="A"/>
 </segment>
 </net>
-<net name="F13" class="0">
+<net name="DEBUGOUT20" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="1"/>
 <wire x1="-134.62" y1="304.8" x2="-142.24" y2="304.8" width="0.1524" layer="91"/>
@@ -14935,7 +14927,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="304.8"/>
 </segment>
 </net>
-<net name="F14" class="0">
+<net name="DEBUGOUT21" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="2"/>
 <wire x1="-134.62" y1="302.26" x2="-142.24" y2="302.26" width="0.1524" layer="91"/>
@@ -14945,7 +14937,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="302.26"/>
 </segment>
 </net>
-<net name="F3" class="0">
+<net name="DEBUGOUT22" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="3"/>
 <wire x1="-134.62" y1="299.72" x2="-142.24" y2="299.72" width="0.1524" layer="91"/>
@@ -14955,7 +14947,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="299.72"/>
 </segment>
 </net>
-<net name="F9" class="0">
+<net name="DEBUGOUT23" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="4"/>
 <wire x1="-134.62" y1="297.18" x2="-142.24" y2="297.18" width="0.1524" layer="91"/>
@@ -14965,7 +14957,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="297.18"/>
 </segment>
 </net>
-<net name="G5" class="0">
+<net name="DEBUGOUT24" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="5"/>
 <wire x1="-134.62" y1="294.64" x2="-142.24" y2="294.64" width="0.1524" layer="91"/>
@@ -14975,7 +14967,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="294.64"/>
 </segment>
 </net>
-<net name="J11" class="0">
+<net name="DEBUGOUT25" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="6"/>
 <wire x1="-134.62" y1="292.1" x2="-142.24" y2="292.1" width="0.1524" layer="91"/>
@@ -14985,7 +14977,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="292.1"/>
 </segment>
 </net>
-<net name="J13" class="0">
+<net name="DEBUGOUT26" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="7"/>
 <wire x1="-134.62" y1="289.56" x2="-142.24" y2="289.56" width="0.1524" layer="91"/>
@@ -14995,7 +14987,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="289.56"/>
 </segment>
 </net>
-<net name="J6" class="0">
+<net name="DEBUGOUT27" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="8"/>
 <wire x1="-134.62" y1="287.02" x2="-142.24" y2="287.02" width="0.1524" layer="91"/>
@@ -15053,7 +15045,7 @@ Example Datasheet</description>
 <pinref part="LED24" gate="G$1" pin="A"/>
 </segment>
 </net>
-<net name="F5" class="0">
+<net name="DEBUGOUT12" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="1"/>
 <wire x1="-182.88" y1="304.8" x2="-190.5" y2="304.8" width="0.1524" layer="91"/>
@@ -15063,7 +15055,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="304.8"/>
 </segment>
 </net>
-<net name="K11" class="0">
+<net name="DEBUGOUT13" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="2"/>
 <wire x1="-182.88" y1="302.26" x2="-190.5" y2="302.26" width="0.1524" layer="91"/>
@@ -15073,7 +15065,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="302.26"/>
 </segment>
 </net>
-<net name="K12" class="0">
+<net name="DEBUGOUT14" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="3"/>
 <wire x1="-182.88" y1="299.72" x2="-190.5" y2="299.72" width="0.1524" layer="91"/>
@@ -15083,7 +15075,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="299.72"/>
 </segment>
 </net>
-<net name="K5" class="0">
+<net name="DEBUGOUT15" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="4"/>
 <wire x1="-182.88" y1="297.18" x2="-190.5" y2="297.18" width="0.1524" layer="91"/>
@@ -15093,7 +15085,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="297.18"/>
 </segment>
 </net>
-<net name="L12" class="0">
+<net name="DEBUGOUT16" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="5"/>
 <wire x1="-182.88" y1="294.64" x2="-190.5" y2="294.64" width="0.1524" layer="91"/>
@@ -15103,7 +15095,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="294.64"/>
 </segment>
 </net>
-<net name="L13" class="0">
+<net name="DEBUGOUT17" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="6"/>
 <wire x1="-182.88" y1="292.1" x2="-190.5" y2="292.1" width="0.1524" layer="91"/>
@@ -15113,7 +15105,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="292.1"/>
 </segment>
 </net>
-<net name="L14" class="0">
+<net name="DEBUGOUT18" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="7"/>
 <wire x1="-182.88" y1="289.56" x2="-190.5" y2="289.56" width="0.1524" layer="91"/>
@@ -15123,7 +15115,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="289.56"/>
 </segment>
 </net>
-<net name="L3" class="0">
+<net name="DEBUGOUT19" class="0">
 <segment>
 <pinref part="J10" gate="G$1" pin="8"/>
 <wire x1="-182.88" y1="287.02" x2="-190.5" y2="287.02" width="0.1524" layer="91"/>
@@ -15229,7 +15221,7 @@ Example Datasheet</description>
 <pinref part="LED48" gate="G$1" pin="A"/>
 </segment>
 </net>
-<net name="L4" class="0">
+<net name="DEBUGOUT4" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="1"/>
 <wire x1="-134.62" y1="342.9" x2="-142.24" y2="342.9" width="0.1524" layer="91"/>
@@ -15239,7 +15231,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="342.9"/>
 </segment>
 </net>
-<net name="L7" class="0">
+<net name="DEBUGOUT5" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="2"/>
 <wire x1="-134.62" y1="340.36" x2="-142.24" y2="340.36" width="0.1524" layer="91"/>
@@ -15249,7 +15241,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="340.36"/>
 </segment>
 </net>
-<net name="M10" class="0">
+<net name="DEBUGOUT6" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="3"/>
 <wire x1="-134.62" y1="337.82" x2="-142.24" y2="337.82" width="0.1524" layer="91"/>
@@ -15259,7 +15251,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="337.82"/>
 </segment>
 </net>
-<net name="M12" class="0">
+<net name="DEBUGOUT7" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="4"/>
 <wire x1="-134.62" y1="335.28" x2="-142.24" y2="335.28" width="0.1524" layer="91"/>
@@ -15269,7 +15261,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="335.28"/>
 </segment>
 </net>
-<net name="M6" class="0">
+<net name="DEBUGOUT8" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="5"/>
 <wire x1="-134.62" y1="332.74" x2="-142.24" y2="332.74" width="0.1524" layer="91"/>
@@ -15279,7 +15271,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="332.74"/>
 </segment>
 </net>
-<net name="N11" class="0">
+<net name="DEBUGOUT9" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="6"/>
 <wire x1="-134.62" y1="330.2" x2="-142.24" y2="330.2" width="0.1524" layer="91"/>
@@ -15289,7 +15281,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="330.2"/>
 </segment>
 </net>
-<net name="N13" class="0">
+<net name="DEBUGOUT10" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="7"/>
 <wire x1="-134.62" y1="327.66" x2="-142.24" y2="327.66" width="0.1524" layer="91"/>
@@ -15299,7 +15291,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="327.66"/>
 </segment>
 </net>
-<net name="N14" class="0">
+<net name="DEBUGOUT11" class="0">
 <segment>
 <pinref part="J11" gate="G$1" pin="8"/>
 <wire x1="-134.62" y1="325.12" x2="-142.24" y2="325.12" width="0.1524" layer="91"/>
@@ -15309,7 +15301,7 @@ Example Datasheet</description>
 <junction x="-134.62" y="325.12"/>
 </segment>
 </net>
-<net name="P11" class="0">
+<net name="LED0" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="1"/>
 <wire x1="-182.88" y1="342.9" x2="-190.5" y2="342.9" width="0.1524" layer="91"/>
@@ -15319,7 +15311,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="342.9"/>
 </segment>
 </net>
-<net name="P15" class="0">
+<net name="LED1" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="2"/>
 <wire x1="-182.88" y1="340.36" x2="-190.5" y2="340.36" width="0.1524" layer="91"/>
@@ -15329,7 +15321,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="340.36"/>
 </segment>
 </net>
-<net name="P6" class="0">
+<net name="LED2" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="3"/>
 <wire x1="-182.88" y1="337.82" x2="-190.5" y2="337.82" width="0.1524" layer="91"/>
@@ -15339,7 +15331,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="337.82"/>
 </segment>
 </net>
-<net name="P9" class="0">
+<net name="LED3" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="4"/>
 <wire x1="-182.88" y1="335.28" x2="-190.5" y2="335.28" width="0.1524" layer="91"/>
@@ -15349,7 +15341,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="335.28"/>
 </segment>
 </net>
-<net name="R1" class="0">
+<net name="DEBUGOUT0" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="5"/>
 <wire x1="-182.88" y1="332.74" x2="-190.5" y2="332.74" width="0.1524" layer="91"/>
@@ -15359,7 +15351,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="332.74"/>
 </segment>
 </net>
-<net name="R14" class="0">
+<net name="DEBUGOUT1" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="6"/>
 <wire x1="-182.88" y1="330.2" x2="-190.5" y2="330.2" width="0.1524" layer="91"/>
@@ -15369,7 +15361,7 @@ Example Datasheet</description>
 <junction x="-182.88" y="330.2"/>
 </segment>
 </net>
-<net name="T2" class="0">
+<net name="DEBUGOUT2" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="7"/>
 <wire x1="-182.88" y1="327.66" x2="-190.5" y2="327.66" width="0.1524" layer="91"/>
@@ -16290,6 +16282,16 @@ Example Datasheet</description>
 <wire x1="111.76" y1="200.66" x2="99.06" y2="200.66" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="DB4-"/>
 <label x="101.6" y="200.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="DEBUGOUT3" class="1">
+<segment>
+<pinref part="J13" gate="G$1" pin="8"/>
+<wire x1="-182.88" y1="325.12" x2="-190.5" y2="325.12" width="0.1524" layer="91"/>
+<label x="-190.5" y="325.12" size="1.778" layer="95"/>
+<pinref part="R46" gate="G$1" pin="P$1"/>
+<wire x1="-170.18" y1="325.12" x2="-182.88" y2="325.12" width="0.1524" layer="91"/>
+<junction x="-182.88" y="325.12"/>
 </segment>
 </net>
 </nets>

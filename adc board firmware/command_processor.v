@@ -54,12 +54,14 @@ module command_processor (
   output reg scanclk=0,
   
   output reg [2:0] spimisossel=0, //which spimiso to listen to
-  output reg 			led5  // for debugging
+  output reg [27:0]	debugout,  // for debugging
+  input wire [3:0]	overrange  //ORA0,A1,B0,B1
+  
 );
 
 integer version = 4; // firmware version
 
-assign io2 = locked;
+assign debugout[0] = locked;
 
 //for clock phase
 reg[7:0] pllclock_counter=0;
