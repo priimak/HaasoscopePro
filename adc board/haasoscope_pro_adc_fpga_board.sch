@@ -8194,7 +8194,6 @@ Example Datasheet</description>
 <part name="INB-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
 <part name="INA-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
 <part name="INA+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
-<part name="R17" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100"/>
 <part name="R18" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="0"/>
 </parts>
 <sheets>
@@ -11507,7 +11506,7 @@ Example Datasheet</description>
 <label x="284.48" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DDSTRN" class="0">
+<net name="DDSTR_N" class="2">
 <segment>
 <wire x1="292.1" y1="134.62" x2="279.4" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_278"/>
@@ -12447,10 +12446,6 @@ Example Datasheet</description>
 <instance part="INA+" gate="G$1" x="-172.72" y="256.54" smashed="yes">
 <attribute name="NAME" x="-165.1" y="259.08" size="1.27" layer="95"/>
 <attribute name="VALUE" x="-165.1" y="256.54" size="1.27" layer="95"/>
-</instance>
-<instance part="R17" gate="G$1" x="182.88" y="337.82" smashed="yes">
-<attribute name="NAME" x="179.07" y="339.3186" size="1.778" layer="95"/>
-<attribute name="VALUE" x="179.07" y="334.518" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -14913,20 +14908,6 @@ Example Datasheet</description>
 <label x="101.6" y="226.06" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DIFF1_P" class="2">
-<segment>
-<pinref part="R17" gate="G$1" pin="P$1"/>
-<wire x1="177.8" y1="337.82" x2="165.1" y2="337.82" width="0.1524" layer="91"/>
-<label x="165.1" y="337.82" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="DIFF1_N" class="2">
-<segment>
-<pinref part="R17" gate="G$1" pin="P$2"/>
-<wire x1="187.96" y1="337.82" x2="200.66" y2="337.82" width="0.1524" layer="91"/>
-<label x="187.96" y="337.82" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="DB10_P" class="2">
 <segment>
 <wire x1="111.76" y1="198.12" x2="99.06" y2="198.12" width="0.1524" layer="91"/>
@@ -15929,6 +15910,38 @@ Example Datasheet</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,2,-111.76,264.16,CLK+,GND1,GND,,,"/>
+<approved hash="104,2,-106.68,264.16,CLK+,GND2,GND,,,"/>
+<approved hash="104,2,-111.76,248.92,CLK+,GND3,GND,,,"/>
+<approved hash="104,2,-106.68,248.92,CLK+,GND4,GND,,,"/>
+<approved hash="104,2,-111.76,238.76,CLK-,GND1,GND,,,"/>
+<approved hash="104,2,-106.68,238.76,CLK-,GND2,GND,,,"/>
+<approved hash="104,2,-111.76,223.52,CLK-,GND3,GND,,,"/>
+<approved hash="104,2,-106.68,223.52,CLK-,GND4,GND,,,"/>
+<approved hash="104,2,-142.24,264.16,INB+,GND1,GND,,,"/>
+<approved hash="104,2,-137.16,264.16,INB+,GND2,GND,,,"/>
+<approved hash="104,2,-142.24,248.92,INB+,GND3,GND,,,"/>
+<approved hash="104,2,-137.16,248.92,INB+,GND4,GND,,,"/>
+<approved hash="104,2,-142.24,238.76,INB-,GND1,GND,,,"/>
+<approved hash="104,2,-137.16,238.76,INB-,GND2,GND,,,"/>
+<approved hash="104,2,-142.24,223.52,INB-,GND3,GND,,,"/>
+<approved hash="104,2,-137.16,223.52,INB-,GND4,GND,,,"/>
+<approved hash="104,2,-175.26,238.76,INA-,GND1,GND,,,"/>
+<approved hash="104,2,-170.18,238.76,INA-,GND2,GND,,,"/>
+<approved hash="104,2,-175.26,223.52,INA-,GND3,GND,,,"/>
+<approved hash="104,2,-170.18,223.52,INA-,GND4,GND,,,"/>
+<approved hash="104,2,-175.26,264.16,INA+,GND1,GND,,,"/>
+<approved hash="104,2,-170.18,264.16,INA+,GND2,GND,,,"/>
+<approved hash="104,2,-175.26,248.92,INA+,GND3,GND,,,"/>
+<approved hash="104,2,-170.18,248.92,INA+,GND4,GND,,,"/>
+<approved hash="113,2,-108.869,256.54,CLK+,,,,,"/>
+<approved hash="113,2,-109.097,231.14,CLK-,,,,,"/>
+<approved hash="113,2,-139.599,256.54,INB+,,,,,"/>
+<approved hash="113,2,-139.826,231.14,INB-,,,,,"/>
+<approved hash="113,2,-172.846,231.14,INA-,,,,,"/>
+<approved hash="113,2,-172.619,256.54,INA+,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
