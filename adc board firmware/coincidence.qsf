@@ -283,8 +283,8 @@ set_location_assignment PIN_M2 -to lvds3in[10]
 set_location_assignment PIN_M1 -to "lvds3in[10](n)"
 set_location_assignment PIN_U15 -to lvds3in[9]
 set_location_assignment PIN_V15 -to "lvds3in[9](n)"
-set_location_assignment PIN_W6 -to lvds3in[8]
-set_location_assignment PIN_V7 -to "lvds3in[8](n)"
+set_location_assignment PIN_M8 -to lvds3in[8]
+set_location_assignment PIN_N8 -to "lvds3in[8](n)"
 set_location_assignment PIN_U7 -to lvds3in[7]
 set_location_assignment PIN_U8 -to "lvds3in[7](n)"
 set_location_assignment PIN_L6 -to lvds3in[6]
