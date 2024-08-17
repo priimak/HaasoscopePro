@@ -54,7 +54,7 @@ module command_processor (
   output reg scanclk=0,
   
   output reg [2:0] spimisossel=0, //which spimiso to listen to
-  output reg 			io2  // for debugging
+  output reg 			led5  // for debugging
 );
 
 integer version = 4; // firmware version

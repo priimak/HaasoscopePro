@@ -8099,10 +8099,10 @@ Example Datasheet</description>
 </part>
 <part name="C1" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="4.7nF"/>
 <part name="C2" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="4.7nF"/>
-<part name="R4_CLKOUT+" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
-<part name="T4_CLKOUT-" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
-<part name="D11_CLKOUT2+" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
-<part name="B13_CLKOUT2-" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="CLKEXT" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="CLKOUT" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="CLKEXT2" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="CLKOUT2" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="IC2" library="SN74AVC4T774PWR" deviceset="SN74AVC4T774PWR" device=""/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="R1" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100"/>
@@ -9793,6 +9793,11 @@ Example Datasheet</description>
 <pinref part="IC5" gate="G$1" pin="CLK11"/>
 <label x="226.06" y="530.86" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="134.62" y1="403.86" x2="144.78" y2="403.86" width="0.1524" layer="91"/>
+<label x="139.7" y="403.86" size="1.778" layer="95"/>
+<pinref part="Y2" gate="G$1" pin="OUT"/>
+</segment>
 </net>
 <net name="CLK9" class="0">
 <segment>
@@ -10067,14 +10072,14 @@ Example Datasheet</description>
 <label x="226.06" y="381" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO68" class="0">
+<net name="CLKOUT" class="0">
 <segment>
 <wire x1="238.76" y1="378.46" x2="226.06" y2="378.46" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_68"/>
 <label x="226.06" y="378.46" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO69" class="0">
+<net name="CLKOUT2" class="0">
 <segment>
 <wire x1="238.76" y1="375.92" x2="226.06" y2="375.92" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_69"/>
@@ -10339,11 +10344,6 @@ Example Datasheet</description>
 <wire x1="238.76" y1="276.86" x2="226.06" y2="276.86" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK1"/>
 <label x="226.06" y="276.86" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="134.62" y1="403.86" x2="144.78" y2="403.86" width="0.1524" layer="91"/>
-<label x="139.7" y="403.86" size="1.778" layer="95"/>
-<pinref part="Y2" gate="G$1" pin="OUT"/>
 </segment>
 </net>
 <net name="IO97" class="0">
@@ -12938,16 +12938,16 @@ Example Datasheet</description>
 <attribute name="VALUE" x="42.799" y="62.484" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="J17" gate="G$1" x="-35.56" y="190.5" smashed="yes" rot="R180"/>
-<instance part="R4_CLKOUT+" gate="G1" x="-53.34" y="264.16" smashed="yes">
+<instance part="CLKEXT" gate="G1" x="-53.34" y="264.16" smashed="yes">
 <attribute name="NAME" x="-55.88" y="267.462" size="1.778" layer="95"/>
 </instance>
-<instance part="T4_CLKOUT-" gate="G1" x="-53.34" y="248.92" smashed="yes">
+<instance part="CLKOUT" gate="G1" x="-53.34" y="248.92" smashed="yes">
 <attribute name="NAME" x="-55.88" y="252.222" size="1.778" layer="95"/>
 </instance>
-<instance part="D11_CLKOUT2+" gate="G1" x="-22.86" y="264.16" smashed="yes">
+<instance part="CLKEXT2" gate="G1" x="-22.86" y="264.16" smashed="yes">
 <attribute name="NAME" x="-25.4" y="267.462" size="1.778" layer="95"/>
 </instance>
-<instance part="B13_CLKOUT2-" gate="G1" x="-22.86" y="248.92" smashed="yes">
+<instance part="CLKOUT2" gate="G1" x="-22.86" y="248.92" smashed="yes">
 <attribute name="NAME" x="-25.4" y="252.222" size="1.778" layer="95"/>
 </instance>
 <instance part="IC2" gate="G$1" x="-149.86" y="152.4" smashed="yes">
@@ -13559,22 +13559,22 @@ Example Datasheet</description>
 <label x="-58.42" y="193.04" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R4_CLKOUT+" gate="G1" pin="2"/>
+<pinref part="CLKEXT" gate="G1" pin="2"/>
 <wire x1="-50.8" y1="261.62" x2="-45.72" y2="261.62" width="0.1524" layer="91"/>
 <label x="-45.72" y="261.62" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="T4_CLKOUT-" gate="G1" pin="2"/>
+<pinref part="CLKOUT" gate="G1" pin="2"/>
 <wire x1="-50.8" y1="246.38" x2="-45.72" y2="246.38" width="0.1524" layer="91"/>
 <label x="-45.72" y="246.38" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="D11_CLKOUT2+" gate="G1" pin="2"/>
+<pinref part="CLKEXT2" gate="G1" pin="2"/>
 <wire x1="-20.32" y1="261.62" x2="-15.24" y2="261.62" width="0.1524" layer="91"/>
 <label x="-15.24" y="261.62" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="B13_CLKOUT2-" gate="G1" pin="2"/>
+<pinref part="CLKOUT2" gate="G1" pin="2"/>
 <wire x1="-20.32" y1="246.38" x2="-15.24" y2="246.38" width="0.1524" layer="91"/>
 <label x="-15.24" y="246.38" size="1.778" layer="95" rot="R180"/>
 </segment>
@@ -14460,30 +14460,30 @@ Example Datasheet</description>
 <label x="-157.48" y="182.88" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="R4_CLKOUT1P" class="3">
+<net name="CLK8" class="0">
 <segment>
-<pinref part="R4_CLKOUT+" gate="G1" pin="1"/>
+<pinref part="CLKEXT" gate="G1" pin="1"/>
 <wire x1="-50.8" y1="264.16" x2="-45.72" y2="264.16" width="0.1524" layer="91"/>
 <label x="-50.8" y="264.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="T4_CLKOUT1N" class="3">
+<net name="CLKOUT" class="0">
 <segment>
-<pinref part="T4_CLKOUT-" gate="G1" pin="1"/>
+<pinref part="CLKOUT" gate="G1" pin="1"/>
 <wire x1="-50.8" y1="248.92" x2="-45.72" y2="248.92" width="0.1524" layer="91"/>
 <label x="-50.8" y="248.92" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D11_CLKOUT2P" class="3">
+<net name="CLK9" class="0">
 <segment>
-<pinref part="D11_CLKOUT2+" gate="G1" pin="1"/>
+<pinref part="CLKEXT2" gate="G1" pin="1"/>
 <wire x1="-20.32" y1="264.16" x2="-15.24" y2="264.16" width="0.1524" layer="91"/>
 <label x="-20.32" y="264.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="B13_CLKOUT2N" class="3">
+<net name="CLKOUT2" class="0">
 <segment>
-<pinref part="B13_CLKOUT2-" gate="G1" pin="1"/>
+<pinref part="CLKOUT2" gate="G1" pin="1"/>
 <wire x1="-20.32" y1="248.92" x2="-15.24" y2="248.92" width="0.1524" layer="91"/>
 <label x="-20.32" y="248.92" size="1.778" layer="95"/>
 </segment>

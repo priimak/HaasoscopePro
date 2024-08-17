@@ -292,8 +292,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 304)
 		(output)
-		(text "io2" (rect 0 0 10 12)(font "Arial" ))
-		(text "io2" (rect 249 299 259 311)(font "Arial" ))
+		(text "led5" (rect 0 0 15 12)(font "Arial" ))
+		(text "led5" (rect 244 299 259 311)(font "Arial" ))
 		(line (pt 280 304)(pt 264 304)(line_width 1))
 	)
 	(drawing

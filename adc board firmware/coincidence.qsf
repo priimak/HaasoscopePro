@@ -119,12 +119,11 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spiadccs
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
-set_location_assignment PIN_A4 -to io2
 set_location_assignment PIN_B3 -to ftdi_wr_n
 set_location_assignment PIN_B4 -to ftdi_txe_n
 set_location_assignment PIN_B7 -to ftdi_rxf_n
 set_location_assignment PIN_B8 -to ftdi_rd_n
-set_location_assignment PIN_E6 -to ftdi_oe_n
+set_location_assignment PIN_A3 -to ftdi_oe_n
 set_location_assignment PIN_A11 -to ftdi_clk
 set_location_assignment PIN_C3 -to ftdi_data7
 set_location_assignment PIN_C4 -to ftdi_data6
@@ -143,7 +142,6 @@ set_location_assignment PIN_G11 -to spiampmiso
 set_location_assignment PIN_G7 -to spiampsclk
 set_location_assignment PIN_G8 -to spiampscs
 set_location_assignment PIN_G9 -to spiampsdi
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to io2
 set_location_assignment PIN_T10 -to lvds1in[13]
 set_location_assignment PIN_T11 -to "lvds1in[13](n)"
 set_location_assignment PIN_T8 -to lvds1in[12]
@@ -329,4 +327,8 @@ set_global_assignment -name QIP_FILE lvds1.qip
 set_global_assignment -name QIP_FILE fifo1.qip
 set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
+set_location_assignment PIN_E6 -to clkout2
+set_location_assignment PIN_B12 -to clkext2
+set_location_assignment PIN_A4 -to led5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led5
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

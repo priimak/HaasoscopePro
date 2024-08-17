@@ -159,7 +159,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -392 1280 -224 1296)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "lvds4in[13..0]" (rect 5 0 69 17)(font "Intel Clear" ))
+	(text "lvds4in[13..0]" (rect 5 0 68 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -193,7 +193,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -392 1024 -224 1040)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "lvds2in[13..0]" (rect 5 0 69 17)(font "Intel Clear" ))
+	(text "lvds2in[13..0]" (rect 5 0 68 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -210,7 +210,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -384 512 -216 528)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clk_ext" (rect 5 0 41 12)(font "Arial" ))
+	(text "clk_ext" (rect 5 0 40 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -446,23 +446,6 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1080 1192 1256 1208)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "io2" (rect 90 0 104 17)(font "Intel Clear" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 1256 1208 1312 1232))
-)
-(pin
-	(output)
 	(rect 288 520 464 536)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "clk50out" (rect 90 0 131 12)(font "Arial" ))
@@ -477,6 +460,23 @@ refer to the applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 	(annotation_block (location)(rect 464 512 520 536))
+)
+(pin
+	(output)
+	(rect 1080 1192 1256 1208)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "led5" (rect 90 0 111 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1256 1208 1312 1232))
 )
 (pin
 	(bidir)
@@ -1583,8 +1583,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 304)
 		(output)
-		(text "io2" (rect 0 0 14 12)(font "Arial" ))
-		(text "io2" (rect 248 299 259 311)(font "Arial" ))
+		(text "led5" (rect 0 0 20 12)(font "Arial" ))
+		(text "led5" (rect 243 299 259 311)(font "Arial" ))
 		(line (pt 280 304)(pt 264 304))
 	)
 	(drawing
