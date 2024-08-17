@@ -292,9 +292,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 288)
 		(output)
-		(text "debugout[27..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "debugout[27..0]" (rect 199 283 259 295)(font "Arial" ))
+		(text "spimisossel[2..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "spimisossel[2..0]" (rect 195 283 259 295)(font "Arial" ))
 		(line (pt 280 288)(pt 264 288)(line_width 3))
+	)
+	(port
+		(pt 280 304)
+		(output)
+		(text "debugout[27..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "debugout[27..0]" (rect 199 299 259 311)(font "Arial" ))
+		(line (pt 280 304)(pt 264 304)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 264 384)(line_width 1))

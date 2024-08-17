@@ -208,7 +208,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1288 928 1464 944)
+	(rect 1408 968 1584 984)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "spimisos[7..0]" (rect 5 0 75 12)(font "Arial" ))
 	(pt 176 8)
@@ -221,7 +221,7 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1224 944 1288 968))
+	(annotation_block (location)(rect 1344 984 1408 1008))
 )
 (pin
 	(output)
@@ -361,7 +361,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1072 1176 1248 1192)
+	(rect 1040 1192 1216 1208)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "debugout[27..0]" (rect 90 0 164 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -374,7 +374,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1248 1192 1304 1216))
+	(annotation_block (location)(rect 1216 1208 1272 1232))
 )
 (pin
 	(output)
@@ -1488,13 +1488,64 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 288)
 		(output)
-		(text "debugout[27..0]" (rect 0 0 76 12)(font "Arial" ))
-		(text "debugout[27..0]" (rect 195 283 259 295)(font "Arial" ))
+		(text "spimisossel[2..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "spimisossel[2..0]" (rect 189 283 259 295)(font "Arial" ))
 		(line (pt 280 288)(pt 264 288)(line_width 3))
+	)
+	(port
+		(pt 280 304)
+		(output)
+		(text "debugout[27..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "debugout[27..0]" (rect 195 299 259 311)(font "Arial" ))
+		(line (pt 280 304)(pt 264 304)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 264 384))
 	)
+)
+(symbol
+	(rect 1696 928 1808 1016)
+	(text "MUX" (rect 42 0 73 16)(font "Arial" (font_size 10)))
+	(text "inst40" (rect 3 77 31 94)(font "Intel Clear" ))
+	(port
+		(pt 0 48)
+		(input)
+		(text "data[WIDTH-1..0]" (rect 6 35 101 49)(font "Arial" (font_size 8)))
+		(text "data[]" (rect 6 35 37 49)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 44 48)(line_width 3))
+	)
+	(port
+		(pt 56 88)
+		(input)
+		(text "sel[WIDTHS-1..0]" (rect 59 73 154 87)(font "Arial" (font_size 8)))
+		(text "sel[]" (rect 59 73 82 87)(font "Arial" (font_size 8)))
+		(line (pt 56 88)(pt 56 72)(line_width 3))
+	)
+	(port
+		(pt 112 48)
+		(output)
+		(text "result" (rect 74 33 105 47)(font "Arial" (font_size 8)))
+		(text "result" (rect 74 33 105 47)(font "Arial" (font_size 8)))
+		(line (pt 68 48)(pt 112 48))
+	)
+	(parameter
+		"WIDTH"
+		"8"
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(parameter
+		"WIDTHS"
+		"CEIL(LOG2(WIDTH))"
+		"Width of sel[] port, default is CEIL(LOG2(WIDTH))"
+	)
+	(drawing
+		(line (pt 68 64)(pt 68 32))
+		(line (pt 44 80)(pt 44 16))
+		(line (pt 44 16)(pt 68 32))
+		(line (pt 44 80)(pt 68 64))
+	)
+	(annotation_block (parameter)(rect 1808 864 2004 921))
 )
 (connector
 	(text "ftdidata0" (rect 923 328 965 345)(font "Intel Clear" ))
@@ -2080,18 +2131,41 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
+	(pt 928 1200)
+	(pt 1040 1200)
+	(bus)
+)
+(connector
+	(text "spimisossel[2..0]" (rect 950 1168 1027 1185)(font "Intel Clear" ))
 	(pt 928 1184)
-	(pt 1072 1184)
+	(pt 1040 1184)
 	(bus)
 )
 (connector
-	(text "spimisos[7..0]" (rect 1486 920 1549 937)(font "Intel Clear" ))
-	(pt 1464 936)
-	(pt 1576 936)
+	(text "spimisos[7..0]" (rect 1606 960 1669 977)(font "Intel Clear" ))
+	(pt 1584 976)
+	(pt 1696 976)
 	(bus)
 )
 (connector
-	(text "spimisos[0]" (rect 1481 784 1534 801)(font "Intel Clear" ))
+	(text "spimiso_selected" (rect 1826 960 1907 977)(font "Intel Clear" ))
+	(pt 1808 976)
+	(pt 1912 976)
+)
+(connector
+	(text "spimiso_selected" (rect 1449 784 1530 801)(font "Intel Clear" ))
 	(pt 1544 800)
-	(pt 1464 800)
+	(pt 1432 800)
+)
+(connector
+	(text "spimisossel[2..0]" (rect 1653 1032 1730 1049)(font "Intel Clear" ))
+	(pt 1752 1048)
+	(pt 1632 1048)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS550>>" (rect 1735 1027 1752 1139)(font "Intel Clear" )(vertical)(invisible))
+	(pt 1752 1016)
+	(pt 1752 1048)
+	(bus)
 )

@@ -53,9 +53,10 @@ module command_processor (
   output reg phasestep=0,
   output reg scanclk=0,
   
+  output reg [2:0] spimisossel=0, //which spimiso to listen to
   output reg [27:0]	debugout,  // for debugging
   input wire [3:0]	overrange  //ORA0,A1,B0,B1
-  
+
 );
 
 integer version = 4; // firmware version
@@ -185,6 +186,7 @@ always @ (posedge clk or negedge rstn)
 		3 : begin // SPI command
 			case (spistate)			
 			0 : begin
+				spimisossel <= rx_data[1][2:0]; // select requested data from chip
 				spics[rx_data[1][2:0]]<=1'b0; //select requested chip
 				spitx <= rx_data[2];//first byte to send
 				spistate <= 3'd1;
