@@ -9733,7 +9733,7 @@ Example Datasheet</description>
 <label x="226.06" y="576.58" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DEBUGOUT3" class="1">
+<net name="DEBUGOUT3" class="0">
 <segment>
 <wire x1="238.76" y1="574.04" x2="226.06" y2="574.04" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_12"/>
@@ -16319,7 +16319,7 @@ Example Datasheet</description>
 <label x="101.6" y="200.66" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DEBUGOUT3" class="1">
+<net name="DEBUGOUT3" class="0">
 <segment>
 <pinref part="J13" gate="G$1" pin="8"/>
 <wire x1="-182.88" y1="325.12" x2="-190.5" y2="325.12" width="0.1524" layer="91"/>
