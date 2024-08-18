@@ -8900,7 +8900,7 @@ Example Datasheet</description>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="1">
+<net name="GND" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="GND_1"/>
 <wire x1="238.76" y1="612.14" x2="226.06" y2="612.14" width="0.1524" layer="91"/>
@@ -13651,7 +13651,7 @@ Example Datasheet</description>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="1">
+<net name="GND" class="0">
 <segment>
 <wire x1="-180.34" y1="248.92" x2="-175.26" y2="248.92" width="0.1524" layer="91"/>
 <label x="-175.26" y="251.46" size="1.778" layer="95" rot="R180"/>
@@ -16593,7 +16593,7 @@ Example Datasheet</description>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="1">
+<net name="GND" class="0">
 <segment>
 <pinref part="C6" gate="C$1" pin="1"/>
 <pinref part="GND3" gate="1" pin="GND"/>
