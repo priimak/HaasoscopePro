@@ -10,7 +10,7 @@
 <layers>
 <layer number="1" name="top" color="12" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="topgnd" color="12" fill="5" visible="no" active="yes"/>
-<layer number="3" name="sig2" color="4" fill="1" visible="no" active="yes"/>
+<layer number="3" name="sig2" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="4" name="sig2gnd" color="4" fill="5" visible="no" active="yes"/>
 <layer number="5" name="pow1" color="7" fill="5" visible="no" active="yes"/>
 <layer number="6" name="pwr2" color="1" fill="8" visible="no" active="no"/>
@@ -19,11 +19,11 @@
 <layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
 <layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
 <layer number="11" name="sig3gnd" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="pow2" color="30" fill="5" visible="yes" active="yes"/>
+<layer number="12" name="pow2" color="30" fill="5" visible="no" active="yes"/>
 <layer number="13" name="sig4gnd" color="1" fill="5" visible="no" active="yes"/>
-<layer number="14" name="sig4" color="1" fill="1" visible="no" active="yes"/>
+<layer number="14" name="sig4" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="15" name="sig5gnd" color="5" fill="5" visible="no" active="yes"/>
-<layer number="16" name="sig5" color="5" fill="1" visible="no" active="yes"/>
+<layer number="16" name="sig5" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -46,10 +46,10 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="58" fill="7" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="58" fill="7" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
@@ -2379,27 +2379,27 @@ Example Datasheet</description>
 <element name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X08" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin" x="33.5" y="14" smashed="yes">
 <attribute name="PROD_ID" value="CONN-08438" x="33.5" y="14" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CLK+" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="" x="0.5" y="62" smashed="yes">
+<element name="CLK+" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in" x="0.5" y="62" smashed="yes">
 <attribute name="NAME" x="9.08" y="62.485" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="5.58" y="54.38" size="0.8128" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="CLK-" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="" x="0.5" y="49" smashed="yes">
+<element name="CLK-" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in" x="0.5" y="49" smashed="yes">
 <attribute name="NAME" x="8.58" y="49.485" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="5.58" y="41.38" size="0.8128" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="INB+" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="" x="11.5" y="12" smashed="yes" rot="R90">
+<element name="INB+" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in" x="11.5" y="12" smashed="yes" rot="R90">
 <attribute name="NAME" x="11.015" y="20.58" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="19.12" y="17.08" size="0.8128" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="INB-" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="" x="24.5" y="12" smashed="yes" rot="R90">
+<element name="INB-" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in" x="24.5" y="12" smashed="yes" rot="R90">
 <attribute name="NAME" x="24.015" y="20.58" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="32.12" y="17.08" size="0.8128" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="INA-" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="" x="49" y="100.5" smashed="yes" rot="R270">
+<element name="INA-" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in" x="49" y="100.5" smashed="yes" rot="R270">
 <attribute name="NAME" x="49.485" y="91.92" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="41.38" y="95.42" size="0.8128" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="INA+" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="" x="36" y="100.5" smashed="yes" rot="R270">
+<element name="INA+" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="SMA_EDGELAUNCH" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in" x="36" y="100.5" smashed="yes" rot="R270">
 <attribute name="NAME" x="36.485" y="91.92" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="28.38" y="95.42" size="0.8128" layer="27" ratio="10" rot="R90"/>
 </element>

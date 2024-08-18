@@ -8365,12 +8365,12 @@ Example Datasheet</description>
 <part name="GND58" library="supply1" deviceset="GND" device=""/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
-<part name="CLK+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
-<part name="CLK-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
-<part name="INB+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
-<part name="INB-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
-<part name="INA-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
-<part name="INA+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1"/>
+<part name="CLK+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in"/>
+<part name="CLK-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in"/>
+<part name="INB+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in"/>
+<part name="INB-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in"/>
+<part name="INA-" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in"/>
+<part name="INA+" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SMACONNECTOR" device="_EDGE" package3d_urn="urn:adsk.eagle:package:6240945/1" value="in"/>
 <part name="R18" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="0"/>
 <part name="R17" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
 <part name="R19" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
@@ -17003,12 +17003,6 @@ Example Datasheet</description>
 <approved hash="104,2,-170.18,264.16,INA+,GND2,GND,,,"/>
 <approved hash="104,2,-175.26,248.92,INA+,GND3,GND,,,"/>
 <approved hash="104,2,-170.18,248.92,INA+,GND4,GND,,,"/>
-<approved hash="113,2,-108.869,256.54,CLK+,,,,,"/>
-<approved hash="113,2,-109.097,231.14,CLK-,,,,,"/>
-<approved hash="113,2,-139.599,256.54,INB+,,,,,"/>
-<approved hash="113,2,-139.826,231.14,INB-,,,,,"/>
-<approved hash="113,2,-172.846,231.14,INA-,,,,,"/>
-<approved hash="113,2,-172.619,256.54,INA+,,,,,"/>
 </errors>
 </schematic>
 </drawing>
