@@ -833,7 +833,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="C11" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="12.1395" y="3.447" smashed="yes" rot="R90"/>
 <element name="C12" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="12.0995" y="0.553" smashed="yes" rot="R270"/>
 <element name="FB1" library="SparkFun-Coils" library_urn="urn:adsk.eagle:library:512" package="0603" package3d_urn="urn:adsk.eagle:package:37574/1" value="50mΩ 220Ω@100MHz 0603" x="25.9545" y="0.8915" smashed="yes" rot="R180">
-<attribute name="LCSC" value="C2901628" x="25.9545" y="0.8915" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C710364" x="25.9545" y="0.8915" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="PROD_ID" value="NDUC-07859" x="25.9545" y="0.8915" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="25.9545" y="-0.7465" size="0.6096" layer="27" font="vector" rot="R180" align="top-center"/>
 </element>
