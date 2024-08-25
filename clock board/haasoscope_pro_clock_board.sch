@@ -2302,8 +2302,8 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <part name="GND93" library="supply1" deviceset="GND" device=""/>
 <part name="+3V20" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND95" library="supply1" deviceset="GND" device=""/>
-<part name="RFAOUT-" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE"/>
-<part name="RFAOUT+" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE"/>
+<part name="RFAOUT-" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
+<part name="RFAOUT+" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="R1" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
@@ -2325,7 +2325,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <part name="C10" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1nF"/>
 <part name="C11" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1nF"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="REFRFIN" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE"/>
+<part name="REFRFIN" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
 <part name="C12" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1nF"/>
 <part name="R9" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
