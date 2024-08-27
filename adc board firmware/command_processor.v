@@ -62,6 +62,10 @@ module command_processor (
 integer version = 4; // firmware version
 
 assign debugout[0] = locked;
+assign debugout[4] = overrange[0];
+assign debugout[5] = overrange[1];
+assign debugout[6] = overrange[2];
+assign debugout[7] = overrange[3];
 
 //for clock phase
 reg[7:0] pllclock_counter=0;

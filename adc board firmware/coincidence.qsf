@@ -288,29 +288,6 @@ set_location_assignment PIN_N22 -to "lvds4in[0](n)"
 set_location_assignment PIN_E5 -to clk50out
 set_location_assignment PIN_A12 -to clk_ext
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk50out
-set_global_assignment -name BDF_FILE coincidence.bdf
-set_global_assignment -name SDC_FILE coincidence.sdc
-set_global_assignment -name VERILOG_FILE command_processor.v
-set_global_assignment -name VERILOG_FILE SPI_Master.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo4.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo2.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_upsizing.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v
-set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_assert.v
-set_global_assignment -name QIP_FILE pll2.qip
-set_global_assignment -name QIP_FILE lvds1.qip
-set_global_assignment -name QIP_FILE fifo1.qip
-set_global_assignment -name CDF_FILE Chain1.cdf
-set_global_assignment -name CDF_FILE Chain2.cdf
 set_location_assignment PIN_E6 -to clkout2
 set_location_assignment PIN_B12 -to clkext2
 set_location_assignment PIN_A13 -to debugout[0]
@@ -374,4 +351,35 @@ set_location_assignment PIN_C10 -to spimisos[4]
 set_location_assignment PIN_D6 -to spimisos[5]
 set_location_assignment PIN_E7 -to spimisos[6]
 set_location_assignment PIN_E9 -to spimisos[7]
+set_global_assignment -name BDF_FILE coincidence.bdf
+set_global_assignment -name SDC_FILE coincidence.sdc
+set_global_assignment -name VERILOG_FILE command_processor.v
+set_global_assignment -name VERILOG_FILE SPI_Master.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/fpga_top_ft232h_tx_mass.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/fpga_ft232h_example/clock_beat.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/resetn_sync.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_top.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/ftdi_245fifo_fsm.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo4.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo2.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo_delay_submit.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/fifo_async.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_upsizing.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_resizing.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v
+set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_assert.v
+set_global_assignment -name QIP_FILE pll2.qip
+set_global_assignment -name QIP_FILE lvds1.qip
+set_global_assignment -name QIP_FILE fifo1.qip
+set_global_assignment -name CDF_FILE Chain1.cdf
+set_global_assignment -name CDF_FILE Chain2.cdf
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clkout2
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
