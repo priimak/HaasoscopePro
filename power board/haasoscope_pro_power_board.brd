@@ -193,7 +193,7 @@ out</text>
 <text x="59.944" y="28.702" size="0.8128" layer="21" rot="R180">+</text>
 <text x="59.817" y="12.446" size="0.8128" layer="21" rot="R180">+</text>
 <text x="4.953" y="6.223" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="4.572" y="13.589" size="0.8128" layer="21" rot="R180">Vin</text>
+<text x="4.572" y="13.589" size="0.8128" layer="21" rot="R180">12V in</text>
 <wire x1="38.1" y1="22.86" x2="40.64" y2="22.86" width="0.1524" layer="21"/>
 <wire x1="40.64" y1="22.86" x2="39.37" y2="21.59" width="0.1524" layer="21"/>
 <wire x1="39.37" y1="21.59" x2="38.1" y2="22.86" width="0.1524" layer="21"/>

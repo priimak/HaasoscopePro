@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.05" altunitdist="mm" altunit="mm"/>
@@ -180,7 +180,7 @@
 <hole x="3" y="98" drill="2.9"/>
 <hole x="154.5" y="98" drill="2.9"/>
 <text x="63" y="85" size="1.27" layer="21">Haasoscope Pro
-ADC board, v1.11
+ADC board, v1.12
 by Dr. Andy Haas
 August 2024</text>
 <text x="151.5" y="79.5" size="0.8128" layer="21" rot="R180">2v5D</text>
@@ -276,6 +276,7 @@ August 2024</text>
 <text x="104" y="67.5" size="0.8128" layer="21" rot="R270">VCCA</text>
 <text x="107" y="67.5" size="0.8128" layer="21" rot="R270">VCCPLL</text>
 <text x="110" y="67.5" size="0.8128" layer="21" rot="R270">VCCINT</text>
+<text x="62.3" y="33.4" size="0.8128" layer="21" rot="R90">VDDD33</text>
 </plain>
 <libraries>
 <library name="con-coax" urn="urn:adsk.eagle:library:133">
@@ -3132,7 +3133,6 @@ Example Datasheet</description>
 <wire x1="97.5" y1="47.5" x2="97.75" y2="47.25" width="0.1524" layer="1"/>
 <wire x1="97.75" y1="46.25" x2="97.938" y2="46.275" width="0.1524" layer="1"/>
 <wire x1="90.5" y1="59.5" x2="90.6" y2="59.5" width="0.1524" layer="1"/>
-<wire x1="61.5" y1="50.25" x2="61.45" y2="50" width="0.1524" layer="16"/>
 <wire x1="40.5" y1="47" x2="40.4" y2="46.9" width="0.1524" layer="1"/>
 <wire x1="40.4" y1="46.9" x2="39.25" y2="46.9" width="0.1524" layer="1"/>
 <wire x1="70.5" y1="35.5" x2="71" y2="35" width="0.1524" layer="1"/>
@@ -3168,7 +3168,6 @@ Example Datasheet</description>
 <wire x1="61.75" y1="66.5" x2="42.5" y2="66.5" width="0.1524" layer="1"/>
 <wire x1="63" y1="65.25" x2="61.75" y2="66.5" width="0.1524" layer="1"/>
 <wire x1="63" y1="63.5" x2="63" y2="65.25" width="0.1524" layer="1"/>
-<wire x1="81" y1="35.25" x2="81" y2="35.4" width="0.1524" layer="1"/>
 <via x="143.5" y="12.75" extent="1-16" drill="0.2"/>
 <via x="140.75" y="12.75" extent="1-16" drill="0.2"/>
 <via x="98.5" y="96.75" extent="1-16" drill="0.2"/>
@@ -3234,10 +3233,6 @@ Example Datasheet</description>
 <wire x1="66.5" y1="56.5702125" x2="66.9032" y2="56.1670125" width="0.1524" layer="16"/>
 <wire x1="66.9032" y1="55.8329875" x2="66.5" y2="55.4297875" width="0.1524" layer="16"/>
 <wire x1="66.5" y1="57" x2="67.5" y2="58" width="0.1524" layer="16"/>
-<wire x1="69.0702125" y1="59" x2="69.5" y2="59" width="0.1524" layer="16"/>
-<wire x1="68.6670125" y1="58.5968" x2="69.0702125" y2="59" width="0.1524" layer="16"/>
-<wire x1="67.5" y1="58" x2="68.0968" y2="58.5968" width="0.1524" layer="16"/>
-<wire x1="68.0968" y1="58.5968" x2="68.6670125" y2="58.5968" width="0.1524" layer="16"/>
 <wire x1="66.9032" y1="54.1670125" x2="66.9032" y2="53.8329875" width="0.1524" layer="16"/>
 <wire x1="66.5" y1="55" x2="66.5" y2="54.5702125" width="0.1524" layer="16"/>
 <wire x1="66.5" y1="53.4297875" x2="66.5" y2="53" width="0.1524" layer="16"/>
@@ -3392,9 +3387,6 @@ Example Datasheet</description>
 <wire x1="93.25" y1="69.25" x2="93.25" y2="56.5" width="0.1524" layer="1"/>
 <wire x1="91.5" y1="54.25" x2="91.29" y2="54.04" width="0.1524" layer="1"/>
 <wire x1="67.5" y1="33.25" x2="67.5" y2="33.5" width="0.1524" layer="1"/>
-<wire x1="94.75" y1="94.75" x2="94.75" y2="93.75" width="0.1524" layer="5"/>
-<wire x1="94.75" y1="93.75" x2="94.54" y2="93.73" width="0.1524" layer="5"/>
-<wire x1="94.75" y1="94.75" x2="94.788321875" y2="94.764334375" width="0.1524" layer="5"/>
 <via x="93.25" y="69.25" extent="1-16" drill="0.2"/>
 <via x="145.5" y="55.5" extent="1-16" drill="0.2"/>
 <wire x1="94.54" y1="93.73" x2="99" y2="89.27" width="0.4064" layer="3"/>
@@ -4651,10 +4643,9 @@ Example Datasheet</description>
 <wire x1="60.95075" y1="52.2275125" x2="60.95075" y2="51.636171875" width="0.0889" layer="3"/>
 <wire x1="61.0434625" y1="51.543459375" x2="61.043465625" y2="51.543459375" width="0.0889" layer="3"/>
 <wire x1="61.043465625" y1="51.543459375" x2="61.17026875" y2="51.41665625" width="0.0889" layer="3"/>
-<wire x1="62.69823125" y1="51.41665625" x2="62.747425" y2="51.46585" width="0.0889" layer="3"/>
 <wire x1="61.17026875" y1="51.41665625" x2="62.69823125" y2="51.41665625" width="0.0889" layer="3"/>
-<wire x1="63.03415" y1="51.46585" x2="63.5" y2="51" width="0.0889" layer="3"/>
-<wire x1="62.747425" y1="51.46585" x2="63.03415" y2="51.46585" width="0.0889" layer="3"/>
+<wire x1="62.69823125" y1="51.41665625" x2="63.1148875" y2="51" width="0.0889" layer="3"/>
+<wire x1="63.1148875" y1="51" x2="63.5" y2="51" width="0.0889" layer="3"/>
 </signal>
 <signal name="DC4_N" class="2">
 <contactref element="IC1" pad="E14"/>
