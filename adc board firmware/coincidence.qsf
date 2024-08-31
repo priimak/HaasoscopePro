@@ -61,7 +61,7 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
 set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
-set_global_assignment -name OPTIMIZATION_MODE BALANCED
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
 set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
@@ -351,6 +351,14 @@ set_location_assignment PIN_C10 -to spimisos[4]
 set_location_assignment PIN_D6 -to spimisos[5]
 set_location_assignment PIN_E7 -to spimisos[6]
 set_location_assignment PIN_E9 -to spimisos[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clkout2
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
 set_global_assignment -name VERILOG_FILE command_processor.v
@@ -374,12 +382,4 @@ set_global_assignment -name QIP_FILE lvds1.qip
 set_global_assignment -name QIP_FILE fifo1.qip
 set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clkout2
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

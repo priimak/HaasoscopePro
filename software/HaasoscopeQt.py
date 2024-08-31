@@ -21,10 +21,10 @@ def oldbytes():
         if len(olddata)==0: break
         print("Old byte0:",olddata[0])
 
-def fifoused():
-    usb.send(bytes([4, 99, 99, 99, 100, 100, 100, 100]))  # get fifo used
+def clkswitch():
+    usb.send(bytes([1, 99, 99, 99, 100, 100, 100, 100]))
     tres = usb.recv(4)
-    print("Fifo used", tres[3], tres[2], tres[1] * 256 + tres[0])
+    print("Clk switch: bad1 bad0, activeclk, switch", tres[3], tres[2], tres[1], tres[0])
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
 def spicommand(name, first, second, third, read, show_bin=False, cs=0, nbyte=3):
@@ -443,9 +443,7 @@ class MainWindow(TemplateBaseClass):
         expect_samples = 100
         expect_len = expect_samples * 2 * 16  # length to request
 
-        if self.debug: fifoused()
         usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
-        if self.debug: fifoused()
 
         usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
         data = usb.recv(expect_len)  # recv from usb
@@ -495,6 +493,8 @@ class MainWindow(TemplateBaseClass):
         usb.send(bytes([2, 99, 99, 99, 100, 100, 100, 100]))  # get version
         res = usb.recv(4)
         print("Version", res[3], res[2], res[1], res[0])
+
+        #clkswitch()
 
         board_setup(self.dopattern)
         return 1

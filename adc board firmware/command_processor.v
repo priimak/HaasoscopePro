@@ -33,7 +33,7 @@ module command_processor (
 	
 	input wire			locked, // clock is locked
 	
-	input wire [139:0] lvds1bits, // rx_in[0] drives data to rx_out[(J-1)..0], rx_in[1] drives data to the next J number of bits on rx_out
+	input wire [139:0] lvds1bits, lvds2bits, lvds3bits, lvds4bits,// rx_in[0] drives data to rx_out[(J-1)..0], rx_in[1] drives data to the next J number of bits on rx_out
 	input wire			clklvds, // clk1, runs at LVDS bit rate (ADC clk input rate) / 2
 	output reg			lvds1wr,
 	output reg			lvds1rd,
@@ -41,21 +41,20 @@ module command_processor (
 	input wire			lvds1wrempty,
 	input wire			lvds1rdfull,
 	input wire			lvds1rdempty,
-	output reg [139:0] lvds1bitsfifoout, //output bits to fifo
-	input wire [139:0] lvds1bitsfifoin, // input bits from fifo
-	input wire [10:0]	lvds1wrused,
-	input wire [10:0]	lvds1rdused,
+	output reg [559:0] lvds1bitsfifoout, //output bits to fifo
+	input wire [559:0] lvds1bitsfifoin, // input bits from fifo
 	
-	input wire			activeclock, clkbad1, clkbad0,
+	input wire			activeclock, 
+	input wire [1:0]	clkbad,
 	
-  output reg[2:0] phasecounterselect, // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
-  output reg phaseupdown=1, // Dynamic phase shift direction; 1:UP, 0:DOWN. Registered in the PLL on the rising edge of scanclk.
-  output reg phasestep=0,
-  output reg scanclk=0,
-  
-  output reg [2:0] spimisossel=0, //which spimiso to listen to
-  output reg [27:0]	debugout,  // for debugging
-  input wire [3:0]	overrange  //ORA0,A1,B0,B1
+	output reg[2:0] phasecounterselect, // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
+	output reg phaseupdown=1, // Dynamic phase shift direction; 1:UP, 0:DOWN. Registered in the PLL on the rising edge of scanclk.
+	output reg phasestep=0,
+	output reg scanclk=0,
+
+	output reg [2:0] spimisossel=0, //which spimiso to listen to
+	output reg [27:0]	debugout,  // for debugging
+	input wire [3:0]	overrange  //ORA0,A1,B0,B1
 
 );
 
@@ -86,12 +85,13 @@ reg [ 2:0]  acqstate=0;
 reg [15:0]	triggercounter=0, triggercounter2=0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
-reg [ 7:0]	triggertype=0;
+reg [ 7:0]	triggertype=0, triggertype2=0;
 reg signed [11:0]  samplevalue=0, lowerthresh=-12'd10, upperthresh=12'd10;
 
 always @ (posedge clklvds) begin
 	triggerlive2 <= triggerlive;
 	lengthtotake2 <= lengthtotake;
+	triggertype2 <= triggertype;
 end
 
 always @ (posedge clklvds or negedge rstn)
@@ -106,7 +106,7 @@ always @ (posedge clklvds or negedge rstn)
 		lvds1wr <= 1'b0;
 		if (triggerlive2) begin
 			triggercounter<=0;
-			if (triggertype==8'd1) acqstate <= 3'd1; // threshold trigger
+			if (triggertype2==8'd1) acqstate <= 3'd1; // threshold trigger
 			else acqstate <= 3'd3; // go straight to taking data, no trigger, triggertype==0
 		end
 	end
@@ -119,7 +119,7 @@ always @ (posedge clklvds or negedge rstn)
 	3 : begin // taking data
 		lvds1bitsfifoout <= lvds1bits;
 		//lvds1bitsfifoout <= {14{triggercounter[9:0]}}; // for testing the queue
-		if (lvds1wrused<1020 && triggercounter<lengthtotake2) begin
+		if ((!lvds1wrfull) && triggercounter<lengthtotake2) begin
 			lvds1wr <= 1'b1;
 			triggercounter<=triggercounter+16'd1;
 		end
@@ -174,7 +174,7 @@ always @ (posedge clk or negedge rstn)
 		
 		1 : begin // toggles clkswitch
 			clkswitch <= ~clkswitch;
-			o_tdata <= {7'd0,clkbad1,7'd0,clkbad0,7'd0,activeclock,7'd0,clkswitch};
+			o_tdata <= {7'd0,clkbad[1],7'd0,clkbad[0],7'd0,activeclock,7'd0,clkswitch};
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
@@ -239,8 +239,8 @@ always @ (posedge clk or negedge rstn)
 			endcase
 		end
 		
-		4 : begin // reads fifo used
-			o_tdata <= lvds1rdused;
+		4 : begin // not used
+			o_tdata <= 19;
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
