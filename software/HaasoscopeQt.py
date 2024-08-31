@@ -459,19 +459,28 @@ class MainWindow(TemplateBaseClass):
                 if self.debug and self.debugprint: print("sample", s, "------------------------------------")
                 for n in range(nsubsamples): # the subsample to get
                     pbyte = nsubsamples*2*s + 2*n
+                    lowbits = data[pbyte + 0]
                     highbits = data[pbyte + 1]
+                    if n==40:
+                        if lowbits!=68 or highbits!=68:
+                            if lowbits!=17 or highbits!=17:
+                                self.nbadclk=self.nbadclk+1
+                                print(n,"badclk")
+                    if n==41:
+                        if lowbits!=4 or highbits!=0:
+                            if lowbits!=1 or highbits!=0:
+                                self.nbadclk=self.nbadclk+1
+                                print(n,"badclk")
                     if getbit(highbits,3): highbits = (highbits - 16)*256
                     else: highbits = highbits*256
-                    val = highbits + data[pbyte + 0]
-                    #if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
+                    val = highbits + lowbits
                     if self.debug and self.debugprint:
                         if s<100:
-                            if self.showbinarydata and n<48:
+                            if self.showbinarydata and n<40:
                                 print("n=",n, "pbyte=",pbyte, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val, self.nbadclk)
                             else:
                                 print("n=",n, "pbyte=",pbyte, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<10:
-                        #print(n,val)
                         self.xydata[chan][1][s*10+(9-n)] = val
 
         if self.debug:
