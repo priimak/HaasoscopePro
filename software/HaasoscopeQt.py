@@ -439,7 +439,7 @@ class MainWindow(TemplateBaseClass):
 
     def getchannels(self):
         chan=0
-        nsubsamples = 10 * 4 + 2  # extra 2 subsamples are dead beef
+        nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
 
         expect_samples = 100
         usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
@@ -466,7 +466,7 @@ class MainWindow(TemplateBaseClass):
                     #if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
                     if self.debug and self.debugprint:
                         if s<100:
-                            if self.showbinarydata and n<40:
+                            if self.showbinarydata and n<48:
                                 print("n=",n, "pbyte=",pbyte, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val, self.nbadclk)
                             else:
                                 print("n=",n, "pbyte=",pbyte, hex(data[pbyte + 1]), hex(data[pbyte + 0]))

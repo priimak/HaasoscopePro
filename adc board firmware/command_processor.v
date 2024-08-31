@@ -360,9 +360,60 @@ always @ (posedge clk or negedge rstn)
 		lvds1rd <= 1'b0;
 		if (o_tready) begin
 			o_tvalid <= 1'b1;
-			if (channel==40) o_tdata <= {16'hbeef,16'hdead};//marker
+			if (channel==48) o_tdata <= {16'hbeef,16'hdead};//marker
+			else if (channel==46) o_tdata  <= {
+				12'd0,
+				lvds1bitsfifoin[14*39+12 +: 2], //sampleclkstr39
+				lvds1bitsfifoin[14*38+12 +: 2], //...
+				lvds1bitsfifoin[14*37+12 +: 2],
+				lvds1bitsfifoin[14*36+12 +: 2],
+				lvds1bitsfifoin[14*35+12 +: 2],
+				lvds1bitsfifoin[14*34+12 +: 2],
+				lvds1bitsfifoin[14*33+12 +: 2],
+				lvds1bitsfifoin[14*32+12 +: 2],
+				lvds1bitsfifoin[14*31+12 +: 2],
+				lvds1bitsfifoin[14*30+12 +: 2], //sampleclkstr30
+				};
+			else if (channel==44) o_tdata  <= {
+				12'd0,
+				lvds1bitsfifoin[14*29+12 +: 2], //sampleclkstr29
+				lvds1bitsfifoin[14*28+12 +: 2], //...
+				lvds1bitsfifoin[14*27+12 +: 2],
+				lvds1bitsfifoin[14*26+12 +: 2],
+				lvds1bitsfifoin[14*25+12 +: 2],
+				lvds1bitsfifoin[14*24+12 +: 2],
+				lvds1bitsfifoin[14*23+12 +: 2],
+				lvds1bitsfifoin[14*22+12 +: 2],
+				lvds1bitsfifoin[14*21+12 +: 2],
+				lvds1bitsfifoin[14*20+12 +: 2], //sampleclkstr20
+				};
+			else if (channel==42) o_tdata  <= {
+				12'd0,
+				lvds1bitsfifoin[14*19+12 +: 2], //sampleclkstr19
+				lvds1bitsfifoin[14*18+12 +: 2], //...
+				lvds1bitsfifoin[14*17+12 +: 2],
+				lvds1bitsfifoin[14*16+12 +: 2],
+				lvds1bitsfifoin[14*15+12 +: 2],
+				lvds1bitsfifoin[14*14+12 +: 2],
+				lvds1bitsfifoin[14*13+12 +: 2],
+				lvds1bitsfifoin[14*12+12 +: 2],
+				lvds1bitsfifoin[14*11+12 +: 2],
+				lvds1bitsfifoin[14*10+12 +: 2], //sampleclkstr10
+				};
+			else if (channel==40) o_tdata  <= {
+				12'd0,
+				lvds1bitsfifoin[14*9+12 +: 2], //sampleclkstr9
+				lvds1bitsfifoin[14*8+12 +: 2], //...
+				lvds1bitsfifoin[14*7+12 +: 2],
+				lvds1bitsfifoin[14*6+12 +: 2],
+				lvds1bitsfifoin[14*5+12 +: 2],
+				lvds1bitsfifoin[14*4+12 +: 2],
+				lvds1bitsfifoin[14*3+12 +: 2],
+				lvds1bitsfifoin[14*2+12 +: 2],
+				lvds1bitsfifoin[14*1+12 +: 2],
+				lvds1bitsfifoin[14*0+12 +: 2], //sampleclkstr0
+				};
 			else o_tdata  <= {4'd0, lvds1bitsfifoin[14*(channel+1) +: 12], 4'd0, lvds1bitsfifoin[14*channel +: 12]};
-			//TODO: add channels for clk/str
 			channel<=channel+6'd2;
 			state <= TX_DATA4;
 		end
@@ -374,7 +425,7 @@ always @ (posedge clk or negedge rstn)
 			o_tvalid <= 1'b0;
 			if (length >= 4) begin
 				length <= length - 16'd4;
-				if (channel==42) begin
+				if (channel==50) begin
 					channel <= 0;
 					state <= TX_DATA1;
 				end
