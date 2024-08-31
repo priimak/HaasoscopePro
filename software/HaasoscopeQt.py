@@ -7,7 +7,7 @@ from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 #################
 
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
-usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','Haasoscope USB2'),('FT60X','Haasoscope USB3')))
+usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','HaasoscopePro USB2'),('FT60X','Haasoscope USB3')))
 
 def binprint(x):
     return bin(x)[2:].zfill(8)
@@ -68,13 +68,13 @@ def board_setup(dopattern=False):
     # spicommand("SYNC_SEL",0x02,0x01,0x0a,False) # use LSYNC_N (software), 2's complement
     spicommand("SYNC_SEL", 0x02, 0x01, 0x08, False)  # use LSYNC_N (software), offset binary
 
-    spicommand("INPUT_MUX", 0x00, 0x60, 0x11, False)  # swap inputs
-    #spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+    #spicommand("INPUT_MUX", 0x00, 0x60, 0x11, False)  # swap inputs
+    spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
 
     if dopattern:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval = 0x00
-        usrval3 = 0x08;  usrval2 = 0x00
+        usrval3 = 0x0f;  usrval2 = 0xff
         spicommand2("UPAT0", 0x01, 0x80, usrval3, usrval2, False)  # set pattern sample 0
         spicommand2("UPAT1", 0x01, 0x82, usrval3, usrval2, False)  # set pattern sample 1
         spicommand2("UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
@@ -98,7 +98,7 @@ def board_setup(dopattern=False):
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
     gain=0x10 #00 to 20 is 26 to -6 dB
-    spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2) # gain -6dB
+    spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
 #################
@@ -112,7 +112,8 @@ class MainWindow(TemplateBaseClass):
     total_rx_len = 0
     time_start = time.time()
     dopattern = False
-    triggertype = 1 # 0 no trigger, 1 threshold trigger
+    triggertype = 1  # 0 no trigger, 1 threshold trigger
+    if dopattern: triggertype = 0
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -463,8 +464,8 @@ class MainWindow(TemplateBaseClass):
                 for p in range(16 * s, 16 * (s + 1)): #loop over the 16 channels of the sample
                     if n<8: bit=getbit(data[2*p+0], n)
                     else: bit=getbit(data[2*p+1], n-8)
-                    #if bit and bb<11: val=val+pow(2,bb)
-                    if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
+                    if bit and bb<11: val=val+pow(2,bb)
+                    #if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
                     if bit and bb==11: val = val - pow(2,bb)
                     bb=bb+1
                     if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
