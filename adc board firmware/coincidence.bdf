@@ -2120,17 +2120,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 496 1248)
-	(pt 496 1232)
-	(bus)
-)
-(connector
-	(text "clkbad1,clkbad0" (rect 539 1232 616 1249)(font "Intel Clear" ))
-	(pt 648 1248)
-	(pt 496 1248)
-	(bus)
-)
-(connector
 	(text "lvds1bitsin[559..0]" (rect -217 1456 -131 1473)(font "Intel Clear" ))
 	(pt -232 1472)
 	(pt -136 1472)
@@ -2145,4 +2134,10 @@ refer to the applicable agreement for further details.
 	(text "clk_ext" (rect -334 528 -300 545)(font "Intel Clear" ))
 	(pt -352 544)
 	(pt -296 544)
+)
+(connector
+	(text "clkbad1,clkbad0" (rect 547 1232 624 1249)(font "Intel Clear" ))
+	(pt 536 1248)
+	(pt 648 1248)
+	(bus)
 )

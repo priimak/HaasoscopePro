@@ -106,7 +106,7 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
-    debug = False
+    debug = True
     debugprint = True
     showbinarydata = True
     total_rx_len = 0
@@ -439,12 +439,12 @@ class MainWindow(TemplateBaseClass):
 
     def getchannels(self):
         chan=0
+        nsubsamples = 10 * 4 + 2  # extra 2 subsamples are dead beef
 
         expect_samples = 100
-        expect_len = expect_samples * 2 * 16  # length to request
-
         usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
 
+        expect_len = expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
         usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
         data = usb.recv(expect_len)  # recv from usb
         rx_len = len(data)
@@ -452,28 +452,28 @@ class MainWindow(TemplateBaseClass):
         self.total_rx_len += rx_len
         if expect_len != rx_len:
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len))
-            # break
-        for n in range(10): # the bit to get
-            self.nbadclk=0
+
+        else:
+            self.nbadclk = 0
             for s in range(0, int(expect_samples)):
-                if self.debug and self.debugprint and s==99 and n==9: print("sample", s, "bit", n, "------------------------------------")
-                bb=0
-                val=0
-                for p in range(16 * s, 16 * (s + 1)): #loop over the 16 channels of the sample
-                    if n<8: bit=getbit(data[2*p+0], n)
-                    else: bit=getbit(data[2*p+1], n-8)
-                    if bit and bb<11: val=val+pow(2,bb)
-                    #if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
-                    if bit and bb==11: val = val - pow(2,bb)
-                    bb=bb+1
-                    if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
+                if self.debug and self.debugprint: print("sample", s, "------------------------------------")
+                for n in range(nsubsamples): # the subsample to get
+                    pbyte = nsubsamples*2*s + 2*n
+                    highbits = data[pbyte + 1]
+                    if getbit(highbits,3): highbits = (highbits - 16)*256
+                    else: highbits = highbits*256
+                    val = highbits + data[pbyte + 0]
+                    #if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
                     if self.debug and self.debugprint:
-                        if s==99 and n==9:
-                            if self.showbinarydata:
-                                print(binprint(data[2 * p + 1]), binprint(data[2 * p + 0]), val,self.nbadclk)
+                        if s<100:
+                            if self.showbinarydata and n<40:
+                                print("n=",n, "pbyte=",pbyte, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val, self.nbadclk)
                             else:
-                                print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
-                self.xydata[chan][1][s*10+(9-n)] = val
+                                print("n=",n, "pbyte=",pbyte, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
+                    if n<10:
+                        #print(n,val)
+                        self.xydata[chan][1][s*10+(9-n)] = val
+
         if self.debug:
             time.sleep(.1)
             oldbytes()
