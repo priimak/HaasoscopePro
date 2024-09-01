@@ -108,12 +108,13 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
-    debug = True
+    debug = False
+    dopattern = False
     debugprint = True
     showbinarydata = True
+    xydata_overlapped=False
     total_rx_len = 0
     time_start = time.time()
-    dopattern = True
     triggertype = 1  # 0 no trigger, 1 threshold trigger
     if dopattern: triggertype = 0
     def __init__(self):
@@ -415,7 +416,10 @@ class MainWindow(TemplateBaseClass):
         self.timer.stop()
         self.timer2.stop()
 
-    xydata = np.empty([int(num_chan_per_board * num_board), 2, num_samples], dtype=float)
+    if xydata_overlapped:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, num_samples], dtype=float)
+    else:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 4*num_samples], dtype=float)
 
     def updateplot(self):
         self.mainloop()
@@ -471,52 +475,40 @@ class MainWindow(TemplateBaseClass):
                     if n<40 and getbit(highbits,3): highbits = (highbits - 16)*256
                     else: highbits = highbits*256
                     val = highbits + lowbits
-                    badclk=0
+                    if n % 10 == 0: chan = chan + 1
                     if n==40 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkA=self.nbadclkA+1
-                        badclk=1
                     if n==41 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkA=self.nbadclkA+1
-                        badclk=2
                     if n==42 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkB=self.nbadclkB+1
-                        badclk=3
                     if n==43 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkB=self.nbadclkB+1
-                        badclk=4
                     if n==44 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkC=self.nbadclkC+1
-                        badclk=5
                     if n==45 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkC=self.nbadclkC+1
-                        badclk=6
                     if n==46 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkD=self.nbadclkD+1
-                        badclk=7
                     if n==47 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkD=self.nbadclkD+1
-                        badclk=8
-                    if n % 10 == 0: chan = chan + 1
-                    #if chan==1 or chan==3: val=0
                     if self.debug and self.debugprint:
                         goodval=-1
-                        if s<0 or (n<40 and val!=0 and val!=goodval): # or badclk:
+                        if s<0 or (n<40 and val!=0 and val!=goodval):
                             if self.showbinarydata and n<40:
-                                if s<0 or chan!=3 or (chan==3 and val!=511 and val!=1023 and val!=2047):
+                                if s<0 or chan!=3 or (chan==3 and val!=255 and val!=511 and val!=1023 and val!=2047):
                                     if lowbits>0 or highbits>0: print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        self.xydata[chan][1][s*10+(9-(n%10))] = val
-
+                        if self.xydata_overlapped:
+                            self.xydata[chan][1][s*10+(9-(n%10))] = val
+                        else:
+                            self.xydata[0][1][chan+ 4*(s*10+(9-(n%10)))] = val
         if self.debug:
-            time.sleep(.1)
+            time.sleep(.001)
             #oldbytes()
-
-        for c in range(self.num_chan_per_board):
-            self.xydata[c][0] = np.array([range(0,1000)])
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
-
         return rx_len
 
     def chantext(self):
@@ -536,6 +528,11 @@ class MainWindow(TemplateBaseClass):
         return 1
 
     def init(self):
+        if self.xydata_overlapped:
+            for c in range(self.num_chan_per_board):
+                self.xydata[c][0] = np.array([range(0,1000)])
+        else:
+            self.xydata[0][0] = np.array([range(0, 4000)])
         return 1
 
     def cleanup(self):
