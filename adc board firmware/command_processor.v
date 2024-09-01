@@ -262,8 +262,7 @@ always @ (posedge clklvds) begin
 	triggerlive2 <= triggerlive;
 	lengthtotake2 <= lengthtotake;
 	triggertype2 <= triggertype;
-	samplevalue = {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};//for trigger
-
+	samplevalue <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};//for trigger
 end
 
 always @ (posedge clklvds or negedge rstn)

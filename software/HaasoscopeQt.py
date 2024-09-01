@@ -107,7 +107,7 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
-    debug = True
+    debug = False
     debugprint = True
     showbinarydata = True
     total_rx_len = 0
