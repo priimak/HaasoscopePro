@@ -75,7 +75,7 @@ def board_setup(dopattern=False):
     if dopattern:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval = 0x00
-        usrval3 = 0x0f;  usrval2 = 0xf8
+        usrval3 = 0x0f;  usrval2 = 0xff
         spicommand2("UPAT0", 0x01, 0x80, usrval3, usrval2, False)  # set pattern sample 0
         spicommand2("UPAT1", 0x01, 0x82, usrval, usrval, False)  # set pattern sample 1
         spicommand2("UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
@@ -472,44 +472,46 @@ class MainWindow(TemplateBaseClass):
                     else: highbits = highbits*256
                     val = highbits + lowbits
                     badclk=0
-                    if n==40 and val&0x5555!=4369:
+                    if n==40 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkA=self.nbadclkA+1
                         badclk=1
-                    if n==41 and val&0x5555!=1:
+                    if n==41 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkA=self.nbadclkA+1
                         badclk=2
-                    if n==42 and val&0x5555!=4369:
+                    if n==42 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkB=self.nbadclkB+1
                         badclk=3
-                    if n==43 and val&0x5555!=1:
+                    if n==43 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkB=self.nbadclkB+1
                         badclk=4
-                    if n==44 and val&0x5555!=4369:
+                    if n==44 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkC=self.nbadclkC+1
                         badclk=5
-                    if n==45 and val&0x5555!=1:
+                    if n==45 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkC=self.nbadclkC+1
                         badclk=6
-                    if n==46 and val&0x5555!=4369:
+                    if n==46 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkD=self.nbadclkD+1
                         badclk=7
-                    if n==47 and val&0x5555!=1:
+                    if n==47 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkD=self.nbadclkD+1
                         badclk=8
                     if n % 10 == 0: chan = chan + 1
                     #if chan==1 or chan==3: val=0
                     if self.debug and self.debugprint:
-                        if s<1 or (n<40 and val!=0 and val!=-8): # or badclk:
-                            if self.showbinarydata and n<48:
-                                if lowbits>0 or highbits>0: print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
-                            else:
+                        goodval=-1
+                        if s<0 or (n<40 and val!=0 and val!=goodval): # or badclk:
+                            if self.showbinarydata and n<40:
+                                if s<0 or chan!=3 or (chan==3 and val!=511 and val!=1023 and val!=2047):
+                                    if lowbits>0 or highbits>0: print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+                            elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
                         self.xydata[chan][1][s*10+(9-(n%10))] = val
 
         if self.debug:
             time.sleep(.1)
-            oldbytes()
+            #oldbytes()
 
         for c in range(self.num_chan_per_board):
             self.xydata[c][0] = np.array([range(0,1000)])
