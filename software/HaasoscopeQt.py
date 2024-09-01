@@ -61,12 +61,13 @@ def board_setup(dopattern=False):
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
-    spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode
+    spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
+    #spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
     spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
     #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
 
-    # spicommand("SYNC_SEL",0x02,0x01,0x0a,False) # use LSYNC_N (software), 2's complement
-    spicommand("SYNC_SEL", 0x02, 0x01, 0x08, False)  # use LSYNC_N (software), offset binary
+    spicommand("LCTRL",0x02,0x04,0x0a,False) # use LSYNC_N (software), 2's complement
+    #spicommand("LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
 
     #spicommand("INPUT_MUX", 0x00, 0x60, 0x11, False)  # swap inputs
     spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
@@ -351,7 +352,7 @@ class MainWindow(TemplateBaseClass):
                 elif modifiers == QtCore.Qt.ControlModifier:
                     self.ui.chanonCheck.toggle()
 
-    num_chan_per_board=1
+    num_chan_per_board=4
     num_board=1
     num_logic_inputs=1
     num_samples=1000
@@ -438,7 +439,6 @@ class MainWindow(TemplateBaseClass):
     nbadclk = 0
 
     def getchannels(self):
-        chan=0
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
 
         expect_samples = 100
@@ -456,7 +456,7 @@ class MainWindow(TemplateBaseClass):
         else:
             self.nbadclk = 0
             for s in range(0, int(expect_samples)):
-                if self.debug and self.debugprint: print("sample", s, "------------------------------------")
+                chan = -1
                 for n in range(nsubsamples): # the subsample to get
                     pbyte = nsubsamples*2*s + 2*n
                     lowbits = data[pbyte + 0]
@@ -465,29 +465,31 @@ class MainWindow(TemplateBaseClass):
                         if lowbits!=68 or highbits!=68:
                             if lowbits!=17 or highbits!=17:
                                 self.nbadclk=self.nbadclk+1
-                                print(n,"badclk")
                     if n==41:
                         if lowbits!=4 or highbits!=0:
                             if lowbits!=1 or highbits!=0:
                                 self.nbadclk=self.nbadclk+1
-                                print(n,"badclk")
                     if getbit(highbits,3): highbits = (highbits - 16)*256
                     else: highbits = highbits*256
                     val = highbits + lowbits
+                    if n % 10 == 0: chan = chan + 1
+                    if chan==1 or chan==3: val=0
                     if self.debug and self.debugprint:
-                        if s<100:
+                        if s<1:
+                            if n==0: print("sample", s, "------------------------------------")
                             if self.showbinarydata and n<40:
-                                print("n=",n, "pbyte=",pbyte, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val, self.nbadclk)
+                                print("n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
                             else:
-                                print("n=",n, "pbyte=",pbyte, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
-                    if n<10:
+                                print("n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
+                    if n<40:
                         self.xydata[chan][1][s*10+(9-n)] = val
 
         if self.debug:
             time.sleep(.1)
             oldbytes()
 
-        self.xydata[chan][0] = np.array([range(0,1000)])
+        for c in range(self.num_chan_per_board):
+            self.xydata[c][0] = np.array([range(0,1000)])
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
 
         return rx_len
