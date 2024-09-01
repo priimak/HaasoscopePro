@@ -75,16 +75,17 @@ def board_setup(dopattern=False):
     if dopattern:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval = 0x00
-        usrval3 = 0x0f;  usrval2 = 0xff
+        usrval3 = 0x0f;  usrval2 = 0xf8
         spicommand2("UPAT0", 0x01, 0x80, usrval3, usrval2, False)  # set pattern sample 0
-        spicommand2("UPAT1", 0x01, 0x82, usrval3, usrval2, False)  # set pattern sample 1
+        spicommand2("UPAT1", 0x01, 0x82, usrval, usrval, False)  # set pattern sample 1
         spicommand2("UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
         spicommand2("UPAT3", 0x01, 0x86, usrval, usrval, False)  # set pattern sample 3
         spicommand2("UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
         spicommand2("UPAT5", 0x01, 0x8a, usrval, usrval, False)  # set pattern sample 5
         spicommand2("UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
         spicommand2("UPAT7", 0x01, 0x8e, usrval, usrval, False)  # set pattern sample 7
-        spicommand("UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user
+        #spicommand("UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user, invert a bit of B C D
+        spicommand("UPAT_CTRL", 0x01, 0x90, 0x00, False)  # set lane pattern to user
     else:
         spicommand("PAT_SEL", 0x02, 0x05, 0x02, False)  # normal ADC data
         spicommand("UPAT_CTRL", 0x01, 0x90, 0x1e, False)  # set lane pattern to default
@@ -107,12 +108,12 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
-    debug = False
+    debug = True
     debugprint = True
     showbinarydata = True
     total_rx_len = 0
     time_start = time.time()
-    dopattern = False
+    dopattern = True
     triggertype = 1  # 0 no trigger, 1 threshold trigger
     if dopattern: triggertype = 0
     def __init__(self):
@@ -436,7 +437,10 @@ class MainWindow(TemplateBaseClass):
     oldnevents=0
     tinterval=100.
     oldtime=time.time()
-    nbadclk = 0
+    nbadclkA = 0
+    nbadclkB = 0
+    nbadclkC = 0
+    nbadclkD = 0
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
@@ -454,33 +458,52 @@ class MainWindow(TemplateBaseClass):
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len))
 
         else:
-            self.nbadclk = 0
+            self.nbadclkA = 0
+            self.nbadclkB = 0
+            self.nbadclkC = 0
+            self.nbadclkD = 0
             for s in range(0, int(expect_samples)):
                 chan = -1
                 for n in range(nsubsamples): # the subsample to get
                     pbyte = nsubsamples*2*s + 2*n
                     lowbits = data[pbyte + 0]
                     highbits = data[pbyte + 1]
-                    if n==40:
-                        if lowbits!=68 or highbits!=68:
-                            if lowbits!=17 or highbits!=17:
-                                self.nbadclk=self.nbadclk+1
-                    if n==41:
-                        if lowbits!=4 or highbits!=0:
-                            if lowbits!=1 or highbits!=0:
-                                self.nbadclk=self.nbadclk+1
-                    if getbit(highbits,3): highbits = (highbits - 16)*256
+                    if n<40 and getbit(highbits,3): highbits = (highbits - 16)*256
                     else: highbits = highbits*256
                     val = highbits + lowbits
+                    badclk=0
+                    if n==40 and val&0x5555!=4369:
+                        self.nbadclkA=self.nbadclkA+1
+                        badclk=1
+                    if n==41 and val&0x5555!=1:
+                        self.nbadclkA=self.nbadclkA+1
+                        badclk=2
+                    if n==42 and val&0x5555!=4369:
+                        self.nbadclkB=self.nbadclkB+1
+                        badclk=3
+                    if n==43 and val&0x5555!=1:
+                        self.nbadclkB=self.nbadclkB+1
+                        badclk=4
+                    if n==44 and val&0x5555!=4369:
+                        self.nbadclkC=self.nbadclkC+1
+                        badclk=5
+                    if n==45 and val&0x5555!=1:
+                        self.nbadclkC=self.nbadclkC+1
+                        badclk=6
+                    if n==46 and val&0x5555!=4369:
+                        self.nbadclkD=self.nbadclkD+1
+                        badclk=7
+                    if n==47 and val&0x5555!=1:
+                        self.nbadclkD=self.nbadclkD+1
+                        badclk=8
                     if n % 10 == 0: chan = chan + 1
                     #if chan==1 or chan==3: val=0
                     if self.debug and self.debugprint:
-                        if s<1:
-                            if n==0: print("sample", s, "------------------------------------")
-                            if self.showbinarydata and n<40:
-                                print("n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+                        if s<1 or (n<40 and val!=0 and val!=-8): # or badclk:
+                            if self.showbinarydata and n<48:
+                                if lowbits>0 or highbits>0: print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
                             else:
-                                print("n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
+                                print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
                         self.xydata[chan][1][s*10+(9-(n%10))] = val
 
@@ -495,7 +518,7 @@ class MainWindow(TemplateBaseClass):
         return rx_len
 
     def chantext(self):
-        return "nbadclk "+str(self.nbadclk)
+        return "nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
 
     def setup_connections(self):
         print("Starting")
