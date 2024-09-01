@@ -61,8 +61,8 @@ def board_setup(dopattern=False):
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
-    spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
-    #spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
+    #spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
+    spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
     spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
     #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
 
@@ -473,7 +473,7 @@ class MainWindow(TemplateBaseClass):
                     else: highbits = highbits*256
                     val = highbits + lowbits
                     if n % 10 == 0: chan = chan + 1
-                    if chan==1 or chan==3: val=0
+                    #if chan==1 or chan==3: val=0
                     if self.debug and self.debugprint:
                         if s<1:
                             if n==0: print("sample", s, "------------------------------------")
@@ -482,7 +482,7 @@ class MainWindow(TemplateBaseClass):
                             else:
                                 print("n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        self.xydata[chan][1][s*10+(9-n)] = val
+                        self.xydata[chan][1][s*10+(9-(n%10))] = val
 
         if self.debug:
             time.sleep(.1)
