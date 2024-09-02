@@ -112,7 +112,8 @@ class MainWindow(TemplateBaseClass):
     dopattern = False
     debugprint = True
     showbinarydata = True
-    xydata_overlapped=False
+    debugstrobe = False
+    xydata_overlapped=True
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger
@@ -492,6 +493,10 @@ class MainWindow(TemplateBaseClass):
                         self.nbadclkD=self.nbadclkD+1
                     if n==47 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkD=self.nbadclkD+1
+                    if 40 <= n < 48 and self.debugstrobe:
+                        strobe = val&0xaaaa
+                        if strobe != 0:
+                            print("s=",s,"n=",n,"str",binprint(strobe),strobe)
                     if self.debug and self.debugprint:
                         goodval=-1
                         if s<0 or (n<40 and val!=0 and val!=goodval):
@@ -505,9 +510,11 @@ class MainWindow(TemplateBaseClass):
                             self.xydata[chan][1][s*10+(9-(n%10))] = val
                         else:
                             self.xydata[0][1][chan+ 4*(s*10+(9-(n%10)))] = val
-        if self.debug:
-            time.sleep(.001)
+
+        if self.debug or self.debugstrobe:
+            time.sleep(.5)
             #oldbytes()
+
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
         return rx_len
 

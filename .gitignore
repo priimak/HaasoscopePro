@@ -5,3 +5,4 @@
 /adc board firmware/output_files/*.summary
 /adc board firmware/output_files/*.done
 /adc board firmware/*.bak
+/adc board firmware/coincidence.qws
