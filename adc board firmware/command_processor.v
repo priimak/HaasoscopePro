@@ -22,7 +22,7 @@ module command_processor (
 	output wire [ 3:0] o_tkeep,
 	output wire        o_tlast,
 	 
-	output reg clkswitch, // sets which input clk the pll uses
+	output reg pllreset,
 	 
 	output reg [7:0]	spitx,
 	input  reg [7:0]	spirx,
@@ -43,23 +43,21 @@ module command_processor (
 	input wire			lvds1rdempty,
 	output reg [559:0] lvds1bitsfifoout, //output bits to fifo
 	input wire [559:0] lvds1bitsfifoin, // input bits from fifo
-	
-	input wire			activeclock, 
-	input wire [1:0]	clkbad,
+	input wire [59:0] lvdsbits_short, lvdsbits_other,
 	
 	output reg[2:0] phasecounterselect, // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
 	output reg phaseupdown=1, // Dynamic phase shift direction; 1:UP, 0:DOWN. Registered in the PLL on the rising edge of scanclk.
-	output reg phasestep=0,
+	output reg [3:0] phasestep,
 	output reg scanclk=0,
 
 	output reg [2:0] spimisossel=0, //which spimiso to listen to
 	output reg [27:0]	debugout,  // for debugging
 	input wire [3:0]	overrange,  //ORA0,A1,B0,B1
-	input wire [59:0] lvdsbits_short, lvdsbits_other
+	input wire			clklvds90, clklvds180, clklvds270
 
 );
 
-integer version = 5; // firmware version
+integer version = 7; // firmware version
 
 assign debugout[0] = locked;
 assign debugout[4] = overrange[0];
@@ -83,13 +81,11 @@ reg [5:0]	channel = 0;
 
 //variables in clklvds domain
 reg [ 2:0]  acqstate=0;
-reg [15:0]	triggercounter=0, triggercounter2=0;
+reg [15:0]	triggercounter=0, triggercounter2=0, triggercounter3=0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
 reg [ 7:0]	triggertype=0, triggertype2=0;
 reg signed [11:0]  lowerthresh=-12'd10, upperthresh=12'd10;
-
-reg signed [11:0]  samplevalue=0;
 
 reg signed [11:0]  samplevalue0=0;
 reg signed [11:0]  samplevalue1=0;
@@ -112,27 +108,6 @@ reg [1:0] sampleclkstr7=0;
 reg [1:0] sampleclkstr8=0;
 reg [1:0] sampleclkstr9=0;
 
-assign samplevalue0 = {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
-assign samplevalue1 = {lvds1bits[111],lvds1bits[101],lvds1bits[91],lvds1bits[81],lvds1bits[71],lvds1bits[61],lvds1bits[51],lvds1bits[41],lvds1bits[31],lvds1bits[21],lvds1bits[11],lvds1bits[1]};
-assign samplevalue2 = {lvds1bits[112],lvds1bits[102],lvds1bits[92],lvds1bits[82],lvds1bits[72],lvds1bits[62],lvds1bits[52],lvds1bits[42],lvds1bits[32],lvds1bits[22],lvds1bits[12],lvds1bits[2]};
-assign samplevalue3 = {lvds1bits[113],lvds1bits[103],lvds1bits[93],lvds1bits[83],lvds1bits[73],lvds1bits[63],lvds1bits[53],lvds1bits[43],lvds1bits[33],lvds1bits[23],lvds1bits[13],lvds1bits[3]};
-assign samplevalue4 = {lvds1bits[114],lvds1bits[104],lvds1bits[94],lvds1bits[84],lvds1bits[74],lvds1bits[64],lvds1bits[54],lvds1bits[44],lvds1bits[34],lvds1bits[24],lvds1bits[14],lvds1bits[4]};
-assign samplevalue5 = {lvds1bits[115],lvds1bits[105],lvds1bits[95],lvds1bits[85],lvds1bits[75],lvds1bits[65],lvds1bits[55],lvds1bits[45],lvds1bits[35],lvds1bits[25],lvds1bits[15],lvds1bits[5]};
-assign samplevalue6 = {lvds1bits[116],lvds1bits[106],lvds1bits[96],lvds1bits[86],lvds1bits[76],lvds1bits[66],lvds1bits[56],lvds1bits[46],lvds1bits[36],lvds1bits[26],lvds1bits[16],lvds1bits[6]};
-assign samplevalue7 = {lvds1bits[117],lvds1bits[107],lvds1bits[97],lvds1bits[87],lvds1bits[77],lvds1bits[67],lvds1bits[57],lvds1bits[47],lvds1bits[37],lvds1bits[27],lvds1bits[17],lvds1bits[7]};
-assign samplevalue8 = {lvds1bits[118],lvds1bits[108],lvds1bits[98],lvds1bits[88],lvds1bits[78],lvds1bits[68],lvds1bits[58],lvds1bits[48],lvds1bits[38],lvds1bits[28],lvds1bits[18],lvds1bits[8]};
-assign samplevalue9 = {lvds1bits[119],lvds1bits[109],lvds1bits[99],lvds1bits[89],lvds1bits[79],lvds1bits[69],lvds1bits[59],lvds1bits[49],lvds1bits[39],lvds1bits[29],lvds1bits[19],lvds1bits[9]};
-assign sampleclkstr0 = {lvds1bits[130],lvds1bits[120]};
-assign sampleclkstr1 = {lvds1bits[131],lvds1bits[121]};
-assign sampleclkstr2 = {lvds1bits[132],lvds1bits[122]};
-assign sampleclkstr3 = {lvds1bits[133],lvds1bits[123]};
-assign sampleclkstr4 = {lvds1bits[134],lvds1bits[124]};
-assign sampleclkstr5 = {lvds1bits[135],lvds1bits[125]};
-assign sampleclkstr6 = {lvds1bits[136],lvds1bits[126]};
-assign sampleclkstr7 = {lvds1bits[137],lvds1bits[127]};
-assign sampleclkstr8 = {lvds1bits[138],lvds1bits[128]};
-assign sampleclkstr9 = {lvds1bits[139],lvds1bits[129]};
-
 reg signed [11:0]  samplevalue10=0;
 reg signed [11:0]  samplevalue11=0;
 reg signed [11:0]  samplevalue12=0;
@@ -153,27 +128,6 @@ reg [1:0] sampleclkstr16=0;
 reg [1:0] sampleclkstr17=0;
 reg [1:0] sampleclkstr18=0;
 reg [1:0] sampleclkstr19=0;
-
-assign samplevalue10 = {lvds2bits[110],lvds2bits[100],lvds2bits[90],lvds2bits[80],lvdsbits_other[0],lvdsbits_other[10],lvds2bits[50],lvds2bits[40],lvds2bits[30],lvds2bits[20],lvds2bits[10],lvds2bits[0]};
-assign samplevalue11 = {lvds2bits[111],lvds2bits[101],lvds2bits[91],lvds2bits[81],lvdsbits_other[1],lvdsbits_other[11],lvds2bits[51],lvds2bits[41],lvds2bits[31],lvds2bits[21],lvds2bits[11],lvds2bits[1]};
-assign samplevalue12 = {lvds2bits[112],lvds2bits[102],lvds2bits[92],lvds2bits[82],lvdsbits_other[2],lvdsbits_other[12],lvds2bits[52],lvds2bits[42],lvds2bits[32],lvds2bits[22],lvds2bits[12],lvds2bits[2]};
-assign samplevalue13 = {lvds2bits[113],lvds2bits[103],lvds2bits[93],lvds2bits[83],lvdsbits_other[3],lvdsbits_other[13],lvds2bits[53],lvds2bits[43],lvds2bits[33],lvds2bits[23],lvds2bits[13],lvds2bits[3]};
-assign samplevalue14 = {lvds2bits[114],lvds2bits[104],lvds2bits[94],lvds2bits[84],lvdsbits_other[4],lvdsbits_other[14],lvds2bits[54],lvds2bits[44],lvds2bits[34],lvds2bits[24],lvds2bits[14],lvds2bits[4]};
-assign samplevalue15 = {lvds2bits[115],lvds2bits[105],lvds2bits[95],lvds2bits[85],lvdsbits_other[5],lvdsbits_other[15],lvds2bits[55],lvds2bits[45],lvds2bits[35],lvds2bits[25],lvds2bits[15],lvds2bits[5]};
-assign samplevalue16 = {lvds2bits[116],lvds2bits[106],lvds2bits[96],lvds2bits[86],lvdsbits_other[6],lvdsbits_other[16],lvds2bits[56],lvds2bits[46],lvds2bits[36],lvds2bits[26],lvds2bits[16],lvds2bits[6]};
-assign samplevalue17 = {lvds2bits[117],lvds2bits[107],lvds2bits[97],lvds2bits[87],lvdsbits_other[7],lvdsbits_other[17],lvds2bits[57],lvds2bits[47],lvds2bits[37],lvds2bits[27],lvds2bits[17],lvds2bits[7]};
-assign samplevalue18 = {lvds2bits[118],lvds2bits[108],lvds2bits[98],lvds2bits[88],lvdsbits_other[8],lvdsbits_other[18],lvds2bits[58],lvds2bits[48],lvds2bits[38],lvds2bits[28],lvds2bits[18],lvds2bits[8]};
-assign samplevalue19 = {lvds2bits[119],lvds2bits[109],lvds2bits[99],lvds2bits[89],lvdsbits_other[9],lvdsbits_other[19],lvds2bits[59],lvds2bits[49],lvds2bits[39],lvds2bits[29],lvds2bits[19],lvds2bits[9]};
-assign sampleclkstr10 = {lvds2bits[130],lvds2bits[120]};
-assign sampleclkstr11 = {lvds2bits[131],lvds2bits[121]};
-assign sampleclkstr12 = {lvds2bits[132],lvds2bits[122]};
-assign sampleclkstr13 = {lvds2bits[133],lvds2bits[123]};
-assign sampleclkstr14 = {lvds2bits[134],lvds2bits[124]};
-assign sampleclkstr15 = {lvds2bits[135],lvds2bits[125]};
-assign sampleclkstr16 = {lvds2bits[136],lvds2bits[126]};
-assign sampleclkstr17 = {lvds2bits[137],lvds2bits[127]};
-assign sampleclkstr18 = {lvds2bits[138],lvds2bits[128]};
-assign sampleclkstr19 = {lvds2bits[139],lvds2bits[129]};
 
 reg signed [11:0]  samplevalue20=0;
 reg signed [11:0]  samplevalue21=0;
@@ -196,27 +150,6 @@ reg [1:0] sampleclkstr27=0;
 reg [1:0] sampleclkstr28=0;
 reg [1:0] sampleclkstr29=0;
 
-assign samplevalue20 = {lvds3bits[110],lvdsbits_short[0],lvds3bits[90],lvds3bits[80],lvds3bits[70],lvds3bits[60],lvds3bits[50],lvds3bits[40],lvds3bits[30],lvds3bits[20],lvds3bits[10],lvds3bits[0]};
-assign samplevalue21 = {lvds3bits[111],lvdsbits_short[1],lvds3bits[91],lvds3bits[81],lvds3bits[71],lvds3bits[61],lvds3bits[51],lvds3bits[41],lvds3bits[31],lvds3bits[21],lvds3bits[11],lvds3bits[1]};
-assign samplevalue22 = {lvds3bits[112],lvdsbits_short[2],lvds3bits[92],lvds3bits[82],lvds3bits[72],lvds3bits[62],lvds3bits[52],lvds3bits[42],lvds3bits[32],lvds3bits[22],lvds3bits[12],lvds3bits[2]};
-assign samplevalue23 = {lvds3bits[113],lvdsbits_short[3],lvds3bits[93],lvds3bits[83],lvds3bits[73],lvds3bits[63],lvds3bits[53],lvds3bits[43],lvds3bits[33],lvds3bits[23],lvds3bits[13],lvds3bits[3]};
-assign samplevalue24 = {lvds3bits[114],lvdsbits_short[4],lvds3bits[94],lvds3bits[84],lvds3bits[74],lvds3bits[64],lvds3bits[54],lvds3bits[44],lvds3bits[34],lvds3bits[24],lvds3bits[14],lvds3bits[4]};
-assign samplevalue25 = {lvds3bits[115],lvdsbits_short[5],lvds3bits[95],lvds3bits[85],lvds3bits[75],lvds3bits[65],lvds3bits[55],lvds3bits[45],lvds3bits[35],lvds3bits[25],lvds3bits[15],lvds3bits[5]};
-assign samplevalue26 = {lvds3bits[116],lvdsbits_short[6],lvds3bits[96],lvds3bits[86],lvds3bits[76],lvds3bits[66],lvds3bits[56],lvds3bits[46],lvds3bits[36],lvds3bits[26],lvds3bits[16],lvds3bits[6]};
-assign samplevalue27 = {lvds3bits[117],lvdsbits_short[7],lvds3bits[97],lvds3bits[87],lvds3bits[77],lvds3bits[67],lvds3bits[57],lvds3bits[47],lvds3bits[37],lvds3bits[27],lvds3bits[17],lvds3bits[7]};
-assign samplevalue28 = {lvds3bits[118],lvdsbits_short[8],lvds3bits[98],lvds3bits[88],lvds3bits[78],lvds3bits[68],lvds3bits[58],lvds3bits[48],lvds3bits[38],lvds3bits[28],lvds3bits[18],lvds3bits[8]};
-assign samplevalue29 = {lvds3bits[119],lvdsbits_short[9],lvds3bits[99],lvds3bits[89],lvds3bits[79],lvds3bits[69],lvds3bits[59],lvds3bits[49],lvds3bits[39],lvds3bits[29],lvds3bits[19],lvds3bits[9]};
-assign sampleclkstr20 = {lvds3bits[130],lvds3bits[120]};
-assign sampleclkstr21 = {lvds3bits[131],lvds3bits[121]};
-assign sampleclkstr22 = {lvds3bits[132],lvds3bits[122]};
-assign sampleclkstr23 = {lvds3bits[133],lvds3bits[123]};
-assign sampleclkstr24 = {lvds3bits[134],lvds3bits[124]};
-assign sampleclkstr25 = {lvds3bits[135],lvds3bits[125]};
-assign sampleclkstr26 = {lvds3bits[136],lvds3bits[126]};
-assign sampleclkstr27 = {lvds3bits[137],lvds3bits[127]};
-assign sampleclkstr28 = {lvds3bits[138],lvds3bits[128]};
-assign sampleclkstr29 = {lvds3bits[139],lvds3bits[129]};
-
 reg signed [11:0]  samplevalue30=0;
 reg signed [11:0]  samplevalue31=0;
 reg signed [11:0]  samplevalue32=0;
@@ -238,32 +171,270 @@ reg [1:0] sampleclkstr37=0;
 reg [1:0] sampleclkstr38=0;
 reg [1:0] sampleclkstr39=0;
 
-assign samplevalue30 = {lvdsbits_short[40],lvdsbits_short[30],lvdsbits_short[20],lvdsbits_short[10],lvds4bits[70],lvds4bits[60],lvds4bits[50],lvds4bits[40],lvds4bits[30],lvds4bits[20],lvds4bits[10],lvds4bits[0]};
-assign samplevalue31 = {lvdsbits_short[41],lvdsbits_short[31],lvdsbits_short[21],lvdsbits_short[11],lvds4bits[71],lvds4bits[61],lvds4bits[51],lvds4bits[41],lvds4bits[31],lvds4bits[21],lvds4bits[11],lvds4bits[1]};
-assign samplevalue32 = {lvdsbits_short[42],lvdsbits_short[32],lvdsbits_short[22],lvdsbits_short[12],lvds4bits[72],lvds4bits[62],lvds4bits[52],lvds4bits[42],lvds4bits[32],lvds4bits[22],lvds4bits[12],lvds4bits[2]};
-assign samplevalue33 = {lvdsbits_short[43],lvdsbits_short[33],lvdsbits_short[23],lvdsbits_short[13],lvds4bits[73],lvds4bits[63],lvds4bits[53],lvds4bits[43],lvds4bits[33],lvds4bits[23],lvds4bits[13],lvds4bits[3]};
-assign samplevalue34 = {lvdsbits_short[44],lvdsbits_short[34],lvdsbits_short[24],lvdsbits_short[14],lvds4bits[74],lvds4bits[64],lvds4bits[54],lvds4bits[44],lvds4bits[34],lvds4bits[24],lvds4bits[14],lvds4bits[4]};
-assign samplevalue35 = {lvdsbits_short[45],lvdsbits_short[35],lvdsbits_short[25],lvdsbits_short[15],lvds4bits[75],lvds4bits[65],lvds4bits[55],lvds4bits[45],lvds4bits[35],lvds4bits[25],lvds4bits[15],lvds4bits[5]};
-assign samplevalue36 = {lvdsbits_short[46],lvdsbits_short[36],lvdsbits_short[26],lvdsbits_short[16],lvds4bits[76],lvds4bits[66],lvds4bits[56],lvds4bits[46],lvds4bits[36],lvds4bits[26],lvds4bits[16],lvds4bits[6]};
-assign samplevalue37 = {lvdsbits_short[47],lvdsbits_short[37],lvdsbits_short[27],lvdsbits_short[17],lvds4bits[77],lvds4bits[67],lvds4bits[57],lvds4bits[47],lvds4bits[37],lvds4bits[27],lvds4bits[17],lvds4bits[7]};
-assign samplevalue38 = {lvdsbits_short[48],lvdsbits_short[38],lvdsbits_short[28],lvdsbits_short[18],lvds4bits[78],lvds4bits[68],lvds4bits[58],lvds4bits[48],lvds4bits[38],lvds4bits[28],lvds4bits[18],lvds4bits[8]};
-assign samplevalue39 = {lvdsbits_short[49],lvdsbits_short[39],lvdsbits_short[29],lvdsbits_short[19],lvds4bits[79],lvds4bits[69],lvds4bits[59],lvds4bits[49],lvds4bits[39],lvds4bits[29],lvds4bits[19],lvds4bits[9]};
-assign sampleclkstr30 = {lvds4bits[130],lvds4bits[120]};
-assign sampleclkstr31 = {lvds4bits[131],lvds4bits[121]};
-assign sampleclkstr32 = {lvds4bits[132],lvds4bits[122]};
-assign sampleclkstr33 = {lvds4bits[133],lvds4bits[123]};
-assign sampleclkstr34 = {lvds4bits[134],lvds4bits[124]};
-assign sampleclkstr35 = {lvds4bits[135],lvds4bits[125]};
-assign sampleclkstr36 = {lvds4bits[136],lvds4bits[126]};
-assign sampleclkstr37 = {lvds4bits[137],lvds4bits[127]};
-assign sampleclkstr38 = {lvds4bits[138],lvds4bits[128]};
-assign sampleclkstr39 = {lvds4bits[139],lvds4bits[129]};
+
+reg signed [11:0]  samplevalue0sync=0;
+reg signed [11:0]  samplevalue1sync=0;
+reg signed [11:0]  samplevalue2sync=0;
+reg signed [11:0]  samplevalue3sync=0;
+reg signed [11:0]  samplevalue4sync=0;
+reg signed [11:0]  samplevalue5sync=0;
+reg signed [11:0]  samplevalue6sync=0;
+reg signed [11:0]  samplevalue7sync=0;
+reg signed [11:0]  samplevalue8sync=0;
+reg signed [11:0]  samplevalue9sync=0;
+reg [1:0] sampleclkstr0sync=0;
+reg [1:0] sampleclkstr1sync=0;
+reg [1:0] sampleclkstr2sync=0;
+reg [1:0] sampleclkstr3sync=0;
+reg [1:0] sampleclkstr4sync=0;
+reg [1:0] sampleclkstr5sync=0;
+reg [1:0] sampleclkstr6sync=0;
+reg [1:0] sampleclkstr7sync=0;
+reg [1:0] sampleclkstr8sync=0;
+reg [1:0] sampleclkstr9sync=0;
+
+reg signed [11:0]  samplevalue10sync=0;
+reg signed [11:0]  samplevalue11sync=0;
+reg signed [11:0]  samplevalue12sync=0;
+reg signed [11:0]  samplevalue13sync=0;
+reg signed [11:0]  samplevalue14sync=0;
+reg signed [11:0]  samplevalue15sync=0;
+reg signed [11:0]  samplevalue16sync=0;
+reg signed [11:0]  samplevalue17sync=0;
+reg signed [11:0]  samplevalue18sync=0;
+reg signed [11:0]  samplevalue19sync=0;
+reg [1:0] sampleclkstr10sync=0;
+reg [1:0] sampleclkstr11sync=0;
+reg [1:0] sampleclkstr12sync=0;
+reg [1:0] sampleclkstr13sync=0;
+reg [1:0] sampleclkstr14sync=0;
+reg [1:0] sampleclkstr15sync=0;
+reg [1:0] sampleclkstr16sync=0;
+reg [1:0] sampleclkstr17sync=0;
+reg [1:0] sampleclkstr18sync=0;
+reg [1:0] sampleclkstr19sync=0;
+
+reg signed [11:0]  samplevalue20sync=0;
+reg signed [11:0]  samplevalue21sync=0;
+reg signed [11:0]  samplevalue22sync=0;
+reg signed [11:0]  samplevalue23sync=0;
+reg signed [11:0]  samplevalue24sync=0;
+reg signed [11:0]  samplevalue25sync=0;
+reg signed [11:0]  samplevalue26sync=0;
+reg signed [11:0]  samplevalue27sync=0;
+reg signed [11:0]  samplevalue28sync=0;
+reg signed [11:0]  samplevalue29sync=0;
+reg [1:0] sampleclkstr20sync=0;
+reg [1:0] sampleclkstr21sync=0;
+reg [1:0] sampleclkstr22sync=0;
+reg [1:0] sampleclkstr23sync=0;
+reg [1:0] sampleclkstr24sync=0;
+reg [1:0] sampleclkstr25sync=0;
+reg [1:0] sampleclkstr26sync=0;
+reg [1:0] sampleclkstr27sync=0;
+reg [1:0] sampleclkstr28sync=0;
+reg [1:0] sampleclkstr29sync=0;
+
+reg signed [11:0]  samplevalue30sync=0;
+reg signed [11:0]  samplevalue31sync=0;
+reg signed [11:0]  samplevalue32sync=0;
+reg signed [11:0]  samplevalue33sync=0;
+reg signed [11:0]  samplevalue34sync=0;
+reg signed [11:0]  samplevalue35sync=0;
+reg signed [11:0]  samplevalue36sync=0;
+reg signed [11:0]  samplevalue37sync=0;
+reg signed [11:0]  samplevalue38sync=0;
+reg signed [11:0]  samplevalue39sync=0;
+reg [1:0] sampleclkstr30sync=0;
+reg [1:0] sampleclkstr31sync=0;
+reg [1:0] sampleclkstr32sync=0;
+reg [1:0] sampleclkstr33sync=0;
+reg [1:0] sampleclkstr34sync=0;
+reg [1:0] sampleclkstr35sync=0;
+reg [1:0] sampleclkstr36sync=0;
+reg [1:0] sampleclkstr37sync=0;
+reg [1:0] sampleclkstr38sync=0;
+reg [1:0] sampleclkstr39sync=0;
+
 
 always @ (posedge clklvds) begin
 	triggerlive2 <= triggerlive;
 	lengthtotake2 <= lengthtotake;
 	triggertype2 <= triggertype;
-	samplevalue <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};//for trigger
+samplevalue0  <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
+samplevalue1  <= {lvds1bits[111],lvds1bits[101],lvds1bits[91],lvds1bits[81],lvds1bits[71],lvds1bits[61],lvds1bits[51],lvds1bits[41],lvds1bits[31],lvds1bits[21],lvds1bits[11],lvds1bits[1]};
+samplevalue2  <= {lvds1bits[112],lvds1bits[102],lvds1bits[92],lvds1bits[82],lvds1bits[72],lvds1bits[62],lvds1bits[52],lvds1bits[42],lvds1bits[32],lvds1bits[22],lvds1bits[12],lvds1bits[2]};
+samplevalue3  <= {lvds1bits[113],lvds1bits[103],lvds1bits[93],lvds1bits[83],lvds1bits[73],lvds1bits[63],lvds1bits[53],lvds1bits[43],lvds1bits[33],lvds1bits[23],lvds1bits[13],lvds1bits[3]};
+samplevalue4  <= {lvds1bits[114],lvds1bits[104],lvds1bits[94],lvds1bits[84],lvds1bits[74],lvds1bits[64],lvds1bits[54],lvds1bits[44],lvds1bits[34],lvds1bits[24],lvds1bits[14],lvds1bits[4]};
+samplevalue5  <= {lvds1bits[115],lvds1bits[105],lvds1bits[95],lvds1bits[85],lvds1bits[75],lvds1bits[65],lvds1bits[55],lvds1bits[45],lvds1bits[35],lvds1bits[25],lvds1bits[15],lvds1bits[5]};
+samplevalue6  <= {lvds1bits[116],lvds1bits[106],lvds1bits[96],lvds1bits[86],lvds1bits[76],lvds1bits[66],lvds1bits[56],lvds1bits[46],lvds1bits[36],lvds1bits[26],lvds1bits[16],lvds1bits[6]};
+samplevalue7  <= {lvds1bits[117],lvds1bits[107],lvds1bits[97],lvds1bits[87],lvds1bits[77],lvds1bits[67],lvds1bits[57],lvds1bits[47],lvds1bits[37],lvds1bits[27],lvds1bits[17],lvds1bits[7]};
+samplevalue8  <= {lvds1bits[118],lvds1bits[108],lvds1bits[98],lvds1bits[88],lvds1bits[78],lvds1bits[68],lvds1bits[58],lvds1bits[48],lvds1bits[38],lvds1bits[28],lvds1bits[18],lvds1bits[8]};
+samplevalue9  <= {lvds1bits[119],lvds1bits[109],lvds1bits[99],lvds1bits[89],lvds1bits[79],lvds1bits[69],lvds1bits[59],lvds1bits[49],lvds1bits[39],lvds1bits[29],lvds1bits[19],lvds1bits[9]};
+sampleclkstr0 <= {lvds1bits[130],lvds1bits[120]};
+sampleclkstr1 <= {lvds1bits[131],lvds1bits[121]};
+sampleclkstr2 <= {lvds1bits[132],lvds1bits[122]};
+sampleclkstr3 <= {lvds1bits[133],lvds1bits[123]};
+sampleclkstr4 <= {lvds1bits[134],lvds1bits[124]};
+sampleclkstr5 <= {lvds1bits[135],lvds1bits[125]};
+sampleclkstr6 <= {lvds1bits[136],lvds1bits[126]};
+sampleclkstr7 <= {lvds1bits[137],lvds1bits[127]};
+sampleclkstr8 <= {lvds1bits[138],lvds1bits[128]};
+sampleclkstr9 <= {lvds1bits[139],lvds1bits[129]};
+
+samplevalue0sync  <= samplevalue0 ;
+samplevalue1sync  <= samplevalue1 ;
+samplevalue2sync  <= samplevalue2 ;
+samplevalue3sync  <= samplevalue3 ;
+samplevalue4sync  <= samplevalue4 ;
+samplevalue5sync  <= samplevalue5 ;
+samplevalue6sync  <= samplevalue6 ;
+samplevalue7sync  <= samplevalue7 ;
+samplevalue8sync  <= samplevalue8 ;
+samplevalue9sync  <= samplevalue9 ;
+sampleclkstr0sync <= sampleclkstr0;
+sampleclkstr1sync <= sampleclkstr1;
+sampleclkstr2sync <= sampleclkstr2;
+sampleclkstr3sync <= sampleclkstr3;
+sampleclkstr4sync <= sampleclkstr4;
+sampleclkstr5sync <= sampleclkstr5;
+sampleclkstr6sync <= sampleclkstr6;
+sampleclkstr7sync <= sampleclkstr7;
+sampleclkstr8sync <= sampleclkstr8;
+sampleclkstr9sync <= sampleclkstr9;
+
+samplevalue10sync  <= samplevalue10 ;
+samplevalue11sync  <= samplevalue11 ;
+samplevalue12sync  <= samplevalue12 ;
+samplevalue13sync  <= samplevalue13 ;
+samplevalue14sync  <= samplevalue14 ;
+samplevalue15sync  <= samplevalue15 ;
+samplevalue16sync  <= samplevalue16 ;
+samplevalue17sync  <= samplevalue17 ;
+samplevalue18sync  <= samplevalue18 ;
+samplevalue19sync  <= samplevalue19 ;
+sampleclkstr10sync <= sampleclkstr10;
+sampleclkstr11sync <= sampleclkstr11;
+sampleclkstr12sync <= sampleclkstr12;
+sampleclkstr13sync <= sampleclkstr13;
+sampleclkstr14sync <= sampleclkstr14;
+sampleclkstr15sync <= sampleclkstr15;
+sampleclkstr16sync <= sampleclkstr16;
+sampleclkstr17sync <= sampleclkstr17;
+sampleclkstr18sync <= sampleclkstr18;
+sampleclkstr19sync <= sampleclkstr19;
+
+samplevalue20sync  <= samplevalue20 ;
+samplevalue21sync  <= samplevalue21 ;
+samplevalue22sync  <= samplevalue22 ;
+samplevalue23sync  <= samplevalue23 ;
+samplevalue24sync  <= samplevalue24 ;
+samplevalue25sync  <= samplevalue25 ;
+samplevalue26sync  <= samplevalue26 ;
+samplevalue27sync  <= samplevalue27 ;
+samplevalue28sync  <= samplevalue28 ;
+samplevalue29sync  <= samplevalue29 ;
+sampleclkstr20sync <= sampleclkstr20;
+sampleclkstr21sync <= sampleclkstr21;
+sampleclkstr22sync <= sampleclkstr22;
+sampleclkstr23sync <= sampleclkstr23;
+sampleclkstr24sync <= sampleclkstr24;
+sampleclkstr25sync <= sampleclkstr25;
+sampleclkstr26sync <= sampleclkstr26;
+sampleclkstr27sync <= sampleclkstr27;
+sampleclkstr28sync <= sampleclkstr28;
+sampleclkstr29sync <= sampleclkstr29;
+
+samplevalue30sync  <= samplevalue30 ;
+samplevalue31sync  <= samplevalue31 ;
+samplevalue32sync  <= samplevalue32 ;
+samplevalue33sync  <= samplevalue33 ;
+samplevalue34sync  <= samplevalue34 ;
+samplevalue35sync  <= samplevalue35 ;
+samplevalue36sync  <= samplevalue36 ;
+samplevalue37sync  <= samplevalue37 ;
+samplevalue38sync  <= samplevalue38 ;
+samplevalue39sync  <= samplevalue39 ;
+sampleclkstr30sync <= sampleclkstr30;
+sampleclkstr31sync <= sampleclkstr31;
+sampleclkstr32sync <= sampleclkstr32;
+sampleclkstr33sync <= sampleclkstr33;
+sampleclkstr34sync <= sampleclkstr34;
+sampleclkstr35sync <= sampleclkstr35;
+sampleclkstr36sync <= sampleclkstr36;
+sampleclkstr37sync <= sampleclkstr37;
+sampleclkstr38sync <= sampleclkstr38;
+sampleclkstr39sync <= sampleclkstr39;
+
+end
+
+always @ (posedge clklvds90) begin
+samplevalue10  <= {lvds2bits[110],lvds2bits[100],lvds2bits[90],lvds2bits[80],lvdsbits_other[0],lvdsbits_other[10],lvds2bits[50],lvds2bits[40],lvds2bits[30],lvds2bits[20],lvds2bits[10],lvds2bits[0]};
+samplevalue11  <= {lvds2bits[111],lvds2bits[101],lvds2bits[91],lvds2bits[81],lvdsbits_other[1],lvdsbits_other[11],lvds2bits[51],lvds2bits[41],lvds2bits[31],lvds2bits[21],lvds2bits[11],lvds2bits[1]};
+samplevalue12  <= {lvds2bits[112],lvds2bits[102],lvds2bits[92],lvds2bits[82],lvdsbits_other[2],lvdsbits_other[12],lvds2bits[52],lvds2bits[42],lvds2bits[32],lvds2bits[22],lvds2bits[12],lvds2bits[2]};
+samplevalue13  <= {lvds2bits[113],lvds2bits[103],lvds2bits[93],lvds2bits[83],lvdsbits_other[3],lvdsbits_other[13],lvds2bits[53],lvds2bits[43],lvds2bits[33],lvds2bits[23],lvds2bits[13],lvds2bits[3]};
+samplevalue14  <= {lvds2bits[114],lvds2bits[104],lvds2bits[94],lvds2bits[84],lvdsbits_other[4],lvdsbits_other[14],lvds2bits[54],lvds2bits[44],lvds2bits[34],lvds2bits[24],lvds2bits[14],lvds2bits[4]};
+samplevalue15  <= {lvds2bits[115],lvds2bits[105],lvds2bits[95],lvds2bits[85],lvdsbits_other[5],lvdsbits_other[15],lvds2bits[55],lvds2bits[45],lvds2bits[35],lvds2bits[25],lvds2bits[15],lvds2bits[5]};
+samplevalue16  <= {lvds2bits[116],lvds2bits[106],lvds2bits[96],lvds2bits[86],lvdsbits_other[6],lvdsbits_other[16],lvds2bits[56],lvds2bits[46],lvds2bits[36],lvds2bits[26],lvds2bits[16],lvds2bits[6]};
+samplevalue17  <= {lvds2bits[117],lvds2bits[107],lvds2bits[97],lvds2bits[87],lvdsbits_other[7],lvdsbits_other[17],lvds2bits[57],lvds2bits[47],lvds2bits[37],lvds2bits[27],lvds2bits[17],lvds2bits[7]};
+samplevalue18  <= {lvds2bits[118],lvds2bits[108],lvds2bits[98],lvds2bits[88],lvdsbits_other[8],lvdsbits_other[18],lvds2bits[58],lvds2bits[48],lvds2bits[38],lvds2bits[28],lvds2bits[18],lvds2bits[8]};
+samplevalue19  <= {lvds2bits[119],lvds2bits[109],lvds2bits[99],lvds2bits[89],lvdsbits_other[9],lvdsbits_other[19],lvds2bits[59],lvds2bits[49],lvds2bits[39],lvds2bits[29],lvds2bits[19],lvds2bits[9]};
+sampleclkstr10 <= {lvds2bits[130],lvds2bits[120]};
+sampleclkstr11 <= {lvds2bits[131],lvds2bits[121]};
+sampleclkstr12 <= {lvds2bits[132],lvds2bits[122]};
+sampleclkstr13 <= {lvds2bits[133],lvds2bits[123]};
+sampleclkstr14 <= {lvds2bits[134],lvds2bits[124]};
+sampleclkstr15 <= {lvds2bits[135],lvds2bits[125]};
+sampleclkstr16 <= {lvds2bits[136],lvds2bits[126]};
+sampleclkstr17 <= {lvds2bits[137],lvds2bits[127]};
+sampleclkstr18 <= {lvds2bits[138],lvds2bits[128]};
+sampleclkstr19 <= {lvds2bits[139],lvds2bits[129]};
+end
+
+always @ (posedge clklvds180) begin
+samplevalue20  <= {lvds3bits[110],lvdsbits_short[0],lvds3bits[90],lvds3bits[80],lvds3bits[70],lvds3bits[60],lvds3bits[50],lvds3bits[40],lvds3bits[30],lvds3bits[20],lvds3bits[10],lvds3bits[0]};
+samplevalue21  <= {lvds3bits[111],lvdsbits_short[1],lvds3bits[91],lvds3bits[81],lvds3bits[71],lvds3bits[61],lvds3bits[51],lvds3bits[41],lvds3bits[31],lvds3bits[21],lvds3bits[11],lvds3bits[1]};
+samplevalue22  <= {lvds3bits[112],lvdsbits_short[2],lvds3bits[92],lvds3bits[82],lvds3bits[72],lvds3bits[62],lvds3bits[52],lvds3bits[42],lvds3bits[32],lvds3bits[22],lvds3bits[12],lvds3bits[2]};
+samplevalue23  <= {lvds3bits[113],lvdsbits_short[3],lvds3bits[93],lvds3bits[83],lvds3bits[73],lvds3bits[63],lvds3bits[53],lvds3bits[43],lvds3bits[33],lvds3bits[23],lvds3bits[13],lvds3bits[3]};
+samplevalue24  <= {lvds3bits[114],lvdsbits_short[4],lvds3bits[94],lvds3bits[84],lvds3bits[74],lvds3bits[64],lvds3bits[54],lvds3bits[44],lvds3bits[34],lvds3bits[24],lvds3bits[14],lvds3bits[4]};
+samplevalue25  <= {lvds3bits[115],lvdsbits_short[5],lvds3bits[95],lvds3bits[85],lvds3bits[75],lvds3bits[65],lvds3bits[55],lvds3bits[45],lvds3bits[35],lvds3bits[25],lvds3bits[15],lvds3bits[5]};
+samplevalue26  <= {lvds3bits[116],lvdsbits_short[6],lvds3bits[96],lvds3bits[86],lvds3bits[76],lvds3bits[66],lvds3bits[56],lvds3bits[46],lvds3bits[36],lvds3bits[26],lvds3bits[16],lvds3bits[6]};
+samplevalue27  <= {lvds3bits[117],lvdsbits_short[7],lvds3bits[97],lvds3bits[87],lvds3bits[77],lvds3bits[67],lvds3bits[57],lvds3bits[47],lvds3bits[37],lvds3bits[27],lvds3bits[17],lvds3bits[7]};
+samplevalue28  <= {lvds3bits[118],lvdsbits_short[8],lvds3bits[98],lvds3bits[88],lvds3bits[78],lvds3bits[68],lvds3bits[58],lvds3bits[48],lvds3bits[38],lvds3bits[28],lvds3bits[18],lvds3bits[8]};
+samplevalue29  <= {lvds3bits[119],lvdsbits_short[9],lvds3bits[99],lvds3bits[89],lvds3bits[79],lvds3bits[69],lvds3bits[59],lvds3bits[49],lvds3bits[39],lvds3bits[29],lvds3bits[19],lvds3bits[9]};
+sampleclkstr20 <= {lvds3bits[130],lvds3bits[120]};
+sampleclkstr21 <= {lvds3bits[131],lvds3bits[121]};
+sampleclkstr22 <= {lvds3bits[132],lvds3bits[122]};
+sampleclkstr23 <= {lvds3bits[133],lvds3bits[123]};
+sampleclkstr24 <= {lvds3bits[134],lvds3bits[124]};
+sampleclkstr25 <= {lvds3bits[135],lvds3bits[125]};
+sampleclkstr26 <= {lvds3bits[136],lvds3bits[126]};
+sampleclkstr27 <= {lvds3bits[137],lvds3bits[127]};
+sampleclkstr28 <= {lvds3bits[138],lvds3bits[128]};
+sampleclkstr29 <= {lvds3bits[139],lvds3bits[129]};
+end
+
+always @ (posedge clklvds270) begin
+samplevalue30  <= {lvdsbits_short[40],lvdsbits_short[30],lvdsbits_short[20],lvdsbits_short[10],lvds4bits[70],lvds4bits[60],lvds4bits[50],lvds4bits[40],lvds4bits[30],lvds4bits[20],lvds4bits[10],lvds4bits[0]};
+samplevalue31  <= {lvdsbits_short[41],lvdsbits_short[31],lvdsbits_short[21],lvdsbits_short[11],lvds4bits[71],lvds4bits[61],lvds4bits[51],lvds4bits[41],lvds4bits[31],lvds4bits[21],lvds4bits[11],lvds4bits[1]};
+samplevalue32  <= {lvdsbits_short[42],lvdsbits_short[32],lvdsbits_short[22],lvdsbits_short[12],lvds4bits[72],lvds4bits[62],lvds4bits[52],lvds4bits[42],lvds4bits[32],lvds4bits[22],lvds4bits[12],lvds4bits[2]};
+samplevalue33  <= {lvdsbits_short[43],lvdsbits_short[33],lvdsbits_short[23],lvdsbits_short[13],lvds4bits[73],lvds4bits[63],lvds4bits[53],lvds4bits[43],lvds4bits[33],lvds4bits[23],lvds4bits[13],lvds4bits[3]};
+samplevalue34  <= {lvdsbits_short[44],lvdsbits_short[34],lvdsbits_short[24],lvdsbits_short[14],lvds4bits[74],lvds4bits[64],lvds4bits[54],lvds4bits[44],lvds4bits[34],lvds4bits[24],lvds4bits[14],lvds4bits[4]};
+samplevalue35  <= {lvdsbits_short[45],lvdsbits_short[35],lvdsbits_short[25],lvdsbits_short[15],lvds4bits[75],lvds4bits[65],lvds4bits[55],lvds4bits[45],lvds4bits[35],lvds4bits[25],lvds4bits[15],lvds4bits[5]};
+samplevalue36  <= {lvdsbits_short[46],lvdsbits_short[36],lvdsbits_short[26],lvdsbits_short[16],lvds4bits[76],lvds4bits[66],lvds4bits[56],lvds4bits[46],lvds4bits[36],lvds4bits[26],lvds4bits[16],lvds4bits[6]};
+samplevalue37  <= {lvdsbits_short[47],lvdsbits_short[37],lvdsbits_short[27],lvdsbits_short[17],lvds4bits[77],lvds4bits[67],lvds4bits[57],lvds4bits[47],lvds4bits[37],lvds4bits[27],lvds4bits[17],lvds4bits[7]};
+samplevalue38  <= {lvdsbits_short[48],lvdsbits_short[38],lvdsbits_short[28],lvdsbits_short[18],lvds4bits[78],lvds4bits[68],lvds4bits[58],lvds4bits[48],lvds4bits[38],lvds4bits[28],lvds4bits[18],lvds4bits[8]};
+samplevalue39  <= {lvdsbits_short[49],lvdsbits_short[39],lvdsbits_short[29],lvdsbits_short[19],lvds4bits[79],lvds4bits[69],lvds4bits[59],lvds4bits[49],lvds4bits[39],lvds4bits[29],lvds4bits[19],lvds4bits[9]};
+sampleclkstr30 <= {lvds4bits[130],lvds4bits[120]};
+sampleclkstr31 <= {lvds4bits[131],lvds4bits[121]};
+sampleclkstr32 <= {lvds4bits[132],lvds4bits[122]};
+sampleclkstr33 <= {lvds4bits[133],lvds4bits[123]};
+sampleclkstr34 <= {lvds4bits[134],lvds4bits[124]};
+sampleclkstr35 <= {lvds4bits[135],lvds4bits[125]};
+sampleclkstr36 <= {lvds4bits[136],lvds4bits[126]};
+sampleclkstr37 <= {lvds4bits[137],lvds4bits[127]};
+sampleclkstr38 <= {lvds4bits[138],lvds4bits[128]};
+sampleclkstr39 <= {lvds4bits[139],lvds4bits[129]};
 end
 
 always @ (posedge clklvds or negedge rstn)
@@ -282,56 +453,56 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	1 : begin // ready for first part of trigger condition to be met
-		if (samplevalue<lowerthresh) acqstate <= 3'd2;
+		if (samplevalue0<lowerthresh) acqstate <= 3'd2;
 	end
 	2 : begin // ready for second part of trigger condition to be met
-		if (samplevalue>upperthresh) acqstate <= 3'd3;
+		if (samplevalue0>upperthresh) acqstate <= 3'd3;
 	end
 	3 : begin // taking data
 		lvds1bitsfifoout <= {
-		sampleclkstr39,samplevalue39,
-		sampleclkstr38,samplevalue38,
-		sampleclkstr37,samplevalue37,
-		sampleclkstr36,samplevalue36,
-		sampleclkstr35,samplevalue35,
-		sampleclkstr34,samplevalue34,
-		sampleclkstr33,samplevalue33,
-		sampleclkstr32,samplevalue32,
-		sampleclkstr31,samplevalue31,
-		sampleclkstr30,samplevalue30,
+		sampleclkstr39sync,samplevalue39sync,
+		sampleclkstr38sync,samplevalue38sync,
+		sampleclkstr37sync,samplevalue37sync,
+		sampleclkstr36sync,samplevalue36sync,
+		sampleclkstr35sync,samplevalue35sync,
+		sampleclkstr34sync,samplevalue34sync,
+		sampleclkstr33sync,samplevalue33sync,
+		sampleclkstr32sync,samplevalue32sync,
+		sampleclkstr31sync,samplevalue31sync,
+		sampleclkstr30sync,samplevalue30sync,
 		
-		sampleclkstr29,samplevalue29,
-		sampleclkstr28,samplevalue28,
-		sampleclkstr27,samplevalue27,
-		sampleclkstr26,samplevalue26,
-		sampleclkstr25,samplevalue25,
-		sampleclkstr24,samplevalue24,
-		sampleclkstr23,samplevalue23,
-		sampleclkstr22,samplevalue22,
-		sampleclkstr21,samplevalue21,
-		sampleclkstr20,samplevalue20,
+		sampleclkstr29sync,samplevalue29sync,
+		sampleclkstr28sync,samplevalue28sync,
+		sampleclkstr27sync,samplevalue27sync,
+		sampleclkstr26sync,samplevalue26sync,
+		sampleclkstr25sync,samplevalue25sync,
+		sampleclkstr24sync,samplevalue24sync,
+		sampleclkstr23sync,samplevalue23sync,
+		sampleclkstr22sync,samplevalue22sync,
+		sampleclkstr21sync,samplevalue21sync,
+		sampleclkstr20sync,samplevalue20sync,
 		
-		sampleclkstr19,samplevalue19,
-		sampleclkstr18,samplevalue18,
-		sampleclkstr17,samplevalue17,
-		sampleclkstr16,samplevalue16,
-		sampleclkstr15,samplevalue15,
-		sampleclkstr14,samplevalue14,
-		sampleclkstr13,samplevalue13,
-		sampleclkstr12,samplevalue12,
-		sampleclkstr11,samplevalue11,
-		sampleclkstr10,samplevalue10,
+		sampleclkstr19sync,samplevalue19sync,
+		sampleclkstr18sync,samplevalue18sync,
+		sampleclkstr17sync,samplevalue17sync,
+		sampleclkstr16sync,samplevalue16sync,
+		sampleclkstr15sync,samplevalue15sync,
+		sampleclkstr14sync,samplevalue14sync,
+		sampleclkstr13sync,samplevalue13sync,
+		sampleclkstr12sync,samplevalue12sync,
+		sampleclkstr11sync,samplevalue11sync,
+		sampleclkstr10sync,samplevalue10sync,
 		
-		sampleclkstr9,samplevalue9,
-		sampleclkstr8,samplevalue8,
-		sampleclkstr7,samplevalue7,
-		sampleclkstr6,samplevalue6,
-		sampleclkstr5,samplevalue5,
-		sampleclkstr4,samplevalue4,
-		sampleclkstr3,samplevalue3,
-		sampleclkstr2,samplevalue2,
-		sampleclkstr1,samplevalue1,
-		sampleclkstr0,samplevalue0
+		sampleclkstr9sync,samplevalue9sync,
+		sampleclkstr8sync,samplevalue8sync,
+		sampleclkstr7sync,samplevalue7sync,
+		sampleclkstr6sync,samplevalue6sync,
+		sampleclkstr5sync,samplevalue5sync,
+		sampleclkstr4sync,samplevalue4sync,
+		sampleclkstr3sync,samplevalue3sync,
+		sampleclkstr2sync,samplevalue2sync,
+		sampleclkstr1sync,samplevalue1sync,
+		sampleclkstr0sync,samplevalue0sync
 		};
 		//lvds1bitsfifoout <= {56{triggercounter[9:0]}}; // for testing the queue
 		if ((!lvds1wrfull) && triggercounter<lengthtotake2) begin
@@ -351,17 +522,18 @@ always @ (posedge clklvds or negedge rstn)
  
 always @ (posedge clk) begin
 	triggercounter2 <= triggercounter;
+	triggercounter3 <= triggercounter2;
 end
 
 always @ (posedge clk or negedge rstn)
  if (~rstn) begin
 	state  <= INIT;
-	lvds1rd <= 1'b0;
  end else begin
  
   case (state)
    INIT : begin
-		clkswitch <= 1'b0;
+		pllreset <= 1'b0;
+		lvds1rd <= 1'b0;
    	rx_counter <= 0;
 		length <= 0;
 		spistate <= 0;
@@ -388,9 +560,9 @@ always @ (posedge clk or negedge rstn)
 			state <= TX_DATA1;
 		end
 		
-		1 : begin // toggles clkswitch
-			clkswitch <= ~clkswitch;
-			o_tdata <= {7'd0,clkbad[1],7'd0,clkbad[0],7'd0,activeclock,7'd0,clkswitch};
+		1 : begin // reset plls
+			pllreset <= 1'b1;
+			o_tdata <= 33;
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
@@ -465,7 +637,7 @@ always @ (posedge clk or negedge rstn)
 		5 : begin // sets length to take
 			triggertype <= rx_data[1];
 			lengthtotake <= {rx_data[5],rx_data[4]};
-			if (triggercounter2 == -16'd1) begin
+			if (triggercounter3 == -16'd1) begin
 				triggerlive <= 1'b1;
 			end else begin
 				triggerlive <= 1'b0;
@@ -477,7 +649,7 @@ always @ (posedge clk or negedge rstn)
 			phasecounterselect<=rx_data[2][2:0];// 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. 
 			phaseupdown<=rx_data[3][0]; // up or down
 			scanclk<=1'b0; // start low
-			phasestep<=1'b1; // assert!
+			phasestep[rx_data[1]]<=1'b1; // assert!
 			pllclock_counter<=0;
 			scanclk_cycles<=0;
 			state<=PLLCLOCK;
@@ -495,7 +667,7 @@ always @ (posedge clk or negedge rstn)
 		end else begin
 			length <= 0;
 			o_tvalid <= 1'b0;
-			state <= RX;
+			state <= INIT;
 		end
 	end
 	
@@ -609,8 +781,8 @@ always @ (posedge clk or negedge rstn)
 			scanclk = ~scanclk;
 			pllclock_counter=0;
 			scanclk_cycles=scanclk_cycles+8'd1;
-			if (scanclk_cycles>5) phasestep=1'b0; // deassert!
-			if (scanclk_cycles>7) state=RX;
+			if (scanclk_cycles>5) phasestep[rx_data[1]]=1'b0; // deassert!
+			if (scanclk_cycles>7) state=INIT;
 		end
 	end
 	

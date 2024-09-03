@@ -320,7 +320,7 @@
          <rect>
           <x>10</x>
           <y>80</y>
-          <width>101</width>
+          <width>141</width>
           <height>181</height>
          </rect>
         </property>
@@ -424,48 +424,6 @@
          <font>
           <family>Arial</family>
          </font>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="coinBox">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>170</y>
-          <width>51</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="minimum">
-         <number>0</number>
-        </property>
-        <property name="maximum">
-         <number>3</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>150</y>
-          <width>51</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="text">
-         <string>N coin.</string>
         </property>
        </widget>
       </widget>
@@ -643,13 +601,13 @@
         </font>
        </property>
        <property name="title">
-        <string>Fast ADC channel options</string>
+        <string/>
        </property>
        <widget class="QCheckBox" name="decodeCheck">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>340</y>
+          <y>440</y>
           <width>91</width>
           <height>17</height>
          </rect>
@@ -667,7 +625,7 @@
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>20</y>
+          <y>210</y>
           <width>51</width>
           <height>21</height>
          </rect>
@@ -681,29 +639,11 @@
          <number>255</number>
         </property>
        </widget>
-       <widget class="QCheckBox" name="allchanCheck">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>20</y>
-          <width>41</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="text">
-         <string>All</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>20</y>
+          <y>210</y>
           <width>47</width>
           <height>13</height>
          </rect>
@@ -721,7 +661,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>230</y>
+          <y>330</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -745,7 +685,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>250</y>
+          <y>350</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -766,7 +706,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>150</y>
+          <y>250</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -787,7 +727,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>170</y>
+          <y>270</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -808,7 +748,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>280</y>
+          <y>380</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -828,10 +768,10 @@
        <widget class="QFrame" name="frame_3">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>141</width>
-          <height>91</height>
+          <x>0</x>
+          <y>0</y>
+          <width>161</width>
+          <height>181</height>
          </rect>
         </property>
         <property name="font">
@@ -845,11 +785,11 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QToolButton" name="downposButton">
+        <widget class="QToolButton" name="downposButton0">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>50</y>
+           <y>80</y>
            <width>31</width>
            <height>31</height>
           </rect>
@@ -866,11 +806,11 @@
           <enum>Qt::DownArrow</enum>
          </property>
         </widget>
-        <widget class="QToolButton" name="upposButton">
+        <widget class="QToolButton" name="upposButton0">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>20</y>
+           <y>50</y>
            <width>31</width>
            <height>31</height>
           </rect>
@@ -891,7 +831,7 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>0</y>
+           <y>30</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -902,14 +842,14 @@
           </font>
          </property>
          <property name="text">
-          <string>c1</string>
+          <string>c0</string>
          </property>
         </widget>
         <widget class="QToolButton" name="upposButton3">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>20</y>
+           <x>100</x>
+           <y>50</y>
            <width>31</width>
            <height>31</height>
           </rect>
@@ -929,8 +869,8 @@
         <widget class="QLabel" name="label_8">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>0</y>
+           <x>100</x>
+           <y>30</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -947,8 +887,8 @@
         <widget class="QToolButton" name="downposButton3">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>50</y>
+           <x>100</x>
+           <y>80</y>
            <width>31</width>
            <height>31</height>
           </rect>
@@ -968,8 +908,8 @@
         <widget class="QLabel" name="label_12">
          <property name="geometry">
           <rect>
-           <x>90</x>
-           <y>0</y>
+           <x>130</x>
+           <y>30</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -986,8 +926,8 @@
         <widget class="QToolButton" name="upposButton4">
          <property name="geometry">
           <rect>
-           <x>90</x>
-           <y>20</y>
+           <x>130</x>
+           <y>50</y>
            <width>31</width>
            <height>31</height>
           </rect>
@@ -1007,8 +947,8 @@
         <widget class="QToolButton" name="downposButton4">
          <property name="geometry">
           <rect>
-           <x>90</x>
-           <y>50</y>
+           <x>130</x>
+           <y>80</y>
            <width>31</width>
            <height>31</height>
           </rect>
@@ -1025,12 +965,195 @@
           <enum>Qt::DownArrow</enum>
          </property>
         </widget>
+        <widget class="QSpinBox" name="pllBox">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>120</y>
+           <width>51</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>2</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>120</y>
+           <width>41</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>Pll:</string>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="upposButton2">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>50</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="arrowType">
+          <enum>Qt::UpArrow</enum>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="upposButton1">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>50</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="arrowType">
+          <enum>Qt::UpArrow</enum>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="downposButton2">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>80</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="arrowType">
+          <enum>Qt::DownArrow</enum>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="downposButton1">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>80</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="arrowType">
+          <enum>Qt::DownArrow</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>c1</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>30</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>c2</string>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="pllresetButton">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>150</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>Reset</string>
+         </property>
+         <property name="arrowType">
+          <enum>Qt::NoArrow</enum>
+         </property>
+        </widget>
        </widget>
        <widget class="QCheckBox" name="fftCheck">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>360</y>
+          <y>460</y>
           <width>91</width>
           <height>17</height>
          </rect>
@@ -1048,7 +1171,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>380</y>
+          <y>480</y>
           <width>91</width>
           <height>17</height>
          </rect>

@@ -21,10 +21,6 @@ def oldbytes():
         if len(olddata)==0: break
         print("Old byte0:",olddata[0])
 
-def clkswitch():
-    usb.send(bytes([1, 99, 99, 99, 100, 100, 100, 100]))
-    tres = usb.recv(4)
-    print("Clk switch: bad1 bad0, activeclk, switch", tres[3], tres[2], tres[1], tres[0])
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
 def spicommand(name, first, second, third, read, show_bin=False, cs=0, nbyte=3):
@@ -61,8 +57,12 @@ def board_setup(dopattern=False):
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
+
     #spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
-    spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
+    #spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
+    #spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel
+    spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
+
     spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
     #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
 
@@ -118,6 +118,7 @@ class MainWindow(TemplateBaseClass):
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger
     if dopattern: triggertype = 0
+    selectedchannel=0
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -136,8 +137,13 @@ class MainWindow(TemplateBaseClass):
         self.ui.totBox.valueChanged.connect(self.tot)
         self.ui.gridCheck.stateChanged.connect(self.grid)
         self.ui.markerCheck.stateChanged.connect(self.marker)
-        self.ui.upposButton.clicked.connect(self.uppos)
-        self.ui.downposButton.clicked.connect(self.downpos)
+        self.ui.pllresetButton.clicked.connect(self.pllreset)
+        self.ui.upposButton0.clicked.connect(self.uppos)
+        self.ui.downposButton0.clicked.connect(self.downpos)
+        self.ui.upposButton1.clicked.connect(self.uppos1)
+        self.ui.downposButton1.clicked.connect(self.downpos1)
+        self.ui.upposButton2.clicked.connect(self.uppos2)
+        self.ui.downposButton2.clicked.connect(self.downpos2)
         self.ui.upposButton3.clicked.connect(self.uppos3)
         self.ui.downposButton3.clicked.connect(self.downpos3)
         self.ui.upposButton4.clicked.connect(self.uppos4)
@@ -166,10 +172,6 @@ class MainWindow(TemplateBaseClass):
 
     def selectchannel(self):
         self.selectedchannel=self.ui.chanBox.value()
-        if self.acdc[self.selectedchannel]:   self.ui.acdcCheck.setCheckState(QtCore.Qt.Unchecked)
-        else:   self.ui.acdcCheck.setCheckState(QtCore.Qt.Checked)
-        if self.gain[self.selectedchannel]:   self.ui.gainCheck.setCheckState(QtCore.Qt.Unchecked)
-        else:   self.ui.gainCheck.setCheckState(QtCore.Qt.Checked)
         if len(self.lines)>0:
             if self.lines[self.selectedchannel].isVisible():   self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
             else:   self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
@@ -206,30 +208,30 @@ class MainWindow(TemplateBaseClass):
             if not self.gain[self.selectedchannel]:
                 self.tellswitchgain(self.selectedchannel)
 
-    # for 3rd byte, 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4
+    phasec = [0,0,0,0,0]
+    # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
     # for 4th byte, 1 is up, 0 is down
-    def uppos(self):
-        usb.send(bytes([6, 99, 3, 1, 100, 100, 100, 100])) #c1
-        #usb.send(bytes([6, 99, 4, 1, 100, 100, 100, 100])) #c2
-        print("phase up c1")
-    def uppos3(self):
-        usb.send(bytes([6, 99, 5, 1, 100, 100, 100, 100])) #c3
-        print("phase up c3")
-    def uppos4(self):
-        usb.send(bytes([6, 99, 6, 1, 100, 100, 100, 100])) #c4
-        print("phase up c4")
-    def downpos(self):
-        usb.send(bytes([6, 99, 3, 0, 100, 100, 100, 100])) #c1
-        #usb.send(bytes([6, 99, 4, 0, 100, 100, 100, 100])) #c2
-        print("phase down c1")
-    def downpos3(self):
-        usb.send(bytes([6, 99, 5, 0, 100, 100, 100, 100])) #c3
-        print("phase down c3")
+    def dophase(self,plloutnum,updown):
+        pllnum = int(self.ui.pllBox.value())
+        usb.send(bytes([6,pllnum, int(plloutnum+2), updown, 100, 100, 100, 100]))
+        if updown: self.phasec[plloutnum] = self.phasec[plloutnum]+1
+        else: self.phasec[plloutnum] = self.phasec[plloutnum]-1
+        print("phase for pllnum",pllnum,"plloutnum",plloutnum,"now",self.phasec[plloutnum])
+    def uppos(self): self.dophase(plloutnum=0,updown=1)
+    def uppos1(self): self.dophase(plloutnum=1,updown=1)
+    def uppos2(self): self.dophase(plloutnum=2,updown=1)
+    def uppos3(self): self.dophase(plloutnum=3,updown=1)
+    def uppos4(self): self.dophase(plloutnum=4,updown=1)
+    def downpos(self): self.dophase(plloutnum=0,updown=0)
+    def downpos1(self): self.dophase(plloutnum=1,updown=0)
+    def downpos2(self): self.dophase(plloutnum=2,updown=0)
+    def downpos3(self): self.dophase(plloutnum=3,updown=0)
+    def downpos4(self): self.dophase(plloutnum=4,updown=0)
 
-    def downpos4(self):
-        usb.send(bytes([6, 99, 6, 0, 100, 100, 100, 100])) #c4
-        print("phase down c4")
-
+    def pllreset(self):
+        usb.send(bytes([1, 99, 99, 99, 100, 100, 100, 100]))
+        tres = usb.recv(4)
+        print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
 
     def wheelEvent(self, event): #QWheelEvent
         if hasattr(event,"delta"):
@@ -510,8 +512,8 @@ class MainWindow(TemplateBaseClass):
                         self.nbadclkD=self.nbadclkD+1
                     if n==47 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkD=self.nbadclkD+1
-                    #if 40<=n<48 and self.nbadclkD:
-                    #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+                    if 40<=n<48 and self.nbadclkD:
+                        print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
 
                     if 40 <= n < 48 and self.debugstrobe:
                         strobe = val&0xaaaa
@@ -529,10 +531,15 @@ class MainWindow(TemplateBaseClass):
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        if self.xydata_overlapped:
-                            self.xydata[chan][1][s*10+(9-(n%10))] = val
+                        samp = s * 10 + (9 - (n % 10))
+                        if samp % 2 == 1:
+                            samp = samp - 1
                         else:
-                            self.xydata[0][1][chan+ 4*(s*10+(9-(n%10)))] = val
+                            samp = samp + 1
+                        if self.xydata_overlapped:
+                            self.xydata[chan][1][samp] = val
+                        else:
+                            self.xydata[0][1][chan+ 4*samp] = val
 
         if self.debug or self.debugstrobe:
             time.sleep(.5)
@@ -551,8 +558,6 @@ class MainWindow(TemplateBaseClass):
         usb.send(bytes([2, 99, 99, 99, 100, 100, 100, 100]))  # get version
         res = usb.recv(4)
         print("Version", res[3], res[2], res[1], res[0])
-
-        #clkswitch()
 
         board_setup(self.dopattern)
         return 1
