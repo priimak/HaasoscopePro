@@ -99,7 +99,7 @@ def board_setup(dopattern=False):
 
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    gain=0x10 #00 to 20 is 26 to -6 dB
+    gain=0x20 #00 to 20 is 26 to -6 dB
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
@@ -138,9 +138,12 @@ class MainWindow(TemplateBaseClass):
         self.ui.markerCheck.stateChanged.connect(self.marker)
         self.ui.upposButton.clicked.connect(self.uppos)
         self.ui.downposButton.clicked.connect(self.downpos)
+        self.ui.upposButton3.clicked.connect(self.uppos3)
+        self.ui.downposButton3.clicked.connect(self.downpos3)
+        self.ui.upposButton4.clicked.connect(self.uppos4)
+        self.ui.downposButton4.clicked.connect(self.downpos4)
         self.ui.chanBox.valueChanged.connect(self.selectchannel)
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
-        self.ui.gainCheck.stateChanged.connect(self.setgain)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
         self.ui.trigchanonCheck.stateChanged.connect(self.trigchanon)
@@ -208,11 +211,24 @@ class MainWindow(TemplateBaseClass):
     def uppos(self):
         usb.send(bytes([6, 99, 3, 1, 100, 100, 100, 100])) #c1
         #usb.send(bytes([6, 99, 4, 1, 100, 100, 100, 100])) #c2
-        print("phase up")
+        print("phase up c1")
+    def uppos3(self):
+        usb.send(bytes([6, 99, 5, 1, 100, 100, 100, 100])) #c3
+        print("phase up c3")
+    def uppos4(self):
+        usb.send(bytes([6, 99, 6, 1, 100, 100, 100, 100])) #c4
+        print("phase up c4")
     def downpos(self):
         usb.send(bytes([6, 99, 3, 0, 100, 100, 100, 100])) #c1
         #usb.send(bytes([6, 99, 4, 0, 100, 100, 100, 100])) #c2
-        print("phase down")
+        print("phase down c1")
+    def downpos3(self):
+        usb.send(bytes([6, 99, 5, 0, 100, 100, 100, 100])) #c3
+        print("phase down c3")
+
+    def downpos4(self):
+        usb.send(bytes([6, 99, 6, 0, 100, 100, 100, 100])) #c4
+        print("phase down c4")
 
 
     def wheelEvent(self, event): #QWheelEvent
@@ -477,6 +493,7 @@ class MainWindow(TemplateBaseClass):
                     else: highbits = highbits*256
                     val = highbits + lowbits
                     if n % 10 == 0: chan = chan + 1
+
                     if n==40 and val&0x5555!=4369 and val&0x5555!=17476:
                         self.nbadclkA=self.nbadclkA+1
                     if n==41 and val&0x5555!=1 and val&0x5555!=4:
@@ -493,16 +510,22 @@ class MainWindow(TemplateBaseClass):
                         self.nbadclkD=self.nbadclkD+1
                     if n==47 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkD=self.nbadclkD+1
+                    #if 40<=n<48 and self.nbadclkD:
+                    #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+
                     if 40 <= n < 48 and self.debugstrobe:
                         strobe = val&0xaaaa
                         if strobe != 0:
                             print("s=",s,"n=",n,"str",binprint(strobe),strobe)
+
                     if self.debug and self.debugprint:
                         goodval=-1
                         if s<0 or (n<40 and val!=0 and val!=goodval):
                             if self.showbinarydata and n<40:
-                                if s<0 or chan!=3 or (chan==3 and val!=255 and val!=511 and val!=1023 and val!=2047):
-                                    if lowbits>0 or highbits>0: print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+                                #if s<0 or chan!=3 or (chan==3 and val!=255 and val!=511 and val!=1023 and val!=2047):
+                                if s<100:
+                                    if lowbits>0 or highbits>0:
+                                        print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:

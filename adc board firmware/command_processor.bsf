@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 296 416)
+	(rect 16 16 296 448)
 	(text "command_processor" (rect 5 0 91 12)(font "Arial" ))
-	(text "inst" (rect 8 384 20 396)(font "Arial" ))
+	(text "inst" (rect 8 416 20 428)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -178,6 +178,20 @@ refer to the applicable agreement for further details.
 		(line (pt 0 368)(pt 16 368)(line_width 3))
 	)
 	(port
+		(pt 0 384)
+		(input)
+		(text "lvdsbits_short[59..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "lvdsbits_short[59..0]" (rect 21 379 101 391)(font "Arial" ))
+		(line (pt 0 384)(pt 16 384)(line_width 3))
+	)
+	(port
+		(pt 0 400)
+		(input)
+		(text "lvdsbits_other[59..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "lvdsbits_other[59..0]" (rect 21 395 101 407)(font "Arial" ))
+		(line (pt 0 400)(pt 16 400)(line_width 3))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "i_tready" (rect 0 0 33 12)(font "Arial" ))
@@ -304,6 +318,6 @@ refer to the applicable agreement for further details.
 		(line (pt 280 304)(pt 264 304)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 264 384)(line_width 1))
+		(rectangle (rect 16 16 264 416)(line_width 1))
 	)
 )
