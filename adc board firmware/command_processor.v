@@ -53,7 +53,9 @@ module command_processor (
 	output reg [2:0] spimisossel=0, //which spimiso to listen to
 	output reg [27:0]	debugout,  // for debugging
 	input wire [3:0]	overrange,  //ORA0,A1,B0,B1
-	input wire			clklvds90, clklvds180, clklvds270
+	input wire			clklvds90, clklvds180, clklvds270,
+	input wire clk50, // for pllreset, since the pll will be dead during reset
+	input wire [59:0] lvdsbitsC_o
 
 );
 
@@ -392,16 +394,16 @@ sampleclkstr19 <= {lvds2bits[139],lvds2bits[129]};
 end
 
 always @ (posedge clklvds180) begin
-samplevalue20  <= {lvds3bits[110],lvdsbits_short[0],lvds3bits[90],lvds3bits[80],lvds3bits[70],lvds3bits[60],lvds3bits[50],lvds3bits[40],lvds3bits[30],lvds3bits[20],lvds3bits[10],lvds3bits[0]};
-samplevalue21  <= {lvds3bits[111],lvdsbits_short[1],lvds3bits[91],lvds3bits[81],lvds3bits[71],lvds3bits[61],lvds3bits[51],lvds3bits[41],lvds3bits[31],lvds3bits[21],lvds3bits[11],lvds3bits[1]};
-samplevalue22  <= {lvds3bits[112],lvdsbits_short[2],lvds3bits[92],lvds3bits[82],lvds3bits[72],lvds3bits[62],lvds3bits[52],lvds3bits[42],lvds3bits[32],lvds3bits[22],lvds3bits[12],lvds3bits[2]};
-samplevalue23  <= {lvds3bits[113],lvdsbits_short[3],lvds3bits[93],lvds3bits[83],lvds3bits[73],lvds3bits[63],lvds3bits[53],lvds3bits[43],lvds3bits[33],lvds3bits[23],lvds3bits[13],lvds3bits[3]};
-samplevalue24  <= {lvds3bits[114],lvdsbits_short[4],lvds3bits[94],lvds3bits[84],lvds3bits[74],lvds3bits[64],lvds3bits[54],lvds3bits[44],lvds3bits[34],lvds3bits[24],lvds3bits[14],lvds3bits[4]};
-samplevalue25  <= {lvds3bits[115],lvdsbits_short[5],lvds3bits[95],lvds3bits[85],lvds3bits[75],lvds3bits[65],lvds3bits[55],lvds3bits[45],lvds3bits[35],lvds3bits[25],lvds3bits[15],lvds3bits[5]};
-samplevalue26  <= {lvds3bits[116],lvdsbits_short[6],lvds3bits[96],lvds3bits[86],lvds3bits[76],lvds3bits[66],lvds3bits[56],lvds3bits[46],lvds3bits[36],lvds3bits[26],lvds3bits[16],lvds3bits[6]};
-samplevalue27  <= {lvds3bits[117],lvdsbits_short[7],lvds3bits[97],lvds3bits[87],lvds3bits[77],lvds3bits[67],lvds3bits[57],lvds3bits[47],lvds3bits[37],lvds3bits[27],lvds3bits[17],lvds3bits[7]};
-samplevalue28  <= {lvds3bits[118],lvdsbits_short[8],lvds3bits[98],lvds3bits[88],lvds3bits[78],lvds3bits[68],lvds3bits[58],lvds3bits[48],lvds3bits[38],lvds3bits[28],lvds3bits[18],lvds3bits[8]};
-samplevalue29  <= {lvds3bits[119],lvdsbits_short[9],lvds3bits[99],lvds3bits[89],lvds3bits[79],lvds3bits[69],lvds3bits[59],lvds3bits[49],lvds3bits[39],lvds3bits[29],lvds3bits[19],lvds3bits[9]};
+samplevalue20  <= {lvds3bits[110],lvdsbitsC_o[0],lvds3bits[90],lvds3bits[80],lvds3bits[70],lvds3bits[60],lvds3bits[50],lvds3bits[40],lvds3bits[30],lvds3bits[20],lvds3bits[10],lvds3bits[0]};
+samplevalue21  <= {lvds3bits[111],lvdsbitsC_o[1],lvds3bits[91],lvds3bits[81],lvds3bits[71],lvds3bits[61],lvds3bits[51],lvds3bits[41],lvds3bits[31],lvds3bits[21],lvds3bits[11],lvds3bits[1]};
+samplevalue22  <= {lvds3bits[112],lvdsbitsC_o[2],lvds3bits[92],lvds3bits[82],lvds3bits[72],lvds3bits[62],lvds3bits[52],lvds3bits[42],lvds3bits[32],lvds3bits[22],lvds3bits[12],lvds3bits[2]};
+samplevalue23  <= {lvds3bits[113],lvdsbitsC_o[3],lvds3bits[93],lvds3bits[83],lvds3bits[73],lvds3bits[63],lvds3bits[53],lvds3bits[43],lvds3bits[33],lvds3bits[23],lvds3bits[13],lvds3bits[3]};
+samplevalue24  <= {lvds3bits[114],lvdsbitsC_o[4],lvds3bits[94],lvds3bits[84],lvds3bits[74],lvds3bits[64],lvds3bits[54],lvds3bits[44],lvds3bits[34],lvds3bits[24],lvds3bits[14],lvds3bits[4]};
+samplevalue25  <= {lvds3bits[115],lvdsbitsC_o[5],lvds3bits[95],lvds3bits[85],lvds3bits[75],lvds3bits[65],lvds3bits[55],lvds3bits[45],lvds3bits[35],lvds3bits[25],lvds3bits[15],lvds3bits[5]};
+samplevalue26  <= {lvds3bits[116],lvdsbitsC_o[6],lvds3bits[96],lvds3bits[86],lvds3bits[76],lvds3bits[66],lvds3bits[56],lvds3bits[46],lvds3bits[36],lvds3bits[26],lvds3bits[16],lvds3bits[6]};
+samplevalue27  <= {lvds3bits[117],lvdsbitsC_o[7],lvds3bits[97],lvds3bits[87],lvds3bits[77],lvds3bits[67],lvds3bits[57],lvds3bits[47],lvds3bits[37],lvds3bits[27],lvds3bits[17],lvds3bits[7]};
+samplevalue28  <= {lvds3bits[118],lvdsbitsC_o[8],lvds3bits[98],lvds3bits[88],lvds3bits[78],lvds3bits[68],lvds3bits[58],lvds3bits[48],lvds3bits[38],lvds3bits[28],lvds3bits[18],lvds3bits[8]};
+samplevalue29  <= {lvds3bits[119],lvdsbitsC_o[9],lvds3bits[99],lvds3bits[89],lvds3bits[79],lvds3bits[69],lvds3bits[59],lvds3bits[49],lvds3bits[39],lvds3bits[29],lvds3bits[19],lvds3bits[9]};
 sampleclkstr20 <= {lvds3bits[130],lvds3bits[120]};
 sampleclkstr21 <= {lvds3bits[131],lvds3bits[121]};
 sampleclkstr22 <= {lvds3bits[132],lvds3bits[122]};
@@ -415,16 +417,16 @@ sampleclkstr29 <= {lvds3bits[139],lvds3bits[129]};
 end
 
 always @ (posedge clklvds270) begin
-samplevalue30  <= {lvdsbits_short[40],lvdsbits_short[30],lvdsbits_short[20],lvdsbits_short[10],lvds4bits[70],lvds4bits[60],lvds4bits[50],lvds4bits[40],lvds4bits[30],lvds4bits[20],lvds4bits[10],lvds4bits[0]};
-samplevalue31  <= {lvdsbits_short[41],lvdsbits_short[31],lvdsbits_short[21],lvdsbits_short[11],lvds4bits[71],lvds4bits[61],lvds4bits[51],lvds4bits[41],lvds4bits[31],lvds4bits[21],lvds4bits[11],lvds4bits[1]};
-samplevalue32  <= {lvdsbits_short[42],lvdsbits_short[32],lvdsbits_short[22],lvdsbits_short[12],lvds4bits[72],lvds4bits[62],lvds4bits[52],lvds4bits[42],lvds4bits[32],lvds4bits[22],lvds4bits[12],lvds4bits[2]};
-samplevalue33  <= {lvdsbits_short[43],lvdsbits_short[33],lvdsbits_short[23],lvdsbits_short[13],lvds4bits[73],lvds4bits[63],lvds4bits[53],lvds4bits[43],lvds4bits[33],lvds4bits[23],lvds4bits[13],lvds4bits[3]};
-samplevalue34  <= {lvdsbits_short[44],lvdsbits_short[34],lvdsbits_short[24],lvdsbits_short[14],lvds4bits[74],lvds4bits[64],lvds4bits[54],lvds4bits[44],lvds4bits[34],lvds4bits[24],lvds4bits[14],lvds4bits[4]};
-samplevalue35  <= {lvdsbits_short[45],lvdsbits_short[35],lvdsbits_short[25],lvdsbits_short[15],lvds4bits[75],lvds4bits[65],lvds4bits[55],lvds4bits[45],lvds4bits[35],lvds4bits[25],lvds4bits[15],lvds4bits[5]};
-samplevalue36  <= {lvdsbits_short[46],lvdsbits_short[36],lvdsbits_short[26],lvdsbits_short[16],lvds4bits[76],lvds4bits[66],lvds4bits[56],lvds4bits[46],lvds4bits[36],lvds4bits[26],lvds4bits[16],lvds4bits[6]};
-samplevalue37  <= {lvdsbits_short[47],lvdsbits_short[37],lvdsbits_short[27],lvdsbits_short[17],lvds4bits[77],lvds4bits[67],lvds4bits[57],lvds4bits[47],lvds4bits[37],lvds4bits[27],lvds4bits[17],lvds4bits[7]};
-samplevalue38  <= {lvdsbits_short[48],lvdsbits_short[38],lvdsbits_short[28],lvdsbits_short[18],lvds4bits[78],lvds4bits[68],lvds4bits[58],lvds4bits[48],lvds4bits[38],lvds4bits[28],lvds4bits[18],lvds4bits[8]};
-samplevalue39  <= {lvdsbits_short[49],lvdsbits_short[39],lvdsbits_short[29],lvdsbits_short[19],lvds4bits[79],lvds4bits[69],lvds4bits[59],lvds4bits[49],lvds4bits[39],lvds4bits[29],lvds4bits[19],lvds4bits[9]};
+samplevalue30  <= {lvdsbits_short[40],lvdsbits_short[30],lvdsbits_short[20],lvdsbits_short[10],lvdsbits_short[0],lvds4bits[60],lvds4bits[50],lvds4bits[40],lvds4bits[30],lvds4bits[20],lvds4bits[10],lvds4bits[0]};
+samplevalue31  <= {lvdsbits_short[41],lvdsbits_short[31],lvdsbits_short[21],lvdsbits_short[11],lvdsbits_short[1],lvds4bits[61],lvds4bits[51],lvds4bits[41],lvds4bits[31],lvds4bits[21],lvds4bits[11],lvds4bits[1]};
+samplevalue32  <= {lvdsbits_short[42],lvdsbits_short[32],lvdsbits_short[22],lvdsbits_short[12],lvdsbits_short[2],lvds4bits[62],lvds4bits[52],lvds4bits[42],lvds4bits[32],lvds4bits[22],lvds4bits[12],lvds4bits[2]};
+samplevalue33  <= {lvdsbits_short[43],lvdsbits_short[33],lvdsbits_short[23],lvdsbits_short[13],lvdsbits_short[3],lvds4bits[63],lvds4bits[53],lvds4bits[43],lvds4bits[33],lvds4bits[23],lvds4bits[13],lvds4bits[3]};
+samplevalue34  <= {lvdsbits_short[44],lvdsbits_short[34],lvdsbits_short[24],lvdsbits_short[14],lvdsbits_short[4],lvds4bits[64],lvds4bits[54],lvds4bits[44],lvds4bits[34],lvds4bits[24],lvds4bits[14],lvds4bits[4]};
+samplevalue35  <= {lvdsbits_short[45],lvdsbits_short[35],lvdsbits_short[25],lvdsbits_short[15],lvdsbits_short[5],lvds4bits[65],lvds4bits[55],lvds4bits[45],lvds4bits[35],lvds4bits[25],lvds4bits[15],lvds4bits[5]};
+samplevalue36  <= {lvdsbits_short[46],lvdsbits_short[36],lvdsbits_short[26],lvdsbits_short[16],lvdsbits_short[6],lvds4bits[66],lvds4bits[56],lvds4bits[46],lvds4bits[36],lvds4bits[26],lvds4bits[16],lvds4bits[6]};
+samplevalue37  <= {lvdsbits_short[47],lvdsbits_short[37],lvdsbits_short[27],lvdsbits_short[17],lvdsbits_short[7],lvds4bits[67],lvds4bits[57],lvds4bits[47],lvds4bits[37],lvds4bits[27],lvds4bits[17],lvds4bits[7]};
+samplevalue38  <= {lvdsbits_short[48],lvdsbits_short[38],lvdsbits_short[28],lvdsbits_short[18],lvdsbits_short[8],lvds4bits[68],lvds4bits[58],lvds4bits[48],lvds4bits[38],lvds4bits[28],lvds4bits[18],lvds4bits[8]};
+samplevalue39  <= {lvdsbits_short[49],lvdsbits_short[39],lvdsbits_short[29],lvdsbits_short[19],lvdsbits_short[9],lvds4bits[69],lvds4bits[59],lvds4bits[49],lvds4bits[39],lvds4bits[29],lvds4bits[19],lvds4bits[9]};
 sampleclkstr30 <= {lvds4bits[130],lvds4bits[120]};
 sampleclkstr31 <= {lvds4bits[131],lvds4bits[121]};
 sampleclkstr32 <= {lvds4bits[132],lvds4bits[122]};
@@ -525,6 +527,23 @@ always @ (posedge clk) begin
 	triggercounter3 <= triggercounter2;
 end
 
+reg [1:0] pllresetstate=0;
+reg pllreset2=0;
+always @ (posedge clk50) begin
+	case (pllresetstate)
+   0 : begin
+		if (pllreset2) begin
+			pllreset<=1'b1;
+			pllresetstate<=2'd1;
+		end
+	end
+	1 : begin
+		pllreset<=1'b0;
+		if (!pllreset2) pllresetstate<=2'd0;
+	end
+	endcase
+end
+
 always @ (posedge clk or negedge rstn)
  if (~rstn) begin
 	state  <= INIT;
@@ -532,7 +551,7 @@ always @ (posedge clk or negedge rstn)
  
   case (state)
    INIT : begin
-		pllreset <= 1'b0;
+		pllreset2 <= 1'b0;
 		lvds1rd <= 1'b0;
    	rx_counter <= 0;
 		length <= 0;
@@ -561,7 +580,7 @@ always @ (posedge clk or negedge rstn)
 		end
 		
 		1 : begin // reset plls
-			pllreset <= 1'b1;
+			pllreset2 <= 1'b1;
 			o_tdata <= 33;
 			length <= 4;
 			o_tvalid <= 1'b1;

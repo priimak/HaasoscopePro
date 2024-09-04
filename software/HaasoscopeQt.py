@@ -512,8 +512,8 @@ class MainWindow(TemplateBaseClass):
                         self.nbadclkD=self.nbadclkD+1
                     if n==47 and val&0x5555!=1 and val&0x5555!=4:
                         self.nbadclkD=self.nbadclkD+1
-                    if 40<=n<48 and self.nbadclkD:
-                        print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+                    #if 40<=n<48 and self.nbadclkD:
+                    #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
 
                     if 40 <= n < 48 and self.debugstrobe:
                         strobe = val&0xaaaa
