@@ -77,7 +77,7 @@ localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=
 reg [ 3:0]	state = INIT;
 reg [ 3:0]	rx_counter = 0;
 reg [ 7:0]	rx_data[7:0];
-reg [15:0]	length = 0;
+integer		length = 0;
 reg [ 2:0]	spistate = 0;
 reg [5:0]	channel = 0;
 
@@ -575,7 +575,7 @@ always @ (posedge clk or negedge rstn)
 		case (rx_data[0])
 			
 		0 : begin // send a length of bytes given by the command
-			length <= {rx_data[5],rx_data[4]};
+			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
 			state <= TX_DATA1;
 		end
 		

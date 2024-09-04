@@ -304,7 +304,7 @@ class MainWindow(TemplateBaseClass):
     def triggerposchanged(self,value):
         if value>253 or value<3: return
         offset=5.0 # trig to readout delay
-        scal = self.num_samples/256.
+        scal = self.expect_samples/256.
         point = value*scal + offset/pow(2,self.downsample)
         if self.downsample<0: point = 128*scal + (point-128*scal)*pow(2,self.downsample)
         self.settriggerpoint(int(point))
@@ -376,7 +376,6 @@ class MainWindow(TemplateBaseClass):
     num_chan_per_board=4
     num_board=1
     num_logic_inputs=1
-    num_samples=1000
     chtext=""
     linepens=[]
     def launch(self):
@@ -427,7 +426,7 @@ class MainWindow(TemplateBaseClass):
         #self.setxaxis()
         #self.setyaxis()
         #self.timechanged()
-        self.ui.totBox.setMaximum(self.num_samples)
+        self.ui.totBox.setMaximum(self.expect_samples)
         self.ui.plot.showGrid(x=True, y=True)
 
     def closeEvent(self, event):
@@ -435,10 +434,11 @@ class MainWindow(TemplateBaseClass):
         self.timer.stop()
         self.timer2.stop()
 
+    expect_samples = 100
     if xydata_overlapped:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, num_samples], dtype=float)
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 10*expect_samples], dtype=float)
     else:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, 4*num_samples], dtype=float)
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 4*10*expect_samples], dtype=float)
 
     def updateplot(self):
         self.mainloop()
@@ -467,11 +467,9 @@ class MainWindow(TemplateBaseClass):
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
+        usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(self.expect_samples+1)))  # length to take (last 4 bytes)
 
-        expect_samples = 100
-        usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
-
-        expect_len = expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
+        expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
         usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
         data = usb.recv(expect_len)  # recv from usb
         rx_len = len(data)
@@ -485,7 +483,7 @@ class MainWindow(TemplateBaseClass):
             self.nbadclkB = 0
             self.nbadclkC = 0
             self.nbadclkD = 0
-            for s in range(0, int(expect_samples)):
+            for s in range(0, int(self.expect_samples)):
                 chan = -1
                 for n in range(nsubsamples): # the subsample to get
                     pbyte = nsubsamples*2*s + 2*n
@@ -565,9 +563,9 @@ class MainWindow(TemplateBaseClass):
     def init(self):
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
-                self.xydata[c][0] = np.array([range(0,1000)])
+                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])
         else:
-            self.xydata[0][0] = np.array([range(0, 4000)])
+            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])
         return 1
 
     def cleanup(self):
