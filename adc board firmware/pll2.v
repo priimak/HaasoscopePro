@@ -150,9 +150,9 @@ module pll2 (
 		altpll_component.clk3_duty_cycle = 50,
 		altpll_component.clk3_multiply_by = 29,
 		altpll_component.clk3_phase_shift = "0",
-		altpll_component.clk4_divide_by = 2,
+		altpll_component.clk4_divide_by = 4,
 		altpll_component.clk4_duty_cycle = 50,
-		altpll_component.clk4_multiply_by = 1,
+		altpll_component.clk4_multiply_by = 29,
 		altpll_component.clk4_phase_shift = "0",
 		altpll_component.compensate_clock = "CLK0",
 		altpll_component.inclk0_input_frequency = 20000,
@@ -203,8 +203,6 @@ module pll2 (
 		altpll_component.port_extclk2 = "PORT_UNUSED",
 		altpll_component.port_extclk3 = "PORT_UNUSED",
 		altpll_component.self_reset_on_loss_lock = "OFF",
-		altpll_component.vco_frequency_control = "MANUAL_PHASE",
-		altpll_component.vco_phase_shift_step = 1,
 		altpll_component.width_clock = 5,
 		altpll_component.width_phasecounterselect = 3;
 
@@ -234,7 +232,7 @@ endmodule
 // Retrieval info: PRIVATE: DIV_FACTOR1 NUMERIC "20"
 // Retrieval info: PRIVATE: DIV_FACTOR2 NUMERIC "4"
 // Retrieval info: PRIVATE: DIV_FACTOR3 NUMERIC "4"
-// Retrieval info: PRIVATE: DIV_FACTOR4 NUMERIC "2"
+// Retrieval info: PRIVATE: DIV_FACTOR4 NUMERIC "4"
 // Retrieval info: PRIVATE: DUTY_CYCLE0 STRING "50.00000000"
 // Retrieval info: PRIVATE: DUTY_CYCLE1 STRING "50.00000000"
 // Retrieval info: PRIVATE: DUTY_CYCLE2 STRING "50.00000000"
@@ -244,7 +242,7 @@ endmodule
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE1 STRING "72.500000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE2 STRING "362.500000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE3 STRING "362.500000"
-// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE4 STRING "25.000000"
+// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE4 STRING "362.500000"
 // Retrieval info: PRIVATE: EXPLICIT_SWITCHOVER_COUNTER STRING "0"
 // Retrieval info: PRIVATE: EXT_FEEDBACK_RADIO STRING "0"
 // Retrieval info: PRIVATE: GLOCKED_COUNTER_EDIT_CHANGED STRING "1"
@@ -269,8 +267,6 @@ endmodule
 // Retrieval info: PRIVATE: LVDS_PHASE_SHIFT_UNIT2 STRING "ps"
 // Retrieval info: PRIVATE: LVDS_PHASE_SHIFT_UNIT3 STRING "ps"
 // Retrieval info: PRIVATE: LVDS_PHASE_SHIFT_UNIT4 STRING "ps"
-// Retrieval info: PRIVATE: MANUAL_PHASE_SHIFT_STEP_EDIT STRING "1.00000000"
-// Retrieval info: PRIVATE: MANUAL_PHASE_SHIFT_STEP_UNIT STRING "ps"
 // Retrieval info: PRIVATE: MIG_DEVICE_SPEED_GRADE STRING "Any"
 // Retrieval info: PRIVATE: MIRROR_CLK0 STRING "0"
 // Retrieval info: PRIVATE: MIRROR_CLK1 STRING "0"
@@ -281,7 +277,7 @@ endmodule
 // Retrieval info: PRIVATE: MULT_FACTOR1 NUMERIC "29"
 // Retrieval info: PRIVATE: MULT_FACTOR2 NUMERIC "29"
 // Retrieval info: PRIVATE: MULT_FACTOR3 NUMERIC "29"
-// Retrieval info: PRIVATE: MULT_FACTOR4 NUMERIC "1"
+// Retrieval info: PRIVATE: MULT_FACTOR4 NUMERIC "29"
 // Retrieval info: PRIVATE: NORMAL_MODE_RADIO STRING "1"
 // Retrieval info: PRIVATE: OUTPUT_FREQ0 STRING "50.00000000"
 // Retrieval info: PRIVATE: OUTPUT_FREQ1 STRING "350.00000000"
@@ -305,7 +301,7 @@ endmodule
 // Retrieval info: PRIVATE: PHASE_SHIFT2 STRING "0.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT3 STRING "0.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT4 STRING "0.00000000"
-// Retrieval info: PRIVATE: PHASE_SHIFT_STEP_ENABLED_CHECK STRING "1"
+// Retrieval info: PRIVATE: PHASE_SHIFT_STEP_ENABLED_CHECK STRING "0"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT0 STRING "deg"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT1 STRING "deg"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT2 STRING "deg"
@@ -370,9 +366,9 @@ endmodule
 // Retrieval info: CONSTANT: CLK3_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK3_MULTIPLY_BY NUMERIC "29"
 // Retrieval info: CONSTANT: CLK3_PHASE_SHIFT STRING "0"
-// Retrieval info: CONSTANT: CLK4_DIVIDE_BY NUMERIC "2"
+// Retrieval info: CONSTANT: CLK4_DIVIDE_BY NUMERIC "4"
 // Retrieval info: CONSTANT: CLK4_DUTY_CYCLE NUMERIC "50"
-// Retrieval info: CONSTANT: CLK4_MULTIPLY_BY NUMERIC "1"
+// Retrieval info: CONSTANT: CLK4_MULTIPLY_BY NUMERIC "29"
 // Retrieval info: CONSTANT: CLK4_PHASE_SHIFT STRING "0"
 // Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
 // Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
@@ -422,8 +418,6 @@ endmodule
 // Retrieval info: CONSTANT: PORT_extclk2 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_extclk3 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: SELF_RESET_ON_LOSS_LOCK STRING "OFF"
-// Retrieval info: CONSTANT: VCO_FREQUENCY_CONTROL STRING "MANUAL_PHASE"
-// Retrieval info: CONSTANT: VCO_PHASE_SHIFT_STEP NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_CLOCK NUMERIC "5"
 // Retrieval info: CONSTANT: WIDTH_PHASECOUNTERSELECT NUMERIC "3"
 // Retrieval info: USED_PORT: @clk 0 0 5 0 OUTPUT_CLK_EXT VCC "@clk[4..0]"

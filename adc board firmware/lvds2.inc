@@ -15,10 +15,10 @@
 
 FUNCTION lvds2 
 (
-	rx_in[5..0],
+	rx_in[1..0],
 	rx_inclock
 )
 
 RETURNS (
-	rx_out[59..0]
+	rx_out[19..0]
 );

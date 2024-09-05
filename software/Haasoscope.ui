@@ -723,27 +723,6 @@
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QCheckBox" name="trigchanonCheck">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>270</y>
-          <width>121</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="text">
-         <string>Triggering on</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
        <widget class="QCheckBox" name="oversampCheck">
         <property name="geometry">
          <rect>

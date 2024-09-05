@@ -36,9 +36,9 @@ module lvds2 (
 	rx_inclock,
 	rx_out);
 
-	input	[5:0]  rx_in;
+	input	[1:0]  rx_in;
 	input	  rx_inclock;
-	output	[59:0]  rx_out;
+	output	[19:0]  rx_out;
 
 endmodule
 
@@ -58,15 +58,15 @@ endmodule
 // Retrieval info: PRIVATE: Ext_PLL STRING "ON"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: PRIVATE: Le_Serdes STRING "ON"
-// Retrieval info: PRIVATE: Num_Channel NUMERIC "6"
+// Retrieval info: PRIVATE: Num_Channel NUMERIC "2"
 // Retrieval info: PRIVATE: Outclock_Divide_By NUMERIC "0"
 // Retrieval info: PRIVATE: pCNX_OUTCLK_ALIGN NUMERIC "0"
 // Retrieval info: PRIVATE: pINCLOCK_PHASE_SHIFT STRING "0.00"
 // Retrieval info: PRIVATE: PLL_Enable NUMERIC "0"
 // Retrieval info: PRIVATE: PLL_Freq STRING "100.00"
-// Retrieval info: PRIVATE: PLL_Period STRING "10.000"
+// Retrieval info: PRIVATE: PLL_Period NUMERIC "5"
 // Retrieval info: PRIVATE: pOUTCLOCK_PHASE_SHIFT NUMERIC "0"
-// Retrieval info: PRIVATE: Reg_InOut NUMERIC "1"
+// Retrieval info: PRIVATE: Reg_InOut NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Cda_Reset NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Clock_Resc STRING "AUTO"
 // Retrieval info: PRIVATE: Use_Common_Rx_Tx_Plls NUMERIC "0"
@@ -96,17 +96,17 @@ endmodule
 // Retrieval info: CONSTANT: IMPLEMENT_IN_LES STRING "ON"
 // Retrieval info: CONSTANT: INCLOCK_BOOST NUMERIC "0"
 // Retrieval info: CONSTANT: INCLOCK_DATA_ALIGNMENT STRING "EDGE_ALIGNED"
-// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "10000"
+// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "5000"
 // Retrieval info: CONSTANT: INCLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: CONSTANT: INPUT_DATA_RATE NUMERIC "800"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LOSE_LOCK_ON_ONE_CHANGE STRING "UNUSED"
 // Retrieval info: CONSTANT: LPM_HINT STRING "UNUSED"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altlvds_rx"
-// Retrieval info: CONSTANT: NUMBER_OF_CHANNELS NUMERIC "6"
+// Retrieval info: CONSTANT: NUMBER_OF_CHANNELS NUMERIC "2"
 // Retrieval info: CONSTANT: OUTCLOCK_RESOURCE STRING "AUTO"
 // Retrieval info: CONSTANT: PLL_OPERATION_MODE STRING "UNUSED"
-// Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
+// Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "UNUSED"
 // Retrieval info: CONSTANT: PORT_RX_CHANNEL_DATA_ALIGN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_RX_DATA_ALIGN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
@@ -122,12 +122,12 @@ endmodule
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "ON"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: X_ON_BITSLIP STRING "ON"
-// Retrieval info: USED_PORT: rx_in 0 0 6 0 INPUT NODEFVAL "rx_in[5..0]"
-// Retrieval info: CONNECT: @rx_in 0 0 6 0 rx_in 0 0 6 0
+// Retrieval info: USED_PORT: rx_in 0 0 2 0 INPUT NODEFVAL "rx_in[1..0]"
+// Retrieval info: CONNECT: @rx_in 0 0 2 0 rx_in 0 0 2 0
 // Retrieval info: USED_PORT: rx_inclock 0 0 0 0 INPUT NODEFVAL "rx_inclock"
 // Retrieval info: CONNECT: @rx_inclock 0 0 0 0 rx_inclock 0 0 0 0
-// Retrieval info: USED_PORT: rx_out 0 0 60 0 OUTPUT NODEFVAL "rx_out[59..0]"
-// Retrieval info: CONNECT: rx_out 0 0 60 0 @rx_out 0 0 60 0
+// Retrieval info: USED_PORT: rx_out 0 0 20 0 OUTPUT NODEFVAL "rx_out[19..0]"
+// Retrieval info: CONNECT: rx_out 0 0 20 0 @rx_out 0 0 20 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds2.v TRUE FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds2.qip TRUE FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds2.bsf TRUE TRUE

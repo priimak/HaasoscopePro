@@ -59,9 +59,9 @@ def board_setup(dopattern=False):
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
 
     #spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
-    #spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
+    spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
     #spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel
-    spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
+    #spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
 
     spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
     #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
@@ -152,7 +152,6 @@ class MainWindow(TemplateBaseClass):
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
-        self.ui.trigchanonCheck.stateChanged.connect(self.trigchanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
         self.db=False
         self.lastTime = time.time()
@@ -175,22 +174,12 @@ class MainWindow(TemplateBaseClass):
         if len(self.lines)>0:
             if self.lines[self.selectedchannel].isVisible():   self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
             else:   self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
-        if self.trigsactive[self.selectedchannel]:   self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Checked)
-        else:   self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Unchecked)
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
             self.lines[self.selectedchannel].setVisible(True)
-            self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Checked)
         else:
             self.lines[self.selectedchannel].setVisible(False)
-            self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Unchecked)
-
-    def trigchanon(self):
-        if self.ui.trigchanonCheck.checkState() == QtCore.Qt.Checked:
-            if not self.trigsactive[self.selectedchannel]: self.toggletriggerchan(self.selectedchannel)
-        else:
-            if self.trigsactive[self.selectedchannel]: self.toggletriggerchan(self.selectedchannel)
 
     def setacdc(self):
         if self.ui.acdcCheck.checkState() == QtCore.Qt.Checked: #ac coupled
@@ -208,15 +197,15 @@ class MainWindow(TemplateBaseClass):
             if not self.gain[self.selectedchannel]:
                 self.tellswitchgain(self.selectedchannel)
 
-    phasec = [0,0,0,0,0]
+    phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
     # for 4th byte, 1 is up, 0 is down
     def dophase(self,plloutnum,updown):
         pllnum = int(self.ui.pllBox.value())
         usb.send(bytes([6,pllnum, int(plloutnum+2), updown, 100, 100, 100, 100]))
-        if updown: self.phasec[plloutnum] = self.phasec[plloutnum]+1
-        else: self.phasec[plloutnum] = self.phasec[plloutnum]-1
-        print("phase for pllnum",pllnum,"plloutnum",plloutnum,"now",self.phasec[plloutnum])
+        if updown: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]+1
+        else: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]-1
+        print("phase for pllnum",pllnum,"plloutnum",plloutnum,"now",self.phasec[pllnum][plloutnum])
     def uppos(self): self.dophase(plloutnum=0,updown=1)
     def uppos1(self): self.dophase(plloutnum=1,updown=1)
     def uppos2(self): self.dophase(plloutnum=2,updown=1)

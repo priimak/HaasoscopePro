@@ -41,12 +41,12 @@ module lvds2 (
 	rx_inclock,
 	rx_out);
 
-	input	[5:0]  rx_in;
+	input	[1:0]  rx_in;
 	input	  rx_inclock;
-	output	[59:0]  rx_out;
+	output	[19:0]  rx_out;
 
-	wire [59:0] sub_wire0;
-	wire [59:0] rx_out = sub_wire0[59:0];
+	wire [19:0] sub_wire0;
+	wire [19:0] rx_out = sub_wire0[19:0];
 
 	altlvds_rx	ALTLVDS_RX_component (
 				.rx_in (rx_in),
@@ -61,27 +61,27 @@ module lvds2 (
 				.pll_phaseupdown (),
 				.pll_scanclk (),
 				.rx_cda_max (),
-				.rx_cda_reset ({6{1'b0}}),
-				.rx_channel_data_align ({6{1'b0}}),
-				.rx_coreclk ({6{1'b1}}),
+				.rx_cda_reset ({2{1'b0}}),
+				.rx_channel_data_align ({2{1'b0}}),
+				.rx_coreclk ({2{1'b1}}),
 				.rx_data_align (1'b0),
 				.rx_data_align_reset (1'b0),
 				.rx_data_reset (1'b0),
 				.rx_deskew (1'b0),
 				.rx_divfwdclk (),
-				.rx_dpa_lock_reset ({6{1'b0}}),
+				.rx_dpa_lock_reset ({2{1'b0}}),
 				.rx_dpa_locked (),
 				.rx_dpaclock (1'b0),
-				.rx_dpll_enable ({6{1'b1}}),
-				.rx_dpll_hold ({6{1'b0}}),
-				.rx_dpll_reset ({6{1'b0}}),
+				.rx_dpll_enable ({2{1'b1}}),
+				.rx_dpll_hold ({2{1'b0}}),
+				.rx_dpll_reset ({2{1'b0}}),
 				.rx_enable (1'b1),
-				.rx_fifo_reset ({6{1'b0}}),
+				.rx_fifo_reset ({2{1'b0}}),
 				.rx_locked (),
 				.rx_outclock (),
 				.rx_pll_enable (1'b1),
 				.rx_readclock (1'b0),
-				.rx_reset ({6{1'b0}}),
+				.rx_reset ({2{1'b0}}),
 				.rx_syncclock (1'b0));
 	defparam
 		ALTLVDS_RX_component.buffer_implementation = "RAM",
@@ -104,17 +104,17 @@ module lvds2 (
 		ALTLVDS_RX_component.implement_in_les = "ON",
 		ALTLVDS_RX_component.inclock_boost = 0,
 		ALTLVDS_RX_component.inclock_data_alignment = "EDGE_ALIGNED",
-		ALTLVDS_RX_component.inclock_period = 10000,
+		ALTLVDS_RX_component.inclock_period = 5000,
 		ALTLVDS_RX_component.inclock_phase_shift = 0,
 		ALTLVDS_RX_component.input_data_rate = 800,
 		ALTLVDS_RX_component.intended_device_family = "Cyclone IV E",
 		ALTLVDS_RX_component.lose_lock_on_one_change = "UNUSED",
 		ALTLVDS_RX_component.lpm_hint = "CBX_MODULE_PREFIX=lvds2",
 		ALTLVDS_RX_component.lpm_type = "altlvds_rx",
-		ALTLVDS_RX_component.number_of_channels = 6,
+		ALTLVDS_RX_component.number_of_channels = 2,
 		ALTLVDS_RX_component.outclock_resource = "AUTO",
 		ALTLVDS_RX_component.pll_operation_mode = "UNUSED",
-		ALTLVDS_RX_component.pll_self_reset_on_loss_lock = "OFF",
+		ALTLVDS_RX_component.pll_self_reset_on_loss_lock = "UNUSED",
 		ALTLVDS_RX_component.port_rx_channel_data_align = "PORT_UNUSED",
 		ALTLVDS_RX_component.port_rx_data_align = "PORT_UNUSED",
 		ALTLVDS_RX_component.refclk_frequency = "UNUSED",
@@ -151,15 +151,15 @@ endmodule
 // Retrieval info: PRIVATE: Ext_PLL STRING "ON"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: PRIVATE: Le_Serdes STRING "ON"
-// Retrieval info: PRIVATE: Num_Channel NUMERIC "6"
+// Retrieval info: PRIVATE: Num_Channel NUMERIC "2"
 // Retrieval info: PRIVATE: Outclock_Divide_By NUMERIC "0"
 // Retrieval info: PRIVATE: pCNX_OUTCLK_ALIGN NUMERIC "0"
 // Retrieval info: PRIVATE: pINCLOCK_PHASE_SHIFT STRING "0.00"
 // Retrieval info: PRIVATE: PLL_Enable NUMERIC "0"
 // Retrieval info: PRIVATE: PLL_Freq STRING "100.00"
-// Retrieval info: PRIVATE: PLL_Period STRING "10.000"
+// Retrieval info: PRIVATE: PLL_Period NUMERIC "5"
 // Retrieval info: PRIVATE: pOUTCLOCK_PHASE_SHIFT NUMERIC "0"
-// Retrieval info: PRIVATE: Reg_InOut NUMERIC "1"
+// Retrieval info: PRIVATE: Reg_InOut NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Cda_Reset NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Clock_Resc STRING "AUTO"
 // Retrieval info: PRIVATE: Use_Common_Rx_Tx_Plls NUMERIC "0"
@@ -189,17 +189,17 @@ endmodule
 // Retrieval info: CONSTANT: IMPLEMENT_IN_LES STRING "ON"
 // Retrieval info: CONSTANT: INCLOCK_BOOST NUMERIC "0"
 // Retrieval info: CONSTANT: INCLOCK_DATA_ALIGNMENT STRING "EDGE_ALIGNED"
-// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "10000"
+// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "5000"
 // Retrieval info: CONSTANT: INCLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: CONSTANT: INPUT_DATA_RATE NUMERIC "800"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LOSE_LOCK_ON_ONE_CHANGE STRING "UNUSED"
 // Retrieval info: CONSTANT: LPM_HINT STRING "UNUSED"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altlvds_rx"
-// Retrieval info: CONSTANT: NUMBER_OF_CHANNELS NUMERIC "6"
+// Retrieval info: CONSTANT: NUMBER_OF_CHANNELS NUMERIC "2"
 // Retrieval info: CONSTANT: OUTCLOCK_RESOURCE STRING "AUTO"
 // Retrieval info: CONSTANT: PLL_OPERATION_MODE STRING "UNUSED"
-// Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
+// Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "UNUSED"
 // Retrieval info: CONSTANT: PORT_RX_CHANNEL_DATA_ALIGN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_RX_DATA_ALIGN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
@@ -215,12 +215,12 @@ endmodule
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "ON"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: X_ON_BITSLIP STRING "ON"
-// Retrieval info: USED_PORT: rx_in 0 0 6 0 INPUT NODEFVAL "rx_in[5..0]"
-// Retrieval info: CONNECT: @rx_in 0 0 6 0 rx_in 0 0 6 0
+// Retrieval info: USED_PORT: rx_in 0 0 2 0 INPUT NODEFVAL "rx_in[1..0]"
+// Retrieval info: CONNECT: @rx_in 0 0 2 0 rx_in 0 0 2 0
 // Retrieval info: USED_PORT: rx_inclock 0 0 0 0 INPUT NODEFVAL "rx_inclock"
 // Retrieval info: CONNECT: @rx_inclock 0 0 0 0 rx_inclock 0 0 0 0
-// Retrieval info: USED_PORT: rx_out 0 0 60 0 OUTPUT NODEFVAL "rx_out[59..0]"
-// Retrieval info: CONNECT: rx_out 0 0 60 0 @rx_out 0 0 60 0
+// Retrieval info: USED_PORT: rx_out 0 0 20 0 OUTPUT NODEFVAL "rx_out[19..0]"
+// Retrieval info: CONNECT: rx_out 0 0 20 0 @rx_out 0 0 20 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds2.v TRUE FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds2.qip TRUE FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds2.bsf TRUE TRUE
