@@ -205,6 +205,8 @@ set_location_assignment PIN_M4 -to lvds1in[7]
 set_location_assignment PIN_M3 -to "lvds1in[7](n)"
 set_location_assignment PIN_M2 -to lvds1in[6]
 set_location_assignment PIN_M1 -to "lvds1in[6](n)"
+set_location_assignment PIN_U7 -to lvds1in[5]
+set_location_assignment PIN_U8 -to "lvds1in[5](n)"
 set_location_assignment PIN_V6 -to lvds1in[4]
 set_location_assignment PIN_V5 -to "lvds1in[4](n)"
 set_location_assignment PIN_R7 -to lvds1in[3]
@@ -337,20 +339,12 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clkout2
-set_location_assignment PIN_AA16 -to lvdsin_short[0]
-set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_short[0]
-set_location_assignment PIN_AB16 -to "lvdsin_short[0](n)"
-set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_short[1]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other[1]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other[0]
 set_location_assignment PIN_N19 -to lvdsin_other[0]
 set_location_assignment PIN_N20 -to "lvdsin_other[0](n)"
 set_location_assignment PIN_M19 -to lvdsin_other[1]
 set_location_assignment PIN_M20 -to "lvdsin_other[1](n)"
-set_location_assignment PIN_AA8 -to lvdsinC_other[0]
-set_instance_assignment -name IO_STANDARD LVDS -to lvdsinC_other[0]
-set_location_assignment PIN_AB8 -to "lvdsinC_other[0](n)"
-set_instance_assignment -name IO_STANDARD LVDS -to lvdsinC_other[1]
 set_location_assignment PIN_AA7 -to lvds3in[10]
 set_location_assignment PIN_AB7 -to "lvds3in[10](n)"
 set_location_assignment PIN_AA20 -to lvds4in[7]
@@ -361,8 +355,6 @@ set_location_assignment PIN_AA15 -to lvds4in[10]
 set_location_assignment PIN_AB15 -to "lvds4in[10](n)"
 set_location_assignment PIN_AA14 -to lvds4in[11]
 set_location_assignment PIN_AB14 -to "lvds4in[11](n)"
-set_location_assignment PIN_W7 -to lvdsinC_other[1]
-set_location_assignment PIN_Y7 -to "lvdsinC_other[1](n)"
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
 set_global_assignment -name VERILOG_FILE command_processor.v
@@ -388,6 +380,14 @@ set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_packing.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_downsizing.v
 set_global_assignment -name VERILOG_FILE ftdi245fifo/RTL/ftdi_245fifo/axi_stream_assert.v
-set_location_assignment PIN_U7 -to lvdsin_short[1]
-set_location_assignment PIN_U8 -to "lvdsin_short[1](n)"
+set_location_assignment PIN_AA8 -to lvds3in[11]
+set_location_assignment PIN_AB8 -to "lvds3in[11](n)"
+set_location_assignment PIN_W7 -to lvds3in[9]
+set_location_assignment PIN_Y7 -to "lvds3in[9](n)"
+set_location_assignment PIN_AA16 -to lvds4in[9]
+set_location_assignment PIN_AB16 -to "lvds4in[9](n)"
+set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other2[1]
+set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other2[0]
+set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other3[1]
+set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other3[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

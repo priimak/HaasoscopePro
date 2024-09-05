@@ -43,7 +43,7 @@ module command_processor (
 	input wire			lvds1rdempty,
 	output reg [559:0] lvds1bitsfifoout, //output bits to fifo
 	input wire [559:0] lvds1bitsfifoin, // input bits from fifo
-	input wire [19:0] lvdsbits_short, lvdsbits_other,
+	input wire [19:0] lvdsbits_o2, lvdsbits_other,
 	
 	output reg[2:0] phasecounterselect, // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
 	output reg phaseupdown=1, // Dynamic phase shift direction; 1:UP, 0:DOWN. Registered in the PLL on the rising edge of scanclk.
@@ -54,11 +54,11 @@ module command_processor (
 	output reg [27:0]	debugout,  // for debugging
 	input wire [3:0]	overrange,  //ORA0,A1,B0,B1
 	input wire			clklvds90, clklvds180, clklvds270,
-	input wire [19:0] lvdsbitsC_o
+	input wire [19:0] lvdsbits_o3
 
 );
 
-integer version = 8; // firmware version
+integer version = 9; // firmware version
 
 assign debugout[0] = locked;
 assign debugout[4] = overrange[0];
@@ -352,16 +352,16 @@ always @ (posedge clklvds) begin
 	triggerlive2 <= triggerlive;
 	lengthtotake2 <= lengthtotake;
 	triggertype2 <= triggertype;
-samplevalue0  <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvdsbits_short[10],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
-samplevalue1  <= {lvds1bits[111],lvds1bits[101],lvds1bits[91],lvds1bits[81],lvds1bits[71],lvds1bits[61],lvdsbits_short[11],lvds1bits[41],lvds1bits[31],lvds1bits[21],lvds1bits[11],lvds1bits[1]};
-samplevalue2  <= {lvds1bits[112],lvds1bits[102],lvds1bits[92],lvds1bits[82],lvds1bits[72],lvds1bits[62],lvdsbits_short[12],lvds1bits[42],lvds1bits[32],lvds1bits[22],lvds1bits[12],lvds1bits[2]};
-samplevalue3  <= {lvds1bits[113],lvds1bits[103],lvds1bits[93],lvds1bits[83],lvds1bits[73],lvds1bits[63],lvdsbits_short[13],lvds1bits[43],lvds1bits[33],lvds1bits[23],lvds1bits[13],lvds1bits[3]};
-samplevalue4  <= {lvds1bits[114],lvds1bits[104],lvds1bits[94],lvds1bits[84],lvds1bits[74],lvds1bits[64],lvdsbits_short[14],lvds1bits[44],lvds1bits[34],lvds1bits[24],lvds1bits[14],lvds1bits[4]};
-samplevalue5  <= {lvds1bits[115],lvds1bits[105],lvds1bits[95],lvds1bits[85],lvds1bits[75],lvds1bits[65],lvdsbits_short[15],lvds1bits[45],lvds1bits[35],lvds1bits[25],lvds1bits[15],lvds1bits[5]};
-samplevalue6  <= {lvds1bits[116],lvds1bits[106],lvds1bits[96],lvds1bits[86],lvds1bits[76],lvds1bits[66],lvdsbits_short[16],lvds1bits[46],lvds1bits[36],lvds1bits[26],lvds1bits[16],lvds1bits[6]};
-samplevalue7  <= {lvds1bits[117],lvds1bits[107],lvds1bits[97],lvds1bits[87],lvds1bits[77],lvds1bits[67],lvdsbits_short[17],lvds1bits[47],lvds1bits[37],lvds1bits[27],lvds1bits[17],lvds1bits[7]};
-samplevalue8  <= {lvds1bits[118],lvds1bits[108],lvds1bits[98],lvds1bits[88],lvds1bits[78],lvds1bits[68],lvdsbits_short[18],lvds1bits[48],lvds1bits[38],lvds1bits[28],lvds1bits[18],lvds1bits[8]};
-samplevalue9  <= {lvds1bits[119],lvds1bits[109],lvds1bits[99],lvds1bits[89],lvds1bits[79],lvds1bits[69],lvdsbits_short[19],lvds1bits[49],lvds1bits[39],lvds1bits[29],lvds1bits[19],lvds1bits[9]};
+samplevalue0  <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
+samplevalue1  <= {lvds1bits[111],lvds1bits[101],lvds1bits[91],lvds1bits[81],lvds1bits[71],lvds1bits[61],lvds1bits[51],lvds1bits[41],lvds1bits[31],lvds1bits[21],lvds1bits[11],lvds1bits[1]};
+samplevalue2  <= {lvds1bits[112],lvds1bits[102],lvds1bits[92],lvds1bits[82],lvds1bits[72],lvds1bits[62],lvds1bits[52],lvds1bits[42],lvds1bits[32],lvds1bits[22],lvds1bits[12],lvds1bits[2]};
+samplevalue3  <= {lvds1bits[113],lvds1bits[103],lvds1bits[93],lvds1bits[83],lvds1bits[73],lvds1bits[63],lvds1bits[53],lvds1bits[43],lvds1bits[33],lvds1bits[23],lvds1bits[13],lvds1bits[3]};
+samplevalue4  <= {lvds1bits[114],lvds1bits[104],lvds1bits[94],lvds1bits[84],lvds1bits[74],lvds1bits[64],lvds1bits[54],lvds1bits[44],lvds1bits[34],lvds1bits[24],lvds1bits[14],lvds1bits[4]};
+samplevalue5  <= {lvds1bits[115],lvds1bits[105],lvds1bits[95],lvds1bits[85],lvds1bits[75],lvds1bits[65],lvds1bits[55],lvds1bits[45],lvds1bits[35],lvds1bits[25],lvds1bits[15],lvds1bits[5]};
+samplevalue6  <= {lvds1bits[116],lvds1bits[106],lvds1bits[96],lvds1bits[86],lvds1bits[76],lvds1bits[66],lvds1bits[56],lvds1bits[46],lvds1bits[36],lvds1bits[26],lvds1bits[16],lvds1bits[6]};
+samplevalue7  <= {lvds1bits[117],lvds1bits[107],lvds1bits[97],lvds1bits[87],lvds1bits[77],lvds1bits[67],lvds1bits[57],lvds1bits[47],lvds1bits[37],lvds1bits[27],lvds1bits[17],lvds1bits[7]};
+samplevalue8  <= {lvds1bits[118],lvds1bits[108],lvds1bits[98],lvds1bits[88],lvds1bits[78],lvds1bits[68],lvds1bits[58],lvds1bits[48],lvds1bits[38],lvds1bits[28],lvds1bits[18],lvds1bits[8]};
+samplevalue9  <= {lvds1bits[119],lvds1bits[109],lvds1bits[99],lvds1bits[89],lvds1bits[79],lvds1bits[69],lvds1bits[59],lvds1bits[49],lvds1bits[39],lvds1bits[29],lvds1bits[19],lvds1bits[9]};
 sampleclkstr0 <= {lvds1bits[130],lvds1bits[120]};
 sampleclkstr1 <= {lvds1bits[131],lvds1bits[121]};
 sampleclkstr2 <= {lvds1bits[132],lvds1bits[122]};
@@ -526,16 +526,16 @@ sampleclkstr19sync <= sampleclkstr19;
 end
 
 always @ (posedge clklvds180) begin
-samplevalue20  <= {lvdsbitsC_o[0],lvds3bits[100],lvdsbitsC_o[10],lvds3bits[80],lvds3bits[70],lvds3bits[60],lvds3bits[50],lvds3bits[40],lvds3bits[30],lvds3bits[20],lvds3bits[10],lvds3bits[0]};
-samplevalue21  <= {lvdsbitsC_o[1],lvds3bits[101],lvdsbitsC_o[11],lvds3bits[81],lvds3bits[71],lvds3bits[61],lvds3bits[51],lvds3bits[41],lvds3bits[31],lvds3bits[21],lvds3bits[11],lvds3bits[1]};
-samplevalue22  <= {lvdsbitsC_o[2],lvds3bits[102],lvdsbitsC_o[12],lvds3bits[82],lvds3bits[72],lvds3bits[62],lvds3bits[52],lvds3bits[42],lvds3bits[32],lvds3bits[22],lvds3bits[12],lvds3bits[2]};
-samplevalue23  <= {lvdsbitsC_o[3],lvds3bits[103],lvdsbitsC_o[13],lvds3bits[83],lvds3bits[73],lvds3bits[63],lvds3bits[53],lvds3bits[43],lvds3bits[33],lvds3bits[23],lvds3bits[13],lvds3bits[3]};
-samplevalue24  <= {lvdsbitsC_o[4],lvds3bits[104],lvdsbitsC_o[14],lvds3bits[84],lvds3bits[74],lvds3bits[64],lvds3bits[54],lvds3bits[44],lvds3bits[34],lvds3bits[24],lvds3bits[14],lvds3bits[4]};
-samplevalue25  <= {lvdsbitsC_o[5],lvds3bits[105],lvdsbitsC_o[15],lvds3bits[85],lvds3bits[75],lvds3bits[65],lvds3bits[55],lvds3bits[45],lvds3bits[35],lvds3bits[25],lvds3bits[15],lvds3bits[5]};
-samplevalue26  <= {lvdsbitsC_o[6],lvds3bits[106],lvdsbitsC_o[16],lvds3bits[86],lvds3bits[76],lvds3bits[66],lvds3bits[56],lvds3bits[46],lvds3bits[36],lvds3bits[26],lvds3bits[16],lvds3bits[6]};
-samplevalue27  <= {lvdsbitsC_o[7],lvds3bits[107],lvdsbitsC_o[17],lvds3bits[87],lvds3bits[77],lvds3bits[67],lvds3bits[57],lvds3bits[47],lvds3bits[37],lvds3bits[27],lvds3bits[17],lvds3bits[7]};
-samplevalue28  <= {lvdsbitsC_o[8],lvds3bits[108],lvdsbitsC_o[18],lvds3bits[88],lvds3bits[78],lvds3bits[68],lvds3bits[58],lvds3bits[48],lvds3bits[38],lvds3bits[28],lvds3bits[18],lvds3bits[8]};
-samplevalue29  <= {lvdsbitsC_o[9],lvds3bits[109],lvdsbitsC_o[19],lvds3bits[89],lvds3bits[79],lvds3bits[69],lvds3bits[59],lvds3bits[49],lvds3bits[39],lvds3bits[29],lvds3bits[19],lvds3bits[9]};
+samplevalue20  <= {lvds3bits[110],lvds3bits[100],lvds3bits[90],lvds3bits[80],lvds3bits[70],lvds3bits[60],lvds3bits[50],lvds3bits[40],lvds3bits[30],lvds3bits[20],lvds3bits[10],lvds3bits[0]};
+samplevalue21  <= {lvds3bits[111],lvds3bits[101],lvds3bits[91],lvds3bits[81],lvds3bits[71],lvds3bits[61],lvds3bits[51],lvds3bits[41],lvds3bits[31],lvds3bits[21],lvds3bits[11],lvds3bits[1]};
+samplevalue22  <= {lvds3bits[112],lvds3bits[102],lvds3bits[92],lvds3bits[82],lvds3bits[72],lvds3bits[62],lvds3bits[52],lvds3bits[42],lvds3bits[32],lvds3bits[22],lvds3bits[12],lvds3bits[2]};
+samplevalue23  <= {lvds3bits[113],lvds3bits[103],lvds3bits[93],lvds3bits[83],lvds3bits[73],lvds3bits[63],lvds3bits[53],lvds3bits[43],lvds3bits[33],lvds3bits[23],lvds3bits[13],lvds3bits[3]};
+samplevalue24  <= {lvds3bits[114],lvds3bits[104],lvds3bits[94],lvds3bits[84],lvds3bits[74],lvds3bits[64],lvds3bits[54],lvds3bits[44],lvds3bits[34],lvds3bits[24],lvds3bits[14],lvds3bits[4]};
+samplevalue25  <= {lvds3bits[115],lvds3bits[105],lvds3bits[95],lvds3bits[85],lvds3bits[75],lvds3bits[65],lvds3bits[55],lvds3bits[45],lvds3bits[35],lvds3bits[25],lvds3bits[15],lvds3bits[5]};
+samplevalue26  <= {lvds3bits[116],lvds3bits[106],lvds3bits[96],lvds3bits[86],lvds3bits[76],lvds3bits[66],lvds3bits[56],lvds3bits[46],lvds3bits[36],lvds3bits[26],lvds3bits[16],lvds3bits[6]};
+samplevalue27  <= {lvds3bits[117],lvds3bits[107],lvds3bits[97],lvds3bits[87],lvds3bits[77],lvds3bits[67],lvds3bits[57],lvds3bits[47],lvds3bits[37],lvds3bits[27],lvds3bits[17],lvds3bits[7]};
+samplevalue28  <= {lvds3bits[118],lvds3bits[108],lvds3bits[98],lvds3bits[88],lvds3bits[78],lvds3bits[68],lvds3bits[58],lvds3bits[48],lvds3bits[38],lvds3bits[28],lvds3bits[18],lvds3bits[8]};
+samplevalue29  <= {lvds3bits[119],lvds3bits[109],lvds3bits[99],lvds3bits[89],lvds3bits[79],lvds3bits[69],lvds3bits[59],lvds3bits[49],lvds3bits[39],lvds3bits[29],lvds3bits[19],lvds3bits[9]};
 sampleclkstr20 <= {lvds3bits[130],lvds3bits[120]};
 sampleclkstr21 <= {lvds3bits[131],lvds3bits[121]};
 sampleclkstr22 <= {lvds3bits[132],lvds3bits[122]};
@@ -570,16 +570,16 @@ sampleclkstr29sync <= sampleclkstr29;
 end
 
 always @ (posedge clklvds270) begin
-samplevalue30  <= {lvds4bits[110],lvds4bits[100],lvdsbits_short[0],lvds4bits[80],lvds4bits[70],lvds4bits[60],lvds4bits[50],lvds4bits[40],lvds4bits[30],lvds4bits[20],lvds4bits[10],lvds4bits[0]};
-samplevalue31  <= {lvds4bits[111],lvds4bits[101],lvdsbits_short[1],lvds4bits[81],lvds4bits[71],lvds4bits[61],lvds4bits[51],lvds4bits[41],lvds4bits[31],lvds4bits[21],lvds4bits[11],lvds4bits[1]};
-samplevalue32  <= {lvds4bits[112],lvds4bits[102],lvdsbits_short[2],lvds4bits[82],lvds4bits[72],lvds4bits[62],lvds4bits[52],lvds4bits[42],lvds4bits[32],lvds4bits[22],lvds4bits[12],lvds4bits[2]};
-samplevalue33  <= {lvds4bits[113],lvds4bits[103],lvdsbits_short[3],lvds4bits[83],lvds4bits[73],lvds4bits[63],lvds4bits[53],lvds4bits[43],lvds4bits[33],lvds4bits[23],lvds4bits[13],lvds4bits[3]};
-samplevalue34  <= {lvds4bits[114],lvds4bits[104],lvdsbits_short[4],lvds4bits[84],lvds4bits[74],lvds4bits[64],lvds4bits[54],lvds4bits[44],lvds4bits[34],lvds4bits[24],lvds4bits[14],lvds4bits[4]};
-samplevalue35  <= {lvds4bits[115],lvds4bits[105],lvdsbits_short[5],lvds4bits[85],lvds4bits[75],lvds4bits[65],lvds4bits[55],lvds4bits[45],lvds4bits[35],lvds4bits[25],lvds4bits[15],lvds4bits[5]};
-samplevalue36  <= {lvds4bits[116],lvds4bits[106],lvdsbits_short[6],lvds4bits[86],lvds4bits[76],lvds4bits[66],lvds4bits[56],lvds4bits[46],lvds4bits[36],lvds4bits[26],lvds4bits[16],lvds4bits[6]};
-samplevalue37  <= {lvds4bits[117],lvds4bits[107],lvdsbits_short[7],lvds4bits[87],lvds4bits[77],lvds4bits[67],lvds4bits[57],lvds4bits[47],lvds4bits[37],lvds4bits[27],lvds4bits[17],lvds4bits[7]};
-samplevalue38  <= {lvds4bits[118],lvds4bits[108],lvdsbits_short[8],lvds4bits[88],lvds4bits[78],lvds4bits[68],lvds4bits[58],lvds4bits[48],lvds4bits[38],lvds4bits[28],lvds4bits[18],lvds4bits[8]};
-samplevalue39  <= {lvds4bits[119],lvds4bits[109],lvdsbits_short[9],lvds4bits[89],lvds4bits[79],lvds4bits[69],lvds4bits[59],lvds4bits[49],lvds4bits[39],lvds4bits[29],lvds4bits[19],lvds4bits[9]};
+samplevalue30  <= {lvds4bits[110],lvds4bits[100],lvds4bits[90],lvds4bits[80],lvds4bits[70],lvds4bits[60],lvds4bits[50],lvds4bits[40],lvds4bits[30],lvds4bits[20],lvds4bits[10],lvds4bits[0]};
+samplevalue31  <= {lvds4bits[111],lvds4bits[101],lvds4bits[91],lvds4bits[81],lvds4bits[71],lvds4bits[61],lvds4bits[51],lvds4bits[41],lvds4bits[31],lvds4bits[21],lvds4bits[11],lvds4bits[1]};
+samplevalue32  <= {lvds4bits[112],lvds4bits[102],lvds4bits[92],lvds4bits[82],lvds4bits[72],lvds4bits[62],lvds4bits[52],lvds4bits[42],lvds4bits[32],lvds4bits[22],lvds4bits[12],lvds4bits[2]};
+samplevalue33  <= {lvds4bits[113],lvds4bits[103],lvds4bits[93],lvds4bits[83],lvds4bits[73],lvds4bits[63],lvds4bits[53],lvds4bits[43],lvds4bits[33],lvds4bits[23],lvds4bits[13],lvds4bits[3]};
+samplevalue34  <= {lvds4bits[114],lvds4bits[104],lvds4bits[94],lvds4bits[84],lvds4bits[74],lvds4bits[64],lvds4bits[54],lvds4bits[44],lvds4bits[34],lvds4bits[24],lvds4bits[14],lvds4bits[4]};
+samplevalue35  <= {lvds4bits[115],lvds4bits[105],lvds4bits[95],lvds4bits[85],lvds4bits[75],lvds4bits[65],lvds4bits[55],lvds4bits[45],lvds4bits[35],lvds4bits[25],lvds4bits[15],lvds4bits[5]};
+samplevalue36  <= {lvds4bits[116],lvds4bits[106],lvds4bits[96],lvds4bits[86],lvds4bits[76],lvds4bits[66],lvds4bits[56],lvds4bits[46],lvds4bits[36],lvds4bits[26],lvds4bits[16],lvds4bits[6]};
+samplevalue37  <= {lvds4bits[117],lvds4bits[107],lvds4bits[97],lvds4bits[87],lvds4bits[77],lvds4bits[67],lvds4bits[57],lvds4bits[47],lvds4bits[37],lvds4bits[27],lvds4bits[17],lvds4bits[7]};
+samplevalue38  <= {lvds4bits[118],lvds4bits[108],lvds4bits[98],lvds4bits[88],lvds4bits[78],lvds4bits[68],lvds4bits[58],lvds4bits[48],lvds4bits[38],lvds4bits[28],lvds4bits[18],lvds4bits[8]};
+samplevalue39  <= {lvds4bits[119],lvds4bits[109],lvds4bits[99],lvds4bits[89],lvds4bits[79],lvds4bits[69],lvds4bits[59],lvds4bits[49],lvds4bits[39],lvds4bits[29],lvds4bits[19],lvds4bits[9]};
 sampleclkstr30 <= {lvds4bits[130],lvds4bits[120]};
 sampleclkstr31 <= {lvds4bits[131],lvds4bits[121]};
 sampleclkstr32 <= {lvds4bits[132],lvds4bits[122]};
@@ -590,17 +590,6 @@ sampleclkstr36 <= {lvds4bits[136],lvds4bits[126]};
 sampleclkstr37 <= {lvds4bits[137],lvds4bits[127]};
 sampleclkstr38 <= {lvds4bits[138],lvds4bits[128]};
 sampleclkstr39 <= {lvds4bits[139],lvds4bits[129]};
-
-
-
-
-
-
-
-
-
-
-
 
 samplevalue30sync  <= samplevalue30 ;
 samplevalue31sync  <= samplevalue31 ;

@@ -159,8 +159,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 336)
 		(input)
-		(text "lvdsbits_short[19..0]" (rect 0 0 79 12)(font "Arial" ))
-		(text "lvdsbits_short[19..0]" (rect 21 331 100 343)(font "Arial" ))
+		(text "lvdsbits_o2[19..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "lvdsbits_o2[19..0]" (rect 21 331 89 343)(font "Arial" ))
 		(line (pt 0 336)(pt 16 336)(line_width 3))
 	)
 	(port
@@ -201,8 +201,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 432)
 		(input)
-		(text "lvdsbitsC_o[19..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "lvdsbitsC_o[19..0]" (rect 21 427 91 439)(font "Arial" ))
+		(text "lvdsbits_o3[19..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "lvdsbits_o3[19..0]" (rect 21 427 89 439)(font "Arial" ))
 		(line (pt 0 432)(pt 16 432)(line_width 3))
 	)
 	(port
