@@ -524,9 +524,9 @@ class MainWindow(TemplateBaseClass):
                         else:
                             samp = samp + 1
                         if self.xydata_overlapped:
-                            self.xydata[chan][1][samp] = val
+                            self.xydata[chan][1][samp] = -val
                         else:
-                            self.xydata[0][1][chan+ 4*samp] = val
+                            self.xydata[0][1][chan+ 4*samp] = -val
 
         if self.debug or self.debugstrobe:
             time.sleep(.5)
