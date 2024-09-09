@@ -11,15 +11,20 @@ create_clock -name ftdi_clk -period  16.666  [get_ports ftdi_clk]
 ## The clk for adjusting the pll phase
 create_clock -name scanclk -period 10.000   [get_nodes command_processor:inst1|scanclk]
 
-
+# Derive clks
 derive_pll_clocks
 derive_clock_uncertainty -add
-
 
 ## Declare that these two clocks are asynchronous
 set_clock_groups -asynchronous -group {clk50 *pll1|clk[0] *pll1|clk[1] *pll1|clk[2] *pll1|clk[3] *pll1|clk[4]} -group {ftdi_clk} -group {scanclk}
 
-#IO constraints
+## Ignores
+set_false_path -from [get_registers command_processor:inst1|triggercounter*] -to [get_registers command_processor:inst1|triggercounter2*]
+set_false_path -from [get_registers command_processor:inst1|triggerlive*] -to [get_registers command_processor:inst1|triggerlive2*]
+set_false_path -from [get_registers command_processor:inst1|triggertype*] -to [get_registers command_processor:inst1|triggertype2*]
+set_false_path -from [get_registers command_processor:inst1|lengthtotake*] -to [get_registers command_processor:inst1|lengthtotake2*]
+
+## IO constraints
 set_max_delay -to [get_ports clk*] 10
 set_min_delay -to [get_ports clk*] 0
 set_max_delay -to [get_ports ftdi_*] 10

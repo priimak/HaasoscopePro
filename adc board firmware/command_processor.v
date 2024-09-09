@@ -81,7 +81,7 @@ reg [5:0]	channel = 0;
 
 //variables in clklvds domain
 reg [ 2:0]  acqstate=0;
-reg [15:0]	triggercounter=0, triggercounter2=0, triggercounter3=0;
+reg [15:0]	triggercounter=0, triggercounter2=0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
 reg [ 7:0]	triggertype=0, triggertype2=0;
@@ -693,7 +693,6 @@ always @ (posedge clklvds or negedge rstn)
  
 always @ (posedge clk) begin
 	triggercounter2 <= triggercounter;
-	triggercounter3 <= triggercounter2;
 end
 
 reg [1:0] pllresetstate=0;
@@ -825,7 +824,7 @@ always @ (posedge clk or negedge rstn)
 		5 : begin // sets length to take
 			triggertype <= rx_data[1];
 			lengthtotake <= {rx_data[5],rx_data[4]};
-			if (triggercounter3 == -16'd1) begin
+			if (triggercounter2 == -16'd1) begin
 				triggerlive <= 1'b1;
 			end else begin
 				triggerlive <= 1'b0;
