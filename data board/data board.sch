@@ -2500,11 +2500,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$15" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="JP3" library="microbuilder" deviceset="HEADER-1X3" device="ROUND"/>
-<part name="U1" library="Seeed-IC" library_urn="urn:adsk.eagle:library:470" deviceset="PMIC-CJT1117-5.0(SOT223)" device="" package3d_urn="urn:adsk.eagle:package:32638/1" value="CJT1117-5.0-SOT223">
-<attribute name="LCSC" value="C89273"/>
-</part>
+<part name="U1" library="Seeed-IC" library_urn="urn:adsk.eagle:library:470" deviceset="PMIC-CJT1117-5.0(SOT223)" device="" package3d_urn="urn:adsk.eagle:package:32638/1" value="CJT1117-5.0-SOT223"/>
 <part name="U$8" library="microbuilder" deviceset="GND" device=""/>
-<part name="U9" library="SparkFun-DiscreteSemi" deviceset="MOSFET-PCHANNEL-SOIC8" device="SOIC8">
+<part name="U$9" library="SparkFun-DiscreteSemi" deviceset="MOSFET-PCHANNEL-SOIC8" device="SOIC8">
 <attribute name="LCSC" value="C143671"/>
 </part>
 <part name="C17" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
@@ -2700,12 +2698,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U1" gate="G$1" x="314.96" y="132.08" smashed="yes">
 <attribute name="NAME" x="307.34" y="135.89" size="1.27" layer="95"/>
 <attribute name="VALUE" x="314.96" y="135.89" size="1.27" layer="96"/>
-<attribute name="LCSC" x="314.96" y="132.08" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U$8" gate="G$1" x="314.96" y="121.92" smashed="yes">
 <attribute name="VALUE" x="313.436" y="119.38" size="1.27" layer="96"/>
 </instance>
-<instance part="U9" gate="G$1" x="248.92" y="124.46" smashed="yes">
+<instance part="U$9" gate="G$1" x="248.92" y="124.46" smashed="yes">
 <attribute name="NAME" x="241.3" y="130.048" size="1.778" layer="95"/>
 <attribute name="VALUE" x="241.3" y="114.3" size="1.778" layer="96"/>
 <attribute name="LCSC" x="243.84" y="127" size="1.778" layer="96"/>
@@ -3292,12 +3289,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="251.46" y="104.14"/>
 </segment>
 <segment>
-<pinref part="U9" gate="G$1" pin="S@1"/>
+<pinref part="U$9" gate="G$1" pin="S@1"/>
 <wire x1="238.76" y1="127" x2="226.06" y2="127" width="0.1524" layer="91"/>
-<pinref part="U9" gate="G$1" pin="S@2"/>
+<pinref part="U$9" gate="G$1" pin="S@2"/>
 <wire x1="238.76" y1="127" x2="238.76" y2="124.46" width="0.1524" layer="91"/>
 <junction x="238.76" y="127"/>
-<pinref part="U9" gate="G$1" pin="S@3"/>
+<pinref part="U$9" gate="G$1" pin="S@3"/>
 <wire x1="238.76" y1="124.46" x2="238.76" y2="121.92" width="0.1524" layer="91"/>
 <junction x="238.76" y="124.46"/>
 <label x="226.06" y="127" size="1.778" layer="95"/>
@@ -3343,13 +3340,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="299.72" y="132.08"/>
 </segment>
 <segment>
-<pinref part="U9" gate="G$1" pin="D@4"/>
-<pinref part="U9" gate="G$1" pin="D@3"/>
+<pinref part="U$9" gate="G$1" pin="D@4"/>
+<pinref part="U$9" gate="G$1" pin="D@3"/>
 <wire x1="256.54" y1="127" x2="256.54" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="U9" gate="G$1" pin="D@2"/>
+<pinref part="U$9" gate="G$1" pin="D@2"/>
 <wire x1="256.54" y1="124.46" x2="256.54" y2="121.92" width="0.1524" layer="91"/>
 <junction x="256.54" y="124.46"/>
-<pinref part="U9" gate="G$1" pin="D@1"/>
+<pinref part="U$9" gate="G$1" pin="D@1"/>
 <wire x1="256.54" y1="121.92" x2="256.54" y2="119.38" width="0.1524" layer="91"/>
 <junction x="256.54" y="121.92"/>
 <wire x1="256.54" y1="127" x2="269.24" y2="127" width="0.1524" layer="91"/>
@@ -3381,7 +3378,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="261.62" y="93.98"/>
 </segment>
 <segment>
-<pinref part="U9" gate="G$1" pin="G"/>
+<pinref part="U$9" gate="G$1" pin="G"/>
 <wire x1="238.76" y1="119.38" x2="226.06" y2="119.38" width="0.1524" layer="91"/>
 <label x="226.06" y="119.38" size="1.778" layer="95"/>
 </segment>
