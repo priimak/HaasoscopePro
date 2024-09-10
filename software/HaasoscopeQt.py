@@ -108,6 +108,10 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
+    expect_samples = 100
+    num_chan_per_board = 4
+    num_board = 1
+    num_logic_inputs = 1
     debug = False
     dopattern = False
     debugprint = True
@@ -362,9 +366,6 @@ class MainWindow(TemplateBaseClass):
                 elif modifiers == QtCore.Qt.ControlModifier:
                     self.ui.chanonCheck.toggle()
 
-    num_chan_per_board=4
-    num_board=1
-    num_logic_inputs=1
     chtext=""
     linepens=[]
     def launch(self):
@@ -423,7 +424,6 @@ class MainWindow(TemplateBaseClass):
         self.timer.stop()
         self.timer2.stop()
 
-    expect_samples = 100
     if xydata_overlapped:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 10*expect_samples], dtype=float)
     else:
