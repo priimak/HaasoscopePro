@@ -6042,6 +6042,7 @@ Example Datasheet</description>
 <part name="JP342" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2" value="1"/>
 <part name="R10" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="R11" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
+<part name="R12" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 </parts>
 <sheets>
 <sheet>
@@ -9016,6 +9017,10 @@ Example Datasheet</description>
 <attribute name="NAME" x="102.6414" y="168.91" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="107.442" y="168.91" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="R12" gate="G$1" x="137.16" y="180.34" smashed="yes" rot="R180">
+<attribute name="NAME" x="140.97" y="178.8414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="140.97" y="183.642" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -9412,8 +9417,13 @@ Example Datasheet</description>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="144.78" y1="172.72" x2="157.48" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="172.72" x2="147.32" y2="172.72" width="0.1524" layer="91"/>
 <label x="149.86" y="172.72" size="1.778" layer="95"/>
+<pinref part="R12" gate="G$1" pin="P$1"/>
+<wire x1="147.32" y1="172.72" x2="157.48" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="180.34" x2="147.32" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="180.34" x2="147.32" y2="172.72" width="0.1524" layer="91"/>
+<junction x="147.32" y="172.72"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="10"/>
@@ -11260,8 +11270,13 @@ Example Datasheet</description>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="129.54" y1="172.72" x2="116.84" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="172.72" x2="124.46" y2="172.72" width="0.1524" layer="91"/>
 <label x="116.84" y="172.72" size="1.778" layer="95"/>
+<pinref part="R12" gate="G$1" pin="P$2"/>
+<wire x1="124.46" y1="172.72" x2="116.84" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="180.34" x2="124.46" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="180.34" x2="124.46" y2="172.72" width="0.1524" layer="91"/>
+<junction x="124.46" y="172.72"/>
 </segment>
 </net>
 <net name="NCE" class="0">

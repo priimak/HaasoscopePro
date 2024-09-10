@@ -44,9 +44,9 @@ assign ftdi_siwu   = 1'b1;  // 1=send immidiently , !!!!!! UnComment this line i
 // FTDI USB chip's 245fifo mode controller
 ftdi_245fifo_top #(
     .TX_EW                 ( 2                  ),   // TX data stream width,  0=8bit, 1=16bit, 2=32bit, 3=64bit, 4=128bit ...
-    .TX_EA                 ( 10                 ),   // TX FIFO depth = 2^TX_AEXP = 2^10 = 1024
+    .TX_EA                 ( 8                 ),   // TX FIFO depth = 2^TX_AEXP = 2^10 = 1024
     .RX_EW                 ( 0                  ),   // RX data stream width,  0=8bit, 1=16bit, 2=32bit, 3=64bit, 4=128bit ...
-    .RX_EA                 ( 8                  ),   // RX FIFO depth = 2^RX_AEXP = 2^10 = 1024
+    .RX_EA                 ( 4                  ),   // RX FIFO depth = 2^RX_AEXP = 2^10 = 1024
     .CHIP_TYPE             ( "FTx232H"          )
 ) u_ftdi_245fifo_top (
     .rstn_async            ( rstn               ),

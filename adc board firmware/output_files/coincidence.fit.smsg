@@ -8,3 +8,4 @@ Extra Info (176238): Start inferring scan chains for DSP blocks
 Extra Info (176239): Inferring scan chains for DSP blocks is complete
 Extra Info (176248): Moving registers into I/O cells, Multiplier Blocks, and RAM blocks to improve timing and density
 Extra Info (176249): Finished moving registers into I/O cells, Multiplier Blocks, and RAM blocks
+Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.

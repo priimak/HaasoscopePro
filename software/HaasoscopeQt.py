@@ -7,7 +7,7 @@ from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 #################
 
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
-usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','Haasoscope USB2'),('FT60X','Haasoscope USB3')))
+usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','HaasoscopePro USB2'),('FT60X','Haasoscope USB3')))
 
 def binprint(x):
     return bin(x)[2:].zfill(8)
@@ -21,10 +21,6 @@ def oldbytes():
         if len(olddata)==0: break
         print("Old byte0:",olddata[0])
 
-def fifoused():
-    usb.send(bytes([4, 99, 99, 99, 100, 100, 100, 100]))  # get fifo used
-    tres = usb.recv(4)
-    print("Fifo used", tres[3], tres[2], tres[1] * 256 + tres[0])
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
 def spicommand(name, first, second, third, read, show_bin=False, cs=0, nbyte=3):
@@ -61,29 +57,35 @@ def board_setup(dopattern=False):
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
-    spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode
+
+    #spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
+    spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
+    #spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel
+    #spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
+
     spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
     #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
 
-    # spicommand("SYNC_SEL",0x02,0x01,0x0a,False) # use LSYNC_N (software), 2's complement
-    spicommand("SYNC_SEL", 0x02, 0x01, 0x08, False)  # use LSYNC_N (software), offset binary
+    spicommand("LCTRL",0x02,0x04,0x0a,False) # use LSYNC_N (software), 2's complement
+    #spicommand("LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
 
-    spicommand("INPUT_MUX", 0x00, 0x60, 0x11, False)  # swap inputs
-    #spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+    #spicommand("INPUT_MUX", 0x00, 0x60, 0x11, False)  # swap inputs
+    spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
 
     if dopattern:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval = 0x00
-        usrval3 = 0x08;  usrval2 = 0x00
+        usrval3 = 0x0f;  usrval2 = 0xff
         spicommand2("UPAT0", 0x01, 0x80, usrval3, usrval2, False)  # set pattern sample 0
-        spicommand2("UPAT1", 0x01, 0x82, usrval3, usrval2, False)  # set pattern sample 1
+        spicommand2("UPAT1", 0x01, 0x82, usrval, usrval, False)  # set pattern sample 1
         spicommand2("UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
         spicommand2("UPAT3", 0x01, 0x86, usrval, usrval, False)  # set pattern sample 3
         spicommand2("UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
         spicommand2("UPAT5", 0x01, 0x8a, usrval, usrval, False)  # set pattern sample 5
         spicommand2("UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
         spicommand2("UPAT7", 0x01, 0x8e, usrval, usrval, False)  # set pattern sample 7
-        spicommand("UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user
+        #spicommand("UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user, invert a bit of B C D
+        spicommand("UPAT_CTRL", 0x01, 0x90, 0x00, False)  # set lane pattern to user
     else:
         spicommand("PAT_SEL", 0x02, 0x05, 0x02, False)  # normal ADC data
         spicommand("UPAT_CTRL", 0x01, 0x90, 0x1e, False)  # set lane pattern to default
@@ -97,8 +99,8 @@ def board_setup(dopattern=False):
 
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    gain=0x10 #00 to 20 is 26 to -6 dB
-    spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2) # gain
+    gain=0x20 #00 to 20 is 26 to -6 dB
+    spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
 #################
@@ -106,14 +108,21 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
 class MainWindow(TemplateBaseClass):
-    debug = True
+    expect_samples = 100
+    num_chan_per_board = 4
+    num_board = 1
+    num_logic_inputs = 1
+    debug = False
+    dopattern = False
     debugprint = True
     showbinarydata = True
+    debugstrobe = False
+    xydata_overlapped=True
     total_rx_len = 0
     time_start = time.time()
-    dopattern = False
-    triggertype = 1 # 0 no trigger, 1 threshold trigger
-    if dopattern: triggertype=0
+    triggertype = 1  # 0 no trigger, 1 threshold trigger
+    if dopattern: triggertype = 0
+    selectedchannel=0
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -132,14 +141,21 @@ class MainWindow(TemplateBaseClass):
         self.ui.totBox.valueChanged.connect(self.tot)
         self.ui.gridCheck.stateChanged.connect(self.grid)
         self.ui.markerCheck.stateChanged.connect(self.marker)
-        self.ui.upposButton.clicked.connect(self.uppos)
-        self.ui.downposButton.clicked.connect(self.downpos)
+        self.ui.pllresetButton.clicked.connect(self.pllreset)
+        self.ui.upposButton0.clicked.connect(self.uppos)
+        self.ui.downposButton0.clicked.connect(self.downpos)
+        self.ui.upposButton1.clicked.connect(self.uppos1)
+        self.ui.downposButton1.clicked.connect(self.downpos1)
+        self.ui.upposButton2.clicked.connect(self.uppos2)
+        self.ui.downposButton2.clicked.connect(self.downpos2)
+        self.ui.upposButton3.clicked.connect(self.uppos3)
+        self.ui.downposButton3.clicked.connect(self.downpos3)
+        self.ui.upposButton4.clicked.connect(self.uppos4)
+        self.ui.downposButton4.clicked.connect(self.downpos4)
         self.ui.chanBox.valueChanged.connect(self.selectchannel)
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
-        self.ui.gainCheck.stateChanged.connect(self.setgain)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
-        self.ui.trigchanonCheck.stateChanged.connect(self.trigchanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
         self.db=False
         self.lastTime = time.time()
@@ -159,29 +175,15 @@ class MainWindow(TemplateBaseClass):
 
     def selectchannel(self):
         self.selectedchannel=self.ui.chanBox.value()
-        if self.acdc[self.selectedchannel]:   self.ui.acdcCheck.setCheckState(QtCore.Qt.Unchecked)
-        else:   self.ui.acdcCheck.setCheckState(QtCore.Qt.Checked)
-        if self.gain[self.selectedchannel]:   self.ui.gainCheck.setCheckState(QtCore.Qt.Unchecked)
-        else:   self.ui.gainCheck.setCheckState(QtCore.Qt.Checked)
         if len(self.lines)>0:
             if self.lines[self.selectedchannel].isVisible():   self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
             else:   self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
-        if self.trigsactive[self.selectedchannel]:   self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Checked)
-        else:   self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Unchecked)
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
             self.lines[self.selectedchannel].setVisible(True)
-            self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Checked)
         else:
             self.lines[self.selectedchannel].setVisible(False)
-            self.ui.trigchanonCheck.setCheckState(QtCore.Qt.Unchecked)
-
-    def trigchanon(self):
-        if self.ui.trigchanonCheck.checkState() == QtCore.Qt.Checked:
-            if not self.trigsactive[self.selectedchannel]: self.toggletriggerchan(self.selectedchannel)
-        else:
-            if self.trigsactive[self.selectedchannel]: self.toggletriggerchan(self.selectedchannel)
 
     def setacdc(self):
         if self.ui.acdcCheck.checkState() == QtCore.Qt.Checked: #ac coupled
@@ -199,17 +201,30 @@ class MainWindow(TemplateBaseClass):
             if not self.gain[self.selectedchannel]:
                 self.tellswitchgain(self.selectedchannel)
 
-    # for 3rd byte, 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4
+    phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
+    # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
     # for 4th byte, 1 is up, 0 is down
-    def uppos(self):
-        usb.send(bytes([6, 99, 3, 1, 100, 100, 100, 100])) #c1
-        #usb.send(bytes([6, 99, 4, 1, 100, 100, 100, 100])) #c2
-        print("phase up")
-    def downpos(self):
-        usb.send(bytes([6, 99, 3, 0, 100, 100, 100, 100])) #c1
-        #usb.send(bytes([6, 99, 4, 0, 100, 100, 100, 100])) #c2
-        print("phase down")
+    def dophase(self,plloutnum,updown):
+        pllnum = int(self.ui.pllBox.value())
+        usb.send(bytes([6,pllnum, int(plloutnum+2), updown, 100, 100, 100, 100]))
+        if updown: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]+1
+        else: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]-1
+        print("phase for pllnum",pllnum,"plloutnum",plloutnum,"now",self.phasec[pllnum][plloutnum])
+    def uppos(self): self.dophase(plloutnum=0,updown=1)
+    def uppos1(self): self.dophase(plloutnum=1,updown=1)
+    def uppos2(self): self.dophase(plloutnum=2,updown=1)
+    def uppos3(self): self.dophase(plloutnum=3,updown=1)
+    def uppos4(self): self.dophase(plloutnum=4,updown=1)
+    def downpos(self): self.dophase(plloutnum=0,updown=0)
+    def downpos1(self): self.dophase(plloutnum=1,updown=0)
+    def downpos2(self): self.dophase(plloutnum=2,updown=0)
+    def downpos3(self): self.dophase(plloutnum=3,updown=0)
+    def downpos4(self): self.dophase(plloutnum=4,updown=0)
 
+    def pllreset(self):
+        usb.send(bytes([1, 99, 99, 99, 100, 100, 100, 100]))
+        tres = usb.recv(4)
+        print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
 
     def wheelEvent(self, event): #QWheelEvent
         if hasattr(event,"delta"):
@@ -282,7 +297,7 @@ class MainWindow(TemplateBaseClass):
     def triggerposchanged(self,value):
         if value>253 or value<3: return
         offset=5.0 # trig to readout delay
-        scal = self.num_samples/256.
+        scal = self.expect_samples/256.
         point = value*scal + offset/pow(2,self.downsample)
         if self.downsample<0: point = 128*scal + (point-128*scal)*pow(2,self.downsample)
         self.settriggerpoint(int(point))
@@ -351,10 +366,6 @@ class MainWindow(TemplateBaseClass):
                 elif modifiers == QtCore.Qt.ControlModifier:
                     self.ui.chanonCheck.toggle()
 
-    num_chan_per_board=1
-    num_board=1
-    num_logic_inputs=1
-    num_samples=1000
     chtext=""
     linepens=[]
     def launch(self):
@@ -405,7 +416,7 @@ class MainWindow(TemplateBaseClass):
         #self.setxaxis()
         #self.setyaxis()
         #self.timechanged()
-        self.ui.totBox.setMaximum(self.num_samples)
+        self.ui.totBox.setMaximum(self.expect_samples)
         self.ui.plot.showGrid(x=True, y=True)
 
     def closeEvent(self, event):
@@ -413,7 +424,10 @@ class MainWindow(TemplateBaseClass):
         self.timer.stop()
         self.timer2.stop()
 
-    xydata = np.empty([int(num_chan_per_board * num_board), 2, num_samples], dtype=float)
+    if xydata_overlapped:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 10*expect_samples], dtype=float)
+    else:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 4*10*expect_samples], dtype=float)
 
     def updateplot(self):
         self.mainloop()
@@ -435,18 +449,16 @@ class MainWindow(TemplateBaseClass):
     oldnevents=0
     tinterval=100.
     oldtime=time.time()
-    nbadclk = 0
+    nbadclkA = 0
+    nbadclkB = 0
+    nbadclkC = 0
+    nbadclkD = 0
 
     def getchannels(self):
-        chan=0
+        nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
+        usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(self.expect_samples+1)))  # length to take (last 4 bytes)
 
-        expect_samples = 100
-        expect_len = expect_samples * 2 * 16  # length to request
-
-        if self.debug: fifoused()
-        usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(expect_samples+1)))  # length to take (last 4 bytes)
-        if self.debug: fifoused()
-
+        expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
         usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
         data = usb.recv(expect_len)  # recv from usb
         rx_len = len(data)
@@ -454,39 +466,77 @@ class MainWindow(TemplateBaseClass):
         self.total_rx_len += rx_len
         if expect_len != rx_len:
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len))
-            # break
-        for n in range(10): # the bit to get
-            self.nbadclk=0
-            for s in range(0, int(expect_samples)):
-                if self.debug and self.debugprint and s==99 and n==9: print("sample", s, "bit", n, "------------------------------------")
-                bb=0
-                val=0
-                for p in range(16 * s, 16 * (s + 1)): #loop over the 16 channels of the sample
-                    if n<8: bit=getbit(data[2*p+0], n)
-                    else: bit=getbit(data[2*p+1], n-8)
-                    if bit and bb<11: val=val+pow(2,bb)
-                    #if bit and bb < 11 and bb!=6: val = val + pow(2, bb)
-                    if bit and bb==11: val = val - pow(2,bb)
-                    bb=bb+1
-                    if p%16==12 and data[2 * p + 0]!=0xaa and data[2 * p + 0]!=0x55: self.nbadclk=self.nbadclk+1
+
+        else:
+            self.nbadclkA = 0
+            self.nbadclkB = 0
+            self.nbadclkC = 0
+            self.nbadclkD = 0
+            for s in range(0, int(self.expect_samples)):
+                chan = -1
+                for n in range(nsubsamples): # the subsample to get
+                    pbyte = nsubsamples*2*s + 2*n
+                    lowbits = data[pbyte + 0]
+                    highbits = data[pbyte + 1]
+                    if n<40 and getbit(highbits,3): highbits = (highbits - 16)*256
+                    else: highbits = highbits*256
+                    val = highbits + lowbits
+                    if n % 10 == 0: chan = chan + 1
+
+                    if n==40 and val&0x5555!=4369 and val&0x5555!=17476:
+                        self.nbadclkA=self.nbadclkA+1
+                    if n==41 and val&0x5555!=1 and val&0x5555!=4:
+                        self.nbadclkA=self.nbadclkA+1
+                    if n==42 and val&0x5555!=4369 and val&0x5555!=17476:
+                        self.nbadclkB=self.nbadclkB+1
+                    if n==43 and val&0x5555!=1 and val&0x5555!=4:
+                        self.nbadclkB=self.nbadclkB+1
+                    if n==44 and val&0x5555!=4369 and val&0x5555!=17476:
+                        self.nbadclkC=self.nbadclkC+1
+                    if n==45 and val&0x5555!=1 and val&0x5555!=4:
+                        self.nbadclkC=self.nbadclkC+1
+                    if n==46 and val&0x5555!=4369 and val&0x5555!=17476:
+                        self.nbadclkD=self.nbadclkD+1
+                    if n==47 and val&0x5555!=1 and val&0x5555!=4:
+                        self.nbadclkD=self.nbadclkD+1
+                    #if 40<=n<48 and self.nbadclkD:
+                    #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+
+                    if 40 <= n < 48 and self.debugstrobe:
+                        strobe = val&0xaaaa
+                        if strobe != 0:
+                            print("s=",s,"n=",n,"str",binprint(strobe),strobe)
+
                     if self.debug and self.debugprint:
-                        if s==99 and n==9:
-                            if self.showbinarydata:
-                                print(binprint(data[2 * p + 1]), binprint(data[2 * p + 0]), val,self.nbadclk)
-                            else:
-                                print(hex(data[2 * p + 1]), hex(data[2 * p + 0]))
-                self.xydata[chan][1][s*10+(9-n)] = val
-        if self.debug:
-            time.sleep(.1)
-            oldbytes()
+                        goodval=-1
+                        if s<0 or (n<40 and val!=0 and val!=goodval):
+                            if self.showbinarydata and n<40:
+                                #if s<0 or chan!=3 or (chan==3 and val!=255 and val!=511 and val!=1023 and val!=2047):
+                                if s<100:
+                                    if lowbits>0 or highbits>0:
+                                        print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+                            elif n<40:
+                                print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
+                    if n<40:
+                        samp = s * 10 + (9 - (n % 10))
+                        if samp % 2 == 1:
+                            samp = samp - 1
+                        else:
+                            samp = samp + 1
+                        if self.xydata_overlapped:
+                            self.xydata[chan][1][samp] = -val
+                        else:
+                            self.xydata[0][1][chan+ 4*samp] = -val
 
-        self.xydata[chan][0] = np.array([range(0,1000)])
+        if self.debug or self.debugstrobe:
+            time.sleep(.5)
+            #oldbytes()
+
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
-
         return rx_len
 
     def chantext(self):
-        return "nbadclk "+str(self.nbadclk)
+        return "nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
 
     def setup_connections(self):
         print("Starting")
@@ -500,6 +550,11 @@ class MainWindow(TemplateBaseClass):
         return 1
 
     def init(self):
+        if self.xydata_overlapped:
+            for c in range(self.num_chan_per_board):
+                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])
+        else:
+            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])
         return 1
 
     def cleanup(self):
