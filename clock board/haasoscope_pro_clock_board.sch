@@ -2267,6 +2267,12 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </class>
 <class number="2" name="gnd" width="0.3048" drill="0">
 </class>
+<class number="3" name="loosediffpair" width="0.1524" drill="0">
+<clearance class="0" value="0.3048"/>
+<clearance class="1" value="0.3048"/>
+<clearance class="2" value="0.3048"/>
+<clearance class="3" value="0.3048"/>
+</class>
 </classes>
 <parts>
 <part name="C2" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
@@ -2302,8 +2308,8 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <part name="GND93" library="supply1" deviceset="GND" device=""/>
 <part name="+3V20" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND95" library="supply1" deviceset="GND" device=""/>
-<part name="RFAOUT-" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
-<part name="RFAOUT+" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
+<part name="RFAOUTA-" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
+<part name="RFAOUTA+" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="R1" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
@@ -2338,6 +2344,18 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <part name="R11" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="360"/>
 <part name="C15" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="47nF"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
+<part name="R12" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
+<part name="GND7" library="supply1" deviceset="GND" device=""/>
+<part name="GND8" library="supply1" deviceset="GND" device=""/>
+<part name="RFAOUTB-" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
+<part name="RFAOUTB+" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="sma"/>
+<part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
+<part name="R13" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
+<part name="R14" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
+<part name="C17" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
+<part name="GND9" library="supply1" deviceset="GND" device=""/>
+<part name="C18" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1nF"/>
+<part name="C19" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1nF"/>
 </parts>
 <sheets>
 <sheet>
@@ -2447,11 +2465,11 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="GND95" gate="1" x="320.04" y="137.16" smashed="yes">
 <attribute name="VALUE" x="317.5" y="134.62" size="1.778" layer="96"/>
 </instance>
-<instance part="RFAOUT-" gate="G$1" x="317.5" y="172.72" smashed="yes">
+<instance part="RFAOUTA-" gate="G$1" x="317.5" y="172.72" smashed="yes">
 <attribute name="NAME" x="325.12" y="175.26" size="1.27" layer="95"/>
 <attribute name="VALUE" x="325.12" y="172.72" size="1.27" layer="95"/>
 </instance>
-<instance part="RFAOUT+" gate="G$1" x="317.5" y="147.32" smashed="yes">
+<instance part="RFAOUTA+" gate="G$1" x="317.5" y="147.32" smashed="yes">
 <attribute name="NAME" x="325.12" y="149.86" size="1.27" layer="95"/>
 <attribute name="VALUE" x="325.12" y="147.32" size="1.27" layer="95"/>
 </instance>
@@ -2581,6 +2599,50 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="GND6" gate="1" x="111.76" y="210.82" smashed="yes">
 <attribute name="VALUE" x="109.22" y="208.28" size="1.778" layer="96"/>
 </instance>
+<instance part="R12" gate="G$1" x="304.8" y="236.22" smashed="yes" rot="R180">
+<attribute name="NAME" x="305.816" y="233.68" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
+<attribute name="VALUE" x="305.816" y="238.76" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
+<instance part="GND7" gate="1" x="391.16" y="215.9" smashed="yes">
+<attribute name="VALUE" x="388.62" y="213.36" size="1.778" layer="96"/>
+</instance>
+<instance part="GND8" gate="1" x="391.16" y="190.5" smashed="yes">
+<attribute name="VALUE" x="388.62" y="187.96" size="1.778" layer="96"/>
+</instance>
+<instance part="RFAOUTB-" gate="G$1" x="388.62" y="226.06" smashed="yes">
+<attribute name="NAME" x="396.24" y="228.6" size="1.27" layer="95"/>
+<attribute name="VALUE" x="396.24" y="226.06" size="1.27" layer="95"/>
+</instance>
+<instance part="RFAOUTB+" gate="G$1" x="388.62" y="200.66" smashed="yes">
+<attribute name="NAME" x="396.24" y="203.2" size="1.27" layer="95"/>
+<attribute name="VALUE" x="396.24" y="200.66" size="1.27" layer="95"/>
+</instance>
+<instance part="+3V2" gate="G$1" x="337.82" y="251.46" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="340.36" y="246.38" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="R13" gate="G$1" x="297.18" y="236.22" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="233.68" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
+<attribute name="VALUE" x="298.196" y="238.76" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
+<instance part="R14" gate="G$1" x="327.66" y="246.38" smashed="yes" rot="R270">
+<attribute name="NAME" x="330.2" y="247.396" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="325.12" y="247.396" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="C17" gate="G$1" x="317.5" y="243.84" smashed="yes">
+<attribute name="NAME" x="320.04" y="245.364" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="320.04" y="242.316" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="GND9" gate="1" x="317.5" y="238.76" smashed="yes">
+<attribute name="VALUE" x="314.96" y="236.22" size="1.778" layer="96"/>
+</instance>
+<instance part="C18" gate="G$1" x="332.74" y="218.44" smashed="yes" rot="R270">
+<attribute name="NAME" x="334.264" y="215.9" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="331.216" y="215.9" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
+<instance part="C19" gate="G$1" x="332.74" y="208.28" smashed="yes" rot="R270">
+<attribute name="NAME" x="334.264" y="205.74" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="331.216" y="205.74" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -2654,11 +2716,11 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <pinref part="C8" gate="G$1" pin="P$2"/>
 </segment>
 <segment>
-<pinref part="RFAOUT+" gate="G$1" pin="GND4"/>
-<pinref part="RFAOUT+" gate="G$1" pin="GND2"/>
-<pinref part="RFAOUT+" gate="G$1" pin="GND1"/>
+<pinref part="RFAOUTA+" gate="G$1" pin="GND4"/>
+<pinref part="RFAOUTA+" gate="G$1" pin="GND2"/>
+<pinref part="RFAOUTA+" gate="G$1" pin="GND1"/>
 <wire x1="320.04" y1="154.94" x2="314.96" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="RFAOUT+" gate="G$1" pin="GND3"/>
+<pinref part="RFAOUTA+" gate="G$1" pin="GND3"/>
 <wire x1="314.96" y1="154.94" x2="314.96" y2="139.7" width="0.1524" layer="91"/>
 <junction x="314.96" y="154.94"/>
 <wire x1="314.96" y1="139.7" x2="320.04" y2="139.7" width="0.1524" layer="91"/>
@@ -2667,11 +2729,11 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <junction x="320.04" y="139.7"/>
 </segment>
 <segment>
-<pinref part="RFAOUT-" gate="G$1" pin="GND4"/>
-<pinref part="RFAOUT-" gate="G$1" pin="GND2"/>
-<pinref part="RFAOUT-" gate="G$1" pin="GND1"/>
+<pinref part="RFAOUTA-" gate="G$1" pin="GND4"/>
+<pinref part="RFAOUTA-" gate="G$1" pin="GND2"/>
+<pinref part="RFAOUTA-" gate="G$1" pin="GND1"/>
 <wire x1="320.04" y1="180.34" x2="314.96" y2="180.34" width="0.1524" layer="91"/>
-<pinref part="RFAOUT-" gate="G$1" pin="GND3"/>
+<pinref part="RFAOUTA-" gate="G$1" pin="GND3"/>
 <wire x1="314.96" y1="180.34" x2="314.96" y2="165.1" width="0.1524" layer="91"/>
 <junction x="314.96" y="180.34"/>
 <wire x1="314.96" y1="165.1" x2="320.04" y2="165.1" width="0.1524" layer="91"/>
@@ -2732,6 +2794,36 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="C15" gate="G$1" pin="P$2"/>
 <pinref part="GND6" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="RFAOUTB+" gate="G$1" pin="GND4"/>
+<pinref part="RFAOUTB+" gate="G$1" pin="GND2"/>
+<pinref part="RFAOUTB+" gate="G$1" pin="GND1"/>
+<wire x1="391.16" y1="208.28" x2="386.08" y2="208.28" width="0.1524" layer="91"/>
+<pinref part="RFAOUTB+" gate="G$1" pin="GND3"/>
+<wire x1="386.08" y1="208.28" x2="386.08" y2="193.04" width="0.1524" layer="91"/>
+<junction x="386.08" y="208.28"/>
+<wire x1="386.08" y1="193.04" x2="391.16" y2="193.04" width="0.1524" layer="91"/>
+<junction x="386.08" y="193.04"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<junction x="391.16" y="193.04"/>
+</segment>
+<segment>
+<pinref part="RFAOUTB-" gate="G$1" pin="GND4"/>
+<pinref part="RFAOUTB-" gate="G$1" pin="GND2"/>
+<pinref part="RFAOUTB-" gate="G$1" pin="GND1"/>
+<wire x1="391.16" y1="233.68" x2="386.08" y2="233.68" width="0.1524" layer="91"/>
+<pinref part="RFAOUTB-" gate="G$1" pin="GND3"/>
+<wire x1="386.08" y1="233.68" x2="386.08" y2="218.44" width="0.1524" layer="91"/>
+<junction x="386.08" y="233.68"/>
+<wire x1="386.08" y1="218.44" x2="391.16" y2="218.44" width="0.1524" layer="91"/>
+<junction x="386.08" y="218.44"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+<junction x="391.16" y="218.44"/>
+</segment>
+<segment>
+<pinref part="C17" gate="G$1" pin="P$2"/>
+<pinref part="GND9" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -2806,6 +2898,12 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <pinref part="+3V18" gate="G$1" pin="+3V3"/>
 <pinref part="R7" gate="G$1" pin="P$2"/>
 </segment>
+<segment>
+<pinref part="+3V2" gate="G$1" pin="+3V3"/>
+<wire x1="337.82" y1="248.92" x2="337.82" y2="246.38" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="246.38" x2="332.74" y2="246.38" width="0.1524" layer="91"/>
+<pinref part="R14" gate="G$1" pin="P$1"/>
+</segment>
 </net>
 <net name="N$18" class="0">
 <segment>
@@ -2878,6 +2976,20 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <pinref part="C9" gate="G$1" pin="P$1"/>
 <wire x1="246.38" y1="193.04" x2="251.46" y2="193.04" width="0.1524" layer="91"/>
 <junction x="246.38" y="193.04"/>
+</segment>
+<segment>
+<wire x1="297.18" y1="246.38" x2="297.18" y2="241.3" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="246.38" x2="304.8" y2="241.3" width="0.1524" layer="91"/>
+<wire x1="297.18" y1="246.38" x2="304.8" y2="246.38" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="246.38" x2="317.5" y2="246.38" width="0.1524" layer="91"/>
+<junction x="304.8" y="246.38"/>
+<label x="309.88" y="246.38" size="1.778" layer="95"/>
+<pinref part="R12" gate="G$1" pin="P$2"/>
+<pinref part="R13" gate="G$1" pin="P$2"/>
+<pinref part="R14" gate="G$1" pin="P$2"/>
+<pinref part="C17" gate="G$1" pin="P$1"/>
+<wire x1="317.5" y1="246.38" x2="322.58" y2="246.38" width="0.1524" layer="91"/>
+<junction x="317.5" y="246.38"/>
 </segment>
 </net>
 <net name="ADFCLK" class="0">
@@ -3012,7 +3124,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <wire x1="309.88" y1="165.1" x2="309.88" y2="172.72" width="0.1524" layer="91"/>
 <label x="289.56" y="165.1" size="1.778" layer="95"/>
-<pinref part="RFAOUT-" gate="G$1" pin="ANT"/>
+<pinref part="RFAOUTA-" gate="G$1" pin="ANT"/>
 <wire x1="264.16" y1="165.1" x2="309.88" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="C10" gate="G$1" pin="P$1"/>
 </segment>
@@ -3021,7 +3133,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <wire x1="309.88" y1="154.94" x2="309.88" y2="147.32" width="0.1524" layer="91"/>
 <label x="289.56" y="154.94" size="1.778" layer="95"/>
-<pinref part="RFAOUT+" gate="G$1" pin="ANT"/>
+<pinref part="RFAOUTA+" gate="G$1" pin="ANT"/>
 <wire x1="264.16" y1="154.94" x2="309.88" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="C11" gate="G$1" pin="P$1"/>
 </segment>
@@ -3049,6 +3161,50 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <pinref part="C15" gate="G$1" pin="P$1"/>
 </segment>
 </net>
+<net name="RFOUTB_N" class="0">
+<segment>
+<wire x1="297.18" y1="231.14" x2="297.18" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="297.18" y1="218.44" x2="330.2" y2="218.44" width="0.1524" layer="91"/>
+<junction x="297.18" y="218.44"/>
+<label x="309.88" y="218.44" size="1.778" layer="95"/>
+<pinref part="R13" gate="G$1" pin="P$1"/>
+<pinref part="C18" gate="G$1" pin="P$2"/>
+<pinref part="U4" gate="G$1" pin="RFOUTB-"/>
+<wire x1="218.44" y1="238.76" x2="218.44" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="218.44" x2="297.18" y2="218.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RFOUTB_P" class="0">
+<segment>
+<wire x1="304.8" y1="208.28" x2="304.8" y2="231.14" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="208.28" x2="330.2" y2="208.28" width="0.1524" layer="91"/>
+<junction x="304.8" y="208.28"/>
+<label x="309.88" y="208.28" size="1.778" layer="95"/>
+<pinref part="R12" gate="G$1" pin="P$1"/>
+<pinref part="C19" gate="G$1" pin="P$2"/>
+<wire x1="304.8" y1="208.28" x2="213.36" y2="208.28" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="RFOUTB+"/>
+<wire x1="213.36" y1="208.28" x2="213.36" y2="238.76" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RFOUTBSMA_N" class="0">
+<segment>
+<wire x1="381" y1="218.44" x2="381" y2="226.06" width="0.1524" layer="91"/>
+<label x="360.68" y="218.44" size="1.778" layer="95"/>
+<pinref part="RFAOUTB-" gate="G$1" pin="ANT"/>
+<wire x1="335.28" y1="218.44" x2="381" y2="218.44" width="0.1524" layer="91"/>
+<pinref part="C18" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="RFOUTBSMA_P" class="0">
+<segment>
+<wire x1="381" y1="208.28" x2="381" y2="200.66" width="0.1524" layer="91"/>
+<label x="360.68" y="208.28" size="1.778" layer="95"/>
+<pinref part="RFAOUTB+" gate="G$1" pin="ANT"/>
+<wire x1="335.28" y1="208.28" x2="381" y2="208.28" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="P$1"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -3067,21 +3223,26 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <approved hash="104,1,208.28,309.88,U4G$1,DVDD,+3V3,,,"/>
 <approved hash="104,1,193.04,309.88,U4G$1,SDGND,GND,,,"/>
 <approved hash="104,1,187.96,309.88,U4G$1,SDVDD,+3V3,,,"/>
-<approved hash="104,1,314.96,180.34,RFAOUT-,GND1,GND,,,"/>
-<approved hash="104,1,320.04,180.34,RFAOUT-,GND2,GND,,,"/>
-<approved hash="104,1,314.96,165.1,RFAOUT-,GND3,GND,,,"/>
-<approved hash="104,1,320.04,165.1,RFAOUT-,GND4,GND,,,"/>
-<approved hash="104,1,314.96,154.94,RFAOUT+,GND1,GND,,,"/>
-<approved hash="104,1,320.04,154.94,RFAOUT+,GND2,GND,,,"/>
-<approved hash="104,1,314.96,139.7,RFAOUT+,GND3,GND,,,"/>
-<approved hash="104,1,320.04,139.7,RFAOUT+,GND4,GND,,,"/>
+<approved hash="104,1,314.96,180.34,RFAOUTA-,GND1,GND,,,"/>
+<approved hash="104,1,320.04,180.34,RFAOUTA-,GND2,GND,,,"/>
+<approved hash="104,1,314.96,165.1,RFAOUTA-,GND3,GND,,,"/>
+<approved hash="104,1,320.04,165.1,RFAOUTA-,GND4,GND,,,"/>
+<approved hash="104,1,314.96,154.94,RFAOUTA+,GND1,GND,,,"/>
+<approved hash="104,1,320.04,154.94,RFAOUTA+,GND2,GND,,,"/>
+<approved hash="104,1,314.96,139.7,RFAOUTA+,GND3,GND,,,"/>
+<approved hash="104,1,320.04,139.7,RFAOUTA+,GND4,GND,,,"/>
 <approved hash="104,1,96.52,167.64,REFRFIN,GND1,GND,,,"/>
 <approved hash="104,1,101.6,167.64,REFRFIN,GND2,GND,,,"/>
 <approved hash="104,1,96.52,152.4,REFRFIN,GND3,GND,,,"/>
 <approved hash="104,1,101.6,152.4,REFRFIN,GND4,GND,,,"/>
-<approved hash="113,1,319.502,172.72,RFAOUT-,,,,,"/>
-<approved hash="113,1,319.779,147.32,RFAOUT+,,,,,"/>
-<approved hash="113,1,101.058,160.02,REFRFIN,,,,,"/>
+<approved hash="104,1,386.08,233.68,RFAOUTB-,GND1,GND,,,"/>
+<approved hash="104,1,391.16,233.68,RFAOUTB-,GND2,GND,,,"/>
+<approved hash="104,1,386.08,218.44,RFAOUTB-,GND3,GND,,,"/>
+<approved hash="104,1,391.16,218.44,RFAOUTB-,GND4,GND,,,"/>
+<approved hash="104,1,386.08,208.28,RFAOUTB+,GND1,GND,,,"/>
+<approved hash="104,1,391.16,208.28,RFAOUTB+,GND2,GND,,,"/>
+<approved hash="104,1,386.08,193.04,RFAOUTB+,GND3,GND,,,"/>
+<approved hash="104,1,391.16,193.04,RFAOUTB+,GND4,GND,,,"/>
 </errors>
 </schematic>
 </drawing>
