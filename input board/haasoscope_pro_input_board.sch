@@ -2883,8 +2883,8 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/TLV9102"&gt; Datasheet &lt;/a&gt;<
 <part name="R19" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="R20" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
-<part name="AMPOUT-" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE"/>
-<part name="AMPOUT+" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE"/>
+<part name="AMPOUT-" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out-"/>
+<part name="AMPOUT+" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out+"/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R21" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
