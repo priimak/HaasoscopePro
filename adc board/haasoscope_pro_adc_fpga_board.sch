@@ -3316,9 +3316,31 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 <text x="0.635" y="2.54" size="1.27" layer="33" ratio="10" rot="R90">&gt;name</text>
 <rectangle x1="-1.27" y1="-12.7" x2="1.27" y2="12.7" layer="39"/>
 </package>
+<package name="H4-2.54" urn="urn:adsk.eagle:footprint:33083/1" library_version="1">
+<wire x1="-1.27" y1="5.08" x2="1.27" y2="5.08" width="0.127" layer="21"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-5.08" x2="-1.27" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-5.08" x2="-1.27" y2="5.08" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="5.08" x2="1.27" y2="5.08" width="0" layer="39"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="-5.08" width="0" layer="39"/>
+<wire x1="1.27" y1="-5.08" x2="-1.27" y2="-5.08" width="0" layer="39"/>
+<wire x1="-1.27" y1="-5.08" x2="-1.27" y2="5.08" width="0" layer="39"/>
+<pad name="1" x="0" y="3.81" drill="0.889" diameter="1.651" shape="square"/>
+<pad name="2" x="0" y="1.27" drill="0.889" diameter="1.651"/>
+<pad name="3" x="0" y="-1.27" drill="0.889" diameter="1.651"/>
+<pad name="4" x="0" y="-3.81" drill="0.889" diameter="1.651"/>
+<text x="-1.905" y="-1.905" size="0.889" layer="25" ratio="11" rot="R90">&gt;name</text>
+<text x="2.54" y="-1.905" size="0.889" layer="27" ratio="11" rot="R90">&gt;value</text>
+<rectangle x1="-1.27" y1="-5.08" x2="1.27" y2="5.08" layer="39"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="H10-2.54" urn="urn:adsk.eagle:package:33117/1" type="box" library_version="1">
+</package3d>
+<package3d name="H4-2.54" urn="urn:adsk.eagle:package:33137/1" type="box" library_version="1">
+<packageinstances>
+<packageinstance name="H4-2.54"/>
+</packageinstances>
 </package3d>
 </packages3d>
 <symbols>
@@ -3339,6 +3361,18 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 <pin name="8" x="-6.35" y="-6.35" visible="pad" length="middle"/>
 <pin name="9" x="-6.35" y="-8.89" visible="pad" length="middle"/>
 <pin name="10" x="-6.35" y="-11.43" visible="pad" length="middle"/>
+</symbol>
+<symbol name="HEADER-4P" urn="urn:adsk.eagle:symbol:33082/1" library_version="1">
+<wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
+<text x="-7.62" y="6.35" size="1.27" layer="95" ratio="10">&gt;name</text>
+<text x="-1.27" y="6.35" size="1.27" layer="96" ratio="10">&gt;value</text>
+<pin name="P$1" x="-7.62" y="3.81" visible="pad" length="middle" function="dotclk"/>
+<pin name="P$2" x="-7.62" y="1.27" visible="pad" length="middle"/>
+<pin name="P$3" x="-7.62" y="-1.27" visible="pad" length="middle"/>
+<pin name="P$4" x="-7.62" y="-3.81" visible="pad" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3368,6 +3402,31 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 <technology name="">
 <attribute name="MPN" value="F185-1110A1BSYC1" constant="no"/>
 <attribute name="VALUE" value="YELLOW-10P-2.54" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIP-BLACK-MALE-HEADER-VERT(4P-2.54)" urn="urn:adsk.eagle:component:33189/1" prefix="J" uservalue="yes" library_version="1">
+<description>320020017</description>
+<gates>
+<gate name="G$1" symbol="HEADER-4P" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="H4-2.54">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+<connect gate="G$1" pin="P$3" pad="3"/>
+<connect gate="G$1" pin="P$4" pad="4"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:33137/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="P125-1104A0BS116A1" constant="no"/>
+<attribute name="VALUE" value="4p-2.54" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -8435,6 +8494,7 @@ Example Datasheet</description>
 <part name="C43" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
 <part name="C41" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
 <part name="C42" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
+<part name="J5" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 </parts>
 <sheets>
 <sheet>
@@ -9667,11 +9727,6 @@ Example Datasheet</description>
 </net>
 <net name="DEBUGOUT0" class="0">
 <segment>
-<pinref part="IC5" gate="G$1" pin="IO_2"/>
-<wire x1="238.76" y1="604.52" x2="226.06" y2="604.52" width="0.1524" layer="91"/>
-<label x="226.06" y="604.52" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="238.76" y1="581.66" x2="226.06" y2="581.66" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_9"/>
 <label x="226.06" y="581.66" size="1.778" layer="95"/>
@@ -9803,7 +9858,7 @@ Example Datasheet</description>
 <label x="226.06" y="535.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO26" class="0">
+<net name="SDO3_CLK" class="0">
 <segment>
 <wire x1="238.76" y1="533.4" x2="226.06" y2="533.4" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_26"/>
@@ -10365,14 +10420,7 @@ Example Datasheet</description>
 <label x="226.06" y="259.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO102" class="0">
-<segment>
-<wire x1="238.76" y1="256.54" x2="226.06" y2="256.54" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IO_102"/>
-<label x="226.06" y="256.54" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="IO104" class="0">
+<net name="SCS3_CLK" class="0">
 <segment>
 <wire x1="238.76" y1="251.46" x2="226.06" y2="251.46" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_104"/>
@@ -13111,6 +13159,20 @@ Example Datasheet</description>
 <label x="226.06" y="309.88" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="SCS3_IN1DAC" class="0">
+<segment>
+<wire x1="238.76" y1="256.54" x2="226.06" y2="256.54" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="IO_102"/>
+<label x="226.06" y="256.54" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCS3_IN2DAC" class="0">
+<segment>
+<pinref part="IC5" gate="G$1" pin="IO_2"/>
+<wire x1="238.76" y1="604.52" x2="226.06" y2="604.52" width="0.1524" layer="91"/>
+<label x="226.06" y="604.52" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -13646,6 +13708,10 @@ Example Datasheet</description>
 <instance part="INA+" gate="G$1" x="-172.72" y="256.54" smashed="yes">
 <attribute name="NAME" x="-165.1" y="259.08" size="1.27" layer="95"/>
 <attribute name="VALUE" x="-165.1" y="256.54" size="1.27" layer="95"/>
+</instance>
+<instance part="J5" gate="G$1" x="-233.68" y="135.89" smashed="yes">
+<attribute name="NAME" x="-241.3" y="142.24" size="1.27" layer="95" ratio="10"/>
+<attribute name="VALUE" x="-234.95" y="142.24" size="1.27" layer="96" ratio="10"/>
 </instance>
 </instances>
 <busses>
@@ -16341,6 +16407,34 @@ Example Datasheet</description>
 <pinref part="J2" gate="G$1" pin="6"/>
 <wire x1="-200.66" y1="106.68" x2="-213.36" y2="106.68" width="0.1524" layer="91"/>
 <label x="-213.36" y="106.68" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCS3_IN1DAC" class="0">
+<segment>
+<wire x1="-241.3" y1="139.7" x2="-259.08" y2="139.7" width="0.1524" layer="91"/>
+<label x="-261.62" y="139.7" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="SCS3_IN2DAC" class="0">
+<segment>
+<wire x1="-241.3" y1="137.16" x2="-259.08" y2="137.16" width="0.1524" layer="91"/>
+<label x="-261.62" y="137.16" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="SCS3_CLK" class="0">
+<segment>
+<wire x1="-241.3" y1="134.62" x2="-259.08" y2="134.62" width="0.1524" layer="91"/>
+<label x="-259.08" y="134.62" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="P$3"/>
+</segment>
+</net>
+<net name="SDO3_CLK" class="0">
+<segment>
+<wire x1="-241.3" y1="132.08" x2="-259.08" y2="132.08" width="0.1524" layer="91"/>
+<label x="-259.08" y="132.08" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="P$4"/>
 </segment>
 </net>
 </nets>

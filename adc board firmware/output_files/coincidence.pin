@@ -138,8 +138,8 @@ overrange[3]                 : B1        : input  : 2.5 V             :         
 overrange[2]                 : B2        : input  : 2.5 V             :         : 1         : Y              
 ftdi_wr_n                    : B3        : output : 3.3-V LVTTL       :         : 8         : Y              
 ftdi_txe_n                   : B4        : input  : 3.3-V LVTTL       :         : 8         : Y              
-spics[6]                     : B5        : output : 3.3-V LVTTL       :         : 8         : Y              
-spics[7]                     : B6        : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
+spics[6]                     : B6        : output : 3.3-V LVTTL       :         : 8         : N              
 ftdi_rxf_n                   : B7        : input  : 3.3-V LVTTL       :         : 8         : Y              
 ftdi_rd_n                    : B8        : output : 3.3-V LVTTL       :         : 8         : Y              
 spimisos[2]                  : B9        : input  : 3.3-V LVTTL       :         : 8         : Y              
@@ -165,7 +165,7 @@ ftdi_data5                   : C6        : bidir  : 3.3-V LVTTL       :         
 ftdi_data4                   : C7        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 ftdi_data3                   : C8        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : C9        : gnd    :                   :         :           :                
-spimisos[4]                  : C10       : input  : 3.3-V LVTTL       :         : 8         : Y              
+spics[7]                     : C10       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : C11       : gnd    :                   :         :           :                
 GND                          : C12       : gnd    :                   :         :           :                
 debugout[18]                 : C13       : output : 2.5 V             :         : 7         : Y              
@@ -183,7 +183,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :      
 GND                          : D3        : gnd    :                   :         :           :                
 VCCIO1                       : D4        : power  :                   : 2.5V    : 1         :                
 VCCIO8                       : D5        : power  :                   : 3.3V    : 8         :                
-spimisos[5]                  : D6        : input  : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
 ftdi_data2                   : D7        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : D8        : gnd    :                   :         :           :                
 VCCIO8                       : D9        : power  :                   : 3.3V    : 8         :                
@@ -206,13 +206,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 1         :                
 clk50out                     : E5        : output : 3.3-V LVTTL       :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
-spimisos[6]                  : E7        : input  : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
 VCCIO8                       : E8        : power  :                   : 3.3V    : 8         :                
-spimisos[7]                  : E9        : input  : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 8         :                
 spiclk                       : E10       : output : 3.3-V LVTTL       :         : 8         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E11       :        :                   :         : 7         :                
+spimisos[7]                  : E11       : input  : 3.3-V LVTTL       :         : 7         : N              
 debugout[26]                 : E12       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :         : 7         :                
+spimisos[5]                  : E13       : input  : 3.3-V LVTTL       :         : 7         : N              
 debugout[27]                 : E14       : output : 2.5 V             :         : 7         : Y              
 debugout[25]                 : E15       : output : 2.5 V             :         : 7         : Y              
 debugout[24]                 : E16       : output : 2.5 V             :         : 7         : Y              
@@ -232,7 +232,7 @@ spimosi                      : F7        : output : 3.3-V LVTTL       :         
 spics[0]                     : F8        : output : 3.3-V LVTTL       :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8         :                
 spimisos[0]                  : F10       : input  : 3.3-V LVTTL       :         : 8         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F11       :        :                   :         : 7         :                
+spimisos[4]                  : F11       : input  : 3.3-V LVTTL       :         : 7         : N              
 GND                          : F12       : gnd    :                   :         :           :                
 debugout[16]                 : F13       : output : 2.5 V             :         : 7         : Y              
 debugout[17]                 : F14       : output : 2.5 V             :         : 7         : Y              
@@ -256,7 +256,7 @@ spics[4]                     : G9        : output : 3.3-V LVTTL       :         
 ftdi_data0                   : G10       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 spics[3]                     : G11       : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCINT                       : G12       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G13       :        :                   :         : 7         :                
+spimisos[6]                  : G13       : input  : 3.3-V LVTTL       :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 7         :                
