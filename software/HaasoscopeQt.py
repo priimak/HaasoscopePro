@@ -4,9 +4,11 @@ import pyqtgraph as pg
 from ftd2xx import DeviceError
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 
-#################
-
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
+
+# https://github.com/drandyhaas/pyadf435x
+from adf435x import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, BandSelectClockMode
+
 usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','HaasoscopePro USB2'),('FT60X','Haasoscope USB3')))
 
 def binprint(x):
@@ -102,6 +104,28 @@ def board_setup(dopattern=False):
     gain=0x20 #00 to 20 is 26 to -6 dB
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
+
+    #For now use cs=2 for clk, later can use cs=3 on new board revision
+    freq = 1450.0
+    print('ADF4530 being set to %0.2f MHz' % freq)
+    INT, MOD, FRAC, output_divider, band_select_clock_divider = (
+        calculate_regs(device_type=DeviceType.ADF4350,freq=freq,ref_freq=50.0,
+        band_select_clock_mode=BandSelectClockMode.Low,
+        ref_doubler=False, ref_div2=True
+        ))
+    print("INT",INT,"MOD",MOD,"FRAC",FRAC,"outdiv",output_divider,"bandselclkdiv",band_select_clock_divider)
+    regs = make_regs(INT=INT, MOD=MOD, FRAC=FRAC, output_divider=output_divider, band_select_clock_divider=band_select_clock_divider,
+                     device_type=DeviceType.ADF4350, phase_value=None, mux_out=MuxOut.NDividerOutput,
+                     aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0, #(-4,-1,2,5)
+                     clk_div_mode=ClkDivMode.ResyncEnable,
+                     clock_divider_value=150
+                     )
+    for r in range(len(regs)):
+        print("adf4530 reg",r, binprint(regs[r]), hex(regs[r]))
+        fourbytes = inttobytes(regs[r])
+        #for i in range(4): print(binprint(fourbytes[i]))
+        spicommand2("ADF4530 Reg "+str(r), fourbytes[0], fourbytes[1], fourbytes[2], fourbytes[3],False, cs=2, nbyte=3)
+    time.sleep(0.1)
 
 #################
 
