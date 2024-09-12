@@ -116,7 +116,8 @@ class MainWindow(TemplateBaseClass):
     dopattern = False
     debugprint = True
     showbinarydata = True
-    debugstrobe = False
+    debugstrobe = True
+    dofast = False
     xydata_overlapped=True
     total_rx_len = 0
     time_start = time.time()
@@ -453,6 +454,7 @@ class MainWindow(TemplateBaseClass):
     nbadclkB = 0
     nbadclkC = 0
     nbadclkD = 0
+    nbadstr = 0
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
@@ -468,10 +470,12 @@ class MainWindow(TemplateBaseClass):
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len))
 
         else:
+            if self.dofast: return rx_len
             self.nbadclkA = 0
             self.nbadclkB = 0
             self.nbadclkC = 0
             self.nbadclkD = 0
+            self.nbadstr = 0
             for s in range(0, int(self.expect_samples)):
                 chan = -1
                 for n in range(nsubsamples): # the subsample to get
@@ -502,10 +506,13 @@ class MainWindow(TemplateBaseClass):
                     #if 40<=n<48 and self.nbadclkD:
                     #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
 
-                    if 40 <= n < 48 and self.debugstrobe:
+                    if 40 <= n < 48:
                         strobe = val&0xaaaa
                         if strobe != 0:
-                            print("s=",s,"n=",n,"str",binprint(strobe),strobe)
+                            if strobe!=8 and strobe!=128 and strobe!=2048 and strobe!=32768:
+                                if strobe*4!=8 and strobe*4!=128 and strobe*4!=2048 and strobe*4!=32768:
+                                    self.debugstrobe: print("s=",s,"n=",n,"str",binprint(strobe),strobe)
+                                    self.nbadstr=self.nbadstr+1
 
                     if self.debug and self.debugprint:
                         goodval=-1
@@ -528,7 +535,7 @@ class MainWindow(TemplateBaseClass):
                         else:
                             self.xydata[0][1][chan+ 4*samp] = -val
 
-        if self.debug or self.debugstrobe:
+        if self.debug:
             time.sleep(.5)
             #oldbytes()
 
@@ -536,7 +543,10 @@ class MainWindow(TemplateBaseClass):
         return rx_len
 
     def chantext(self):
-        return "nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
+        return (
+                "nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD) +"\n"
+                +"nbadstrobes "+str(self.nbadstr)
+        )
 
     def setup_connections(self):
         print("Starting")
@@ -575,7 +585,6 @@ class MainWindow(TemplateBaseClass):
                 elapsedtime=now-self.oldtime
                 self.oldtime=now
                 lastrate = round(self.tinterval/elapsedtime,2)
-                nchan = self.num_chan_per_board
                 print(self.nevents,"events,",lastrate,"Hz",round(lastrate*rx_len/1e6,3),"MB/s")
                 if lastrate>40: self.tinterval=500.
                 else: self.tinterval=100.
