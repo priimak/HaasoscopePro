@@ -2492,8 +2492,6 @@ Example Datasheet</description>
 <element name="C42" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="78.5" y="36.5" smashed="yes" rot="R90"/>
 <element name="J5" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" package="H4-2.54" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54" x="6" y="87" smashed="yes" rot="R90">
 <attribute name="MPN" value="P125-1104A0BS116A1" x="6" y="87" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="7.905" y="85.095" size="0.889" layer="25" ratio="11" rot="R180"/>
-<attribute name="VALUE" x="7.905" y="89.54" size="0.889" layer="27" ratio="11" rot="R180"/>
 </element>
 </elements>
 <signals>
