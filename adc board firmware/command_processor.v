@@ -76,8 +76,9 @@ reg [ 3:0]	state = INIT;
 reg [ 3:0]	rx_counter = 0;
 reg [ 7:0]	rx_data[7:0];
 integer		length = 0;
-reg [ 2:0]	spistate = 0;
+reg [ 3:0]	spistate = 0;
 reg [5:0]	channel = 0;
+reg [3:0]	spicscounter = 0;
 
 //variables in clklvds domain
 reg [ 2:0]  acqstate=0;
@@ -768,49 +769,72 @@ always @ (posedge clk or negedge rstn)
 				spimisossel <= rx_data[1][2:0]; // select requested data from chip
 				spics[rx_data[1][2:0]]<=1'b0; //select requested chip
 				spitx <= rx_data[2];//first byte to send
-				spistate <= 3'd1;
+				
+				if (spicscounter==4'd5) begin // wait a bit for cs to go low
+					spicscounter<=4'd0;
+					spistate <= 4'd1;
+				end
+				else spicscounter<=spicscounter+4'd1;
 			end
 			1 : begin
 				if (spitxready) begin
 					spitxdv <= 1'b1;
-					if (rx_data[7]==2) spistate <= 3'd4; //sending 2 bytes
-					else spistate <= 3'd2; // sending 3 bytes
+					if (rx_data[7]==2) spistate <= 4'd4; //sending 2 bytes
+					else spistate <= 4'd2; // sending more than 2 bytes
 				end
 			end
 			2 : begin
 				spitxdv <= 1'b0;
 				spitx <= rx_data[3];//second byte to send
-				spistate <= 3'd3;
+				spistate <= 4'd3;
 			end
 			3 : begin
 				if (spitxready) begin
 					spitxdv <= 1'b1;
-					spistate <= 3'd4;
+					spistate <= 4'd4;
 				end
 			end
 			4 : begin
 				spitxdv <= 1'b0;
 				spitx <= rx_data[4];//third byte to send (ignored during read)
-				spistate <= 3'd5;
+				spistate <= 4'd5;
 			end
 			5 : begin
 				if (spitxready) begin
 					spitxdv <= 1'b1;
-					spistate <= 3'd6;
+					if (rx_data[7]==4) spistate <= 4'd6; // send the 4th byte
+					else spistate <= 4'd8; // skip the 4th byte
 				end
 			end
 			6 : begin
 				spitxdv <= 1'b0;
-				if (spirxdv) begin
-					spics <= 8'hff;//unselect chip
-					spistate <= 3'd0;
-					o_tdata <= spirx; // send back the SPI data read
-					length <= 4;
-					o_tvalid <= 1'b1;
-					state <= TX_DATA_CONST;					
+				spitx <= rx_data[5];//fourth byte to send
+				spistate <= 4'd7;
+			end
+			7 : begin
+				if (spitxready) begin
+					spitxdv <= 1'b1;
+					spistate <= 4'd8;
 				end
 			end
-			default : spistate <= 3'd0;
+			8 : begin
+				spitxdv <= 1'b0;
+				if (spirxdv) begin
+					spistate <= 4'd9;
+					o_tdata <= spirx; // send back the SPI data read
+				end
+			end
+			9 : begin
+				if (spicscounter==4'd15) begin // wait a bit before setting cs high
+					spicscounter<=4'd0;
+					spistate <= 4'd0;
+					length <= 4;
+					o_tvalid <= 1'b1;
+					state <= TX_DATA_CONST;		
+				end
+				else spicscounter<=spicscounter+4'd1;
+			end
+			default : spistate <= 4'd0;
 			endcase
 		end
 		

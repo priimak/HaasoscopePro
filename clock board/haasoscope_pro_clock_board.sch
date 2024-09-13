@@ -2589,7 +2589,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <attribute name="VALUE" x="127" y="218.44" size="1.778" layer="96"/>
 </instance>
 <instance part="R11" gate="G$1" x="111.76" y="223.52" smashed="yes">
-<attribute name="NAME" x="110.744" y="226.06" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="NAME" x="113.792" y="223.266" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
 <attribute name="VALUE" x="110.744" y="220.98" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
 <instance part="C15" gate="G$1" x="111.76" y="215.9" smashed="yes">

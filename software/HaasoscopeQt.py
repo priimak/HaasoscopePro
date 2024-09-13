@@ -7,7 +7,7 @@ from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
 
 # https://github.com/drandyhaas/pyadf435x
-from adf435x import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, BandSelectClockMode
+from adf435x import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, BandSelectClockMode, FeedbackSelect, PDPolarity
 
 usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','HaasoscopePro USB2'),('FT60X','Haasoscope USB3')))
 
@@ -25,19 +25,19 @@ def oldbytes():
 
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
-def spicommand(name, first, second, third, read, show_bin=False, cs=0, nbyte=3):
+def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=0, nbyte=3):
     # first byte to send, start of address
     # second byte to send, rest of address
     # third byte to send, value to write, ignored during read
     # cs is which chip to select, adc 0 by default
     # nbyte is 2 or 3, second byte is ignored in case of 2 bytes
     if read: first = first + 0x80 #set the highest bit for read, i.e. add 0x80
-    usb.send(bytes([3, cs, first, second, third, 100, 100, nbyte]))  # get SPI result from command
+    usb.send(bytes([3, cs, first, second, third, fourth, 100, nbyte]))  # get SPI result from command
     spires = usb.recv(4)
     if read:
         if show_bin: print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[0]))
         else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[0]))
-    else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third))
+    else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third),hex(fourth))
 
 def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     # first byte to send, start of address
@@ -53,6 +53,28 @@ def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     spires2 = usb.recv(4)
     if read: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
     else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
+
+def adf4350(freq):
+    # For now use cs=2 for clk, later can use cs=3 on new board revision
+    print('ADF4530 being set to %0.2f MHz' % freq)
+    INT, MOD, FRAC, output_divider, band_select_clock_divider = (
+        calculate_regs(device_type=DeviceType.ADF4350, freq=freq, ref_freq=25.0,
+                       band_select_clock_mode=BandSelectClockMode.Low,
+                       ref_doubler=False, ref_div2=False, enable_gcd=True
+                       ))
+    print("INT", INT, "MOD", MOD, "FRAC", FRAC, "outdiv", output_divider, "bandselclkdiv", band_select_clock_divider)
+    regs = make_regs(INT=INT, MOD=4000, FRAC=FRAC, output_divider=output_divider,
+                     band_select_clock_divider=band_select_clock_divider,
+                     device_type=DeviceType.ADF4350, phase_value=None, mux_out=MuxOut.DVdd, charge_pump_current=2.50,
+                     feedback_select=FeedbackSelect.Fundamental, pd_polarity=PDPolarity.Positive,
+                     clk_div_mode=ClkDivMode.ResyncEnable, clock_divider_value=4000, csr=False,
+                     aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0)  # (-4,-1,2,5)
+
+    for r in range(len(regs)):
+        print("adf4530 reg", r, binprint(regs[r]), hex(regs[r]))
+        fourbytes = inttobytes(regs[r])
+        # for i in range(4): print(binprint(fourbytes[i]))
+        spicommand("ADF4530 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=2, nbyte=4)
 
 #address 1 2, value 1 (2)
 def board_setup(dopattern=False):
@@ -105,27 +127,7 @@ def board_setup(dopattern=False):
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
-    #For now use cs=2 for clk, later can use cs=3 on new board revision
-    freq = 1450.0
-    print('ADF4530 being set to %0.2f MHz' % freq)
-    INT, MOD, FRAC, output_divider, band_select_clock_divider = (
-        calculate_regs(device_type=DeviceType.ADF4350,freq=freq,ref_freq=50.0,
-        band_select_clock_mode=BandSelectClockMode.Low,
-        ref_doubler=False, ref_div2=True
-        ))
-    print("INT",INT,"MOD",MOD,"FRAC",FRAC,"outdiv",output_divider,"bandselclkdiv",band_select_clock_divider)
-    regs = make_regs(INT=INT, MOD=MOD, FRAC=FRAC, output_divider=output_divider, band_select_clock_divider=band_select_clock_divider,
-                     device_type=DeviceType.ADF4350, phase_value=None, mux_out=MuxOut.NDividerOutput,
-                     aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0, #(-4,-1,2,5)
-                     clk_div_mode=ClkDivMode.ResyncEnable,
-                     clock_divider_value=150
-                     )
-    for r in range(len(regs)):
-        print("adf4530 reg",r, binprint(regs[r]), hex(regs[r]))
-        fourbytes = inttobytes(regs[r])
-        #for i in range(4): print(binprint(fourbytes[i]))
-        spicommand2("ADF4530 Reg "+str(r), fourbytes[0], fourbytes[1], fourbytes[2], fourbytes[3],False, cs=2, nbyte=3)
-    time.sleep(0.1)
+    adf4350(1450.0)
 
 #################
 
