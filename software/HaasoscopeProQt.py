@@ -37,7 +37,9 @@ def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=
     if read:
         if show_bin: print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[0]))
         else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[0]))
-    else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third),hex(fourth))
+    else:
+        if nbyte==4: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third),hex(fourth))
+        else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third))
 
 def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     # first byte to send, start of address
@@ -54,27 +56,36 @@ def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     if read: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
     else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
-def adf4350(freq):
+def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider):
     # For now use cs=2 for clk, later can use cs=3 on new board revision
     print('ADF4530 being set to %0.2f MHz' % freq)
-    INT, MOD, FRAC, output_divider, band_select_clock_divider = (
-        calculate_regs(device_type=DeviceType.ADF4350, freq=freq, ref_freq=25.0,
-                       band_select_clock_mode=BandSelectClockMode.Low,
-                       ref_doubler=False, ref_div2=False, enable_gcd=True
-                       ))
+    INT, MOD, FRAC, output_divider, band_select_clock_divider = (calculate_regs(
+        device_type=DeviceType.ADF4351, freq=freq, ref_freq=25.0,
+        band_select_clock_mode=BandSelectClockMode.Low,
+        r_counter=r_counter, # needed when using FeedbackSelect.Divider (needed for phase resync?!)
+        ref_doubler=False, ref_div2=False, enable_gcd=True))
     print("INT", INT, "MOD", MOD, "FRAC", FRAC, "outdiv", output_divider, "bandselclkdiv", band_select_clock_divider)
-    regs = make_regs(INT=INT, MOD=4000, FRAC=FRAC, output_divider=output_divider,
-                     band_select_clock_divider=band_select_clock_divider,
-                     device_type=DeviceType.ADF4350, phase_value=None, mux_out=MuxOut.DVdd, charge_pump_current=2.50,
-                     feedback_select=FeedbackSelect.Fundamental, pd_polarity=PDPolarity.Positive,
-                     clk_div_mode=ClkDivMode.ResyncEnable, clock_divider_value=4000, csr=False,
-                     aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0)  # (-4,-1,2,5)
-
-    for r in range(len(regs)):
+    if divided==FeedbackSelect.Divider:
+        INT=int(INT/output_divider)
+        print("INT now",INT)
+    regs = make_regs(
+        INT=INT, MOD=MOD, FRAC=FRAC, output_divider=output_divider,
+        band_select_clock_divider=band_select_clock_divider, r_counter=r_counter,
+        device_type=DeviceType.ADF4351, phase_value=phase, mux_out=MuxOut.DVdd, charge_pump_current=2.50,
+        feedback_select=divided, pd_polarity=PDPolarity.Positive, prescaler='4/5',
+        clk_div_mode=ClkDivMode.ResyncEnable, clock_divider_value=1000, csr=False,
+        aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0) # (-4,-1,2,5)
+    #values can also be computed using free Analog Devices ADF435x Software:
+    #https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adf4351.html#eb-relatedsoftware
+    for r in reversed(range(len(regs))):
         print("adf4530 reg", r, binprint(regs[r]), hex(regs[r]))
         fourbytes = inttobytes(regs[r])
         # for i in range(4): print(binprint(fourbytes[i]))
         spicommand("ADF4530 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=2, nbyte=4)
+
+def adfreset():
+    # adf4350(150.0, None, 10) # need larger rcounter for low freq
+    adf4350(1450.0, None)
 
 #address 1 2, value 1 (2)
 def board_setup(dopattern=False):
@@ -127,12 +138,12 @@ def board_setup(dopattern=False):
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
-    adf4350(1450.0)
+    adfreset()
 
 #################
 
 # Define main window class from template
-WindowTemplate, TemplateBaseClass = loadUiType("Haasoscope.ui")
+WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
     num_chan_per_board = 4
@@ -169,6 +180,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.gridCheck.stateChanged.connect(self.grid)
         self.ui.markerCheck.stateChanged.connect(self.marker)
         self.ui.pllresetButton.clicked.connect(self.pllreset)
+        self.ui.adfresetButton.clicked.connect(adfreset)
         self.ui.upposButton0.clicked.connect(self.uppos)
         self.ui.downposButton0.clicked.connect(self.downpos)
         self.ui.upposButton1.clicked.connect(self.uppos1)
@@ -231,8 +243,8 @@ class MainWindow(TemplateBaseClass):
     phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
     # for 4th byte, 1 is up, 0 is down
-    def dophase(self,plloutnum,updown):
-        pllnum = int(self.ui.pllBox.value())
+    def dophase(self,plloutnum,updown,pllnum=None):
+        if pllnum is None: pllnum = int(self.ui.pllBox.value())
         usb.send(bytes([6,pllnum, int(plloutnum+2), updown, 100, 100, 100, 100]))
         if updown: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]+1
         else: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]-1
@@ -586,6 +598,10 @@ class MainWindow(TemplateBaseClass):
         return 1
 
     def init(self):
+
+        self.pllreset()
+        self.dophase(0,1,pllnum=1) # adjust phase of clkout
+
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])

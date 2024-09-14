@@ -2493,11 +2493,6 @@ refer to the applicable agreement for further details.
 	(pt -296 264)
 )
 (connector
-	(text "phasestep[0]" (rect -271 264 -210 281)(font "Intel Clear" ))
-	(pt -136 280)
-	(pt -296 280)
-)
-(connector
 	(text "scanclk" (rect -274 280 -239 297)(font "Intel Clear" ))
 	(pt -136 296)
 	(pt -296 296)
@@ -2514,4 +2509,9 @@ refer to the applicable agreement for further details.
 	(text "clk50" (rect -195 184 -170 201)(font "Intel Clear" ))
 	(pt -144 200)
 	(pt -216 200)
+)
+(connector
+	(text "phasestep[1]" (rect -271 264 -210 281)(font "Intel Clear" ))
+	(pt -136 280)
+	(pt -296 280)
 )
