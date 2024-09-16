@@ -141,7 +141,7 @@ def board_setup(dopattern=False):
 
     spicommand("DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
     spicommand("DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
-    dacval=int((pow(2,16)-1)*0.7)
+    dacval=int((pow(2,16)-1)*0.55)
     print("dacval is",dacval)
     spicommand("DAC 1 value", 0x18, dacval>>8, dacval%256, False, cs=4)
 
@@ -165,7 +165,7 @@ class MainWindow(TemplateBaseClass):
     xydata_overlapped=True
     total_rx_len = 0
     time_start = time.time()
-    triggertype = 0  # 0 no trigger, 1 threshold trigger
+    triggertype = 1  # 0 no trigger, 1 threshold trigger
     if dopattern: triggertype = 0
     selectedchannel=0
     def __init__(self):
