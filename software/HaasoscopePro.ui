@@ -225,7 +225,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Rolling</string>
+         <string>Normal</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -444,24 +444,6 @@
        <property name="title">
         <string>Readout options</string>
        </property>
-       <widget class="QCheckBox" name="avgCheck">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>70</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="text">
-         <string>Average</string>
-        </property>
-       </widget>
        <widget class="QCheckBox" name="highresCheck">
         <property name="geometry">
          <rect>
@@ -625,7 +607,7 @@
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>210</y>
+          <y>190</y>
           <width>51</width>
           <height>21</height>
          </rect>
@@ -643,9 +625,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>210</y>
+          <y>191</y>
           <width>47</width>
-          <height>13</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="font">
@@ -1183,6 +1165,45 @@
         </property>
         <property name="text">
          <string>Show persist</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>215</y>
+          <width>47</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>Offset</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="offsetBox">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>214</y>
+          <width>51</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="minimum">
+         <number>-100</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
         </property>
        </widget>
       </widget>

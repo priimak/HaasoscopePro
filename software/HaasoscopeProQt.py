@@ -88,7 +88,11 @@ def adfreset():
     # adf4350(150.0, None, 10) # need larger rcounter for low freq
     adf4350(1450.0, None)
 
-#address 1 2, value 1 (2)
+def dooffset(val): #val goes from -100% to 100%
+    dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
+    print("dacval is", dacval)
+    spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4)
+
 def board_setup(dopattern=False):
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
@@ -135,19 +139,13 @@ def board_setup(dopattern=False):
 
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    gain=0x20 #00 to 20 is 26 to -6 dB
+    gain=0x1a #00 to 20 is 26 to -6 dB
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
     spicommand("DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
     spicommand("DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
-    dacval=int((pow(2,16)-1)*0.55)
-    print("dacval is",dacval)
-    spicommand("DAC 1 value", 0x18, dacval>>8, dacval%256, False, cs=4)
-
-    adfreset()
-
-#################
+    dooffset(0)
 
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
@@ -162,7 +160,7 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     debugstrobe = True
     dofast = False
-    xydata_overlapped=True
+    xydata_overlapped=False
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger
@@ -199,6 +197,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.upposButton4.clicked.connect(self.uppos4)
         self.ui.downposButton4.clicked.connect(self.downpos4)
         self.ui.chanBox.valueChanged.connect(self.selectchannel)
+        self.ui.offsetBox.valueChanged.connect(self.changeoffset)
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
@@ -224,6 +223,9 @@ class MainWindow(TemplateBaseClass):
         if len(self.lines)>0:
             if self.lines[self.selectedchannel].isVisible():   self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
             else:   self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
+
+    def changeoffset(self):
+        dooffset(self.ui.offsetBox.value())
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
@@ -350,15 +352,11 @@ class MainWindow(TemplateBaseClass):
         self.vline = float(  2*(value-128)/256. *self.xscale /self.xscaling)
         self.otherlines[0].setData( [self.vline, self.vline], [self.min_y, self.max_y] ) # vertical line showing trigger time
 
-    rolltrigger=True
-    def tellrolltrig(self, roll):
-        return
     def rolling(self):
-        self.rolltrigger = not self.rolltrigger
-        self.tellrolltrig(self.rolltrigger)
-        self.ui.rollingButton.setChecked(self.rolltrigger)
-        if self.rolltrigger: self.ui.rollingButton.setText("Rolling/Auto")
-        else: self.ui.rollingButton.setText("Normal")
+        self.triggertype = not self.triggertype
+        self.ui.rollingButton.setChecked(self.triggertype)
+        if self.triggertype: self.ui.rollingButton.setText("Normal")
+        else: self.ui.rollingButton.setText("Auto")
 
     getone=False
     def single(self):
@@ -589,8 +587,10 @@ class MainWindow(TemplateBaseClass):
 
     def chantext(self):
         return (
-                "nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD) +"\n"
-                +"nbadstrobes "+str(self.nbadstr)
+                "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
+                +"\n"+"Nbadstrobes "+str(self.nbadstr)
+                +"\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
+                +"\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
         )
 
     def setup_connections(self):
@@ -607,7 +607,8 @@ class MainWindow(TemplateBaseClass):
     def init(self):
 
         self.pllreset()
-        self.dophase(0,1,pllnum=1) # adjust phase of clkout
+        for i in range(5): self.dophase(0,1,pllnum=1) # adjust phase of clkout
+        adfreset()
 
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
@@ -624,6 +625,7 @@ class MainWindow(TemplateBaseClass):
         else:
             try:
                 rx_len=self.getchannels()
+                if self.getone: self.dostartstop()
             except DeviceError:
                 print("Device error")
                 sys.exit(1)
