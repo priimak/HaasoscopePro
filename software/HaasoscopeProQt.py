@@ -25,6 +25,7 @@ def oldbytes():
 
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
+
 def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=0, nbyte=3):
     # first byte to send, start of address
     # second byte to send, rest of address
@@ -138,6 +139,12 @@ def board_setup(dopattern=False):
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
+    spicommand("DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
+    spicommand("DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
+    dacval=int((pow(2,16)-1)*0.7)
+    print("dacval is",dacval)
+    spicommand("DAC 1 value", 0x18, dacval>>8, dacval%256, False, cs=4)
+
     adfreset()
 
 #################
@@ -158,7 +165,7 @@ class MainWindow(TemplateBaseClass):
     xydata_overlapped=True
     total_rx_len = 0
     time_start = time.time()
-    triggertype = 1  # 0 no trigger, 1 threshold trigger
+    triggertype = 0  # 0 no trigger, 1 threshold trigger
     if dopattern: triggertype = 0
     selectedchannel=0
     def __init__(self):

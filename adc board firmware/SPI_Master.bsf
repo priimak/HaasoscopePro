@@ -100,7 +100,7 @@ refer to the applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"CLKS_PER_HALF_BIT"
-		"2"
+		"8"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

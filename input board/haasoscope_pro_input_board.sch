@@ -2861,8 +2861,6 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/TLV9102"&gt; Datasheet &lt;/a&gt;<
 <part name="D2" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603" value="green"/>
 <part name="R13" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R14" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
-<part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R15" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="IC4" library="OPA693ID" deviceset="OPA693ID" device=""/>
 <part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -3038,11 +3036,6 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/TLV9102"&gt; Datasheet &lt;/a&gt;<
 <attribute name="VALUE" x="194.056" y="22.86" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
 <instance part="SUPPLY18" gate="GND" x="193.04" y="12.7" smashed="yes"/>
-<instance part="R14" gate="G$1" x="96.52" y="71.12" smashed="yes" rot="R180">
-<attribute name="NAME" x="97.536" y="68.58" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="97.536" y="73.66" size="1.016" layer="96" font="vector" rot="R270"/>
-</instance>
-<instance part="SUPPLY2" gate="GND" x="96.52" y="63.5" smashed="yes"/>
 <instance part="R15" gate="G$1" x="93.98" y="71.12" smashed="yes" rot="R180">
 <attribute name="NAME" x="94.996" y="68.58" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="94.996" y="73.66" size="1.016" layer="96" font="vector" rot="R270"/>
@@ -3254,10 +3247,6 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/TLV9102"&gt; Datasheet &lt;/a&gt;<
 <segment>
 <pinref part="R13" gate="G$1" pin="P$1"/>
 <pinref part="SUPPLY18" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="R14" gate="G$1" pin="P$1"/>
-<pinref part="SUPPLY2" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="SUPPLY20" gate="GND" pin="GND"/>
@@ -3803,11 +3792,8 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/TLV9102"&gt; Datasheet &lt;/a&gt;<
 <net name="AOFFSET" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="P$1"/>
-<wire x1="101.6" y1="76.2" x2="96.52" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="76.2" x2="93.98" y2="76.2" width="0.1524" layer="91"/>
 <label x="91.44" y="76.2" size="1.778" layer="95"/>
-<pinref part="R14" gate="G$1" pin="P$2"/>
-<wire x1="96.52" y1="76.2" x2="93.98" y2="76.2" width="0.1524" layer="91"/>
-<junction x="96.52" y="76.2"/>
 <pinref part="R15" gate="G$1" pin="P$2"/>
 <wire x1="93.98" y1="76.2" x2="91.44" y2="76.2" width="0.1524" layer="91"/>
 <junction x="93.98" y="76.2"/>

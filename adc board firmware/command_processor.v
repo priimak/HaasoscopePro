@@ -57,9 +57,12 @@ module command_processor (
 
 );
 
-integer version = 9; // firmware version
+integer version = 11; // firmware version
 
 assign debugout[0] = locked;
+assign debugout[1] = spics[4];
+assign debugout[2] = spics[5];
+assign debugout[3] = 1;
 assign debugout[4] = overrange[0];
 assign debugout[5] = overrange[1];
 assign debugout[6] = overrange[2];
