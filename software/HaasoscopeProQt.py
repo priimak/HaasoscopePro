@@ -438,28 +438,28 @@ class MainWindow(TemplateBaseClass):
             self.lines.append(line)
             self.linepens.append(pen)
         self.ui.chanBox.setMaximum(self.num_chan_per_board*self.num_board-1)
+
         #for the logic analyzer
         for li in np.arange(self.num_logic_inputs):
             line = self.ui.plot.plot(pen=None,name="logic_"+str(li)) # not drawn by default
             self.lines.append(line)
             if li==0: self.logicline1=len(self.lines)-1 # remember index where this first logic line is
+
         #trigger lines
         self.vline=0.0
         pen = pg.mkPen(color="k",width=1.0,style=QtCore.Qt.DashLine)
         line = self.ui.plot.plot([self.vline, self.vline], [-2.0, 2.0], pen=pen,name="trigger time vert")
         self.otherlines.append(line)
+
         self.hline = 0.0
         pen = pg.mkPen(color="k",width=1.0,style=QtCore.Qt.DashLine)
         line = self.ui.plot.plot( [-2.0, 2.0], [self.hline, self.hline], pen=pen,name="trigger thresh horiz")
         self.otherlines.append(line)
-        self.hline2 = 0.0
-        pen = pg.mkPen(color="b",width=1.0,style=QtCore.Qt.DashLine)
-        line = self.ui.plot.plot( [-2.0, 2.0], [self.hline2, self.hline2], pen=pen,name="trigger thresh2 horiz") # not drawn by default
-        line.setVisible(False)
-        self.otherlines.append(line)
+
         #other stuff
-        #self.setxaxis()
-        #self.setyaxis()
+        self.ui.plot.setLabel('bottom',"Time (ns)")
+        self.ui.plot.setLabel('left', "Voltage (ADC sample value)")
+        self.ui.plot.setRange(yRange=(-2100, 2100),padding=0)
         #self.timechanged()
         self.ui.totBox.setMaximum(self.expect_samples)
         self.ui.plot.showGrid(x=True, y=True)
@@ -493,6 +493,7 @@ class MainWindow(TemplateBaseClass):
     nevents=0
     oldnevents=0
     tinterval=100.
+    nspersamp=1./2.9 # 1/freq in GHz
     oldtime=time.time()
     nbadclkA = 0
     nbadclkB = 0
@@ -617,7 +618,7 @@ class MainWindow(TemplateBaseClass):
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])
         else:
-            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])
+            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*self.nspersamp
         return 1
 
     def cleanup(self):
