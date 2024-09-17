@@ -59,6 +59,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 1))
 	)
 	(port
+		(pt 0 112)
+		(input)
+		(text "spimode[1..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "spimode[1..0]" (rect 21 107 72 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
 		(pt 232 32)
 		(output)
 		(text "o_TX_Ready" (rect 0 0 56 12)(font "Arial" ))
@@ -93,11 +100,6 @@ refer to the applicable agreement for further details.
 		(text "o_SPI_MOSI" (rect 157 91 211 103)(font "Arial" ))
 		(line (pt 232 96)(pt 216 96)(line_width 1))
 	)
-	(parameter
-		"SPI_MODE"
-		"0"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"CLKS_PER_HALF_BIT"
 		"8"

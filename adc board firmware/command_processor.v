@@ -53,7 +53,9 @@ module command_processor (
 	output reg [2:0] spimisossel=0, //which spimiso to listen to
 	output reg [27:0]	debugout,  // for debugging
 	input wire [3:0]	overrange,  //ORA0,A1,B0,B1
-	input wire [19:0] lvdsbits_o3
+	input wire [19:0] lvdsbits_o3,
+	
+	output reg [1:0] spi_mode=0
 
 );
 
@@ -841,8 +843,9 @@ always @ (posedge clk or negedge rstn)
 			endcase
 		end
 		
-		4 : begin // not used
-			o_tdata <= 19;
+		4 : begin // set SPI_MODE (see SPI_Master.v)
+			spi_mode <= rx_data[1][1:0];
+			o_tdata <= rx_data[1];
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;

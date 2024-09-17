@@ -79,22 +79,28 @@ def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider):
         aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0) # (-4,-1,2,5)
     #values can also be computed using free Analog Devices ADF435x Software:
     #https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adf4351.html#eb-relatedsoftware
+    spimode(1)
     for r in reversed(range(len(regs))):
         print("adf4530 reg", r, binprint(regs[r]), hex(regs[r]))
         fourbytes = inttobytes(regs[r])
         # for i in range(4): print(binprint(fourbytes[i]))
         spicommand("ADF4530 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=2, nbyte=4)
-
-def adfreset():
-    # adf4350(150.0, None, 10) # need larger rcounter for low freq
-    adf4350(1450.0, None)
+    spimode(1)
 
 def dooffset(val): #val goes from -100% to 100%
+    spimode(2)
     dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
     print("dacval is", dacval)
     spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4)
+    spimode(1)
+
+def spimode(mode): # set SPI mode (polarity of clk and data)
+    usb.send(bytes([4, mode, 0, 0, 0, 0, 0, 0]))
+    spires = usb.recv(4)
+    print("SPI mode now",spires[0])
 
 def board_setup(dopattern=False):
+    spimode(1)
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
@@ -144,14 +150,17 @@ def board_setup(dopattern=False):
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
+    spimode(2)
     spicommand("DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
     spicommand("DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
+    spimode(1)
     dooffset(0)
 
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
+    samplerate= 3.2 # freq in GHz
     num_chan_per_board = 4
     num_board = 1
     num_logic_inputs = 1
@@ -186,7 +195,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.gridCheck.stateChanged.connect(self.grid)
         self.ui.markerCheck.stateChanged.connect(self.marker)
         self.ui.pllresetButton.clicked.connect(self.pllreset)
-        self.ui.adfresetButton.clicked.connect(adfreset)
+        self.ui.adfresetButton.clicked.connect(self.adfreset)
         self.ui.upposButton0.clicked.connect(self.uppos)
         self.ui.downposButton0.clicked.connect(self.downpos)
         self.ui.upposButton1.clicked.connect(self.uppos1)
@@ -227,6 +236,10 @@ class MainWindow(TemplateBaseClass):
 
     def changeoffset(self):
         dooffset(self.ui.offsetBox.value())
+
+    def adfreset(self):
+        # adf4350(150.0, None, 10) # need larger rcounter for low freq
+        adf4350(self.samplerate*1000/2, None)
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
@@ -493,7 +506,6 @@ class MainWindow(TemplateBaseClass):
     nevents=0
     oldnevents=0
     tinterval=100.
-    nspersamp=1./2.9 # 1/freq in GHz
     oldtime=time.time()
     nbadclkA = 0
     nbadclkB = 0
@@ -612,13 +624,13 @@ class MainWindow(TemplateBaseClass):
         for i in range(5): self.dophase(0,1,pllnum=1,quiet=(i!=5-1)) # adjust phase of clkout, pll 1, c0
         self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2
         for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60, pll 2, c0
-        adfreset()
+        self.adfreset()
 
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])
         else:
-            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*self.nspersamp
+            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])/self.samplerate
         return 1
 
     def cleanup(self):

@@ -310,6 +310,13 @@ refer to the applicable agreement for further details.
 		(text "debugout[27..0]" (rect 199 299 259 311)(font "Arial" ))
 		(line (pt 280 304)(pt 264 304)(line_width 3))
 	)
+	(port
+		(pt 280 320)
+		(output)
+		(text "spi_mode[1..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "spi_mode[1..0]" (rect 202 315 259 327)(font "Arial" ))
+		(line (pt 280 320)(pt 264 320)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 264 416)(line_width 1))
 	)

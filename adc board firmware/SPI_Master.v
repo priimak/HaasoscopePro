@@ -34,8 +34,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 module SPI_Master
-  #(parameter SPI_MODE = 0,
-    parameter CLKS_PER_HALF_BIT = 8)
+  #(parameter CLKS_PER_HALF_BIT = 8)
   (
    // Control/Data Signals,
    input        i_Rst_L,     // FPGA Reset
@@ -53,7 +52,9 @@ module SPI_Master
    // SPI Interface
    output reg o_SPI_Clk,
    input      i_SPI_MISO,
-   output reg o_SPI_MOSI
+   output reg o_SPI_MOSI,
+	
+	input wire [1:0] spimode
    );
 
   // SPI Interface (All Runs at SPI Clock Domain)
@@ -74,14 +75,14 @@ module SPI_Master
   // CPOL: Clock Polarity
   // CPOL=0 means clock idles at 0, leading edge is rising edge.
   // CPOL=1 means clock idles at 1, leading edge is falling edge.
-  assign w_CPOL  = (SPI_MODE == 2) | (SPI_MODE == 3);
+  assign w_CPOL  = (spimode == 2) | (spimode == 3);
 
   // CPHA: Clock Phase
   // CPHA=0 means the "out" side changes the data on trailing edge of clock
   //              the "in" side captures data on leading edge of clock
   // CPHA=1 means the "out" side changes the data on leading edge of clock
   //              the "in" side captures data on the trailing edge of clock
-  assign w_CPHA  = (SPI_MODE == 1) | (SPI_MODE == 3);
+  assign w_CPHA  = (spimode == 1) | (spimode == 3);
 
 
 
