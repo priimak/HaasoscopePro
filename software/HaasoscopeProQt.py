@@ -252,12 +252,12 @@ class MainWindow(TemplateBaseClass):
     phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
     # for 4th byte, 1 is up, 0 is down
-    def dophase(self,plloutnum,updown,pllnum=None):
+    def dophase(self,plloutnum,updown,pllnum=None,quiet=False):
         if pllnum is None: pllnum = int(self.ui.pllBox.value())
         usb.send(bytes([6,pllnum, int(plloutnum+2), updown, 100, 100, 100, 100]))
         if updown: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]+1
         else: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]-1
-        print("phase for pllnum",pllnum,"plloutnum",plloutnum,"now",self.phasec[pllnum][plloutnum])
+        if not quiet: print("phase for pllnum",pllnum,"plloutnum",plloutnum,"now",self.phasec[pllnum][plloutnum])
     def uppos(self): self.dophase(plloutnum=0,updown=1)
     def uppos1(self): self.dophase(plloutnum=1,updown=1)
     def uppos2(self): self.dophase(plloutnum=2,updown=1)
@@ -607,7 +607,9 @@ class MainWindow(TemplateBaseClass):
     def init(self):
 
         self.pllreset()
-        for i in range(5): self.dophase(0,1,pllnum=1) # adjust phase of clkout
+        for i in range(5): self.dophase(0,1,pllnum=1,quiet=(i!=5-1)) # adjust phase of clkout, pll 1, c0
+        self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2
+        for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60, pll 2, c0
         adfreset()
 
         if self.xydata_overlapped:
