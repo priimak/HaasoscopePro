@@ -622,8 +622,9 @@ class MainWindow(TemplateBaseClass):
     def init(self):
 
         self.pllreset()
-        for i in range(5): self.dophase(0,1,pllnum=1,quiet=(i!=5-1)) # adjust phase of clkout, pll 1, c0
-        self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2
+        for i in range(4): self.dophase(0,0,pllnum=1,quiet=(i!=4-1)) # adjust phase of clkout, pll 1, c0
+        #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
+        #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
         for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60, pll 2, c0
         self.adfreset()
 

@@ -351,12 +351,8 @@ set_location_assignment PIN_AA16 -to lvds4in[9]
 set_location_assignment PIN_AB16 -to "lvds4in[9](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other2[1]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other2[0]
-set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other3[1]
-set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other3[0]
 set_location_assignment PIN_AA14 -to lvdsin_other2[0]
 set_location_assignment PIN_AB14 -to "lvdsin_other2[0](n)"
-set_location_assignment PIN_P2 -to lvdsin_other3[0]
-set_location_assignment PIN_P1 -to "lvdsin_other3[0](n)"
 set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE BALANCED
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE 12.5%
 set_global_assignment -name POWER_USE_INPUT_FILES OFF
@@ -364,6 +360,8 @@ set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
 set_location_assignment PIN_E5 -to clkout
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clkout
 set_global_assignment -name ALLOW_REGISTER_RETIMING ON
+set_location_assignment PIN_P2 -to lvds1in[9]
+set_location_assignment PIN_P1 -to "lvds1in[9](n)"
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
 set_global_assignment -name VERILOG_FILE command_processor.v

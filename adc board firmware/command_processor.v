@@ -1,11 +1,6 @@
 //--------------------------------------------------------------------------------------------------------
 // Module  : command_processor
-// Type    : synthesizable
-// Standard: Verilog 2001 (IEEE1364-2001)
-// Function: receive 8 bytes from AXI-stream slave,
-//           then take various actions,
-//				 send length of bytes on AXI-stream master
-//           this module will called by fpga_top_ft600_tx_mass.v or fpga_top_ft232h_tx_mass.v
+// Function: receive 8 bytes from AXI-stream slave, then take various actions
 //--------------------------------------------------------------------------------------------------------
 
 module command_processor (
@@ -53,7 +48,6 @@ module command_processor (
 	output reg [2:0] spimisossel=0, //which spimiso to listen to
 	output reg [27:0]	debugout,  // for debugging
 	input wire [3:0]	overrange,  //ORA0,A1,B0,B1
-	input wire [19:0] lvdsbits_o3,
 	
 	output reg [1:0] spi_mode=0
 
@@ -178,197 +172,22 @@ reg [1:0] sampleclkstr38=0;
 reg [1:0] sampleclkstr39=0;
 
 
-reg signed [11:0]  samplevalue0sync=0;
-reg signed [11:0]  samplevalue1sync=0;
-reg signed [11:0]  samplevalue2sync=0;
-reg signed [11:0]  samplevalue3sync=0;
-reg signed [11:0]  samplevalue4sync=0;
-reg signed [11:0]  samplevalue5sync=0;
-reg signed [11:0]  samplevalue6sync=0;
-reg signed [11:0]  samplevalue7sync=0;
-reg signed [11:0]  samplevalue8sync=0;
-reg signed [11:0]  samplevalue9sync=0;
-reg [1:0] sampleclkstr0sync=0;
-reg [1:0] sampleclkstr1sync=0;
-reg [1:0] sampleclkstr2sync=0;
-reg [1:0] sampleclkstr3sync=0;
-reg [1:0] sampleclkstr4sync=0;
-reg [1:0] sampleclkstr5sync=0;
-reg [1:0] sampleclkstr6sync=0;
-reg [1:0] sampleclkstr7sync=0;
-reg [1:0] sampleclkstr8sync=0;
-reg [1:0] sampleclkstr9sync=0;
-
-reg signed [11:0]  samplevalue10sync=0;
-reg signed [11:0]  samplevalue11sync=0;
-reg signed [11:0]  samplevalue12sync=0;
-reg signed [11:0]  samplevalue13sync=0;
-reg signed [11:0]  samplevalue14sync=0;
-reg signed [11:0]  samplevalue15sync=0;
-reg signed [11:0]  samplevalue16sync=0;
-reg signed [11:0]  samplevalue17sync=0;
-reg signed [11:0]  samplevalue18sync=0;
-reg signed [11:0]  samplevalue19sync=0;
-reg [1:0] sampleclkstr10sync=0;
-reg [1:0] sampleclkstr11sync=0;
-reg [1:0] sampleclkstr12sync=0;
-reg [1:0] sampleclkstr13sync=0;
-reg [1:0] sampleclkstr14sync=0;
-reg [1:0] sampleclkstr15sync=0;
-reg [1:0] sampleclkstr16sync=0;
-reg [1:0] sampleclkstr17sync=0;
-reg [1:0] sampleclkstr18sync=0;
-reg [1:0] sampleclkstr19sync=0;
-
-reg signed [11:0]  samplevalue20sync=0;
-reg signed [11:0]  samplevalue21sync=0;
-reg signed [11:0]  samplevalue22sync=0;
-reg signed [11:0]  samplevalue23sync=0;
-reg signed [11:0]  samplevalue24sync=0;
-reg signed [11:0]  samplevalue25sync=0;
-reg signed [11:0]  samplevalue26sync=0;
-reg signed [11:0]  samplevalue27sync=0;
-reg signed [11:0]  samplevalue28sync=0;
-reg signed [11:0]  samplevalue29sync=0;
-reg [1:0] sampleclkstr20sync=0;
-reg [1:0] sampleclkstr21sync=0;
-reg [1:0] sampleclkstr22sync=0;
-reg [1:0] sampleclkstr23sync=0;
-reg [1:0] sampleclkstr24sync=0;
-reg [1:0] sampleclkstr25sync=0;
-reg [1:0] sampleclkstr26sync=0;
-reg [1:0] sampleclkstr27sync=0;
-reg [1:0] sampleclkstr28sync=0;
-reg [1:0] sampleclkstr29sync=0;
-
-reg signed [11:0]  samplevalue30sync=0;
-reg signed [11:0]  samplevalue31sync=0;
-reg signed [11:0]  samplevalue32sync=0;
-reg signed [11:0]  samplevalue33sync=0;
-reg signed [11:0]  samplevalue34sync=0;
-reg signed [11:0]  samplevalue35sync=0;
-reg signed [11:0]  samplevalue36sync=0;
-reg signed [11:0]  samplevalue37sync=0;
-reg signed [11:0]  samplevalue38sync=0;
-reg signed [11:0]  samplevalue39sync=0;
-reg [1:0] sampleclkstr30sync=0;
-reg [1:0] sampleclkstr31sync=0;
-reg [1:0] sampleclkstr32sync=0;
-reg [1:0] sampleclkstr33sync=0;
-reg [1:0] sampleclkstr34sync=0;
-reg [1:0] sampleclkstr35sync=0;
-reg [1:0] sampleclkstr36sync=0;
-reg [1:0] sampleclkstr37sync=0;
-reg [1:0] sampleclkstr38sync=0;
-reg [1:0] sampleclkstr39sync=0;
-
-
-
-
-reg signed [11:0]  samplevalue0sync2=0;
-reg signed [11:0]  samplevalue1sync2=0;
-reg signed [11:0]  samplevalue2sync2=0;
-reg signed [11:0]  samplevalue3sync2=0;
-reg signed [11:0]  samplevalue4sync2=0;
-reg signed [11:0]  samplevalue5sync2=0;
-reg signed [11:0]  samplevalue6sync2=0;
-reg signed [11:0]  samplevalue7sync2=0;
-reg signed [11:0]  samplevalue8sync2=0;
-reg signed [11:0]  samplevalue9sync2=0;
-reg [1:0] sampleclkstr0sync2=0;
-reg [1:0] sampleclkstr1sync2=0;
-reg [1:0] sampleclkstr2sync2=0;
-reg [1:0] sampleclkstr3sync2=0;
-reg [1:0] sampleclkstr4sync2=0;
-reg [1:0] sampleclkstr5sync2=0;
-reg [1:0] sampleclkstr6sync2=0;
-reg [1:0] sampleclkstr7sync2=0;
-reg [1:0] sampleclkstr8sync2=0;
-reg [1:0] sampleclkstr9sync2=0;
-
-reg signed [11:0]  samplevalue10sync2=0;
-reg signed [11:0]  samplevalue11sync2=0;
-reg signed [11:0]  samplevalue12sync2=0;
-reg signed [11:0]  samplevalue13sync2=0;
-reg signed [11:0]  samplevalue14sync2=0;
-reg signed [11:0]  samplevalue15sync2=0;
-reg signed [11:0]  samplevalue16sync2=0;
-reg signed [11:0]  samplevalue17sync2=0;
-reg signed [11:0]  samplevalue18sync2=0;
-reg signed [11:0]  samplevalue19sync2=0;
-reg [1:0] sampleclkstr10sync2=0;
-reg [1:0] sampleclkstr11sync2=0;
-reg [1:0] sampleclkstr12sync2=0;
-reg [1:0] sampleclkstr13sync2=0;
-reg [1:0] sampleclkstr14sync2=0;
-reg [1:0] sampleclkstr15sync2=0;
-reg [1:0] sampleclkstr16sync2=0;
-reg [1:0] sampleclkstr17sync2=0;
-reg [1:0] sampleclkstr18sync2=0;
-reg [1:0] sampleclkstr19sync2=0;
-
-reg signed [11:0]  samplevalue20sync2=0;
-reg signed [11:0]  samplevalue21sync2=0;
-reg signed [11:0]  samplevalue22sync2=0;
-reg signed [11:0]  samplevalue23sync2=0;
-reg signed [11:0]  samplevalue24sync2=0;
-reg signed [11:0]  samplevalue25sync2=0;
-reg signed [11:0]  samplevalue26sync2=0;
-reg signed [11:0]  samplevalue27sync2=0;
-reg signed [11:0]  samplevalue28sync2=0;
-reg signed [11:0]  samplevalue29sync2=0;
-reg [1:0] sampleclkstr20sync2=0;
-reg [1:0] sampleclkstr21sync2=0;
-reg [1:0] sampleclkstr22sync2=0;
-reg [1:0] sampleclkstr23sync2=0;
-reg [1:0] sampleclkstr24sync2=0;
-reg [1:0] sampleclkstr25sync2=0;
-reg [1:0] sampleclkstr26sync2=0;
-reg [1:0] sampleclkstr27sync2=0;
-reg [1:0] sampleclkstr28sync2=0;
-reg [1:0] sampleclkstr29sync2=0;
-
-reg signed [11:0]  samplevalue30sync2=0;
-reg signed [11:0]  samplevalue31sync2=0;
-reg signed [11:0]  samplevalue32sync2=0;
-reg signed [11:0]  samplevalue33sync2=0;
-reg signed [11:0]  samplevalue34sync2=0;
-reg signed [11:0]  samplevalue35sync2=0;
-reg signed [11:0]  samplevalue36sync2=0;
-reg signed [11:0]  samplevalue37sync2=0;
-reg signed [11:0]  samplevalue38sync2=0;
-reg signed [11:0]  samplevalue39sync2=0;
-reg [1:0] sampleclkstr30sync2=0;
-reg [1:0] sampleclkstr31sync2=0;
-reg [1:0] sampleclkstr32sync2=0;
-reg [1:0] sampleclkstr33sync2=0;
-reg [1:0] sampleclkstr34sync2=0;
-reg [1:0] sampleclkstr35sync2=0;
-reg [1:0] sampleclkstr36sync2=0;
-reg [1:0] sampleclkstr37sync2=0;
-reg [1:0] sampleclkstr38sync2=0;
-reg [1:0] sampleclkstr39sync2=0;
-
-
-
-
-
 always @ (posedge clklvds) begin
 	
 	triggerlive2 <= triggerlive;
 	lengthtotake2 <= lengthtotake;
 	triggertype2 <= triggertype;
 	
-samplevalue0  <= {lvds1bits[110],lvds1bits[100],lvdsbits_o3[0],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
-samplevalue1  <= {lvds1bits[111],lvds1bits[101],lvdsbits_o3[1],lvds1bits[81],lvds1bits[71],lvds1bits[61],lvds1bits[51],lvds1bits[41],lvds1bits[31],lvds1bits[21],lvds1bits[11],lvds1bits[1]};
-samplevalue2  <= {lvds1bits[112],lvds1bits[102],lvdsbits_o3[2],lvds1bits[82],lvds1bits[72],lvds1bits[62],lvds1bits[52],lvds1bits[42],lvds1bits[32],lvds1bits[22],lvds1bits[12],lvds1bits[2]};
-samplevalue3  <= {lvds1bits[113],lvds1bits[103],lvdsbits_o3[3],lvds1bits[83],lvds1bits[73],lvds1bits[63],lvds1bits[53],lvds1bits[43],lvds1bits[33],lvds1bits[23],lvds1bits[13],lvds1bits[3]};
-samplevalue4  <= {lvds1bits[114],lvds1bits[104],lvdsbits_o3[4],lvds1bits[84],lvds1bits[74],lvds1bits[64],lvds1bits[54],lvds1bits[44],lvds1bits[34],lvds1bits[24],lvds1bits[14],lvds1bits[4]};
-samplevalue5  <= {lvds1bits[115],lvds1bits[105],lvdsbits_o3[5],lvds1bits[85],lvds1bits[75],lvds1bits[65],lvds1bits[55],lvds1bits[45],lvds1bits[35],lvds1bits[25],lvds1bits[15],lvds1bits[5]};
-samplevalue6  <= {lvds1bits[116],lvds1bits[106],lvdsbits_o3[6],lvds1bits[86],lvds1bits[76],lvds1bits[66],lvds1bits[56],lvds1bits[46],lvds1bits[36],lvds1bits[26],lvds1bits[16],lvds1bits[6]};
-samplevalue7  <= {lvds1bits[117],lvds1bits[107],lvdsbits_o3[7],lvds1bits[87],lvds1bits[77],lvds1bits[67],lvds1bits[57],lvds1bits[47],lvds1bits[37],lvds1bits[27],lvds1bits[17],lvds1bits[7]};
-samplevalue8  <= {lvds1bits[118],lvds1bits[108],lvdsbits_o3[8],lvds1bits[88],lvds1bits[78],lvds1bits[68],lvds1bits[58],lvds1bits[48],lvds1bits[38],lvds1bits[28],lvds1bits[18],lvds1bits[8]};
-samplevalue9  <= {lvds1bits[119],lvds1bits[109],lvdsbits_o3[9],lvds1bits[89],lvds1bits[79],lvds1bits[69],lvds1bits[59],lvds1bits[49],lvds1bits[39],lvds1bits[29],lvds1bits[19],lvds1bits[9]};
+samplevalue0  <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
+samplevalue1  <= {lvds1bits[111],lvds1bits[101],lvds1bits[91],lvds1bits[81],lvds1bits[71],lvds1bits[61],lvds1bits[51],lvds1bits[41],lvds1bits[31],lvds1bits[21],lvds1bits[11],lvds1bits[1]};
+samplevalue2  <= {lvds1bits[112],lvds1bits[102],lvds1bits[92],lvds1bits[82],lvds1bits[72],lvds1bits[62],lvds1bits[52],lvds1bits[42],lvds1bits[32],lvds1bits[22],lvds1bits[12],lvds1bits[2]};
+samplevalue3  <= {lvds1bits[113],lvds1bits[103],lvds1bits[93],lvds1bits[83],lvds1bits[73],lvds1bits[63],lvds1bits[53],lvds1bits[43],lvds1bits[33],lvds1bits[23],lvds1bits[13],lvds1bits[3]};
+samplevalue4  <= {lvds1bits[114],lvds1bits[104],lvds1bits[94],lvds1bits[84],lvds1bits[74],lvds1bits[64],lvds1bits[54],lvds1bits[44],lvds1bits[34],lvds1bits[24],lvds1bits[14],lvds1bits[4]};
+samplevalue5  <= {lvds1bits[115],lvds1bits[105],lvds1bits[95],lvds1bits[85],lvds1bits[75],lvds1bits[65],lvds1bits[55],lvds1bits[45],lvds1bits[35],lvds1bits[25],lvds1bits[15],lvds1bits[5]};
+samplevalue6  <= {lvds1bits[116],lvds1bits[106],lvds1bits[96],lvds1bits[86],lvds1bits[76],lvds1bits[66],lvds1bits[56],lvds1bits[46],lvds1bits[36],lvds1bits[26],lvds1bits[16],lvds1bits[6]};
+samplevalue7  <= {lvds1bits[117],lvds1bits[107],lvds1bits[97],lvds1bits[87],lvds1bits[77],lvds1bits[67],lvds1bits[57],lvds1bits[47],lvds1bits[37],lvds1bits[27],lvds1bits[17],lvds1bits[7]};
+samplevalue8  <= {lvds1bits[118],lvds1bits[108],lvds1bits[98],lvds1bits[88],lvds1bits[78],lvds1bits[68],lvds1bits[58],lvds1bits[48],lvds1bits[38],lvds1bits[28],lvds1bits[18],lvds1bits[8]};
+samplevalue9  <= {lvds1bits[119],lvds1bits[109],lvds1bits[99],lvds1bits[89],lvds1bits[79],lvds1bits[69],lvds1bits[59],lvds1bits[49],lvds1bits[39],lvds1bits[29],lvds1bits[19],lvds1bits[9]};
 sampleclkstr0 <= {lvds1bits[130],lvds1bits[120]};
 sampleclkstr1 <= {lvds1bits[131],lvds1bits[121]};
 sampleclkstr2 <= {lvds1bits[132],lvds1bits[122]};
@@ -379,27 +198,6 @@ sampleclkstr6 <= {lvds1bits[136],lvds1bits[126]};
 sampleclkstr7 <= {lvds1bits[137],lvds1bits[127]};
 sampleclkstr8 <= {lvds1bits[138],lvds1bits[128]};
 sampleclkstr9 <= {lvds1bits[139],lvds1bits[129]};
-
-samplevalue0sync  <= samplevalue0 ;
-samplevalue1sync  <= samplevalue1 ;
-samplevalue2sync  <= samplevalue2 ;
-samplevalue3sync  <= samplevalue3 ;
-samplevalue4sync  <= samplevalue4 ;
-samplevalue5sync  <= samplevalue5 ;
-samplevalue6sync  <= samplevalue6 ;
-samplevalue7sync  <= samplevalue7 ;
-samplevalue8sync  <= samplevalue8 ;
-samplevalue9sync  <= samplevalue9 ;
-sampleclkstr0sync <= sampleclkstr0;
-sampleclkstr1sync <= sampleclkstr1;
-sampleclkstr2sync <= sampleclkstr2;
-sampleclkstr3sync <= sampleclkstr3;
-sampleclkstr4sync <= sampleclkstr4;
-sampleclkstr5sync <= sampleclkstr5;
-sampleclkstr6sync <= sampleclkstr6;
-sampleclkstr7sync <= sampleclkstr7;
-sampleclkstr8sync <= sampleclkstr8;
-sampleclkstr9sync <= sampleclkstr9;
 
 samplevalue10  <= {lvds2bits[110],lvds2bits[100],lvds2bits[90],lvds2bits[80],lvdsbits_other[0],lvdsbits_other[10],lvds2bits[50],lvds2bits[40],lvds2bits[30],lvds2bits[20],lvds2bits[10],lvds2bits[0]};
 samplevalue11  <= {lvds2bits[111],lvds2bits[101],lvds2bits[91],lvds2bits[81],lvdsbits_other[1],lvdsbits_other[11],lvds2bits[51],lvds2bits[41],lvds2bits[31],lvds2bits[21],lvds2bits[11],lvds2bits[1]};
@@ -422,27 +220,6 @@ sampleclkstr17 <= {lvds2bits[137],lvds2bits[127]};
 sampleclkstr18 <= {lvds2bits[138],lvds2bits[128]};
 sampleclkstr19 <= {lvds2bits[139],lvds2bits[129]};
 
-samplevalue10sync  <= samplevalue10 ;
-samplevalue11sync  <= samplevalue11 ;
-samplevalue12sync  <= samplevalue12 ;
-samplevalue13sync  <= samplevalue13 ;
-samplevalue14sync  <= samplevalue14 ;
-samplevalue15sync  <= samplevalue15 ;
-samplevalue16sync  <= samplevalue16 ;
-samplevalue17sync  <= samplevalue17 ;
-samplevalue18sync  <= samplevalue18 ;
-samplevalue19sync  <= samplevalue19 ;
-sampleclkstr10sync <= sampleclkstr10;
-sampleclkstr11sync <= sampleclkstr11;
-sampleclkstr12sync <= sampleclkstr12;
-sampleclkstr13sync <= sampleclkstr13;
-sampleclkstr14sync <= sampleclkstr14;
-sampleclkstr15sync <= sampleclkstr15;
-sampleclkstr16sync <= sampleclkstr16;
-sampleclkstr17sync <= sampleclkstr17;
-sampleclkstr18sync <= sampleclkstr18;
-sampleclkstr19sync <= sampleclkstr19;
-
 samplevalue20  <= {lvds3bits[110],lvds3bits[100],lvds3bits[90],lvds3bits[80],lvds3bits[70],lvds3bits[60],lvds3bits[50],lvds3bits[40],lvds3bits[30],lvds3bits[20],lvds3bits[10],lvds3bits[0]};
 samplevalue21  <= {lvds3bits[111],lvds3bits[101],lvds3bits[91],lvds3bits[81],lvds3bits[71],lvds3bits[61],lvds3bits[51],lvds3bits[41],lvds3bits[31],lvds3bits[21],lvds3bits[11],lvds3bits[1]};
 samplevalue22  <= {lvds3bits[112],lvds3bits[102],lvds3bits[92],lvds3bits[82],lvds3bits[72],lvds3bits[62],lvds3bits[52],lvds3bits[42],lvds3bits[32],lvds3bits[22],lvds3bits[12],lvds3bits[2]};
@@ -464,27 +241,6 @@ sampleclkstr27 <= {lvds3bits[137],lvds3bits[127]};
 sampleclkstr28 <= {lvds3bits[138],lvds3bits[128]};
 sampleclkstr29 <= {lvds3bits[139],lvds3bits[129]};
 
-samplevalue20sync  <= samplevalue20 ;
-samplevalue21sync  <= samplevalue21 ;
-samplevalue22sync  <= samplevalue22 ;
-samplevalue23sync  <= samplevalue23 ;
-samplevalue24sync  <= samplevalue24 ;
-samplevalue25sync  <= samplevalue25 ;
-samplevalue26sync  <= samplevalue26 ;
-samplevalue27sync  <= samplevalue27 ;
-samplevalue28sync  <= samplevalue28 ;
-samplevalue29sync  <= samplevalue29 ;
-sampleclkstr20sync <= sampleclkstr20;
-sampleclkstr21sync <= sampleclkstr21;
-sampleclkstr22sync <= sampleclkstr22;
-sampleclkstr23sync <= sampleclkstr23;
-sampleclkstr24sync <= sampleclkstr24;
-sampleclkstr25sync <= sampleclkstr25;
-sampleclkstr26sync <= sampleclkstr26;
-sampleclkstr27sync <= sampleclkstr27;
-sampleclkstr28sync <= sampleclkstr28;
-sampleclkstr29sync <= sampleclkstr29;
-
 samplevalue30  <= {lvdsbits_o2[0],lvds4bits[100],lvds4bits[90],lvds4bits[80],lvds4bits[70],lvds4bits[60],lvds4bits[50],lvds4bits[40],lvds4bits[30],lvds4bits[20],lvds4bits[10],lvds4bits[0]};
 samplevalue31  <= {lvdsbits_o2[1],lvds4bits[101],lvds4bits[91],lvds4bits[81],lvds4bits[71],lvds4bits[61],lvds4bits[51],lvds4bits[41],lvds4bits[31],lvds4bits[21],lvds4bits[11],lvds4bits[1]};
 samplevalue32  <= {lvdsbits_o2[2],lvds4bits[102],lvds4bits[92],lvds4bits[82],lvds4bits[72],lvds4bits[62],lvds4bits[52],lvds4bits[42],lvds4bits[32],lvds4bits[22],lvds4bits[12],lvds4bits[2]};
@@ -505,112 +261,6 @@ sampleclkstr36 <= {lvds4bits[136],lvds4bits[126]};
 sampleclkstr37 <= {lvds4bits[137],lvds4bits[127]};
 sampleclkstr38 <= {lvds4bits[138],lvds4bits[128]};
 sampleclkstr39 <= {lvds4bits[139],lvds4bits[129]};
-
-samplevalue30sync  <= samplevalue30 ;
-samplevalue31sync  <= samplevalue31 ;
-samplevalue32sync  <= samplevalue32 ;
-samplevalue33sync  <= samplevalue33 ;
-samplevalue34sync  <= samplevalue34 ;
-samplevalue35sync  <= samplevalue35 ;
-samplevalue36sync  <= samplevalue36 ;
-samplevalue37sync  <= samplevalue37 ;
-samplevalue38sync  <= samplevalue38 ;
-samplevalue39sync  <= samplevalue39 ;
-sampleclkstr30sync <= sampleclkstr30;
-sampleclkstr31sync <= sampleclkstr31;
-sampleclkstr32sync <= sampleclkstr32;
-sampleclkstr33sync <= sampleclkstr33;
-sampleclkstr34sync <= sampleclkstr34;
-sampleclkstr35sync <= sampleclkstr35;
-sampleclkstr36sync <= sampleclkstr36;
-sampleclkstr37sync <= sampleclkstr37;
-sampleclkstr38sync <= sampleclkstr38;
-sampleclkstr39sync <= sampleclkstr39;
-
-
-samplevalue0sync2  <= samplevalue0sync ;
-samplevalue1sync2  <= samplevalue1sync ;
-samplevalue2sync2  <= samplevalue2sync ;
-samplevalue3sync2  <= samplevalue3sync ;
-samplevalue4sync2  <= samplevalue4sync ;
-samplevalue5sync2  <= samplevalue5sync ;
-samplevalue6sync2  <= samplevalue6sync ;
-samplevalue7sync2  <= samplevalue7sync ;
-samplevalue8sync2  <= samplevalue8sync ;
-samplevalue9sync2  <= samplevalue9sync ;
-sampleclkstr0sync2 <= sampleclkstr0sync;
-sampleclkstr1sync2 <= sampleclkstr1sync;
-sampleclkstr2sync2 <= sampleclkstr2sync;
-sampleclkstr3sync2 <= sampleclkstr3sync;
-sampleclkstr4sync2 <= sampleclkstr4sync;
-sampleclkstr5sync2 <= sampleclkstr5sync;
-sampleclkstr6sync2 <= sampleclkstr6sync;
-sampleclkstr7sync2 <= sampleclkstr7sync;
-sampleclkstr8sync2 <= sampleclkstr8sync;
-sampleclkstr9sync2 <= sampleclkstr9sync;
-
-samplevalue10sync2  <= samplevalue10sync ;
-samplevalue11sync2  <= samplevalue11sync ;
-samplevalue12sync2  <= samplevalue12sync ;
-samplevalue13sync2  <= samplevalue13sync ;
-samplevalue14sync2  <= samplevalue14sync ;
-samplevalue15sync2  <= samplevalue15sync ;
-samplevalue16sync2  <= samplevalue16sync ;
-samplevalue17sync2  <= samplevalue17sync ;
-samplevalue18sync2  <= samplevalue18sync ;
-samplevalue19sync2  <= samplevalue19sync ;
-sampleclkstr10sync2 <= sampleclkstr10sync;
-sampleclkstr11sync2 <= sampleclkstr11sync;
-sampleclkstr12sync2 <= sampleclkstr12sync;
-sampleclkstr13sync2 <= sampleclkstr13sync;
-sampleclkstr14sync2 <= sampleclkstr14sync;
-sampleclkstr15sync2 <= sampleclkstr15sync;
-sampleclkstr16sync2 <= sampleclkstr16sync;
-sampleclkstr17sync2 <= sampleclkstr17sync;
-sampleclkstr18sync2 <= sampleclkstr18sync;
-sampleclkstr19sync2 <= sampleclkstr19sync;
-
-samplevalue20sync2  <= samplevalue20sync ;
-samplevalue21sync2  <= samplevalue21sync ;
-samplevalue22sync2  <= samplevalue22sync ;
-samplevalue23sync2  <= samplevalue23sync ;
-samplevalue24sync2  <= samplevalue24sync ;
-samplevalue25sync2  <= samplevalue25sync ;
-samplevalue26sync2  <= samplevalue26sync ;
-samplevalue27sync2  <= samplevalue27sync ;
-samplevalue28sync2  <= samplevalue28sync ;
-samplevalue29sync2  <= samplevalue29sync ;
-sampleclkstr20sync2 <= sampleclkstr20sync;
-sampleclkstr21sync2 <= sampleclkstr21sync;
-sampleclkstr22sync2 <= sampleclkstr22sync;
-sampleclkstr23sync2 <= sampleclkstr23sync;
-sampleclkstr24sync2 <= sampleclkstr24sync;
-sampleclkstr25sync2 <= sampleclkstr25sync;
-sampleclkstr26sync2 <= sampleclkstr26sync;
-sampleclkstr27sync2 <= sampleclkstr27sync;
-sampleclkstr28sync2 <= sampleclkstr28sync;
-sampleclkstr29sync2 <= sampleclkstr29sync;
-
-samplevalue30sync2  <= samplevalue30sync ;
-samplevalue31sync2  <= samplevalue31sync ;
-samplevalue32sync2  <= samplevalue32sync ;
-samplevalue33sync2  <= samplevalue33sync ;
-samplevalue34sync2  <= samplevalue34sync ;
-samplevalue35sync2  <= samplevalue35sync ;
-samplevalue36sync2  <= samplevalue36sync ;
-samplevalue37sync2  <= samplevalue37sync ;
-samplevalue38sync2  <= samplevalue38sync ;
-samplevalue39sync2  <= samplevalue39sync ;
-sampleclkstr30sync2 <= sampleclkstr30sync;
-sampleclkstr31sync2 <= sampleclkstr31sync;
-sampleclkstr32sync2 <= sampleclkstr32sync;
-sampleclkstr33sync2 <= sampleclkstr33sync;
-sampleclkstr34sync2 <= sampleclkstr34sync;
-sampleclkstr35sync2 <= sampleclkstr35sync;
-sampleclkstr36sync2 <= sampleclkstr36sync;
-sampleclkstr37sync2 <= sampleclkstr37sync;
-sampleclkstr38sync2 <= sampleclkstr38sync;
-sampleclkstr39sync2 <= sampleclkstr39sync;
 
 end
 
@@ -637,49 +287,49 @@ always @ (posedge clklvds or negedge rstn)
 	end
 	3 : begin // taking data
 		lvds1bitsfifoout <= {
-		sampleclkstr39sync2,samplevalue39sync2,
-		sampleclkstr38sync2,samplevalue38sync2,
-		sampleclkstr37sync2,samplevalue37sync2,
-		sampleclkstr36sync2,samplevalue36sync2,
-		sampleclkstr35sync2,samplevalue35sync2,
-		sampleclkstr34sync2,samplevalue34sync2,
-		sampleclkstr33sync2,samplevalue33sync2,
-		sampleclkstr32sync2,samplevalue32sync2,
-		sampleclkstr31sync2,samplevalue31sync2,
-		sampleclkstr30sync2,samplevalue30sync2,
+		sampleclkstr39,samplevalue39,
+		sampleclkstr38,samplevalue38,
+		sampleclkstr37,samplevalue37,
+		sampleclkstr36,samplevalue36,
+		sampleclkstr35,samplevalue35,
+		sampleclkstr34,samplevalue34,
+		sampleclkstr33,samplevalue33,
+		sampleclkstr32,samplevalue32,
+		sampleclkstr31,samplevalue31,
+		sampleclkstr30,samplevalue30,
 		
-		sampleclkstr29sync2,samplevalue29sync2,
-		sampleclkstr28sync2,samplevalue28sync2,
-		sampleclkstr27sync2,samplevalue27sync2,
-		sampleclkstr26sync2,samplevalue26sync2,
-		sampleclkstr25sync2,samplevalue25sync2,
-		sampleclkstr24sync2,samplevalue24sync2,
-		sampleclkstr23sync2,samplevalue23sync2,
-		sampleclkstr22sync2,samplevalue22sync2,
-		sampleclkstr21sync2,samplevalue21sync2,
-		sampleclkstr20sync2,samplevalue20sync2,
+		sampleclkstr29,samplevalue29,
+		sampleclkstr28,samplevalue28,
+		sampleclkstr27,samplevalue27,
+		sampleclkstr26,samplevalue26,
+		sampleclkstr25,samplevalue25,
+		sampleclkstr24,samplevalue24,
+		sampleclkstr23,samplevalue23,
+		sampleclkstr22,samplevalue22,
+		sampleclkstr21,samplevalue21,
+		sampleclkstr20,samplevalue20,
 		
-		sampleclkstr19sync2,samplevalue19sync2,
-		sampleclkstr18sync2,samplevalue18sync2,
-		sampleclkstr17sync2,samplevalue17sync2,
-		sampleclkstr16sync2,samplevalue16sync2,
-		sampleclkstr15sync2,samplevalue15sync2,
-		sampleclkstr14sync2,samplevalue14sync2,
-		sampleclkstr13sync2,samplevalue13sync2,
-		sampleclkstr12sync2,samplevalue12sync2,
-		sampleclkstr11sync2,samplevalue11sync2,
-		sampleclkstr10sync2,samplevalue10sync2,
+		sampleclkstr19,samplevalue19,
+		sampleclkstr18,samplevalue18,
+		sampleclkstr17,samplevalue17,
+		sampleclkstr16,samplevalue16,
+		sampleclkstr15,samplevalue15,
+		sampleclkstr14,samplevalue14,
+		sampleclkstr13,samplevalue13,
+		sampleclkstr12,samplevalue12,
+		sampleclkstr11,samplevalue11,
+		sampleclkstr10,samplevalue10,
 		
-		sampleclkstr9sync2,samplevalue9sync2,
-		sampleclkstr8sync2,samplevalue8sync2,
-		sampleclkstr7sync2,samplevalue7sync2,
-		sampleclkstr6sync2,samplevalue6sync2,
-		sampleclkstr5sync2,samplevalue5sync2,
-		sampleclkstr4sync2,samplevalue4sync2,
-		sampleclkstr3sync2,samplevalue3sync2,
-		sampleclkstr2sync2,samplevalue2sync2,
-		sampleclkstr1sync2,samplevalue1sync2,
-		sampleclkstr0sync2,samplevalue0sync2
+		sampleclkstr9,samplevalue9,
+		sampleclkstr8,samplevalue8,
+		sampleclkstr7,samplevalue7,
+		sampleclkstr6,samplevalue6,
+		sampleclkstr5,samplevalue5,
+		sampleclkstr4,samplevalue4,
+		sampleclkstr3,samplevalue3,
+		sampleclkstr2,samplevalue2,
+		sampleclkstr1,samplevalue1,
+		sampleclkstr0,samplevalue0
 		};
 		//lvds1bitsfifoout <= {56{triggercounter[9:0]}}; // for testing the queue
 		if ((!lvds1wrfull) && triggercounter<lengthtotake2) begin
