@@ -27,7 +27,7 @@ def oldbytes():
 def inttobytes(theint): #convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
 
-def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=0, nbyte=3):
+def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=0, nbyte=3, quiet=False):
     # first byte to send, start of address
     # second byte to send, rest of address
     # third byte to send, value to write, ignored during read
@@ -36,6 +36,7 @@ def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=
     if read: first = first + 0x80 #set the highest bit for read, i.e. add 0x80
     usb.send(bytes([3, cs, first, second, third, fourth, 100, nbyte]))  # get SPI result from command
     spires = usb.recv(4)
+    if quiet: return
     if read:
         if show_bin: print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[0]))
         else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[0]))
@@ -91,13 +92,13 @@ def dooffset(val): #val goes from -100% to 100%
     spimode(2)
     dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
     print("dacval is", dacval)
-    spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4)
+    spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(1)
 
 def spimode(mode): # set SPI mode (polarity of clk and data)
     usb.send(bytes([4, mode, 0, 0, 0, 0, 0, 0]))
     spires = usb.recv(4)
-    print("SPI mode now",spires[0])
+    #print("SPI mode now",spires[0])
 
 def board_setup(dopattern=False):
     spimode(1)

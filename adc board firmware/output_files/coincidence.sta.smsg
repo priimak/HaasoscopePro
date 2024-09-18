@@ -1,2 +1,4 @@
-Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is not an object ID File: C:/altera/18.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
-Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is not an object ID File: C:/altera/18.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (332060): Node: reset was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: reset was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: reset was determined to be a clock but was found without an associated clock assignment.
