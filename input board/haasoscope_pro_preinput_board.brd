@@ -2077,6 +2077,12 @@ design rules under a new name.
 <via x="72.5" y="25.5" extent="1-16" drill="0.35"/>
 <via x="69" y="16.5" extent="1-16" drill="0.35"/>
 <via x="67" y="40" extent="1-16" drill="0.35"/>
+<polygon width="0.2032" layer="2" pour="cutout">
+<vertex x="59" y="23.5"/>
+<vertex x="61.5" y="23.5"/>
+<vertex x="61.5" y="21.5"/>
+<vertex x="59" y="21.5"/>
+</polygon>
 </signal>
 <signal name="VS+">
 <polygon width="0.2032" layer="16">
