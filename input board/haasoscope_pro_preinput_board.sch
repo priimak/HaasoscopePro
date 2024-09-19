@@ -10098,7 +10098,9 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="K2" library="G6K-2F-RF-T-TR03_DC5" deviceset="G6K-2F-RF-T-TR03_DC5" device=""/>
+<part name="K2" library="G6K-2F-RF-T-TR03_DC5" deviceset="G6K-2F-RF-T-TR03_DC5" device="">
+<attribute name="LCSC" value="C397195"/>
+</part>
 <part name="Q1" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" deviceset="SMD-TRANSISTORS-NPN-25V-500MW-S8050(SOT-23)" device="" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050">
 <attribute name="LCSC" value="C7420370"/>
 </part>
@@ -10195,6 +10197,7 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <instance part="K2" gate="G$1" x="276.86" y="17.78" smashed="yes">
 <attribute name="NAME" x="306.07" y="25.4" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="306.07" y="22.86" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="276.86" y="17.78" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="Q1" gate="G$1" x="226.06" y="-27.94" smashed="yes">
 <attribute name="NAME" x="223.52" y="-25.4" size="1.27" layer="95" ratio="10"/>

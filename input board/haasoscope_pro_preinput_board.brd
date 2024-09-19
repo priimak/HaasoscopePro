@@ -2022,6 +2022,7 @@ design rules under a new name.
 <element name="K2" library="G6K-2F-RF-T-TR03_DC5" package="G6K2FRFTTR03DC5" value="G6K-2F-RF-T-TR03_DC5" x="52.5" y="34.5" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="High Frequency / RF Relays 3GHz SpSavGrd NoLtch DPDT 5DC 100mW TR300" x="52.5" y="34.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HEIGHT" value="5.7mm" x="52.5" y="34.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C397195" x="52.5" y="34.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Omron Electronics" x="52.5" y="34.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-T-TR03 DC5" x="52.5" y="34.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="653-G6K2FRFTTR03DC5" x="52.5" y="34.5" size="1.778" layer="27" rot="R180" display="off"/>
