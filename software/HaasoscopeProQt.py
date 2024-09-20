@@ -147,7 +147,7 @@ def board_setup(dopattern=False):
 
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    gain=0x1a #00 to 20 is 26 to -6 dB
+    gain=0x1a #00 to 20 is 26 to -6 dB, 0x1a is no gain
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
