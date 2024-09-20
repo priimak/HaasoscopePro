@@ -46,10 +46,13 @@ module command_processor (
 	output reg scanclk=0,
 
 	output reg [2:0] spimisossel=0, //which spimiso to listen to
-	output reg [27:0]	debugout,  // for debugging
+	output reg [11:0]	debugout,  // for debugging
 	input wire [3:0]	overrange,  //ORA0,A1,B0,B1
 	
-	output reg [1:0] spi_mode=0
+	output reg [1:0] spi_mode=0,
+	
+	input wire [7:0] boardin,
+	output wire [7:0] boardout
 
 );
 
@@ -58,11 +61,12 @@ integer version = 11; // firmware version
 assign debugout[0] = locked;
 assign debugout[1] = spics[4];
 assign debugout[2] = spics[5];
-assign debugout[3] = 1;
+assign debugout[3] = boardin[0];
 assign debugout[4] = overrange[0];
 assign debugout[5] = overrange[1];
 assign debugout[6] = overrange[2];
 assign debugout[7] = overrange[3];
+assign debugout[11:8] = state;
 
 //for clock phase
 reg[7:0] pllclock_counter=0;
