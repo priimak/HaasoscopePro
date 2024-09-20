@@ -9864,123 +9864,6 @@ Source: http://www.panasonic-electric-works.com/catalogues/downloads/photomos/ds
 </deviceset>
 </devicesets>
 </library>
-<library name="G6K-2F-RF-T-TR03_DC5">
-<description>&lt;High Frequency / RF Relays 3GHz SpSavGrd NoLtch DPDT 5DC 100mW TR300&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="G6K2FRFTTR03DC5">
-<description>&lt;b&gt;G6K-2F-RF-T-TR03 DC5-1&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-5.4" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="2" x="-2.2" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="3" x="0" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="4" x="2.2" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="5" x="2.2" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="6" x="0" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="7" x="-2.2" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="8" x="-5.4" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP1" x="-6.75" y="-3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
-<smd name="MP2" x="-3.3" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP3" x="-1.1" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP4" x="1.1" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP5" x="3.55" y="-3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
-<smd name="MP6" x="3.55" y="3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
-<smd name="MP7" x="1.1" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP8" x="-1.1" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP9" x="-3.3" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP10" x="-6.75" y="3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
-<text x="-1.6" y="-0.35" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="-1.6" y="-0.35" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-6.95" y1="3.45" x2="3.75" y2="3.45" width="0.2" layer="51"/>
-<wire x1="3.75" y1="3.45" x2="3.75" y2="-3.45" width="0.2" layer="51"/>
-<wire x1="3.75" y1="-3.45" x2="-6.95" y2="-3.45" width="0.2" layer="51"/>
-<wire x1="-6.95" y1="-3.45" x2="-6.95" y2="3.45" width="0.2" layer="51"/>
-<wire x1="-8.325" y1="6.4" x2="5.125" y2="6.4" width="0.1" layer="51"/>
-<wire x1="5.125" y1="6.4" x2="5.125" y2="-7.1" width="0.1" layer="51"/>
-<wire x1="5.125" y1="-7.1" x2="-8.325" y2="-7.1" width="0.1" layer="51"/>
-<wire x1="-8.325" y1="-7.1" x2="-8.325" y2="6.4" width="0.1" layer="51"/>
-<wire x1="-5.6" y1="-6" x2="-5.6" y2="-6" width="0.2" layer="21"/>
-<wire x1="-5.6" y1="-6" x2="-5.4" y2="-6" width="0.2" layer="21" curve="180"/>
-<wire x1="-5.4" y1="-6" x2="-5.4" y2="-6" width="0.2" layer="21"/>
-<wire x1="-5.4" y1="-6" x2="-5.6" y2="-6" width="0.2" layer="21" curve="180"/>
-<wire x1="3.75" y1="0.25" x2="3.75" y2="-0.35" width="0.1" layer="21"/>
-<wire x1="-4.6" y1="-3.45" x2="-4.2" y2="-3.45" width="0.1" layer="21"/>
-<wire x1="-4.6" y1="3.45" x2="-4.2" y2="3.45" width="0.1" layer="21"/>
-<wire x1="-6.95" y1="0.2" x2="-6.95" y2="-0.2" width="0.1" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="G6K-2F-RF-T-TR03_DC5">
-<wire x1="5.08" y1="2.54" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-22.86" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-22.86" x2="5.08" y2="-22.86" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-22.86" width="0.254" layer="94"/>
-<text x="29.21" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="29.21" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="COIL+" x="0" y="-2.54" length="middle"/>
-<pin name="NC_1" x="0" y="-7.62" length="middle"/>
-<pin name="COM_1" x="0" y="-12.7" length="middle"/>
-<pin name="NO_1" x="0" y="-17.78" length="middle"/>
-<pin name="NO_2" x="33.02" y="-17.78" length="middle" rot="R180"/>
-<pin name="COM_2" x="33.02" y="-12.7" length="middle" rot="R180"/>
-<pin name="NC_2" x="33.02" y="-7.62" length="middle" rot="R180"/>
-<pin name="COIL-" x="33.02" y="-2.54" length="middle" rot="R180"/>
-<pin name="GND_1" x="0" y="0" length="middle"/>
-<pin name="GND_2" x="0" y="-5.08" length="middle"/>
-<pin name="GND_3" x="0" y="-10.16" length="middle"/>
-<pin name="GND_4" x="0" y="-15.24" length="middle"/>
-<pin name="GND_5" x="0" y="-20.32" length="middle"/>
-<pin name="GND_6" x="33.02" y="-20.32" length="middle" rot="R180"/>
-<pin name="GND_7" x="33.02" y="-15.24" length="middle" rot="R180"/>
-<pin name="GND_8" x="33.02" y="-10.16" length="middle" rot="R180"/>
-<pin name="GND_9" x="33.02" y="-5.08" length="middle" rot="R180"/>
-<pin name="GND_10" x="33.02" y="0" length="middle" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="G6K-2F-RF-T-TR03_DC5" prefix="K">
-<description>&lt;b&gt;High Frequency / RF Relays 3GHz SpSavGrd NoLtch DPDT 5DC 100mW TR300&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf.pdf"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="G6K-2F-RF-T-TR03_DC5" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="G6K2FRFTTR03DC5">
-<connects>
-<connect gate="G$1" pin="COIL+" pad="1"/>
-<connect gate="G$1" pin="COIL-" pad="8"/>
-<connect gate="G$1" pin="COM_1" pad="3"/>
-<connect gate="G$1" pin="COM_2" pad="6"/>
-<connect gate="G$1" pin="GND_1" pad="MP1"/>
-<connect gate="G$1" pin="GND_10" pad="MP10"/>
-<connect gate="G$1" pin="GND_2" pad="MP2"/>
-<connect gate="G$1" pin="GND_3" pad="MP3"/>
-<connect gate="G$1" pin="GND_4" pad="MP4"/>
-<connect gate="G$1" pin="GND_5" pad="MP5"/>
-<connect gate="G$1" pin="GND_6" pad="MP6"/>
-<connect gate="G$1" pin="GND_7" pad="MP7"/>
-<connect gate="G$1" pin="GND_8" pad="MP8"/>
-<connect gate="G$1" pin="GND_9" pad="MP9"/>
-<connect gate="G$1" pin="NC_1" pad="2"/>
-<connect gate="G$1" pin="NC_2" pad="7"/>
-<connect gate="G$1" pin="NO_1" pad="4"/>
-<connect gate="G$1" pin="NO_2" pad="5"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="High Frequency / RF Relays 3GHz SpSavGrd NoLtch DPDT 5DC 100mW TR300" constant="no"/>
-<attribute name="HEIGHT" value="5.7mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Omron Electronics" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-T-TR03 DC5" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="653-G6K2FRFTTR03DC5" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-T-TR03-DC5?qs=bR9%2Fh8%2FHa7Q3LGohyKHVjA%3D%3D" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="Seeed-Transistor" urn="urn:adsk.eagle:library:477">
 <packages>
 <package name="SOT-23" urn="urn:adsk.eagle:footprint:33010/1" library_version="1">
@@ -10054,6 +9937,97 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 </deviceset>
 </devicesets>
 </library>
+<library name="G6K-2F-RF-DC3">
+<description>&lt;High Frequency / RF Relays 1GHz Std Grd NoLatch DPDT 3VDC 100mW&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="G6K2FRFDC3">
+<description>&lt;b&gt;G6K-2F-RF-DC3-2&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-3.8" y="-3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="2" x="-0.6" y="-3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="3" x="1.6" y="-3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="4" x="3.8" y="-3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="5" x="3.8" y="3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="6" x="1.6" y="3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="7" x="-0.6" y="3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="8" x="-3.8" y="3.5" dx="1.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP1" x="-5.75" y="-1.75" dx="2.5" dy="2.5" layer="1" rot="R90"/>
+<smd name="MP2" x="5.75" y="1.75" dx="2.5" dy="2.5" layer="1" rot="R90"/>
+<text x="0" y="-0.4" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="-0.4" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-5.15" y1="3.45" x2="5.15" y2="3.45" width="0.2" layer="51"/>
+<wire x1="5.15" y1="3.45" x2="5.15" y2="-3.45" width="0.2" layer="51"/>
+<wire x1="5.15" y1="-3.45" x2="-5.15" y2="-3.45" width="0.2" layer="51"/>
+<wire x1="-5.15" y1="-3.45" x2="-5.15" y2="3.45" width="0.2" layer="51"/>
+<wire x1="-8" y1="5.4" x2="8" y2="5.4" width="0.1" layer="51"/>
+<wire x1="8" y1="5.4" x2="8" y2="-6.2" width="0.1" layer="51"/>
+<wire x1="8" y1="-6.2" x2="-8" y2="-6.2" width="0.1" layer="51"/>
+<wire x1="-8" y1="-6.2" x2="-8" y2="5.4" width="0.1" layer="51"/>
+<wire x1="-5.15" y1="3.5" x2="-5.15" y2="0" width="0.1" layer="21"/>
+<wire x1="5.15" y1="0" x2="5.15" y2="-3" width="0.1" layer="21"/>
+<wire x1="-3.8" y1="-5" x2="-3.8" y2="-5" width="0.3" layer="21"/>
+<wire x1="-3.8" y1="-5" x2="-3.8" y2="-5.2" width="0.3" layer="21" curve="180"/>
+<wire x1="-3.8" y1="-5.2" x2="-3.8" y2="-5.2" width="0.3" layer="21"/>
+<wire x1="-3.8" y1="-5.2" x2="-3.8" y2="-5" width="0.3" layer="21" curve="180"/>
+</package>
+</packages>
+<symbols>
+<symbol name="G6K-2F-RF-DC3">
+<wire x1="5.08" y1="12.7" x2="20.32" y2="12.7" width="0.254" layer="94"/>
+<wire x1="20.32" y1="-12.7" x2="20.32" y2="12.7" width="0.254" layer="94"/>
+<wire x1="20.32" y1="-12.7" x2="5.08" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="5.08" y1="12.7" x2="5.08" y2="-12.7" width="0.254" layer="94"/>
+<text x="21.59" y="17.78" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="21.59" y="15.24" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="COIL+" x="7.62" y="-17.78" length="middle" rot="R90"/>
+<pin name="NC_1" x="10.16" y="-17.78" length="middle" rot="R90"/>
+<pin name="COM_1" x="12.7" y="-17.78" length="middle" rot="R90"/>
+<pin name="NO_1" x="15.24" y="-17.78" length="middle" rot="R90"/>
+<pin name="NO_2" x="15.24" y="17.78" length="middle" rot="R270"/>
+<pin name="COM_2" x="12.7" y="17.78" length="middle" rot="R270"/>
+<pin name="NC_2" x="10.16" y="17.78" length="middle" rot="R270"/>
+<pin name="COIL-" x="7.62" y="17.78" length="middle" rot="R270"/>
+<pin name="MP1" x="0" y="0" length="middle"/>
+<pin name="MP2" x="25.4" y="0" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="G6K-2F-RF-DC3" prefix="K">
+<description>&lt;b&gt;High Frequency / RF Relays 1GHz Std Grd NoLatch DPDT 3VDC 100mW&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/G6K-2F-RF-DC3.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="G6K-2F-RF-DC3" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="G6K2FRFDC3">
+<connects>
+<connect gate="G$1" pin="COIL+" pad="1"/>
+<connect gate="G$1" pin="COIL-" pad="8"/>
+<connect gate="G$1" pin="COM_1" pad="3"/>
+<connect gate="G$1" pin="COM_2" pad="6"/>
+<connect gate="G$1" pin="MP1" pad="MP1"/>
+<connect gate="G$1" pin="MP2" pad="MP2"/>
+<connect gate="G$1" pin="NC_1" pad="2"/>
+<connect gate="G$1" pin="NC_2" pad="7"/>
+<connect gate="G$1" pin="NO_1" pad="4"/>
+<connect gate="G$1" pin="NO_2" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="High Frequency / RF Relays 1GHz Std Grd NoLatch DPDT 3VDC 100mW" constant="no"/>
+<attribute name="HEIGHT" value="5.7mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Omron Electronics" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-DC3" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="653-G6K-2F-RF-DC3" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-DC3?qs=Pjd0UV7BHP8BL6Nr%252BzW3GA%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10067,7 +10041,9 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 </classes>
 <parts>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
-<part name="D1" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603" value="green"/>
+<part name="D1" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603" value="green">
+<attribute name="LCSC" value="C2286"/>
+</part>
 <part name="R12" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -10075,7 +10051,7 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <part name="C11" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="C12" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="INCON" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="in"/>
-<part name="OUTPUT50" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
+<part name="OUTPUT502" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="FL1" library="OPA859IDSGR" deviceset="OPA859IDSGR" device=""/>
@@ -10083,7 +10059,6 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <part name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10pF"/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
-<part name="R3" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="J1" library="connector" deviceset="MOLEX_BNC_73100-0105" device="">
 <attribute name="MPN" value="73100-0105"/>
 </part>
@@ -10096,32 +10071,57 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF"/>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
+<part name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="?50?"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="K2" library="G6K-2F-RF-T-TR03_DC5" deviceset="G6K-2F-RF-T-TR03_DC5" device="">
-<attribute name="LCSC" value="C397195"/>
-</part>
 <part name="Q1" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" deviceset="SMD-TRANSISTORS-NPN-25V-500MW-S8050(SOT-23)" device="" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050">
 <attribute name="LCSC" value="C7420370"/>
 </part>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R6" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
-<part name="D2" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603" value="green"/>
+<part name="D2" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603" value="green">
+<attribute name="LCSC" value="C2286"/>
+</part>
 <part name="R7" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="K3" library="G6K-2F-RF-DC3" deviceset="G6K-2F-RF-DC3" device="">
+<attribute name="LCSC" value="C397195"/>
+</part>
+<part name="OUTPUT501" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
+<part name="SUPPLY11" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="R8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
+<part name="R9" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
+<part name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
+<part name="R11" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="120"/>
+<part name="R13" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="75">
+<attribute name="LCSC" value="C113304"/>
+</part>
+<part name="R14" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="75">
+<attribute name="LCSC" value="C113304"/>
+</part>
+<part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <description>Sheet 1</description>
 <plain>
 <text x="266.7" y="93.98" size="1.778" layer="90">Buffer with high bandwidth</text>
+<text x="347.98" y="68.58" size="1.778" layer="90">Pi attenuator
+1/5, -14dB
+50 Ohm</text>
+<text x="393.7" y="104.14" size="1.778" layer="90">AC/DC coupling</text>
+<text x="241.3" y="53.34" size="1.778" layer="90" rot="R90">RF relay</text>
+<text x="320.04" y="55.88" size="1.778" layer="90" rot="R90">RF relay</text>
+<text x="289.56" y="25.4" size="1.778" layer="90">RF relay</text>
+<text x="276.86" y="-17.78" size="1.778" layer="90">RF relay driver</text>
 </plain>
 <instances>
 <instance part="J4" gate="G$1" x="213.36" y="10.16" smashed="yes" rot="R180"/>
 <instance part="D1" gate="G$1" x="228.6" y="12.7" smashed="yes" rot="R270">
 <attribute name="NAME" x="226.06" y="15.24" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
 <attribute name="VALUE" x="223.52" y="15.24" size="1.016" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="228.6" y="12.7" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="R12" gate="G$1" x="228.6" y="5.08" smashed="yes" rot="R180">
 <attribute name="NAME" x="229.616" y="2.54" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
@@ -10142,12 +10142,12 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <attribute name="NAME" x="200.66" y="60.96" size="1.27" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="200.66" y="58.42" size="1.27" layer="95" rot="MR0"/>
 </instance>
-<instance part="OUTPUT50" gate="G$1" x="360.68" y="60.96" smashed="yes">
-<attribute name="NAME" x="368.3" y="63.5" size="1.27" layer="95"/>
-<attribute name="VALUE" x="368.3" y="60.96" size="1.27" layer="95"/>
+<instance part="OUTPUT502" gate="G$1" x="436.88" y="60.96" smashed="yes">
+<attribute name="NAME" x="444.5" y="63.5" size="1.27" layer="95"/>
+<attribute name="VALUE" x="444.5" y="60.96" size="1.27" layer="95"/>
 </instance>
 <instance part="SUPPLY7" gate="GND" x="205.74" y="48.26" smashed="yes" rot="MR0"/>
-<instance part="SUPPLY8" gate="GND" x="363.22" y="50.8" smashed="yes"/>
+<instance part="SUPPLY8" gate="GND" x="439.42" y="50.8" smashed="yes"/>
 <instance part="FL1" gate="G$1" x="266.7" y="81.28" smashed="yes">
 <attribute name="NAME" x="288.29" y="88.9" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="288.29" y="86.36" size="1.778" layer="96" align="center-left"/>
@@ -10165,60 +10165,90 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <attribute name="NAME" x="308.61" y="74.7014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="308.61" y="79.502" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R3" gate="G$1" x="259.08" y="81.28" smashed="yes" rot="R270">
-<attribute name="NAME" x="261.62" y="82.296" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="256.54" y="82.296" size="1.016" layer="96" font="vector"/>
-</instance>
 <instance part="J1" gate="G$1" x="205.74" y="78.74" smashed="yes">
 <attribute name="MPN" x="213.36" y="78.74" size="1.778" layer="96" display="off"/>
 <attribute name="NAME" x="201.93" y="81.788" size="1.778" layer="95" ratio="12"/>
 </instance>
-<instance part="K1" gate="G$1" x="350.52" y="83.82" smashed="yes" rot="R270">
-<attribute name="NAME" x="356.87" y="91.44" size="1.778" layer="95" font="vector" rot="R270"/>
-<attribute name="VALUE" x="342.9" y="91.44" size="1.778" layer="96" font="vector" rot="R270"/>
-<attribute name="LCSC" x="350.52" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
+<instance part="K1" gate="G$1" x="403.86" y="83.82" smashed="yes" rot="R270">
+<attribute name="NAME" x="410.21" y="91.44" size="1.778" layer="95" font="vector" rot="R270"/>
+<attribute name="VALUE" x="396.24" y="91.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="403.86" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="SUPPLY2" gate="GND" x="213.36" y="71.12" smashed="yes" rot="MR0"/>
-<instance part="R4" gate="G$1" x="347.98" y="99.06" smashed="yes" rot="R270">
-<attribute name="NAME" x="350.52" y="100.076" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="345.44" y="100.076" size="1.016" layer="96" font="vector"/>
+<instance part="R4" gate="G$1" x="401.32" y="99.06" smashed="yes" rot="R270">
+<attribute name="NAME" x="403.86" y="100.076" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="398.78" y="100.076" size="1.016" layer="96" font="vector"/>
 </instance>
-<instance part="SUPPLY3" gate="GND" x="340.36" y="91.44" smashed="yes" rot="MR0"/>
-<instance part="C2" gate="G$1" x="347.98" y="60.96" smashed="yes" rot="R270">
-<attribute name="NAME" x="348.996" y="58.039" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="348.996" y="65.659" size="1.778" layer="96" rot="R180"/>
+<instance part="SUPPLY3" gate="GND" x="393.7" y="91.44" smashed="yes" rot="MR0"/>
+<instance part="C2" gate="G$1" x="401.32" y="60.96" smashed="yes" rot="R270">
+<attribute name="NAME" x="402.336" y="58.039" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="402.336" y="65.659" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY4" gate="GND" x="312.42" y="-5.08" smashed="yes"/>
+<instance part="SUPPLY4" gate="GND" x="294.64" y="-7.62" smashed="yes"/>
 <instance part="R5" gate="G$1" x="248.92" y="38.1" smashed="yes" rot="R90">
 <attribute name="NAME" x="247.4214" y="36.83" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="252.222" y="36.83" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="SUPPLY5" gate="GND" x="248.92" y="30.48" smashed="yes" rot="MR0"/>
-<instance part="K2" gate="G$1" x="276.86" y="17.78" smashed="yes">
-<attribute name="NAME" x="306.07" y="25.4" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="306.07" y="22.86" size="1.778" layer="96" align="center-left"/>
-<attribute name="LCSC" x="276.86" y="17.78" size="1.778" layer="96" display="off"/>
+<instance part="Q1" gate="G$1" x="297.18" y="-27.94" smashed="yes">
+<attribute name="NAME" x="294.64" y="-25.4" size="1.27" layer="95" ratio="10"/>
+<attribute name="VALUE" x="300.99" y="-25.4" size="1.27" layer="96" ratio="10"/>
+<attribute name="LCSC" x="297.18" y="-27.94" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="Q1" gate="G$1" x="226.06" y="-27.94" smashed="yes">
-<attribute name="NAME" x="223.52" y="-25.4" size="1.27" layer="95" ratio="10"/>
-<attribute name="VALUE" x="229.87" y="-25.4" size="1.27" layer="96" ratio="10"/>
-<attribute name="LCSC" x="226.06" y="-27.94" size="1.778" layer="96" display="off"/>
-</instance>
-<instance part="SUPPLY6" gate="GND" x="228.6" y="-35.56" smashed="yes"/>
-<instance part="SUPPLY9" gate="GND" x="274.32" y="-5.08" smashed="yes"/>
-<instance part="R6" gate="G$1" x="215.9" y="-27.94" smashed="yes" rot="R270">
-<attribute name="NAME" x="218.44" y="-26.924" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="213.36" y="-26.924" size="1.016" layer="96" font="vector"/>
+<instance part="SUPPLY6" gate="GND" x="299.72" y="-35.56" smashed="yes"/>
+<instance part="SUPPLY9" gate="GND" x="297.18" y="17.78" smashed="yes"/>
+<instance part="R6" gate="G$1" x="287.02" y="-27.94" smashed="yes" rot="R270">
+<attribute name="NAME" x="289.56" y="-26.924" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="284.48" y="-26.924" size="1.016" layer="96" font="vector"/>
 </instance>
 <instance part="D2" gate="G$1" x="238.76" y="12.7" smashed="yes" rot="R270">
 <attribute name="NAME" x="236.22" y="15.24" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
 <attribute name="VALUE" x="233.68" y="15.24" size="1.016" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="238.76" y="12.7" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="R7" gate="G$1" x="238.76" y="5.08" smashed="yes" rot="R180">
 <attribute name="NAME" x="239.776" y="2.54" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="239.776" y="7.62" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
 <instance part="SUPPLY10" gate="GND" x="238.76" y="-2.54" smashed="yes"/>
+<instance part="K3" gate="G$1" x="294.64" y="20.32" smashed="yes" rot="R270">
+<attribute name="NAME" x="300.99" y="17.78" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="300.99" y="20.32" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="294.64" y="20.32" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="OUTPUT501" gate="G$1" x="436.88" y="86.36" smashed="yes">
+<attribute name="NAME" x="444.5" y="88.9" size="1.27" layer="95"/>
+<attribute name="VALUE" x="444.5" y="86.36" size="1.27" layer="95"/>
+</instance>
+<instance part="SUPPLY11" gate="GND" x="439.42" y="76.2" smashed="yes"/>
+<instance part="R8" gate="G$1" x="421.64" y="60.96" smashed="yes" rot="R180">
+<attribute name="NAME" x="422.91" y="59.4614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="422.91" y="64.262" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R9" gate="G$1" x="421.64" y="86.36" smashed="yes" rot="R180">
+<attribute name="NAME" x="422.91" y="84.8614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="422.91" y="89.662" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R10" gate="G$1" x="426.72" y="73.66" smashed="yes" rot="R270">
+<attribute name="NAME" x="428.2186" y="74.93" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="423.418" y="74.93" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R11" gate="G$1" x="353.06" y="60.96" smashed="yes" rot="R180">
+<attribute name="NAME" x="354.33" y="59.4614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="354.33" y="64.262" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R13" gate="G$1" x="363.22" y="55.88" smashed="yes" rot="R270">
+<attribute name="NAME" x="364.7186" y="57.15" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="359.918" y="57.15" size="1.778" layer="96" rot="R270"/>
+<attribute name="LCSC" x="363.22" y="55.88" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R14" gate="G$1" x="342.9" y="55.88" smashed="yes" rot="R270">
+<attribute name="NAME" x="344.3986" y="57.15" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="339.598" y="57.15" size="1.778" layer="96" rot="R270"/>
+<attribute name="LCSC" x="342.9" y="55.88" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="SUPPLY12" gate="GND" x="342.9" y="48.26" smashed="yes"/>
+<instance part="SUPPLY13" gate="GND" x="363.22" y="48.26" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -10255,17 +10285,17 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <junction x="205.74" y="50.8"/>
 </segment>
 <segment>
-<pinref part="OUTPUT50" gate="G$1" pin="GND4"/>
+<pinref part="OUTPUT502" gate="G$1" pin="GND4"/>
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
-<pinref part="OUTPUT50" gate="G$1" pin="GND2"/>
-<pinref part="OUTPUT50" gate="G$1" pin="GND1"/>
-<wire x1="363.22" y1="68.58" x2="358.14" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="OUTPUT50" gate="G$1" pin="GND3"/>
-<wire x1="358.14" y1="68.58" x2="358.14" y2="53.34" width="0.1524" layer="91"/>
-<junction x="358.14" y="68.58"/>
-<wire x1="358.14" y1="53.34" x2="363.22" y2="53.34" width="0.1524" layer="91"/>
-<junction x="358.14" y="53.34"/>
-<junction x="363.22" y="53.34"/>
+<pinref part="OUTPUT502" gate="G$1" pin="GND2"/>
+<pinref part="OUTPUT502" gate="G$1" pin="GND1"/>
+<wire x1="439.42" y1="68.58" x2="434.34" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="OUTPUT502" gate="G$1" pin="GND3"/>
+<wire x1="434.34" y1="68.58" x2="434.34" y2="53.34" width="0.1524" layer="91"/>
+<junction x="434.34" y="68.58"/>
+<wire x1="434.34" y1="53.34" x2="439.42" y2="53.34" width="0.1524" layer="91"/>
+<junction x="434.34" y="53.34"/>
+<junction x="439.42" y="53.34"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
@@ -10283,7 +10313,7 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <segment>
 <pinref part="K1" gate="G$1" pin="K"/>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
-<wire x1="340.36" y1="93.98" x2="347.98" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="393.7" y1="93.98" x2="401.32" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="J4" gate="G$1" pin="6"/>
@@ -10304,50 +10334,38 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="K2" gate="G$1" pin="GND_6"/>
-<pinref part="SUPPLY4" gate="GND" pin="GND"/>
-<wire x1="309.88" y1="-2.54" x2="312.42" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="K2" gate="G$1" pin="GND_7"/>
-<wire x1="309.88" y1="2.54" x2="312.42" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="312.42" y1="2.54" x2="312.42" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="312.42" y="-2.54"/>
-<pinref part="K2" gate="G$1" pin="GND_8"/>
-<wire x1="309.88" y1="7.62" x2="312.42" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="312.42" y1="7.62" x2="312.42" y2="2.54" width="0.1524" layer="91"/>
-<junction x="312.42" y="2.54"/>
-<pinref part="K2" gate="G$1" pin="GND_9"/>
-<wire x1="309.88" y1="12.7" x2="312.42" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="312.42" y1="12.7" x2="312.42" y2="7.62" width="0.1524" layer="91"/>
-<junction x="312.42" y="7.62"/>
-<pinref part="K2" gate="G$1" pin="GND_10"/>
-<wire x1="309.88" y1="17.78" x2="312.42" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="312.42" y1="17.78" x2="312.42" y2="12.7" width="0.1524" layer="91"/>
-<junction x="312.42" y="12.7"/>
-</segment>
-<segment>
-<pinref part="K2" gate="G$1" pin="GND_1"/>
-<wire x1="276.86" y1="17.78" x2="274.32" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="17.78" x2="274.32" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="K2" gate="G$1" pin="GND_2"/>
-<wire x1="274.32" y1="12.7" x2="276.86" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="12.7" x2="274.32" y2="7.62" width="0.1524" layer="91"/>
-<junction x="274.32" y="12.7"/>
-<pinref part="K2" gate="G$1" pin="GND_3"/>
-<wire x1="274.32" y1="7.62" x2="276.86" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="7.62" x2="274.32" y2="2.54" width="0.1524" layer="91"/>
-<junction x="274.32" y="7.62"/>
-<pinref part="K2" gate="G$1" pin="GND_4"/>
-<wire x1="274.32" y1="2.54" x2="276.86" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="2.54" x2="274.32" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="274.32" y="2.54"/>
-<pinref part="K2" gate="G$1" pin="GND_5"/>
-<pinref part="SUPPLY9" gate="GND" pin="GND"/>
-<wire x1="274.32" y1="-2.54" x2="276.86" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="274.32" y="-2.54"/>
-</segment>
-<segment>
 <pinref part="R7" gate="G$1" pin="P$1"/>
 <pinref part="SUPPLY10" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="K3" gate="G$1" pin="MP2"/>
+<pinref part="SUPPLY4" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="K3" gate="G$1" pin="MP1"/>
+<pinref part="SUPPLY9" gate="GND" pin="GND"/>
+<wire x1="294.64" y1="20.32" x2="297.18" y2="20.32" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="OUTPUT501" gate="G$1" pin="GND4"/>
+<pinref part="SUPPLY11" gate="GND" pin="GND"/>
+<pinref part="OUTPUT501" gate="G$1" pin="GND2"/>
+<pinref part="OUTPUT501" gate="G$1" pin="GND1"/>
+<wire x1="439.42" y1="93.98" x2="434.34" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="OUTPUT501" gate="G$1" pin="GND3"/>
+<wire x1="434.34" y1="93.98" x2="434.34" y2="78.74" width="0.1524" layer="91"/>
+<junction x="434.34" y="93.98"/>
+<wire x1="434.34" y1="78.74" x2="439.42" y2="78.74" width="0.1524" layer="91"/>
+<junction x="434.34" y="78.74"/>
+<junction x="439.42" y="78.74"/>
+</segment>
+<segment>
+<pinref part="R14" gate="G$1" pin="2"/>
+<pinref part="SUPPLY12" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="2"/>
+<pinref part="SUPPLY13" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="VS+" class="0">
@@ -10415,7 +10433,9 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <segment>
 <pinref part="FL1" gate="G$1" pin="FB"/>
 <wire x1="266.7" y1="81.28" x2="264.16" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="P$1"/>
+<pinref part="FL1" gate="G$1" pin="IN-"/>
+<wire x1="264.16" y1="76.2" x2="266.7" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="264.16" y1="81.28" x2="264.16" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="INPATH" class="0">
@@ -10430,46 +10450,28 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <label x="223.52" y="58.42" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="K2" gate="G$1" pin="COM_1"/>
-<wire x1="276.86" y1="5.08" x2="264.16" y2="5.08" width="0.1524" layer="91"/>
-<label x="264.16" y="5.08" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="FL1" gate="G$1" pin="IN-"/>
-<pinref part="R3" gate="G$1" pin="P$2"/>
-<wire x1="254" y1="81.28" x2="254" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="254" y1="76.2" x2="266.7" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="7.62" x2="264.16" y2="7.62" width="0.1524" layer="91"/>
+<label x="264.16" y="7.62" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="COM_1"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
 <pinref part="K1" gate="G$1" pin="A"/>
-<wire x1="353.06" y1="93.98" x2="353.06" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="406.4" y1="93.98" x2="406.4" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="ACDC1" class="0">
 <segment>
-<wire x1="342.9" y1="99.06" x2="332.74" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="99.06" x2="386.08" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="P$2"/>
-<label x="332.74" y="99.06" size="1.778" layer="95"/>
+<label x="386.08" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="J4" gate="G$1" pin="4"/>
 <wire x1="208.28" y1="10.16" x2="198.12" y2="10.16" width="0.1524" layer="91"/>
 <label x="198.12" y="10.16" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="OUTPUT50" gate="G$1" pin="ANT"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="350.52" y1="60.96" x2="353.06" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="DS1"/>
-<wire x1="353.06" y1="73.66" x2="353.06" y2="60.96" width="0.1524" layer="91"/>
-<junction x="353.06" y="60.96"/>
 </segment>
 </net>
 <net name="50_1M" class="0">
@@ -10480,8 +10482,8 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="P$2"/>
-<wire x1="210.82" y1="-27.94" x2="198.12" y2="-27.94" width="0.1524" layer="91"/>
-<label x="200.66" y="-27.94" size="1.778" layer="95"/>
+<wire x1="281.94" y1="-27.94" x2="269.24" y2="-27.94" width="0.1524" layer="91"/>
+<label x="271.78" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="1MPATH" class="0">
@@ -10497,53 +10499,51 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <label x="236.22" y="73.66" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="K2" gate="G$1" pin="NO_1"/>
-<wire x1="276.86" y1="0" x2="264.16" y2="0" width="0.1524" layer="91"/>
-<label x="264.16" y="0" size="1.778" layer="95"/>
+<wire x1="276.86" y1="5.08" x2="264.16" y2="5.08" width="0.1524" layer="91"/>
+<label x="264.16" y="5.08" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="NO_1"/>
 </segment>
 </net>
 <net name="OUTPATH" class="0">
 <segment>
-<pinref part="C2" gate="G$1" pin="2"/>
-<pinref part="K1" gate="G$1" pin="DS2"/>
-<wire x1="347.98" y1="73.66" x2="340.36" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="340.36" y1="73.66" x2="340.36" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="340.36" y1="60.96" x2="342.9" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="340.36" y1="60.96" x2="325.12" y2="60.96" width="0.1524" layer="91"/>
-<junction x="340.36" y="60.96"/>
-<label x="325.12" y="60.96" size="1.778" layer="95"/>
+<wire x1="312.42" y1="7.62" x2="330.2" y2="7.62" width="0.1524" layer="91"/>
+<label x="317.5" y="7.62" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="COM_2"/>
 </segment>
 <segment>
-<pinref part="K2" gate="G$1" pin="COM_2"/>
-<wire x1="309.88" y1="5.08" x2="327.66" y2="5.08" width="0.1524" layer="91"/>
-<label x="314.96" y="5.08" size="1.778" layer="95"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<wire x1="347.98" y1="60.96" x2="342.9" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="60.96" x2="327.66" y2="60.96" width="0.1524" layer="91"/>
+<junction x="342.9" y="60.96"/>
+<label x="327.66" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="50PATH" class="0">
 <segment>
-<wire x1="248.92" y1="43.18" x2="314.96" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="43.18" x2="325.12" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="2"/>
 <junction x="248.92" y="43.18"/>
 <wire x1="233.68" y1="43.18" x2="248.92" y2="43.18" width="0.1524" layer="91"/>
 <label x="236.22" y="43.18" size="1.778" layer="95"/>
-<label x="304.8" y="43.18" size="1.778" layer="95"/>
+<label x="312.42" y="43.18" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="K2" gate="G$1" pin="NC_1"/>
 <wire x1="276.86" y1="10.16" x2="264.16" y2="10.16" width="0.1524" layer="91"/>
 <label x="264.16" y="10.16" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="NC_1"/>
 </segment>
 <segment>
-<pinref part="K2" gate="G$1" pin="NC_2"/>
-<wire x1="309.88" y1="10.16" x2="327.66" y2="10.16" width="0.1524" layer="91"/>
-<label x="314.96" y="10.16" size="1.778" layer="95"/>
+<wire x1="312.42" y1="10.16" x2="330.2" y2="10.16" width="0.1524" layer="91"/>
+<label x="317.5" y="10.16" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="NC_2"/>
 </segment>
 </net>
 <net name="5V" class="0">
 <segment>
-<pinref part="K2" gate="G$1" pin="COIL+"/>
-<wire x1="276.86" y1="15.24" x2="266.7" y2="15.24" width="0.1524" layer="91"/>
-<label x="266.7" y="15.24" size="1.778" layer="95"/>
+<wire x1="276.86" y1="12.7" x2="266.7" y2="12.7" width="0.1524" layer="91"/>
+<label x="266.7" y="12.7" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="COIL+"/>
 </segment>
 <segment>
 <pinref part="J4" gate="G$1" pin="1"/>
@@ -10558,14 +10558,14 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 </net>
 <net name="COIL1-" class="0">
 <segment>
-<pinref part="K2" gate="G$1" pin="COIL-"/>
-<wire x1="309.88" y1="15.24" x2="322.58" y2="15.24" width="0.1524" layer="91"/>
-<label x="314.96" y="15.24" size="1.778" layer="95"/>
+<wire x1="312.42" y1="12.7" x2="325.12" y2="12.7" width="0.1524" layer="91"/>
+<label x="317.5" y="12.7" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="COIL-"/>
 </segment>
 <segment>
 <pinref part="Q1" gate="G$1" pin="C"/>
-<wire x1="228.6" y1="-22.86" x2="228.6" y2="-15.24" width="0.1524" layer="91"/>
-<label x="228.6" y="-22.86" size="1.778" layer="95" rot="R90"/>
+<wire x1="299.72" y1="-22.86" x2="299.72" y2="-15.24" width="0.1524" layer="91"/>
+<label x="299.72" y="-22.86" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="1MPATH50" class="0">
@@ -10575,22 +10575,72 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <label x="312.42" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="K2" gate="G$1" pin="NO_2"/>
-<wire x1="309.88" y1="0" x2="327.66" y2="0" width="0.1524" layer="91"/>
-<label x="314.96" y="0" size="1.778" layer="95"/>
+<wire x1="312.42" y1="5.08" x2="330.2" y2="5.08" width="0.1524" layer="91"/>
+<label x="317.5" y="5.08" size="1.778" layer="95"/>
+<pinref part="K3" gate="G$1" pin="NO_2"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="Q1" gate="G$1" pin="B"/>
 <pinref part="R6" gate="G$1" pin="P$1"/>
-<wire x1="220.98" y1="-27.94" x2="223.52" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="-27.94" x2="294.64" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
 <pinref part="D2" gate="G$1" pin="CATHODE"/>
 <pinref part="R7" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="416.56" y1="86.36" x2="416.56" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="403.86" y1="60.96" x2="406.4" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="K1" gate="G$1" pin="DS1"/>
+<wire x1="406.4" y1="73.66" x2="406.4" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="416.56" y1="60.96" x2="406.4" y2="60.96" width="0.1524" layer="91"/>
+<junction x="416.56" y="60.96"/>
+<junction x="406.4" y="60.96"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<pinref part="OUTPUT502" gate="G$1" pin="ANT"/>
+<wire x1="426.72" y1="60.96" x2="429.26" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="426.72" y1="68.58" x2="426.72" y2="60.96" width="0.1524" layer="91"/>
+<junction x="426.72" y="60.96"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<pinref part="OUTPUT501" gate="G$1" pin="ANT"/>
+<wire x1="426.72" y1="86.36" x2="429.26" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="426.72" y1="78.74" x2="426.72" y2="86.36" width="0.1524" layer="91"/>
+<junction x="426.72" y="86.36"/>
+</segment>
+</net>
+<net name="OUTPATHFILT" class="0">
+<segment>
+<pinref part="C2" gate="G$1" pin="2"/>
+<pinref part="K1" gate="G$1" pin="DS2"/>
+<wire x1="401.32" y1="73.66" x2="393.7" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="393.7" y1="73.66" x2="393.7" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="393.7" y1="60.96" x2="396.24" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="393.7" y1="60.96" x2="363.22" y2="60.96" width="0.1524" layer="91"/>
+<junction x="393.7" y="60.96"/>
+<label x="373.38" y="60.96" size="1.778" layer="95"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="358.14" y1="60.96" x2="363.22" y2="60.96" width="0.1524" layer="91"/>
+<junction x="363.22" y="60.96"/>
 </segment>
 </net>
 </nets>
@@ -10603,16 +10653,26 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 <approved hash="104,1,205.74,66.04,INCON,GND2,GND,,,"/>
 <approved hash="104,1,210.82,50.8,INCON,GND3,GND,,,"/>
 <approved hash="104,1,205.74,50.8,INCON,GND4,GND,,,"/>
-<approved hash="104,1,358.14,68.58,OUTPUT50,GND1,GND,,,"/>
-<approved hash="104,1,363.22,68.58,OUTPUT50,GND2,GND,,,"/>
-<approved hash="104,1,358.14,53.34,OUTPUT50,GND3,GND,,,"/>
-<approved hash="104,1,363.22,53.34,OUTPUT50,GND4,GND,,,"/>
+<approved hash="104,1,434.34,68.58,OUTPUT502,GND1,GND,,,"/>
+<approved hash="104,1,439.42,68.58,OUTPUT502,GND2,GND,,,"/>
+<approved hash="104,1,434.34,53.34,OUTPUT502,GND3,GND,,,"/>
+<approved hash="104,1,439.42,53.34,OUTPUT502,GND4,GND,,,"/>
 <approved hash="104,1,238.76,15.24,D2,ANODE,5V,,,"/>
 <approved hash="104,1,238.76,10.16,D2,CATHODE,N$7,,,"/>
+<approved hash="104,1,434.34,93.98,OUTPUT501,GND1,GND,,,"/>
+<approved hash="104,1,439.42,93.98,OUTPUT501,GND2,GND,,,"/>
+<approved hash="104,1,434.34,78.74,OUTPUT501,GND3,GND,,,"/>
+<approved hash="104,1,439.42,78.74,OUTPUT501,GND4,GND,,,"/>
+<approved hash="209,1,266.7,81.28,N$5,,,,,"/>
+<approved hash="209,1,266.7,76.2,N$5,,,,,"/>
 </errors>
 </schematic>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
