@@ -2,7 +2,6 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Warning (176125): The input ports of the PLL pll1:plla|altpll:altpll_component|pll1_altpll2:auto_generated|pll1 and the PLL pll2:inst6|altpll:altpll_component|pll2_altpll1:auto_generated|pll1 are mismatched, preventing the PLLs to be merged File: C:/gitwork/master/HaasoscopePro/adc board firmware/db/pll1_altpll2.v Line: 604
 Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
-Warning (332060): Node: reset was determined to be a clock but was found without an associated clock assignment.
 Extra Info (176273): Performing register packing on registers with non-logic cell location assignments
 Extra Info (176274): Completed register packing on registers with non-logic cell location assignments
 Extra Info (176236): Started Fast Input/Output/OE register processing

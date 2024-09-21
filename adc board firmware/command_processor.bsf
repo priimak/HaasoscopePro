@@ -324,6 +324,13 @@ refer to the applicable agreement for further details.
 		(text "boardout[7..0]" (rect 205 331 259 343)(font "Arial" ))
 		(line (pt 280 336)(pt 264 336)(line_width 3))
 	)
+	(port
+		(pt 280 352)
+		(output)
+		(text "spireset_L" (rect 0 0 42 12)(font "Arial" ))
+		(text "spireset_L" (rect 217 347 259 359)(font "Arial" ))
+		(line (pt 280 352)(pt 264 352)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 264 416)(line_width 1))
 	)

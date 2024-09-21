@@ -255,6 +255,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 272 1288 336 1312))
 )
 (pin
 	(output)
@@ -492,6 +493,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1216 1240 1280 1264))
 )
 (pin
 	(bidir)
@@ -1891,6 +1893,13 @@ refer to the applicable agreement for further details.
 		(text "boardout[7..0]" (rect 202 331 259 343)(font "Arial" ))
 		(line (pt 280 336)(pt 264 336)(line_width 3))
 	)
+	(port
+		(pt 280 352)
+		(output)
+		(text "spireset_L" (rect 0 0 50 12)(font "Arial" ))
+		(text "spireset_L" (rect 217 347 259 359)(font "Arial" ))
+		(line (pt 280 352)(pt 264 352))
+	)
 	(drawing
 		(rectangle (rect 16 16 264 416))
 	)
@@ -2436,11 +2445,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "rstn" (rect 1485 720 1502 737)(font "Intel Clear" ))
-	(pt 1464 736)
-	(pt 1544 736)
-)
-(connector
 	(text "clk50" (rect 1489 736 1514 753)(font "Intel Clear" ))
 	(pt 1464 752)
 	(pt 1544 752)
@@ -2626,4 +2630,14 @@ refer to the applicable agreement for further details.
 	(pt 648 1280)
 	(pt 504 1280)
 	(bus)
+)
+(connector
+	(text "spireset_L" (rect 1485 720 1533 737)(font "Intel Clear" ))
+	(pt 1464 736)
+	(pt 1544 736)
+)
+(connector
+	(text "spireset_L" (rect 955 1232 1003 1249)(font "Intel Clear" ))
+	(pt 928 1248)
+	(pt 1032 1248)
 )

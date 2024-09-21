@@ -52,7 +52,8 @@ module command_processor (
 	output reg [1:0] spi_mode=0,
 	
 	input wire [7:0] boardin,
-	output wire [7:0] boardout
+	output wire [7:0] boardout,
+	output reg spireset_L
 
 );
 
@@ -379,6 +380,7 @@ always @ (posedge clk or negedge rstn)
  
   case (state)
    INIT : begin
+		spireset_L <= 1'b1;
 		pllreset2 <= 1'b0;
 		lvds1rd <= 1'b0;
    	rx_counter <= 0;
@@ -498,6 +500,7 @@ always @ (posedge clk or negedge rstn)
 		end
 		
 		4 : begin // set SPI_MODE (see SPI_Master.v)
+			spireset_L <= 1'b0;
 			spi_mode <= rx_data[1][1:0];
 			o_tdata <= rx_data[1];
 			length <= 4;

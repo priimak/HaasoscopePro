@@ -80,20 +80,20 @@ def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider):
         aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0) # (-4,-1,2,5)
     #values can also be computed using free Analog Devices ADF435x Software:
     #https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adf4351.html#eb-relatedsoftware
-    spimode(1)
+    spimode(0)
     for r in reversed(range(len(regs))):
         print("adf4530 reg", r, binprint(regs[r]), hex(regs[r]))
         fourbytes = inttobytes(regs[r])
         # for i in range(4): print(binprint(fourbytes[i]))
         spicommand("ADF4530 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=2, nbyte=4)
-    spimode(1)
+    spimode(0)
 
 def dooffset(val): #val goes from -100% to 100%
-    spimode(2)
+    spimode(1)
     dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
     print("dacval is", dacval)
     spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    spimode(1)
+    spimode(0)
 
 def spimode(mode): # set SPI mode (polarity of clk and data)
     usb.send(bytes([4, mode, 0, 0, 0, 0, 0, 0]))
@@ -101,7 +101,7 @@ def spimode(mode): # set SPI mode (polarity of clk and data)
     #print("SPI mode now",spires[0])
 
 def board_setup(dopattern=False):
-    spimode(1)
+    spimode(0)
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
@@ -151,10 +151,10 @@ def board_setup(dopattern=False):
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
-    spimode(2)
+    spimode(1)
     spicommand("DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
     spicommand("DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
-    spimode(1)
+    spimode(0)
     dooffset(0)
 
 # Define main window class from template
