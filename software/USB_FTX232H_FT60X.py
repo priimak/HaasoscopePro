@@ -136,9 +136,9 @@ class USB_FTX232H_FT60X_sync245mode():
         
         self._usb.close()
         self._usb = None
-    
-    
-    
+
+    def set_latencyt(self, latency):
+        self._usb.setLatencyTimer(latency)
     
     def set_recv_timeout(self, timeout):
         '''
