@@ -57,7 +57,7 @@ module command_processor (
 
 );
 
-integer version = 11; // firmware version
+integer version = 12; // firmware version
 
 assign debugout[0] = locked;
 assign debugout[1] = spics[4];
@@ -352,8 +352,13 @@ always @ (posedge clklvds or negedge rstn)
 	endcase
  end
  
+integer overrange_counter[4];
 always @ (posedge clk) begin
 	triggercounter2 <= triggercounter;
+	if (overrange[0]) overrange_counter[0]<=overrange_counter[0]+1;
+	if (overrange[1]) overrange_counter[1]<=overrange_counter[1]+1;
+	if (overrange[2]) overrange_counter[2]<=overrange_counter[2]+1;
+	if (overrange[3]) overrange_counter[3]<=overrange_counter[3]+1;
 end
 
 reg [1:0] pllresetstate=0;
@@ -527,6 +532,13 @@ always @ (posedge clk or negedge rstn)
 			pllclock_counter<=0;
 			scanclk_cycles<=0;
 			state<=PLLCLOCK;
+		end
+		
+		7 : begin
+			o_tdata <= overrange_counter[rx_data[1][1:0]];
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
 		end
 		
 		default: // some command we didn't know

@@ -100,6 +100,7 @@ def spimode(mode): # set SPI mode (polarity of clk and data)
     spires = usb.recv(4)
     #print("SPI mode now",spires[0])
 
+dooverrange=False
 def board_setup(dopattern=False):
     spimode(0)
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
@@ -119,6 +120,13 @@ def board_setup(dopattern=False):
 
     #spicommand("INPUT_MUX", 0x00, 0x60, 0x11, False)  # swap inputs
     spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+
+    if dooverrange:
+        spicommand("OVR_CFG", 0x02, 0x13, 0x0f, False)  # overrange on
+        spicommand("OVR_T0", 0x02, 0x11, 0xf2, False)  # overrange threshold 0
+        spicommand("OVR_T1", 0x02, 0x12, 0xab, False)  # overrange threshold 1
+    else:
+        spicommand("OVR_CFG", 0x02, 0x13, 0x0f, False)  # overrange off
 
     if dopattern:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
@@ -145,9 +153,10 @@ def board_setup(dopattern=False):
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x00, False)
     #spicommand("CAL_SOFT_TRIG", 0x00, 0x6c, 0x01, False)
 
+    spimode(0)
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    gain=0x1a #00 to 20 is 26 to -6 dB, 0x1a is no gain
+    gain=0x1d #00 to 20 is 26 to -6 dB, 0x1a is no gain
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
@@ -601,11 +610,16 @@ class MainWindow(TemplateBaseClass):
         return rx_len
 
     def chantext(self):
+        if dooverrange:
+            usb.send(bytes([7, 0, 99, 99, 100, 100, 100, 100]))  # get overrange
+            res = usb.recv(4)
+            print("Overrange0", res[3], res[2], res[1], res[0])
         return (
                 "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
                 +"\n"+"Nbadstrobes "+str(self.nbadstr)
                 +"\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
                 +"\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
+                +"\n"+"overrange 0 1 2 3"
         )
 
     def setup_connections(self):
