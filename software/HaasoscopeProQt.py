@@ -18,6 +18,10 @@ def binprint(x):
 
 def getbit(i, n):
     return (i >> n) & 1
+
+def bytestoint(thebytes):
+    return thebytes[0]+pow(2,8)*thebytes[1]+pow(2,16)*thebytes[2]+pow(2,24)*thebytes[3]
+
 def oldbytes():
     while True:
         olddata = usb.recv(10000000)
@@ -127,7 +131,7 @@ def board_setup(dopattern=False):
         spicommand("OVR_T0", 0x02, 0x11, 0xf2, False)  # overrange threshold 0
         spicommand("OVR_T1", 0x02, 0x12, 0xab, False)  # overrange threshold 1
     else:
-        spicommand("OVR_CFG", 0x02, 0x13, 0x0f, False)  # overrange off
+        spicommand("OVR_CFG", 0x02, 0x13, 0x07, False)  # overrange off
 
     if dopattern:
         spicommand("PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
@@ -179,7 +183,7 @@ class MainWindow(TemplateBaseClass):
     dopattern = False
     debugprint = True
     showbinarydata = True
-    debugstrobe = True
+    debugstrobe = False
     dofast = False
     xydata_overlapped=False
     total_rx_len = 0
@@ -581,7 +585,7 @@ class MainWindow(TemplateBaseClass):
                         if strobe != 0:
                             if strobe!=8 and strobe!=128 and strobe!=2048 and strobe!=32768:
                                 if strobe*4!=8 and strobe*4!=128 and strobe*4!=2048 and strobe*4!=32768:
-                                    self.debugstrobe: print("s=",s,"n=",n,"str",binprint(strobe),strobe)
+                                    if self.debugstrobe: print("s=",s,"n=",n,"str",binprint(strobe),strobe)
                                     self.nbadstr=self.nbadstr+1
 
                     if self.debug and self.debugprint:
@@ -621,14 +625,13 @@ class MainWindow(TemplateBaseClass):
         if dooverrange:
             usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
             res = usb.recv(4)
-            print("Overrange0", res[3], res[2], res[1], res[0])
-        return (
-                "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
-                +"\n"+"Nbadstrobes "+str(self.nbadstr)
-                +"\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
-                +"\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
-                +"\n"+"overrange 0 1 2 3"
-        )
+            #print("Overrange0", res[3], res[2], res[1], res[0])
+        thestr = "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
+        thestr +="\n"+"Nbadstrobes "+str(self.nbadstr)
+        thestr +="\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
+        thestr +="\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
+        if dooverrange: thestr +="\n"+"overrange0 "+str(bytestoint(res))
+        return thestr
 
     def setup_connections(self):
         print("Starting")
