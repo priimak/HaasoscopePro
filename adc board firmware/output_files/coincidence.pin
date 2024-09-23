@@ -72,11 +72,11 @@ GND                          : A1        : gnd    :                   :         
 VCCIO8                       : A2        : power  :                   : 3.3V    : 8         :                
 ftdi_oe_n                    : A3        : output : 3.3-V LVTTL       :         : 8         : Y              
 spics[5]                     : A4        : output : 3.3-V LVTTL       :         : 8         : Y              
-led0                         : A5        : output : 3.3-V LVTTL       :         : 8         : Y              
-led1                         : A6        : output : 3.3-V LVTTL       :         : 8         : Y              
-led2                         : A7        : output : 3.3-V LVTTL       :         : 8         : Y              
-led3                         : A8        : output : 3.3-V LVTTL       :         : 8         : Y              
-ftdi_data1                   : A9        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+led[0]                       : A5        : output : 3.3-V LVTTL       :         : 8         : Y              
+led[1]                       : A6        : output : 3.3-V LVTTL       :         : 8         : Y              
+led[2]                       : A7        : output : 3.3-V LVTTL       :         : 8         : Y              
+led[3]                       : A8        : output : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[1]                 : A9        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 spimisos[1]                  : A10       : input  : 3.3-V LVTTL       :         : 8         : Y              
 ftdi_clk                     : A11       : input  : 3.3-V LVTTL       :         : 8         : Y              
 GND+                         : A12       :        :                   :         : 7         :                
@@ -158,14 +158,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : B21       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 6         :                
 overrange[1]                 : C1        : input  : 2.5 V             :         : 1         : Y              
 overrange[0]                 : C2        : input  : 2.5 V             :         : 1         : Y              
-ftdi_data7                   : C3        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-ftdi_data6                   : C4        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[7]                 : C3        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[6]                 : C4        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : C5        : gnd    :                   :         :           :                
-ftdi_data5                   : C6        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-ftdi_data4                   : C7        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-ftdi_data3                   : C8        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[5]                 : C6        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[4]                 : C7        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[3]                 : C8        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : C9        : gnd    :                   :         :           :                
-spics[7]                     : C10       : output : 3.3-V LVTTL       :         : 8         : N              
+spics[6]                     : C10       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : C11       : gnd    :                   :         :           :                
 GND                          : C12       : gnd    :                   :         :           :                
 boardout[6]                  : C13       : output : 2.5 V             :         : 7         : Y              
@@ -184,7 +184,7 @@ GND                          : D3        : gnd    :                   :         
 VCCIO1                       : D4        : power  :                   : 2.5V    : 1         :                
 VCCIO8                       : D5        : power  :                   : 3.3V    : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
-ftdi_data2                   : D7        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[2]                 : D7        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : D8        : gnd    :                   :         :           :                
 VCCIO8                       : D9        : power  :                   : 3.3V    : 8         :                
 reset                        : D10       : input  : 3.3-V LVTTL       :         : 8         : Y              
@@ -208,7 +208,7 @@ clkout                       : E5        : output : 3.3-V LVTTL       :         
 clkout2                      : E6        : output : 3.3-V LVTTL       :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
 VCCIO8                       : E8        : power  :                   : 3.3V    : 8         :                
-spics[6]                     : E9        : output : 3.3-V LVTTL       :         : 8         : N              
+spics[7]                     : E9        : output : 3.3-V LVTTL       :         : 8         : N              
 spiclk                       : E10       : output : 3.3-V LVTTL       :         : 8         : Y              
 spimisos[4]                  : E11       : input  : 3.3-V LVTTL       :         : 7         : N              
 boardin[6]                   : E12       : input  : 2.5 V             :         : 7         : Y              
@@ -253,7 +253,7 @@ VCCA3                        : G6        : power  :                   : 2.5V    
 spics[1]                     : G7        : output : 3.3-V LVTTL       :         : 8         : Y              
 spics[2]                     : G8        : output : 3.3-V LVTTL       :         : 8         : Y              
 spics[4]                     : G9        : output : 3.3-V LVTTL       :         : 8         : Y              
-ftdi_data0                   : G10       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+ftdi_data[0]                 : G10       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 spics[3]                     : G11       : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCINT                       : G12       : power  :                   : 1.2V    :           :                
 spimisos[7]                  : G13       : input  : 3.3-V LVTTL       :         : 7         : N              

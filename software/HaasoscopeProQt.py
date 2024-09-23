@@ -251,6 +251,8 @@ class MainWindow(TemplateBaseClass):
     def adfreset(self):
         # adf4350(150.0, None, 10) # need larger rcounter for low freq
         adf4350(self.samplerate*1000/2, None)
+        time.sleep(0.1)
+        self.boardinbits()
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
@@ -610,9 +612,14 @@ class MainWindow(TemplateBaseClass):
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
         return rx_len
 
+    def boardinbits(self):
+        usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
+        res = usb.recv(4)
+        print("Board in bits", res[0], binprint(res[0]))
+
     def chantext(self):
         if dooverrange:
-            usb.send(bytes([7, 0, 99, 99, 100, 100, 100, 100]))  # get overrange
+            usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
             res = usb.recv(4)
             print("Overrange0", res[3], res[2], res[1], res[0])
         return (
@@ -627,7 +634,7 @@ class MainWindow(TemplateBaseClass):
         print("Starting")
         oldbytes()
 
-        usb.send(bytes([2, 99, 99, 99, 100, 100, 100, 100]))  # get version
+        usb.send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
         res = usb.recv(4)
         print("Version", res[3], res[2], res[1], res[0])
 
@@ -637,10 +644,10 @@ class MainWindow(TemplateBaseClass):
     def init(self):
 
         self.pllreset()
-        for i in range(4): self.dophase(0,0,pllnum=1,quiet=(i!=4-1)) # adjust phase of clkout, pll 1, c0
+        for i in range(5): self.dophase(4,0,pllnum=0,quiet=(i!=5-1)) # adjust phase of clkout
         #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
         #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
-        for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60, pll 2, c0
+        #for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60
         self.adfreset()
 
         if self.xydata_overlapped:

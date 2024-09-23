@@ -62,7 +62,7 @@ integer version = 12; // firmware version
 assign debugout[0] = locked;
 assign debugout[1] = spics[4];
 assign debugout[2] = spics[5];
-assign debugout[3] = boardin[0];
+assign debugout[3] = phaseupdown;
 assign debugout[4] = overrange[0];
 assign debugout[5] = overrange[1];
 assign debugout[6] = overrange[2];
@@ -422,8 +422,10 @@ always @ (posedge clk or negedge rstn)
 			state <= TX_DATA_CONST;
 		end
 		
-		2 : begin // reads version
-			o_tdata <= version;
+		2 : begin // reads version or other info
+			if (rx_data[1]==0) o_tdata <= version;
+			if (rx_data[1]==1) o_tdata <= {boardin,boardin,boardin,boardin};
+			if (rx_data[1]==2) o_tdata <= overrange_counter[rx_data[2][1:0]];
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
@@ -532,13 +534,6 @@ always @ (posedge clk or negedge rstn)
 			pllclock_counter<=0;
 			scanclk_cycles<=0;
 			state<=PLLCLOCK;
-		end
-		
-		7 : begin
-			o_tdata <= overrange_counter[rx_data[1][1:0]];
-			length <= 4;
-			o_tvalid <= 1'b1;
-			state <= TX_DATA_CONST;
 		end
 		
 		default: // some command we didn't know
