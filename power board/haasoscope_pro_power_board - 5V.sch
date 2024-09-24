@@ -4211,7 +4211,6 @@ Diode with low voltage drop</description>
 <attribute name="LCSC" value="
 C307331"/>
 </part>
-<part name="GND33" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C49" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C50" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="1uF"/>
 <part name="GND34" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
@@ -4237,6 +4236,11 @@ C307331"/>
 <attribute name="LCSC" value="C64982"/>
 </part>
 <part name="R2" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="15k"/>
+<part name="C5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF">
+<attribute name="LCSC" value="
+C307331"/>
+</part>
+<part name="GND3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4785,9 +4789,6 @@ C307331"/>
 <attribute name="VALUE" x="98.044" y="-90.551" size="1.778" layer="96"/>
 <attribute name="LCSC" x="96.52" y="-88.9" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND33" gate="1" x="96.52" y="-96.52" smashed="yes">
-<attribute name="VALUE" x="96.52" y="-96.774" size="1.778" layer="96" align="top-center"/>
-</instance>
 <instance part="C49" gate="C$1" x="154.94" y="-81.28" smashed="yes">
 <attribute name="NAME" x="156.464" y="-80.899" size="1.778" layer="95"/>
 <attribute name="VALUE" x="156.464" y="-85.471" size="1.778" layer="96"/>
@@ -4859,6 +4860,14 @@ C307331"/>
 <instance part="R2" gate="G$1" x="170.18" y="-106.68" smashed="yes" rot="R90">
 <attribute name="NAME" x="168.6814" y="-110.49" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="173.482" y="-110.49" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C5" gate="C$1" x="96.52" y="-96.52" smashed="yes">
+<attribute name="NAME" x="98.044" y="-93.599" size="1.778" layer="95"/>
+<attribute name="VALUE" x="98.044" y="-98.171" size="1.778" layer="96"/>
+<attribute name="LCSC" x="96.52" y="-96.52" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="GND3" gate="1" x="96.52" y="-104.14" smashed="yes">
+<attribute name="VALUE" x="96.52" y="-104.394" size="1.778" layer="96" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -5287,15 +5296,6 @@ C307331"/>
 <pinref part="GND32" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="C48" gate="C$1" pin="2"/>
-<pinref part="PS7" gate="G$1" pin="PGND"/>
-<wire x1="114.3" y1="-83.82" x2="109.22" y2="-83.82" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-83.82" x2="109.22" y2="-93.98" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-93.98" x2="96.52" y2="-93.98" width="0.1524" layer="91"/>
-<junction x="96.52" y="-93.98"/>
-<pinref part="GND33" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="C50" gate="C$1" pin="2"/>
 <junction x="154.94" y="-101.6"/>
 <pinref part="PS7" gate="G$1" pin="EP"/>
@@ -5346,6 +5346,15 @@ C307331"/>
 <pinref part="D6" gate="G$1" pin="C"/>
 <wire x1="200.66" y1="-30.48" x2="215.9" y2="-30.48" width="0.1524" layer="91"/>
 <junction x="200.66" y="-30.48"/>
+</segment>
+<segment>
+<pinref part="C5" gate="C$1" pin="2"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="96.52" y1="-101.6" x2="109.22" y2="-101.6" width="0.1524" layer="91"/>
+<junction x="96.52" y="-101.6"/>
+<pinref part="PS7" gate="G$1" pin="PGND"/>
+<wire x1="114.3" y1="-83.82" x2="109.22" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-83.82" x2="109.22" y2="-101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="2V8+" class="0">
@@ -6200,6 +6209,12 @@ C307331"/>
 <segment>
 <pinref part="R16" gate="G$1" pin="P$1"/>
 <pinref part="R2" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="N$40" class="0">
+<segment>
+<pinref part="C48" gate="C$1" pin="2"/>
+<pinref part="C5" gate="C$1" pin="1"/>
 </segment>
 </net>
 </nets>
