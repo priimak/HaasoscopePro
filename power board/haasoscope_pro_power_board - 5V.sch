@@ -4122,7 +4122,7 @@ Diode with low voltage drop</description>
 <part name="C46" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J14" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R23" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
-<part name="R25" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="37k"/>
+<part name="R25" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="39k"/>
 <part name="GND23" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="PS3" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
 <part name="C7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -4156,7 +4156,7 @@ Diode with low voltage drop</description>
 <part name="C25" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J5" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R6" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
-<part name="R7" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="71k"/>
+<part name="R7" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="68k"/>
 <part name="GND26" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="PS5" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
 <part name="C26" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -4173,7 +4173,7 @@ Diode with low voltage drop</description>
 <part name="C34" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J7" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R8" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
-<part name="R11" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="55k"/>
+<part name="R11" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
 <part name="GND29" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="PS6" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
 <part name="C39" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -4190,7 +4190,7 @@ Diode with low voltage drop</description>
 <part name="C47" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J9" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R12" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
-<part name="R13" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="55k"/>
+<part name="R13" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
 <part name="GND32" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="PS8" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
 <part name="C53" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -4205,9 +4205,12 @@ Diode with low voltage drop</description>
 <part name="C57" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J20" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R19" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
-<part name="R20" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="55k"/>
+<part name="R20" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
 <part name="PS7" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
-<part name="C48" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
+<part name="C48" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF">
+<attribute name="LCSC" value="
+C307331"/>
+</part>
 <part name="GND33" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C49" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C50" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="1uF"/>
@@ -4221,7 +4224,7 @@ Diode with low voltage drop</description>
 <part name="C52" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J11" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R15" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
-<part name="R16" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="25k"/>
+<part name="R16" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="GND35" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="J1" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
@@ -4233,6 +4236,7 @@ Diode with low voltage drop</description>
 <part name="D6" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A">
 <attribute name="LCSC" value="C64982"/>
 </part>
+<part name="R2" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="15k"/>
 </parts>
 <sheets>
 <sheet>
@@ -4779,6 +4783,7 @@ Diode with low voltage drop</description>
 <instance part="C48" gate="C$1" x="96.52" y="-88.9" smashed="yes">
 <attribute name="NAME" x="98.044" y="-85.979" size="1.778" layer="95"/>
 <attribute name="VALUE" x="98.044" y="-90.551" size="1.778" layer="96"/>
+<attribute name="LCSC" x="96.52" y="-88.9" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND33" gate="1" x="96.52" y="-96.52" smashed="yes">
 <attribute name="VALUE" x="96.52" y="-96.774" size="1.778" layer="96" align="top-center"/>
@@ -4850,6 +4855,10 @@ Diode with low voltage drop</description>
 <attribute name="NAME" x="213.868" y="-35.56" size="1.778" layer="95" font="vector" rot="R90"/>
 <attribute name="VALUE" x="217.932" y="-35.56" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
 <attribute name="LCSC" x="215.9" y="-33.02" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="R2" gate="G$1" x="170.18" y="-106.68" smashed="yes" rot="R90">
+<attribute name="NAME" x="168.6814" y="-110.49" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="173.482" y="-110.49" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -5288,14 +5297,16 @@ Diode with low voltage drop</description>
 </segment>
 <segment>
 <pinref part="C50" gate="C$1" pin="2"/>
-<pinref part="R16" gate="G$1" pin="P$1"/>
-<wire x1="154.94" y1="-101.6" x2="170.18" y2="-101.6" width="0.1524" layer="91"/>
 <junction x="154.94" y="-101.6"/>
 <pinref part="PS7" gate="G$1" pin="EP"/>
 <wire x1="129.54" y1="-104.14" x2="144.78" y2="-104.14" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="-104.14" x2="144.78" y2="-101.6" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="-101.6" x2="154.94" y2="-101.6" width="0.1524" layer="91"/>
 <pinref part="GND34" gate="1" pin="GND"/>
+<wire x1="154.94" y1="-101.6" x2="162.56" y2="-101.6" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="-101.6" x2="162.56" y2="-111.76" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="P$1"/>
+<wire x1="162.56" y1="-111.76" x2="170.18" y2="-111.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C52" gate="C$1" pin="2"/>
@@ -6183,6 +6194,12 @@ Diode with low voltage drop</description>
 <segment>
 <pinref part="D1" gate="G$1" pin="CATHODE"/>
 <pinref part="R1" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="R16" gate="G$1" pin="P$1"/>
+<pinref part="R2" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 </nets>
