@@ -3796,6 +3796,242 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-DiscreteSemi" urn="urn:adsk.eagle:library:514">
+<description>&lt;h3&gt;SparkFun Discrete Semiconductors&lt;/h3&gt;
+This library contains diodes, optoisolators, TRIACs, MOSFETs, transistors, etc. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="SOD-323" urn="urn:adsk.eagle:footprint:38400/1" library_version="1">
+<description>SOD-323 (Small Outline Diode)</description>
+<wire x1="-1.77" y1="0.625" x2="-1.77" y2="-0.625" width="0.2032" layer="21"/>
+<wire x1="-0.9" y1="0.625" x2="0.9" y2="0.625" width="0.2032" layer="21"/>
+<wire x1="-0.9" y1="-0.625" x2="0.9" y2="-0.625" width="0.2032" layer="21"/>
+<smd name="C" x="-1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
+<smd name="A" x="1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
+<text x="0" y="0.762" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.762" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+<package name="SOD-523" urn="urn:adsk.eagle:footprint:38401/1" library_version="1">
+<description>SOD-523 (Small Outline Diode)</description>
+<smd name="C" x="0.7" y="0" dx="0.4" dy="0.4" layer="1"/>
+<smd name="A" x="-0.7" y="0" dx="0.4" dy="0.4" layer="1"/>
+<wire x1="-0.625" y1="-0.425" x2="0.625" y2="-0.425" width="0.127" layer="21"/>
+<wire x1="0.625" y1="0.425" x2="-0.625" y2="0.425" width="0.127" layer="21"/>
+<wire x1="-0.6" y1="-0.4" x2="0.3" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.3" y1="-0.4" x2="0.6" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="-0.4" x2="0.6" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="0.6" y1="-0.1" x2="0.6" y2="0.1" width="0.127" layer="51"/>
+<wire x1="0.6" y1="0.1" x2="0.6" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="0.4" x2="0.3" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.3" y1="0.4" x2="-0.6" y2="0.4" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="0.4" x2="-0.6" y2="0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="0.1" x2="-0.6" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="-0.1" x2="-0.6" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="0.1" x2="0.8" y2="0.1" width="0.127" layer="51"/>
+<wire x1="0.8" y1="0.1" x2="0.8" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="0.8" y1="-0.1" x2="0.6" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="-0.1" x2="-0.8" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="0.1" x2="-0.8" y2="0.1" width="0.127" layer="51"/>
+<wire x1="-0.8" y1="0.1" x2="-0.8" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="0.3" y1="0.4" x2="0.3" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="1.1176" y1="0.3048" x2="1.1176" y2="-0.3048" width="0.2032" layer="21"/>
+</package>
+<package name="SMA-DIODE" urn="urn:adsk.eagle:footprint:38402/1" library_version="1">
+<description>&lt;B&gt;Diode&lt;/B&gt;
+&lt;p&gt;Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140&lt;/p&gt;
+&lt;p&gt;SMA is the smallest package in the DO-214 standard (DO-214AC)&lt;/p&gt;</description>
+<wire x1="-2.3" y1="1" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
+<wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
+<wire x1="2.3" y1="1.45" x2="2.3" y2="1" width="0.2032" layer="21"/>
+<wire x1="2.3" y1="-1" x2="2.3" y2="-1.45" width="0.2032" layer="21"/>
+<wire x1="2.3" y1="-1.45" x2="-2.3" y2="-1.45" width="0.2032" layer="21"/>
+<wire x1="-2.3" y1="-1.45" x2="-2.3" y2="-1" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="1" x2="3.175" y2="-1" width="0.2032" layer="21"/>
+<smd name="A" x="-2.15" y="0" dx="1.27" dy="1.47" layer="1" rot="R180"/>
+<smd name="C" x="2.15" y="0" dx="1.27" dy="1.47" layer="1"/>
+<text x="0" y="1.651" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.651" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+<package name="SOT23-3" urn="urn:adsk.eagle:footprint:38398/1" library_version="1">
+<description>SOT23-3</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-0.8" y1="0.7" x2="-1.4" y2="0.7" width="0.2032" layer="21"/>
+<wire x1="-1.4" y1="0.7" x2="-1.4" y2="-0.1" width="0.2032" layer="21"/>
+<wire x1="0.8" y1="0.7" x2="1.4" y2="0.7" width="0.2032" layer="21"/>
+<wire x1="1.4" y1="0.7" x2="1.4" y2="-0.1" width="0.2032" layer="21"/>
+<smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
+<text x="-1.651" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="1.651" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="SOD-323" urn="urn:adsk.eagle:package:38441/1" type="box" library_version="1">
+<description>SOD-323 (Small Outline Diode)</description>
+<packageinstances>
+<packageinstance name="SOD-323"/>
+</packageinstances>
+</package3d>
+<package3d name="SOD-523" urn="urn:adsk.eagle:package:38442/1" type="box" library_version="1">
+<description>SOD-523 (Small Outline Diode)</description>
+<packageinstances>
+<packageinstance name="SOD-523"/>
+</packageinstances>
+</package3d>
+<package3d name="SMA-DIODE" urn="urn:adsk.eagle:package:38443/1" type="box" library_version="1">
+<description>Diode
+Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140
+SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
+<packageinstances>
+<packageinstance name="SMA-DIODE"/>
+</packageinstances>
+</package3d>
+<package3d name="SOT23-3" urn="urn:adsk.eagle:package:38446/1" type="box" library_version="1">
+<description>SOT23-3</description>
+<packageinstances>
+<packageinstance name="SOT23-3"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="DIODE-SCHOTTKY" urn="urn:adsk.eagle:symbol:38399/1" library_version="1">
+<description>&lt;h3&gt; Schottky Diode&lt;/h3&gt;
+Diode with low voltage drop</description>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.778" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0.762" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="-1.27" x2="0.762" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="1.27" x2="1.778" y2="1.016" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.032" size="1.778" layer="95" font="vector">&gt;NAME</text>
+<text x="-2.54" y="-2.032" size="1.778" layer="96" font="vector" align="top-left">&gt;VALUE</text>
+<pin name="A" x="-2.54" y="0" visible="off" length="point" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="point" direction="pas" rot="R180"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-1.27" y="1.27"/>
+<vertex x="1.27" y="0"/>
+<vertex x="-1.27" y="-1.27"/>
+</polygon>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DIODE-SCHOTTKY" urn="urn:adsk.eagle:component:38469/1" prefix="D" library_version="1">
+<description>&lt;h3&gt;Schottky diode&lt;/h3&gt;
+&lt;p&gt;A Schottky diode is a semiconductor diode which has a low forward voltage drop and a very fast switching action.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="DIODE-SCHOTTKY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-BAT20J" package="SOD-323">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38441/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-11623"/>
+<attribute name="VALUE" value="1A/23V/620mV"/>
+</technology>
+</technologies>
+</device>
+<device name="-RB751S40" package="SOD-523">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38442/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-11018"/>
+<attribute name="VALUE" value="120mA/40V/370mV"/>
+</technology>
+</technologies>
+</device>
+<device name="-SS14" package="SMA-DIODE">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38443/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-08053"/>
+<attribute name="VALUE" value="1A/40V/500mV"/>
+</technology>
+</technologies>
+</device>
+<device name="-PMEG4005EJ" package="SOD-323">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38441/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-10955"/>
+<attribute name="VALUE" value="0.5A/40V/420mV"/>
+</technology>
+</technologies>
+</device>
+<device name="-B340A" package="SMA-DIODE">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38443/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-09886"/>
+<attribute name="VALUE" value="3A/40V/500mV"/>
+</technology>
+</technologies>
+</device>
+<device name="-ZLLS500" package="SOT23-3">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="C" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38446/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-08411"/>
+<attribute name="VALUE" value="700mA/40V/533mV"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3994,6 +4230,9 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <part name="D1" library="MF_LEDs" deviceset="LED_SINGLE" device="-0805" value="green"/>
 <part name="R1" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="3.3k"/>
 <part name="C4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
+<part name="D6" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A">
+<attribute name="LCSC" value="C64982"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -4607,6 +4846,11 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <attribute name="NAME" x="90.424" y="-40.259" size="1.778" layer="95"/>
 <attribute name="VALUE" x="90.424" y="-44.831" size="1.778" layer="96"/>
 </instance>
+<instance part="D6" gate="G$1" x="215.9" y="-33.02" smashed="yes" rot="R90">
+<attribute name="NAME" x="213.868" y="-35.56" size="1.778" layer="95" font="vector" rot="R90"/>
+<attribute name="VALUE" x="217.932" y="-35.56" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
+<attribute name="LCSC" x="215.9" y="-33.02" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -4627,12 +4871,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <junction x="96.52" y="-45.72"/>
 <pinref part="C4" gate="C$1" pin="2"/>
 <wire x1="88.9" y1="-45.72" x2="96.52" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-45.72" x2="109.22" y2="-50.8" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-50.8" x2="99.06" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-45.72" x2="109.22" y2="-55.88" width="0.1524" layer="91"/>
 <junction x="109.22" y="-45.72"/>
-<label x="99.06" y="-50.8" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C55" gate="C$1" pin="2"/>
 <pinref part="R20" gate="G$1" pin="P$1"/>
 <wire x1="154.94" y1="-53.34" x2="170.18" y2="-53.34" width="0.1524" layer="91"/>
@@ -4642,6 +4882,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <wire x1="144.78" y1="-55.88" x2="144.78" y2="-53.34" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="-53.34" x2="154.94" y2="-53.34" width="0.1524" layer="91"/>
 <label x="134.62" y="-55.88" size="1.778" layer="95"/>
+<wire x1="109.22" y1="-55.88" x2="129.54" y2="-55.88" width="0.1524" layer="91"/>
+<junction x="129.54" y="-55.88"/>
 </segment>
 <segment>
 <pinref part="C57" gate="C$1" pin="2"/>
@@ -4652,6 +4894,9 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <pinref part="C56" gate="G$1" pin="-"/>
 <wire x1="175.26" y1="-38.1" x2="185.42" y2="-38.1" width="0.1524" layer="91"/>
 <label x="195.58" y="-38.1" size="1.778" layer="95"/>
+<pinref part="D6" gate="G$1" pin="A"/>
+<wire x1="200.66" y1="-35.56" x2="215.9" y2="-35.56" width="0.1524" layer="91"/>
+<junction x="200.66" y="-35.56"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -5008,8 +5253,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <wire x1="109.22" y1="7.62" x2="96.52" y2="7.62" width="0.1524" layer="91"/>
 <junction x="96.52" y="7.62"/>
 <pinref part="GND30" gate="1" pin="GND"/>
-</segment>
-<segment>
+<wire x1="109.22" y1="7.62" x2="109.22" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="109.22" y="7.62"/>
 <pinref part="C41" gate="C$1" pin="2"/>
 <pinref part="R13" gate="G$1" pin="P$1"/>
 <wire x1="154.94" y1="0" x2="170.18" y2="0" width="0.1524" layer="91"/>
@@ -5019,6 +5264,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <wire x1="144.78" y1="-2.54" x2="144.78" y2="0" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="0" x2="154.94" y2="0" width="0.1524" layer="91"/>
 <pinref part="GND31" gate="1" pin="GND"/>
+<wire x1="109.22" y1="-2.54" x2="129.54" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="129.54" y="-2.54"/>
 </segment>
 <segment>
 <pinref part="C47" gate="C$1" pin="2"/>
@@ -5085,6 +5332,9 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmr33630.pdf"&gt; Datasheet
 <wire x1="185.42" y1="-30.48" x2="200.66" y2="-30.48" width="0.1524" layer="91"/>
 <junction x="185.42" y="-30.48"/>
 <label x="195.58" y="-30.48" size="1.778" layer="95"/>
+<pinref part="D6" gate="G$1" pin="C"/>
+<wire x1="200.66" y1="-30.48" x2="215.9" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="200.66" y="-30.48"/>
 </segment>
 </net>
 <net name="2V8+" class="0">
