@@ -3713,6 +3713,9 @@ Diode with low voltage drop</description>
 <part name="C82" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="22uF"/>
 <part name="C83" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="22uF"/>
 <part name="C84" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="22uF"/>
+<part name="C45" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF">
+<attribute name="LCSC" value="C307331"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -4227,8 +4230,8 @@ Diode with low voltage drop</description>
 <attribute name="VALUE" x="120.65" y="-78.74" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="C48" gate="C$1" x="96.52" y="-88.9" smashed="yes">
-<attribute name="NAME" x="98.044" y="-85.979" size="1.778" layer="95"/>
-<attribute name="VALUE" x="98.044" y="-90.551" size="1.778" layer="96"/>
+<attribute name="NAME" x="98.044" y="-88.519" size="1.778" layer="95"/>
+<attribute name="VALUE" x="98.044" y="-93.091" size="1.778" layer="96"/>
 <attribute name="LCSC" x="96.52" y="-88.9" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C49" gate="C$1" x="154.94" y="-81.28" smashed="yes">
@@ -4412,6 +4415,11 @@ Diode with low voltage drop</description>
 <instance part="C84" gate="C$1" x="195.58" y="332.74" smashed="yes">
 <attribute name="NAME" x="197.104" y="335.661" size="1.778" layer="95"/>
 <attribute name="VALUE" x="197.104" y="331.089" size="1.778" layer="96"/>
+</instance>
+<instance part="C45" gate="C$1" x="96.52" y="-96.52" smashed="yes">
+<attribute name="NAME" x="98.044" y="-96.139" size="1.778" layer="95"/>
+<attribute name="VALUE" x="98.044" y="-100.711" size="1.778" layer="96"/>
+<attribute name="LCSC" x="96.52" y="-96.52" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>
@@ -4898,8 +4906,7 @@ Diode with low voltage drop</description>
 <pinref part="PS7" gate="G$1" pin="PGND"/>
 <wire x1="114.3" y1="-83.82" x2="109.22" y2="-83.82" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="-83.82" x2="109.22" y2="-101.6" width="0.1524" layer="91"/>
-<pinref part="C48" gate="C$1" pin="2"/>
-<wire x1="96.52" y1="-93.98" x2="96.52" y2="-101.6" width="0.1524" layer="91"/>
+<pinref part="C45" gate="C$1" pin="2"/>
 <junction x="96.52" y="-101.6"/>
 </segment>
 <segment>
@@ -5916,6 +5923,12 @@ Diode with low voltage drop</description>
 <segment>
 <pinref part="R16" gate="G$1" pin="P$1"/>
 <pinref part="R2" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="C48" gate="C$1" pin="2"/>
+<pinref part="C45" gate="C$1" pin="1"/>
 </segment>
 </net>
 </nets>

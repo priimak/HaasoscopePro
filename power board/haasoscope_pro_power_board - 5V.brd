@@ -1322,6 +1322,9 @@ design rules under a new name.</description>
 <element name="C82" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="22uF" x="30" y="95" smashed="yes" rot="R180"/>
 <element name="C83" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="22uF" x="30" y="89" smashed="yes" rot="R180"/>
 <element name="C84" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="22uF" x="30" y="86" smashed="yes" rot="R180"/>
+<element name="C45" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="69" y="50.4" smashed="yes" rot="R90">
+<attribute name="LCSC" value="C307331" x="69" y="50.4" size="0.8128" layer="27" rot="R90" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND" airwireshidden="yes">
@@ -1579,7 +1582,6 @@ design rules under a new name.</description>
 <contactref element="J1" pad="1"/>
 <contactref element="C1" pad="2"/>
 <contactref element="C2" pad="2"/>
-<contactref element="C48" pad="2"/>
 <contactref element="C15" pad="1"/>
 <contactref element="C24" pad="1"/>
 <contactref element="C33" pad="1"/>
@@ -1652,6 +1654,7 @@ design rules under a new name.</description>
 <wire x1="67" y1="22" x2="70" y2="22" width="1.27" layer="1"/>
 <wire x1="70" y1="22" x2="70" y2="17.73" width="1.27" layer="1"/>
 <wire x1="70" y1="17.73" x2="69.27" y2="17" width="1.27" layer="1"/>
+<contactref element="C45" pad="2"/>
 </signal>
 <signal name="2V8-">
 <contactref element="IC5" pad="2"/>
@@ -2719,6 +2722,11 @@ design rules under a new name.</description>
 <contactref element="R16" pad="P$1"/>
 <contactref element="R2" pad="P$2"/>
 <wire x1="65" y1="48.5" x2="65" y2="49.5" width="0.3048" layer="1"/>
+</signal>
+<signal name="N$2">
+<contactref element="C48" pad="2"/>
+<contactref element="C45" pad="1"/>
+<wire x1="69" y1="48.55" x2="69" y2="49.85" width="0.3048" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
