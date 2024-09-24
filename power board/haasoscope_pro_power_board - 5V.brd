@@ -1292,8 +1292,7 @@ design rules under a new name.</description>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMR33630ADDA?qs=r5DSvlrkXmL3yj62Sna%2FpQ%3D%3D" x="66" y="44" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="C48" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="69" y="48" smashed="yes" rot="R90">
-<attribute name="LCSC" value="
-C307331" x="69" y="48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C307331" x="69" y="48" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="68" y="47.3" size="0.8128" layer="21" rot="R90"/>
 </element>
 <element name="C49" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="60" y="42" smashed="yes" rot="R90">
@@ -1346,8 +1345,7 @@ C307331" x="69" y="48" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="65.5" y="51.27" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="C5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="69" y="50.4" smashed="yes" rot="R90">
-<attribute name="LCSC" value="
-C307331" x="69" y="50.4" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C307331" x="69" y="50.4" size="0.8128" layer="27" rot="R90" display="off"/>
 </element>
 </elements>
 <signals>

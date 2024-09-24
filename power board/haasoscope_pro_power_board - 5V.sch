@@ -4208,8 +4208,7 @@ Diode with low voltage drop</description>
 <part name="R20" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
 <part name="PS7" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
 <part name="C48" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF">
-<attribute name="LCSC" value="
-C307331"/>
+<attribute name="LCSC" value="C307331"/>
 </part>
 <part name="C49" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C50" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="1uF"/>
@@ -4237,8 +4236,7 @@ C307331"/>
 </part>
 <part name="R2" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="15k"/>
 <part name="C5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF">
-<attribute name="LCSC" value="
-C307331"/>
+<attribute name="LCSC" value="C307331"/>
 </part>
 <part name="GND3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
