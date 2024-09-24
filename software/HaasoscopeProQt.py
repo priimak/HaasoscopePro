@@ -96,7 +96,7 @@ def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider):
 def dooffset(val): #val goes from -100% to 100%
     spimode(1)
     dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
-    print("dacval is", dacval)
+    #print("dacval is", dacval)
     spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(0)
 
@@ -301,7 +301,7 @@ class MainWindow(TemplateBaseClass):
     def downpos4(self): self.dophase(plloutnum=4,updown=0)
 
     def pllreset(self):
-        usb.send(bytes([1, 99, 99, 99, 100, 100, 100, 100]))
+        usb.send(bytes([5, 99, 99, 99, 100, 100, 100, 100]))
         tres = usb.recv(4)
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
 
@@ -422,13 +422,14 @@ class MainWindow(TemplateBaseClass):
         self.fallingedge=not self.ui.risingedgeCheck.checkState()
         self.settriggertype(self.fallingedge)
 
+    dodrawing=True
     def drawing(self):
         if self.ui.drawingCheck.checkState() == QtCore.Qt.Checked:
             self.dodrawing=True
-            print("drawing now",self.dodrawing)
+            #print("drawing now",self.dodrawing)
         else:
             self.dodrawing=False
-            print("drawing now",self.dodrawing)
+            #print("drawing now",self.dodrawing)
 
     def fastadclineclick(self, curve):
         for li in range(self.nlines):
@@ -506,7 +507,7 @@ class MainWindow(TemplateBaseClass):
 
     def updateplot(self):
         self.mainloop()
-        if not self.ui.drawingCheck.checkState() == QtCore.Qt.Checked: return
+        if not self.dodrawing: return
         for li in range(self.nlines):
             self.lines[li].setData(self.xydata[li][0],self.xydata[li][1])
         now = time.time()
@@ -517,7 +518,7 @@ class MainWindow(TemplateBaseClass):
         else:
             s = np.clip(dt*3., 0, 1)
             self.fps = self.fps * (1-s) + (1.0/dt) * s
-        self.ui.plot.setTitle('%0.2f fps' % self.fps)
+        self.ui.plot.setTitle("%0.2f fps, %d events, %0.2f Hz, %0.2f MB/s"%(self.fps,self.nevents,self.lastrate,self.lastrate*self.lastsize/1e6))
         app.processEvents()
 
     nevents=0
@@ -529,14 +530,20 @@ class MainWindow(TemplateBaseClass):
     nbadclkC = 0
     nbadclkD = 0
     nbadstr = 0
+    eventcounter = 0
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
-        usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(self.expect_samples+1)))  # length to take (last 4 bytes)
+        usb.send(bytes([1, self.triggertype, 99, 99] + inttobytes(self.expect_samples+1)))  # length to take (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
+        eventcountertemp = triggercounter[3]*256+triggercounter[2]
 
         if triggercounter[0]==255 and triggercounter[1]==255:
+            if eventcountertemp != self.eventcounter + 1 and eventcountertemp != (255 * 256 + 255):
+                print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter)
+            self.eventcounter = eventcountertemp
+
             expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
             usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
             data = usb.recv(expect_len)  # recv from usb
@@ -626,7 +633,7 @@ class MainWindow(TemplateBaseClass):
         res = usb.recv(4)
         print("Board in bits", res[0], binprint(res[0]))
 
-    def chantext(self):
+    def drawtext(self): # happens once per second
         if dooverrange:
             usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
             res = usb.recv(4)
@@ -636,7 +643,8 @@ class MainWindow(TemplateBaseClass):
         thestr +="\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
         thestr +="\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
         if dooverrange: thestr +="\n"+"overrange0 "+str(bytestoint(res))
-        return thestr
+        thestr +="\n"+"Trigger threshold: " + str(round(self.hline,3))
+        self.ui.textBrowser.setText(thestr)
 
     def setup_connections(self):
         print("Starting")
@@ -650,7 +658,6 @@ class MainWindow(TemplateBaseClass):
         return 1
 
     def init(self):
-
         self.pllreset()
         for i in range(5): self.dophase(4,0,pllnum=0,quiet=(i!=5-1)) # adjust phase of clkout
         #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
@@ -668,6 +675,8 @@ class MainWindow(TemplateBaseClass):
     def cleanup(self):
         return 1
 
+    lastrate=0
+    lastsize=0
     def mainloop(self):
         if self.paused: time.sleep(.1)
         else:
@@ -678,21 +687,17 @@ class MainWindow(TemplateBaseClass):
                 print("Device error")
                 sys.exit(1)
             if self.db: print(time.time()-self.oldtime,"done with evt",self.nevents)
-            self.nevents += 1
+            if rx_len>0: self.nevents += 1
             if self.nevents-self.oldnevents >= self.tinterval:
                 now=time.time()
                 elapsedtime=now-self.oldtime
                 self.oldtime=now
-                lastrate = round(self.tinterval/elapsedtime,2)
-                print(self.nevents,"events,",lastrate,"Hz",round(lastrate*rx_len/1e6,3),"MB/s")
-                if lastrate>40: self.tinterval=500.
+                self.lastrate = round(self.tinterval/elapsedtime,2)
+                self.lastsize = rx_len
+                if not self.dodrawing: print(self.nevents,"events,",self.lastrate,"Hz",round(self.lastrate*self.lastsize/1e6,3),"MB/s")
+                if self.lastrate>40: self.tinterval=500.
                 else: self.tinterval=100.
                 self.oldnevents=self.nevents
-
-    def drawtext(self): # happens once per second
-        self.ui.textBrowser.setText(self.chantext())
-        self.ui.textBrowser.append("trigger threshold: " + str(round(self.hline,3)))
-
 
 if __name__ == '__main__':
     print('Argument List:', str(sys.argv))

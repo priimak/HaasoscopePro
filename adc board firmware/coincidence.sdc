@@ -19,10 +19,7 @@ derive_clock_uncertainty -add
 set_clock_groups -asynchronous -group {clk50 *pll1|clk[0] *pll1|clk[1] *pll1|clk[2] *pll1|clk[3] *pll1|clk[4]} -group {ftdi_clk} -group {scanclk}
 
 ## Ignores
-set_false_path -from [get_registers command_processor:inst1|triggercounter*] -to [get_registers command_processor:inst1|triggercounter2*]
-set_false_path -from [get_registers command_processor:inst1|triggerlive*] -to [get_registers command_processor:inst1|triggerlive2*]
-set_false_path -from [get_registers command_processor:inst1|triggertype*] -to [get_registers command_processor:inst1|triggertype2*]
-set_false_path -from [get_registers command_processor:inst1|lengthtotake*] -to [get_registers command_processor:inst1|lengthtotake2*]
+set_false_path -from [get_registers command_processor:inst1|*] -to [get_registers command_processor:inst1|*_sync*]
 set_false_path -from [get_registers fpga_top_ft232h_tx_mass*rptr_grey*] -to [get_registers fpga_top_ft232h_tx_mass*rptr_grey*]
 set_false_path -from [get_registers fpga_top_ft232h_tx_mass*wptr_grey*] -to [get_registers fpga_top_ft232h_tx_mass*wptr_grey*]
 
