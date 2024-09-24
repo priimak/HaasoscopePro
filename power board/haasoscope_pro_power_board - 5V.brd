@@ -1325,6 +1325,10 @@ design rules under a new name.</description>
 <element name="C45" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="69" y="50.4" smashed="yes" rot="R90">
 <attribute name="LCSC" value="C307331" x="69" y="50.4" size="0.8128" layer="27" rot="R90" display="off"/>
 </element>
+<element name="C56" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="65" y="65" smashed="yes" rot="R180"/>
+<element name="C59" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="65" y="62" smashed="yes" rot="R180"/>
+<element name="C60" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="65" y="68" smashed="yes"/>
+<element name="C73" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="65" y="59" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND" airwireshidden="yes">
@@ -1655,6 +1659,8 @@ design rules under a new name.</description>
 <wire x1="70" y1="22" x2="70" y2="17.73" width="1.27" layer="1"/>
 <wire x1="70" y1="17.73" x2="69.27" y2="17" width="1.27" layer="1"/>
 <contactref element="C45" pad="2"/>
+<contactref element="C60" pad="2"/>
+<contactref element="C73" pad="2"/>
 </signal>
 <signal name="2V8-">
 <contactref element="IC5" pad="2"/>
@@ -2667,7 +2673,8 @@ design rules under a new name.</description>
 <contactref element="CN1" pad="PWR"/>
 <wire x1="65.1321" y1="71.65835" x2="65.1321" y2="71.8829" width="1.27" layer="1"/>
 <wire x1="65.1321" y1="71.8829" x2="64.205" y2="72.81" width="1.27" layer="1"/>
-<wire x1="70.2619" y1="46.55615" x2="70.2619" y2="66.52855" width="1.27" layer="1"/>
+<wire x1="70.2619" y1="46.55615" x2="70.2619" y2="66" width="1.27" layer="1"/>
+<wire x1="70.2619" y1="66" x2="70.2619" y2="66.52855" width="1.27" layer="1"/>
 <wire x1="70.2619" y1="66.52855" x2="65.1321" y2="71.65835" width="1.27" layer="1"/>
 <wire x1="64.205" y1="72.81" x2="63.4" y2="73.615" width="1.27" layer="1"/>
 <wire x1="63.4" y1="73.615" x2="63.4" y2="79" width="1.27" layer="1"/>
@@ -2679,6 +2686,11 @@ design rules under a new name.</description>
 <wire x1="66.40115" y1="88.1126" x2="67.73855" y2="89.45" width="1.27" layer="1"/>
 <wire x1="62.3" y1="88" x2="62.4126" y2="88.1126" width="1.27" layer="1"/>
 <wire x1="62.4126" y1="88.1126" x2="66.40115" y2="88.1126" width="1.27" layer="1"/>
+<contactref element="C56" pad="1"/>
+<contactref element="C59" pad="1"/>
+<wire x1="66.1" y1="65" x2="66.1" y2="62" width="1.27" layer="1"/>
+<wire x1="66.1" y1="65" x2="67.1" y2="66" width="1.27" layer="1"/>
+<wire x1="67.1" y1="66" x2="70.2619" y2="66" width="1.27" layer="1"/>
 </signal>
 <signal name="N$32">
 <contactref element="C49" pad="1"/>
@@ -2727,6 +2739,18 @@ design rules under a new name.</description>
 <contactref element="C48" pad="2"/>
 <contactref element="C45" pad="1"/>
 <wire x1="69" y1="48.55" x2="69" y2="49.85" width="0.3048" layer="1"/>
+</signal>
+<signal name="N$15">
+<contactref element="C56" pad="2"/>
+<contactref element="C60" pad="1"/>
+<wire x1="64" y1="65" x2="64" y2="67.9" width="1.27" layer="1"/>
+<wire x1="64" y1="67.9" x2="63.9" y2="68" width="1.27" layer="1"/>
+</signal>
+<signal name="N$40">
+<contactref element="C59" pad="2"/>
+<contactref element="C73" pad="1"/>
+<wire x1="63.9" y1="59" x2="64" y2="59.1" width="1.27" layer="1"/>
+<wire x1="64" y1="59.1" x2="64" y2="62" width="1.27" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
