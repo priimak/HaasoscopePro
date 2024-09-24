@@ -16,6 +16,7 @@ usb.set_latencyt(1) #ms
 def binprint(x):
     return bin(x)[2:].zfill(8)
 
+#get bit n from byte i
 def getbit(i, n):
     return (i >> n) & 1
 
@@ -256,7 +257,9 @@ class MainWindow(TemplateBaseClass):
         # adf4350(150.0, None, 10) # need larger rcounter for low freq
         adf4350(self.samplerate*1000/2, None)
         time.sleep(0.1)
-        self.boardinbits()
+        res=self.boardinbits()
+        if not getbit(res,0): print("Pll not locked?") # should be 1 if locked
+        if not getbit(res,1): print("Pll not setup?") # should be 1 for MuxOut.DVdd
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
@@ -632,6 +635,7 @@ class MainWindow(TemplateBaseClass):
         usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
         res = usb.recv(4)
         print("Board in bits", res[0], binprint(res[0]))
+        return res[0]
 
     def drawtext(self): # happens once per second
         if dooverrange:
