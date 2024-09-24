@@ -89,6 +89,7 @@ reg [ 2:0]  acqstate=0;
 reg [15:0]	triggercounter=0, triggercounter2=0;
 reg [15:0]	lengthtotake=0, lengthtotake2=0;
 reg 			triggerlive=0, triggerlive2=0;
+reg			didreadout=0, didreadout2=0;
 reg [ 7:0]	triggertype=0, triggertype2=0;
 reg signed [11:0]  lowerthresh=-12'd10, upperthresh=12'd10;
 
@@ -182,6 +183,7 @@ always @ (posedge clklvds) begin
 	triggerlive2 <= triggerlive;
 	lengthtotake2 <= lengthtotake;
 	triggertype2 <= triggertype;
+	didreadout2 <= didreadout;
 	
 samplevalue0  <= {lvds1bits[110],lvds1bits[100],lvds1bits[90],lvds1bits[80],lvds1bits[70],lvds1bits[60],lvds1bits[50],lvds1bits[40],lvds1bits[30],lvds1bits[20],lvds1bits[10],lvds1bits[0]};
 samplevalue1  <= {lvds1bits[111],lvds1bits[101],lvds1bits[91],lvds1bits[81],lvds1bits[71],lvds1bits[61],lvds1bits[51],lvds1bits[41],lvds1bits[31],lvds1bits[21],lvds1bits[11],lvds1bits[1]};
@@ -276,10 +278,9 @@ always @ (posedge clklvds or negedge rstn)
  end else begin
 	case (acqstate)
 	0 : begin // ready
-		triggercounter <= -16'd1;
 		lvds1wr <= 1'b0;
+		triggercounter<=0;
 		if (triggerlive2) begin
-			triggercounter<=0;
 			if (triggertype2==8'd1) acqstate <= 3'd1; // threshold trigger
 			else acqstate <= 3'd3; // go straight to taking data, no trigger, triggertype==0
 		end
@@ -343,8 +344,12 @@ always @ (posedge clklvds or negedge rstn)
 		end
 		else begin
 			lvds1wr <= 1'b0;
-			acqstate <= 3'd0;
+			acqstate <= 3'd4;
 		end
+	end
+	4 : begin // ready to be read out
+		triggercounter<= -16'd1;
+		if (didreadout2) acqstate <= 3'd0;
 	end
 	default : begin
 		acqstate <= 3'd0;
@@ -394,6 +399,8 @@ always @ (posedge clk or negedge rstn)
 		spitxdv <= 1'b0;
 		spics <= 8'hff;
 		channel <= 6'd0;
+		triggerlive <= 1'b0;
+		didreadout <= 1'b0;
 		state <= RX;
 	end
   
@@ -409,7 +416,8 @@ always @ (posedge clk or negedge rstn)
 	PROCESS : begin // do something, based on the command in the first byte
 		case (rx_data[0])
 			
-		0 : begin // send a length of bytes given by the command
+		0 : begin // send a length of bytes
+			didreadout <= 1'b1; // tell it we have read out this event
 			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
 			state <= TX_DATA1;
 		end
@@ -515,15 +523,15 @@ always @ (posedge clk or negedge rstn)
 			state <= TX_DATA_CONST;
 		end
 		
-		5 : begin // sets length to take
-			triggertype <= rx_data[1];
+		5 : begin // sets length of data to take, activates trigger for new event if we don't alrady have one
+			triggertype <= rx_data[1]; // while we're at it, set the trigger type
 			lengthtotake <= {rx_data[5],rx_data[4]};
-			if (triggercounter2 == -16'd1) begin
-				triggerlive <= 1'b1;
-			end else begin
-				triggerlive <= 1'b0;
-				state <= RX;
-			end
+			if (triggercounter2 == 0) triggerlive <= 1'b1; // gets reset in INIT state
+			//else triggerlive <= 1'b0;
+			o_tdata <= triggercounter2; // return triggercounter, so we can see if we have an event ready to be read out
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
 		end
 		
 		6 : begin

@@ -533,11 +533,16 @@ class MainWindow(TemplateBaseClass):
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
         usb.send(bytes([5, self.triggertype, 99, 99] + inttobytes(self.expect_samples+1)))  # length to take (last 4 bytes)
+        triggercounter = usb.recv(4)  # get the 4 bytes
+        #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
 
-        expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
-        usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
-        data = usb.recv(expect_len)  # recv from usb
-        rx_len = len(data)
+        if triggercounter[0]==255 and triggercounter[1]==255:
+            expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
+            usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
+            data = usb.recv(expect_len)  # recv from usb
+            rx_len = len(data)
+        else:
+            return 0
 
         self.total_rx_len += rx_len
         if expect_len != rx_len:
