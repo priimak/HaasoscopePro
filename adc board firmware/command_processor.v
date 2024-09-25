@@ -447,13 +447,13 @@ always @ (posedge clk or negedge rstn)
 	end
 	
 	PLLCLOCK : begin // to step the clock phase, you have to toggle scanclk a few times
-		pllclock_counter=pllclock_counter+8'd1;
+		pllclock_counter <= pllclock_counter+8'd1;
 		if (pllclock_counter[4]) begin
-			scanclk = ~scanclk;
-			pllclock_counter=0;
-			scanclk_cycles=scanclk_cycles+8'd1;
-			if (scanclk_cycles>5) phasestep[rx_data[1]]=1'b0; // deassert!
-			if (scanclk_cycles>7) state=INIT;
+			scanclk <= ~scanclk;
+			pllclock_counter <= 0;
+			scanclk_cycles <= scanclk_cycles+8'd1;
+			if (scanclk_cycles>5) phasestep[rx_data[1]] <= 1'b0; // deassert!
+			if (scanclk_cycles>7) state <= INIT;
 		end
 	end
 	
