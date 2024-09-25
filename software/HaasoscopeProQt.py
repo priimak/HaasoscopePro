@@ -2,6 +2,7 @@ import numpy as np
 import sys, time
 import pyqtgraph as pg
 from ftd2xx import DeviceError
+# noinspection PyUnresolvedReferences
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
@@ -101,10 +102,11 @@ def dooffset(val): #val goes from -100% to 100%
     spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(0)
 
+debugspi=False
 def spimode(mode): # set SPI mode (polarity of clk and data)
     usb.send(bytes([4, mode, 0, 0, 0, 0, 0, 0]))
     spires = usb.recv(4)
-    #print("SPI mode now",spires[0])
+    if debugspi: print("SPI mode now",spires[0])
 
 dooverrange=False
 def board_setup(dopattern=False):
@@ -237,8 +239,10 @@ class MainWindow(TemplateBaseClass):
         self.doh5=False # use the h5 binary file format
         self.numrecordeventsperfile=1000 # number of events in each file to record before opening new file
         self.timer = QtCore.QTimer()
+        # noinspection PyUnresolvedReferences
         self.timer.timeout.connect(self.updateplot)
         self.timer2 = QtCore.QTimer()
+        # noinspection PyUnresolvedReferences
         self.timer2.timeout.connect(self.drawtext)
         self.ui.statusBar.showMessage("Hello!")
         self.ui.plot.setBackground('w')
@@ -303,7 +307,8 @@ class MainWindow(TemplateBaseClass):
     def downpos3(self): self.dophase(plloutnum=3,updown=0)
     def downpos4(self): self.dophase(plloutnum=4,updown=0)
 
-    def pllreset(self):
+    @staticmethod
+    def pllreset():
         usb.send(bytes([5, 99, 99, 99, 100, 100, 100, 100]))
         tres = usb.recv(4)
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
@@ -631,23 +636,24 @@ class MainWindow(TemplateBaseClass):
         #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
         return rx_len
 
-    def boardinbits(self):
+    @staticmethod
+    def boardinbits():
         usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
         res = usb.recv(4)
         print("Board in bits", res[0], binprint(res[0]))
         return res[0]
 
     def drawtext(self): # happens once per second
-        if dooverrange:
-            usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
-            res = usb.recv(4)
-            #print("Overrange0", res[3], res[2], res[1], res[0])
         thestr = "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
         thestr +="\n"+"Nbadstrobes "+str(self.nbadstr)
         thestr +="\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
         thestr +="\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
-        if dooverrange: thestr +="\n"+"overrange0 "+str(bytestoint(res))
         thestr +="\n"+"Trigger threshold: " + str(round(self.hline,3))
+        if dooverrange:
+            usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
+            res = usb.recv(4)
+            #print("Overrange0", res[3], res[2], res[1], res[0])
+            thestr += "\n" + "Overrange0 " + str(bytestoint(res))
         self.ui.textBrowser.setText(thestr)
 
     def setup_connections(self):
@@ -663,7 +669,7 @@ class MainWindow(TemplateBaseClass):
 
     def init(self):
         self.pllreset()
-        for i in range(5): self.dophase(4,0,pllnum=0,quiet=(i!=5-1)) # adjust phase of clkout
+        #for i in range(5): self.dophase(4,0,pllnum=0,quiet=(i!=5-1)) # adjust phase of clkout
         #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
         #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
         #for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60
@@ -676,7 +682,8 @@ class MainWindow(TemplateBaseClass):
             self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])/self.samplerate
         return 1
 
-    def cleanup(self):
+    @staticmethod
+    def cleanup():
         return 1
 
     lastrate=0
