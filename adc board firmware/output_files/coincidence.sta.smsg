@@ -1,4 +1,1 @@
 Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
-Warning (332060): Node: command_processor:inst1|spireset_L was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: command_processor:inst1|spireset_L was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: command_processor:inst1|spireset_L was determined to be a clock but was found without an associated clock assignment.

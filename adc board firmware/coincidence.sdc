@@ -11,6 +11,9 @@ create_clock -name ftdi_clk -period  16.666  [get_ports ftdi_clk]
 ## The clk for adjusting the pll phase
 create_clock -name scanclk -period 10.000   [get_nodes command_processor:inst1|scanclk]
 
+## SPI reset "clock"
+create_clock -name spireset [get_nodes command_processor:inst1|spireset_L] -period 20.000
+
 # Derive clks
 derive_pll_clocks
 derive_clock_uncertainty -add
@@ -30,6 +33,27 @@ set_max_delay -to [get_ports ftdi_*] 10
 set_min_delay -to [get_ports ftdi_*] 0
 set_max_delay -from [get_ports ftdi_*] 10
 set_min_delay -from [get_ports ftdi_*] 0
-set_output_delay -clock ftdi_clk 0.5 [get_ports ftdi_*]
 set_max_delay -from [get_ports lvds*in*] 10
 set_min_delay -from [get_ports lvds*in*] 0
+set_max_delay -to [get_ports led* ] 10
+set_min_delay -to [get_ports led* ] -10
+set_max_delay -from [get_ports reset ] 10
+set_min_delay -from [get_ports reset ] -10
+
+set_input_delay -clock ftdi_clk 0 [get_ports ftdi_clk ]
+set_input_delay -clock ftdi_clk 0 [get_ports ftdi_rxf_n ]
+set_input_delay -clock ftdi_clk 0 [get_ports ftdi_txe_n ]
+set_output_delay -clock ftdi_clk 1 [get_ports ftdi_data* ]
+set_output_delay -clock ftdi_clk 1 [get_ports ftdi_oe_n ]
+set_output_delay -clock ftdi_clk 1 [get_ports ftdi_rd_n ]
+set_output_delay -clock ftdi_clk 1 [get_ports ftdi_wr_n ]
+
+set_input_delay -clock clk50 0 [get_ports spimiso* ]
+set_output_delay -clock clk50 1 [get_ports spiclk ]
+set_output_delay -clock clk50 1 [get_ports spics* ]
+set_output_delay -clock clk50 1 [get_ports spimosi ]
+
+set_input_delay -clock clk50 0 [get_ports boardin* ]
+set_input_delay -clock clk50 0 [get_ports overrange* ]
+set_output_delay -clock clk50 0 [get_ports boardout* ]
+set_output_delay -clock clk50 0 [get_ports debugout* ]
