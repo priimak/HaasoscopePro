@@ -309,11 +309,16 @@ class MainWindow(TemplateBaseClass):
     def downpos3(self): self.dophase(plloutnum=3,updown=0)
     def downpos4(self): self.dophase(plloutnum=4,updown=0)
 
-    @staticmethod
-    def pllreset():
+    def pllreset(self):
         usb.send(bytes([5, 99, 99, 99, 100, 100, 100, 100]))
         tres = usb.recv(4)
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
+        self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
+        #adjust other phases
+        for i in range(1): self.dophase(4,1,pllnum=0,quiet=(i!=1-1)) # adjust phase of clkout
+        #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
+        #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
+        #for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60
 
     def wheelEvent(self, event): #QWheelEvent
         if hasattr(event,"delta"):
@@ -551,7 +556,7 @@ class MainWindow(TemplateBaseClass):
         eventcountertemp = triggercounter[3]*256+triggercounter[2]
 
         if triggercounter[0]==255 and triggercounter[1]==255:
-            if eventcountertemp != self.eventcounter + 1 and eventcountertemp != (255 * 256 + 255):
+            if eventcountertemp != self.eventcounter + 1 and eventcountertemp != 0: #check event count, but account for rollover
                 print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter)
             self.eventcounter = eventcountertemp
 
@@ -636,7 +641,9 @@ class MainWindow(TemplateBaseClass):
             time.sleep(.5)
             #oldbytes()
 
-        #self.xydata[chan][1] = np.random.random_sample(size = self.num_samples)
+        if self.nbadclkA == 2*self.expect_samples: # adjust phase by 90 deg
+            for i in range(6): self.dophase(4, 1, pllnum=0, quiet=(i != 6 - 1))  # adjust phase of clkout
+
         return rx_len
 
     @staticmethod
@@ -672,10 +679,6 @@ class MainWindow(TemplateBaseClass):
 
     def init(self):
         self.pllreset()
-        #for i in range(5): self.dophase(4,0,pllnum=0,quiet=(i!=5-1)) # adjust phase of clkout
-        #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
-        #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
-        #for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60
         self.adfreset()
 
         if self.xydata_overlapped:
