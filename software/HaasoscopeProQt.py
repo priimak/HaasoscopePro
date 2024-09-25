@@ -111,6 +111,8 @@ def spimode(mode): # set SPI mode (polarity of clk and data)
 dooverrange=False
 def board_setup(dopattern=False):
     spimode(0)
+    spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x00, False) # power up
+    #spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x03, False) # power down
     spicommand2("VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
@@ -126,7 +128,7 @@ def board_setup(dopattern=False):
     spicommand("LCTRL",0x02,0x04,0x0a,False) # use LSYNC_N (software), 2's complement
     #spicommand("LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
 
-    #spicommand("INPUT_MUX", 0x00, 0x60, 0x11, False)  # swap inputs
+    #spicommand("INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
     spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
 
     if dooverrange:
@@ -507,6 +509,7 @@ class MainWindow(TemplateBaseClass):
         print("Handling closeEvent",event)
         self.timer.stop()
         self.timer2.stop()
+        win.cleanup()
 
     if xydata_overlapped:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 10*expect_samples], dtype=float)
@@ -684,6 +687,8 @@ class MainWindow(TemplateBaseClass):
 
     @staticmethod
     def cleanup():
+        spimode(0)
+        spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
         return 1
 
     lastrate=0
@@ -729,6 +734,7 @@ if __name__ == '__main__':
         win.setWindowTitle('Haasoscope Qt')
         if not win.setup_connections():
             print("Exiting now - failed setup_connections!")
+            win.cleanup()
             sys.exit(1)
         if not win.init():
             print("Exiting now - failed init!")
