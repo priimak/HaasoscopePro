@@ -53,7 +53,8 @@ module command_processor (
 	
 	input wire [7:0] boardin,
 	output wire [7:0] boardout,
-	output reg spireset_L
+	output reg spireset_L,
+	input wire clk50 // needed while doing pllreset
 );
 
 integer version = 13; // firmware version
@@ -178,7 +179,7 @@ end
 
 reg [1:0] pllresetstate=0;
 reg pllreset2=0;
-always @ (posedge clk) begin
+always @ (posedge clk50) begin
 	case (pllresetstate)
    0 : begin
 		if (pllreset2) begin

@@ -66,33 +66,32 @@ def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     if read: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
     else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
-def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider):
+def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True):
     # For now use cs=2 for clk, later can use cs=3 on new board revision
-    print('ADF4530 being set to %0.2f MHz' % freq)
+    print('ADF4350 being set to %0.2f MHz' % freq)
     INT, MOD, FRAC, output_divider, band_select_clock_divider = (calculate_regs(
-        device_type=DeviceType.ADF4351, freq=freq, ref_freq=25.0,
+        device_type=DeviceType.ADF4350, freq=freq, ref_freq=50.0,
         band_select_clock_mode=BandSelectClockMode.Low,
+        feedback_select=divided,
         r_counter=r_counter, # needed when using FeedbackSelect.Divider (needed for phase resync?!)
-        ref_doubler=False, ref_div2=False, enable_gcd=True))
+        ref_doubler=ref_doubler, ref_div2=ref_div2, enable_gcd=True))
     print("INT", INT, "MOD", MOD, "FRAC", FRAC, "outdiv", output_divider, "bandselclkdiv", band_select_clock_divider)
-    if divided==FeedbackSelect.Divider:
-        INT=int(INT/output_divider)
-        print("INT now",INT)
     regs = make_regs(
         INT=INT, MOD=MOD, FRAC=FRAC, output_divider=output_divider,
-        band_select_clock_divider=band_select_clock_divider, r_counter=r_counter,
-        device_type=DeviceType.ADF4351, phase_value=phase, mux_out=MuxOut.DVdd, charge_pump_current=2.50,
-        feedback_select=divided, pd_polarity=PDPolarity.Positive, prescaler='4/5',
+        band_select_clock_divider=band_select_clock_divider, r_counter=r_counter, ref_doubler=ref_doubler, ref_div_2=ref_div2,
+        device_type=DeviceType.ADF4350, phase_value=phase, mux_out=MuxOut.DVdd, charge_pump_current=2.50,
+        feedback_select=divided, pd_polarity=PDPolarity.Positive, prescaler='4/5', band_select_clock_mode=BandSelectClockMode.Low,
         clk_div_mode=ClkDivMode.ResyncEnable, clock_divider_value=1000, csr=False,
         aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0) # (-4,-1,2,5)
     #values can also be computed using free Analog Devices ADF435x Software:
     #https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adf4351.html#eb-relatedsoftware
     spimode(0)
     for r in reversed(range(len(regs))):
-        print("adf4530 reg", r, binprint(regs[r]), hex(regs[r]))
+        #regs[2]=0x5004E42 #to override from ADF435x software
+        print("adf4350 reg", r, binprint(regs[r]), hex(regs[r]))
         fourbytes = inttobytes(regs[r])
         # for i in range(4): print(binprint(fourbytes[i]))
-        spicommand("ADF4530 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=2, nbyte=4)
+        spicommand("ADF4350 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=2, nbyte=4)
     spimode(0)
 
 def dooffset(val): #val goes from -100% to 100%
@@ -260,7 +259,7 @@ class MainWindow(TemplateBaseClass):
         dooffset(self.ui.offsetBox.value())
 
     def adfreset(self):
-        # adf4350(150.0, None, 10) # need larger rcounter for low freq
+        #adf4350(150.0, None, 10) # need larger rcounter for low freq
         adf4350(self.samplerate*1000/2, None)
         time.sleep(0.1)
         res=self.boardinbits()
@@ -315,7 +314,7 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
-        for i in range(1): self.dophase(4,1,pllnum=0,quiet=(i!=1-1)) # adjust phase of clkout
+        #for i in range(1): self.dophase(4,1,pllnum=0,quiet=(i!=1-1)) # adjust phase of clkout
         #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
         #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
         #for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60

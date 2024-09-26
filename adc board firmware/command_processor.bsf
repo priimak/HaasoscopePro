@@ -185,6 +185,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 384)(pt 16 384)(line_width 3))
 	)
 	(port
+		(pt 0 400)
+		(input)
+		(text "clk50" (rect 0 0 20 12)(font "Arial" ))
+		(text "clk50" (rect 21 395 41 407)(font "Arial" ))
+		(line (pt 0 400)(pt 16 400)(line_width 1))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "i_tready" (rect 0 0 33 12)(font "Arial" ))
