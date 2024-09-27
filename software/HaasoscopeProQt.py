@@ -165,7 +165,7 @@ def board_setup(dopattern=False):
     spimode(0)
     spicommand("Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand("Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    gain=0x1d #00 to 20 is 26 to -6 dB, 0x1a is no gain
+    gain=0x1a #00 to 20 is 26 to -6 dB, 0x1a is no gain
     spicommand("Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
     spicommand("Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
 
@@ -626,8 +626,8 @@ class MainWindow(TemplateBaseClass):
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        samp = s * 10 + (9 - (n % 10))
-                        if samp % 2 == 1:
+                        samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
+                        if samp % 2 == 1: # account for switching of bits form DDR in lvds reciever?
                             samp = samp - 1
                         else:
                             samp = samp + 1
@@ -700,7 +700,7 @@ class MainWindow(TemplateBaseClass):
         else:
             try:
                 rx_len=self.getchannels()
-                if self.getone: self.dostartstop()
+                if self.getone and rx_len>0: self.dostartstop()
             except DeviceError:
                 print("Device error")
                 sys.exit(1)
