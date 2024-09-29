@@ -546,7 +546,6 @@ class MainWindow(TemplateBaseClass):
     nbadclkD = 0
     nbadstr = 0
     eventcounter = 0
-    doswapsamples = False # seemed to be needed only for Quartus 18?
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
@@ -628,11 +627,10 @@ class MainWindow(TemplateBaseClass):
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
                         samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
-                        if self.doswapsamples:
-                            if samp % 2 == 1: # account for switching of bits form DDR in lvds reciever?
-                                samp = samp - 1
-                            else:
-                                samp = samp + 1
+                        if samp % 2 == 1: # account for switching of bits form DDR in lvds reciever?
+                            samp = samp - 1
+                        else:
+                            samp = samp + 1
                         if self.xydata_overlapped:
                             self.xydata[chan][1][samp] = -val
                         else:
