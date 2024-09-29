@@ -15800,7 +15800,9 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/G6K-2F-RF-DC3
 <part name="R8" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="R9" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="R10" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
-<part name="C2" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
+<part name="C2" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="RF_1uF">
+<attribute name="LCSC" value="C52923"/>
+</part>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="Q3" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" deviceset="SMD-TRANSISTORS-NPN-25V-500MW-S8050(SOT-23)" device="" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050">
 <attribute name="LCSC" value="C7420370"/>
@@ -15860,6 +15862,8 @@ for attenuator</text>
 <text x="523.24" y="25.4" size="1.778" layer="90">RF relay for splitting</text>
 <text x="510.54" y="-17.78" size="1.778" layer="90">RF relay driver
 for splitting</text>
+<text x="454.66" y="55.88" size="1.778" layer="90">Z~1.5 Ohm at 2 GHz
+for CL05A105KA5NQNC</text>
 </plain>
 <instances>
 <instance part="J4" gate="G$1" x="215.9" y="127" smashed="yes" rot="R180"/>
@@ -16003,6 +16007,7 @@ for splitting</text>
 <instance part="C2" gate="G$1" x="467.36" y="63.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="465.836" y="66.04" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="468.884" y="66.04" size="1.016" layer="96" font="vector" rot="R90"/>
+<attribute name="LCSC" x="467.36" y="63.5" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="SUPPLY7" gate="GND" x="528.32" y="-7.62" smashed="yes"/>
 <instance part="Q3" gate="G$1" x="530.86" y="-27.94" smashed="yes">
