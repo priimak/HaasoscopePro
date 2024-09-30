@@ -199,6 +199,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 416)(pt 16 416)(line_width 1))
 	)
 	(port
+		(pt 0 432)
+		(input)
+		(text "lvdsin_spare[0..1]" (rect 0 0 69 12)(font "Arial" ))
+		(text "lvdsin_spare[0..1]" (rect 21 427 90 439)(font "Arial" ))
+		(line (pt 0 432)(pt 16 432)(line_width 3))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "i_tready" (rect 0 0 33 12)(font "Arial" ))
@@ -358,6 +365,13 @@ refer to the applicable agreement for further details.
 		(text "clkswitch" (rect 0 0 34 12)(font "Arial" ))
 		(text "clkswitch" (rect 225 379 259 391)(font "Arial" ))
 		(line (pt 280 384)(pt 264 384)(line_width 1))
+	)
+	(port
+		(pt 280 400)
+		(output)
+		(text "lvdsout_spare[0..1]" (rect 0 0 75 12)(font "Arial" ))
+		(text "lvdsout_spare[0..1]" (rect 184 395 259 407)(font "Arial" ))
+		(line (pt 280 400)(pt 264 400)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 264 448)(line_width 1))

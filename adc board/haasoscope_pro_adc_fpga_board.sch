@@ -10619,14 +10619,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="396.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO62" class="0">
+<net name="LVDSOUT_SPARE0_P" class="2">
 <segment>
 <wire x1="238.76" y1="393.7" x2="226.06" y2="393.7" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_62"/>
 <label x="226.06" y="393.7" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO63" class="0">
+<net name="LVDSOUT_SPARE0_N" class="2">
 <segment>
 <wire x1="238.76" y1="391.16" x2="226.06" y2="391.16" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_63"/>
@@ -10764,14 +10764,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <junction x="81.28" y="266.7"/>
 </segment>
 </net>
-<net name="IO79" class="0">
+<net name="LVDSOUT_SPARE1_P" class="2">
 <segment>
 <wire x1="238.76" y1="337.82" x2="226.06" y2="337.82" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_79"/>
 <label x="226.06" y="337.82" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO80" class="0">
+<net name="LVDSOUT_SPARE1_N" class="2">
 <segment>
 <wire x1="238.76" y1="335.28" x2="226.06" y2="335.28" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_80"/>
@@ -11183,14 +11183,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="223.52" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO111" class="0">
+<net name="LVDSIN_SPARE0_N" class="2">
 <segment>
 <wire x1="238.76" y1="220.98" x2="226.06" y2="220.98" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_111"/>
 <label x="226.06" y="220.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO112" class="0">
+<net name="LVDSIN_SPARE0_P" class="2">
 <segment>
 <wire x1="238.76" y1="218.44" x2="226.06" y2="218.44" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_112"/>
@@ -11312,14 +11312,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="396.24" y="612.14" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO128" class="0">
+<net name="LVDSIN_SPARE1_N" class="2">
 <segment>
 <wire x1="238.76" y1="165.1" x2="226.06" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_128"/>
 <label x="226.06" y="165.1" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO129" class="0">
+<net name="LVDSIN_SPARE1_P" class="2">
 <segment>
 <wire x1="238.76" y1="162.56" x2="226.06" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_129"/>
@@ -17749,8 +17749,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="104,2,-175.26,248.92,INA+,GND3,GND,,,"/>
 <approved hash="104,2,-170.18,248.92,INA+,GND4,GND,,,"/>
 <approved hash="106,1,238.76,276.86,CLK1,,,,,"/>
-<approved hash="106,1,279.4,386.08,CLK2,,,,,"/>
-<approved hash="106,1,279.4,388.62,CLK3,,,,,"/>
 <approved hash="106,1,238.76,226.06,CLK4,,,,,"/>
 <approved hash="106,1,238.76,223.52,CLK5,,,,,"/>
 <approved hash="106,1,279.4,337.82,CLK6,,,,,"/>
@@ -17771,18 +17769,12 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="106,1,238.76,431.8,IO54,,,,,"/>
 <approved hash="106,1,238.76,398.78,IO60,,,,,"/>
 <approved hash="106,1,238.76,396.24,IO61,,,,,"/>
-<approved hash="106,1,238.76,393.7,IO62,,,,,"/>
-<approved hash="106,1,238.76,391.16,IO63,,,,,"/>
 <approved hash="106,1,238.76,388.62,IO64,,,,,"/>
 <approved hash="106,1,238.76,383.54,IO66,,,,,"/>
 <approved hash="106,1,238.76,381,IO67,,,,,"/>
 <approved hash="106,1,238.76,373.38,IO70,,,,,"/>
 <approved hash="106,1,238.76,363.22,IO73,,,,,"/>
 <approved hash="106,1,238.76,358.14,IO75,,,,,"/>
-<approved hash="106,1,238.76,337.82,IO79,,,,,"/>
-<approved hash="106,1,238.76,335.28,IO80,,,,,"/>
-<approved hash="106,1,238.76,332.74,IO81,,,,,"/>
-<approved hash="106,1,238.76,330.2,IO82,,,,,"/>
 <approved hash="106,1,238.76,312.42,IO85,,,,,"/>
 <approved hash="106,1,238.76,307.34,IO87,,,,,"/>
 <approved hash="106,1,238.76,297.18,IO90,,,,,"/>
@@ -17792,8 +17784,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="106,1,238.76,284.48,IO94,,,,,"/>
 <approved hash="106,1,238.76,281.94,IO95,,,,,"/>
 <approved hash="106,1,238.76,279.4,IO96,,,,,"/>
-<approved hash="106,1,238.76,271.78,IO97,,,,,"/>
-<approved hash="106,1,238.76,269.24,IO98,,,,,"/>
 <approved hash="106,1,238.76,266.7,IO99,,,,,"/>
 <approved hash="106,1,238.76,246.38,IO105,,,,,"/>
 <approved hash="106,1,238.76,243.84,IO106,,,,,"/>
@@ -17801,10 +17791,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="106,1,238.76,238.76,IO108,,,,,"/>
 <approved hash="106,1,238.76,236.22,IO109,,,,,"/>
 <approved hash="106,1,238.76,233.68,IO110,,,,,"/>
-<approved hash="106,1,238.76,220.98,IO111,,,,,"/>
-<approved hash="106,1,238.76,218.44,IO112,,,,,"/>
 <approved hash="106,1,238.76,210.82,IO113,,,,,"/>
-<approved hash="106,1,238.76,208.28,IO114,,,,,"/>
 <approved hash="106,1,238.76,205.74,IO115,,,,,"/>
 <approved hash="106,1,238.76,203.2,IO116,,,,,"/>
 <approved hash="106,1,238.76,198.12,IO117,,,,,"/>
@@ -17816,12 +17803,9 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="106,1,238.76,177.8,IO123,,,,,"/>
 <approved hash="106,1,238.76,175.26,IO124,,,,,"/>
 <approved hash="106,1,238.76,172.72,IO125,,,,,"/>
-<approved hash="106,1,238.76,165.1,IO128,,,,,"/>
-<approved hash="106,1,238.76,162.56,IO129,,,,,"/>
 <approved hash="106,1,238.76,160.02,IO130,,,,,"/>
 <approved hash="106,1,238.76,157.48,IO131,,,,,"/>
 <approved hash="106,1,238.76,154.94,IO132,,,,,"/>
-<approved hash="106,1,238.76,152.4,IO133,,,,,"/>
 <approved hash="106,1,238.76,149.86,IO134,,,,,"/>
 <approved hash="106,1,238.76,147.32,IO135,,,,,"/>
 <approved hash="106,1,238.76,124.46,IO136,,,,,"/>

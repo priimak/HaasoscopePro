@@ -7632,10 +7632,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO61">
 <contactref element="IC5" pad="D20"/>
 </signal>
-<signal name="IO62">
+<signal name="LVDSOUT_SPARE0_P" class="2">
 <contactref element="IC5" pad="D21"/>
 </signal>
-<signal name="IO63">
+<signal name="LVDSOUT_SPARE0_N" class="2">
 <contactref element="IC5" pad="D22"/>
 </signal>
 <signal name="IO64">
@@ -7710,10 +7710,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="144.5" y1="66" x2="143" y2="67.5" width="0.1524" layer="1"/>
 <via x="143" y="67.5" extent="1-16" drill="0.2"/>
 </signal>
-<signal name="IO79">
+<signal name="LVDSOUT_SPARE1_P" class="2">
 <contactref element="IC5" pad="E21"/>
 </signal>
-<signal name="IO80">
+<signal name="LVDSOUT_SPARE1_N" class="2">
 <contactref element="IC5" pad="E22"/>
 </signal>
 <signal name="LVDSIN_TRIG_N" class="2">
@@ -7946,10 +7946,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="CLK5" class="5">
 <contactref element="IC5" pad="G22"/>
 </signal>
-<signal name="IO111">
+<signal name="LVDSIN_SPARE0_N" class="2">
 <contactref element="IC5" pad="H1"/>
 </signal>
-<signal name="IO112">
+<signal name="LVDSIN_SPARE0_P" class="2">
 <contactref element="IC5" pad="H2"/>
 </signal>
 <signal name="IO113">
@@ -7991,10 +7991,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO125">
 <contactref element="IC5" pad="H20"/>
 </signal>
-<signal name="IO128">
+<signal name="LVDSIN_SPARE1_N" class="2">
 <contactref element="IC5" pad="J1"/>
 </signal>
-<signal name="IO129">
+<signal name="LVDSIN_SPARE1_P" class="2">
 <contactref element="IC5" pad="J2"/>
 </signal>
 <signal name="IO130">

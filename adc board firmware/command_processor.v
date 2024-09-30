@@ -57,7 +57,9 @@ module command_processor (
 	input wire clk50, // needed while doing pllreset,
 	input wire lvdsin_trig,
 	output reg lvdsout_trig=0,
-	output reg clkswitch=0
+	output reg clkswitch=0,
+	input wire lvdsin_spare[2],
+	output reg lvdsout_spare[2]
 );
 
 integer version = 14; // firmware version
