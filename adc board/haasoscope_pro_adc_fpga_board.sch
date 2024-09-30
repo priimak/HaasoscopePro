@@ -3292,30 +3292,6 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 </library>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
 <packages>
-<package name="H10-2.54" urn="urn:adsk.eagle:footprint:33050/1" library_version="1">
-<wire x1="-1.27" y1="12.7" x2="1.27" y2="12.7" width="0.127" layer="21"/>
-<wire x1="1.27" y1="12.7" x2="1.27" y2="-12.7" width="0.127" layer="21"/>
-<wire x1="1.27" y1="-12.7" x2="-1.27" y2="-12.7" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-12.7" x2="-1.27" y2="12.7" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="12.7" x2="1.27" y2="12.7" width="0" layer="39"/>
-<wire x1="1.27" y1="12.7" x2="1.27" y2="-12.7" width="0" layer="39"/>
-<wire x1="1.27" y1="-12.7" x2="-1.27" y2="-12.7" width="0" layer="39"/>
-<wire x1="-1.27" y1="-12.7" x2="-1.27" y2="12.7" width="0" layer="39"/>
-<pad name="1" x="0" y="11.43" drill="0.889" diameter="1.651" shape="square"/>
-<pad name="2" x="0" y="8.89" drill="0.889" diameter="1.651"/>
-<pad name="3" x="0" y="6.35" drill="0.889" diameter="1.651"/>
-<pad name="4" x="0" y="3.81" drill="0.889" diameter="1.651"/>
-<pad name="5" x="0" y="1.27" drill="0.889" diameter="1.651"/>
-<pad name="6" x="0" y="-1.27" drill="0.889" diameter="1.651"/>
-<pad name="7" x="0" y="-3.81" drill="0.889" diameter="1.651"/>
-<pad name="8" x="0" y="-6.35" drill="0.889" diameter="1.651"/>
-<pad name="9" x="0" y="-8.89" drill="0.889" diameter="1.651"/>
-<pad name="10" x="0" y="-11.43" drill="0.889" diameter="1.651"/>
-<text x="2.54" y="-1.27" size="0.889" layer="27" ratio="11" rot="R90">&gt;value</text>
-<text x="-1.905" y="-1.27" size="0.889" layer="25" ratio="11" rot="R90">&gt;name</text>
-<text x="0.635" y="2.54" size="1.27" layer="33" ratio="10" rot="R90">&gt;name</text>
-<rectangle x1="-1.27" y1="-12.7" x2="1.27" y2="12.7" layer="39"/>
-</package>
 <package name="H4-2.54" urn="urn:adsk.eagle:footprint:33083/1" library_version="1">
 <wire x1="-1.27" y1="5.08" x2="1.27" y2="5.08" width="0.127" layer="21"/>
 <wire x1="1.27" y1="5.08" x2="1.27" y2="-5.08" width="0.127" layer="21"/>
@@ -3335,8 +3311,6 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 </package>
 </packages>
 <packages3d>
-<package3d name="H10-2.54" urn="urn:adsk.eagle:package:33117/1" type="box" library_version="1">
-</package3d>
 <package3d name="H4-2.54" urn="urn:adsk.eagle:package:33137/1" type="box" library_version="1">
 <packageinstances>
 <packageinstance name="H4-2.54"/>
@@ -3344,24 +3318,6 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="HEADER-10P" urn="urn:adsk.eagle:symbol:33049/1" library_version="1">
-<wire x1="-1.27" y1="12.7" x2="3.81" y2="12.7" width="0.1524" layer="94"/>
-<wire x1="3.81" y1="12.7" x2="3.81" y2="-12.7" width="0.1524" layer="94"/>
-<wire x1="3.81" y1="-12.7" x2="-1.27" y2="-12.7" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="-12.7" x2="-1.27" y2="12.7" width="0.1524" layer="94"/>
-<text x="-7.62" y="13.97" size="1.27" layer="95" ratio="10">&gt;name</text>
-<text x="-1.27" y="13.97" size="1.27" layer="95" ratio="10">&gt;value</text>
-<pin name="1" x="-6.35" y="11.43" visible="pad" length="middle" function="dotclk"/>
-<pin name="2" x="-6.35" y="8.89" visible="pad" length="middle"/>
-<pin name="3" x="-6.35" y="6.35" visible="pad" length="middle"/>
-<pin name="4" x="-6.35" y="3.81" visible="pad" length="middle"/>
-<pin name="5" x="-6.35" y="1.27" visible="pad" length="middle"/>
-<pin name="6" x="-6.35" y="-1.27" visible="pad" length="middle"/>
-<pin name="7" x="-6.35" y="-3.81" visible="pad" length="middle"/>
-<pin name="8" x="-6.35" y="-6.35" visible="pad" length="middle"/>
-<pin name="9" x="-6.35" y="-8.89" visible="pad" length="middle"/>
-<pin name="10" x="-6.35" y="-11.43" visible="pad" length="middle"/>
-</symbol>
 <symbol name="HEADER-4P" urn="urn:adsk.eagle:symbol:33082/1" library_version="1">
 <wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
 <wire x1="2.54" y1="5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
@@ -3376,37 +3332,6 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="DIP-YELLOW-FEMALE-HEADER-VERT(10P-2.54)" urn="urn:adsk.eagle:component:33172/1" prefix="J" uservalue="yes" library_version="1">
-<description>320030059</description>
-<gates>
-<gate name="G$1" symbol="HEADER-10P" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="H10-2.54">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="10" pad="10"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
-<connect gate="G$1" pin="7" pad="7"/>
-<connect gate="G$1" pin="8" pad="8"/>
-<connect gate="G$1" pin="9" pad="9"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:33117/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="MPN" value="F185-1110A1BSYC1" constant="no"/>
-<attribute name="VALUE" value="YELLOW-10P-2.54" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="DIP-BLACK-MALE-HEADER-VERT(4P-2.54)" urn="urn:adsk.eagle:component:33189/1" prefix="J" uservalue="yes" library_version="1">
 <description>320020017</description>
 <gates>
@@ -8785,14 +8710,6 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <part name="C31" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C32" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="1uF"/>
 <part name="C33" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
-<part name="GND52" library="supply1" deviceset="GND" device=""/>
-<part name="PINOUT1" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-YELLOW-FEMALE-HEADER-VERT(10P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33117/1" value="YELLOW-10P-2.54">
-<attribute name="MPN" value=""/>
-</part>
-<part name="PINOUT2" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-YELLOW-FEMALE-HEADER-VERT(10P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33117/1" value="YELLOW-10P-2.54">
-<attribute name="MPN" value=""/>
-</part>
-<part name="GND68" library="supply1" deviceset="GND" device=""/>
 <part name="J8" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="R6" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R7" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
@@ -9464,18 +9381,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <attribute name="NAME" x="472.44" y="551.18" size="1.016" layer="95" font="vector" rot="MR180"/>
 <attribute name="VALUE" x="472.44" y="548.64" size="1.016" layer="96" font="vector"/>
 </instance>
-<instance part="GND52" gate="1" x="132.334" y="499.11" smashed="yes">
-<attribute name="VALUE" x="129.794" y="496.57" size="1.778" layer="96"/>
-</instance>
-<instance part="PINOUT1" gate="G$1" x="124.714" y="514.35" smashed="yes" rot="R180">
-<attribute name="NAME" x="123.444" y="519.43" size="1.27" layer="95" ratio="10" rot="R270"/>
-</instance>
-<instance part="PINOUT2" gate="G$1" x="155.194" y="514.35" smashed="yes" rot="R180">
-<attribute name="NAME" x="153.924" y="519.43" size="1.27" layer="95" ratio="10" rot="R270"/>
-</instance>
-<instance part="GND68" gate="1" x="162.814" y="499.11" smashed="yes">
-<attribute name="VALUE" x="160.274" y="496.57" size="1.778" layer="96"/>
-</instance>
 <instance part="R121" gate="G$1" x="187.96" y="530.86" smashed="yes" rot="R90">
 <attribute name="NAME" x="186.4614" y="527.05" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="191.262" y="527.05" size="1.778" layer="96" rot="R90"/>
@@ -10040,18 +9945,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <wire x1="238.76" y1="104.14" x2="226.06" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="GND_23"/>
 <label x="226.06" y="104.14" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="PINOUT1" gate="G$1" pin="1"/>
-<pinref part="GND52" gate="1" pin="GND"/>
-<wire x1="132.334" y1="501.65" x2="132.334" y2="502.92" width="0.1524" layer="91"/>
-<wire x1="132.334" y1="502.92" x2="131.064" y2="502.92" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="PINOUT2" gate="G$1" pin="1"/>
-<pinref part="GND68" gate="1" pin="GND"/>
-<wire x1="162.814" y1="501.65" x2="162.814" y2="502.92" width="0.1524" layer="91"/>
-<wire x1="162.814" y1="502.92" x2="161.544" y2="502.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C44" gate="G$1" pin="2"/>
@@ -11513,7 +11406,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="396.24" y="607.06" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DCLK" class="5">
+<net name="DCLK" class="0">
 <segment>
 <wire x1="238.76" y1="106.68" x2="226.06" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="DCLK"/>
@@ -13601,12 +13494,10 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="5V" class="1">
 <segment>
-<pinref part="PINOUT1" gate="G$1" pin="2"/>
 <wire x1="139.954" y1="505.46" x2="131.064" y2="505.46" width="0.1524" layer="91"/>
 <label x="135.128" y="505.714" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="2"/>
 <wire x1="172.974" y1="505.46" x2="161.544" y2="505.46" width="0.1524" layer="91"/>
 <label x="164.846" y="505.714" size="1.778" layer="95"/>
 </segment>
@@ -13614,7 +13505,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <net name="FTDI_DATA1" class="5">
 <segment>
 <label x="134.112" y="510.54" size="1.778" layer="95"/>
-<pinref part="PINOUT1" gate="G$1" pin="4"/>
 <wire x1="131.064" y1="510.54" x2="139.954" y2="510.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -13626,7 +13516,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <net name="FTDI_DATA0" class="5">
 <segment>
 <label x="134.112" y="508" size="1.778" layer="95"/>
-<pinref part="PINOUT1" gate="G$1" pin="3"/>
 <wire x1="131.064" y1="508" x2="139.954" y2="508" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -13638,7 +13527,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <net name="FTDI_DATA2" class="5">
 <segment>
 <label x="134.112" y="513.08" size="1.778" layer="95"/>
-<pinref part="PINOUT1" gate="G$1" pin="5"/>
 <wire x1="131.064" y1="513.08" x2="139.954" y2="513.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -13650,7 +13538,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <net name="FTDI_DATA3" class="5">
 <segment>
 <label x="134.112" y="515.62" size="1.778" layer="95"/>
-<pinref part="PINOUT1" gate="G$1" pin="6"/>
 <wire x1="131.064" y1="515.62" x2="139.954" y2="515.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -13662,7 +13549,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <net name="FTDI_DATA4" class="5">
 <segment>
 <label x="134.112" y="518.16" size="1.778" layer="95"/>
-<pinref part="PINOUT1" gate="G$1" pin="7"/>
 <wire x1="131.064" y1="518.16" x2="139.954" y2="518.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -13673,7 +13559,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_DATA5" class="5">
 <segment>
-<pinref part="PINOUT1" gate="G$1" pin="8"/>
 <wire x1="131.064" y1="520.7" x2="139.954" y2="520.7" width="0.1524" layer="91"/>
 <label x="134.112" y="520.7" size="1.778" layer="95"/>
 </segment>
@@ -13685,7 +13570,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_DATA6" class="5">
 <segment>
-<pinref part="PINOUT1" gate="G$1" pin="9"/>
 <wire x1="131.064" y1="523.24" x2="139.954" y2="523.24" width="0.1524" layer="91"/>
 <label x="134.112" y="523.24" size="1.778" layer="95"/>
 </segment>
@@ -13697,7 +13581,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_DATA7" class="5">
 <segment>
-<pinref part="PINOUT1" gate="G$1" pin="10"/>
 <wire x1="131.064" y1="525.78" x2="139.954" y2="525.78" width="0.1524" layer="91"/>
 <label x="134.112" y="525.78" size="1.778" layer="95"/>
 </segment>
@@ -13709,7 +13592,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC0_RXF" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="10"/>
 <wire x1="161.544" y1="525.78" x2="172.974" y2="525.78" width="0.1524" layer="91"/>
 <label x="162.814" y="525.78" size="1.778" layer="95"/>
 </segment>
@@ -13721,7 +13603,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC2_RD" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="8"/>
 <wire x1="161.544" y1="520.7" x2="172.72" y2="520.7" width="0.1524" layer="91"/>
 <label x="162.814" y="520.7" size="1.778" layer="95"/>
 </segment>
@@ -13733,7 +13614,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC3_WR" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="7"/>
 <wire x1="161.544" y1="518.16" x2="172.72" y2="518.16" width="0.1524" layer="91"/>
 <label x="162.814" y="518.16" size="1.778" layer="95"/>
 </segment>
@@ -13745,7 +13625,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC4_SIWU" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="6"/>
 <label x="162.814" y="515.62" size="1.778" layer="95"/>
 <pinref part="R121" gate="G$1" pin="P$1"/>
 <wire x1="161.544" y1="515.62" x2="187.96" y2="515.62" width="0.1524" layer="91"/>
@@ -13754,7 +13633,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC6_OE" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="4"/>
 <wire x1="161.544" y1="510.54" x2="172.72" y2="510.54" width="0.1524" layer="91"/>
 <label x="162.814" y="510.54" size="1.778" layer="95"/>
 </segment>
@@ -13766,7 +13644,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC7_PWRSAV" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="3"/>
 <label x="162.814" y="508" size="1.778" layer="95"/>
 <pinref part="R123" gate="G$1" pin="P$1"/>
 <wire x1="195.58" y1="508" x2="195.58" y2="525.78" width="0.1524" layer="91"/>
@@ -13775,7 +13652,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC5_CLK" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="5"/>
 <wire x1="161.544" y1="513.08" x2="172.72" y2="513.08" width="0.1524" layer="91"/>
 <label x="162.814" y="513.08" size="1.778" layer="95"/>
 </segment>
@@ -13787,7 +13663,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="FTDI_AC1_TXE" class="5">
 <segment>
-<pinref part="PINOUT2" gate="G$1" pin="9"/>
 <wire x1="161.544" y1="523.24" x2="172.974" y2="523.24" width="0.1524" layer="91"/>
 <label x="162.814" y="523.24" size="1.778" layer="95"/>
 </segment>
@@ -17873,6 +17748,149 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="104,2,-170.18,264.16,INA+,GND2,GND,,,"/>
 <approved hash="104,2,-175.26,248.92,INA+,GND3,GND,,,"/>
 <approved hash="104,2,-170.18,248.92,INA+,GND4,GND,,,"/>
+<approved hash="106,1,238.76,276.86,CLK1,,,,,"/>
+<approved hash="106,1,279.4,386.08,CLK2,,,,,"/>
+<approved hash="106,1,279.4,388.62,CLK3,,,,,"/>
+<approved hash="106,1,238.76,226.06,CLK4,,,,,"/>
+<approved hash="106,1,238.76,223.52,CLK5,,,,,"/>
+<approved hash="106,1,279.4,337.82,CLK6,,,,,"/>
+<approved hash="106,1,279.4,335.28,CLK7,,,,,"/>
+<approved hash="106,1,279.4,25.4,CLK12,,,,,"/>
+<approved hash="106,1,279.4,81.28,CLK13,,,,,"/>
+<approved hash="106,1,279.4,27.94,CLK14,,,,,"/>
+<approved hash="106,1,279.4,83.82,CLK15,,,,,"/>
+<approved hash="106,1,238.76,546.1,IO21,,,,,"/>
+<approved hash="106,1,238.76,543.56,IO22,,,,,"/>
+<approved hash="106,1,238.76,505.46,IO35,,,,,"/>
+<approved hash="106,1,238.76,502.92,IO36,,,,,"/>
+<approved hash="106,1,238.76,454.66,IO48,,,,,"/>
+<approved hash="106,1,238.76,452.12,IO49,,,,,"/>
+<approved hash="106,1,238.76,449.58,IO50,,,,,"/>
+<approved hash="106,1,238.76,447.04,IO51,,,,,"/>
+<approved hash="106,1,238.76,441.96,IO53,,,,,"/>
+<approved hash="106,1,238.76,431.8,IO54,,,,,"/>
+<approved hash="106,1,238.76,398.78,IO60,,,,,"/>
+<approved hash="106,1,238.76,396.24,IO61,,,,,"/>
+<approved hash="106,1,238.76,393.7,IO62,,,,,"/>
+<approved hash="106,1,238.76,391.16,IO63,,,,,"/>
+<approved hash="106,1,238.76,388.62,IO64,,,,,"/>
+<approved hash="106,1,238.76,383.54,IO66,,,,,"/>
+<approved hash="106,1,238.76,381,IO67,,,,,"/>
+<approved hash="106,1,238.76,373.38,IO70,,,,,"/>
+<approved hash="106,1,238.76,363.22,IO73,,,,,"/>
+<approved hash="106,1,238.76,358.14,IO75,,,,,"/>
+<approved hash="106,1,238.76,337.82,IO79,,,,,"/>
+<approved hash="106,1,238.76,335.28,IO80,,,,,"/>
+<approved hash="106,1,238.76,332.74,IO81,,,,,"/>
+<approved hash="106,1,238.76,330.2,IO82,,,,,"/>
+<approved hash="106,1,238.76,312.42,IO85,,,,,"/>
+<approved hash="106,1,238.76,307.34,IO87,,,,,"/>
+<approved hash="106,1,238.76,297.18,IO90,,,,,"/>
+<approved hash="106,1,238.76,294.64,IO91,,,,,"/>
+<approved hash="106,1,238.76,292.1,IO92,,,,,"/>
+<approved hash="106,1,238.76,287.02,IO93,,,,,"/>
+<approved hash="106,1,238.76,284.48,IO94,,,,,"/>
+<approved hash="106,1,238.76,281.94,IO95,,,,,"/>
+<approved hash="106,1,238.76,279.4,IO96,,,,,"/>
+<approved hash="106,1,238.76,271.78,IO97,,,,,"/>
+<approved hash="106,1,238.76,269.24,IO98,,,,,"/>
+<approved hash="106,1,238.76,266.7,IO99,,,,,"/>
+<approved hash="106,1,238.76,246.38,IO105,,,,,"/>
+<approved hash="106,1,238.76,243.84,IO106,,,,,"/>
+<approved hash="106,1,238.76,241.3,IO107,,,,,"/>
+<approved hash="106,1,238.76,238.76,IO108,,,,,"/>
+<approved hash="106,1,238.76,236.22,IO109,,,,,"/>
+<approved hash="106,1,238.76,233.68,IO110,,,,,"/>
+<approved hash="106,1,238.76,220.98,IO111,,,,,"/>
+<approved hash="106,1,238.76,218.44,IO112,,,,,"/>
+<approved hash="106,1,238.76,210.82,IO113,,,,,"/>
+<approved hash="106,1,238.76,208.28,IO114,,,,,"/>
+<approved hash="106,1,238.76,205.74,IO115,,,,,"/>
+<approved hash="106,1,238.76,203.2,IO116,,,,,"/>
+<approved hash="106,1,238.76,198.12,IO117,,,,,"/>
+<approved hash="106,1,238.76,195.58,IO118,,,,,"/>
+<approved hash="106,1,238.76,187.96,IO119,,,,,"/>
+<approved hash="106,1,238.76,185.42,IO120,,,,,"/>
+<approved hash="106,1,238.76,182.88,IO121,,,,,"/>
+<approved hash="106,1,238.76,180.34,IO122,,,,,"/>
+<approved hash="106,1,238.76,177.8,IO123,,,,,"/>
+<approved hash="106,1,238.76,175.26,IO124,,,,,"/>
+<approved hash="106,1,238.76,172.72,IO125,,,,,"/>
+<approved hash="106,1,238.76,165.1,IO128,,,,,"/>
+<approved hash="106,1,238.76,162.56,IO129,,,,,"/>
+<approved hash="106,1,238.76,160.02,IO130,,,,,"/>
+<approved hash="106,1,238.76,157.48,IO131,,,,,"/>
+<approved hash="106,1,238.76,154.94,IO132,,,,,"/>
+<approved hash="106,1,238.76,152.4,IO133,,,,,"/>
+<approved hash="106,1,238.76,149.86,IO134,,,,,"/>
+<approved hash="106,1,238.76,147.32,IO135,,,,,"/>
+<approved hash="106,1,238.76,124.46,IO136,,,,,"/>
+<approved hash="106,1,238.76,121.92,IO137,,,,,"/>
+<approved hash="106,1,238.76,93.98,IO141,,,,,"/>
+<approved hash="106,1,238.76,91.44,IO142,,,,,"/>
+<approved hash="106,1,238.76,63.5,IO145,,,,,"/>
+<approved hash="106,1,238.76,38.1,IO149,,,,,"/>
+<approved hash="106,1,238.76,35.56,IO150,,,,,"/>
+<approved hash="106,1,279.4,601.98,IO157,,,,,"/>
+<approved hash="106,1,279.4,596.9,IO159,,,,,"/>
+<approved hash="106,1,279.4,574.04,IO161,,,,,"/>
+<approved hash="106,1,279.4,546.1,IO168,,,,,"/>
+<approved hash="106,1,279.4,543.56,IO169,,,,,"/>
+<approved hash="106,1,279.4,518.16,IO172,,,,,"/>
+<approved hash="106,1,279.4,490.22,IO183,,,,,"/>
+<approved hash="106,1,279.4,487.68,IO184,,,,,"/>
+<approved hash="106,1,279.4,464.82,IO186,,,,,"/>
+<approved hash="106,1,279.4,462.28,IO187,,,,,"/>
+<approved hash="106,1,279.4,459.74,IO188,,,,,"/>
+<approved hash="106,1,279.4,452.12,IO189,,,,,"/>
+<approved hash="106,1,279.4,434.34,IO194,,,,,"/>
+<approved hash="106,1,279.4,431.8,IO195,,,,,"/>
+<approved hash="106,1,279.4,411.48,IO197,,,,,"/>
+<approved hash="106,1,279.4,408.94,IO198,,,,,"/>
+<approved hash="106,1,279.4,406.4,IO199,,,,,"/>
+<approved hash="106,1,279.4,403.86,IO200,,,,,"/>
+<approved hash="106,1,279.4,396.24,IO203,,,,,"/>
+<approved hash="106,1,279.4,383.54,IO206,,,,,"/>
+<approved hash="106,1,279.4,381,IO207,,,,,"/>
+<approved hash="106,1,279.4,378.46,IO208,,,,,"/>
+<approved hash="106,1,279.4,350.52,IO218,,,,,"/>
+<approved hash="106,1,279.4,347.98,IO219,,,,,"/>
+<approved hash="106,1,279.4,345.44,IO220,,,,,"/>
+<approved hash="106,1,279.4,312.42,IO225,,,,,"/>
+<approved hash="106,1,279.4,309.88,IO226,,,,,"/>
+<approved hash="106,1,279.4,307.34,IO227,,,,,"/>
+<approved hash="106,1,279.4,304.8,IO228,,,,,"/>
+<approved hash="106,1,279.4,302.26,IO229,,,,,"/>
+<approved hash="106,1,279.4,271.78,IO240,,,,,"/>
+<approved hash="106,1,279.4,269.24,IO241,,,,,"/>
+<approved hash="106,1,279.4,261.62,IO244,,,,,"/>
+<approved hash="106,1,279.4,259.08,IO245,,,,,"/>
+<approved hash="106,1,279.4,256.54,IO246,,,,,"/>
+<approved hash="106,1,279.4,254,IO247,,,,,"/>
+<approved hash="106,1,279.4,251.46,IO248,,,,,"/>
+<approved hash="106,1,279.4,248.92,IO249,,,,,"/>
+<approved hash="106,1,279.4,246.38,IO250,,,,,"/>
+<approved hash="106,1,279.4,238.76,IO253,,,,,"/>
+<approved hash="106,1,279.4,208.28,IO258,,,,,"/>
+<approved hash="106,1,279.4,203.2,IO260,,,,,"/>
+<approved hash="106,1,279.4,187.96,IO263,,,,,"/>
+<approved hash="106,1,279.4,185.42,IO264,,,,,"/>
+<approved hash="106,1,279.4,175.26,IO266,,,,,"/>
+<approved hash="106,1,279.4,172.72,IO267,,,,,"/>
+<approved hash="106,1,279.4,160.02,IO272,,,,,"/>
+<approved hash="106,1,279.4,157.48,IO273,,,,,"/>
+<approved hash="106,1,279.4,152.4,IO274,,,,,"/>
+<approved hash="106,1,279.4,147.32,IO276,,,,,"/>
+<approved hash="106,1,279.4,109.22,IO282,,,,,"/>
+<approved hash="106,1,279.4,104.14,IO283,,,,,"/>
+<approved hash="106,1,279.4,101.6,IO284,,,,,"/>
+<approved hash="106,1,279.4,66.04,IO295,,,,,"/>
+<approved hash="106,1,279.4,63.5,IO296,,,,,"/>
+<approved hash="106,1,279.4,58.42,IO298,,,,,"/>
+<approved hash="106,1,279.4,48.26,IO299,,,,,"/>
+<approved hash="106,1,279.4,45.72,IO300,,,,,"/>
+<approved hash="106,1,279.4,10.16,IO311,,,,,"/>
+<approved hash="106,1,279.4,7.62,IO312,,,,,"/>
 </errors>
 </schematic>
 </drawing>
