@@ -2223,6 +2223,25 @@ Source: http://www.osram.convergy.de/ ... LO_LS_LY L89K.pdf</description>
 <text x="1.73" y="-2.178" size="1.016" layer="21" font="vector">A</text>
 <text x="-2.938" y="-2.178" size="1.016" layer="21" font="vector">K</text>
 </package>
+<package name="RGBLED5050" urn="urn:adsk.eagle:footprint:6240222/1" library_version="2">
+<wire x1="-2.5" y1="2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="2.5" x2="2.5" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-1.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-2.5" x2="1.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-2.5" x2="2.5" y2="-1.5" width="0.127" layer="21"/>
+<circle x="2.934" y="-2.688" radius="0.1414" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="2.1" width="0.127" layer="21"/>
+<smd name="1" x="-2" y="1.7" dx="2" dy="1.1" layer="1"/>
+<smd name="2" x="-2" y="0" dx="2" dy="1.1" layer="1"/>
+<smd name="3" x="-2" y="-1.7" dx="2" dy="1.1" layer="1"/>
+<smd name="4" x="2" y="-1.7" dx="2" dy="1.1" layer="1"/>
+<smd name="5" x="2" y="0" dx="2" dy="1.1" layer="1"/>
+<smd name="6" x="2" y="1.7" dx="2" dy="1.1" layer="1"/>
+<text x="-1.7" y="2.9" size="1.27" layer="25" font="vector">&gt;NAME</text>
+<text x="-2" y="-4.1" size="1.27" layer="27" font="vector">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="1206" urn="urn:adsk.eagle:package:6240349/1" type="box" library_version="2">
@@ -2453,6 +2472,11 @@ Source: http://www.osram.convergy.de/ ... LO_LS_LY L89K.pdf</description>
 <packageinstance name="SMLK34"/>
 </packageinstances>
 </package3d>
+<package3d name="RGBLED5050" urn="urn:adsk.eagle:package:6240865/1" type="box" library_version="2">
+<packageinstances>
+<packageinstance name="RGBLED5050"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
 <symbol name="LED" urn="urn:adsk.eagle:symbol:6239480/1" library_version="2">
@@ -2479,6 +2503,39 @@ Source: http://www.osram.convergy.de/ ... LO_LS_LY L89K.pdf</description>
 <vertex x="-2.921" y="-2.413"/>
 <vertex x="-2.413" y="-2.921"/>
 </polygon>
+</symbol>
+<symbol name="RGBLED" urn="urn:adsk.eagle:symbol:6239624/1" library_version="2">
+<wire x1="1.27" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="6.35" x2="1.27" y2="5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="3.81" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-6.35" x2="1.27" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="1.27" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="-1.27" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="6.35" x2="-1.27" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="3.81" x2="1.27" y2="5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="-1.27" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-3.81" x2="-1.27" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-6.35" x2="1.27" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="1.27" y2="0" width="0.254" layer="94"/>
+<text x="-3.81" y="8.89" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-3.81" size="1.778" layer="94">Red</text>
+<text x="2.54" y="1.27" size="1.778" layer="94">Grn</text>
+<text x="2.54" y="6.35" size="1.778" layer="94">Blue</text>
+<pin name="BLUE_C" x="5.08" y="5.08" visible="off" length="point" rot="R180"/>
+<pin name="GREEN_C" x="5.08" y="0" visible="off" length="point" rot="R180"/>
+<pin name="GREEN_A" x="-5.08" y="0" visible="off" length="point"/>
+<pin name="RED_C" x="5.08" y="-5.08" visible="off" length="point" rot="R180"/>
+<pin name="BLUE_A" x="-5.08" y="5.08" visible="off" length="point"/>
+<pin name="RED_A" x="-5.08" y="-5.08" visible="off" length="point"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2921,6 +2978,30 @@ Source: http://www.osram.convergy.de/</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="RGBLED" urn="urn:adsk.eagle:component:6241116/1" prefix="LED" library_version="2">
+<description>For 5050 RGB LEDs, the order of the LEDs may vary from one manufacturer to another!</description>
+<gates>
+<gate name="G$1" symbol="RGBLED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="5050" package="RGBLED5050">
+<connects>
+<connect gate="G$1" pin="BLUE_A" pad="3"/>
+<connect gate="G$1" pin="BLUE_C" pad="4"/>
+<connect gate="G$1" pin="GREEN_A" pad="1"/>
+<connect gate="G$1" pin="GREEN_C" pad="6"/>
+<connect gate="G$1" pin="RED_A" pad="2"/>
+<connect gate="G$1" pin="RED_C" pad="5"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:6240865/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -2941,13 +3022,18 @@ Source: http://www.osram.convergy.de/</description>
 <part name="GND2" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="R1" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="3.3k"/>
 <part name="LED1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
+<part name="LED2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="RGBLED" device="5050" package3d_urn="urn:adsk.eagle:package:6240865/1"/>
+<part name="GND1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="R2" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="3.3k"/>
+<part name="R3" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="3.3k"/>
+<part name="R4" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="3.3k"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="J16" gate="G$1" x="35.56" y="20.32" smashed="yes" rot="R180"/>
+<instance part="J16" gate="G$1" x="10.16" y="22.86" smashed="yes" rot="R180"/>
 <instance part="GND2" gate="1" x="93.98" y="7.62" smashed="yes">
 <attribute name="VALUE" x="93.98" y="7.366" size="1.778" layer="96" align="top-center"/>
 </instance>
@@ -2958,6 +3044,21 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="LED1" gate="G$1" x="93.98" y="27.94" smashed="yes">
 <attribute name="NAME" x="97.536" y="23.368" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="99.695" y="23.368" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED2" gate="G$1" x="60.96" y="25.4" smashed="yes">
+<attribute name="NAME" x="57.15" y="34.29" size="1.778" layer="95"/>
+</instance>
+<instance part="GND1" gate="1" x="71.12" y="17.78" smashed="yes">
+<attribute name="VALUE" x="71.12" y="17.526" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="R2" gate="G$1" x="45.72" y="30.48" smashed="yes" rot="R180">
+<attribute name="VALUE" x="49.53" y="33.782" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R3" gate="G$1" x="45.72" y="25.4" smashed="yes" rot="R180">
+<attribute name="VALUE" x="49.53" y="28.702" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R4" gate="G$1" x="45.72" y="20.32" smashed="yes" rot="R180">
+<attribute name="VALUE" x="49.53" y="23.622" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -2971,8 +3072,21 @@ Source: http://www.osram.convergy.de/</description>
 </segment>
 <segment>
 <pinref part="J16" gate="G$1" pin="2"/>
-<wire x1="30.48" y1="25.4" x2="22.86" y2="25.4" width="0.1524" layer="91"/>
-<label x="22.86" y="25.4" size="1.778" layer="95"/>
+<wire x1="5.08" y1="27.94" x2="-2.54" y2="27.94" width="0.1524" layer="91"/>
+<label x="-2.54" y="27.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="LED2" gate="G$1" pin="RED_C"/>
+<wire x1="66.04" y1="20.32" x2="71.12" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<pinref part="LED2" gate="G$1" pin="BLUE_C"/>
+<wire x1="66.04" y1="30.48" x2="71.12" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="LED2" gate="G$1" pin="GREEN_C"/>
+<wire x1="66.04" y1="25.4" x2="71.12" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="30.48" x2="71.12" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="25.4" x2="71.12" y2="20.32" width="0.1524" layer="91"/>
+<junction x="71.12" y="25.4"/>
+<junction x="71.12" y="20.32"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -2983,14 +3097,89 @@ Source: http://www.osram.convergy.de/</description>
 </segment>
 <segment>
 <pinref part="J16" gate="G$1" pin="1"/>
-<wire x1="30.48" y1="27.94" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
-<label x="22.86" y="27.94" size="1.778" layer="95"/>
+<wire x1="5.08" y1="30.48" x2="-2.54" y2="30.48" width="0.1524" layer="91"/>
+<label x="-2.54" y="30.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J16" gate="G$1" pin="3"/>
+<wire x1="5.08" y1="25.4" x2="-2.54" y2="25.4" width="0.1524" layer="91"/>
+<label x="-2.54" y="25.4" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J16" gate="G$1" pin="5"/>
+<wire x1="5.08" y1="20.32" x2="-2.54" y2="20.32" width="0.1524" layer="91"/>
+<label x="-2.54" y="20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J16" gate="G$1" pin="7"/>
+<wire x1="5.08" y1="15.24" x2="-2.54" y2="15.24" width="0.1524" layer="91"/>
+<label x="-2.54" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="P$2"/>
 <pinref part="LED1" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="BLUE" class="0">
+<segment>
+<pinref part="J16" gate="G$1" pin="8"/>
+<wire x1="5.08" y1="12.7" x2="-2.54" y2="12.7" width="0.1524" layer="91"/>
+<label x="-2.54" y="12.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="P$2"/>
+<wire x1="40.64" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
+<label x="30.48" y="30.48" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="GREEN" class="0">
+<segment>
+<pinref part="J16" gate="G$1" pin="6"/>
+<wire x1="5.08" y1="17.78" x2="-2.54" y2="17.78" width="0.1524" layer="91"/>
+<label x="-2.54" y="17.78" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="P$2"/>
+<wire x1="30.48" y1="25.4" x2="40.64" y2="25.4" width="0.1524" layer="91"/>
+<label x="30.48" y="25.4" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RED" class="0">
+<segment>
+<pinref part="J16" gate="G$1" pin="4"/>
+<wire x1="5.08" y1="22.86" x2="-2.54" y2="22.86" width="0.1524" layer="91"/>
+<label x="-2.54" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="P$2"/>
+<wire x1="40.64" y1="20.32" x2="30.48" y2="20.32" width="0.1524" layer="91"/>
+<label x="30.48" y="20.32" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BLUE_R" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="BLUE_A"/>
+<wire x1="55.88" y1="30.48" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
+<label x="50.8" y="30.48" size="1.778" layer="95"/>
+<pinref part="R2" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="GREEN_R" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="GREEN_A"/>
+<wire x1="55.88" y1="25.4" x2="50.8" y2="25.4" width="0.1524" layer="91"/>
+<label x="50.8" y="25.4" size="1.778" layer="95"/>
+<pinref part="R3" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="RED_R" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="RED_A"/>
+<wire x1="55.88" y1="20.32" x2="50.8" y2="20.32" width="0.1524" layer="91"/>
+<label x="50.8" y="20.32" size="1.778" layer="95"/>
+<pinref part="R4" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 </nets>
