@@ -51,7 +51,7 @@ set_output_delay -clock ftdi_clk 1 [get_ports ftdi_rd_n ]
 set_output_delay -clock ftdi_clk 1 [get_ports ftdi_wr_n ]
 
 set_input_delay -clock clk50 0 [get_ports spimiso* ]
-set_output_delay -clock clk50 1 [get_ports spiclk ]
+set_output_delay -clock clk50 5 [get_ports spiclk ]
 set_output_delay -clock clk50 1 [get_ports spics* ]
 set_output_delay -clock clk50 1 [get_ports spimosi ]
 
