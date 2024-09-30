@@ -54,10 +54,13 @@ module command_processor (
 	input wire [7:0] boardin,
 	output wire [7:0] boardout,
 	output reg spireset_L,
-	input wire clk50 // needed while doing pllreset
+	input wire clk50, // needed while doing pllreset,
+	input wire lvdsin_trig,
+	output reg lvdsout_trig=0,
+	output reg clkswitch=0
 );
 
-integer version = 13; // firmware version
+integer version = 14; // firmware version
 
 assign debugout[0] = locked;
 assign debugout[1] = spics[4];
@@ -68,6 +71,8 @@ assign debugout[5] = overrange[1];
 assign debugout[6] = overrange[2];
 assign debugout[7] = overrange[3];
 assign debugout[11:8] = state;
+
+assign lvdsout_trig = lvdsin_trig;
 
 //for clock phase
 reg[7:0] pllclock_counter=0;
@@ -353,6 +358,14 @@ always @ (posedge clk or negedge rstn)
 			pllclock_counter<=0;
 			scanclk_cycles<=0;
 			state<=PLLCLOCK;
+		end
+		
+		7 : begin // try to switch clocks
+			clkswitch <= ~clkswitch;
+			o_tdata <= {8'd0,8'd0,8'd0,7'd0,~clkswitch};
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
 		end
 		
 		default: // some command we didn't know

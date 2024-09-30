@@ -10778,14 +10778,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="335.28" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO81" class="0">
+<net name="LVDSIN_TRIG_N" class="2">
 <segment>
 <wire x1="238.76" y1="332.74" x2="226.06" y2="332.74" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_81"/>
 <label x="226.06" y="332.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO82" class="0">
+<net name="LVDSIN_TRIG_P" class="2">
 <segment>
 <wire x1="238.76" y1="330.2" x2="226.06" y2="330.2" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_82"/>
@@ -10930,14 +10930,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="276.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO97" class="0">
+<net name="LVDSOUT_TRIG_N" class="2">
 <segment>
 <wire x1="238.76" y1="271.78" x2="226.06" y2="271.78" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_97"/>
 <label x="226.06" y="271.78" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO98" class="0">
+<net name="LVDSOUT_TRIG_P" class="2">
 <segment>
 <wire x1="238.76" y1="269.24" x2="226.06" y2="269.24" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_98"/>
@@ -11204,7 +11204,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="210.82" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO114" class="0">
+<net name="LVDSOUT_CLK_P" class="2">
 <segment>
 <wire x1="238.76" y1="208.28" x2="226.06" y2="208.28" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_114"/>
@@ -11347,7 +11347,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO133" class="0">
+<net name="LVDSOUT_CLK_N" class="2">
 <segment>
 <wire x1="238.76" y1="152.4" x2="226.06" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_133"/>
@@ -12197,14 +12197,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="482.6" y="601.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK3" class="5">
+<net name="LVDSIN_CLK_N" class="2">
 <segment>
 <wire x1="292.1" y1="388.62" x2="279.4" y2="388.62" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK3"/>
 <label x="284.48" y="388.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK2" class="5">
+<net name="LVDSIN_CLK_P" class="2">
 <segment>
 <wire x1="292.1" y1="386.08" x2="279.4" y2="386.08" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK2"/>

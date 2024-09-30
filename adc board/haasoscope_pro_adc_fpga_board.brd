@@ -7716,10 +7716,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO80">
 <contactref element="IC5" pad="E22"/>
 </signal>
-<signal name="IO81">
+<signal name="LVDSIN_TRIG_N" class="2">
 <contactref element="IC5" pad="F1"/>
 </signal>
-<signal name="IO82">
+<signal name="LVDSIN_TRIG_P" class="2">
 <contactref element="IC5" pad="F2"/>
 </signal>
 <signal name="IO85">
@@ -7792,10 +7792,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="CLK1" class="5">
 <contactref element="IC5" pad="G1"/>
 </signal>
-<signal name="IO97">
+<signal name="LVDSOUT_TRIG_N" class="2">
 <contactref element="IC5" pad="G3"/>
 </signal>
-<signal name="IO98">
+<signal name="LVDSOUT_TRIG_P" class="2">
 <contactref element="IC5" pad="G4"/>
 </signal>
 <signal name="IO99">
@@ -7955,7 +7955,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO113">
 <contactref element="IC5" pad="H5"/>
 </signal>
-<signal name="IO114">
+<signal name="LVDSOUT_CLK_P" class="2">
 <contactref element="IC5" pad="H6"/>
 </signal>
 <signal name="IO115">
@@ -8006,7 +8006,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO132">
 <contactref element="IC5" pad="J5"/>
 </signal>
-<signal name="IO133">
+<signal name="LVDSOUT_CLK_N" class="2">
 <contactref element="IC5" pad="J6"/>
 </signal>
 <signal name="IO134">
@@ -8157,10 +8157,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO203">
 <contactref element="IC5" pad="R20"/>
 </signal>
-<signal name="CLK3" class="5">
+<signal name="LVDSIN_CLK_N" class="2">
 <contactref element="IC5" pad="T1"/>
 </signal>
-<signal name="CLK2" class="5">
+<signal name="LVDSIN_CLK_P" class="2">
 <contactref element="IC5" pad="T2"/>
 </signal>
 <signal name="IO206">

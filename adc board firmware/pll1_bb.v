@@ -33,36 +33,47 @@
 
 module pll1 (
 	areset,
+	clkswitch,
 	inclk0,
+	inclk1,
 	phasecounterselect,
 	phasestep,
 	phaseupdown,
 	scanclk,
+	activeclock,
 	c0,
 	c1,
 	c2,
 	c3,
 	c4,
+	clkbad0,
+	clkbad1,
 	locked,
 	phasedone);
 
 	input	  areset;
+	input	  clkswitch;
 	input	  inclk0;
+	input	  inclk1;
 	input	[2:0]  phasecounterselect;
 	input	  phasestep;
 	input	  phaseupdown;
 	input	  scanclk;
+	output	  activeclock;
 	output	  c0;
 	output	  c1;
 	output	  c2;
 	output	  c3;
 	output	  c4;
+	output	  clkbad0;
+	output	  clkbad1;
 	output	  locked;
 	output	  phasedone;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
 	tri0	  areset;
+	tri0	  clkswitch;
 	tri0	[2:0]  phasecounterselect;
 	tri0	  phasestep;
 	tri0	  phaseupdown;
@@ -75,7 +86,7 @@ endmodule
 // ============================================================
 // CNX file retrieval info
 // ============================================================
-// Retrieval info: PRIVATE: ACTIVECLK_CHECK STRING "0"
+// Retrieval info: PRIVATE: ACTIVECLK_CHECK STRING "1"
 // Retrieval info: PRIVATE: BANDWIDTH STRING "1.000"
 // Retrieval info: PRIVATE: BANDWIDTH_FEATURE_ENABLED STRING "1"
 // Retrieval info: PRIVATE: BANDWIDTH_FREQ_UNIT STRING "MHz"
@@ -84,10 +95,10 @@ endmodule
 // Retrieval info: PRIVATE: BANDWIDTH_USE_PRESET STRING "1"
 // Retrieval info: PRIVATE: CLKBAD_SWITCHOVER_CHECK STRING "0"
 // Retrieval info: PRIVATE: CLKLOSS_CHECK STRING "0"
-// Retrieval info: PRIVATE: CLKSWITCH_CHECK STRING "0"
+// Retrieval info: PRIVATE: CLKSWITCH_CHECK STRING "1"
 // Retrieval info: PRIVATE: CNX_NO_COMPENSATE_RADIO STRING "0"
-// Retrieval info: PRIVATE: CREATE_CLKBAD_CHECK STRING "0"
-// Retrieval info: PRIVATE: CREATE_INCLK1_CHECK STRING "0"
+// Retrieval info: PRIVATE: CREATE_CLKBAD_CHECK STRING "1"
+// Retrieval info: PRIVATE: CREATE_INCLK1_CHECK STRING "1"
 // Retrieval info: PRIVATE: CUR_DEDICATED_CLK STRING "c0"
 // Retrieval info: PRIVATE: CUR_FBIN_CLK STRING "c0"
 // Retrieval info: PRIVATE: DEVICE_SPEED_GRADE STRING "7"
@@ -115,7 +126,7 @@ endmodule
 // Retrieval info: PRIVATE: HAS_MANUAL_SWITCHOVER STRING "1"
 // Retrieval info: PRIVATE: INCLK0_FREQ_EDIT STRING "50.000"
 // Retrieval info: PRIVATE: INCLK0_FREQ_UNIT_COMBO STRING "MHz"
-// Retrieval info: PRIVATE: INCLK1_FREQ_EDIT STRING "100.000"
+// Retrieval info: PRIVATE: INCLK1_FREQ_EDIT STRING "50.000"
 // Retrieval info: PRIVATE: INCLK1_FREQ_EDIT_CHANGED STRING "1"
 // Retrieval info: PRIVATE: INCLK1_FREQ_UNIT_CHANGED STRING "1"
 // Retrieval info: PRIVATE: INCLK1_FREQ_UNIT_COMBO STRING "MHz"
@@ -237,20 +248,21 @@ endmodule
 // Retrieval info: CONSTANT: CLK4_PHASE_SHIFT STRING "0"
 // Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
 // Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
+// Retrieval info: CONSTANT: INCLK1_INPUT_FREQUENCY NUMERIC "20000"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altpll"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "NORMAL"
 // Retrieval info: CONSTANT: PLL_TYPE STRING "AUTO"
-// Retrieval info: CONSTANT: PORT_ACTIVECLOCK STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PORT_ACTIVECLOCK STRING "PORT_USED"
 // Retrieval info: CONSTANT: PORT_ARESET STRING "PORT_USED"
-// Retrieval info: CONSTANT: PORT_CLKBAD0 STRING "PORT_UNUSED"
-// Retrieval info: CONSTANT: PORT_CLKBAD1 STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PORT_CLKBAD0 STRING "PORT_USED"
+// Retrieval info: CONSTANT: PORT_CLKBAD1 STRING "PORT_USED"
 // Retrieval info: CONSTANT: PORT_CLKLOSS STRING "PORT_UNUSED"
-// Retrieval info: CONSTANT: PORT_CLKSWITCH STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PORT_CLKSWITCH STRING "PORT_USED"
 // Retrieval info: CONSTANT: PORT_CONFIGUPDATE STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_FBIN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_INCLK0 STRING "PORT_USED"
-// Retrieval info: CONSTANT: PORT_INCLK1 STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PORT_INCLK1 STRING "PORT_USED"
 // Retrieval info: CONSTANT: PORT_LOCKED STRING "PORT_USED"
 // Retrieval info: CONSTANT: PORT_PFDENA STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_PHASECOUNTERSELECT STRING "PORT_USED"
@@ -282,19 +294,26 @@ endmodule
 // Retrieval info: CONSTANT: PORT_extclk1 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_extclk2 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_extclk3 STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PRIMARY_CLOCK STRING "inclk0"
 // Retrieval info: CONSTANT: SELF_RESET_ON_LOSS_LOCK STRING "OFF"
+// Retrieval info: CONSTANT: SWITCH_OVER_TYPE STRING "MANUAL"
 // Retrieval info: CONSTANT: VCO_FREQUENCY_CONTROL STRING "MANUAL_PHASE"
 // Retrieval info: CONSTANT: VCO_PHASE_SHIFT_STEP NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_CLOCK NUMERIC "5"
 // Retrieval info: CONSTANT: WIDTH_PHASECOUNTERSELECT NUMERIC "3"
 // Retrieval info: USED_PORT: @clk 0 0 5 0 OUTPUT_CLK_EXT VCC "@clk[4..0]"
+// Retrieval info: USED_PORT: activeclock 0 0 0 0 OUTPUT GND "activeclock"
 // Retrieval info: USED_PORT: areset 0 0 0 0 INPUT GND "areset"
 // Retrieval info: USED_PORT: c0 0 0 0 0 OUTPUT_CLK_EXT VCC "c0"
 // Retrieval info: USED_PORT: c1 0 0 0 0 OUTPUT_CLK_EXT VCC "c1"
 // Retrieval info: USED_PORT: c2 0 0 0 0 OUTPUT_CLK_EXT VCC "c2"
 // Retrieval info: USED_PORT: c3 0 0 0 0 OUTPUT_CLK_EXT VCC "c3"
 // Retrieval info: USED_PORT: c4 0 0 0 0 OUTPUT_CLK_EXT VCC "c4"
+// Retrieval info: USED_PORT: clkbad0 0 0 0 0 OUTPUT VCC "clkbad0"
+// Retrieval info: USED_PORT: clkbad1 0 0 0 0 OUTPUT VCC "clkbad1"
+// Retrieval info: USED_PORT: clkswitch 0 0 0 0 INPUT GND "clkswitch"
 // Retrieval info: USED_PORT: inclk0 0 0 0 0 INPUT_CLK_EXT GND "inclk0"
+// Retrieval info: USED_PORT: inclk1 0 0 0 0 INPUT_CLK_EXT GND "inclk1"
 // Retrieval info: USED_PORT: locked 0 0 0 0 OUTPUT GND "locked"
 // Retrieval info: USED_PORT: phasecounterselect 0 0 3 0 INPUT GND "phasecounterselect[2..0]"
 // Retrieval info: USED_PORT: phasedone 0 0 0 0 OUTPUT GND "phasedone"
@@ -302,17 +321,21 @@ endmodule
 // Retrieval info: USED_PORT: phaseupdown 0 0 0 0 INPUT GND "phaseupdown"
 // Retrieval info: USED_PORT: scanclk 0 0 0 0 INPUT_CLK_EXT VCC "scanclk"
 // Retrieval info: CONNECT: @areset 0 0 0 0 areset 0 0 0 0
-// Retrieval info: CONNECT: @inclk 0 0 1 1 GND 0 0 0 0
+// Retrieval info: CONNECT: @clkswitch 0 0 0 0 clkswitch 0 0 0 0
 // Retrieval info: CONNECT: @inclk 0 0 1 0 inclk0 0 0 0 0
+// Retrieval info: CONNECT: @inclk 0 0 1 1 inclk1 0 0 0 0
 // Retrieval info: CONNECT: @phasecounterselect 0 0 3 0 phasecounterselect 0 0 3 0
 // Retrieval info: CONNECT: @phasestep 0 0 0 0 phasestep 0 0 0 0
 // Retrieval info: CONNECT: @phaseupdown 0 0 0 0 phaseupdown 0 0 0 0
 // Retrieval info: CONNECT: @scanclk 0 0 0 0 scanclk 0 0 0 0
+// Retrieval info: CONNECT: activeclock 0 0 0 0 @activeclock 0 0 0 0
 // Retrieval info: CONNECT: c0 0 0 0 0 @clk 0 0 1 0
 // Retrieval info: CONNECT: c1 0 0 0 0 @clk 0 0 1 1
 // Retrieval info: CONNECT: c2 0 0 0 0 @clk 0 0 1 2
 // Retrieval info: CONNECT: c3 0 0 0 0 @clk 0 0 1 3
 // Retrieval info: CONNECT: c4 0 0 0 0 @clk 0 0 1 4
+// Retrieval info: CONNECT: clkbad0 0 0 0 0 @clkbad 0 0 1 0
+// Retrieval info: CONNECT: clkbad1 0 0 0 0 @clkbad 0 0 1 1
 // Retrieval info: CONNECT: locked 0 0 0 0 @locked 0 0 0 0
 // Retrieval info: CONNECT: phasedone 0 0 0 0 @phasedone 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL pll1.v TRUE

@@ -139,7 +139,7 @@ overrange[2]                 : B2        : input  : 2.5 V             :         
 ftdi_wr_n                    : B3        : output : 3.3-V LVTTL       :         : 8         : Y              
 ftdi_txe_n                   : B4        : input  : 3.3-V LVTTL       :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
-spimisos[7]                  : B6        : input  : 3.3-V LVTTL       :         : 8         : N              
+spics[7]                     : B6        : output : 3.3-V LVTTL       :         : 8         : N              
 ftdi_rxf_n                   : B7        : input  : 3.3-V LVTTL       :         : 8         : Y              
 ftdi_rd_n                    : B8        : output : 3.3-V LVTTL       :         : 8         : Y              
 spimisos[2]                  : B9        : input  : 3.3-V LVTTL       :         : 8         : Y              
@@ -212,7 +212,7 @@ spimisos[6]                  : E9        : input  : 3.3-V LVTTL       :         
 spiclk                       : E10       : output : 3.3-V LVTTL       :         : 8         : Y              
 spimisos[5]                  : E11       : input  : 3.3-V LVTTL       :         : 7         : N              
 boardin[6]                   : E12       : input  : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :         : 7         :                
+spimisos[7]                  : E13       : input  : 3.3-V LVTTL       :         : 7         : N              
 boardin[7]                   : E14       : input  : 2.5 V             :         : 7         : Y              
 boardin[5]                   : E15       : input  : 2.5 V             :         : 7         : Y              
 boardin[4]                   : E16       : input  : 2.5 V             :         : 7         : Y              
@@ -222,8 +222,8 @@ VCCIO6                       : E19       : power  :                   : 2.5V    
 GND                          : E20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 6         :                
-lvds2in[6](n)                : F1        : input  : LVDS              :         : 1         : N              
-lvds2in[6]                   : F2        : input  : LVDS              :         : 1         : N              
+lvdsin_trig(n)               : F1        : input  : LVDS              :         : 1         : Y              
+lvdsin_trig                  : F2        : input  : LVDS              :         : 1         : Y              
 GND                          : F3        : gnd    :                   :         :           :                
 VCCIO1                       : F4        : power  :                   : 2.5V    : 1         :                
 GNDA3                        : F5        : gnd    :                   :         :           :                
@@ -246,8 +246,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 6         :                
 GND+                         : G1        :        :                   :         : 1         :                
 GND                          : G2        : gnd    :                   :         :           :                
-lvdsin_other2[1](n)          : G3        : input  : LVDS              :         : 1         : N              
-lvdsin_other2[1]             : G4        : input  : LVDS              :         : 1         : N              
+lvdsout_trig(n)              : G3        : output : LVDS              :         : 1         : Y              
+lvdsout_trig                 : G4        : output : LVDS              :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
 VCCA3                        : G6        : power  :                   : 2.5V    :           :                
 spics[1]                     : G7        : output : 3.3-V LVTTL       :         : 8         : Y              
@@ -266,17 +266,17 @@ VCCIO6                       : G19       : power  :                   : 2.5V    
 GND                          : G20       : gnd    :                   :         :           :                
 GND+                         : G21       :        :                   :         : 6         :                
 GND+                         : G22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H2        :        :                   :         : 1         :                
+lvds2in[7](n)                : H1        : input  : LVDS              :         : 1         : N              
+lvds2in[7]                   : H2        : input  : LVDS              :         : 1         : N              
 GND                          : H3        : gnd    :                   :         :           :                
 VCCIO1                       : H4        : power  :                   : 2.5V    : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H5        :        :                   :         : 1         :                
-lvds4in[11]                  : H6        : input  : LVDS              :         : 1         : N              
+lvdsout_clk                  : H6        : output : LVDS              :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
-lvds2in[7]                   : H8        : input  : LVDS              :         : 1         : N              
+lvdsin_other2[1]             : H8        : input  : LVDS              :         : 1         : N              
 VCCINT                       : H9        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H10       :        :                   :         : 8         :                
-spics[7]                     : H11       : output : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H11       :        :                   :         : 8         :                
 GND                          : H12       : gnd    :                   :         :           :                
 GND                          : H13       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
@@ -293,9 +293,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : J2        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J5        :        :                   :         : 1         :                
-lvds4in[11](n)               : J6        : input  : LVDS              :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 1         :                
-lvds2in[7](n)                : J8        : input  : LVDS              :         : 1         : N              
+lvdsout_clk(n)               : J6        : output : LVDS              :         : 1         : Y              
+lvds2in[6]                   : J7        : input  : LVDS              :         : 1         : N              
+lvdsin_other2[1](n)          : J8        : input  : LVDS              :         : 1         : N              
 GND                          : J9        : gnd    :                   :         :           :                
 VCCINT                       : J10       : power  :                   : 1.2V    :           :                
 VCCINT                       : J11       : power  :                   : 1.2V    :           :                
@@ -316,8 +316,8 @@ GND                          : K3        : gnd    :                   :         
 VCCIO1                       : K4        : power  :                   : 2.5V    : 1         :                
 nCONFIG                      : K5        :        :                   :         : 1         :                
 nSTATUS                      : K6        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K7        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1         :                
+lvds2in[6](n)                : K7        : input  : LVDS              :         : 1         : N              
+lvds4in[11](n)               : K8        : input  : LVDS              :         : 1         : N              
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 GND                          : K11       : gnd    :                   :         :           :                
@@ -339,7 +339,7 @@ TDO                          : L4        : output :                   :         
 TDI                          : L5        : input  :                   :         : 1         :                
 lvds1in[1]                   : L6        : input  : LVDS              :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1         :                
+lvds4in[11]                  : L8        : input  : LVDS              :         : 1         : N              
 VCCINT                       : L9        : power  :                   : 1.2V    :           :                
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -442,8 +442,8 @@ lvds2in[9]                   : R19       : input  : LVDS              :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : R20       :        :                   :         : 5         :                
 lvds4in[2]                   : R21       : input  : LVDS              :         : 5         : Y              
 lvds4in[2](n)                : R22       : input  : LVDS              :         : 5         : Y              
-GND+                         : T1        :        :                   :         : 2         :                
-GND+                         : T2        :        :                   :         : 2         :                
+lvdsin_clk(n)                : T1        : input  : LVDS              :         : 2         : Y              
+lvdsin_clk                   : T2        : input  : LVDS              :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :         : 2         :                
