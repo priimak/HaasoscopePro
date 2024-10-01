@@ -257,7 +257,6 @@ set_location_assignment PIN_N21 -to lvds4in[0]
 set_location_assignment PIN_N22 -to "lvds4in[0](n)"
 set_location_assignment PIN_A12 -to clk_ext
 set_location_assignment PIN_E6 -to clkout2
-set_location_assignment PIN_B12 -to clkext2
 set_location_assignment PIN_A13 -to debugout[0]
 set_location_assignment PIN_B1 -to overrange[3]
 set_location_assignment PIN_B2 -to overrange[2]
