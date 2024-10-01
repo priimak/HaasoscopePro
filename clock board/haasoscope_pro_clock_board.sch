@@ -2263,16 +2263,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <classes>
 <class number="0" name="default" width="0.3048" drill="0">
 </class>
-<class number="1" name="power" width="0.4064" drill="0">
-</class>
-<class number="2" name="gnd" width="0.3048" drill="0">
-</class>
-<class number="3" name="loosediffpair" width="0.1524" drill="0">
-<clearance class="0" value="0.3048"/>
-<clearance class="1" value="0.3048"/>
-<clearance class="2" value="0.3048"/>
-<clearance class="3" value="0.3048"/>
-</class>
 </classes>
 <parts>
 <part name="C2" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
@@ -2647,7 +2637,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <busses>
 </busses>
 <nets>
-<net name="GND" class="2">
+<net name="GND" class="0">
 <segment>
 <pinref part="GND57" gate="1" pin="GND"/>
 <pinref part="C7" gate="G$1" pin="P$1"/>
