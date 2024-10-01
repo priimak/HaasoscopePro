@@ -66,9 +66,15 @@ def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     if read: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires2[0]),hex(spires[0]))
     else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
-def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True):
+def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True, themuxout=False):
     # For now use cs=2 for clk, later can use cs=3 on new board revision
     print('ADF4350 being set to %0.2f MHz' % freq)
+    if themuxout:
+        muxout=MuxOut.DGND
+        print("muxout GND 0")
+    else:
+        muxout=MuxOut.DVdd
+        print("muxout V 1")
     INT, MOD, FRAC, output_divider, band_select_clock_divider = (calculate_regs(
         device_type=DeviceType.ADF4350, freq=freq, ref_freq=50.0,
         band_select_clock_mode=BandSelectClockMode.Low,
@@ -79,7 +85,7 @@ def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_double
     regs = make_regs(
         INT=INT, MOD=MOD, FRAC=FRAC, output_divider=output_divider,
         band_select_clock_divider=band_select_clock_divider, r_counter=r_counter, ref_doubler=ref_doubler, ref_div_2=ref_div2,
-        device_type=DeviceType.ADF4350, phase_value=phase, mux_out=MuxOut.DVdd, charge_pump_current=2.50,
+        device_type=DeviceType.ADF4350, phase_value=phase, mux_out=muxout, charge_pump_current=2.50,
         feedback_select=divided, pd_polarity=PDPolarity.Positive, prescaler='4/5', band_select_clock_mode=BandSelectClockMode.Low,
         clk_div_mode=ClkDivMode.ResyncEnable, clock_divider_value=1000, csr=False,
         aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0) # (-4,-1,2,5)
@@ -258,13 +264,15 @@ class MainWindow(TemplateBaseClass):
     def changeoffset(self):
         dooffset(self.ui.offsetBox.value())
 
+    themuxoutV = True
     def adfreset(self):
+        self.themuxoutV = not self.themuxoutV
         #adf4350(150.0, None, 10) # need larger rcounter for low freq
-        adf4350(self.samplerate*1000/2, None)
+        adf4350(self.samplerate*1000/2, None, themuxout=self.themuxoutV)
         time.sleep(0.1)
         res=self.boardinbits()
         if not getbit(res,0): print("Pll not locked?") # should be 1 if locked
-        if not getbit(res,1): print("Pll not setup?") # should be 1 for MuxOut.DVdd
+        if getbit(res,1) == self.themuxoutV: print("Pll not setup?") # should be 1 for MuxOut.DVdd
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:

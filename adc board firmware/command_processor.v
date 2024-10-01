@@ -62,7 +62,7 @@ module command_processor (
 	output reg lvdsout_spare[2]
 );
 
-integer version = 14; // firmware version
+integer version = 15; // firmware version
 
 assign debugout[0] = locked;
 assign debugout[1] = spics[4];
@@ -75,6 +75,8 @@ assign debugout[7] = overrange[3];
 assign debugout[11:8] = state;
 
 assign lvdsout_trig = lvdsin_trig;
+assign lvdsout_spare = lvdsin_spare;
+assign boardout = boardin;
 
 //for clock phase
 reg[7:0] pllclock_counter=0;
@@ -82,14 +84,15 @@ reg[7:0] scanclk_cycles=0;
   
 
 //variables in clk domain
-localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=4'd4, TX_DATA2=4'd5, TX_DATA3=4'd6, TX_DATA4=4'd7, PLLCLOCK=4'd8;
+localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=4'd4, TX_DATA2=4'd5, TX_DATA3=4'd6, TX_DATA4=4'd7, PLLCLOCK=4'd8, BOOTUP=4'd9;
 reg [ 3:0]	state = INIT;
+reg			bootup = 0;
 reg [ 3:0]	rx_counter = 0;
 reg [ 7:0]	rx_data[7:0];
 integer		length = 0;
 reg [ 3:0]	spistate = 0;
 reg [5:0]	channel = 0;
-reg [3:0]	spicscounter = 0;
+reg [5:0]	spicscounter = 0;
 
 //variables in clklvds domain
 reg [ 2:0]  acqstate=0;
@@ -203,6 +206,7 @@ end
 
 always @ (posedge clk or negedge rstn)
  if (~rstn) begin
+	bootup <= 1'b0;
 	state  <= INIT;
  end else begin
  
@@ -219,7 +223,8 @@ always @ (posedge clk or negedge rstn)
 		channel <= 6'd0;
 		triggerlive <= 1'b0;
 		didreadout <= 1'b0;
-		state <= RX;
+		if (bootup) state <= RX;
+		else state <= BOOTUP;
 	end
   
 	RX : if (i_tvalid) begin // get 8 bytes
@@ -267,11 +272,11 @@ always @ (posedge clk or negedge rstn)
 				spics[rx_data[1][2:0]]<=1'b0; //select requested chip
 				spitx <= rx_data[2];//first byte to send
 				
-				if (spicscounter==4'd5) begin // wait a bit for cs to go low
-					spicscounter<=4'd0;
+				if (spicscounter==6'd10) begin // wait a bit for cs to go low
+					spicscounter<=6'd0;
 					spistate <= 4'd1;
 				end
-				else spicscounter<=spicscounter+4'd1;
+				else spicscounter<=spicscounter+6'd1;
 			end
 			1 : begin
 				if (spitxready) begin
@@ -322,14 +327,14 @@ always @ (posedge clk or negedge rstn)
 				end
 			end
 			9 : begin
-				if (spicscounter==4'd15) begin // wait a bit before setting cs high
-					spicscounter<=4'd0;
+				if (spicscounter==6'd35) begin // wait a bit before setting cs high
+					spicscounter<=6'd0;
 					spistate <= 4'd0;
 					length <= 4;
 					o_tvalid <= 1'b1;
 					state <= TX_DATA_CONST;		
 				end
-				else spicscounter<=spicscounter+4'd1;
+				else spicscounter<=spicscounter+6'd1;
 			end
 			default : spistate <= 4'd0;
 			endcase
@@ -471,6 +476,16 @@ always @ (posedge clk or negedge rstn)
 			if (scanclk_cycles>5) phasestep[rx_data[1]] <= 1'b0; // deassert!
 			if (scanclk_cycles>7) state <= INIT;
 		end
+	end
+	
+	BOOTUP : begin // runs once at startup
+		bootup <= 1'b1;
+		rx_data[0]<=8'd3;
+		rx_data[1]<=8'd0;
+		rx_data[2]<=8'h00;
+		rx_data[3]<=8'h02;
+		rx_data[4]<=8'h03;//power down ADC
+		state<=PROCESS;
 	end
 	
 	default :

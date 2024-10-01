@@ -34,7 +34,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 module SPI_Master
-  #(parameter CLKS_PER_HALF_BIT = 16)
+  #(parameter CLKS_PER_HALF_BIT = 8)
   (
    // Control/Data Signals,
    input        i_Rst_L,     // FPGA Reset
