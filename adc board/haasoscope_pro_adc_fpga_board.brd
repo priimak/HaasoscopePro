@@ -9,20 +9,20 @@
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.05" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="top" color="12" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="topgnd" color="12" fill="5" visible="no" active="yes"/>
+<layer number="2" name="topgnd" color="12" fill="5" visible="yes" active="yes"/>
 <layer number="3" name="sig2" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="4" name="sig2gnd" color="4" fill="5" visible="no" active="yes"/>
-<layer number="5" name="pow1" color="7" fill="5" visible="no" active="yes"/>
+<layer number="4" name="sig2gnd" color="4" fill="5" visible="yes" active="yes"/>
+<layer number="5" name="pow1" color="7" fill="5" visible="yes" active="yes"/>
 <layer number="6" name="pwr2" color="1" fill="8" visible="no" active="no"/>
 <layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
 <layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
 <layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
 <layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
 <layer number="11" name="sig3gnd" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="pow2" color="30" fill="5" visible="no" active="yes"/>
-<layer number="13" name="sig4gnd" color="1" fill="5" visible="no" active="yes"/>
+<layer number="12" name="pow2" color="30" fill="5" visible="yes" active="yes"/>
+<layer number="13" name="sig4gnd" color="1" fill="5" visible="yes" active="yes"/>
 <layer number="14" name="sig4" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="15" name="sig5gnd" color="5" fill="5" visible="no" active="yes"/>
+<layer number="15" name="sig5gnd" color="5" fill="5" visible="yes" active="yes"/>
 <layer number="16" name="sig5" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -9611,7 +9611,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="PROD_ID" value="CONN-08671" x="214.5" y="106.5" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="SF_ID" value="PRT-08506" x="214.5" y="106.5" size="0.8128" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C59" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="153.36" y="76.52" smashed="yes"/>
+<element name="C59" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="157.14" y="78.48" smashed="yes" rot="R180"/>
 <element name="Y2" library="SparkFun-Clocks" library_urn="urn:adsk.eagle:library:511" package="OSCILLATOR-SMD-5X3.2" package3d_urn="urn:adsk.eagle:package:37526/1" value="OSCILLATORSMD-5X3" x="152.52" y="79.64" smashed="yes" rot="R180">
 <attribute name="LCSC" value="C2901546" x="152.52" y="79.64" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="151.02" y="82.458" size="0.8128" layer="25" font="vector" rot="R180" align="bottom-center"/>
@@ -11096,6 +11096,563 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="NAME" x="84" y="32.27" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="VALUE" x="83" y="32.27" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
+<element name="C55" library="MF_Passives" package="C0402" value="0.1uF" x="18.2" y="125.8" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="18.2" y="125.8" size="0.8128" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="18.2" y="125.8" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="18.2" y="125.8" size="0.8128" layer="27" display="off"/>
+<attribute name="POPULATE" value="1" x="18.2" y="125.8" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="18.2" y="125.8" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="18.2" y="125.8" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="18.2" y="125.8" size="0.8128" layer="27" display="off"/>
+</element>
+<element name="C56" library="MF_Passives" package="C0402" value="0.1uF" x="18.2" y="124.2" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="18.2" y="124.2" size="0.8128" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="18.2" y="124.2" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="18.2" y="124.2" size="0.8128" layer="27" display="off"/>
+<attribute name="POPULATE" value="1" x="18.2" y="124.2" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="18.2" y="124.2" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="18.2" y="124.2" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="18.2" y="124.2" size="0.8128" layer="27" display="off"/>
+</element>
+<element name="FL2" library="OPA859IDSGR" package="SON50P200X200X80-9N" value="OPA859IDSGR" x="15.3" y="125.2" smashed="yes">
+<attribute name="DESCRIPTION" value="1.8 GHz Unity-Gain Bandwidth, 3.3 nV/Hz, FET Input Amplifier" x="15.3" y="125.2" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="0.8mm" x="15.3" y="125.2" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="15.3" y="125.2" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="OPA859IDSGR" x="15.3" y="125.2" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-OPA859IDSGR" x="15.3" y="125.2" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA859IDSGR?qs=qSfuJ%252Bfl%2Fd54IFp3Wwx4ug%3D%3D" x="15.3" y="125.2" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="15.3" y="125.2" size="1.27" layer="25" align="center"/>
+<attribute name="VALUE" x="15.3" y="125.2" size="1.27" layer="27" align="center"/>
+</element>
+<element name="R42" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1M" x="13.3" y="144.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="12.03" y="143.865" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="15.74" y="143.565" size="1.27" layer="21" rot="R90"/>
+</element>
+<element name="C57" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="?10?" x="18.8" y="144.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="17.63" y="143.63" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="21.34" y="142.23" size="1.27" layer="21" rot="R90"/>
+</element>
+<element name="R43" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47" x="21.7" y="124.9" smashed="yes" rot="R180">
+<attribute name="NAME" x="22.335" y="123.63" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="22.435" y="127.04" size="1.27" layer="21" rot="R180"/>
+</element>
+<element name="BNCIN3" library="connector" package="MOLEX-BNC-73100-0105" value="MOLEX_BNC_73100-0105" x="8.5" y="133.4" smashed="yes" rot="R270">
+<attribute name="DIGIKEY" value="WM5524-ND" x="37.5" y="144.4" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="73100-0105" x="37.5" y="144.4" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="9.6" y="129.9" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
+</element>
+<element name="K5" library="relay" library_urn="urn:adsk.eagle:library:339" package="SOP04" package3d_urn="urn:adsk.eagle:package:24376/1" value="AQY21SOP" x="62.8" y="141" smashed="yes" rot="R180">
+<attribute name="LCSC" value="C7435105" x="62.8" y="141" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="" x="84.3" y="138" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="AQY210S" x="84.3" y="138" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="58.56" y="141.64" size="1.27" layer="25"/>
+<attribute name="OC_FARNELL" value="unknown" x="84.3" y="138" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="84.3" y="138" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="58.36" y="139.89" size="1.27" layer="27"/>
+</element>
+<element name="R136" library="MF_Passives" package="R0402" value="1k" x="66.4" y="143.9" smashed="yes">
+<attribute name="HOUSEPART" value="" x="66.4" y="143.9" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="66.4" y="143.9" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="65.8" y="142" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="POPULATE" value="1" x="66.4" y="143.9" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="66.4" y="143.9" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="66.4" y="143.9" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="66.4" y="143.9" size="1.778" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="66.4" y="143.9" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R137" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="?50?" x="26.5" y="144.4" smashed="yes" rot="R270">
+<attribute name="NAME" x="27.77" y="145.035" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="23.96" y="146.035" size="1.27" layer="21" rot="R270"/>
+</element>
+<element name="Q4" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="30.7" y="125.2" smashed="yes" rot="R90">
+<attribute name="JLC_ROTATION" value="270" x="30.7" y="125.2" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C7420370" x="30.7" y="125.2" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="S8050" x="30.7" y="125.2" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="28.795" y="123.295" size="0.889" layer="25" ratio="11" rot="R90"/>
+<attribute name="VALUE" x="33.494" y="123.93" size="0.635" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="R140" library="MF_Passives" package="R0402" value="1k" x="34.8" y="124.7" smashed="yes" rot="R90">
+<attribute name="HOUSEPART" value="" x="34.8" y="124.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="34.8" y="124.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="36.7" y="123.6" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="POPULATE" value="1" x="34.8" y="124.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="34.8" y="124.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="34.8" y="124.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="34.8" y="124.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="WATTAGE" value="" x="34.8" y="124.7" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="K6" library="G6K-2F-RF-DC3" package="G6K2FRFDC3" value="G6K-2F-RF-DC3" x="25.8" y="134.5" smashed="yes" rot="R180">
+<attribute name="DESCRIPTION" value="High Frequency / RF Relays 1GHz Std Grd NoLatch DPDT 3VDC 100mW" x="25.8" y="134.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="5.7mm" x="25.8" y="134.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C397195" x="25.8" y="134.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Omron Electronics" x="25.8" y="134.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-DC3" x="25.8" y="134.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="653-G6K-2F-RF-DC3" x="25.8" y="134.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-DC3?qs=Pjd0UV7BHP8BL6Nr%252BzW3GA%3D%3D" x="25.8" y="134.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="25.8" y="134.9" size="1.27" layer="25" rot="R180" align="center"/>
+<attribute name="VALUE" x="25.8" y="128.4" size="1.27" layer="21" rot="R180" align="center"/>
+</element>
+<element name="Q5" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="43.1" y="144.2" smashed="yes" rot="R90">
+<attribute name="LCSC" value="C7420370" x="24.1" y="138.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="S8050" x="24.1" y="138.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="41.195" y="142.295" size="0.889" layer="25" ratio="11" rot="R90"/>
+<attribute name="VALUE" x="45.894" y="142.93" size="0.635" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="R141" library="MF_Passives" package="R0402" value="1k" x="46.8" y="143.8" smashed="yes" rot="R90">
+<attribute name="HOUSEPART" value="" x="34.8" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="34.8" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="48.6" y="142.8" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="POPULATE" value="1" x="34.8" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="34.8" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="34.8" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="34.8" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="WATTAGE" value="" x="34.8" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="K7" library="G6K-2F-RF-DC3" package="G6K2FRFDC3" value="G6K-2F-RF-DC3" x="45.8" y="135.5" smashed="yes">
+<attribute name="DESCRIPTION" value="High Frequency / RF Relays 1GHz Std Grd NoLatch DPDT 3VDC 100mW" x="40.8" y="132" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="5.7mm" x="40.8" y="132" size="1.778" layer="27" display="off"/>
+<attribute name="LCSC" value="C397195" x="40.8" y="132" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Omron Electronics" x="40.8" y="132" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-DC3" x="40.8" y="132" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="653-G6K-2F-RF-DC3" x="40.8" y="132" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-DC3?qs=Pjd0UV7BHP8BL6Nr%252BzW3GA%3D%3D" x="40.8" y="132" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="45.8" y="135.1" size="1.27" layer="25" align="center"/>
+<attribute name="VALUE" x="45.8" y="128.6" size="1.27" layer="21" align="center"/>
+</element>
+<element name="R148" library="MF_Passives" package="R0402" value="75" x="56" y="133.1" smashed="yes">
+<attribute name="HOUSEPART" value="" x="56" y="133.1" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="56" y="133.1" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="54.9" y="131" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="POPULATE" value="1" x="56" y="133.1" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="56" y="133.1" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="56" y="133.1" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="56" y="133.1" size="1.778" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="56" y="133.1" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R149" library="MF_Passives" package="R0402" value="75" x="56" y="137.5" smashed="yes">
+<attribute name="HOUSEPART" value="" x="56" y="137.5" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="56" y="137.5" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="54.9" y="138.6" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="POPULATE" value="1" x="56" y="137.5" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="56" y="137.5" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="56" y="137.5" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="56" y="137.5" size="1.778" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="56" y="137.5" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R150" library="MF_Passives" package="R0402" value="120" x="55.6" y="135.3" smashed="yes" rot="R90">
+<attribute name="HOUSEPART" value="" x="55.6" y="135.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="55.6" y="135.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="57.5" y="134.2" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="POPULATE" value="1" x="55.6" y="135.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="55.6" y="135.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="55.6" y="135.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="55.6" y="135.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="WATTAGE" value="" x="55.6" y="135.3" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="R151" library="MF_Passives" package="R0402" value="47" x="87.2" y="136.1" smashed="yes">
+<attribute name="HOUSEPART" value="" x="87.2" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="87.2" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="86.3" y="137" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="POPULATE" value="1" x="87.2" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="87.2" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="87.2" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="87.2" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="87.2" y="136.1" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R152" library="MF_Passives" package="R0402" value="47" x="87.2" y="134.3" smashed="yes">
+<attribute name="HOUSEPART" value="" x="87.2" y="134.3" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="87.2" y="134.3" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="86.3" y="132.4" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="POPULATE" value="1" x="87.2" y="134.3" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="87.2" y="134.3" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="87.2" y="134.3" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="87.2" y="134.3" size="1.778" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="87.2" y="134.3" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R157" library="MF_Passives" package="R0402" value="47" x="89.6" y="135.1" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="89.6" y="135.1" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="89.6" y="135.1" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="90.5" y="136.4" size="1.016" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="POPULATE" value="1" x="89.6" y="135.1" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="89.6" y="135.1" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="89.6" y="135.1" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="89.6" y="135.1" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="89.6" y="135.1" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="C72" library="MF_Passives" package="C0402" value="RF_1uF" x="62.8" y="136.1" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="LCSC" value="C52923" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="61.9" y="134.2" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="POPULATE" value="1" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="62.8" y="136.1" size="1.778" layer="27" display="off"/>
+</element>
+<element name="Q6" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="74.8" y="144.1" smashed="yes" rot="R90">
+<attribute name="LCSC" value="C7420370" x="56.4" y="138.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="S8050" x="56.4" y="138.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="72.895" y="142.195" size="0.889" layer="25" ratio="11" rot="R90"/>
+<attribute name="VALUE" x="77.594" y="142.83" size="0.635" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="R163" library="MF_Passives" package="R0402" value="1k" x="80.4" y="143.7" smashed="yes" rot="R90">
+<attribute name="HOUSEPART" value="" x="68.6" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="68.6" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="79.3" y="142.6" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="POPULATE" value="1" x="68.6" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="68.6" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="68.6" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="68.6" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="WATTAGE" value="" x="68.6" y="134.3" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="K8" library="G6K-2F-RF-DC3" package="G6K2FRFDC3" value="G6K-2F-RF-DC3" x="76.4" y="135.1" smashed="yes">
+<attribute name="DESCRIPTION" value="High Frequency / RF Relays 1GHz Std Grd NoLatch DPDT 3VDC 100mW" x="71.2" y="131.3" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="5.7mm" x="71.2" y="131.3" size="1.778" layer="27" display="off"/>
+<attribute name="LCSC" value="C397195" x="71.2" y="131.3" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Omron Electronics" x="71.2" y="131.3" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-DC3" x="71.2" y="131.3" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="653-G6K-2F-RF-DC3" x="71.2" y="131.3" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-DC3?qs=Pjd0UV7BHP8BL6Nr%252BzW3GA%3D%3D" x="71.2" y="131.3" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="76.4" y="134.7" size="1.27" layer="25" align="center"/>
+<attribute name="VALUE" x="76.4" y="128.1" size="1.27" layer="27" align="center"/>
+</element>
+<element name="J2" library="FlashPCB_Connectors" package="USB-2.0-A-THT-RA-TE_AMP-292303-1" value="test1" x="10.2" y="90.8" smashed="yes" rot="R270">
+<attribute name="VALUE" x="14.645" y="97.15" size="0.8128" layer="27" font="vector" rot="R270"/>
+</element>
+<element name="C107" library="MF_Passives" package="C0402" value="0.1uF" x="95" y="114.5" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="95" y="114.5" size="1.778" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="95" y="114.5" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="95" y="114.5" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="97.2" y="113.9" size="0.8128" layer="25" font="vector" rot="R90"/>
+<attribute name="POPULATE" value="1" x="95" y="114.5" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="95" y="114.5" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="95" y="114.5" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="95" y="114.5" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C108" library="MF_Passives" package="C0402" value="0.1uF" x="95" y="116.5" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="95" y="116.5" size="1.778" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="95" y="116.5" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="95" y="116.5" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="97.2" y="115.9" size="0.8128" layer="25" font="vector" rot="R90"/>
+<attribute name="POPULATE" value="1" x="95" y="116.5" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="95" y="116.5" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="95" y="116.5" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="95" y="116.5" size="1.778" layer="27" display="off"/>
+</element>
+<element name="IC21" library="LMH5401IRMST" package="LMH5401IRMSR" value="LMH5401IRMST" x="91" y="115.5" smashed="yes" rot="R180">
+<attribute name="DESCRIPTION" value="Texas Instruments LMH5401IRMST, RF Amplifier Differential, 14-Pin UQFN" x="91" y="115.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="0.6mm" x="91" y="115.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="91" y="115.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LMH5401IRMST" x="91" y="115.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-LMH5401IRMST" x="91" y="115.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH5401IRMST?qs=pV2tVPdcZ6z49pjv7lt75w%3D%3D" x="91" y="115.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="91" y="115.5" size="0.8128" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="98" y="115.5" size="0.8128" layer="21" rot="R90" align="center"/>
+</element>
+<element name="IC29" library="LMH6401IRMZR" package="LMH6401IRMZR" value="LMH6401IRMZR" x="91" y="103" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="Differential Amplifiers 4.5 GHz Ultra Wideband Digital Variable Gain Amplifier 16-UQFN-HR -40 to 85" x="91" y="103" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="0.65mm" x="91" y="103" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="91" y="103" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LMH6401IRMZR" x="91" y="103" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-LMH6401IRMZR" x="91" y="103" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH6401IRMZR?qs=zEQ6BYqA5vFvz%252BaadXvvtQ%3D%3D" x="91" y="103" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="90.95" y="103" size="0.8128" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="98.05" y="103" size="0.8128" layer="21" rot="R90" align="center"/>
+</element>
+<element name="R187" library="MF_Passives" package="R0402" value="39" x="90" y="109.5" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="90" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="90" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="88.1" y="110.6" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="90" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="90" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="90" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="90" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="90" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="R188" library="MF_Passives" package="R0402" value="39" x="92" y="109.5" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="92" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="92" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="93.1" y="110.6" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="92" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="92" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="92" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="92" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="92" y="109.5" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="R189" library="MF_Passives" package="R0402" value="127" x="89" y="118.5" smashed="yes" rot="R180">
+<attribute name="HOUSEPART" value="" x="89" y="118.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="89" y="118.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="86.6" y="119.2" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="89" y="118.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="89" y="118.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="89" y="118.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="89" y="118.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="WATTAGE" value="" x="89" y="118.5" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="R190" library="MF_Passives" package="R0402" value="127" x="92" y="118.5" smashed="yes">
+<attribute name="HOUSEPART" value="" x="92" y="118.5" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="92" y="118.5" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="93.5" y="119.2" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="92" y="118.5" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="92" y="118.5" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="92" y="118.5" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="92" y="118.5" size="1.778" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="92" y="118.5" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R191" library="MF_Passives" package="R0402" value="66.5" x="89" y="120.5" smashed="yes">
+<attribute name="HOUSEPART" value="" x="89" y="120.5" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="89" y="120.5" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="88.3" y="121.4" size="0.8128" layer="25" font="vector"/>
+<attribute name="POPULATE" value="1" x="89" y="120.5" size="1.778" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="89" y="120.5" size="1.778" layer="27" display="off"/>
+<attribute name="URL" value="" x="89" y="120.5" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="89" y="120.5" size="1.778" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="89" y="120.5" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R192" library="MF_Passives" package="R0402" value="22.6" x="91.4" y="120.5" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="91.4" y="120.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="91.4" y="120.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="92.4" y="121.2" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="91.4" y="120.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="91.4" y="120.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="91.4" y="120.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="91.4" y="120.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="91.4" y="120.5" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="R193" library="MF_Passives" package="R0402" value="357" x="92" y="122.5" smashed="yes" rot="R180">
+<attribute name="HOUSEPART" value="" x="92" y="122.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="92" y="122.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="93.4" y="123.2" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="92" y="122.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="92" y="122.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="92" y="122.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="92" y="122.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="WATTAGE" value="" x="92" y="122.5" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="C109" library="MF_Passives" package="C0402" value="0.1uF" x="87" y="114.5" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="87" y="114.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="87" y="114.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="87" y="114.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="84.6" y="115.1" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="87" y="114.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="87" y="114.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="87" y="114.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="87" y="114.5" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="C110" library="MF_Passives" package="C0402" value="0.1uF" x="87" y="116.5" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="87" y="116.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="87" y="116.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="87" y="116.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="84.6" y="117.1" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="87" y="116.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="87" y="116.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="87" y="116.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="87" y="116.5" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="R194" library="MF_Passives" package="R0402" value="39" x="90" y="98" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="103" y="117" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="103" y="117" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="88.1" y="99.1" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="103" y="117" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="103" y="117" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="103" y="117" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="103" y="117" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="103" y="117" size="0.8128" layer="27" rot="R270" display="off"/>
+</element>
+<element name="R195" library="MF_Passives" package="R0402" value="39" x="92" y="98" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="114" y="107" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="114" y="107" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="93.1" y="99.1" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="114" y="107" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="114" y="107" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="114" y="107" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="114" y="107" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="114" y="107" size="0.8128" layer="27" rot="R270" display="off"/>
+</element>
+<element name="C111" library="MF_Passives" package="C0402" value="0.1uF" x="87" y="102" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="87" y="102" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="87" y="102" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="87" y="102" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="88.1" y="100.9" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="POPULATE" value="1" x="87" y="102" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="87" y="102" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="87" y="102" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="87" y="102" size="0.8128" layer="27" rot="R180" display="off"/>
+</element>
+<element name="C112" library="MF_Passives" package="C0402" value="0.1uF" x="87" y="103.7" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="90" y="107.7" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="90" y="107.7" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="90" y="107.7" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="88.1" y="105.6" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="POPULATE" value="1" x="90" y="107.7" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="90" y="107.7" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="90" y="107.7" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="90" y="107.7" size="0.8128" layer="27" rot="R180" display="off"/>
+</element>
+<element name="C113" library="MF_Passives" package="C0402" value="0.1uF" x="95" y="102" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="95" y="98" size="0.8128" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="95" y="98" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="95" y="98" size="0.8128" layer="27" display="off"/>
+<attribute name="NAME" x="93.9" y="100.1" size="0.8128" layer="25" font="vector"/>
+<attribute name="POPULATE" value="1" x="95" y="98" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="95" y="98" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="95" y="98" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="95" y="98" size="0.8128" layer="27" display="off"/>
+</element>
+<element name="C129" library="MF_Passives" package="C0402" value="0.1uF" x="95" y="104" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="92" y="96" size="0.8128" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="92" y="96" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="92" y="96" size="0.8128" layer="27" display="off"/>
+<attribute name="NAME" x="93.9" y="105.1" size="0.8128" layer="25" font="vector"/>
+<attribute name="POPULATE" value="1" x="92" y="96" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="92" y="96" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="92" y="96" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="92" y="96" size="0.8128" layer="27" display="off"/>
+</element>
+<element name="IC30" library="SN74AVC4T774PWR" package="SOP65P640X120-16N" value="SN74AVC4T774PWR" x="78" y="102" smashed="yes" rot="R90">
+<attribute name="DESCRIPTION" value="4-Bit Dual-Supply Bus Transceiver With Configurable Voltage-Level Shifting and 3-State Outputs" x="78" y="97" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="HEIGHT" value="1.2mm" x="78" y="97" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="78" y="97" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SN74AVC4T774PWR" x="78" y="97" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-SN74AVC4T774PWR" x="78" y="97" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/SN74AVC4T774PWR?qs=WxL8HmPi5r562Eu%2F2kE2LA%3D%3D" x="78" y="97" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="78" y="102" size="0.8128" layer="25" rot="R90" align="center"/>
+<attribute name="VALUE" x="81.8" y="103" size="0.8128" layer="21" rot="R270" align="center"/>
+</element>
+<element name="C130" library="MF_Passives" package="C0402" value="0.1uF" x="76.5" y="108" smashed="yes" rot="R90">
+<attribute name="DIELECTRIC" value="" x="72.5" y="108" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="HOUSEPART" value="" x="72.5" y="108" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="72.5" y="108" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="POPULATE" value="1" x="72.5" y="108" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="72.5" y="108" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="72.5" y="108" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="72.5" y="108" size="0.8128" layer="27" rot="R90" display="off"/>
+</element>
+<element name="C131" library="MF_Passives" package="C0402" value="0.1uF" x="74" y="105" smashed="yes" rot="R270">
+<attribute name="DIELECTRIC" value="" x="70" y="105" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="HOUSEPART" value="" x="70" y="105" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="70" y="105" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="POPULATE" value="1" x="70" y="105" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="70" y="105" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="70" y="105" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="70" y="105" size="0.8128" layer="27" rot="R270" display="off"/>
+</element>
+<element name="R196" library="MF_Passives" package="R0402" value="0" x="83.6" y="119.9" smashed="yes" rot="R90">
+<attribute name="HOUSEPART" value="" x="83.6" y="119.9" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="83.6" y="119.9" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="84.3" y="120.7" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="83.6" y="119.9" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="83.6" y="119.9" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="83.6" y="119.9" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="83.6" y="119.9" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="WATTAGE" value="" x="83.6" y="119.9" size="0.8128" layer="27" rot="R90" display="off"/>
+</element>
+<element name="IC31" library="OPA693ID" package="SOIC127P600X175-8N" value="OPA693ID" x="78.8" y="115.3" smashed="yes" rot="R90">
+<attribute name="DESCRIPTION" value="Ultra-Wideband, Fixed Gain Video Buffer Amplifier with Disable" x="78.8" y="115.3" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="HEIGHT" value="1.75mm" x="78.8" y="115.3" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="78.8" y="115.3" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="OPA693ID" x="78.8" y="115.3" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-OPA693ID" x="78.8" y="115.3" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA693ID?qs=wgAEGBTxy7n5Zagrtgs30Q%3D%3D" x="78.8" y="115.3" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="78.8" y="115.3" size="0.8128" layer="25" rot="R90" align="center"/>
+<attribute name="VALUE" x="75.2" y="115.2" size="0.8128" layer="21" rot="R90" align="center"/>
+</element>
+<element name="C132" library="MF_Passives" package="C0402" value="0.1uF" x="78.2" y="120.5" smashed="yes" rot="R90">
+<attribute name="DIELECTRIC" value="" x="78.2" y="120.5" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="HOUSEPART" value="" x="78.2" y="120.5" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="78.2" y="120.5" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="POPULATE" value="1" x="78.2" y="120.5" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="78.2" y="120.5" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="78.2" y="120.5" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="78.2" y="120.5" size="0.8128" layer="27" rot="R90" display="off"/>
+</element>
+<element name="C133" library="MF_Passives" package="C0402" value="0.1uF" x="82.8" y="113.4" smashed="yes" rot="R90">
+<attribute name="DIELECTRIC" value="" x="82.8" y="113.4" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="HOUSEPART" value="" x="82.8" y="113.4" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="82.8" y="113.4" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="POPULATE" value="1" x="82.8" y="113.4" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="TOLERANCE" value="" x="82.8" y="113.4" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="" x="82.8" y="113.4" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="VOLTAGE" value="" x="82.8" y="113.4" size="0.8128" layer="27" rot="R90" display="off"/>
+</element>
+<element name="C134" library="MF_Passives" package="C0402" value="0.1uF" x="29.5" y="90.5" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="29.5" y="90.5" size="0.8128" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="29.5" y="90.5" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="29.5" y="90.5" size="0.8128" layer="27" display="off"/>
+<attribute name="POPULATE" value="1" x="29.5" y="90.5" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="29.5" y="90.5" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="29.5" y="90.5" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="29.5" y="90.5" size="0.8128" layer="27" display="off"/>
+</element>
+<element name="C135" library="MF_Passives" package="C0402" value="0.1uF" x="23.5" y="84.5" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="23.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="23.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="23.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="POPULATE" value="1" x="23.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="23.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="23.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="23.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+</element>
+<element name="IC33" library="TLV9102IPWR" package="SOP65P640X120-8N" value="TLV9102IPWR" x="26.5" y="87.5" smashed="yes">
+<attribute name="DESCRIPTION" value="Dual 1MHz, 16-V rail-to-rail input/output, low-offset voltage, low-power op amp" x="26.5" y="87.5" size="0.8128" layer="27" display="off"/>
+<attribute name="HEIGHT" value="1.2mm" x="26.5" y="87.5" size="0.8128" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="26.5" y="87.5" size="0.8128" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="TLV9102IPWR" x="26.5" y="87.5" size="0.8128" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-TLV9102IPWR" x="26.5" y="87.5" size="0.8128" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TLV9102IPWR?qs=9r4v7xj2LnnLM2E8pIcWlQ%3D%3D" x="26.5" y="87.5" size="0.8128" layer="27" display="off"/>
+<attribute name="NAME" x="26.5" y="87.5" size="0.8128" layer="25" align="center"/>
+<attribute name="VALUE" x="23.9" y="90.3" size="0.8128" layer="21" align="center"/>
+</element>
+<element name="R197" library="MF_Passives" package="R0402" value="1k" x="31" y="93" smashed="yes" rot="R180">
+<attribute name="HOUSEPART" value="" x="31" y="93" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="31" y="93" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="POPULATE" value="1" x="31" y="93" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="31" y="93" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="31" y="93" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="31" y="93" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="WATTAGE" value="" x="31" y="93" size="0.8128" layer="27" rot="R180" display="off"/>
+</element>
+<element name="R198" library="MF_Passives" package="R0402" value="2k" x="32.5" y="87.5" smashed="yes" rot="R180">
+<attribute name="HOUSEPART" value="" x="32.5" y="87.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="32.5" y="87.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="POPULATE" value="1" x="32.5" y="87.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="32.5" y="87.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="32.5" y="87.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="32.5" y="87.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="WATTAGE" value="" x="32.5" y="87.5" size="0.8128" layer="27" rot="R180" display="off"/>
+</element>
+<element name="R199" library="MF_Passives" package="R0402" value="1k" x="32.5" y="89.5" smashed="yes" rot="R180">
+<attribute name="HOUSEPART" value="" x="32.5" y="89.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="32.5" y="89.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="POPULATE" value="1" x="32.5" y="89.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="32.5" y="89.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="32.5" y="89.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="32.5" y="89.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="WATTAGE" value="" x="32.5" y="89.5" size="0.8128" layer="27" rot="R180" display="off"/>
+</element>
+<element name="R200" library="MF_Passives" package="R0402" value="1k" x="27.5" y="84.5" smashed="yes" rot="R180">
+<attribute name="HOUSEPART" value="" x="27.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="27.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="POPULATE" value="1" x="27.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="27.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="27.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="27.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="WATTAGE" value="" x="27.5" y="84.5" size="0.8128" layer="27" rot="R180" display="off"/>
+</element>
+<element name="R201" library="MF_Passives" package="R0402" value="1k" x="32.5" y="85.5" smashed="yes">
+<attribute name="HOUSEPART" value="" x="32.5" y="85.5" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="32.5" y="85.5" size="0.8128" layer="27" display="off"/>
+<attribute name="POPULATE" value="1" x="32.5" y="85.5" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="32.5" y="85.5" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="32.5" y="85.5" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="32.5" y="85.5" size="0.8128" layer="27" display="off"/>
+<attribute name="WATTAGE" value="" x="32.5" y="85.5" size="0.8128" layer="27" display="off"/>
+</element>
+<element name="R12" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="150.5" y="75.5" smashed="yes" rot="R180"/>
+<element name="R13" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="150.5" y="74.5" smashed="yes" rot="R180"/>
+<element name="R22" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="150.5" y="73.5" smashed="yes" rot="R180"/>
+<element name="R23" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="150.5" y="72.5" smashed="yes" rot="R180"/>
 </elements>
 <signals>
 <signal name="DA3_P" class="2">
@@ -12418,38 +12975,56 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="U$1" pad="S$4"/>
 <contactref element="U$1" pad="S$3"/>
 <contactref element="IC8" pad="33"/>
-<wire x1="174.5645" y1="79.1615" x2="174.5645" y2="79.6615" width="0" layer="19" extent="1-1"/>
-<wire x1="174.5645" y1="78.6615" x2="174.5645" y2="79.1615" width="0" layer="19" extent="1-1"/>
-<wire x1="176.0735" y1="80.397" x2="174.5645" y2="79.6615" width="0" layer="19" extent="1-1"/>
-<wire x1="177.7785" y1="80.397" x2="176.0735" y2="80.397" width="0" layer="19" extent="1-1"/>
-<wire x1="179.9185" y1="80.264" x2="177.7785" y2="80.397" width="0" layer="19" extent="1-1"/>
-<wire x1="174.5645" y1="76.1615" x2="174.5645" y2="78.6615" width="0" layer="19" extent="1-1"/>
-<wire x1="173.4145" y1="73.5115" x2="174.5645" y2="76.1615" width="0" layer="19" extent="1-1"/>
-<wire x1="172.9145" y1="73.5115" x2="173.4145" y2="73.5115" width="0" layer="19" extent="1-1"/>
-<wire x1="170.4145" y1="73.5115" x2="172.9145" y2="73.5115" width="0" layer="19" extent="1-1"/>
-<wire x1="169.9145" y1="73.5115" x2="170.4145" y2="73.5115" width="0" layer="19" extent="1-1"/>
-<wire x1="166.7645" y1="74.6615" x2="169.9145" y2="73.5115" width="0" layer="19" extent="1-1"/>
-<wire x1="166.7645" y1="75.1615" x2="166.7645" y2="74.6615" width="0" layer="19" extent="1-1"/>
-<wire x1="166.7645" y1="76.1615" x2="166.7645" y2="75.1615" width="0" layer="19" extent="1-1"/>
-<wire x1="165.517" y1="71.797" x2="166.7645" y2="74.6615" width="0" layer="19" extent="1-1"/>
-<wire x1="167.056" y1="69.797" x2="165.517" y2="71.797" width="0" layer="19" extent="1-1"/>
-<wire x1="168.2455" y1="69.797" x2="167.056" y2="69.797" width="0" layer="19" extent="1-1"/>
-<wire x1="171.089053125" y1="68.58989375" x2="168.2455" y2="69.797" width="0" layer="19" extent="1-1"/>
-<wire x1="174.0995" y1="68.103" x2="171.089053125" y2="68.58989375" width="0" layer="19" extent="1-1"/>
-<wire x1="174.1395" y1="69.897" x2="174.0995" y2="68.103" width="0" layer="19" extent="1-1"/>
-<wire x1="176.4435" y1="71.003" x2="174.1395" y2="69.897" width="0" layer="19" extent="1-1"/>
-<wire x1="170.6645" y1="77.4115" x2="170.4145" y2="73.5115" width="0" layer="19" extent="1-1"/>
-<wire x1="184.0815" y1="80.497" x2="179.9185" y2="80.264" width="0" layer="19" extent="1-1"/>
-<wire x1="183.5" y1="74.15" x2="184.0815" y2="80.497" width="0" layer="19" extent="1-1"/>
-<wire x1="183.5" y1="71.55" x2="183.5" y2="74.15" width="0" layer="19" extent="1-1"/>
-<wire x1="184.4275" y1="83.8875" x2="184.0815" y2="80.497" width="0" layer="19" extent="1-1"/>
-<wire x1="185.036" y1="68.3085" x2="183.5" y2="71.55" width="0" layer="19" extent="1-1"/>
-<wire x1="183.2655" y1="67.203" x2="185.036" y2="68.3085" width="0" layer="19" extent="1-1"/>
-<wire x1="181.0815" y1="66.3555" x2="183.2655" y2="67.203" width="0" layer="19" extent="1-1"/>
-<wire x1="168.9145" y1="81.3115" x2="170.6645" y2="77.4115" width="0" layer="19" extent="1-1"/>
-<wire x1="168.4145" y1="81.3115" x2="168.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
-<wire x1="169.203" y1="83.3175" x2="168.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
-<wire x1="160.438" y1="70.775" x2="165.517" y2="71.797" width="0" layer="19" extent="1-1"/>
+<contactref element="C57" pad="1"/>
+<contactref element="R42" pad="1"/>
+<contactref element="K5" pad="2"/>
+<contactref element="K6" pad="MP1"/>
+<contactref element="K7" pad="MP1"/>
+<contactref element="K8" pad="MP1"/>
+<contactref element="J2" pad="P$4"/>
+<contactref element="IC21" pad="9"/>
+<contactref element="IC21" pad="2"/>
+<contactref element="IC21" pad="11"/>
+<contactref element="IC21" pad="14"/>
+<contactref element="R193" pad="P$1"/>
+<contactref element="IC29" pad="6"/>
+<contactref element="IC29" pad="7"/>
+<contactref element="IC29" pad="9"/>
+<contactref element="IC29" pad="12"/>
+<contactref element="IC30" pad="8"/>
+<contactref element="IC30" pad="10"/>
+<contactref element="IC30" pad="9"/>
+<contactref element="IC33" pad="5"/>
+<contactref element="IC33" pad="3"/>
+<contactref element="BNCIN3" pad="GND2"/>
+<contactref element="BNCIN3" pad="GND1"/>
+<contactref element="C56" pad="P$2"/>
+<contactref element="C55" pad="P$2"/>
+<contactref element="K6" pad="MP2"/>
+<contactref element="R137" pad="1"/>
+<contactref element="Q4" pad="2"/>
+<contactref element="K7" pad="MP2"/>
+<contactref element="Q5" pad="2"/>
+<contactref element="R148" pad="P$2"/>
+<contactref element="R149" pad="P$2"/>
+<contactref element="K8" pad="MP2"/>
+<contactref element="Q6" pad="2"/>
+<contactref element="C107" pad="P$2"/>
+<contactref element="C108" pad="P$2"/>
+<contactref element="C110" pad="P$2"/>
+<contactref element="C109" pad="P$2"/>
+<contactref element="C112" pad="P$2"/>
+<contactref element="C111" pad="P$2"/>
+<contactref element="C129" pad="P$2"/>
+<contactref element="C113" pad="P$2"/>
+<contactref element="C131" pad="P$2"/>
+<contactref element="C130" pad="P$2"/>
+<contactref element="C133" pad="P$2"/>
+<contactref element="C132" pad="P$2"/>
+<contactref element="C135" pad="P$2"/>
+<contactref element="C134" pad="P$2"/>
+<wire x1="139.5" y1="118.1" x2="136.5" y2="117.55" width="0" layer="19" extent="1-1"/>
+<wire x1="139.5" y1="118.5" x2="139.5" y2="118.1" width="0" layer="19" extent="1-1"/>
 <wire x1="141.05" y1="85.5" x2="141" y2="85.5" width="0" layer="19" extent="1-16"/>
 <wire x1="122" y1="89.55" x2="122" y2="89.5" width="0" layer="19" extent="1-16"/>
 <wire x1="143" y1="68.45" x2="143" y2="68.5" width="0" layer="19" extent="1-16"/>
@@ -12462,30 +13037,58 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="93.95" y1="81.45" x2="94" y2="81.5" width="0" layer="19" extent="1-16"/>
 <wire x1="94.05" y1="75.45" x2="94" y2="75.5" width="0" layer="19" extent="1-16"/>
 <wire x1="93.95" y1="76.55" x2="94" y2="76.5" width="0" layer="19" extent="1-16"/>
+<wire x1="159.35" y1="119.66" x2="159.3" y2="119.7" width="0" layer="19" extent="1-1"/>
+<wire x1="126.5" y1="124.1" x2="126.5" y2="124" width="0" layer="19" extent="1-1"/>
 <wire x1="153.1" y1="86.5" x2="153" y2="86.5" width="0" layer="19" extent="1-1"/>
+<wire x1="159.35" y1="150.14" x2="159.3" y2="150.2" width="0" layer="19" extent="1-1"/>
+<wire x1="139.5" y1="136.1" x2="139.5" y2="136" width="0" layer="19" extent="1-1"/>
+<wire x1="139.5" y1="130.1" x2="139.5" y2="130" width="0" layer="19" extent="1-1"/>
 <wire x1="127" y1="141.4" x2="127" y2="141.5" width="0" layer="19" extent="1-1"/>
+<wire x1="139.5" y1="124.1" x2="139.5" y2="124" width="0" layer="19" extent="1-1"/>
+<wire x1="126.5" y1="136.1" x2="126.5" y2="136" width="0" layer="19" extent="1-1"/>
+<wire x1="126.5" y1="130.1" x2="126.5" y2="130" width="0" layer="19" extent="1-1"/>
 <wire x1="101.05" y1="78.4" x2="101" y2="78.5" width="0" layer="19" extent="1-16"/>
 <wire x1="94.05" y1="79.6" x2="94" y2="79.5" width="0" layer="19" extent="1-16"/>
 <wire x1="80.8" y1="84" x2="81" y2="84" width="0" layer="19" extent="1-1"/>
 <wire x1="80.8" y1="72.5" x2="81" y2="72.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="12.5" x2="111.5" y2="12.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="18.5" x2="111.5" y2="18.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="21.5" x2="111.5" y2="21.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="24.5" x2="111.5" y2="24.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="27.5" x2="111.5" y2="27.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="30.5" x2="111.5" y2="30.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="33.5" x2="111.5" y2="33.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="36.5" x2="111.5" y2="36.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="39.5" x2="111.5" y2="39.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="42.5" x2="111.5" y2="42.5" width="0" layer="19" extent="1-1"/>
+<wire x1="159.35" y1="134.9" x2="159.3" y2="134.7" width="0" layer="19" extent="1-1"/>
+<wire x1="159.35" y1="109.5" x2="159.3" y2="109.7" width="0" layer="19" extent="1-1"/>
 <wire x1="80.8" y1="86.65" x2="81" y2="86.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="45.5" x2="111.5" y2="45.5" width="0" layer="19" extent="1-1"/>
 <wire x1="111.75" y1="54.5" x2="111.5" y2="54.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="45.5" x2="111.5" y2="45.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="42.5" x2="111.5" y2="42.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="39.5" x2="111.5" y2="39.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="36.5" x2="111.5" y2="36.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="33.5" x2="111.5" y2="33.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="30.5" x2="111.5" y2="30.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="27.5" x2="111.5" y2="27.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="24.5" x2="111.5" y2="24.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="21.5" x2="111.5" y2="21.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="18.5" x2="111.5" y2="18.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="12.5" x2="111.5" y2="12.5" width="0" layer="19" extent="1-1"/>
+<wire x1="139.5" y1="111.6" x2="139.5" y2="112" width="0" layer="19" extent="1-1"/>
+<wire x1="126.5" y1="118.1" x2="126.5" y2="118.5" width="0" layer="19" extent="1-1"/>
+<wire x1="126.5" y1="111.6" x2="126.5" y2="112" width="0" layer="19" extent="1-1"/>
 <wire x1="143.5" y1="59.9" x2="143.5" y2="59.5" width="0" layer="19" extent="1-1"/>
 <wire x1="141" y1="59.9" x2="141" y2="59.5" width="0" layer="19" extent="1-1"/>
 <wire x1="137" y1="143.6" x2="137" y2="144" width="0" layer="19" extent="1-1"/>
+<wire x1="168.3" y1="33.7" x2="168.335" y2="33.27341875" width="0" layer="19" extent="1-1"/>
+<wire x1="169.3" y1="153.7" x2="169.335" y2="153.27341875" width="0" layer="19" extent="1-1"/>
 <wire x1="153.45" y1="65" x2="153" y2="65" width="0" layer="19" extent="1-1"/>
+<wire x1="160.85" y1="149.89" x2="160.85" y2="149.39" width="0" layer="19" extent="1-1"/>
+<wire x1="160.1" y1="133.4" x2="159.6" y2="133.4" width="0" layer="19" extent="1-1"/>
+<wire x1="159.1" y1="133.4" x2="159.6" y2="133.4" width="0" layer="19" extent="1-1"/>
+<wire x1="160.1" y1="118.16" x2="159.6" y2="118.16" width="0" layer="19" extent="1-1"/>
+<wire x1="159.1" y1="118.16" x2="159.6" y2="118.16" width="0" layer="19" extent="1-1"/>
+<wire x1="160.1" y1="108" x2="159.6" y2="108" width="0" layer="19" extent="1-1"/>
+<wire x1="159.1" y1="108" x2="159.6" y2="108" width="0" layer="19" extent="1-1"/>
+<wire x1="160.1" y1="148.64" x2="160.85" y2="149.39" width="0" layer="19" extent="1-1"/>
+<wire x1="159.6" y1="148.64" x2="160.1" y2="148.64" width="0" layer="19" extent="1-1"/>
+<wire x1="160.85" y1="118.91" x2="160.1" y2="118.16" width="0" layer="19" extent="1-1"/>
+<wire x1="160.85" y1="108.75" x2="160.1" y2="108" width="0" layer="19" extent="1-1"/>
 <wire x1="159.45" y1="65" x2="158" y2="65" width="0" layer="19" extent="1-1"/>
+<wire x1="159.03" y1="28.24" x2="159.78" y2="29.49" width="0" layer="19" extent="1-1"/>
+<wire x1="158.53" y1="28.24" x2="159.03" y2="28.24" width="0" layer="19" extent="1-1"/>
 <wire x1="59.25" y1="81.45" x2="59" y2="80" width="0" layer="19" extent="1-1"/>
 <wire x1="57.75" y1="81.45" x2="58" y2="80" width="0" layer="19" extent="1-1"/>
 <wire x1="60.45" y1="78.25" x2="59" y2="78" width="0" layer="19" extent="1-1"/>
@@ -12505,11 +13108,32 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="82.15" y1="24.35" x2="84.6" y2="24" width="0" layer="19" extent="1-1"/>
 <wire x1="56.55" y1="20.6" x2="58" y2="22.6" width="0" layer="19" extent="1-1"/>
 <wire x1="20.05" y1="20.25" x2="19" y2="18" width="0" layer="19" extent="1-1"/>
+<wire x1="149.46" y1="44.02" x2="146.92" y2="43.3" width="0" layer="19" extent="1-1"/>
+<wire x1="152" y1="43.57" x2="149.46" y2="44.02" width="0" layer="19" extent="1-1"/>
+<wire x1="149.39" y1="29.19" x2="146.85" y2="28.47" width="0" layer="19" extent="1-1"/>
+<wire x1="151.93" y1="28.74" x2="149.39" y2="29.19" width="0" layer="19" extent="1-1"/>
+<wire x1="150.46" y1="149.59" x2="147.92" y2="148.87" width="0" layer="19" extent="1-1"/>
+<wire x1="153" y1="149.14" x2="150.46" y2="149.59" width="0" layer="19" extent="1-1"/>
+<wire x1="150.46" y1="134.35" x2="147.92" y2="133.63" width="0" layer="19" extent="1-1"/>
+<wire x1="153" y1="133.9" x2="150.46" y2="134.35" width="0" layer="19" extent="1-1"/>
+<wire x1="150.46" y1="119.11" x2="147.92" y2="118.39" width="0" layer="19" extent="1-1"/>
+<wire x1="153" y1="118.66" x2="150.46" y2="119.11" width="0" layer="19" extent="1-1"/>
+<wire x1="150.46" y1="108.95" x2="147.92" y2="108.23" width="0" layer="19" extent="1-1"/>
+<wire x1="153" y1="108.5" x2="150.46" y2="108.95" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="51.5" x2="109" y2="51.05" width="0" layer="19" extent="1-1"/>
 <wire x1="56.55" y1="25" x2="58" y2="22.6" width="0" layer="19" extent="1-1"/>
 <wire x1="31.716" y1="13.589" x2="34.4" y2="14.6" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="15.5" x2="111.5" y2="18.5" width="0" layer="19" extent="1-1"/>
 <wire x1="111.75" y1="48.5" x2="111.5" y2="45.5" width="0" layer="19" extent="1-1"/>
-<wire x1="111.75" y1="51.5" x2="111.5" y2="54.5" width="0" layer="19" extent="1-1"/>
+<wire x1="111.75" y1="15.5" x2="111.5" y2="12.5" width="0" layer="19" extent="1-1"/>
+<wire x1="123.5" y1="129.55" x2="126.5" y2="130" width="0" layer="19" extent="1-1"/>
+<wire x1="123.5" y1="123.55" x2="126.5" y2="124" width="0" layer="19" extent="1-1"/>
+<wire x1="136.5" y1="135.55" x2="139.5" y2="136" width="0" layer="19" extent="1-1"/>
+<wire x1="136.5" y1="129.55" x2="139.5" y2="130" width="0" layer="19" extent="1-1"/>
+<wire x1="136.5" y1="123.55" x2="139.5" y2="124" width="0" layer="19" extent="1-1"/>
+<wire x1="123.5" y1="135.55" x2="126.5" y2="136" width="0" layer="19" extent="1-1"/>
+<wire x1="136.5" y1="111.05" x2="139.5" y2="111.6" width="0" layer="19" extent="1-1"/>
+<wire x1="123.5" y1="117.55" x2="126.5" y2="118.1" width="0" layer="19" extent="1-1"/>
+<wire x1="123.5" y1="111.05" x2="126.5" y2="111.6" width="0" layer="19" extent="1-1"/>
 <wire x1="80.06693125" y1="75.5" x2="80.8" y2="72.5" width="0" layer="19" extent="1-1"/>
 <wire x1="59.9" y1="68.85" x2="59" y2="72" width="0" layer="19" extent="1-1"/>
 <wire x1="56.9" y1="68.85" x2="59.9" y2="68.85" width="0" layer="19" extent="1-1"/>
@@ -12519,178 +13143,136 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="129.7" y1="139.25" x2="127" y2="141.4" width="0" layer="19" extent="1-1"/>
 <wire x1="55.45" y1="85" x2="59" y2="84.55" width="0" layer="19" extent="1-1"/>
 <wire x1="44.116" y1="32.589" x2="45" y2="29" width="0" layer="19" extent="1-1"/>
+<wire x1="150.73" y1="16.115" x2="146.92" y2="16.48" width="0" layer="19" extent="1-1"/>
 <wire x1="14.8" y1="17.05" x2="13" y2="20.6" width="0" layer="19" extent="1-1"/>
 <wire x1="30.05" y1="73.5" x2="29.438" y2="69.525" width="0" layer="19" extent="1-1"/>
-<wire x1="152.81" y1="76.52" x2="151.5" y2="80.5" width="0" layer="19" extent="1-1"/>
+<wire x1="161.7" y1="101.2" x2="165.2" y2="98.93" width="0" layer="19" extent="1-1"/>
+<wire x1="157.69" y1="78.48" x2="151.5" y2="80.5" width="0" layer="19" extent="1-1"/>
+<wire x1="150.18" y1="20.29" x2="150.73" y2="16.115" width="0" layer="19" extent="1-1"/>
+<wire x1="155.79" y1="18.07" x2="155.3" y2="13.85" width="0" layer="19" extent="1-1"/>
+<wire x1="157.842" y1="17.708" x2="155.79" y2="18.07" width="0" layer="19" extent="1-1"/>
+<wire x1="164.3" y1="17.25" x2="164.3" y2="12.97" width="0" layer="19" extent="1-1"/>
 <wire x1="75.816" y1="32.489" x2="77.8" y2="28.6" width="0" layer="19" extent="1-1"/>
+<wire x1="159.85" y1="44.32" x2="164.3" y2="44.65" width="0" layer="19" extent="1-1"/>
+<wire x1="159.1" y1="43.07" x2="159.85" y2="44.32" width="0" layer="19" extent="1-1"/>
+<wire x1="158.3" y1="44.7" x2="158.35" y2="44.57" width="0" layer="19" extent="1-1"/>
+<wire x1="158.6" y1="43.07" x2="159.1" y2="43.07" width="0" layer="19" extent="1-1"/>
+<wire x1="198.7" y1="103.2" x2="194.3" y2="102.1" width="0" layer="19" extent="1-1"/>
+<wire x1="199.15" y1="99.2" x2="198.7" y2="103.2" width="0" layer="19" extent="1-1"/>
 <wire x1="18.75" y1="13.3" x2="19" y2="18" width="0" layer="19" extent="1-1"/>
 <wire x1="18.75" y1="11.7" x2="18.75" y2="13.3" width="0" layer="19" extent="1-1"/>
+<wire x1="211.7" y1="64.7" x2="212.55" y2="60" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="134.8" x2="129.7" y2="139.25" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="133.2" x2="131.5" y2="134.8" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="128.8" x2="131.5" y2="133.2" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="127.2" x2="131.5" y2="128.8" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="122.8" x2="131.5" y2="127.2" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="121.2" x2="131.5" y2="122.8" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="116.8" x2="131.5" y2="121.2" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="115.2" x2="131.5" y2="116.8" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="110.3" x2="131.5" y2="115.2" width="0" layer="19" extent="1-1"/>
+<wire x1="131.5" y1="108.7" x2="131.5" y2="110.3" width="0" layer="19" extent="1-1"/>
+<wire x1="131.43306875" y1="104.5" x2="131.5" y2="108.7" width="0" layer="19" extent="1-1"/>
+<wire x1="134" y1="101.06693125" x2="131.43306875" y2="104.5" width="0" layer="19" extent="1-1"/>
+<wire x1="135.8" y1="101.175" x2="134" y2="101.06693125" width="0" layer="19" extent="1-1"/>
+<wire x1="133" y1="99.06693125" x2="134" y2="101.06693125" width="0" layer="19" extent="1-1"/>
+<wire x1="134" y1="96.5" x2="133" y2="99.06693125" width="0" layer="19" extent="1-1"/>
+<wire x1="160.9" y1="96.3" x2="161.7" y2="101.2" width="0" layer="19" extent="1-1"/>
 <wire x1="43" y1="77.95" x2="48" y2="78" width="0" layer="19" extent="1-1"/>
+<wire x1="165.517" y1="71.797" x2="160.438" y2="70.775" width="0" layer="19" extent="1-1"/>
+<wire x1="167.056" y1="69.797" x2="165.517" y2="71.797" width="0" layer="19" extent="1-1"/>
+<wire x1="168.2455" y1="69.797" x2="167.056" y2="69.797" width="0" layer="19" extent="1-1"/>
+<wire x1="171.089053125" y1="68.58989375" x2="168.2455" y2="69.797" width="0" layer="19" extent="1-1"/>
+<wire x1="174.0995" y1="68.103" x2="171.089053125" y2="68.58989375" width="0" layer="19" extent="1-1"/>
+<wire x1="174.1395" y1="69.897" x2="174.0995" y2="68.103" width="0" layer="19" extent="1-1"/>
+<wire x1="176.4435" y1="71.003" x2="174.1395" y2="69.897" width="0" layer="19" extent="1-1"/>
+<wire x1="166.7645" y1="74.6615" x2="165.517" y2="71.797" width="0" layer="19" extent="1-1"/>
+<wire x1="166.7645" y1="75.1615" x2="166.7645" y2="74.6615" width="0" layer="19" extent="1-1"/>
+<wire x1="166.7645" y1="76.1615" x2="166.7645" y2="75.1615" width="0" layer="19" extent="1-1"/>
+<wire x1="169.9145" y1="73.5115" x2="166.7645" y2="74.6615" width="0" layer="19" extent="1-1"/>
+<wire x1="170.4145" y1="73.5115" x2="169.9145" y2="73.5115" width="0" layer="19" extent="1-1"/>
+<wire x1="172.9145" y1="73.5115" x2="170.4145" y2="73.5115" width="0" layer="19" extent="1-1"/>
+<wire x1="173.4145" y1="73.5115" x2="172.9145" y2="73.5115" width="0" layer="19" extent="1-1"/>
+<wire x1="174.5645" y1="76.1615" x2="173.4145" y2="73.5115" width="0" layer="19" extent="1-1"/>
+<wire x1="174.5645" y1="78.6615" x2="174.5645" y2="76.1615" width="0" layer="19" extent="1-1"/>
+<wire x1="174.5645" y1="79.1615" x2="174.5645" y2="78.6615" width="0" layer="19" extent="1-1"/>
+<wire x1="174.5645" y1="79.6615" x2="174.5645" y2="79.1615" width="0" layer="19" extent="1-1"/>
+<wire x1="176.0735" y1="80.397" x2="174.5645" y2="79.6615" width="0" layer="19" extent="1-1"/>
+<wire x1="177.7785" y1="80.397" x2="176.0735" y2="80.397" width="0" layer="19" extent="1-1"/>
+<wire x1="179.9185" y1="80.264" x2="177.7785" y2="80.397" width="0" layer="19" extent="1-1"/>
+<wire x1="170.6645" y1="77.4115" x2="170.4145" y2="73.5115" width="0" layer="19" extent="1-1"/>
+<wire x1="184.0815" y1="80.497" x2="179.9185" y2="80.264" width="0" layer="19" extent="1-1"/>
+<wire x1="184.4275" y1="83.8875" x2="184.0815" y2="80.497" width="0" layer="19" extent="1-1"/>
+<wire x1="168.9145" y1="81.3115" x2="170.6645" y2="77.4115" width="0" layer="19" extent="1-1"/>
+<wire x1="168.4145" y1="81.3115" x2="168.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
+<wire x1="169.203" y1="83.3175" x2="168.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
+<wire x1="217.3" y1="44.3" x2="213.045" y2="48.01" width="0" layer="19" extent="1-1"/>
+<wire x1="217.19" y1="66.19" x2="211.7" y2="64.7" width="0" layer="19" extent="1-1"/>
 <wire x1="207.75" y1="126.94" x2="209.452" y2="132.507" width="0" layer="19" extent="1-1"/>
 <wire x1="207.595" y1="124.7" x2="207.75" y2="126.94" width="0" layer="19" extent="1-1"/>
+<wire x1="91.7" y1="101.6" x2="93.5" y2="96" width="0" layer="19" extent="1-1"/>
+<wire x1="90.2" y1="101.6" x2="91.7" y2="101.6" width="0" layer="19" extent="1-1"/>
+<wire x1="89.55" y1="102.75" x2="90.2" y2="101.6" width="0" layer="19" extent="1-1"/>
+<wire x1="89.55" y1="103.25" x2="89.55" y2="102.75" width="0" layer="19" extent="1-1"/>
+<wire x1="86.45" y1="103.7" x2="89.55" y2="103.25" width="0" layer="19" extent="1-1"/>
+<wire x1="86.45" y1="102" x2="86.45" y2="103.7" width="0" layer="19" extent="1-1"/>
+<wire x1="95.55" y1="102" x2="91.7" y2="101.6" width="0" layer="19" extent="1-1"/>
+<wire x1="95.55" y1="104" x2="95.55" y2="102" width="0" layer="19" extent="1-1"/>
+<wire x1="151.3" y1="8.7" x2="146.3" y2="5.43" width="0" layer="19" extent="1-1"/>
+<wire x1="208.3" y1="44.3" x2="213.045" y2="48.01" width="0" layer="19" extent="1-1"/>
+<wire x1="29.438" y1="86.525" x2="30" y2="80.5" width="0" layer="19" extent="1-1"/>
+<wire x1="30.05" y1="90.5" x2="29.438" y2="86.525" width="0" layer="19" extent="1-1"/>
+<wire x1="23.562" y1="87.175" x2="29.438" y2="86.525" width="0" layer="19" extent="1-1"/>
+<wire x1="22.95" y1="84.5" x2="23.562" y2="87.175" width="0" layer="19" extent="1-1"/>
+<wire x1="156.04" y1="143.72" x2="159.6" y2="148.64" width="0" layer="19" extent="1-1"/>
+<wire x1="80.275" y1="104.938" x2="86.45" y2="103.7" width="0" layer="19" extent="1-1"/>
+<wire x1="79.625" y1="104.938" x2="80.275" y2="104.938" width="0" layer="19" extent="1-1"/>
+<wire x1="76.5" y1="108.55" x2="79.625" y2="104.938" width="0" layer="19" extent="1-1"/>
+<wire x1="74" y1="104.45" x2="76.5" y2="108.55" width="0" layer="19" extent="1-1"/>
+<wire x1="80.275" y1="99.062" x2="80.275" y2="104.938" width="0" layer="19" extent="1-1"/>
+<wire x1="183.5" y1="74.15" x2="184.0815" y2="80.497" width="0" layer="19" extent="1-1"/>
+<wire x1="183.5" y1="71.55" x2="183.5" y2="74.15" width="0" layer="19" extent="1-1"/>
+<wire x1="185.036" y1="68.3085" x2="183.5" y2="71.55" width="0" layer="19" extent="1-1"/>
+<wire x1="183.2655" y1="67.203" x2="185.036" y2="68.3085" width="0" layer="19" extent="1-1"/>
+<wire x1="181.0815" y1="66.3555" x2="183.2655" y2="67.203" width="0" layer="19" extent="1-1"/>
 <wire x1="191.4235" y1="67.9275" x2="185.036" y2="68.3085" width="0" layer="19" extent="1-1"/>
 <wire x1="61.53" y1="31.5" x2="55.2" y2="30.2" width="0" layer="19" extent="1-1"/>
-<wire x1="214.65" y1="119.5" x2="213.23" y2="111.58" width="0" layer="19" extent="1-1"/>
-<wire x1="134" y1="96.5" x2="137" y2="88.5" width="0" layer="19" extent="1-1"/>
-<wire x1="133" y1="99.06693125" x2="134" y2="96.5" width="0" layer="19" extent="1-1"/>
-<wire x1="134" y1="101.06693125" x2="133" y2="99.06693125" width="0" layer="19" extent="1-1"/>
-<wire x1="135.8" y1="101.175" x2="134" y2="101.06693125" width="0" layer="19" extent="1-1"/>
-<wire x1="131.43306875" y1="104.5" x2="134" y2="101.06693125" width="0" layer="19" extent="1-1"/>
 <wire x1="125.2" y1="99.595" x2="133" y2="99.06693125" width="0" layer="19" extent="1-1"/>
 <wire x1="123.5" y1="100.56693125" x2="125.2" y2="99.595" width="0" layer="19" extent="1-1"/>
+<wire x1="214.65" y1="119.5" x2="213.23" y2="111.58" width="0" layer="19" extent="1-1"/>
+<wire x1="82.8" y1="113.95" x2="76.5" y2="108.55" width="0" layer="19" extent="1-1"/>
+<wire x1="86.45" y1="114.5" x2="82.8" y2="113.95" width="0" layer="19" extent="1-1"/>
+<wire x1="86.45" y1="116.5" x2="86.45" y2="114.5" width="0" layer="19" extent="1-1"/>
+<wire x1="89.85" y1="115.5" x2="86.45" y2="114.5" width="0" layer="19" extent="1-1"/>
+<wire x1="90.25" y1="114.35" x2="89.85" y2="115.5" width="0" layer="19" extent="1-1"/>
+<wire x1="91.75" y1="114.35" x2="90.25" y2="114.35" width="0" layer="19" extent="1-1"/>
+<wire x1="92.15" y1="115.5" x2="91.75" y2="114.35" width="0" layer="19" extent="1-1"/>
+<wire x1="95.55" y1="114.5" x2="92.15" y2="115.5" width="0" layer="19" extent="1-1"/>
+<wire x1="95.55" y1="116.5" x2="95.55" y2="114.5" width="0" layer="19" extent="1-1"/>
+<wire x1="92.55" y1="122.5" x2="95.55" y2="116.5" width="0" layer="19" extent="1-1"/>
+<wire x1="78.2" y1="121.05" x2="82.8" y2="113.95" width="0" layer="19" extent="1-1"/>
 <wire x1="217" y1="93.5" x2="213.25" y2="101.25" width="0" layer="19" extent="1-3"/>
 <wire x1="212.5" y1="91.35" x2="217" y2="93.5" width="0" layer="19" extent="1-1"/>
 <wire x1="211" y1="91.05" x2="212.5" y2="91.35" width="0" layer="19" extent="1-1"/>
-<wire x1="211.78" y1="80.77" x2="211" y2="91.05" width="0" layer="19" extent="1-1"/>
-<wire x1="211.78" y1="74.37" x2="211.78" y2="80.77" width="0" layer="19" extent="1-1"/>
-<wire x1="146.92" y1="43.3" x2="217" y2="93.5" width="0" layer="19" extent="1-1"/>
-<wire x1="149.46" y1="44.02" x2="146.92" y2="43.3" width="0" layer="19" extent="1-1"/>
-<wire x1="152" y1="43.57" x2="149.46" y2="44.02" width="0" layer="19" extent="1-1"/>
-<wire x1="158.3" y1="44.7" x2="152" y2="43.57" width="0" layer="19" extent="1-1"/>
-<wire x1="158.35" y1="44.57" x2="158.3" y2="44.7" width="0" layer="19" extent="1-1"/>
-<wire x1="158.6" y1="43.07" x2="159.1" y2="43.07" width="0" layer="19" extent="1-1"/>
-<wire x1="159.85" y1="44.32" x2="159.1" y2="43.07" width="0" layer="19" extent="1-1"/>
-<wire x1="164.3" y1="44.65" x2="159.85" y2="44.32" width="0" layer="19" extent="1-1"/>
-<wire x1="168.3" y1="45.2" x2="164.3" y2="44.65" width="0" layer="19" extent="1-1"/>
-<wire x1="168.3" y1="33.7" x2="168.3" y2="39.2" width="0" layer="19" extent="1-1"/>
-<wire x1="168.335" y1="33.27341875" x2="168.3" y2="33.7" width="0" layer="19" extent="1-1"/>
-<wire x1="164.3" y1="30.15" x2="168.3" y2="30.7" width="0" layer="19" extent="1-1"/>
-<wire x1="159.78" y1="29.49" x2="164.3" y2="29.1" width="0" layer="19" extent="1-1"/>
-<wire x1="159.03" y1="28.24" x2="159.78" y2="29.49" width="0" layer="19" extent="1-1"/>
-<wire x1="158.53" y1="28.24" x2="159.03" y2="28.24" width="0" layer="19" extent="1-1"/>
-<wire x1="160.85" y1="108.75" x2="168.3" y2="48.2" width="0" layer="19" extent="1-1"/>
-<wire x1="160.1" y1="108" x2="160.85" y2="108.75" width="0" layer="19" extent="1-1"/>
-<wire x1="159.6" y1="108" x2="160.1" y2="108" width="0" layer="19" extent="1-1"/>
-<wire x1="159.3" y1="109.7" x2="159.35" y2="109.5" width="0" layer="19" extent="1-1"/>
-<wire x1="159.1" y1="108" x2="159.6" y2="108" width="0" layer="19" extent="1-1"/>
-<wire x1="170.4" y1="19.7" x2="168.3" y2="24.7" width="0" layer="19" extent="1-1"/>
-<wire x1="164.3" y1="17.25" x2="164.3" y2="12.97" width="0" layer="19" extent="1-1"/>
-<wire x1="153" y1="108.5" x2="159.1" y2="108" width="0" layer="19" extent="1-1"/>
-<wire x1="150.46" y1="108.95" x2="153" y2="108.5" width="0" layer="19" extent="1-1"/>
-<wire x1="147.92" y1="108.23" x2="150.46" y2="108.95" width="0" layer="19" extent="1-1"/>
-<wire x1="151.93" y1="28.74" x2="158.28" y2="29.74" width="0" layer="19" extent="1-1"/>
-<wire x1="149.39" y1="29.19" x2="151.93" y2="28.74" width="0" layer="19" extent="1-1"/>
-<wire x1="146.85" y1="28.47" x2="149.39" y2="29.19" width="0" layer="19" extent="1-1"/>
-<wire x1="157.842" y1="17.708" x2="164.3" y2="17.25" width="0" layer="19" extent="1-1"/>
-<wire x1="155.79" y1="18.07" x2="157.842" y2="17.708" width="0" layer="19" extent="1-1"/>
-<wire x1="155.3" y1="13.85" x2="155.79" y2="18.07" width="0" layer="19" extent="1-1"/>
-<wire x1="146.92" y1="16.48" x2="150.73" y2="16.115" width="0" layer="19" extent="1-1"/>
-<wire x1="150.18" y1="20.29" x2="150.73" y2="16.115" width="0" layer="19" extent="1-1"/>
-<wire x1="151.3" y1="8.7" x2="155.3" y2="13.85" width="0" layer="19" extent="1-1"/>
-<wire x1="146.3" y1="5.43" x2="151.3" y2="8.7" width="0" layer="19" extent="1-1"/>
-<wire x1="165.3" y1="114.43" x2="160.85" y2="108.75" width="0" layer="19" extent="1-1"/>
-<wire x1="165.3" y1="120.15" x2="169.3" y2="120.7" width="0" layer="19" extent="1-1"/>
-<wire x1="160.85" y1="118.91" x2="165.3" y2="119.1" width="0" layer="19" extent="1-1"/>
-<wire x1="160.1" y1="118.16" x2="160.85" y2="118.91" width="0" layer="19" extent="1-1"/>
-<wire x1="159.6" y1="118.16" x2="160.1" y2="118.16" width="0" layer="19" extent="1-1"/>
-<wire x1="159.3" y1="119.7" x2="159.35" y2="119.66" width="0" layer="19" extent="1-1"/>
-<wire x1="159.1" y1="118.16" x2="159.6" y2="118.16" width="0" layer="19" extent="1-1"/>
-<wire x1="169.3" y1="129.7" x2="169.3" y2="123.7" width="0" layer="19" extent="1-1"/>
-<wire x1="165.3" y1="135.15" x2="169.3" y2="135.7" width="0" layer="19" extent="1-1"/>
-<wire x1="160.1" y1="133.4" x2="165.3" y2="134.1" width="0" layer="19" extent="1-1"/>
-<wire x1="159.6" y1="133.4" x2="160.1" y2="133.4" width="0" layer="19" extent="1-1"/>
-<wire x1="159.3" y1="134.7" x2="159.35" y2="134.9" width="0" layer="19" extent="1-1"/>
-<wire x1="159.1" y1="133.4" x2="159.6" y2="133.4" width="0" layer="19" extent="1-1"/>
-<wire x1="169.3" y1="144.7" x2="169.3" y2="138.7" width="0" layer="19" extent="1-1"/>
-<wire x1="169.3" y1="153.7" x2="169.335" y2="153.27341875" width="0" layer="19" extent="1-1"/>
-<wire x1="165.3" y1="150.15" x2="169.3" y2="150.7" width="0" layer="19" extent="1-1"/>
-<wire x1="160.85" y1="149.89" x2="165.3" y2="150.15" width="0" layer="19" extent="1-1"/>
-<wire x1="160.85" y1="149.39" x2="160.85" y2="149.89" width="0" layer="19" extent="1-1"/>
-<wire x1="159.3" y1="150.2" x2="159.35" y2="150.14" width="0" layer="19" extent="1-1"/>
-<wire x1="160.1" y1="148.64" x2="160.85" y2="149.39" width="0" layer="19" extent="1-1"/>
-<wire x1="159.6" y1="148.64" x2="160.1" y2="148.64" width="0" layer="19" extent="1-1"/>
-<wire x1="156.04" y1="143.72" x2="159.3" y2="150.2" width="0" layer="19" extent="1-1"/>
-<wire x1="153" y1="133.9" x2="159.1" y2="133.4" width="0" layer="19" extent="1-1"/>
-<wire x1="150.46" y1="134.35" x2="153" y2="133.9" width="0" layer="19" extent="1-1"/>
-<wire x1="147.92" y1="133.63" x2="150.46" y2="134.35" width="0" layer="19" extent="1-1"/>
-<wire x1="153" y1="118.66" x2="159.1" y2="118.16" width="0" layer="19" extent="1-1"/>
-<wire x1="150.46" y1="119.11" x2="153" y2="118.66" width="0" layer="19" extent="1-1"/>
-<wire x1="147.92" y1="118.39" x2="150.46" y2="119.11" width="0" layer="19" extent="1-1"/>
-<wire x1="153" y1="149.14" x2="159.3" y2="150.2" width="0" layer="19" extent="1-1"/>
-<wire x1="150.46" y1="149.59" x2="153" y2="149.14" width="0" layer="19" extent="1-1"/>
-<wire x1="147.92" y1="148.87" x2="150.46" y2="149.59" width="0" layer="19" extent="1-1"/>
-<wire x1="188.3" y1="24.7" x2="178.3" y2="16.7" width="0" layer="19" extent="1-1"/>
-<wire x1="189.2" y1="27.6" x2="189.395" y2="24.988" width="0" layer="19" extent="1-1"/>
-<wire x1="195.8" y1="28.7" x2="193.4" y2="27.6" width="0" layer="19" extent="1-1"/>
-<wire x1="195.85" y1="24.7" x2="193.4" y2="27.6" width="0" layer="19" extent="1-1"/>
-<wire x1="194.3" y1="33.7" x2="195.8" y2="28.7" width="0" layer="19" extent="1-1"/>
-<wire x1="195.85" y1="39.2" x2="194.3" y2="33.7" width="0" layer="19" extent="1-1"/>
-<wire x1="193.4" y1="42.1" x2="195.85" y2="39.2" width="0" layer="19" extent="1-1"/>
-<wire x1="189.395" y1="39.488" x2="189.2" y2="42.1" width="0" layer="19" extent="1-1"/>
-<wire x1="195.8" y1="43.2" x2="193.4" y2="42.1" width="0" layer="19" extent="1-1"/>
-<wire x1="194.3" y1="48.2" x2="195.8" y2="43.2" width="0" layer="19" extent="1-1"/>
-<wire x1="197.3" y1="16.7" x2="197.3" y2="24.7" width="0" layer="19" extent="1-1"/>
-<wire x1="189.3" y1="114.7" x2="192.85" y2="48.2" width="0" layer="19" extent="1-1"/>
-<wire x1="190.2" y1="117.6" x2="190.395" y2="114.988" width="0" layer="19" extent="1-1"/>
-<wire x1="196.8" y1="118.7" x2="194.4" y2="117.6" width="0" layer="19" extent="1-1"/>
-<wire x1="196.85" y1="114.7" x2="194.4" y2="117.6" width="0" layer="19" extent="1-1"/>
-<wire x1="195.3" y1="123.7" x2="196.8" y2="118.7" width="0" layer="19" extent="1-1"/>
-<wire x1="196.85" y1="129.7" x2="195.3" y2="123.7" width="0" layer="19" extent="1-1"/>
-<wire x1="194.4" y1="132.6" x2="196.85" y2="129.7" width="0" layer="19" extent="1-1"/>
-<wire x1="190.395" y1="129.988" x2="190.2" y2="132.6" width="0" layer="19" extent="1-1"/>
-<wire x1="196.8" y1="133.7" x2="194.4" y2="132.6" width="0" layer="19" extent="1-1"/>
-<wire x1="195.3" y1="138.7" x2="196.8" y2="133.7" width="0" layer="19" extent="1-1"/>
-<wire x1="196.85" y1="144.7" x2="195.3" y2="138.7" width="0" layer="19" extent="1-1"/>
-<wire x1="194.4" y1="147.6" x2="196.85" y2="144.7" width="0" layer="19" extent="1-1"/>
-<wire x1="190.395" y1="144.988" x2="190.2" y2="147.6" width="0" layer="19" extent="1-1"/>
-<wire x1="196.8" y1="148.7" x2="194.4" y2="147.6" width="0" layer="19" extent="1-1"/>
-<wire x1="195.3" y1="153.7" x2="196.8" y2="148.7" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="108.7" x2="156.04" y2="143.72" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="110.3" x2="131.5" y2="108.7" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="115.2" x2="131.5" y2="110.3" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="116.8" x2="131.5" y2="115.2" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="121.2" x2="131.5" y2="116.8" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="122.8" x2="131.5" y2="121.2" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="127.2" x2="131.5" y2="122.8" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="128.8" x2="131.5" y2="127.2" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="133.2" x2="131.5" y2="128.8" width="0" layer="19" extent="1-1"/>
-<wire x1="131.5" y1="134.8" x2="131.5" y2="133.2" width="0" layer="19" extent="1-1"/>
-<wire x1="136.5" y1="135.55" x2="131.5" y2="134.8" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="136" x2="136.5" y2="135.55" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="136.1" x2="139.5" y2="136" width="0" layer="19" extent="1-1"/>
-<wire x1="136.5" y1="129.55" x2="131.5" y2="128.8" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="130" x2="136.5" y2="129.55" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="130.1" x2="139.5" y2="130" width="0" layer="19" extent="1-1"/>
-<wire x1="136.5" y1="123.55" x2="131.5" y2="122.8" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="124" x2="136.5" y2="123.55" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="124.1" x2="139.5" y2="124" width="0" layer="19" extent="1-1"/>
-<wire x1="136.5" y1="117.55" x2="131.5" y2="116.8" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="118.1" x2="136.5" y2="117.55" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="118.5" x2="139.5" y2="118.1" width="0" layer="19" extent="1-1"/>
-<wire x1="136.5" y1="111.05" x2="131.5" y2="110.3" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="111.6" x2="136.5" y2="111.05" width="0" layer="19" extent="1-1"/>
-<wire x1="139.5" y1="112" x2="139.5" y2="111.6" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="136" x2="131.5" y2="134.8" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="136.1" x2="126.5" y2="136" width="0" layer="19" extent="1-1"/>
-<wire x1="123.5" y1="135.55" x2="126.5" y2="136" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="130" x2="131.5" y2="128.8" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="130.1" x2="126.5" y2="130" width="0" layer="19" extent="1-1"/>
-<wire x1="123.5" y1="129.55" x2="126.5" y2="130" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="124" x2="131.5" y2="122.8" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="124.1" x2="126.5" y2="124" width="0" layer="19" extent="1-1"/>
-<wire x1="123.5" y1="123.55" x2="126.5" y2="124" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="118.1" x2="131.5" y2="116.8" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="118.5" x2="126.5" y2="118.1" width="0" layer="19" extent="1-1"/>
-<wire x1="123.5" y1="117.55" x2="126.5" y2="118.1" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="111.6" x2="131.5" y2="110.3" width="0" layer="19" extent="1-1"/>
-<wire x1="126.5" y1="112" x2="126.5" y2="111.6" width="0" layer="19" extent="1-1"/>
-<wire x1="123.5" y1="111.05" x2="126.5" y2="111.6" width="0" layer="19" extent="1-1"/>
-<wire x1="195.2" y1="108.2" x2="198.3" y2="114.7" width="0" layer="19" extent="1-1"/>
-<wire x1="198.7" y1="103.2" x2="195.2" y2="108.2" width="0" layer="19" extent="1-1"/>
-<wire x1="199.15" y1="99.2" x2="198.7" y2="103.2" width="0" layer="19" extent="1-1"/>
-<wire x1="194.3" y1="102.1" x2="198.7" y2="103.2" width="0" layer="19" extent="1-1"/>
-<wire x1="190.295" y1="99.488" x2="190.1" y2="102.1" width="0" layer="19" extent="1-1"/>
-<wire x1="217.3" y1="44.3" x2="198.7" y2="103.2" width="0" layer="19" extent="1-1"/>
-<wire x1="208.3" y1="44.3" x2="217.3" y2="44.3" width="0" layer="19" extent="1-1"/>
-<wire x1="213.045" y1="48.01" x2="208.3" y2="44.3" width="0" layer="19" extent="1-1"/>
-<wire x1="215.95" y1="55.2" x2="213.045" y2="48.01" width="0" layer="19" extent="1-1"/>
-<wire x1="212.55" y1="60" x2="215.95" y2="55.2" width="0" layer="19" extent="1-1"/>
-<wire x1="211.7" y1="64.7" x2="212.55" y2="60" width="0" layer="19" extent="1-1"/>
-<wire x1="217.19" y1="66.19" x2="211.7" y2="64.7" width="0" layer="19" extent="1-1"/>
-<wire x1="170.2" y1="98.2" x2="189.2" y2="99.2" width="0" layer="19" extent="1-1"/>
-<wire x1="165.1" y1="106.85" x2="170.2" y2="107.2" width="0" layer="19" extent="1-1"/>
-<wire x1="161.7" y1="101.2" x2="165.2" y2="98.93" width="0" layer="19" extent="1-1"/>
-<wire x1="160.9" y1="96.3" x2="161.7" y2="101.2" width="0" layer="19" extent="1-1"/>
+<wire x1="211.78" y1="74.37" x2="211.7" y2="64.7" width="0" layer="19" extent="1-1"/>
+<wire x1="211.78" y1="80.77" x2="211.78" y2="74.37" width="0" layer="19" extent="1-1"/>
+<wire x1="13.3" y1="143.55" x2="4.6" y2="137.2" width="0" layer="19" extent="1-1"/>
+<wire x1="18.8" y1="143.55" x2="13.3" y2="143.55" width="0" layer="19" extent="1-1"/>
+<wire x1="26.5" y1="145.35" x2="18.8" y2="143.55" width="0" layer="19" extent="1-1"/>
+<wire x1="31.55" y1="136.25" x2="26.5" y2="145.35" width="0" layer="19" extent="1-1"/>
+<wire x1="40.05" y1="133.75" x2="31.55" y2="136.25" width="0" layer="19" extent="1-1"/>
+<wire x1="31.716" y1="126.089" x2="31.55" y2="136.25" width="0" layer="19" extent="1-1"/>
+<wire x1="20.05" y1="132.75" x2="18.8" y2="143.55" width="0" layer="19" extent="1-1"/>
+<wire x1="18.75" y1="125.8" x2="20.05" y2="132.75" width="0" layer="19" extent="1-1"/>
+<wire x1="18.75" y1="124.2" x2="18.75" y2="125.8" width="0" layer="19" extent="1-1"/>
+<wire x1="51.55" y1="137.25" x2="40.05" y2="133.75" width="0" layer="19" extent="1-1"/>
+<wire x1="56.55" y1="137.5" x2="51.55" y2="137.25" width="0" layer="19" extent="1-1"/>
+<wire x1="56.55" y1="133.1" x2="56.55" y2="137.5" width="0" layer="19" extent="1-1"/>
+<wire x1="61.53" y1="144" x2="56.55" y2="137.5" width="0" layer="19" extent="1-1"/>
+<wire x1="44.116" y1="145.089" x2="51.55" y2="137.25" width="0" layer="19" extent="1-1"/>
+<wire x1="70.65" y1="133.35" x2="61.53" y2="144" width="0" layer="19" extent="1-1"/>
+<wire x1="82.15" y1="136.85" x2="70.65" y2="133.35" width="0" layer="19" extent="1-1"/>
+<wire x1="75.816" y1="144.989" x2="82.15" y2="136.85" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>
@@ -12743,23 +13325,16 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C245" pad="1"/>
 <contactref element="D8" pad="ANODE"/>
 <contactref element="IC8" pad="32"/>
-<wire x1="210.5" y1="127" x2="208.85" y2="126.94" width="0" layer="19" extent="1-1"/>
-<wire x1="208.865" y1="124.7" x2="208.85" y2="126.94" width="0" layer="19" extent="1-1"/>
-<wire x1="130.56693125" y1="104.5" x2="208.85" y2="126.94" width="0" layer="19" extent="1-1"/>
-<wire x1="130.8" y1="103.405" x2="130.56693125" y2="104.5" width="0" layer="19" extent="1-1"/>
-<wire x1="128.93306875" y1="105" x2="130.56693125" y2="104.5" width="0" layer="19" extent="1-1"/>
-<wire x1="134" y1="101.93306875" x2="130.8" y2="103.405" width="0" layer="19" extent="1-1"/>
-<wire x1="135.8" y1="101.825" x2="134" y2="101.93306875" width="0" layer="19" extent="1-1"/>
-<wire x1="210.135" y1="119.3" x2="208.865" y2="124.7" width="0" layer="19" extent="1-1"/>
-<wire x1="211.405" y1="119.3" x2="210.135" y2="119.3" width="0" layer="19" extent="1-1"/>
-<wire x1="213.23" y1="103.96" x2="210.135" y2="119.3" width="0" layer="19" extent="1-1"/>
-<wire x1="214" y1="94.5" x2="213.23" y2="103.96" width="0" layer="19" extent="1-1"/>
-<wire x1="215.5" y1="94.5" x2="214" y2="94.5" width="0" layer="19" extent="1-1"/>
-<wire x1="218.5" y1="94.5" x2="215.5" y2="94.5" width="0" layer="19" extent="1-1"/>
-<wire x1="211" y1="87.5" x2="214" y2="94.5" width="0" layer="19" extent="1-1"/>
-<wire x1="153.79" y1="78.54" x2="135.8" y2="101.825" width="0" layer="19" extent="1-1"/>
-<wire x1="153.91" y1="76.52" x2="153.79" y2="78.54" width="0" layer="19" extent="1-1"/>
-<wire x1="134.5" y1="59.5" x2="153.91" y2="76.52" width="0" layer="19" extent="1-1"/>
+<contactref element="IC30" pad="7"/>
+<contactref element="IC30" pad="2"/>
+<contactref element="IC30" pad="1"/>
+<contactref element="C131" pad="P$1"/>
+<contactref element="IC30" pad="16"/>
+<wire x1="164.5" y1="77" x2="166.7645" y2="76.6615" width="0" layer="19" extent="1-1"/>
+<wire x1="164.5" y1="76" x2="164.5" y2="77" width="0" layer="19" extent="1-1"/>
+<wire x1="156.59" y1="78.48" x2="164.5" y2="77" width="0" layer="19" extent="1-1"/>
+<wire x1="153.79" y1="78.54" x2="156.59" y2="78.48" width="0" layer="19" extent="1-1"/>
+<wire x1="134.5" y1="59.5" x2="156.59" y2="78.48" width="0" layer="19" extent="1-1"/>
 <wire x1="132.5" y1="59.5" x2="134.5" y2="59.5" width="0" layer="19" extent="1-1"/>
 <wire x1="130" y1="59.5" x2="132.5" y2="59.5" width="0" layer="19" extent="1-1"/>
 <wire x1="129" y1="59.5" x2="130" y2="59.5" width="0" layer="19" extent="1-1"/>
@@ -12768,21 +13343,38 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="103.375" y1="56.438" x2="106.625" y2="56.438" width="0" layer="19" extent="1-1"/>
 <wire x1="107.275" y1="50.562" x2="107.275" y2="56.438" width="0" layer="19" extent="1-1"/>
 <wire x1="109" y1="49.95" x2="107.275" y2="50.562" width="0" layer="19" extent="1-1"/>
-<wire x1="166.7645" y1="76.6615" x2="153.91" y2="76.52" width="0" layer="19" extent="1-1"/>
-<wire x1="164.5" y1="77" x2="166.7645" y2="76.6615" width="0" layer="19" extent="1-1"/>
-<wire x1="164.5" y1="76" x2="164.5" y2="77" width="0" layer="19" extent="1-1"/>
-<wire x1="134.3" y1="139.25" x2="164.5" y2="77" width="0" layer="19" extent="1-1"/>
+<wire x1="135.8" y1="101.825" x2="153.79" y2="78.54" width="0" layer="19" extent="1-1"/>
+<wire x1="134" y1="101.93306875" x2="135.8" y2="101.825" width="0" layer="19" extent="1-1"/>
+<wire x1="130.8" y1="103.405" x2="134" y2="101.93306875" width="0" layer="19" extent="1-1"/>
+<wire x1="130.56693125" y1="104.5" x2="130.8" y2="103.405" width="0" layer="19" extent="1-1"/>
+<wire x1="128.93306875" y1="105" x2="130.56693125" y2="104.5" width="0" layer="19" extent="1-1"/>
+<wire x1="134.3" y1="139.25" x2="128.93306875" y2="105" width="0" layer="19" extent="1-1"/>
 <wire x1="137" y1="141.5" x2="134.3" y2="139.25" width="0" layer="19" extent="1-1"/>
 <wire x1="139" y1="141.95" x2="137" y2="141.5" width="0" layer="19" extent="1-1"/>
-<wire x1="147.92" y1="151.41" x2="139" y2="141.95" width="0" layer="19" extent="1-1"/>
-<wire x1="150.46" y1="150.69" x2="147.92" y2="151.41" width="0" layer="19" extent="1-1"/>
+<wire x1="150.48" y1="143.72" x2="139" y2="141.95" width="0" layer="19" extent="1-1"/>
+<wire x1="150.46" y1="150.69" x2="150.48" y2="143.72" width="0" layer="19" extent="1-1"/>
 <wire x1="153" y1="151.24" x2="150.46" y2="150.69" width="0" layer="19" extent="1-1"/>
 <wire x1="155.54" y1="150.64" x2="153" y2="151.24" width="0" layer="19" extent="1-1"/>
 <wire x1="157.85" y1="150.89" x2="155.54" y2="150.64" width="0" layer="19" extent="1-1"/>
 <wire x1="158.6" y1="151.64" x2="157.85" y2="150.89" width="0" layer="19" extent="1-1"/>
 <wire x1="159.1" y1="151.64" x2="158.6" y2="151.64" width="0" layer="19" extent="1-1"/>
-<wire x1="150.48" y1="143.72" x2="150.46" y2="150.69" width="0" layer="19" extent="1-1"/>
-<wire x1="30.45" y1="79" x2="103.375" y2="56.438" width="0" layer="19" extent="1-1"/>
+<wire x1="147.92" y1="151.41" x2="150.46" y2="150.69" width="0" layer="19" extent="1-1"/>
+<wire x1="211" y1="87.5" x2="166.7645" y2="76.6615" width="0" layer="19" extent="1-1"/>
+<wire x1="214" y1="94.5" x2="211" y2="87.5" width="0" layer="19" extent="1-1"/>
+<wire x1="215.5" y1="94.5" x2="214" y2="94.5" width="0" layer="19" extent="1-1"/>
+<wire x1="218.5" y1="94.5" x2="215.5" y2="94.5" width="0" layer="19" extent="1-1"/>
+<wire x1="213.23" y1="103.96" x2="214" y2="94.5" width="0" layer="19" extent="1-1"/>
+<wire x1="211.405" y1="119.3" x2="213.23" y2="103.96" width="0" layer="19" extent="1-1"/>
+<wire x1="210.135" y1="119.3" x2="211.405" y2="119.3" width="0" layer="19" extent="1-1"/>
+<wire x1="208.865" y1="124.7" x2="210.135" y2="119.3" width="0" layer="19" extent="1-1"/>
+<wire x1="208.85" y1="126.94" x2="208.865" y2="124.7" width="0" layer="19" extent="1-1"/>
+<wire x1="210.5" y1="127" x2="208.85" y2="126.94" width="0" layer="19" extent="1-1"/>
+<wire x1="79.625" y1="99.062" x2="103.375" y2="56.438" width="0" layer="19" extent="1-1"/>
+<wire x1="76.375" y1="99.062" x2="79.625" y2="99.062" width="0" layer="19" extent="1-1"/>
+<wire x1="75.725" y1="99.062" x2="76.375" y2="99.062" width="0" layer="19" extent="1-1"/>
+<wire x1="75.725" y1="104.938" x2="75.725" y2="99.062" width="0" layer="19" extent="1-1"/>
+<wire x1="74" y1="105.55" x2="75.725" y2="104.938" width="0" layer="19" extent="1-1"/>
+<wire x1="30.45" y1="79" x2="75.725" y2="99.062" width="0" layer="19" extent="1-1"/>
 <wire x1="28.2" y1="79" x2="30.45" y2="79" width="0" layer="19" extent="1-1"/>
 <wire x1="23.8" y1="77.5" x2="28.2" y2="79" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -13144,14 +13736,16 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="91.2714" y1="87.240340625" x2="91" y2="86.968940625" width="0.1524" layer="1"/>
 <wire x1="91.2714" y1="89.119046875" x2="91.2714" y2="87.240340625" width="0.1524" layer="1"/>
 <wire x1="91.0428" y1="89.347646875" x2="91.2714" y2="89.119046875" width="0.1524" layer="1"/>
-<wire x1="91.0428" y1="98.0428" x2="91.0428" y2="89.347646875" width="0.1524" layer="1"/>
+<contactref element="R194" pad="P$2"/>
+<wire x1="91.0428" y1="89.347646875" x2="90" y2="97.45" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INA_N" class="3">
 <contactref element="IC1" pad="A5"/>
-<wire x1="91.5" y1="97.8534125" x2="91.5" y2="90" width="0.1524" layer="1"/>
 <wire x1="91.7286" y1="86.7714" x2="92" y2="86.5" width="0.1524" layer="1"/>
 <wire x1="91.7286" y1="89.7714" x2="91.7286" y2="86.7714" width="0.1524" layer="1"/>
 <wire x1="91.5" y1="90" x2="91.7286" y2="89.7714" width="0.1524" layer="1"/>
+<contactref element="R195" pad="P$2"/>
+<wire x1="91.5" y1="90" x2="92" y2="97.45" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_DATA3" class="5">
 <contactref element="IC5" pad="C8"/>
@@ -15768,12 +16362,14 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="23.896" y1="78.596" x2="24.6052125" y2="78.596" width="0.2032" layer="1"/>
 <contactref element="U2" pad="1"/>
 <contactref element="R174" pad="P$2"/>
-<wire x1="139" y1="80.5" x2="160.438" y2="67.525" width="0" layer="19" extent="1-1"/>
-<wire x1="140.2" y1="102.475" x2="139" y2="80.5" width="0" layer="19" extent="1-1"/>
+<contactref element="IC30" pad="3"/>
+<wire x1="139" y1="80.5" x2="140.2" y2="102.475" width="0" layer="19" extent="1-1"/>
+<wire x1="160.438" y1="67.525" x2="139" y2="80.5" width="0" layer="19" extent="1-1"/>
 <wire x1="105.975" y1="56.438" x2="139" y2="80.5" width="0" layer="19" extent="1-1"/>
 <wire x1="102.5535" y1="51.5535" x2="106" y2="55" width="0" layer="19" extent="1-1"/>
-<wire x1="53.9" y1="69.95" x2="102.3947875" y2="51.5535" width="0" layer="19" extent="1-1"/>
-<wire x1="56.25" y1="76.55" x2="53.9" y2="69.95" width="0" layer="19" extent="1-1"/>
+<wire x1="77.025" y1="99.062" x2="105.975" y2="56.438" width="0" layer="19" extent="1-1"/>
+<wire x1="56.25" y1="76.55" x2="77.025" y2="99.062" width="0" layer="19" extent="1-1"/>
+<wire x1="53.9" y1="69.95" x2="56.25" y2="76.55" width="0" layer="19" extent="1-1"/>
 <wire x1="24.754" y1="78.7447875" x2="53.9" y2="69.95" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCS3_ADC">
@@ -15793,11 +16389,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="22.5" y1="78" x2="23.8" y2="78" width="0.2032" layer="1"/>
 <contactref element="U2" pad="2"/>
 <contactref element="R173" pad="P$2"/>
+<contactref element="IC30" pad="5"/>
 <wire x1="138" y1="83.5" x2="140.2" y2="101.175" width="0" layer="19" extent="1-1"/>
 <wire x1="160.438" y1="68.825" x2="138" y2="83.5" width="0" layer="19" extent="1-1"/>
 <wire x1="104.675" y1="56.438" x2="138" y2="83.5" width="0" layer="19" extent="1-1"/>
 <wire x1="56.9" y1="69.95" x2="104.675" y2="56.438" width="0" layer="19" extent="1-1"/>
 <wire x1="56.75" y1="76.55" x2="56.9" y2="69.95" width="0" layer="19" extent="1-1"/>
+<wire x1="78.325" y1="99.062" x2="56.75" y2="76.55" width="0" layer="19" extent="1-1"/>
 <wire x1="23.8" y1="78" x2="56.75" y2="76.55" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VDDL19" class="1">
@@ -15820,10 +16418,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="126.5" y1="116" x2="129.775" y2="116" width="0.1524" layer="1"/>
 <wire x1="156.75" y1="67" x2="154.75" y2="67" width="0.1524" layer="1"/>
 <wire x1="158" y1="68.25" x2="156.75" y2="67" width="0.1524" layer="1"/>
-<wire x1="158" y1="68.25" x2="126.5" y2="99.75" width="0.1524" layer="5"/>
-<wire x1="126.5" y1="116" x2="126.5" y2="99.75" width="0.1524" layer="5"/>
 <wire x1="154.75" y1="67" x2="154.562" y2="66.875" width="0.1524" layer="1"/>
 <via x="158" y="68.25" extent="1-16" drill="0.2"/>
+<wire x1="152.5" y1="66.5" x2="129.775" y2="116" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDOT">
 <contactref element="IC2" pad="11"/>
@@ -17240,10 +17837,46 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="16.35" y1="13.45" x2="16.35" y2="12.95" width="0.254" layer="1"/>
 <wire x1="16.35" y1="12.95" x2="16.7" y2="13.3" width="0.254" layer="1"/>
 <wire x1="16.7" y1="13.3" x2="17.65" y2="13.3" width="0.254" layer="1"/>
-<wire x1="102.7252125" y1="43.929" x2="106.5" y2="48.05" width="0" layer="19" extent="1-1"/>
+<contactref element="C55" pad="P$1"/>
+<contactref element="FL2" pad="7"/>
+<contactref element="FL2" pad="8"/>
+<contactref element="C107" pad="P$1"/>
+<contactref element="IC21" pad="1"/>
+<contactref element="IC21" pad="10"/>
+<contactref element="C109" pad="P$1"/>
+<contactref element="IC29" pad="8"/>
+<contactref element="IC29" pad="13"/>
+<contactref element="C111" pad="P$1"/>
+<contactref element="C113" pad="P$1"/>
+<contactref element="IC30" pad="15"/>
+<contactref element="C130" pad="P$1"/>
+<contactref element="IC31" pad="7"/>
+<contactref element="C132" pad="P$1"/>
+<contactref element="C134" pad="P$1"/>
+<contactref element="IC33" pad="8"/>
+<wire x1="105.526" y1="38.3582125" x2="146.85" y2="31.01" width="0" layer="19" extent="1-1"/>
+<wire x1="106.5" y1="48.05" x2="102.7252125" y2="43.929" width="0" layer="19" extent="1-1"/>
+<wire x1="96" y1="43" x2="102.7252125" y2="43.929" width="0" layer="19" extent="1-1"/>
+<wire x1="95.45" y1="53.5" x2="96" y2="43" width="0" layer="19" extent="1-1"/>
 <wire x1="29.438" y1="71.475" x2="88.55" y2="53.5" width="0" layer="19" extent="1-1"/>
+<wire x1="17.65" y1="125.8" x2="28.95" y2="73.5" width="0" layer="19" extent="1-1"/>
+<wire x1="16.35" y1="125.95" x2="17.65" y2="125.8" width="0" layer="19" extent="1-1"/>
+<wire x1="16.35" y1="125.45" x2="16.35" y2="125.95" width="0" layer="19" extent="1-1"/>
+<wire x1="76.375" y1="104.938" x2="16.35" y2="125.45" width="0" layer="19" extent="1-1"/>
+<wire x1="76.5" y1="107.45" x2="76.375" y2="104.938" width="0" layer="19" extent="1-1"/>
+<wire x1="78.165" y1="118.011" x2="76.5" y2="107.45" width="0" layer="19" extent="1-1"/>
+<wire x1="78.2" y1="119.95" x2="78.165" y2="118.011" width="0" layer="19" extent="1-1"/>
+<wire x1="87.55" y1="114.5" x2="78.165" y2="118.011" width="0" layer="19" extent="1-1"/>
+<wire x1="89.85" y1="115" x2="87.55" y2="114.5" width="0" layer="19" extent="1-1"/>
+<wire x1="92.1" y1="115" x2="89.85" y2="115" width="0" layer="19" extent="1-1"/>
+<wire x1="94.45" y1="114.5" x2="92.1" y2="115" width="0" layer="19" extent="1-1"/>
+<wire x1="87.55" y1="102" x2="76.375" y2="104.938" width="0" layer="19" extent="1-1"/>
+<wire x1="89.55" y1="102.25" x2="87.55" y2="102" width="0" layer="19" extent="1-1"/>
+<wire x1="92.35" y1="102.25" x2="89.55" y2="102.25" width="0" layer="19" extent="1-1"/>
+<wire x1="94.45" y1="102" x2="92.35" y2="102.25" width="0" layer="19" extent="1-1"/>
 <wire x1="17.7" y1="14.4" x2="29.438" y2="71.475" width="0" layer="19" extent="1-1"/>
-<wire x1="146.85" y1="31.01" x2="106.625" y2="50.562" width="0" layer="19" extent="1-1"/>
+<wire x1="29.438" y1="88.475" x2="94.45" y2="102" width="0" layer="19" extent="1-1"/>
+<wire x1="28.95" y1="90.5" x2="29.438" y2="88.475" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="2V5-" class="1">
 <contactref element="IC25" pad="5"/>
@@ -17349,10 +17982,40 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="15.7206" y1="12.2794" x2="15.3" y2="12.7" width="0.254" layer="1"/>
 <wire x1="16.35" y1="11.95" x2="15.95486875" y2="11.95" width="0.254" layer="1"/>
 <wire x1="15.95486875" y1="11.95" x2="15.7206" y2="12.18426875" width="0.254" layer="1"/>
+<contactref element="C56" pad="P$1"/>
+<contactref element="FL2" pad="5"/>
+<contactref element="FL2" pad="9"/>
+<contactref element="C108" pad="P$1"/>
+<contactref element="IC21" pad="8"/>
+<contactref element="IC21" pad="3"/>
+<contactref element="C110" pad="P$1"/>
+<contactref element="IC29" pad="5"/>
+<contactref element="IC29" pad="16"/>
+<contactref element="C112" pad="P$1"/>
+<contactref element="C129" pad="P$1"/>
+<contactref element="IC31" pad="4"/>
+<contactref element="C133" pad="P$1"/>
+<contactref element="C135" pad="P$1"/>
+<contactref element="IC33" pad="4"/>
+<wire x1="102.295" y1="42.911" x2="146.92" y2="19.02" width="0" layer="19" extent="1-1"/>
 <wire x1="95.45" y1="39" x2="100.2" y2="42.65" width="0" layer="19" extent="1-1"/>
 <wire x1="24.05" y1="67.5" x2="88.55" y2="51.5" width="0" layer="19" extent="1-1"/>
+<wire x1="17.65" y1="124.2" x2="23.562" y2="69.525" width="0" layer="19" extent="1-1"/>
+<wire x1="16.35" y1="124.45" x2="17.65" y2="124.2" width="0" layer="19" extent="1-1"/>
+<wire x1="15.3" y1="125.2" x2="16.35" y2="124.45" width="0" layer="19" extent="1-1"/>
+<wire x1="80.705" y1="112.589" x2="15.3" y2="125.2" width="0" layer="19" extent="1-1"/>
+<wire x1="82.8" y1="112.85" x2="80.705" y2="112.589" width="0" layer="19" extent="1-1"/>
+<wire x1="87.55" y1="116.5" x2="82.8" y2="112.85" width="0" layer="19" extent="1-1"/>
+<wire x1="89.85" y1="116" x2="87.55" y2="116.5" width="0" layer="19" extent="1-1"/>
+<wire x1="92.15" y1="116" x2="89.85" y2="116" width="0" layer="19" extent="1-1"/>
+<wire x1="94.45" y1="116.5" x2="92.15" y2="116" width="0" layer="19" extent="1-1"/>
+<wire x1="87.55" y1="103.7" x2="82.8" y2="112.85" width="0" layer="19" extent="1-1"/>
+<wire x1="89.55" y1="103.75" x2="87.55" y2="103.7" width="0" layer="19" extent="1-1"/>
+<wire x1="92.35" y1="103.75" x2="89.55" y2="103.75" width="0" layer="19" extent="1-1"/>
+<wire x1="94.45" y1="104" x2="92.35" y2="103.75" width="0" layer="19" extent="1-1"/>
 <wire x1="15.3" y1="12.7" x2="24.05" y2="67.5" width="0" layer="19" extent="1-1"/>
-<wire x1="146.92" y1="19.02" x2="102.295" y2="42.911" width="0" layer="19" extent="1-1"/>
+<wire x1="24.05" y1="84.5" x2="94.45" y2="104" width="0" layer="19" extent="1-1"/>
+<wire x1="23.562" y1="86.525" x2="24.05" y2="84.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCS3_IN1">
 <contactref element="IC5" pad="G7"/>
@@ -17364,6 +18027,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 </signal>
 <signal name="SCS3_IN2">
 <contactref element="IC5" pad="G8"/>
+<contactref element="IC30" pad="4"/>
+<wire x1="77.675" y1="99.062" x2="137" y2="82.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DB4_P" class="2">
 <contactref element="IC1" pad="M9"/>
@@ -17480,6 +18145,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 </signal>
 <signal name="SDO3_IN2">
 <contactref element="IC5" pad="B9"/>
+<contactref element="IC30" pad="6"/>
+<wire x1="78.975" y1="99.062" x2="142" y2="81.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCS3_IN1DAC">
 <contactref element="IC5" pad="G9"/>
@@ -17492,22 +18159,30 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <signal name="BOARDOUT0">
 <contactref element="J10" pad="1"/>
 <contactref element="IC5" pad="B17"/>
+<contactref element="R12" pad="P$2"/>
 <wire x1="142" y1="73.5" x2="160.1" y2="60" width="0" layer="19" extent="1-1"/>
+<wire x1="150" y1="75.5" x2="142" y2="73.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BOARDOUT1">
 <contactref element="J10" pad="2"/>
 <contactref element="IC5" pad="B18"/>
+<contactref element="R13" pad="P$2"/>
 <wire x1="142" y1="72.5" x2="162.64" y2="60" width="0" layer="19" extent="1-1"/>
+<wire x1="150" y1="74.5" x2="142" y2="72.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BOARDOUT2">
 <contactref element="J10" pad="3"/>
 <contactref element="IC5" pad="B19"/>
+<contactref element="R22" pad="P$2"/>
 <wire x1="142" y1="71.5" x2="165.18" y2="60" width="0" layer="19" extent="1-1"/>
+<wire x1="150" y1="73.5" x2="142" y2="71.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BOARDOUT3">
 <contactref element="J10" pad="4"/>
 <contactref element="IC5" pad="B20"/>
+<contactref element="R23" pad="P$2"/>
 <wire x1="142" y1="70.5" x2="167.72" y2="60" width="0" layer="19" extent="1-1"/>
+<wire x1="150" y1="72.5" x2="142" y2="70.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BOARDOUT4">
 <contactref element="J10" pad="5"/>
@@ -17807,7 +18482,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="34" y="71.5" extent="1-16" drill="0.35"/>
 <wire x1="24.625" y1="77" x2="23.8" y2="77" width="0.2032" layer="1"/>
 <wire x1="25.125" y1="77.5" x2="24.625" y2="77" width="0.2032" layer="1"/>
+<contactref element="R198" pad="P$1"/>
 <wire x1="25.125" y1="77.5" x2="33.05" y2="70.5" width="0" layer="19" extent="1-1"/>
+<wire x1="33.05" y1="87.5" x2="23.8" y2="77" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="1V25OUT-">
 <contactref element="R147" pad="P$2"/>
@@ -17822,6 +18499,12 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="34.5814" y1="71.259175" x2="34.5814" y2="71.8778125" width="0.2032" layer="1"/>
 <wire x1="34.5814" y1="71.8778125" x2="33.4052125" y2="73.054" width="0.2032" layer="1"/>
 <wire x1="32.504" y1="73.054" x2="31.95" y2="72.5" width="0.2032" layer="1"/>
+<contactref element="R201" pad="P$2"/>
+<contactref element="IC33" pad="7"/>
+<contactref element="R199" pad="P$2"/>
+<wire x1="33.05" y1="85.5" x2="29.438" y2="70.825" width="0" layer="19" extent="1-1"/>
+<wire x1="31.95" y1="89.5" x2="33.05" y2="85.5" width="0" layer="19" extent="1-1"/>
+<wire x1="29.438" y1="87.825" x2="31.95" y2="89.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$15">
 <contactref element="R145" pad="P$1"/>
@@ -17861,6 +18544,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <signal name="DACOUT2">
 <contactref element="IC17" pad="2"/>
 <wire x1="30.5" y1="77.5" x2="28.2" y2="77.5" width="0.2032" layer="1"/>
+<contactref element="R197" pad="P$2"/>
+<wire x1="30.45" y1="93" x2="28.2" y2="77.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$50">
 <contactref element="FL3" pad="6"/>
@@ -18073,22 +18758,30 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="169.27385" y1="108.6624" x2="168.7776" y2="108.16615" width="1.27" layer="1"/>
 <wire x1="168.7776" y1="108.16615" x2="168.7776" y2="106.8256" width="1.27" layer="1"/>
 <wire x1="169.9381" y1="108.9243" x2="170.2" y2="108.6624" width="1.27" layer="1"/>
+<contactref element="K6" pad="1"/>
+<contactref element="K7" pad="1"/>
+<contactref element="K8" pad="1"/>
+<contactref element="J2" pad="P$1"/>
 <wire x1="185.036" y1="66.2085" x2="183.2655" y2="66.103" width="0" layer="19" extent="1-1"/>
 <wire x1="187.6045" y1="65.8915" x2="185.036" y2="66.2085" width="0" layer="19" extent="1-1"/>
 <wire x1="169.4145" y1="73.5115" x2="183.2655" y2="66.103" width="0" layer="19" extent="1-1"/>
-<wire x1="159.6" y1="101.2" x2="187.6045" y2="65.8915" width="0" layer="19" extent="1-1"/>
+<wire x1="172.3" y1="98.2" x2="169.4145" y2="73.5115" width="0" layer="19" extent="1-1"/>
+<wire x1="159.6" y1="101.2" x2="165.2" y2="101.47" width="0" layer="19" extent="1-1"/>
 <wire x1="159.45" y1="98.2" x2="159.6" y2="101.2" width="0" layer="19" extent="1-1"/>
-<wire x1="172.3" y1="107.2" x2="159.6" y2="101.2" width="0" layer="19" extent="1-1"/>
-<wire x1="196.7" y1="105.2" x2="159.45" y2="98.2" width="0" layer="19" extent="1-1"/>
-<wire x1="146.3" y1="7.97" x2="198.2" y2="105.2" width="0" layer="19" extent="1-1"/>
-<wire x1="194.75" y1="24.7" x2="194.75" y2="10.7" width="0" layer="19" extent="1-1"/>
-<wire x1="194.75" y1="39.2" x2="194.75" y2="24.7" width="0" layer="19" extent="1-1"/>
-<wire x1="194.85615" y1="109.7" x2="194.75" y2="39.2" width="0" layer="19" extent="1-1"/>
+<wire x1="191.665" y1="114.988" x2="177.2" y2="103.2" width="0" layer="19" extent="1-1"/>
+<wire x1="196.7" y1="105.2" x2="194.85615" y2="109.7" width="0" layer="19" extent="1-1"/>
 <wire x1="194.85615" y1="128.14385" x2="192.935" y2="114.988" width="0" layer="19" extent="1-1"/>
 <wire x1="194.85615" y1="142.14385" x2="192.935" y2="129.988" width="0" layer="19" extent="1-1"/>
-<wire x1="72.6" y1="19.1" x2="165.2" y2="101.47" width="0" layer="19" extent="1-1"/>
+<wire x1="190.665" y1="39.488" x2="187.6045" y2="65.8915" width="0" layer="19" extent="1-1"/>
+<wire x1="191.935" y1="24.988" x2="194.75" y2="39.2" width="0" layer="19" extent="1-1"/>
+<wire x1="194.75" y1="10.7" x2="194.75" y2="24.7" width="0" layer="19" extent="1-1"/>
+<wire x1="72.6" y1="19.1" x2="146.3" y2="7.97" width="0" layer="19" extent="1-1"/>
 <wire x1="43.6" y1="17.8" x2="71.4" y2="18.2" width="0" layer="19" extent="1-1"/>
 <wire x1="12.91" y1="72.8" x2="29.6" y2="25.5" width="0" layer="19" extent="1-1"/>
+<wire x1="42" y1="132" x2="12.91" y2="72.8" width="0" layer="19" extent="1-1"/>
+<wire x1="29.6" y1="138" x2="42" y2="132" width="0" layer="19" extent="1-1"/>
+<wire x1="72.6" y1="131.6" x2="42" y2="132" width="0" layer="19" extent="1-1"/>
+<wire x1="12.91" y1="94.3" x2="29.6" y2="138" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="COIL1-">
 <contactref element="Q7" pad="3"/>
@@ -18203,7 +18896,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="R170" pad="P$2"/>
 <wire x1="87.75" y1="21.8" x2="88" y2="22.05" width="0.254" layer="1"/>
 <wire x1="88" y1="22.05" x2="89.6" y2="22.05" width="0.254" layer="1"/>
-<wire x1="89.6" y1="22.05" x2="91.4" y2="20.25" width="0.254" layer="1"/>
 </signal>
 <signal name="OUTMAIN">
 <contactref element="K12" pad="6"/>
@@ -19251,6 +19943,273 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="F10"/>
 <contactref element="IC2" pad="6"/>
 <wire x1="138" y1="80.5" x2="160.438" y2="69.475" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$7">
+<contactref element="FL2" pad="6"/>
+<contactref element="R43" pad="2"/>
+<wire x1="16.35" y1="124.95" x2="20.75" y2="124.9" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$12">
+<contactref element="FL2" pad="1"/>
+<contactref element="FL2" pad="3"/>
+<wire x1="14.25" y1="124.95" x2="14.25" y2="125.95" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="INPATH2">
+<contactref element="BNCIN3" pad="SIGNAL"/>
+<contactref element="K6" pad="3"/>
+<wire x1="12.4" y1="133.4" x2="24.2" y2="138" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$13">
+<contactref element="K5" pad="1"/>
+<contactref element="R136" pad="P$1"/>
+<wire x1="65.85" y1="143.9" x2="64.07" y2="144" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="ACDC_CONTROL2">
+<contactref element="R136" pad="P$2"/>
+<contactref element="R13" pad="P$1"/>
+<wire x1="151" y1="74.5" x2="66.95" y2="143.9" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="50_1M_CONTROL2">
+<contactref element="R140" pad="P$2"/>
+<contactref element="R12" pad="P$1"/>
+<wire x1="151" y1="75.5" x2="34.8" y2="125.25" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="1MPATH2">
+<contactref element="FL2" pad="4"/>
+<contactref element="R42" pad="2"/>
+<contactref element="C57" pad="2"/>
+<contactref element="K6" pad="4"/>
+<wire x1="18.8" y1="145.45" x2="22" y2="138" width="0" layer="19" extent="1-1"/>
+<wire x1="13.3" y1="145.45" x2="18.8" y2="145.45" width="0" layer="19" extent="1-1"/>
+<wire x1="14.25" y1="124.45" x2="18.8" y2="145.45" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="OUTPATH2">
+<contactref element="K6" pad="6"/>
+<contactref element="K7" pad="3"/>
+<wire x1="24.2" y1="131" x2="47.4" y2="132" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="50PATH2">
+<contactref element="R137" pad="2"/>
+<contactref element="K6" pad="7"/>
+<contactref element="K6" pad="2"/>
+<wire x1="26.4" y1="138" x2="26.5" y2="143.45" width="0" layer="19" extent="1-1"/>
+<wire x1="26.4" y1="131" x2="26.4" y2="138" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="COIL1-2">
+<contactref element="Q4" pad="3"/>
+<contactref element="K6" pad="8"/>
+<wire x1="29.684" y1="125.2" x2="29.6" y2="131" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="1MPATH502">
+<contactref element="R43" pad="1"/>
+<contactref element="K6" pad="5"/>
+<wire x1="22.65" y1="124.9" x2="22" y2="131" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$14">
+<contactref element="Q4" pad="1"/>
+<contactref element="R140" pad="P$1"/>
+<wire x1="31.716" y1="124.311" x2="34.8" y2="124.15" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="SPLIT2">
+<contactref element="R151" pad="P$1"/>
+<contactref element="R152" pad="P$1"/>
+<contactref element="K8" pad="4"/>
+<wire x1="86.65" y1="134.3" x2="86.65" y2="136.1" width="0" layer="19" extent="1-1"/>
+<wire x1="80.2" y1="131.6" x2="86.65" y2="134.3" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="SPLITOUT2">
+<contactref element="R151" pad="P$2"/>
+<contactref element="R157" pad="P$1"/>
+<contactref element="K8" pad="5"/>
+<wire x1="87.75" y1="136.1" x2="89.6" y2="135.65" width="0" layer="19" extent="1-1"/>
+<wire x1="80.2" y1="138.6" x2="87.75" y2="136.1" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="OUTPATHFILT2">
+<contactref element="K5" pad="3"/>
+<contactref element="K7" pad="6"/>
+<contactref element="C72" pad="P$1"/>
+<wire x1="62.25" y1="136.1" x2="61.53" y2="138" width="0" layer="19" extent="1-1"/>
+<wire x1="47.4" y1="139" x2="61.53" y2="138" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$18">
+<contactref element="Q5" pad="1"/>
+<contactref element="R141" pad="P$1"/>
+<wire x1="44.116" y1="143.311" x2="46.8" y2="143.25" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="ATT_CONTROL2">
+<contactref element="R141" pad="P$2"/>
+<contactref element="R22" pad="P$1"/>
+<wire x1="151" y1="73.5" x2="46.8" y2="144.35" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="COIL2-2">
+<contactref element="Q5" pad="3"/>
+<contactref element="K7" pad="8"/>
+<wire x1="42" y1="139" x2="42.084" y2="144.2" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="FILTIN2">
+<contactref element="K7" pad="4"/>
+<contactref element="R148" pad="P$1"/>
+<contactref element="R150" pad="P$1"/>
+<wire x1="55.6" y1="134.75" x2="55.45" y2="133.1" width="0" layer="19" extent="1-1"/>
+<wire x1="49.6" y1="132" x2="55.45" y2="133.1" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="FILTOUT2">
+<contactref element="K7" pad="5"/>
+<contactref element="R149" pad="P$1"/>
+<contactref element="R150" pad="P$2"/>
+<wire x1="55.6" y1="135.85" x2="55.45" y2="137.5" width="0" layer="19" extent="1-1"/>
+<wire x1="49.6" y1="139" x2="55.45" y2="137.5" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="NOFILT2">
+<contactref element="K7" pad="2"/>
+<contactref element="K7" pad="7"/>
+<wire x1="45.2" y1="132" x2="45.2" y2="139" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="OUTPATHACDC2">
+<contactref element="K5" pad="4"/>
+<contactref element="C72" pad="P$2"/>
+<contactref element="K8" pad="3"/>
+<wire x1="64.07" y1="138" x2="78" y2="131.6" width="0" layer="19" extent="1-1"/>
+<wire x1="63.35" y1="136.1" x2="64.07" y2="138" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="OUTSPLIT2">
+<contactref element="R152" pad="P$2"/>
+<contactref element="R157" pad="P$2"/>
+<wire x1="87.75" y1="134.3" x2="89.6" y2="134.55" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="OUTMAIN2">
+<contactref element="K8" pad="6"/>
+<contactref element="R192" pad="P$1"/>
+<contactref element="R193" pad="P$2"/>
+<wire x1="91.4" y1="121.05" x2="78" y2="138.6" width="0" layer="19" extent="1-1"/>
+<wire x1="91.45" y1="122.5" x2="91.4" y2="121.05" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$19">
+<contactref element="Q6" pad="1"/>
+<contactref element="R163" pad="P$1"/>
+<wire x1="75.816" y1="143.211" x2="80.4" y2="143.15" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="SPLIT_CONTROL2">
+<contactref element="R163" pad="P$2"/>
+<contactref element="R23" pad="P$1"/>
+<wire x1="151" y1="72.5" x2="80.4" y2="144.25" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="COIL3-2">
+<contactref element="Q6" pad="3"/>
+<contactref element="K8" pad="8"/>
+<wire x1="72.6" y1="138.6" x2="73.784" y2="144.1" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="NOSPLIT2">
+<contactref element="K8" pad="7"/>
+<contactref element="K8" pad="2"/>
+<wire x1="75.8" y1="131.6" x2="75.8" y2="138.6" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AOUT2_P">
+<contactref element="IC21" pad="13"/>
+<contactref element="R188" pad="P$1"/>
+<wire x1="91.25" y1="114.35" x2="92" y2="110.05" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$5">
+<contactref element="IC21" pad="7"/>
+<contactref element="R189" pad="P$2"/>
+<wire x1="88.45" y1="118.5" x2="90.25" y2="116.65" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AIN2_N">
+<contactref element="IC21" pad="5"/>
+<contactref element="R190" pad="P$1"/>
+<contactref element="R192" pad="P$2"/>
+<wire x1="91.45" y1="118.5" x2="91.25" y2="116.65" width="0" layer="19" extent="1-1"/>
+<wire x1="91.4" y1="119.95" x2="91.45" y2="118.5" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$6">
+<contactref element="IC21" pad="4"/>
+<contactref element="R190" pad="P$2"/>
+<wire x1="92.55" y1="118.5" x2="91.75" y2="116.65" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AOUTSMA2_N">
+<contactref element="R187" pad="P$2"/>
+<contactref element="IC29" pad="3"/>
+<wire x1="90" y1="108.95" x2="90.7" y2="104.4" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AOUTSMA2_P">
+<contactref element="R188" pad="P$2"/>
+<contactref element="IC29" pad="2"/>
+<wire x1="92" y1="108.95" x2="91.2" y2="104.4" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AIN2_P">
+<contactref element="IC21" pad="6"/>
+<contactref element="R189" pad="P$1"/>
+<contactref element="R191" pad="P$2"/>
+<wire x1="89.55" y1="118.5" x2="90.75" y2="116.65" width="0" layer="19" extent="1-1"/>
+<wire x1="89.55" y1="120.5" x2="89.55" y2="118.5" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AOUT2_N">
+<contactref element="IC21" pad="12"/>
+<contactref element="R187" pad="P$1"/>
+<wire x1="90.75" y1="114.35" x2="90" y2="110.05" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AMPSDI2">
+<contactref element="IC29" pad="1"/>
+<contactref element="IC30" pad="12"/>
+<wire x1="91.7" y1="104.3" x2="78.325" y2="104.938" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AMPSDO2">
+<contactref element="IC29" pad="4"/>
+<contactref element="IC30" pad="11"/>
+<wire x1="90.2" y1="104.4" x2="78.975" y2="104.938" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AMPOUT2_N">
+<contactref element="IC29" pad="10"/>
+<contactref element="R194" pad="P$1"/>
+<wire x1="90.7" y1="101.6" x2="90" y2="98.55" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AMPOUT2_P">
+<contactref element="IC29" pad="11"/>
+<contactref element="R195" pad="P$1"/>
+<wire x1="92" y1="98.55" x2="91.2" y2="101.6" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AMPSCLK2">
+<contactref element="IC29" pad="14"/>
+<contactref element="IC30" pad="14"/>
+<wire x1="92.35" y1="102.75" x2="77.025" y2="104.938" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AMPSCS2">
+<contactref element="IC29" pad="15"/>
+<contactref element="IC30" pad="13"/>
+<wire x1="92.35" y1="103.25" x2="77.675" y2="104.938" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AOFFSET2">
+<contactref element="R191" pad="P$1"/>
+<contactref element="R196" pad="P$2"/>
+<wire x1="88.45" y1="120.5" x2="83.6" y2="120.45" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="OFFSETOUT2">
+<contactref element="R196" pad="P$1"/>
+<contactref element="IC31" pad="6"/>
+<wire x1="83.6" y1="119.35" x2="79.435" y2="118.011" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="DACAMPOUT2">
+<contactref element="IC31" pad="3"/>
+<contactref element="IC33" pad="1"/>
+<contactref element="R200" pad="P$1"/>
+<wire x1="28.05" y1="84.5" x2="79.435" y2="112.589" width="0" layer="19" extent="1-1"/>
+<wire x1="23.562" y1="88.475" x2="28.05" y2="84.5" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$22">
+<contactref element="R199" pad="P$1"/>
+<contactref element="R198" pad="P$2"/>
+<contactref element="IC33" pad="6"/>
+<wire x1="31.95" y1="87.5" x2="33.05" y2="89.5" width="0" layer="19" extent="1-1"/>
+<wire x1="29.438" y1="87.175" x2="31.95" y2="87.5" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$33">
+<contactref element="IC33" pad="2"/>
+<contactref element="R197" pad="P$1"/>
+<contactref element="R201" pad="P$1"/>
+<contactref element="R200" pad="P$2"/>
+<wire x1="31.95" y1="85.5" x2="31.55" y2="93" width="0" layer="19" extent="1-1"/>
+<wire x1="26.95" y1="84.5" x2="31.95" y2="85.5" width="0" layer="19" extent="1-1"/>
+<wire x1="23.562" y1="87.825" x2="26.95" y2="84.5" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
