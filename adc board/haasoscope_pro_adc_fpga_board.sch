@@ -25809,7 +25809,6 @@ Diode with low voltage drop</description>
 <part name="R14" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R15" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="0"/>
 <part name="R16" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="R18" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="0"/>
 <part name="R17" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
 <part name="R19" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
@@ -26169,7 +26168,6 @@ Diode with low voltage drop</description>
 <part name="C257" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
 <part name="C258" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND217" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="J38" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="CN2" library="adafruit" deviceset="DCBARREL" device="PTH" value="12Vin"/>
 <part name="PS2" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
 <part name="C259" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -33145,7 +33143,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <sheet>
 <description>Power filters</description>
 <plain>
-<text x="195.58" y="76.2" size="1.778" layer="90">Connector to power board</text>
+<text x="198.12" y="78.74" size="1.778" layer="90">Power inputs</text>
 </plain>
 <instances>
 <instance part="C5" gate="G$1" x="12.7" y="68.58" smashed="yes">
@@ -33505,7 +33503,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <attribute name="NAME" x="293.116" y="-119.761" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="293.116" y="-114.681" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J1" gate="G$1" x="213.36" y="63.5" smashed="yes" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -33739,7 +33736,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <segment>
 <wire x1="208.28" y1="60.96" x2="200.66" y2="60.96" width="0.1524" layer="91"/>
 <label x="200.66" y="60.96" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="5"/>
 </segment>
 </net>
 <net name="VLVDS_IN" class="1">
@@ -33757,7 +33753,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <segment>
 <wire x1="208.28" y1="63.5" x2="200.66" y2="63.5" width="0.1524" layer="91"/>
 <label x="198.12" y="63.5" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="VLVDS" class="1">
@@ -33810,7 +33805,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <segment>
 <wire x1="208.28" y1="66.04" x2="200.66" y2="66.04" width="0.1524" layer="91"/>
 <label x="198.12" y="66.04" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="VDDL19" class="1">
@@ -33876,7 +33870,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <segment>
 <wire x1="208.28" y1="68.58" x2="200.66" y2="68.58" width="0.1524" layer="91"/>
 <label x="198.12" y="68.58" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VA11" class="1">
@@ -33958,7 +33951,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <segment>
 <wire x1="208.28" y1="71.12" x2="200.66" y2="71.12" width="0.1524" layer="91"/>
 <label x="200.66" y="71.12" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="1V2" class="1">
@@ -34090,7 +34082,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <segment>
 <wire x1="208.28" y1="58.42" x2="200.66" y2="58.42" width="0.1524" layer="91"/>
 <label x="200.66" y="58.42" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="6"/>
 </segment>
 </net>
 <net name="VCCIO3V3" class="1">
@@ -34115,16 +34106,20 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </net>
 <net name="2V5-" class="1">
 <segment>
-<pinref part="J1" gate="G$1" pin="8"/>
 <wire x1="208.28" y1="53.34" x2="200.66" y2="53.34" width="0.1524" layer="91"/>
 <label x="200.66" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="2V5+" class="1">
 <segment>
-<pinref part="J1" gate="G$1" pin="7"/>
 <wire x1="208.28" y1="55.88" x2="200.66" y2="55.88" width="0.1524" layer="91"/>
 <label x="200.66" y="55.88" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="5V" class="1">
+<segment>
+<wire x1="208.28" y1="73.66" x2="200.66" y2="73.66" width="0.1524" layer="91"/>
+<label x="200.66" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -37045,7 +37040,7 @@ for CL05A105KA5NQNC</text>
 =100k/(5-1) = ~25k</text>
 <text x="7.62" y="71.12" size="1.778" layer="90">12V input, in case USB C insufficient</text>
 <text x="7.62" y="27.94" size="1.778" layer="90">5V input, needed unless there is 12V input</text>
-<text x="101.6" y="27.94" size="1.778" layer="90">Outputs</text>
+<text x="96.52" y="30.48" size="1.778" layer="90">Outputs</text>
 </plain>
 <instances>
 <instance part="GND207" gate="1" x="43.18" y="45.72" smashed="yes">
@@ -37706,7 +37701,6 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="65.024" y="56.261" size="1.778" layer="95"/>
 <attribute name="VALUE" x="65.024" y="51.689" size="1.778" layer="96"/>
 </instance>
-<instance part="J38" gate="G$1" x="111.76" y="15.24" smashed="yes" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -38285,7 +38279,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <wire x1="106.68" y1="12.7" x2="99.06" y2="12.7" width="0.1524" layer="91"/>
 <label x="99.06" y="12.7" size="1.778" layer="95"/>
-<pinref part="J38" gate="G$1" pin="5"/>
 </segment>
 </net>
 <net name="2V8+" class="0">
@@ -38550,7 +38543,6 @@ for CL05A105KA5NQNC</text>
 <label x="289.56" y="116.84" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J38" gate="G$1" pin="8"/>
 <wire x1="106.68" y1="5.08" x2="96.52" y2="5.08" width="0.1524" layer="91"/>
 <label x="96.52" y="5.08" size="1.778" layer="95"/>
 </segment>
@@ -38588,7 +38580,6 @@ for CL05A105KA5NQNC</text>
 <label x="241.3" y="170.18" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J38" gate="G$1" pin="7"/>
 <wire x1="106.68" y1="7.62" x2="99.06" y2="7.62" width="0.1524" layer="91"/>
 <label x="96.52" y="7.62" size="1.778" layer="95"/>
 </segment>
@@ -38749,6 +38740,10 @@ for CL05A105KA5NQNC</text>
 <wire x1="218.44" y1="43.18" x2="233.68" y2="43.18" width="0.1524" layer="91"/>
 <junction x="218.44" y="43.18"/>
 <label x="228.6" y="43.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="106.68" y1="25.4" x2="96.52" y2="25.4" width="0.1524" layer="91"/>
+<label x="96.52" y="25.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$105" class="0">
@@ -39079,7 +39074,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <wire x1="106.68" y1="15.24" x2="99.06" y2="15.24" width="0.1524" layer="91"/>
 <label x="96.52" y="15.24" size="1.778" layer="95"/>
-<pinref part="J38" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="V19_IN" class="1">
@@ -39109,7 +39103,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <wire x1="106.68" y1="17.78" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
 <label x="96.52" y="17.78" size="1.778" layer="95"/>
-<pinref part="J38" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="V11_IN" class="1">
@@ -39139,7 +39132,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <wire x1="106.68" y1="20.32" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
 <label x="96.52" y="20.32" size="1.778" layer="95"/>
-<pinref part="J38" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -39172,7 +39164,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <wire x1="106.68" y1="22.86" x2="96.52" y2="22.86" width="0.1524" layer="91"/>
 <label x="96.52" y="22.86" size="1.778" layer="95"/>
-<pinref part="J38" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="2V5D" class="1">
@@ -39202,7 +39193,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <wire x1="106.68" y1="10.16" x2="96.52" y2="10.16" width="0.1524" layer="91"/>
 <label x="96.52" y="10.16" size="1.778" layer="95"/>
-<pinref part="J38" gate="G$1" pin="6"/>
 </segment>
 </net>
 </nets>
