@@ -367,26 +367,26 @@ set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_clk
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_trig
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsout_clk
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsout_trig
-set_location_assignment PIN_T2 -to lvdsin_clk
-set_location_assignment PIN_T1 -to "lvdsin_clk(n)"
-set_location_assignment PIN_F2 -to lvdsin_trig
-set_location_assignment PIN_F1 -to "lvdsin_trig(n)"
+set_location_assignment PIN_G21 -to lvdsin_clk
+set_location_assignment PIN_G22 -to "lvdsin_clk(n)"
+set_location_assignment PIN_D21 -to lvdsin_trig
+set_location_assignment PIN_D22 -to "lvdsin_trig(n)"
 set_location_assignment PIN_G4 -to lvdsout_trig
 set_location_assignment PIN_G3 -to "lvdsout_trig(n)"
-set_location_assignment PIN_H6 -to lvdsout_clk
-set_location_assignment PIN_J6 -to "lvdsout_clk(n)"
+set_location_assignment PIN_J2 -to lvdsout_clk
+set_location_assignment PIN_J1 -to "lvdsout_clk(n)"
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_spare[1]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_spare[0]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsout_spare[1]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsout_spare[0]
-set_location_assignment PIN_H2 -to lvdsin_spare[0]
-set_location_assignment PIN_H1 -to "lvdsin_spare[0](n)"
-set_location_assignment PIN_J2 -to lvdsin_spare[1]
-set_location_assignment PIN_J1 -to "lvdsin_spare[1](n)"
-set_location_assignment PIN_D21 -to lvdsout_spare[0]
-set_location_assignment PIN_D22 -to "lvdsout_spare[0](n)"
-set_location_assignment PIN_E21 -to lvdsout_spare[1]
-set_location_assignment PIN_E22 -to "lvdsout_spare[1](n)"
+set_location_assignment PIN_E21 -to lvdsin_spare[0]
+set_location_assignment PIN_E22 -to "lvdsin_spare[0](n)"
+set_location_assignment PIN_F21 -to lvdsin_spare[1]
+set_location_assignment PIN_F22 -to "lvdsin_spare[1](n)"
+set_location_assignment PIN_F2 -to lvdsout_spare[0]
+set_location_assignment PIN_F1 -to "lvdsout_spare[0](n)"
+set_location_assignment PIN_H2 -to lvdsout_spare[1]
+set_location_assignment PIN_H1 -to "lvdsout_spare[1](n)"
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
 set_global_assignment -name VERILOG_FILE command_processor.v
