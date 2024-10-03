@@ -26366,21 +26366,8 @@ Diode with low voltage drop</description>
 <part name="R148" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="75"/>
 <part name="R149" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="75"/>
 <part name="R150" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="120"/>
-<part name="R151" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
-<part name="R152" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
-<part name="R157" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="C72" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="RF_1uF">
 <attribute name="LCSC" value="C52923"/>
-</part>
-<part name="SUPPLY56" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="Q6" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" deviceset="SMD-TRANSISTORS-NPN-25V-500MW-S8050(SOT-23)" device="" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050">
-<attribute name="LCSC" value="C7420370"/>
-</part>
-<part name="SUPPLY57" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY58" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R163" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
-<part name="K8" library="G6K-2F-RF-DC3" deviceset="G6K-2F-RF-DC3" device="">
-<attribute name="LCSC" value="C397195"/>
 </part>
 <part name="J2" library="FlashPCB_Connectors" deviceset="USB-TYPE-A" device="THT-RA" value="test1"/>
 <part name="SUPPLY60" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -26436,7 +26423,6 @@ Diode with low voltage drop</description>
 <part name="R12" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R13" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R22" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
-<part name="R23" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 </parts>
 <sheets>
 <sheet>
@@ -27008,10 +26994,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <instance part="R22" gate="G$1" x="-5.08" y="492.76" smashed="yes">
 <attribute name="NAME" x="-8.89" y="494.2586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-8.89" y="489.458" size="1.778" layer="96"/>
-</instance>
-<instance part="R23" gate="G$1" x="-5.08" y="490.22" smashed="yes">
-<attribute name="NAME" x="-8.89" y="491.7186" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-8.89" y="486.918" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -28146,7 +28128,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="J10" gate="G$1" pin="4"/>
 <wire x1="7.62" y1="490.22" x2="0" y2="490.22" width="0.1524" layer="91"/>
 <label x="0" y="490.22" size="1.778" layer="95"/>
-<pinref part="R23" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="IO35" class="0">
@@ -31555,13 +31536,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="R22" gate="G$1" pin="P$1"/>
 <wire x1="-10.16" y1="492.76" x2="-30.48" y2="492.76" width="0.1524" layer="91"/>
 <label x="-30.48" y="492.76" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="SPLIT_CONTROL2" class="0">
-<segment>
-<pinref part="R23" gate="G$1" pin="P$1"/>
-<wire x1="-10.16" y1="490.22" x2="-30.48" y2="490.22" width="0.1524" layer="91"/>
-<label x="-30.48" y="490.22" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -39372,9 +39346,6 @@ for CL05A105KA5NQNC</text>
 <text x="63.5" y="149.86" size="1.778" layer="90">RF relay for input Z</text>
 <text x="50.8" y="106.68" size="1.778" layer="90">RF relay driver
 for input Z</text>
-<text x="309.88" y="226.06" size="1.778" layer="90">50 Ohm resistive 
-splitter/combiner
-Output -6dB</text>
 <text x="170.18" y="149.86" size="1.778" layer="90">RF relay for attenuator</text>
 <text x="157.48" y="106.68" size="1.778" layer="90">RF relay driver
 for attenuator</text>
@@ -39383,9 +39354,6 @@ for attenuator</text>
 50 Ohm</text>
 <text x="142.24" y="180.34" size="1.778" layer="90" rot="R90">RF relay</text>
 <text x="210.82" y="180.34" size="1.778" layer="90" rot="R90">RF relay</text>
-<text x="309.88" y="149.86" size="1.778" layer="90">RF relay for splitting</text>
-<text x="297.18" y="106.68" size="1.778" layer="90">RF relay driver
-for splitting</text>
 <text x="241.3" y="180.34" size="1.778" layer="90">Z~1.5 Ohm at 2 GHz
 for CL05A105KA5NQNC</text>
 </plain>
@@ -39485,45 +39453,16 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="170.18" y="199.644" size="1.016" layer="95" font="vector" align="top-left"/>
 <attribute name="VALUE" x="175.26" y="199.644" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="R151" gate="G$1" x="314.96" y="187.96" smashed="yes" rot="R90">
-<attribute name="NAME" x="312.42" y="186.944" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="317.5" y="186.944" size="1.016" layer="96" font="vector" rot="R180"/>
-</instance>
-<instance part="R152" gate="G$1" x="314.96" y="213.36" smashed="yes" rot="R90">
-<attribute name="NAME" x="312.42" y="212.344" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="317.5" y="212.344" size="1.016" layer="96" font="vector" rot="R180"/>
-</instance>
-<instance part="R157" gate="G$1" x="320.04" y="200.66" smashed="yes" rot="R180">
-<attribute name="NAME" x="321.056" y="198.12" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="321.056" y="203.2" size="1.016" layer="96" font="vector" rot="R270"/>
-</instance>
 <instance part="C72" gate="G$1" x="254" y="187.96" smashed="yes" rot="R90">
 <attribute name="NAME" x="252.476" y="190.5" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="255.524" y="190.5" size="1.016" layer="96" font="vector" rot="R90"/>
 <attribute name="LCSC" x="254" y="187.96" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="SUPPLY56" gate="GND" x="314.96" y="116.84" smashed="yes"/>
-<instance part="Q6" gate="G$1" x="317.5" y="96.52" smashed="yes">
-<attribute name="NAME" x="314.96" y="99.06" size="1.27" layer="95" ratio="10"/>
-<attribute name="VALUE" x="321.31" y="99.06" size="1.27" layer="96" ratio="10"/>
-<attribute name="LCSC" x="317.5" y="96.52" size="1.778" layer="96" display="off"/>
+<instance part="J2" gate="G$1" x="261.62" y="119.38" smashed="yes">
+<attribute name="NAME" x="248.92" y="132.08" size="1.778" layer="95"/>
+<attribute name="VALUE" x="248.92" y="129.54" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY57" gate="GND" x="320.04" y="88.9" smashed="yes"/>
-<instance part="SUPPLY58" gate="GND" x="317.5" y="142.24" smashed="yes"/>
-<instance part="R163" gate="G$1" x="307.34" y="96.52" smashed="yes" rot="R270">
-<attribute name="NAME" x="309.88" y="97.536" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="304.8" y="97.536" size="1.016" layer="96" font="vector"/>
-</instance>
-<instance part="K8" gate="G$1" x="314.96" y="144.78" smashed="yes" rot="R270">
-<attribute name="NAME" x="321.31" y="142.24" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="321.31" y="144.78" size="1.778" layer="96" align="center-left"/>
-<attribute name="LCSC" x="314.96" y="144.78" size="1.778" layer="96" rot="R270" display="off"/>
-</instance>
-<instance part="J2" gate="G$1" x="292.1" y="22.86" smashed="yes">
-<attribute name="NAME" x="279.4" y="35.56" size="1.778" layer="95"/>
-<attribute name="VALUE" x="279.4" y="33.02" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY60" gate="GND" x="299.72" y="12.7" smashed="yes"/>
+<instance part="SUPPLY60" gate="GND" x="269.24" y="109.22" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -39552,11 +39491,6 @@ for CL05A105KA5NQNC</text>
 <pinref part="K7" gate="G$1" pin="MP1"/>
 <pinref part="SUPPLY53" gate="GND" pin="GND"/>
 <wire x1="175.26" y1="144.78" x2="177.8" y2="144.78" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="K8" gate="G$1" pin="MP1"/>
-<pinref part="SUPPLY58" gate="GND" pin="GND"/>
-<wire x1="314.96" y1="144.78" x2="317.5" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="BNCIN3" gate="G$1" pin="GND"/>
@@ -39597,14 +39531,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <pinref part="R149" gate="G$1" pin="P$2"/>
 <pinref part="SUPPLY55" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="K8" gate="G$1" pin="MP2"/>
-<pinref part="SUPPLY56" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="SUPPLY57" gate="GND" pin="GND"/>
-<pinref part="Q6" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="SUPPLY60" gate="GND" pin="GND"/>
@@ -39759,14 +39685,9 @@ for CL05A105KA5NQNC</text>
 <pinref part="K7" gate="G$1" pin="COIL+"/>
 </segment>
 <segment>
-<wire x1="297.18" y1="137.16" x2="287.02" y2="137.16" width="0.1524" layer="91"/>
-<label x="287.02" y="137.16" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="COIL+"/>
-</segment>
-<segment>
 <pinref part="J2" gate="G$1" pin="VCC"/>
-<wire x1="299.72" y1="30.48" x2="307.34" y2="30.48" width="0.1524" layer="91"/>
-<label x="304.8" y="30.48" size="1.778" layer="95"/>
+<wire x1="269.24" y1="127" x2="276.86" y2="127" width="0.1524" layer="91"/>
+<label x="274.32" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="COIL1-2" class="0">
@@ -39798,36 +39719,6 @@ for CL05A105KA5NQNC</text>
 <pinref part="Q4" gate="G$1" pin="B"/>
 <pinref part="R140" gate="G$1" pin="P$1"/>
 <wire x1="66.04" y1="96.52" x2="68.58" y2="96.52" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="SPLIT2" class="0">
-<segment>
-<wire x1="309.88" y1="213.36" x2="309.88" y2="187.96" width="0.1524" layer="91"/>
-<pinref part="R151" gate="G$1" pin="P$1"/>
-<pinref part="R152" gate="G$1" pin="P$1"/>
-<wire x1="309.88" y1="213.36" x2="287.02" y2="213.36" width="0.1524" layer="91"/>
-<junction x="309.88" y="213.36"/>
-<label x="289.56" y="213.36" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="297.18" y1="129.54" x2="284.48" y2="129.54" width="0.1524" layer="91"/>
-<label x="284.48" y="129.54" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="NO_1"/>
-</segment>
-</net>
-<net name="SPLITOUT2" class="0">
-<segment>
-<wire x1="320.04" y1="195.58" x2="320.04" y2="187.96" width="0.1524" layer="91"/>
-<pinref part="R151" gate="G$1" pin="P$2"/>
-<pinref part="R157" gate="G$1" pin="P$1"/>
-<wire x1="320.04" y1="187.96" x2="340.36" y2="187.96" width="0.1524" layer="91"/>
-<junction x="320.04" y="187.96"/>
-<label x="327.66" y="187.96" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="332.74" y1="129.54" x2="350.52" y2="129.54" width="0.1524" layer="91"/>
-<label x="337.82" y="129.54" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="NO_2"/>
 </segment>
 </net>
 <net name="OUTPATHFILT2" class="0">
@@ -39927,75 +39818,6 @@ for CL05A105KA5NQNC</text>
 <wire x1="256.54" y1="187.96" x2="281.94" y2="187.96" width="0.1524" layer="91"/>
 <junction x="256.54" y="187.96"/>
 <label x="264.16" y="187.96" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="297.18" y1="132.08" x2="284.48" y2="132.08" width="0.1524" layer="91"/>
-<label x="284.48" y="132.08" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="COM_1"/>
-</segment>
-</net>
-<net name="OUTSPLIT2" class="0">
-<segment>
-<wire x1="320.04" y1="205.74" x2="320.04" y2="213.36" width="0.1524" layer="91"/>
-<pinref part="R152" gate="G$1" pin="P$2"/>
-<pinref part="R157" gate="G$1" pin="P$2"/>
-<junction x="320.04" y="213.36"/>
-<wire x1="386.08" y1="213.36" x2="320.04" y2="213.36" width="0.1524" layer="91"/>
-<label x="360.68" y="213.36" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="OUTMAIN2" class="0">
-<segment>
-<wire x1="386.08" y1="187.96" x2="358.14" y2="187.96" width="0.1524" layer="91"/>
-<label x="360.68" y="187.96" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="332.74" y1="132.08" x2="350.52" y2="132.08" width="0.1524" layer="91"/>
-<label x="337.82" y="132.08" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="COM_2"/>
-</segment>
-</net>
-<net name="NOSPLIT2" class="0">
-<segment>
-<wire x1="287.02" y1="167.64" x2="340.36" y2="167.64" width="0.1524" layer="91"/>
-<label x="289.56" y="167.64" size="1.778" layer="95"/>
-<label x="327.66" y="167.64" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="332.74" y1="134.62" x2="350.52" y2="134.62" width="0.1524" layer="91"/>
-<label x="337.82" y="134.62" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="NC_2"/>
-</segment>
-<segment>
-<wire x1="297.18" y1="134.62" x2="284.48" y2="134.62" width="0.1524" layer="91"/>
-<label x="284.48" y="134.62" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="NC_1"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="Q6" gate="G$1" pin="B"/>
-<pinref part="R163" gate="G$1" pin="P$1"/>
-<wire x1="312.42" y1="96.52" x2="314.96" y2="96.52" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="SPLIT_CONTROL2" class="0">
-<segment>
-<pinref part="R163" gate="G$1" pin="P$2"/>
-<wire x1="302.26" y1="96.52" x2="281.94" y2="96.52" width="0.1524" layer="91"/>
-<label x="281.94" y="96.52" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="COIL3-2" class="0">
-<segment>
-<pinref part="Q6" gate="G$1" pin="C"/>
-<wire x1="320.04" y1="101.6" x2="320.04" y2="109.22" width="0.1524" layer="91"/>
-<label x="320.04" y="101.6" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<wire x1="332.74" y1="137.16" x2="345.44" y2="137.16" width="0.1524" layer="91"/>
-<label x="337.82" y="137.16" size="1.778" layer="95"/>
-<pinref part="K8" gate="G$1" pin="COIL-"/>
 </segment>
 </net>
 </nets>
@@ -40499,7 +40321,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="IC29" gate="G$1" pin="INP"/>
 </segment>
 </net>
-<net name="OUTMAIN2" class="0">
+<net name="OUTPATHACDC2" class="0">
 <segment>
 <pinref part="R192" gate="G$1" pin="P$1"/>
 <pinref part="R193" gate="G$1" pin="P$2"/>
@@ -40791,7 +40613,7 @@ for CL05A105KA5NQNC</text>
 <approved hash="104,8,48.26,17.78,D9,CATHODE,N$133,,,"/>
 <approved hash="104,9,78.74,203.2,FL2,VS+,2V5+,,,"/>
 <approved hash="104,9,78.74,198.12,FL2,VS-,2V5-,,,"/>
-<approved hash="104,9,299.72,30.48,J2,VCC,5V,,,"/>
+<approved hash="104,9,269.24,127,J2,VCC,5V,,,"/>
 <approved hash="106,2,60.96,220.98,BG,,,,,"/>
 <approved hash="106,2,60.96,302.26,CALTRIG,,,,,"/>
 <approved hash="106,1,238.76,276.86,CLK1,,,,,"/>
