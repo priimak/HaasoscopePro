@@ -9289,91 +9289,6 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/lmh6401.pdf"&gt; Datasheet 
 </deviceset>
 </devicesets>
 </library>
-<library name="OPA693ID">
-<description>&lt;Ultra-Wideband, Fixed Gain Video Buffer Amplifier with Disable&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="SOIC127P600X175-8N">
-<description>&lt;b&gt;D0008A&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-2.711" y="1.905" dx="1.528" dy="0.65" layer="1"/>
-<smd name="2" x="-2.711" y="0.635" dx="1.528" dy="0.65" layer="1"/>
-<smd name="3" x="-2.711" y="-0.635" dx="1.528" dy="0.65" layer="1"/>
-<smd name="4" x="-2.711" y="-1.905" dx="1.528" dy="0.65" layer="1"/>
-<smd name="5" x="2.711" y="-1.905" dx="1.528" dy="0.65" layer="1"/>
-<smd name="6" x="2.711" y="-0.635" dx="1.528" dy="0.65" layer="1"/>
-<smd name="7" x="2.711" y="0.635" dx="1.528" dy="0.65" layer="1"/>
-<smd name="8" x="2.711" y="1.905" dx="1.528" dy="0.65" layer="1"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-3.725" y1="2.75" x2="3.725" y2="2.75" width="0.05" layer="51"/>
-<wire x1="3.725" y1="2.75" x2="3.725" y2="-2.75" width="0.05" layer="51"/>
-<wire x1="3.725" y1="-2.75" x2="-3.725" y2="-2.75" width="0.05" layer="51"/>
-<wire x1="-3.725" y1="-2.75" x2="-3.725" y2="2.75" width="0.05" layer="51"/>
-<wire x1="-1.948" y1="2.452" x2="1.948" y2="2.452" width="0.1" layer="51"/>
-<wire x1="1.948" y1="2.452" x2="1.948" y2="-2.452" width="0.1" layer="51"/>
-<wire x1="1.948" y1="-2.452" x2="-1.948" y2="-2.452" width="0.1" layer="51"/>
-<wire x1="-1.948" y1="-2.452" x2="-1.948" y2="2.452" width="0.1" layer="51"/>
-<wire x1="-1.948" y1="1.182" x2="-0.678" y2="2.452" width="0.1" layer="51"/>
-<wire x1="-1.598" y1="2.452" x2="1.598" y2="2.452" width="0.2" layer="21"/>
-<wire x1="1.598" y1="2.452" x2="1.598" y2="-2.452" width="0.2" layer="21"/>
-<wire x1="1.598" y1="-2.452" x2="-1.598" y2="-2.452" width="0.2" layer="21"/>
-<wire x1="-1.598" y1="-2.452" x2="-1.598" y2="2.452" width="0.2" layer="21"/>
-<wire x1="-3.475" y1="2.58" x2="-1.948" y2="2.58" width="0.2" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="OPA693ID">
-<wire x1="5.08" y1="2.54" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-10.16" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-10.16" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
-<text x="29.21" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="29.21" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="NC_1" x="0" y="0" length="middle"/>
-<pin name="-IN" x="0" y="-2.54" length="middle"/>
-<pin name="+IN" x="0" y="-5.08" length="middle"/>
-<pin name="-VS" x="0" y="-7.62" length="middle"/>
-<pin name="!DIS" x="33.02" y="0" length="middle" rot="R180"/>
-<pin name="+VS" x="33.02" y="-2.54" length="middle" rot="R180"/>
-<pin name="OUTPUT" x="33.02" y="-5.08" length="middle" rot="R180"/>
-<pin name="NC_2" x="33.02" y="-7.62" length="middle" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="OPA693ID" prefix="IC">
-<description>&lt;b&gt;Ultra-Wideband, Fixed Gain Video Buffer Amplifier with Disable&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://www.ti.com/lit/gpn/opa693"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="OPA693ID" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SOIC127P600X175-8N">
-<connects>
-<connect gate="G$1" pin="!DIS" pad="8"/>
-<connect gate="G$1" pin="+IN" pad="3"/>
-<connect gate="G$1" pin="+VS" pad="7"/>
-<connect gate="G$1" pin="-IN" pad="2"/>
-<connect gate="G$1" pin="-VS" pad="4"/>
-<connect gate="G$1" pin="NC_1" pad="1"/>
-<connect gate="G$1" pin="NC_2" pad="5"/>
-<connect gate="G$1" pin="OUTPUT" pad="6"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="Ultra-Wideband, Fixed Gain Video Buffer Amplifier with Disable" constant="no"/>
-<attribute name="HEIGHT" value="1.75mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Texas Instruments" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="OPA693ID" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="595-OPA693ID" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA693ID?qs=wgAEGBTxy7n5Zagrtgs30Q%3D%3D" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="DAC8562SDGSR">
 <description>&lt;16-bit, dual-channel, low-power, ultra-low glitch, voltage output DAC with 2.5V, 4ppm/C reference&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
@@ -26298,7 +26213,6 @@ Diode with low voltage drop</description>
 <part name="C92" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="C93" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="R142" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
-<part name="IC16" library="OPA693ID" deviceset="OPA693ID" device=""/>
 <part name="SUPPLY44" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY45" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C94" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
@@ -26702,7 +26616,7 @@ Diode with low voltage drop</description>
 <part name="C57" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="?10?"/>
 <part name="SUPPLY30" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R43" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
-<part name="BNCIN3" library="connector" deviceset="MOLEX_BNC_73100-0105" device="">
+<part name="BNCIN1" library="connector" deviceset="MOLEX_BNC_73100-0105" device="">
 <attribute name="MPN" value="73100-0105"/>
 </part>
 <part name="K5" library="relay" library_urn="urn:adsk.eagle:library:339" deviceset="AQY*" device="SOP" package3d_urn="urn:adsk.eagle:package:24376/1" technology="21">
@@ -26778,7 +26692,6 @@ Diode with low voltage drop</description>
 <part name="C130" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="C131" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="R196" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
-<part name="IC31" library="OPA693ID" deviceset="OPA693ID" device=""/>
 <part name="SUPPLY68" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY69" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C132" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
@@ -26802,6 +26715,8 @@ Diode with low voltage drop</description>
 <part name="R24" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
 <part name="R25" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
 <part name="R26" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
+<part name="FL1" library="OPA859IDSGR" deviceset="OPA859IDSGR" device=""/>
+<part name="FL4" library="OPA859IDSGR" deviceset="OPA859IDSGR" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -27412,7 +27327,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="K12" gate="G$1" pin="COM_1"/>
 </segment>
 </net>
-<net name="OUTSPLIT" class="0">
+<net name="OUTSPLIT" class="5">
 <segment>
 <wire x1="347.98" y1="246.38" x2="347.98" y2="254" width="0.1524" layer="91"/>
 <pinref part="R169" gate="G$1" pin="P$2"/>
@@ -27594,10 +27509,8 @@ for CL05A105KA5NQNC</text>
 <sheet>
 <description>Input amps 1</description>
 <plain>
-<text x="73.66" y="-86.36" size="1.778" layer="90">open</text>
-<text x="111.76" y="-83.82" size="1.778" layer="90">open</text>
 <text x="96.52" y="-175.26" size="1.778" layer="90">Need to subtract 2.5V/2 from dac out</text>
-<text x="81.28" y="-99.06" size="1.778" layer="90">Buffer with high bandwidth</text>
+<text x="83.82" y="-78.74" size="1.778" layer="90">Buffer with high bandwidth</text>
 </plain>
 <instances>
 <instance part="SUPPLY27" gate="GND" x="101.6" y="-27.94" smashed="yes"/>
@@ -27703,10 +27616,6 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="54.356" y="-60.96" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="54.356" y="-55.88" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
-<instance part="IC16" gate="G$1" x="78.74" y="-83.82" smashed="yes">
-<attribute name="NAME" x="107.95" y="-76.2" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="107.95" y="-78.74" size="1.778" layer="96" align="center-left"/>
-</instance>
 <instance part="SUPPLY44" gate="GND" x="149.86" y="-93.98" smashed="yes"/>
 <instance part="SUPPLY45" gate="GND" x="139.7" y="-93.98" smashed="yes"/>
 <instance part="C94" gate="G$1" x="139.7" y="-88.9" smashed="yes">
@@ -27759,6 +27668,10 @@ for CL05A105KA5NQNC</text>
 <instance part="R147" gate="G$1" x="83.82" y="-165.1" smashed="yes" rot="R270">
 <attribute name="NAME" x="86.36" y="-164.084" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="81.28" y="-164.084" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="FL1" gate="G$1" x="83.82" y="-86.36" smashed="yes">
+<attribute name="NAME" x="85.09" y="-81.28" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="105.41" y="-81.28" size="1.778" layer="96" align="center-left"/>
 </instance>
 </instances>
 <busses>
@@ -27982,11 +27895,6 @@ for CL05A105KA5NQNC</text>
 <label x="256.54" y="-101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC16" gate="G$1" pin="+VS"/>
-<wire x1="111.76" y1="-86.36" x2="129.54" y2="-86.36" width="0.1524" layer="91"/>
-<label x="114.3" y="-86.36" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C94" gate="G$1" pin="P$1"/>
 <wire x1="139.7" y1="-86.36" x2="139.7" y2="-81.28" width="0.1524" layer="91"/>
 <label x="139.7" y="-81.28" size="1.778" layer="95"/>
@@ -28000,6 +27908,14 @@ for CL05A105KA5NQNC</text>
 <pinref part="C96" gate="G$1" pin="P$1"/>
 <wire x1="167.64" y1="-162.56" x2="167.64" y2="-157.48" width="0.1524" layer="91"/>
 <label x="167.64" y="-157.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="109.22" y1="-88.9" x2="116.84" y2="-88.9" width="0.1524" layer="91"/>
+<pinref part="FL1" gate="G$1" pin="VS+"/>
+<pinref part="FL1" gate="G$1" pin="PD"/>
+<wire x1="109.22" y1="-86.36" x2="109.22" y2="-88.9" width="0.1524" layer="91"/>
+<junction x="109.22" y="-88.9"/>
+<label x="111.76" y="-88.9" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="2V5-" class="1">
@@ -28044,11 +27960,6 @@ for CL05A105KA5NQNC</text>
 <label x="238.76" y="-12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC16" gate="G$1" pin="-VS"/>
-<wire x1="78.74" y1="-91.44" x2="66.04" y2="-91.44" width="0.1524" layer="91"/>
-<label x="66.04" y="-91.44" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C95" gate="G$1" pin="P$1"/>
 <wire x1="149.86" y1="-86.36" x2="149.86" y2="-81.28" width="0.1524" layer="91"/>
 <label x="149.86" y="-81.28" size="1.778" layer="95"/>
@@ -28063,8 +27974,19 @@ for CL05A105KA5NQNC</text>
 <wire x1="177.8" y1="-162.56" x2="177.8" y2="-157.48" width="0.1524" layer="91"/>
 <label x="177.8" y="-157.48" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="116.84" y1="-93.98" x2="109.22" y2="-93.98" width="0.1524" layer="91"/>
+<pinref part="FL1" gate="G$1" pin="VS-"/>
+<pinref part="FL1" gate="G$1" pin="THERMAL"/>
+<wire x1="96.52" y1="-114.3" x2="99.06" y2="-114.3" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-114.3" x2="99.06" y2="-96.52" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-96.52" x2="109.22" y2="-96.52" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-96.52" x2="109.22" y2="-93.98" width="0.1524" layer="91"/>
+<junction x="109.22" y="-93.98"/>
+<label x="111.76" y="-93.98" size="1.778" layer="95"/>
+</segment>
 </net>
-<net name="AOUT_P" class="0">
+<net name="AOUT_P" class="2">
 <segment>
 <pinref part="IC13" gate="G$1" pin="OUT+"/>
 <wire x1="121.92" y1="-53.34" x2="129.54" y2="-53.34" width="0.1524" layer="91"/>
@@ -28081,7 +28003,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R131" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AIN_N" class="0">
+<net name="AIN_N" class="2">
 <segment>
 <pinref part="IC13" gate="G$1" pin="IN-"/>
 <label x="83.82" y="-50.8" size="1.778" layer="95"/>
@@ -28099,7 +28021,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R132" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AOUTSMA_N" class="0">
+<net name="AOUTSMA_N" class="2">
 <segment>
 <pinref part="R44" gate="G$1" pin="P$2"/>
 <wire x1="149.86" y1="-50.8" x2="165.1" y2="-50.8" width="0.1524" layer="91"/>
@@ -28111,7 +28033,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="IC14" gate="G$1" pin="INM"/>
 </segment>
 </net>
-<net name="AOUTSMA_P" class="0">
+<net name="AOUTSMA_P" class="2">
 <segment>
 <pinref part="R45" gate="G$1" pin="P$2"/>
 <wire x1="149.86" y1="-53.34" x2="165.1" y2="-53.34" width="0.1524" layer="91"/>
@@ -28132,7 +28054,7 @@ for CL05A105KA5NQNC</text>
 <label x="38.1" y="-50.8" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AIN_P" class="0">
+<net name="AIN_P" class="2">
 <segment>
 <pinref part="IC13" gate="G$1" pin="IN+"/>
 <label x="83.82" y="-53.34" size="1.778" layer="95"/>
@@ -28143,7 +28065,7 @@ for CL05A105KA5NQNC</text>
 <junction x="71.12" y="-53.34"/>
 </segment>
 </net>
-<net name="AOUT_N" class="0">
+<net name="AOUT_N" class="2">
 <segment>
 <pinref part="IC13" gate="G$1" pin="OUT-"/>
 <wire x1="121.92" y1="-50.8" x2="129.54" y2="-50.8" width="0.1524" layer="91"/>
@@ -28177,7 +28099,7 @@ for CL05A105KA5NQNC</text>
 <label x="238.76" y="-111.76" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT_N" class="0">
+<net name="AMPOUT_N" class="2">
 <segment>
 <wire x1="205.74" y1="-60.96" x2="195.58" y2="-60.96" width="0.1524" layer="91"/>
 <pinref part="IC14" gate="G$1" pin="OUTM"/>
@@ -28189,7 +28111,7 @@ for CL05A105KA5NQNC</text>
 <label x="261.62" y="-48.26" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT_P" class="0">
+<net name="AMPOUT_P" class="2">
 <segment>
 <wire x1="246.38" y1="-38.1" x2="236.22" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="IC14" gate="G$1" pin="OUTP"/>
@@ -28304,9 +28226,9 @@ for CL05A105KA5NQNC</text>
 <label x="38.1" y="-63.5" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC16" gate="G$1" pin="OUTPUT"/>
-<wire x1="111.76" y1="-88.9" x2="129.54" y2="-88.9" width="0.1524" layer="91"/>
-<label x="114.3" y="-88.9" size="1.778" layer="95"/>
+<wire x1="109.22" y1="-91.44" x2="127" y2="-91.44" width="0.1524" layer="91"/>
+<label x="114.3" y="-91.44" size="1.778" layer="95"/>
+<pinref part="FL1" gate="G$1" pin="OUT"/>
 </segment>
 </net>
 <net name="DACOUT1" class="0">
@@ -28323,9 +28245,9 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="DACAMPOUT1" class="0">
 <segment>
-<pinref part="IC16" gate="G$1" pin="+IN"/>
-<wire x1="78.74" y1="-88.9" x2="60.96" y2="-88.9" width="0.1524" layer="91"/>
-<label x="60.96" y="-88.9" size="1.778" layer="95"/>
+<wire x1="83.82" y1="-93.98" x2="66.04" y2="-93.98" width="0.1524" layer="91"/>
+<label x="66.04" y="-93.98" size="1.778" layer="95"/>
+<pinref part="FL1" gate="G$1" pin="IN+"/>
 </segment>
 <segment>
 <pinref part="IC18" gate="G$1" pin="OUT1"/>
@@ -28348,7 +28270,7 @@ for CL05A105KA5NQNC</text>
 <label x="147.32" y="-165.1" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="1V25OUT-" class="0">
+<net name="1V25OUT-1" class="0">
 <segment>
 <pinref part="R147" gate="G$1" pin="P$2"/>
 <wire x1="78.74" y1="-165.1" x2="68.58" y2="-165.1" width="0.1524" layer="91"/>
@@ -28408,6 +28330,15 @@ for CL05A105KA5NQNC</text>
 <label x="195.58" y="-111.76" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="FL1" gate="G$1" pin="FB"/>
+<wire x1="83.82" y1="-86.36" x2="81.28" y2="-86.36" width="0.1524" layer="91"/>
+<pinref part="FL1" gate="G$1" pin="IN-"/>
+<wire x1="81.28" y1="-91.44" x2="83.82" y2="-91.44" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="-86.36" x2="81.28" y2="-91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -28459,7 +28390,7 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="95.25" y="199.1614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="95.25" y="203.962" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="BNCIN3" gate="G$1" x="-7.62" y="182.88" smashed="yes">
+<instance part="BNCIN1" gate="G$1" x="-7.62" y="182.88" smashed="yes">
 <attribute name="MPN" x="0" y="182.88" size="1.778" layer="96" display="off"/>
 <attribute name="NAME" x="-11.43" y="185.928" size="1.778" layer="95" ratio="12"/>
 </instance>
@@ -28567,7 +28498,7 @@ for CL05A105KA5NQNC</text>
 <wire x1="175.26" y1="144.78" x2="177.8" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="BNCIN3" gate="G$1" pin="GND"/>
+<pinref part="BNCIN1" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY32" gate="GND" pin="GND"/>
 </segment>
 <segment>
@@ -28662,7 +28593,7 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="INPATH2" class="0">
 <segment>
-<pinref part="BNCIN3" gate="G$1" pin="SIGNAL"/>
+<pinref part="BNCIN1" gate="G$1" pin="SIGNAL"/>
 <wire x1="0" y1="182.88" x2="20.32" y2="182.88" width="0.1524" layer="91"/>
 <label x="10.16" y="182.88" size="1.778" layer="95"/>
 </segment>
@@ -28899,10 +28830,8 @@ for CL05A105KA5NQNC</text>
 <sheet>
 <description>Input amps 2</description>
 <plain>
-<text x="38.1" y="93.98" size="1.778" layer="90">open</text>
-<text x="76.2" y="96.52" size="1.778" layer="90">open</text>
 <text x="60.96" y="5.08" size="1.778" layer="90">Need to subtract 2.5V/2 from dac out</text>
-<text x="45.72" y="81.28" size="1.778" layer="90">Buffer with high bandwidth</text>
+<text x="48.26" y="101.6" size="1.778" layer="90">Buffer with high bandwidth</text>
 </plain>
 <instances>
 <instance part="SUPPLY22" gate="GND" x="66.04" y="152.4" smashed="yes"/>
@@ -29008,10 +28937,6 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="18.796" y="119.38" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="18.796" y="124.46" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
-<instance part="IC31" gate="G$1" x="43.18" y="96.52" smashed="yes">
-<attribute name="NAME" x="72.39" y="104.14" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="72.39" y="101.6" size="1.778" layer="96" align="center-left"/>
-</instance>
 <instance part="SUPPLY68" gate="GND" x="114.3" y="86.36" smashed="yes"/>
 <instance part="SUPPLY69" gate="GND" x="104.14" y="86.36" smashed="yes"/>
 <instance part="C132" gate="G$1" x="104.14" y="91.44" smashed="yes">
@@ -29055,6 +28980,10 @@ for CL05A105KA5NQNC</text>
 <instance part="R201" gate="G$1" x="48.26" y="15.24" smashed="yes" rot="R270">
 <attribute name="NAME" x="50.8" y="16.256" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="45.72" y="16.256" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="FL4" gate="G$1" x="48.26" y="93.98" smashed="yes">
+<attribute name="NAME" x="49.53" y="99.06" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="69.85" y="99.06" size="1.778" layer="96" align="center-left"/>
 </instance>
 </instances>
 <busses>
@@ -29254,11 +29183,6 @@ for CL05A105KA5NQNC</text>
 <label x="220.98" y="78.74" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC31" gate="G$1" pin="+VS"/>
-<wire x1="76.2" y1="93.98" x2="93.98" y2="93.98" width="0.1524" layer="91"/>
-<label x="78.74" y="93.98" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C132" gate="G$1" pin="P$1"/>
 <wire x1="104.14" y1="93.98" x2="104.14" y2="99.06" width="0.1524" layer="91"/>
 <label x="104.14" y="99.06" size="1.778" layer="95"/>
@@ -29272,6 +29196,14 @@ for CL05A105KA5NQNC</text>
 <pinref part="C134" gate="G$1" pin="P$1"/>
 <wire x1="132.08" y1="17.78" x2="132.08" y2="22.86" width="0.1524" layer="91"/>
 <label x="132.08" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="73.66" y1="91.44" x2="81.28" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="FL4" gate="G$1" pin="VS+"/>
+<pinref part="FL4" gate="G$1" pin="PD"/>
+<wire x1="73.66" y1="93.98" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
+<junction x="73.66" y="91.44"/>
+<label x="76.2" y="91.44" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="2V5-" class="1">
@@ -29316,11 +29248,6 @@ for CL05A105KA5NQNC</text>
 <label x="203.2" y="167.64" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC31" gate="G$1" pin="-VS"/>
-<wire x1="43.18" y1="88.9" x2="30.48" y2="88.9" width="0.1524" layer="91"/>
-<label x="30.48" y="88.9" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C133" gate="G$1" pin="P$1"/>
 <wire x1="114.3" y1="93.98" x2="114.3" y2="99.06" width="0.1524" layer="91"/>
 <label x="114.3" y="99.06" size="1.778" layer="95"/>
@@ -29335,8 +29262,19 @@ for CL05A105KA5NQNC</text>
 <wire x1="142.24" y1="17.78" x2="142.24" y2="22.86" width="0.1524" layer="91"/>
 <label x="142.24" y="22.86" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="81.28" y1="86.36" x2="73.66" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="FL4" gate="G$1" pin="VS-"/>
+<pinref part="FL4" gate="G$1" pin="THERMAL"/>
+<wire x1="60.96" y1="66.04" x2="63.5" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="66.04" x2="63.5" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="83.82" x2="73.66" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="83.82" x2="73.66" y2="86.36" width="0.1524" layer="91"/>
+<junction x="73.66" y="86.36"/>
+<label x="76.2" y="86.36" size="1.778" layer="95"/>
+</segment>
 </net>
-<net name="AOUT2_P" class="0">
+<net name="AOUT2_P" class="2">
 <segment>
 <pinref part="IC21" gate="G$1" pin="OUT+"/>
 <wire x1="86.36" y1="127" x2="93.98" y2="127" width="0.1524" layer="91"/>
@@ -29353,7 +29291,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R189" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AIN2_N" class="0">
+<net name="AIN2_N" class="2">
 <segment>
 <pinref part="IC21" gate="G$1" pin="IN-"/>
 <label x="48.26" y="129.54" size="1.778" layer="95"/>
@@ -29371,7 +29309,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R190" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AOUTSMA2_N" class="0">
+<net name="AOUTSMA2_N" class="2">
 <segment>
 <pinref part="R187" gate="G$1" pin="P$2"/>
 <wire x1="114.3" y1="129.54" x2="129.54" y2="129.54" width="0.1524" layer="91"/>
@@ -29383,7 +29321,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="IC29" gate="G$1" pin="INM"/>
 </segment>
 </net>
-<net name="AOUTSMA2_P" class="0">
+<net name="AOUTSMA2_P" class="2">
 <segment>
 <pinref part="R188" gate="G$1" pin="P$2"/>
 <wire x1="114.3" y1="127" x2="129.54" y2="127" width="0.1524" layer="91"/>
@@ -29404,7 +29342,7 @@ for CL05A105KA5NQNC</text>
 <label x="2.54" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AIN2_P" class="0">
+<net name="AIN2_P" class="2">
 <segment>
 <pinref part="IC21" gate="G$1" pin="IN+"/>
 <label x="48.26" y="127" size="1.778" layer="95"/>
@@ -29415,7 +29353,7 @@ for CL05A105KA5NQNC</text>
 <junction x="35.56" y="127"/>
 </segment>
 </net>
-<net name="AOUT2_N" class="0">
+<net name="AOUT2_N" class="2">
 <segment>
 <pinref part="IC21" gate="G$1" pin="OUT-"/>
 <wire x1="86.36" y1="129.54" x2="93.98" y2="129.54" width="0.1524" layer="91"/>
@@ -29449,7 +29387,7 @@ for CL05A105KA5NQNC</text>
 <label x="203.2" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT2_N" class="0">
+<net name="AMPOUT2_N" class="2">
 <segment>
 <wire x1="170.18" y1="119.38" x2="160.02" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="IC29" gate="G$1" pin="OUTM"/>
@@ -29461,7 +29399,7 @@ for CL05A105KA5NQNC</text>
 <label x="226.06" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT2_P" class="0">
+<net name="AMPOUT2_P" class="2">
 <segment>
 <wire x1="210.82" y1="142.24" x2="200.66" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="IC29" gate="G$1" pin="OUTP"/>
@@ -29556,17 +29494,12 @@ for CL05A105KA5NQNC</text>
 <label x="2.54" y="116.84" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC31" gate="G$1" pin="OUTPUT"/>
-<wire x1="76.2" y1="91.44" x2="93.98" y2="91.44" width="0.1524" layer="91"/>
-<label x="78.74" y="91.44" size="1.778" layer="95"/>
+<wire x1="73.66" y1="88.9" x2="91.44" y2="88.9" width="0.1524" layer="91"/>
+<label x="78.74" y="88.9" size="1.778" layer="95"/>
+<pinref part="FL4" gate="G$1" pin="OUT"/>
 </segment>
 </net>
 <net name="DACAMPOUT2" class="0">
-<segment>
-<pinref part="IC31" gate="G$1" pin="+IN"/>
-<wire x1="43.18" y1="91.44" x2="25.4" y2="91.44" width="0.1524" layer="91"/>
-<label x="25.4" y="91.44" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="IC33" gate="G$1" pin="OUT1"/>
 <pinref part="R200" gate="G$1" pin="P$1"/>
@@ -29574,6 +29507,11 @@ for CL05A105KA5NQNC</text>
 <junction x="63.5" y="20.32"/>
 <wire x1="63.5" y1="22.86" x2="33.02" y2="22.86" width="0.1524" layer="91"/>
 <label x="33.02" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="48.26" y1="86.36" x2="30.48" y2="86.36" width="0.1524" layer="91"/>
+<label x="30.48" y="86.36" size="1.778" layer="95"/>
+<pinref part="FL4" gate="G$1" pin="IN+"/>
 </segment>
 </net>
 <net name="2V5DACOUT" class="0">
@@ -29583,7 +29521,7 @@ for CL05A105KA5NQNC</text>
 <label x="111.76" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="1V25OUT-" class="0">
+<net name="1V25OUT-2" class="0">
 <segment>
 <pinref part="R201" gate="G$1" pin="P$2"/>
 <wire x1="43.18" y1="15.24" x2="33.02" y2="15.24" width="0.1524" layer="91"/>
@@ -29642,6 +29580,15 @@ for CL05A105KA5NQNC</text>
 <wire x1="248.92" y1="129.54" x2="248.92" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="248.92" y1="119.38" x2="254" y2="119.38" width="0.1524" layer="91"/>
 <label x="241.3" y="121.92" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="FL4" gate="G$1" pin="FB"/>
+<wire x1="48.26" y1="93.98" x2="45.72" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="FL4" gate="G$1" pin="IN-"/>
+<wire x1="45.72" y1="88.9" x2="48.26" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="93.98" x2="45.72" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -30066,7 +30013,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R176" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="RFOUTA_P" class="0">
+<net name="RFOUTA_P" class="2">
 <segment>
 <wire x1="205.74" y1="109.22" x2="205.74" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="25.4" x2="236.22" y2="25.4" width="0.1524" layer="91"/>
@@ -30079,7 +30026,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="C152" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="RFOUTA_N" class="0">
+<net name="RFOUTA_N" class="2">
 <segment>
 <wire x1="228.6" y1="48.26" x2="228.6" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="109.22" x2="210.82" y2="35.56" width="0.1524" layer="91"/>
@@ -32011,6 +31958,10 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <wire x1="193.04" y1="365.76" x2="193.04" y2="266.7" width="0.1524" layer="90"/>
 <wire x1="193.04" y1="266.7" x2="0" y2="266.7" width="0.1524" layer="90"/>
 <wire x1="0" y1="266.7" x2="0" y2="365.76" width="0.1524" layer="90"/>
+<text x="332.74" y="487.68" size="1.778" layer="90">Cyclone IV E left and right I/O banks support true LVDS transmitters. (We use these!)
+
+The LVDS receiver requires an external 100 Ohm termination resistor
+between the two signals at the input buffer.</text>
 </plain>
 <instances>
 <instance part="IC5" gate="G$1" x="238.76" y="612.14" smashed="yes">
@@ -37139,28 +37090,28 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="332.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK3" class="2">
+<net name="CLK3" class="0">
 <segment>
 <wire x1="292.1" y1="388.62" x2="279.4" y2="388.62" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK3"/>
 <label x="284.48" y="388.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK2" class="2">
+<net name="CLK2" class="0">
 <segment>
 <wire x1="292.1" y1="386.08" x2="279.4" y2="386.08" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK2"/>
 <label x="284.48" y="386.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO133" class="2">
+<net name="IO133" class="0">
 <segment>
 <wire x1="238.76" y1="152.4" x2="226.06" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_133"/>
 <label x="226.06" y="152.4" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO114" class="2">
+<net name="IO114" class="0">
 <segment>
 <wire x1="238.76" y1="208.28" x2="226.06" y2="208.28" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_114"/>
@@ -37486,7 +37437,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="152.4" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D_N" class="0">
+<net name="USB_D_N" class="2">
 <segment>
 <pinref part="IC8" gate="IC" pin="USBD+"/>
 <wire x1="78.74" y1="93.98" x2="86.36" y2="93.98" width="0.1524" layer="91"/>
@@ -37498,7 +37449,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="50.8" y="205.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D_P" class="0">
+<net name="USB_D_P" class="2">
 <segment>
 <pinref part="IC8" gate="IC" pin="USBD-"/>
 <wire x1="86.36" y1="96.52" x2="78.74" y2="96.52" width="0.1524" layer="91"/>
