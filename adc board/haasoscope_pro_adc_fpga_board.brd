@@ -9,20 +9,20 @@
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.05" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="top" color="12" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="topgnd" color="12" fill="5" visible="no" active="yes"/>
+<layer number="2" name="topgnd" color="12" fill="5" visible="yes" active="yes"/>
 <layer number="3" name="sig2" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="4" name="sig2gnd" color="4" fill="5" visible="no" active="yes"/>
-<layer number="5" name="pow1" color="7" fill="5" visible="no" active="yes"/>
+<layer number="4" name="sig2gnd" color="4" fill="5" visible="yes" active="yes"/>
+<layer number="5" name="pow1" color="7" fill="5" visible="yes" active="yes"/>
 <layer number="6" name="Route6" color="1" fill="1" visible="no" active="no"/>
 <layer number="7" name="Route7" color="4" fill="1" visible="no" active="no"/>
 <layer number="8" name="Route8" color="1" fill="1" visible="no" active="no"/>
 <layer number="9" name="Route9" color="4" fill="1" visible="no" active="no"/>
 <layer number="10" name="Route10" color="1" fill="1" visible="no" active="no"/>
 <layer number="11" name="Route11" color="4" fill="1" visible="no" active="no"/>
-<layer number="12" name="pow2" color="30" fill="5" visible="no" active="yes"/>
-<layer number="13" name="sig4gnd" color="1" fill="5" visible="no" active="yes"/>
+<layer number="12" name="pow2" color="30" fill="5" visible="yes" active="yes"/>
+<layer number="13" name="sig4gnd" color="1" fill="5" visible="yes" active="yes"/>
 <layer number="14" name="sig4" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="15" name="sig5gnd" color="5" fill="5" visible="no" active="yes"/>
+<layer number="15" name="sig5gnd" color="5" fill="5" visible="yes" active="yes"/>
 <layer number="16" name="sig5" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -36,27 +36,27 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
-<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
-<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
-<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="yes" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="39" name="tKeepout" color="58" fill="7" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
@@ -115,34 +115,34 @@
 <layer number="133" name="bottom_silk" color="7" fill="1" visible="no" active="no"/>
 <layer number="134" name="silk_top" color="7" fill="1" visible="no" active="no"/>
 <layer number="135" name="silk_bottom" color="7" fill="1" visible="no" active="no"/>
-<layer number="136" name="silktop" color="7" fill="1" visible="no" active="yes"/>
-<layer number="137" name="silkbottom" color="7" fill="1" visible="no" active="yes"/>
-<layer number="138" name="EEE" color="7" fill="1" visible="no" active="yes"/>
-<layer number="139" name="_tKeepout" color="7" fill="1" visible="no" active="yes"/>
-<layer number="140" name="mbKeepout" color="7" fill="1" visible="no" active="yes"/>
-<layer number="141" name="ASSEMBLY_TOP" color="7" fill="1" visible="no" active="yes"/>
-<layer number="142" name="mbRestrict" color="7" fill="1" visible="no" active="yes"/>
-<layer number="143" name="PLACE_BOUND_TOP" color="7" fill="1" visible="no" active="yes"/>
+<layer number="136" name="silktop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="137" name="silkbottom" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="138" name="EEE" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="139" name="_tKeepout" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="140" name="mbKeepout" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="141" name="ASSEMBLY_TOP" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="142" name="mbRestrict" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="143" name="PLACE_BOUND_TOP" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="DrillLegend" color="7" fill="1" visible="no" active="no"/>
-<layer number="145" name="DrillLegend_01-16" color="7" fill="1" visible="no" active="yes"/>
-<layer number="146" name="DrillLegend_01-20" color="7" fill="1" visible="no" active="yes"/>
-<layer number="147" name="PIN_NUMBER" color="7" fill="1" visible="no" active="yes"/>
-<layer number="148" name="mDocument" color="7" fill="1" visible="no" active="yes"/>
-<layer number="149" name="DrillLegend_02-15" color="7" fill="1" visible="no" active="yes"/>
+<layer number="145" name="DrillLegend_01-16" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="146" name="DrillLegend_01-20" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="147" name="PIN_NUMBER" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="148" name="mDocument" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="149" name="DrillLegend_02-15" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="150" name="Notes" color="7" fill="1" visible="no" active="no"/>
 <layer number="151" name="HeatSink" color="14" fill="1" visible="no" active="no"/>
 <layer number="152" name="_bDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="153" name="FabDoc1" color="6" fill="1" visible="no" active="no"/>
 <layer number="154" name="FabDoc2" color="2" fill="1" visible="no" active="no"/>
 <layer number="155" name="FabDoc3" color="7" fill="15" visible="no" active="no"/>
-<layer number="166" name="AntennaArea" color="7" fill="1" visible="no" active="yes"/>
-<layer number="168" name="4mmHeightArea" color="7" fill="1" visible="no" active="yes"/>
-<layer number="191" name="mNets" color="7" fill="1" visible="no" active="yes"/>
-<layer number="192" name="mBusses" color="7" fill="1" visible="no" active="yes"/>
-<layer number="193" name="mPins" color="7" fill="1" visible="no" active="yes"/>
-<layer number="194" name="mSymbols" color="7" fill="1" visible="no" active="yes"/>
-<layer number="195" name="mNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="196" name="mValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="166" name="AntennaArea" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="168" name="4mmHeightArea" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="191" name="mNets" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="192" name="mBusses" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="193" name="mPins" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="194" name="mSymbols" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="195" name="mNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="196" name="mValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="no" active="no"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="no"/>
 <layer number="201" name="201bmp" color="2" fill="1" visible="no" active="no"/>
@@ -9490,21 +9490,21 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="OC_FARNELL" value="unknown" x="115" y="128" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="115" y="128" size="1.778" layer="27" display="off"/>
 </element>
-<element name="IC2" library="SN74AVC4T774PWR" package="SOP65P640X120-16N" value="SN74AVC4T774PWR" x="135.5" y="68.5" smashed="yes" rot="R180">
-<attribute name="DESCRIPTION" value="4-Bit Dual-Supply Bus Transceiver With Configurable Voltage-Level Shifting and 3-State Outputs" x="135.5" y="68.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="HEIGHT" value="1.2mm" x="135.5" y="68.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="135.5" y="68.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="SN74AVC4T774PWR" x="135.5" y="68.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="595-SN74AVC4T774PWR" x="135.5" y="68.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/SN74AVC4T774PWR?qs=WxL8HmPi5r562Eu%2F2kE2LA%3D%3D" x="135.5" y="68.5" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="IC2" library="SN74AVC4T774PWR" package="SOP65P640X120-16N" value="SN74AVC4T774PWR" x="95.5" y="105.5" smashed="yes" rot="R180">
+<attribute name="DESCRIPTION" value="4-Bit Dual-Supply Bus Transceiver With Configurable Voltage-Level Shifting and 3-State Outputs" x="95.5" y="105.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="1.2mm" x="95.5" y="105.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="95.5" y="105.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SN74AVC4T774PWR" x="95.5" y="105.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-SN74AVC4T774PWR" x="95.5" y="105.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/SN74AVC4T774PWR?qs=WxL8HmPi5r562Eu%2F2kE2LA%3D%3D" x="95.5" y="105.5" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="R1" library="FlashPCB_Resistors" package="RES-0402" value="100" x="130" y="67.5" smashed="yes" rot="R180"/>
-<element name="R2" library="FlashPCB_Resistors" package="RES-0402" value="100" x="130" y="68.5" smashed="yes" rot="R180"/>
-<element name="R3" library="FlashPCB_Resistors" package="RES-0402" value="100" x="130" y="69.5" smashed="yes" rot="R180"/>
-<element name="R4" library="FlashPCB_Resistors" package="RES-0402" value="100" x="130" y="70.5" smashed="yes" rot="R180"/>
-<element name="R5" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="130" y="66.5" smashed="yes" rot="R180"/>
-<element name="C3" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="138" y="65" smashed="yes"/>
-<element name="C4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="132" y="65" smashed="yes"/>
+<element name="R1" library="FlashPCB_Resistors" package="RES-0402" value="100" x="90" y="104.5" smashed="yes" rot="R180"/>
+<element name="R2" library="FlashPCB_Resistors" package="RES-0402" value="100" x="90" y="105.5" smashed="yes" rot="R180"/>
+<element name="R3" library="FlashPCB_Resistors" package="RES-0402" value="100" x="90" y="106.5" smashed="yes" rot="R180"/>
+<element name="R4" library="FlashPCB_Resistors" package="RES-0402" value="100" x="90" y="107.5" smashed="yes" rot="R180"/>
+<element name="R5" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="90" y="103.5" smashed="yes" rot="R180"/>
+<element name="C3" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="98" y="102" smashed="yes"/>
+<element name="C4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="92" y="102" smashed="yes"/>
 <element name="C5" library="NFM31PC276B0J3L" package="NFM31HK103R1H3L" value="NFM31PC276B0J3L" x="133.5" y="113.5" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="Murata NFM31PC Series, EMI Filter, 6.3 V dc, 6A 1206/3216 SMD, Flat Contact Termination, 3.2 x 1.6 x 1.3mm" x="133.5" y="113.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HEIGHT" value="1.5mm" x="133.5" y="113.5" size="1.778" layer="27" rot="R180" display="off"/>
@@ -9739,7 +9739,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R79" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="111.5" y="151.5" smashed="yes" rot="R180"/>
 <element name="R80" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="112" y="60.5" smashed="yes" rot="R270"/>
 <element name="R81" library="FlashPCB_Resistors" package="RES-0402" value="0" x="113" y="97" smashed="yes"/>
-<element name="R82" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="214.5" y="46.5" smashed="yes" rot="R90"/>
+<element name="R82" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="213" y="46.5" smashed="yes" rot="R90"/>
 <element name="R83" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="113" y="60.5" smashed="yes" rot="R270"/>
 <element name="R84" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="114" y="60.5" smashed="yes" rot="R270"/>
 <element name="R85" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="115" y="60.5" smashed="yes" rot="R270"/>
@@ -9759,22 +9759,22 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="C69" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="114.5" y="76.5" smashed="yes" rot="MR90"/>
 <element name="C70" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="106.5" y="85.35" smashed="yes" rot="MR270"/>
 <element name="C71" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="118" y="73" smashed="yes" rot="MR0"/>
-<element name="R91" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="216" y="46.5" smashed="yes" rot="R90"/>
-<element name="R92" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="219" y="46.5" smashed="yes" rot="R90"/>
-<element name="R93" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="217.5" y="46.5" smashed="yes" rot="R90"/>
-<element name="C76" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="129" y="146.5" smashed="yes" rot="R90"/>
-<element name="C77" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="127" y="146.5" smashed="yes" rot="R90"/>
-<element name="U6" library="MF_IC_Power" package="SOT-223-3" value="AMS1117-1.2" x="134" y="146.5" smashed="yes" rot="R90">
-<attribute name="HOUSEPART" value="NO" x="146" y="146.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="AMS1117-1.2" x="146" y="146.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="133.25" y="147" size="0.8128" layer="25" font="vector"/>
-<attribute name="POPULATE" value="1" x="146" y="146.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="URL" value="http://www.onsemi.com/pub_link/Collateral/NCP1117LP-D.PDF" x="146" y="146.5" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="R91" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="214.5" y="46.5" smashed="yes" rot="R90"/>
+<element name="R92" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="217.5" y="46.5" smashed="yes" rot="R90"/>
+<element name="R93" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="216" y="46.5" smashed="yes" rot="R90"/>
+<element name="C76" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="141.5" y="100.5" smashed="yes" rot="R90"/>
+<element name="C77" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="139.5" y="100.5" smashed="yes" rot="R90"/>
+<element name="U6" library="MF_IC_Power" package="SOT-223-3" value="AMS1117-1.2" x="146.5" y="100.5" smashed="yes" rot="R90">
+<attribute name="HOUSEPART" value="NO" x="158.5" y="100.5" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="AMS1117-1.2" x="158.5" y="100.5" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="145.75" y="101" size="0.8128" layer="25" font="vector"/>
+<attribute name="POPULATE" value="1" x="158.5" y="100.5" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="URL" value="http://www.onsemi.com/pub_link/Collateral/NCP1117LP-D.PDF" x="158.5" y="100.5" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="C80" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="139" y="146.5" smashed="yes" rot="R270"/>
-<element name="C81" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="141" y="146.5" smashed="yes" rot="R270"/>
+<element name="C80" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="151.5" y="100.5" smashed="yes" rot="R270"/>
+<element name="C81" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="153.5" y="100.5" smashed="yes" rot="R270"/>
 <element name="R14" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="60" y="74" smashed="yes" rot="R180"/>
-<element name="R15" library="FlashPCB_Resistors" package="RES-0402" value="0" x="138.5" y="73.5" smashed="yes"/>
+<element name="R15" library="FlashPCB_Resistors" package="RES-0402" value="0" x="98.15" y="109.15" smashed="yes"/>
 <element name="R16" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="109.5" y="97" smashed="yes"/>
 <element name="R18" library="FlashPCB_Resistors" package="RES-0402" value="0" x="124" y="108.5" smashed="yes" rot="R270"/>
 <element name="R17" library="PP_Passives" package="0201" value="100" x="109.65" y="87.5" smashed="yes" rot="MR90"/>
@@ -10440,11 +10440,11 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R181" library="FlashPCB_Resistors" package="RES-0402" value="12k" x="161.5815" y="82.1165" smashed="yes" rot="R180">
 <attribute name="VALUE" x="162.8515" y="81.6165" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
-<element name="R182" library="FlashPCB_Resistors" package="RES-0402" value="5.1k" x="158.4185" y="80.264" smashed="yes">
-<attribute name="VALUE" x="157.6485" y="80.764" size="0.8128" layer="27" font="vector"/>
+<element name="R182" library="FlashPCB_Resistors" package="RES-0402" value="5.1k" x="206.9185" y="79.764" smashed="yes">
+<attribute name="VALUE" x="206.1485" y="80.264" size="0.8128" layer="27" font="vector"/>
 </element>
-<element name="R183" library="FlashPCB_Resistors" package="RES-0402" value="5.1k" x="158.5815" y="66.3555" smashed="yes" rot="R180">
-<attribute name="VALUE" x="159.8515" y="65.8555" size="0.8128" layer="27" font="vector" rot="R180"/>
+<element name="R183" library="FlashPCB_Resistors" package="RES-0402" value="5.1k" x="206.9185" y="74.6445" smashed="yes">
+<attribute name="VALUE" x="205.6485" y="75.1445" size="0.8128" layer="27" font="vector"/>
 </element>
 <element name="C114" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="145.056" y="70.347" smashed="yes" rot="R90"/>
 <element name="C115" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="143.517" y="72.347" smashed="yes" rot="R90"/>
@@ -11754,7 +11754,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="R20" pad="1"/>
 <wire x1="110.325" y1="84" x2="110.5" y2="84" width="0.0889" layer="16"/>
 </signal>
-<signal name="GND" class="4" airwireshidden="yes">
+<signal name="GND" class="4">
 <contactref element="CLKEXT" pad="5"/>
 <contactref element="CLKEXT" pad="3"/>
 <contactref element="CLKEXT" pad="4"/>
@@ -12143,12 +12143,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="141.5" y="122.5" extent="1-16" drill="0.5"/>
 <via x="141.5" y="116" extent="1-16" drill="0.5"/>
 <via x="128.5" y="116" extent="1-16" drill="0.5"/>
-<via x="139" y="148" extent="1-16" drill="0.5"/>
-<via x="129" y="145.5" extent="1-16" drill="0.5"/>
-<via x="132" y="72" extent="1-16" drill="0.5"/>
-<via x="131" y="65" extent="1-16" drill="0.5"/>
-<via x="136" y="65" extent="1-16" drill="0.5"/>
-<via x="138" y="72" extent="1-16" drill="0.5"/>
+<via x="151.5" y="103" extent="1-16" drill="0.5"/>
+<via x="91.5" y="101" extent="1-16" drill="0.5"/>
+<via x="97.5" y="101" extent="1-16" drill="0.5"/>
 <via x="103.5" y="79" extent="1-16" drill="0.2"/>
 <via x="116.5" y="71" extent="1-16" drill="0.2"/>
 <via x="110.5" y="76" extent="1-16" drill="0.2"/>
@@ -12213,23 +12210,16 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="118" y1="72.5" x2="118.5" y2="73" width="0.1524" layer="1"/>
 <wire x1="118" y1="71.5" x2="118" y2="72.5" width="0.1524" layer="1"/>
 <wire x1="103" y1="81.5" x2="103" y2="85.5" width="0.1524" layer="1"/>
-<wire x1="132.75" y1="70.75" x2="132.75" y2="70.25" width="0.1524" layer="1"/>
-<wire x1="132.75" y1="70.25" x2="132.562" y2="70.125" width="0.1524" layer="1"/>
-<wire x1="132.75" y1="70.75" x2="132.562" y2="70.775" width="0.1524" layer="1"/>
-<wire x1="138.25" y1="71.75" x2="138.25" y2="70.75" width="0.1524" layer="1"/>
-<wire x1="138" y1="72" x2="138.25" y2="71.75" width="0.1524" layer="1"/>
-<wire x1="138.25" y1="70.75" x2="138.438" y2="70.775" width="0.1524" layer="1"/>
+<wire x1="92.75" y1="107.75" x2="92.75" y2="107.25" width="0.1524" layer="1"/>
+<wire x1="92.75" y1="107.25" x2="92.562" y2="107.125" width="0.1524" layer="1"/>
+<wire x1="92.75" y1="107.75" x2="92.562" y2="107.775" width="0.1524" layer="1"/>
+<wire x1="98.25" y1="107.75" x2="98.438" y2="107.775" width="0.1524" layer="1"/>
 <wire x1="82.5" y1="72" x2="82.4" y2="71.9" width="0.1524" layer="1"/>
 <wire x1="82.4" y1="71.9" x2="81.25" y2="71.9" width="0.1524" layer="1"/>
 <wire x1="213.75" y1="53.75" x2="213.73" y2="53.92" width="0.1524" layer="3"/>
 <wire x1="129.5" y1="80.5" x2="129.25" y2="80.5" width="0.1524" layer="1"/>
 <wire x1="129.25" y1="80.5" x2="129.25" y2="80.74" width="0.1524" layer="1"/>
-<wire x1="133.5" y1="70" x2="132.75" y2="70" width="0.1524" layer="1"/>
-<wire x1="134" y1="69.5" x2="133.5" y2="70" width="0.1524" layer="1"/>
-<wire x1="132" y1="71.5" x2="134" y2="69.5" width="0.1524" layer="3"/>
-<wire x1="132" y1="72" x2="132" y2="71.5" width="0.1524" layer="3"/>
-<wire x1="132.75" y1="70" x2="132.562" y2="70.125" width="0.1524" layer="1"/>
-<via x="134" y="69.5" extent="1-16" drill="0.2"/>
+<wire x1="92.75" y1="107" x2="92.562" y2="107.125" width="0.1524" layer="1"/>
 <via x="114.5" y="13" extent="1-16" drill="0.2"/>
 <via x="93.5" y="13" extent="1-16" drill="0.2"/>
 <via x="111.5" y="13" extent="1-16" drill="0.2"/>
@@ -13064,6 +13054,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="24" y="122" extent="1-16" drill="0.2"/>
 <via x="81.5" y="87" extent="1-16" drill="0.2"/>
 <via x="82.5" y="87" extent="1-16" drill="0.2"/>
+<via x="141.5" y="98" extent="1-16" drill="0.5"/>
+<wire x1="161.7" y1="101.2" x2="162.8521" y2="101.2" width="0.25" layer="1"/>
+<wire x1="162.8521" y1="101.2" x2="162.921" y2="101.1311" width="0.25" layer="1"/>
+<wire x1="162.921" y1="101.1311" x2="162.9989" y2="101.1311" width="0.25" layer="1"/>
+<wire x1="162.9989" y1="101.1311" x2="165.2" y2="98.93" width="0.25" layer="1"/>
+<wire x1="160.9" y1="96.3" x2="160.9" y2="100.4" width="0.25" layer="1"/>
+<wire x1="160.9" y1="100.4" x2="161.7" y2="101.2" width="0.25" layer="1"/>
 <wire x1="141.5" y1="115.6" x2="138.5" y2="115.05" width="0" layer="19" extent="1-1"/>
 <wire x1="141.5" y1="116" x2="141.5" y2="115.6" width="0" layer="19" extent="1-1"/>
 <wire x1="133.5" y1="114.3" x2="138.5" y2="115.05" width="0" layer="19" extent="1-1"/>
@@ -13076,13 +13073,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="133.5" y1="133.3" x2="133.5" y2="131.7" width="0" layer="19" extent="1-1"/>
 <wire x1="133.5" y1="138.2" x2="133.5" y2="133.3" width="0" layer="19" extent="1-1"/>
 <wire x1="133.5" y1="139.8" x2="133.5" y2="138.2" width="0" layer="19" extent="1-1"/>
-<wire x1="131.7" y1="143.25" x2="133.5" y2="139.8" width="0" layer="19" extent="1-1"/>
-<wire x1="129" y1="145.4" x2="131.7" y2="143.25" width="0" layer="19" extent="1-1"/>
-<wire x1="129" y1="145.5" x2="129" y2="145.4" width="0" layer="19" extent="1-1"/>
-<wire x1="127" y1="145.95" x2="129" y2="145.5" width="0" layer="19" extent="1-1"/>
-<wire x1="128.5" y1="141.1" x2="131.7" y2="143.25" width="0" layer="19" extent="1-1"/>
-<wire x1="128.5" y1="141" x2="128.5" y2="141.1" width="0" layer="19" extent="1-1"/>
-<wire x1="125.5" y1="140.55" x2="128.5" y2="141" width="0" layer="19" extent="1-1"/>
 <wire x1="138.5" y1="140.55" x2="133.5" y2="139.8" width="0" layer="19" extent="1-1"/>
 <wire x1="141.5" y1="141" x2="138.5" y2="140.55" width="0" layer="19" extent="1-1"/>
 <wire x1="141.5" y1="141.1" x2="141.5" y2="141" width="0" layer="19" extent="1-1"/>
@@ -13095,6 +13085,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="138.5" y1="121.55" x2="133.5" y2="120.8" width="0" layer="19" extent="1-1"/>
 <wire x1="141.5" y1="122.1" x2="138.5" y2="121.55" width="0" layer="19" extent="1-1"/>
 <wire x1="141.5" y1="122.5" x2="141.5" y2="122.1" width="0" layer="19" extent="1-1"/>
+<wire x1="128.5" y1="141" x2="133.5" y2="139.8" width="0" layer="19" extent="1-1"/>
+<wire x1="128.5" y1="141.1" x2="128.5" y2="141" width="0" layer="19" extent="1-1"/>
+<wire x1="125.5" y1="140.55" x2="128.5" y2="141" width="0" layer="19" extent="1-1"/>
 <wire x1="128.5" y1="134.5" x2="133.5" y2="133.3" width="0" layer="19" extent="1-1"/>
 <wire x1="128.5" y1="134.6" x2="128.5" y2="134.5" width="0" layer="19" extent="1-1"/>
 <wire x1="125.5" y1="134.05" x2="128.5" y2="134.5" width="0" layer="19" extent="1-1"/>
@@ -13107,9 +13100,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="128.5" y1="115.6" x2="133.5" y2="114.3" width="0" layer="19" extent="1-1"/>
 <wire x1="128.5" y1="116" x2="128.5" y2="115.6" width="0" layer="19" extent="1-1"/>
 <wire x1="125.5" y1="115.05" x2="128.5" y2="115.6" width="0" layer="19" extent="1-1"/>
-<wire x1="141" y1="147.05" x2="141.5" y2="141.1" width="0" layer="19" extent="1-1"/>
-<wire x1="139" y1="147.6" x2="141" y2="147.05" width="0" layer="19" extent="1-1"/>
-<wire x1="139" y1="148" x2="139" y2="147.6" width="0" layer="19" extent="1-1"/>
 <wire x1="122.5" y1="109.6" x2="125.5" y2="115.05" width="0" layer="19" extent="1-1"/>
 <wire x1="117.5" y1="109.6" x2="122.5" y2="109.6" width="0" layer="19" extent="1-1"/>
 <wire x1="147.92" y1="133.63" x2="141.5" y2="134.5" width="0" layer="19" extent="1-1"/>
@@ -13143,8 +13133,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="159.3" y1="109.7" x2="159.35" y2="109.5" width="0" layer="19" extent="1-1"/>
 <wire x1="159.1" y1="108" x2="159.6" y2="108" width="0" layer="19" extent="1-1"/>
 <wire x1="170.2" y1="107.2" x2="165.1" y2="106.85" width="0" layer="19" extent="1-1"/>
-<wire x1="161.7" y1="101.2" x2="165.2" y2="98.93" width="0" layer="19" extent="1-1"/>
-<wire x1="160.9" y1="96.3" x2="161.7" y2="101.2" width="0" layer="19" extent="1-1"/>
 <wire x1="156.04" y1="143.72" x2="159.6" y2="148.64" width="0" layer="19" extent="1-1"/>
 <wire x1="153" y1="118.66" x2="159.1" y2="118.16" width="0" layer="19" extent="1-1"/>
 <wire x1="150.46" y1="119.11" x2="153" y2="118.66" width="0" layer="19" extent="1-1"/>
@@ -13152,6 +13140,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="153" y1="108.5" x2="159.1" y2="108" width="0" layer="19" extent="1-1"/>
 <wire x1="150.46" y1="108.95" x2="153" y2="108.5" width="0" layer="19" extent="1-1"/>
 <wire x1="147.92" y1="108.23" x2="150.46" y2="108.95" width="0" layer="19" extent="1-1"/>
+<wire x1="151.5" y1="103" x2="153" y2="108.5" width="0" layer="19" extent="1-1"/>
+<wire x1="151.5" y1="101.6" x2="151.5" y2="103" width="0" layer="19" extent="1-1"/>
+<wire x1="153.5" y1="101.05" x2="151.5" y2="101.6" width="0" layer="19" extent="1-1"/>
 <wire x1="153" y1="149.14" x2="156.04" y2="143.72" width="0" layer="19" extent="1-1"/>
 <wire x1="150.46" y1="149.59" x2="153" y2="149.14" width="0" layer="19" extent="1-1"/>
 <wire x1="147.92" y1="148.87" x2="150.46" y2="149.59" width="0" layer="19" extent="1-1"/>
@@ -13159,6 +13150,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="133.54" y1="104.54" x2="128.46" y2="104.54" width="0" layer="19" extent="1-1"/>
 <wire x1="133.54" y1="99.46" x2="133.54" y2="104.54" width="0" layer="19" extent="1-1"/>
 <wire x1="128.46" y1="99.46" x2="128.46" y2="104.54" width="0" layer="19" extent="1-1"/>
+<wire x1="139.5" y1="99.95" x2="133.54" y2="99.46" width="0" layer="19" extent="1-1"/>
+<wire x1="141.5" y1="99.4" x2="139.5" y2="99.95" width="0" layer="19" extent="1-1"/>
+<wire x1="141.5" y1="98" x2="141.5" y2="99.4" width="0" layer="19" extent="1-1"/>
+<wire x1="144.2" y1="97.25" x2="141.5" y2="98" width="0" layer="19" extent="1-1"/>
+<wire x1="143" y1="93.1" x2="144.2" y2="97.25" width="0" layer="19" extent="1-1"/>
+<wire x1="147.5" y1="93.1" x2="143" y2="93.1" width="0" layer="19" extent="1-1"/>
+<wire x1="138.5" y1="93.1" x2="143" y2="93.1" width="0" layer="19" extent="1-1"/>
 <wire x1="110.93306875" y1="105" x2="117.5" y2="109.6" width="0" layer="19" extent="1-1"/>
 <wire x1="113.5" y1="101.56693125" x2="110.93306875" y2="105" width="0" layer="19" extent="1-1"/>
 <wire x1="115.3" y1="101.675" x2="113.5" y2="101.56693125" width="0" layer="19" extent="1-1"/>
@@ -13245,7 +13243,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="152.5645" y1="79.6615" x2="152.5645" y2="79.1615" width="0" layer="19" extent="1-1"/>
 <wire x1="154.0735" y1="80.397" x2="152.5645" y2="79.6615" width="0" layer="19" extent="1-1"/>
 <wire x1="155.7785" y1="80.397" x2="154.0735" y2="80.397" width="0" layer="19" extent="1-1"/>
-<wire x1="157.9185" y1="80.264" x2="155.7785" y2="80.397" width="0" layer="19" extent="1-1"/>
 <wire x1="144.7645" y1="74.6615" x2="147.9145" y2="73.5115" width="0" layer="19" extent="1-1"/>
 <wire x1="144.7645" y1="75.1615" x2="144.7645" y2="74.6615" width="0" layer="19" extent="1-1"/>
 <wire x1="144.7645" y1="76.1615" x2="144.7645" y2="75.1615" width="0" layer="19" extent="1-1"/>
@@ -13256,15 +13253,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="152.0995" y1="68.103" x2="149.089053125" y2="68.58989375" width="0" layer="19" extent="1-1"/>
 <wire x1="152.1395" y1="69.897" x2="152.0995" y2="68.103" width="0" layer="19" extent="1-1"/>
 <wire x1="154.4435" y1="71.003" x2="152.1395" y2="69.897" width="0" layer="19" extent="1-1"/>
-<wire x1="162.0815" y1="80.497" x2="157.9185" y2="80.264" width="0" layer="19" extent="1-1"/>
-<wire x1="162.4275" y1="83.8875" x2="162.0815" y2="80.497" width="0" layer="19" extent="1-1"/>
-<wire x1="132" y1="72" x2="131.95" y2="76.55" width="0" layer="19" extent="1-1"/>
-<wire x1="138.438" y1="70.775" x2="134" y2="69.5" width="0" layer="19" extent="1-1"/>
-<wire x1="136" y1="65" x2="134" y2="69.5" width="0" layer="19" extent="1-1"/>
-<wire x1="137.45" y1="65" x2="136" y2="65" width="0" layer="19" extent="1-1"/>
-<wire x1="131.45" y1="65" x2="136" y2="65" width="0" layer="19" extent="1-1"/>
-<wire x1="131" y1="65" x2="131.45" y2="65" width="0" layer="19" extent="1-1"/>
-<wire x1="133.04" y1="60.54" x2="131.45" y2="65" width="0" layer="19" extent="1-1"/>
 <wire x1="92.95" y1="89.55" x2="97.45" y2="87.55" width="0" layer="19" extent="1-1"/>
 <wire x1="90.45" y1="89.55" x2="92.95" y2="89.55" width="0" layer="19" extent="1-1"/>
 <wire x1="86.45" y1="90.05" x2="90.45" y2="89.55" width="0" layer="19" extent="1-1"/>
@@ -13272,11 +13260,11 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="81.5" y1="87" x2="82.5" y2="87" width="0" layer="19" extent="1-1"/>
 <wire x1="80.45" y1="91.05" x2="81.5" y2="87" width="0" layer="19" extent="1-1"/>
 <wire x1="78.45" y1="91.55" x2="80.45" y2="91.05" width="0" layer="19" extent="1-1"/>
-<wire x1="133.04" y1="55.46" x2="133.04" y2="60.54" width="0" layer="19" extent="1-1"/>
-<wire x1="127.96" y1="60.54" x2="133.04" y2="60.54" width="0" layer="19" extent="1-1"/>
-<wire x1="127.96" y1="55.46" x2="133.04" y2="55.46" width="0" layer="19" extent="1-1"/>
 <wire x1="87.95" y1="95.05" x2="86.45" y2="90.05" width="0" layer="19" extent="1-1"/>
 <wire x1="92.55" y1="98" x2="87.95" y2="95.05" width="0" layer="19" extent="1-1"/>
+<wire x1="91.5" y1="101" x2="92.55" y2="98" width="0" layer="19" extent="1-1"/>
+<wire x1="91.45" y1="102" x2="91.5" y2="101" width="0" layer="19" extent="1-1"/>
+<wire x1="92.75" y1="107" x2="91.45" y2="102" width="0" layer="19" extent="1-1"/>
 <wire x1="94.25" y1="74.6" x2="95.55" y2="79.95" width="0" layer="19" extent="1-1"/>
 <wire x1="96.55" y1="72.45" x2="94.25" y2="74.6" width="0" layer="19" extent="1-1"/>
 <wire x1="93.55" y1="71.45" x2="96.55" y2="72.45" width="0" layer="19" extent="1-1"/>
@@ -13284,6 +13272,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="93.55" y1="67.95" x2="95.55" y2="68.95" width="0" layer="19" extent="1-1"/>
 <wire x1="97.55" y1="63.95" x2="95.55" y2="68.95" width="0" layer="19" extent="1-1"/>
 <wire x1="93.55" y1="61.95" x2="97.55" y2="63.95" width="0" layer="19" extent="1-1"/>
+<wire x1="98.25" y1="107.75" x2="92.75" y2="107" width="0" layer="19" extent="1-1"/>
 <wire x1="73" y1="90.5" x2="78.45" y2="91.55" width="0" layer="19" extent="1-1"/>
 <wire x1="72.5" y1="87" x2="73" y2="90.5" width="0" layer="19" extent="1-1"/>
 <wire x1="73.5" y1="87" x2="72.5" y2="87" width="0" layer="19" extent="1-1"/>
@@ -13381,13 +13370,17 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="61.5" y1="81" x2="62" y2="78" width="0" layer="19" extent="1-1"/>
 <wire x1="59.56693125" y1="75" x2="62" y2="78" width="0" layer="19" extent="1-1"/>
 <wire x1="59.5" y1="74" x2="59.56693125" y2="75" width="0" layer="19" extent="1-1"/>
+<wire x1="97.45" y1="102" x2="98.25" y2="107.75" width="0" layer="19" extent="1-1"/>
+<wire x1="97.5" y1="101" x2="97.45" y2="102" width="0" layer="19" extent="1-1"/>
+<wire x1="103" y1="101.06693125" x2="97.5" y2="101" width="0" layer="19" extent="1-1"/>
+<wire x1="104.7" y1="100.095" x2="103" y2="101.06693125" width="0" layer="19" extent="1-1"/>
+<wire x1="106.55" y1="97.5" x2="104.7" y2="100.095" width="0" layer="19" extent="1-1"/>
 <wire x1="80.5" y1="79" x2="74.5" y2="79" width="0" layer="19" extent="1-1"/>
 <wire x1="80.55" y1="78.9" x2="80.5" y2="79" width="0" layer="19" extent="1-16"/>
 <wire x1="80.55" y1="80" x2="80.5" y2="79" width="0" layer="19" extent="1-16"/>
 <wire x1="80.5" y1="80" x2="80.55" y2="80" width="0" layer="19" extent="1-16"/>
-<wire x1="106.55" y1="97.5" x2="112.5" y2="99.56693125" width="0" layer="19" extent="1-1"/>
-<wire x1="104.7" y1="100.095" x2="106.55" y2="97.5" width="0" layer="19" extent="1-1"/>
-<wire x1="103" y1="101.06693125" x2="104.7" y2="100.095" width="0" layer="19" extent="1-1"/>
+<wire x1="162.0815" y1="80.497" x2="155.7785" y2="80.397" width="0" layer="19" extent="1-1"/>
+<wire x1="162.4275" y1="83.8875" x2="162.0815" y2="80.497" width="0" layer="19" extent="1-1"/>
 <wire x1="66" y1="110.5" x2="65.95" y2="104.2" width="0" layer="19" extent="1-1"/>
 <wire x1="65.95" y1="115" x2="66" y2="110.5" width="0" layer="19" extent="1-1"/>
 <wire x1="65.95" y1="117" x2="65.95" y2="115" width="0" layer="19" extent="1-1"/>
@@ -13407,7 +13400,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="59.775" y1="99.562" x2="59.775" y2="105.438" width="0" layer="19" extent="1-1"/>
 <wire x1="161.5" y1="74.15" x2="162.0815" y2="80.497" width="0" layer="19" extent="1-1"/>
 <wire x1="161.5" y1="71.55" x2="161.5" y2="74.15" width="0" layer="19" extent="1-1"/>
-<wire x1="159.0815" y1="66.3555" x2="161.5" y2="71.55" width="0" layer="19" extent="1-1"/>
 <wire x1="54.05" y1="119" x2="60.55" y2="118.3" width="0" layer="19" extent="1-1"/>
 <wire x1="53.438" y1="116.325" x2="54.05" y2="119" width="0" layer="19" extent="1-1"/>
 <wire x1="47.562" y1="116.975" x2="53.438" y2="116.325" width="0" layer="19" extent="1-1"/>
@@ -13427,9 +13419,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="45.95" y1="124.3" x2="47.562" y2="116.975" width="0" layer="19" extent="1-1"/>
 <wire x1="41.55" y1="124.3" x2="45.95" y2="124.3" width="0" layer="19" extent="1-1"/>
 <wire x1="45.7" y1="129.3" x2="45.95" y2="124.3" width="0" layer="19" extent="1-1"/>
-<wire x1="138.5" y1="93.1" x2="133.54" y2="99.46" width="0" layer="19" extent="1-1"/>
-<wire x1="143" y1="93.1" x2="138.5" y2="93.1" width="0" layer="19" extent="1-1"/>
-<wire x1="147.5" y1="93.1" x2="143" y2="93.1" width="0" layer="19" extent="1-1"/>
 <wire x1="47.5" y1="88" x2="53" y2="94" width="0" layer="19" extent="1-1"/>
 <wire x1="48.5" y1="85" x2="47.5" y2="86.55" width="0" layer="19" extent="1-1"/>
 <wire x1="40.5" y1="88" x2="47.5" y2="88" width="0" layer="19" extent="1-1"/>
@@ -13474,6 +13463,10 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="23" y1="84.5" x2="26.5" y2="80" width="0" layer="19" extent="1-1"/>
 <wire x1="20" y1="85" x2="23" y2="84.5" width="0" layer="19" extent="1-1"/>
 <wire x1="12.91" y1="87.3" x2="20" y2="85" width="0" layer="19" extent="1-1"/>
+<wire x1="127.96" y1="60.54" x2="122.5" y2="68.95" width="0" layer="19" extent="16-16"/>
+<wire x1="133.04" y1="60.54" x2="127.96" y2="60.54" width="0" layer="19" extent="1-1"/>
+<wire x1="133.04" y1="55.46" x2="133.04" y2="60.54" width="0" layer="19" extent="1-1"/>
+<wire x1="127.96" y1="55.46" x2="127.96" y2="60.54" width="0" layer="19" extent="1-1"/>
 <wire x1="88.5" y1="52.5" x2="93.55" y2="61.95" width="0" layer="19" extent="1-1"/>
 <wire x1="86" y1="47.45" x2="88.5" y2="51.55" width="0" layer="19" extent="1-1"/>
 <wire x1="82.875" y1="51.062" x2="86" y2="47.45" width="0" layer="19" extent="1-1"/>
@@ -13611,11 +13604,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="195.8" y1="16.7" x2="195.85" y2="24.7" width="0" layer="19" extent="1-1"/>
 <wire x1="210.452" y1="41.493" x2="197.3" y2="43.2" width="0" layer="19" extent="1-1"/>
 <wire x1="216.548" y1="41.493" x2="210.452" y2="41.493" width="0" layer="19" extent="1-1"/>
-<wire x1="217.5" y1="46" x2="216.548" y2="41.493" width="0" layer="19" extent="1-1"/>
-<wire x1="213.75" y1="53.75" x2="217.5" y2="46" width="0" layer="19" extent="1-3"/>
+<wire x1="216" y1="46" x2="216.548" y2="41.493" width="0" layer="19" extent="1-1"/>
+<wire x1="213.75" y1="53.75" x2="216" y2="46" width="0" layer="19" extent="1-3"/>
 <wire x1="213.73" y1="64.08" x2="213.73" y2="53.92" width="0" layer="19" extent="1-1"/>
 <wire x1="211.88" y1="74.67" x2="213.73" y2="64.08" width="0" layer="19" extent="1-1"/>
-<wire x1="211.88" y1="81.07" x2="211.88" y2="74.67" width="0" layer="19" extent="1-1"/>
+<wire x1="206.4185" y1="74.6445" x2="211.88" y2="74.67" width="0" layer="19" extent="1-1"/>
+<wire x1="206.4185" y1="79.764" x2="206.4185" y2="74.6445" width="0" layer="19" extent="1-1"/>
+<wire x1="211.88" y1="81.07" x2="206.4185" y2="79.764" width="0" layer="19" extent="1-1"/>
 <wire x1="208.3" y1="90.3" x2="211.88" y2="81.07" width="0" layer="19" extent="1-1"/>
 <wire x1="203.9235" y1="90.4275" x2="208.3" y2="90.3" width="0" layer="19" extent="1-1"/>
 <wire x1="213.045" y1="94.01" x2="208.3" y2="90.3" width="0" layer="19" extent="1-1"/>
@@ -13657,7 +13652,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="3.032" y1="9.96" x2="3.032" y2="15.04" width="0" layer="19" extent="1-16"/>
 <wire x1="3.032" y1="9.96" x2="3.032" y2="9.96" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="3V3" class="1" airwireshidden="yes">
+<signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>
 <contactref element="IC6" pad="8"/>
 <contactref element="IC6" pad="7"/>
@@ -13715,52 +13710,67 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <vertex x="-7.5" y="169.5"/>
 <vertex x="-8" y="169"/>
 </polygon>
+<via x="110.5" y="141" extent="1-16" drill="0.35"/>
+<via x="151" y="98" extent="1-16" drill="0.35"/>
+<via x="125.5" y="108.5" extent="1-16" drill="0.35"/>
+<via x="125.5" y="107.5" extent="1-16" drill="0.35"/>
+<via x="110.5" y="107" extent="1-16" drill="0.35"/>
+<via x="100.5" y="109.5" extent="1-16" drill="0.35"/>
+<via x="52" y="103" extent="1-16" drill="0.35"/>
+<via x="38.5" y="99.5" extent="1-16" drill="0.35"/>
+<via x="88.5" y="55" extent="1-16" drill="0.35"/>
+<via x="111.5" y="58.5" extent="1-16" drill="0.35"/>
+<via x="130.5" y="76.5" extent="1-16" drill="0.35"/>
+<via x="141" y="76" extent="1-16" drill="0.35"/>
+<via x="109.5" y="153.5" extent="1-16" drill="0.35"/>
+<via x="207.5" y="59.5" extent="1-16" drill="0.35"/>
+<via x="209" y="47" extent="1-16" drill="0.35"/>
 <wire x1="111.905" y1="143.8" x2="110.635" y2="143.8" width="0" layer="19" extent="1-1"/>
-<wire x1="109.365" y1="149.2" x2="110.635" y2="143.8" width="0" layer="19" extent="1-1"/>
-<wire x1="109.35" y1="151.44" x2="109.365" y2="149.2" width="0" layer="19" extent="1-1"/>
+<wire x1="110.5" y1="141" x2="110.635" y2="143.8" width="0" layer="19" extent="1-1"/>
+<wire x1="142.5" y1="76" x2="141" y2="76" width="0" layer="19" extent="1-1"/>
+<wire x1="142.5" y1="77" x2="142.5" y2="76" width="0" layer="19" extent="1-1"/>
+<wire x1="151.5" y1="99.5" x2="151" y2="98" width="0" layer="19" extent="1-1"/>
+<wire x1="124" y1="109" x2="125.5" y2="108.5" width="0" layer="19" extent="1-1"/>
+<wire x1="112" y1="60" x2="111.5" y2="58.5" width="0" layer="19" extent="1-1"/>
+<wire x1="114" y1="60" x2="112" y2="60" width="0" layer="19" extent="1-1"/>
+<wire x1="110.06693125" y1="105" x2="110.5" y2="107" width="0" layer="19" extent="1-1"/>
+<wire x1="110.3" y1="103.905" x2="110.06693125" y2="105" width="0" layer="19" extent="1-1"/>
+<wire x1="108.43306875" y1="105.5" x2="110.06693125" y2="105" width="0" layer="19" extent="1-1"/>
+<wire x1="153.5" y1="99.95" x2="151.5" y2="99.5" width="0" layer="19" extent="1-1"/>
+<wire x1="109.35" y1="151.44" x2="109.5" y2="153.5" width="0" layer="19" extent="1-1"/>
 <wire x1="111" y1="151.5" x2="109.35" y2="151.44" width="0" layer="19" extent="1-1"/>
-<wire x1="103" y1="143" x2="110.635" y2="143.8" width="0" layer="19" extent="1-1"/>
-<wire x1="136.3" y1="143.25" x2="111.905" y2="143.8" width="0" layer="19" extent="1-1"/>
-<wire x1="139" y1="145.5" x2="136.3" y2="143.25" width="0" layer="19" extent="1-1"/>
-<wire x1="141" y1="145.95" x2="139" y2="145.5" width="0" layer="19" extent="1-1"/>
-<wire x1="147.92" y1="151.41" x2="141" y2="145.95" width="0" layer="19" extent="1-1"/>
+<wire x1="109.365" y1="149.2" x2="109.35" y2="151.44" width="0" layer="19" extent="1-1"/>
+<wire x1="144.7645" y1="76.6615" x2="142.5" y2="77" width="0" layer="19" extent="1-1"/>
+<wire x1="148.8" y1="97.25" x2="151" y2="98" width="0" layer="19" extent="1-1"/>
+<wire x1="131.79" y1="78.54" x2="130.5" y2="76.5" width="0" layer="19" extent="1-1"/>
+<wire x1="86.775" y1="56.938" x2="88.5" y2="55" width="0" layer="19" extent="1-1"/>
+<wire x1="86.125" y1="56.938" x2="86.775" y2="56.938" width="0" layer="19" extent="1-1"/>
 <wire x1="150.46" y1="150.69" x2="147.92" y2="151.41" width="0" layer="19" extent="1-1"/>
 <wire x1="153" y1="151.24" x2="150.46" y2="150.69" width="0" layer="19" extent="1-1"/>
 <wire x1="155.54" y1="150.64" x2="153" y2="151.24" width="0" layer="19" extent="1-1"/>
 <wire x1="157.85" y1="150.89" x2="155.54" y2="150.64" width="0" layer="19" extent="1-1"/>
 <wire x1="158.6" y1="151.64" x2="157.85" y2="150.89" width="0" layer="19" extent="1-1"/>
 <wire x1="159.1" y1="151.64" x2="158.6" y2="151.64" width="0" layer="19" extent="1-1"/>
-<wire x1="150.48" y1="143.72" x2="150.46" y2="150.69" width="0" layer="19" extent="1-1"/>
-<wire x1="214.5" y1="47" x2="213.73" y2="56.46" width="0" layer="19" extent="1-1"/>
-<wire x1="216" y1="47" x2="214.5" y2="47" width="0" layer="19" extent="1-1"/>
-<wire x1="219" y1="47" x2="216" y2="47" width="0" layer="19" extent="1-1"/>
-<wire x1="124" y1="109" x2="136.3" y2="143.25" width="0" layer="19" extent="1-1"/>
-<wire x1="115.3" y1="102.325" x2="124" y2="109" width="0" layer="19" extent="1-1"/>
-<wire x1="113.5" y1="102.43306875" x2="115.3" y2="102.325" width="0" layer="19" extent="1-1"/>
-<wire x1="110.3" y1="103.905" x2="113.5" y2="102.43306875" width="0" layer="19" extent="1-1"/>
-<wire x1="110.06693125" y1="105" x2="110.3" y2="103.905" width="0" layer="19" extent="1-1"/>
-<wire x1="108.43306875" y1="105.5" x2="110.06693125" y2="105" width="0" layer="19" extent="1-1"/>
-<wire x1="131.79" y1="78.54" x2="115.3" y2="102.325" width="0" layer="19" extent="1-1"/>
 <wire x1="134.59" y1="78.48" x2="131.79" y2="78.54" width="0" layer="19" extent="1-1"/>
-<wire x1="138" y1="73.5" x2="134.59" y2="78.48" width="0" layer="19" extent="1-1"/>
-<wire x1="142.5" y1="76" x2="138" y2="73.5" width="0" layer="19" extent="1-1"/>
-<wire x1="142.5" y1="77" x2="142.5" y2="76" width="0" layer="19" extent="1-1"/>
-<wire x1="144.7645" y1="76.6615" x2="142.5" y2="77" width="0" layer="19" extent="1-1"/>
-<wire x1="114" y1="60" x2="131.79" y2="78.54" width="0" layer="19" extent="1-1"/>
-<wire x1="112" y1="60" x2="114" y2="60" width="0" layer="19" extent="1-1"/>
-<wire x1="88.5" y1="50.45" x2="112" y2="60" width="0" layer="19" extent="1-1"/>
-<wire x1="86.775" y1="51.062" x2="88.5" y2="50.45" width="0" layer="19" extent="1-1"/>
-<wire x1="86.775" y1="56.938" x2="86.775" y2="51.062" width="0" layer="19" extent="1-1"/>
-<wire x1="86.125" y1="56.938" x2="86.775" y2="56.938" width="0" layer="19" extent="1-1"/>
+<wire x1="97.65" y1="109.15" x2="100.5" y2="109.5" width="0" layer="19" extent="1-1"/>
+<wire x1="40.55" y1="102" x2="38.5" y2="99.5" width="0" layer="19" extent="1-1"/>
+<wire x1="42.8" y1="102" x2="40.55" y2="102" width="0" layer="19" extent="1-1"/>
 <wire x1="82.875" y1="56.938" x2="86.125" y2="56.938" width="0" layer="19" extent="1-1"/>
-<wire x1="59.125" y1="99.562" x2="82.875" y2="56.938" width="0" layer="19" extent="1-1"/>
-<wire x1="55.875" y1="99.562" x2="59.125" y2="99.562" width="0" layer="19" extent="1-1"/>
-<wire x1="55.225" y1="99.562" x2="55.875" y2="99.562" width="0" layer="19" extent="1-1"/>
-<wire x1="55.225" y1="105.438" x2="55.225" y2="99.562" width="0" layer="19" extent="1-1"/>
-<wire x1="53.5" y1="106.05" x2="55.225" y2="105.438" width="0" layer="19" extent="1-1"/>
-<wire x1="42.8" y1="102" x2="53.5" y2="106.05" width="0" layer="19" extent="1-1"/>
-<wire x1="40.55" y1="102" x2="42.8" y2="102" width="0" layer="19" extent="1-1"/>
+<wire x1="53.5" y1="106.05" x2="52" y2="103" width="0" layer="19" extent="1-1"/>
+<wire x1="55.225" y1="105.438" x2="53.5" y2="106.05" width="0" layer="19" extent="1-1"/>
+<wire x1="113.5" y1="102.43306875" x2="110.3" y2="103.905" width="0" layer="19" extent="1-1"/>
+<wire x1="115.3" y1="102.325" x2="113.5" y2="102.43306875" width="0" layer="19" extent="1-1"/>
+<wire x1="213" y1="47" x2="209" y2="47" width="0" layer="19" extent="1-1"/>
+<wire x1="214.5" y1="47" x2="213" y2="47" width="0" layer="19" extent="1-1"/>
+<wire x1="217.5" y1="47" x2="214.5" y2="47" width="0" layer="19" extent="1-1"/>
+<wire x1="86.775" y1="51.062" x2="88.5" y2="55" width="0" layer="19" extent="1-1"/>
+<wire x1="88.5" y1="50.45" x2="86.775" y2="51.062" width="0" layer="19" extent="1-1"/>
 <wire x1="47.2" y1="103.5" x2="42.8" y2="102" width="0" layer="19" extent="1-1"/>
+<wire x1="55.225" y1="99.562" x2="52" y2="103" width="0" layer="19" extent="1-1"/>
+<wire x1="55.875" y1="99.562" x2="55.225" y2="99.562" width="0" layer="19" extent="1-1"/>
+<wire x1="59.125" y1="99.562" x2="55.875" y2="99.562" width="0" layer="19" extent="1-1"/>
+<wire x1="150.48" y1="143.72" x2="150.46" y2="150.69" width="0" layer="19" extent="1-1"/>
+<wire x1="103" y1="143" x2="110.635" y2="143.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DC2_P" class="2">
 <contactref element="IC1" pad="C13"/>
@@ -14137,6 +14147,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="C8"/>
 <contactref element="IC8" pad="16"/>
 <via x="120.5" y="83" extent="1-16" drill="0.2"/>
+<wire x1="120.5" y1="83" x2="149.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DB2_N" class="2">
 <contactref element="IC1" pad="P10"/>
@@ -14216,6 +14227,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="C4"/>
 <contactref element="IC8" pad="19"/>
 <via x="120.5" y="87" extent="1-16" drill="0.2"/>
+<wire x1="120.5" y1="87" x2="148.4645" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DB7_N" class="2">
 <contactref element="IC1" pad="R12"/>
@@ -14270,20 +14282,24 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="B4"/>
 <contactref element="IC8" pad="25"/>
 <via x="121.5" y="87" extent="1-16" drill="0.2"/>
+<wire x1="121.5" y1="87" x2="144.7645" y2="80.1615" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_AC4_SIWU" class="5">
 <contactref element="R121" pad="P$1"/>
 <contactref element="IC8" pad="28"/>
+<wire x1="144.7645" y1="78.6615" x2="142.5" y2="78" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_DATA0" class="5">
 <contactref element="IC5" pad="G10"/>
 <contactref element="IC8" pad="13"/>
 <via x="116.5" y="81" extent="1-16" drill="0.2"/>
+<wire x1="116.5" y1="81" x2="151.4145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_DATA4" class="5">
 <contactref element="IC5" pad="C7"/>
 <contactref element="IC8" pad="17"/>
 <via x="120.5" y="84" extent="1-16" drill="0.2"/>
+<wire x1="120.5" y1="84" x2="149.4145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DB1_P" class="2">
 <contactref element="IC1" pad="R9"/>
@@ -14911,10 +14927,12 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="B8"/>
 <contactref element="IC8" pad="26"/>
 <via x="121.5" y="83" extent="1-16" drill="0.2"/>
+<wire x1="121.5" y1="83" x2="144.7645" y2="79.6615" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_AC7_PWRSAV" class="5">
 <contactref element="R123" pad="P$1"/>
 <contactref element="IC8" pad="31"/>
+<wire x1="142.5" y1="75" x2="144.7645" y2="77.1615" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DB11_N" class="2">
 <contactref element="IC1" pad="L12"/>
@@ -15043,11 +15061,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="C6"/>
 <contactref element="IC8" pad="18"/>
 <via x="120.5" y="85" extent="1-16" drill="0.2"/>
+<wire x1="120.5" y1="85" x2="148.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_AC0_RXF" class="5">
 <contactref element="IC5" pad="B7"/>
 <contactref element="IC8" pad="21"/>
 <via x="121.5" y="84" extent="1-16" drill="0.2"/>
+<wire x1="121.5" y1="84" x2="147.4145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DA11_N" class="2">
 <contactref element="IC1" pad="F12"/>
@@ -15136,6 +15156,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="C3"/>
 <contactref element="IC8" pad="20"/>
 <via x="120.5" y="88" extent="1-16" drill="0.2"/>
+<wire x1="120.5" y1="88" x2="147.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DD8_N" class="2">
 <contactref element="IC1" pad="P16"/>
@@ -15149,11 +15170,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="A9"/>
 <contactref element="IC8" pad="14"/>
 <via x="122.5" y="82" extent="1-16" drill="0.2"/>
+<wire x1="122.5" y1="82" x2="150.9145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_AC3_WR" class="5">
 <contactref element="IC5" pad="B3"/>
 <contactref element="IC8" pad="27"/>
 <via x="121.5" y="88" extent="1-16" drill="0.2"/>
+<wire x1="121.5" y1="88" x2="144.7645" y2="79.1615" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DA11_P" class="2">
 <contactref element="IC1" pad="F11"/>
@@ -15218,11 +15241,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="A3"/>
 <contactref element="IC8" pad="30"/>
 <via x="122.5" y="88" extent="1-16" drill="0.2"/>
+<wire x1="122.5" y1="88" x2="144.7645" y2="77.6615" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FTDI_DATA2" class="5">
 <contactref element="IC5" pad="D7"/>
 <contactref element="IC8" pad="15"/>
 <via x="119.5" y="84" extent="1-16" drill="0.2"/>
+<wire x1="119.5" y1="84" x2="150.4145" y2="81.3115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DD0_N" class="2">
 <contactref element="IC1" pad="T14"/>
@@ -16465,7 +16490,15 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC1" pad="B1"/>
 <contactref element="R16" pad="P$1"/>
 <via x="67.5" y="86" extent="1-16" drill="0.2"/>
-<wire x1="67.5" y1="86" x2="109" y2="97" width="0" layer="19" extent="1-1"/>
+<wire x1="67.5" y1="86" x2="68.12855" y2="86.62855" width="0.0889" layer="16"/>
+<wire x1="68.12855" y1="86.62855" x2="68.12855" y2="87.1538625" width="0.0889" layer="16"/>
+<wire x1="77.18493125" y1="93.05355" x2="80.63138125" y2="96.5" width="0.0889" layer="16"/>
+<wire x1="68.12855" y1="87.1538625" x2="74.0282375" y2="93.05355" width="0.0889" layer="16"/>
+<wire x1="74.0282375" y1="93.05355" x2="77.18493125" y2="93.05355" width="0.0889" layer="16"/>
+<wire x1="107.5" y1="96.5" x2="108" y2="97" width="0.0889" layer="16"/>
+<via x="108" y="97" extent="1-16" drill="0.35"/>
+<wire x1="108" y1="97" x2="109" y2="97" width="0.0889" layer="1"/>
+<wire x1="80.63138125" y1="96.5" x2="107.5" y2="96.5" width="0.0889" layer="16"/>
 </signal>
 <signal name="CALTRIG">
 <contactref element="IC1" pad="B2"/>
@@ -16498,30 +16531,65 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="R1" pad="P$2"/>
 <contactref element="IC1" pad="T8"/>
 <via x="74.5" y="72" extent="1-16" drill="0.2"/>
-<wire x1="74.5" y1="72" x2="129.5" y2="67.5" width="0" layer="19" extent="1-1"/>
+<wire x1="74.5" y1="72" x2="74" y2="72.5" width="0.0889" layer="3"/>
+<wire x1="74" y1="93" x2="75" y2="94" width="0.0889" layer="3"/>
+<via x="75" y="94" extent="1-16" drill="0.35"/>
+<wire x1="75" y1="94" x2="85.5" y2="104.5" width="0.0889" layer="16"/>
+<wire x1="85.5" y1="104.5" x2="88" y2="104.5" width="0.0889" layer="16"/>
+<wire x1="74" y1="72.5" x2="74" y2="93" width="0.0889" layer="3"/>
+<wire x1="88" y1="104.5" x2="88.565690625" y2="103.934309375" width="0.0889" layer="16"/>
+<via x="88.565690625" y="103.934309375" extent="1-16" drill="0.35"/>
+<wire x1="88.565690625" y1="103.934309375" x2="89.13138125" y2="104.5" width="0.0889" layer="1"/>
+<wire x1="89.13138125" y1="104.5" x2="89.5" y2="104.5" width="0.0889" layer="1"/>
 </signal>
 <signal name="SCS">
 <contactref element="R2" pad="P$2"/>
 <contactref element="IC1" pad="R8"/>
 <via x="74.5" y="73" extent="1-16" drill="0.2"/>
-<wire x1="74.5" y1="73" x2="129.5" y2="68.5" width="0" layer="19" extent="1-1"/>
+<wire x1="74.5" y1="73" x2="74.5" y2="73.4746875" width="0.0889" layer="3"/>
+<wire x1="74.5" y1="73.4746875" x2="74.87145" y2="73.8461375" width="0.0889" layer="3"/>
+<wire x1="74.87145" y1="73.8461375" x2="74.87145" y2="92.37145" width="0.0889" layer="3"/>
+<wire x1="76" y1="93.5" x2="77" y2="93.5" width="0.0889" layer="3"/>
+<via x="77" y="93.5" extent="1-16" drill="0.35"/>
+<wire x1="77" y1="93.5" x2="87" y2="103.5" width="0.0889" layer="16"/>
+<wire x1="87" y1="103.5" x2="87.5" y2="103.5" width="0.0889" layer="16"/>
+<via x="87.5" y="103.5" extent="1-16" drill="0.35"/>
+<wire x1="87.5" y1="103.5" x2="89.5" y2="105.5" width="0.0889" layer="1"/>
+<wire x1="74.87145" y1="92.37145" x2="76" y2="93.5" width="0.0889" layer="3"/>
 </signal>
 <signal name="PD">
 <contactref element="IC1" pad="R1"/>
 <contactref element="R14" pad="P$1"/>
-<wire x1="60.5" y1="74" x2="67.5" y2="73" width="0" layer="19" extent="1-1"/>
+<wire x1="60.5" y1="74" x2="66.5" y2="74" width="0.0889" layer="1"/>
+<wire x1="66.5" y1="74" x2="67.5" y2="73" width="0.0889" layer="1"/>
 </signal>
 <signal name="SDI">
 <contactref element="R3" pad="P$2"/>
 <contactref element="IC1" pad="P8"/>
 <via x="74.5" y="74" extent="1-16" drill="0.2"/>
-<wire x1="74.5" y1="74" x2="129.5" y2="69.5" width="0" layer="19" extent="1-1"/>
+<wire x1="74.5" y1="74" x2="74" y2="74.5" width="0.0889" layer="14"/>
+<wire x1="74" y1="94.21255625" x2="74.07145" y2="94.28400625" width="0.0889" layer="14"/>
+<wire x1="74.07145" y1="94.28400625" x2="74.07145" y2="95.57145" width="0.0889" layer="14"/>
+<wire x1="84.5" y1="106" x2="86.5" y2="106" width="0.0889" layer="14"/>
+<wire x1="74" y1="74.5" x2="74" y2="94.21255625" width="0.0889" layer="14"/>
+<wire x1="74.07145" y1="95.57145" x2="84.5" y2="106" width="0.0889" layer="14"/>
+<via x="86.5" y="106" extent="1-16" drill="0.35"/>
+<wire x1="86.5" y1="106" x2="87" y2="106.5" width="0.0889" layer="1"/>
+<wire x1="87" y1="106.5" x2="89.5" y2="106.5" width="0.0889" layer="1"/>
 </signal>
 <signal name="SDO">
 <contactref element="R4" pad="P$2"/>
 <contactref element="IC1" pad="N8"/>
 <via x="74.5" y="75" extent="1-16" drill="0.2"/>
-<wire x1="74.5" y1="75" x2="129.5" y2="70.5" width="0" layer="19" extent="1-1"/>
+<wire x1="74.5" y1="75" x2="74.5" y2="75.4746875" width="0.0889" layer="14"/>
+<wire x1="74.5" y1="75.4746875" x2="74.87145" y2="75.8461375" width="0.0889" layer="14"/>
+<wire x1="74.87145" y1="75.8461375" x2="74.87145" y2="92.87145" width="0.0889" layer="14"/>
+<wire x1="79.55355" y1="97.55355" x2="79.55355" y2="98.18493125" width="0.0889" layer="14"/>
+<wire x1="88" y1="106.63138125" x2="88" y2="107.5" width="0.0889" layer="14"/>
+<wire x1="79.55355" y1="98.18493125" x2="88" y2="106.63138125" width="0.0889" layer="14"/>
+<wire x1="74.87145" y1="92.87145" x2="79.55355" y2="97.55355" width="0.0889" layer="14"/>
+<via x="88" y="107.5" extent="1-16" drill="0.35"/>
+<wire x1="88" y1="107.5" x2="89.5" y2="107.5" width="0.0889" layer="1"/>
 </signal>
 <signal name="VA19" class="1">
 <contactref element="C25" pad="3"/>
@@ -16575,8 +16643,16 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="125.5" y1="126" x2="125.5" y2="126.45" width="0.1524" layer="1"/>
 <wire x1="128.5" y1="126" x2="131.775" y2="126" width="0.1524" layer="1"/>
 <wire x1="62.5" y1="93" x2="62.4" y2="93" width="0.1524" layer="1"/>
-<wire x1="69.5" y1="81" x2="62.5" y2="93" width="0" layer="19" extent="1-1"/>
-<wire x1="125.5" y1="126.45" x2="72.5" y2="81" width="0" layer="19" extent="1-1"/>
+<wire x1="121.45" y1="126.45" x2="125.5" y2="126.45" width="1.27" layer="1"/>
+<wire x1="115" y1="119.5" x2="120.5" y2="125" width="1.27" layer="12"/>
+<wire x1="62.5" y1="104" x2="62.5" y2="95.494" width="1.27" layer="12"/>
+<via x="62.5" y="95.494" extent="1-16" drill="0.35"/>
+<wire x1="62.5" y1="95.494" x2="62.5" y2="93" width="1.27" layer="1"/>
+<wire x1="115" y1="119.5" x2="78" y2="119.5" width="1.27" layer="12"/>
+<wire x1="78" y1="119.5" x2="62.5" y2="104" width="1.27" layer="12"/>
+<via x="120.5" y="125" extent="1-16" drill="0.35"/>
+<wire x1="120.5" y1="125" x2="120.5" y2="125.5" width="1.27" layer="1"/>
+<wire x1="120.5" y1="125.5" x2="121.45" y2="126.45" width="1.27" layer="1"/>
 </signal>
 <signal name="VA11" class="1">
 <contactref element="C35" pad="3"/>
@@ -16760,11 +16836,11 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C3" pad="2"/>
 <contactref element="R15" pad="P$2"/>
 <contactref element="IC2" pad="16"/>
-<wire x1="138.438" y1="70.125" x2="139" y2="73.5" width="0" layer="19" extent="1-1"/>
-<wire x1="138.438" y1="66.875" x2="138.438" y2="70.125" width="0" layer="19" extent="1-1"/>
-<wire x1="138.438" y1="66.225" x2="138.438" y2="66.875" width="0" layer="19" extent="1-1"/>
-<wire x1="138.55" y1="65" x2="138.438" y2="66.225" width="0" layer="19" extent="1-1"/>
-<wire x1="132.562" y1="66.225" x2="138.438" y2="66.225" width="0" layer="19" extent="1-1"/>
+<wire x1="98.65" y1="109.15" x2="98.438" y2="107.125" width="0" layer="19" extent="1-1"/>
+<wire x1="98.438" y1="103.875" x2="98.438" y2="107.125" width="0" layer="19" extent="1-1"/>
+<wire x1="98.438" y1="103.225" x2="98.438" y2="103.875" width="0" layer="19" extent="1-1"/>
+<wire x1="98.55" y1="102" x2="98.438" y2="103.225" width="0" layer="19" extent="1-1"/>
+<wire x1="92.562" y1="103.225" x2="98.438" y2="103.225" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCLK3">
 <contactref element="IC2" pad="3"/>
@@ -16781,11 +16857,11 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="118.5" y="81" extent="1-16" drill="0.2"/>
 <wire x1="32.4" y1="69.95" x2="32.4" y2="74.2" width="0.1524" layer="1"/>
 <wire x1="32.4" y1="74.2" x2="34.75" y2="76.55" width="0.1524" layer="1"/>
+<wire x1="98.438" y1="104.525" x2="119.7" y2="102.975" width="0" layer="19" extent="1-1"/>
 <wire x1="118.5" y1="81" x2="119.7" y2="102.975" width="0" layer="19" extent="1-1"/>
-<wire x1="138.438" y1="67.525" x2="118.5" y2="81" width="0" layer="19" extent="1-1"/>
 <wire x1="85.5" y1="56.913" x2="118.5" y2="81" width="0" layer="19" extent="1-1"/>
 <wire x1="82.0535" y1="52.0535" x2="85.475" y2="56.938" width="0" layer="19" extent="1-1"/>
-<wire x1="56.525" y1="99.562" x2="85.475" y2="56.938" width="0" layer="19" extent="1-1"/>
+<wire x1="56.525" y1="99.562" x2="98.438" y2="104.525" width="0" layer="19" extent="1-1"/>
 <wire x1="47.2" y1="102.5" x2="56.525" y2="99.562" width="0" layer="19" extent="1-1"/>
 <wire x1="34.75" y1="76.55" x2="47.104" y2="102.404" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -16793,7 +16869,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC2" pad="4"/>
 <contactref element="IC5" pad="F8"/>
 <via x="117.5" y="83" extent="1-16" drill="0.2"/>
-<wire x1="117.5" y1="83" x2="138.438" y2="68.175" width="0" layer="19" extent="1-1"/>
+<wire x1="117.5" y1="83" x2="98.438" y2="105.175" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDI3">
 <contactref element="IC2" pad="5"/>
@@ -16811,11 +16887,11 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="35.3968" y1="76.1037" x2="35.3968" y2="76.4032" width="0.1524" layer="1"/>
 <wire x1="35.3968" y1="76.4032" x2="35.25" y2="76.55" width="0.1524" layer="1"/>
 <wire x1="117.5" y1="84" x2="119.7" y2="101.675" width="0" layer="19" extent="1-1"/>
-<wire x1="138.438" y1="68.825" x2="117.5" y2="84" width="0" layer="19" extent="1-1"/>
-<wire x1="84.346" y1="56.767" x2="117.5" y2="84" width="0" layer="19" extent="1-1"/>
-<wire x1="57.825" y1="99.562" x2="84.175" y2="56.938" width="0" layer="19" extent="1-1"/>
+<wire x1="98.438" y1="105.825" x2="119.7" y2="101.675" width="0" layer="19" extent="1-1"/>
+<wire x1="57.825" y1="99.562" x2="98.438" y2="105.825" width="0" layer="19" extent="1-1"/>
 <wire x1="47.2" y1="103" x2="57.825" y2="99.562" width="0" layer="19" extent="1-1"/>
 <wire x1="35.25" y1="76.55" x2="47.2" y2="103" width="0" layer="19" extent="1-1"/>
+<wire x1="84.346" y1="56.767" x2="117.5" y2="84" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VDDL19" class="1">
 <contactref element="IC2" pad="15"/>
@@ -16825,43 +16901,49 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C18" pad="2"/>
 <contactref element="C19" pad="2"/>
 <via x="128.5" y="120" extent="1-16" drill="0.5"/>
-<wire x1="131" y1="66.5" x2="131.25" y2="66.25" width="0.1524" layer="1"/>
-<wire x1="131.25" y1="66.25" x2="132.5" y2="65" width="0.1524" layer="1"/>
-<wire x1="130.5" y1="66.5" x2="131" y2="66.5" width="0.1524" layer="1"/>
-<wire x1="132.5" y1="65" x2="132.55" y2="65" width="0.1524" layer="1"/>
-<wire x1="131.75" y1="66.75" x2="132.5" y2="66.75" width="0.1524" layer="1"/>
-<wire x1="131.25" y1="66.25" x2="131.75" y2="66.75" width="0.1524" layer="1"/>
-<wire x1="132.5" y1="66.75" x2="132.562" y2="66.875" width="0.1524" layer="1"/>
+<wire x1="91" y1="103.5" x2="90.5" y2="103.5" width="0.1524" layer="1"/>
+<wire x1="92.5" y1="102" x2="92.55" y2="102" width="0.1524" layer="1"/>
 <wire x1="128.5" y1="120" x2="125.5" y2="120" width="0.1524" layer="1"/>
 <wire x1="125.5" y1="120" x2="125.5" y2="120.45" width="0.1524" layer="1"/>
 <wire x1="128.5" y1="120" x2="131.775" y2="120" width="0.1524" layer="1"/>
-<wire x1="134.75" y1="67" x2="132.75" y2="67" width="0.1524" layer="1"/>
-<wire x1="136" y1="68.25" x2="134.75" y2="67" width="0.1524" layer="1"/>
-<wire x1="132.75" y1="67" x2="132.562" y2="66.875" width="0.1524" layer="1"/>
-<via x="136" y="68.25" extent="1-16" drill="0.2"/>
-<wire x1="136" y1="68.25" x2="131.775" y2="120" width="0" layer="19" extent="1-1"/>
+<wire x1="125.5" y1="120.45" x2="124.05" y2="119" width="1.27" layer="1"/>
+<wire x1="124.05" y1="119" x2="116.05" y2="111" width="0.2032" layer="1"/>
+<wire x1="116.05" y1="111" x2="97" y2="111" width="0.2032" layer="1"/>
+<wire x1="97" y1="111" x2="94.5" y2="108.5" width="0.2032" layer="1"/>
+<wire x1="94.5" y1="108.5" x2="94.5" y2="105" width="0.2032" layer="1"/>
+<wire x1="94.5" y1="105" x2="93.375" y2="103.875" width="0.2032" layer="1"/>
+<wire x1="93.375" y1="103.875" x2="92.562" y2="103.875" width="0.2032" layer="1"/>
+<wire x1="91.5512125" y1="103.5" x2="90.5" y2="103.5" width="0.2032" layer="1"/>
+<wire x1="91.5959" y1="103.5446875" x2="91.5512125" y2="103.5" width="0.2032" layer="1"/>
+<wire x1="91.7298125" y1="102.7714" x2="91.5959" y2="102.9053125" width="0.2032" layer="1"/>
+<wire x1="91.5959" y1="102.9053125" x2="91.5959" y2="103.5446875" width="0.2032" layer="1"/>
+<wire x1="91.5959" y1="103.5446875" x2="91.7298125" y2="103.6786" width="0.2032" layer="1"/>
+<wire x1="91.7298125" y1="103.6786" x2="92.3656" y2="103.6786" width="0.2032" layer="1"/>
+<wire x1="92.3656" y1="103.6786" x2="92.562" y2="103.875" width="0.2032" layer="1"/>
+<wire x1="92.55" y1="102" x2="91.7786" y2="102.7714" width="0.2032" layer="1"/>
+<wire x1="91.7786" y1="102.7714" x2="91.7298125" y2="102.7714" width="0.2032" layer="1"/>
 </signal>
 <signal name="SDOT">
 <contactref element="IC2" pad="11"/>
 <contactref element="R4" pad="P$1"/>
-<wire x1="130.5" y1="70.5" x2="132.562" y2="69.475" width="0" layer="19" extent="1-1"/>
+<wire x1="90.5" y1="107.5" x2="92.562" y2="106.475" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDIT">
 <contactref element="IC2" pad="12"/>
 <contactref element="R3" pad="P$1"/>
-<wire x1="130.5" y1="69.5" x2="132.562" y2="68.825" width="0" layer="19" extent="1-1"/>
+<wire x1="90.5" y1="106.5" x2="92.562" y2="105.825" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCST">
 <contactref element="IC2" pad="13"/>
 <contactref element="R2" pad="P$1"/>
 <contactref element="R5" pad="P$2"/>
-<wire x1="130.5" y1="68.5" x2="132.562" y2="68.175" width="0" layer="19" extent="1-1"/>
-<wire x1="129.5" y1="66.5" x2="130.5" y2="68.5" width="0" layer="19" extent="1-1"/>
+<wire x1="90.5" y1="105.5" x2="92.562" y2="105.175" width="0" layer="19" extent="1-1"/>
+<wire x1="89.5" y1="103.5" x2="90.5" y2="105.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCLKT">
 <contactref element="IC2" pad="14"/>
 <contactref element="R1" pad="P$1"/>
-<wire x1="130.5" y1="67.5" x2="132.562" y2="67.525" width="0" layer="19" extent="1-1"/>
+<wire x1="90.5" y1="104.5" x2="92.562" y2="104.525" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VLVDS_IN" class="1">
 <contactref element="C6" pad="2"/>
@@ -17004,7 +17086,11 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC1" pad="N2"/>
 <contactref element="R128" pad="1"/>
 <via x="68.5" y="75" extent="1-16" drill="0.2"/>
-<wire x1="60.43306875" y1="75" x2="68.5" y2="75" width="0" layer="19" extent="1-1"/>
+<wire x1="67.68078125" y1="74.56355" x2="67.31921875" y2="74.56355" width="0.0889" layer="1"/>
+<wire x1="68.5" y1="75" x2="68.11723125" y2="75" width="0.0889" layer="1"/>
+<wire x1="66.88276875" y1="75" x2="60.43306875" y2="75" width="0.0889" layer="1"/>
+<wire x1="68.11723125" y1="75" x2="67.68078125" y2="74.56355" width="0.0889" layer="1"/>
+<wire x1="67.31921875" y1="74.56355" x2="66.88276875" y2="75" width="0.0889" layer="1"/>
 </signal>
 <signal name="TMSTP2">
 <contactref element="IC1" pad="E1"/>
@@ -17560,7 +17646,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="201.6778" y1="40.1778" x2="206.57365" y2="40.1778" width="0.0889" layer="14"/>
 <wire x1="142" y1="37" x2="198.5" y2="37" width="0.0889" layer="14"/>
 <contactref element="R24" pad="2"/>
-<wire x1="119.5" y1="69.175" x2="119.5" y2="69" width="0" layer="19" extent="1-1"/>
+<wire x1="119.5" y1="69" x2="119.5" y2="69.175" width="0.2032" layer="1"/>
 </signal>
 <signal name="LVDSIN_TRIG_P" class="2">
 <contactref element="U$1" pad="P$1"/>
@@ -17593,7 +17679,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="198.57365" y1="36.8222" x2="201.75145" y2="40" width="0.0889" layer="14"/>
 <wire x1="141.92635" y1="36.8222" x2="198.57365" y2="36.8222" width="0.0889" layer="14"/>
 <contactref element="R24" pad="1"/>
-<wire x1="119.5" y1="69.825" x2="119.5" y2="70" width="0" layer="19" extent="1-1"/>
+<wire x1="119.5" y1="70" x2="119.5" y2="69.825" width="0.2032" layer="1"/>
 </signal>
 <signal name="IO85">
 <contactref element="IC5" pad="F9"/>
@@ -17829,6 +17915,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="110.5" y="82" extent="1-16" drill="0.2"/>
 <via x="108.5" y="83" extent="1-16" drill="0.2"/>
 <wire x1="147.5" y1="91" x2="149" y2="91.5" width="0" layer="19" extent="1-1"/>
+<wire x1="115.5" y1="82" x2="147.5" y2="91" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IO105">
 <contactref element="IC5" pad="G13"/>
@@ -17863,7 +17950,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="197" y1="34" x2="195.8222" y2="35.1778" width="0.0889" layer="14"/>
 <wire x1="118.5" y1="58.6778" x2="118.5" y2="66.71701875" width="0.0889" layer="14"/>
 <contactref element="R25" pad="2"/>
-<wire x1="118.5" y1="69.175" x2="118.5" y2="69" width="0" layer="19" extent="1-1"/>
+<wire x1="118.5" y1="69" x2="118.5" y2="69.175" width="0.2032" layer="1"/>
 </signal>
 <signal name="LVDSIN_SPARE0_P" class="2">
 <contactref element="U$1" pad="P$3"/>
@@ -17883,7 +17970,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="196.92635" y1="33.8222" x2="195.74855" y2="35" width="0.0889" layer="14"/>
 <wire x1="195.74855" y1="35" x2="141.92635" y2="35" width="0.0889" layer="14"/>
 <contactref element="R25" pad="1"/>
-<wire x1="118.5" y1="69.825" x2="118.5" y2="70" width="0" layer="19" extent="1-1"/>
+<wire x1="118.5" y1="70" x2="118.5" y2="69.825" width="0.2032" layer="1"/>
 </signal>
 <signal name="IO113">
 <contactref element="IC5" pad="H5"/>
@@ -17960,7 +18047,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="195.5" y1="38" x2="196.67575" y2="39.17575" width="0.0889" layer="3"/>
 <wire x1="197.70503125" y1="39.6778" x2="208.073653125" y2="39.6778" width="0.0889" layer="3"/>
 <contactref element="R26" pad="2"/>
-<wire x1="117.5" y1="69.175" x2="117.5" y2="69" width="0" layer="19" extent="1-1"/>
+<wire x1="117.5" y1="69" x2="117.5" y2="69.175" width="0.2032" layer="1"/>
 </signal>
 <signal name="LVDSIN_SPARE1_P" class="2">
 <contactref element="U$1" pad="P$4"/>
@@ -17990,7 +18077,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="143.42635" y1="37.8222" x2="195.57365" y2="37.8222" width="0.0889" layer="3"/>
 <wire x1="195.57365" y1="37.8222" x2="196.85355" y2="39.1021" width="0.0889" layer="3"/>
 <contactref element="R26" pad="1"/>
-<wire x1="117.5" y1="69.825" x2="117.5" y2="70" width="0" layer="19" extent="1-1"/>
+<wire x1="117.5" y1="70" x2="117.5" y2="69.825" width="0.2032" layer="1"/>
 </signal>
 <signal name="IO130">
 <contactref element="IC5" pad="J3"/>
@@ -18041,7 +18128,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="K6"/>
 <contactref element="R82" pad="P$1"/>
 <via x="113.5" y="85" extent="1-16" drill="0.2"/>
-<wire x1="214.5" y1="46" x2="113.5" y2="85" width="0" layer="19" extent="1-1"/>
+<wire x1="213" y1="46" x2="113.5" y2="85" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IO141">
 <contactref element="IC5" pad="K7"/>
@@ -18065,7 +18152,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="112.6" y="90" extent="1-16" drill="0.2"/>
 <wire x1="112.6" y1="90" x2="112.5" y2="90" width="0" layer="19" extent="1-1"/>
 <wire x1="216.27" y1="59" x2="112.6" y2="90" width="0" layer="19" extent="1-1"/>
-<wire x1="216" y1="46" x2="216.27" y2="59" width="0" layer="19" extent="1-1"/>
+<wire x1="214.5" y1="46" x2="216.27" y2="59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TCK">
 <contactref element="IC5" pad="L2"/>
@@ -18074,7 +18161,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="112.55" y="89" extent="1-16" drill="0.2"/>
 <wire x1="112.55" y1="89" x2="112.5" y2="89" width="0" layer="19" extent="1-1"/>
 <wire x1="216.27" y1="53.92" x2="112.55" y2="89" width="0" layer="19" extent="1-1"/>
-<wire x1="217.5" y1="47" x2="216.27" y2="53.92" width="0" layer="19" extent="1-1"/>
+<wire x1="216" y1="47" x2="216.27" y2="53.92" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="NCE">
 <contactref element="IC5" pad="L3"/>
@@ -18097,7 +18184,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="112.6" y="86" extent="1-16" drill="0.2"/>
 <wire x1="112.6" y1="86" x2="112.5" y2="86" width="0" layer="19" extent="1-1"/>
 <wire x1="216.27" y1="64.08" x2="112.6" y2="86" width="0" layer="19" extent="1-1"/>
-<wire x1="219" y1="46" x2="216.27" y2="64.08" width="0" layer="19" extent="1-1"/>
+<wire x1="217.5" y1="46" x2="216.27" y2="64.08" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IO149">
 <contactref element="IC5" pad="L7"/>
@@ -18193,7 +18280,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="197" y1="37" x2="197.02555625" y2="37.11561875" width="0.0889" layer="3"/>
 <wire x1="116.5" y1="69" x2="116.5" y2="63" width="0.0889" layer="3"/>
 <contactref element="R23" pad="2"/>
-<wire x1="116.5" y1="69.175" x2="116.5" y2="69" width="0" layer="19" extent="1-1"/>
+<wire x1="116.5" y1="69" x2="116.5" y2="69.175" width="0.2032" layer="1"/>
 </signal>
 <signal name="LVDSIN_CLK_P" class="2">
 <contactref element="U$1" pad="P$7"/>
@@ -18216,7 +18303,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="116.3222" y1="68.58178125" x2="116.3222" y2="62.92635" width="0.0889" layer="3"/>
 <wire x1="116.3222" y1="62.92635" x2="142.92635" y2="36.3222" width="0.0889" layer="3"/>
 <contactref element="R23" pad="1"/>
-<wire x1="116.5" y1="69.825" x2="116.5" y2="70" width="0" layer="19" extent="1-1"/>
+<wire x1="116.5" y1="70" x2="116.5" y2="69.825" width="0.2032" layer="1"/>
 </signal>
 <signal name="IO206">
 <contactref element="IC5" pad="T3"/>
@@ -18408,8 +18495,22 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="157.55" y1="46.2" x2="157.14885" y2="46.2324" width="0.3048" layer="1"/>
 <wire x1="158.05" y1="46.2" x2="158.1" y2="46.07" width="0.3048" layer="1"/>
 <wire x1="158.05" y1="46.2" x2="157.6626" y2="46.2324" width="0.3048" layer="1"/>
-<wire x1="119" y1="109" x2="144.5" y2="92.5" width="0" layer="19" extent="1-1"/>
-<wire x1="146.92" y1="45.84" x2="144.5" y2="92.5" width="0" layer="19" extent="1-1"/>
+<wire x1="146.92" y1="45.84" x2="146.92" y2="87.08" width="1.27" layer="5"/>
+<wire x1="145" y1="89" x2="145" y2="93.5" width="1.27" layer="5"/>
+<via x="145" y="93.5" extent="1-16" drill="0.35"/>
+<wire x1="145" y1="93.5" x2="145" y2="93.012" width="1.27" layer="1"/>
+<wire x1="145" y1="93.012" x2="144.5" y2="92.512" width="1.27" layer="1"/>
+<wire x1="146.92" y1="87.08" x2="145" y2="89" width="1.27" layer="5"/>
+<wire x1="145" y1="93.5" x2="139.5" y2="93.5" width="1.27" layer="5"/>
+<wire x1="135.5" y1="97.5" x2="135.5" y2="108.5" width="1.27" layer="5"/>
+<wire x1="135.5" y1="108.5" x2="134" y2="110" width="1.27" layer="5"/>
+<wire x1="134" y1="110" x2="119.5" y2="110" width="1.27" layer="5"/>
+<via x="119.5" y="110" extent="1-16" drill="0.35"/>
+<wire x1="119.5" y1="110" x2="119.5" y2="109.512" width="1.27" layer="1"/>
+<wire x1="119.5" y1="109.512" x2="119" y2="109.012" width="1.27" layer="1"/>
+<wire x1="139.5" y1="93.5" x2="135.5" y2="97.5" width="1.27" layer="5"/>
+<wire x1="144.5" y1="92.512" x2="144.5" y2="92.5" width="0" layer="19" extent="1-1"/>
+<wire x1="119" y1="109" x2="119" y2="109.012" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="1V2" class="1">
 <contactref element="R89" pad="P$1"/>
@@ -18418,16 +18519,23 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C76" pad="2"/>
 <contactref element="U6" pad="P$1"/>
 <contactref element="U6" pad="P$3"/>
-<wire x1="134" y1="149.75" x2="134" y2="147.5" width="0.1524" layer="1"/>
-<wire x1="134" y1="147.5" x2="134" y2="143.25" width="0.1524" layer="1"/>
-<wire x1="128.75" y1="147.25" x2="127" y2="147.25" width="0.1524" layer="1"/>
-<wire x1="129" y1="147.5" x2="128.75" y2="147.25" width="0.1524" layer="1"/>
-<wire x1="127" y1="147.25" x2="127" y2="147.05" width="0.1524" layer="1"/>
-<wire x1="129" y1="147.5" x2="134" y2="147.5" width="0.1524" layer="1"/>
-<wire x1="140" y1="92.5" x2="149" y2="92.5" width="0" layer="19" extent="1-1"/>
-<wire x1="134" y1="143.25" x2="140" y2="92.5" width="0" layer="19" extent="1-1"/>
+<wire x1="141.5" y1="101.5" x2="141.25" y2="101.25" width="0.1524" layer="1"/>
+<wire x1="139.5" y1="101.25" x2="139.5" y2="101.05" width="0.1524" layer="1"/>
+<wire x1="146.5" y1="103.75" x2="144.375" y2="101.625" width="0.4064" layer="1"/>
+<wire x1="144.375" y1="101.625" x2="144.25" y2="101.5" width="0.4064" layer="1"/>
+<wire x1="144.25" y1="101.5" x2="141.5" y2="101.5" width="0.4064" layer="1"/>
+<wire x1="141.5" y1="101.5" x2="141.05" y2="101.05" width="0.4064" layer="1"/>
+<wire x1="141.05" y1="101.05" x2="139.5" y2="101.05" width="0.4064" layer="1"/>
+<wire x1="144.375" y1="101.625" x2="146.5" y2="99.5" width="0.4064" layer="1"/>
+<wire x1="146.5" y1="99.5" x2="146.5" y2="97.25" width="0.4064" layer="1"/>
+<wire x1="146.5" y1="97.25" x2="149" y2="94.75" width="0.4064" layer="1"/>
+<wire x1="149" y1="94.75" x2="149" y2="92.5" width="0.4064" layer="1"/>
+<wire x1="146.5" y1="97.25" x2="144.75" y2="95.5" width="0.4064" layer="1"/>
+<wire x1="144.75" y1="95.5" x2="140.5" y2="95.5" width="0.4064" layer="1"/>
+<wire x1="140.5" y1="95.5" x2="140" y2="95" width="0.4064" layer="1"/>
+<wire x1="140" y1="95" x2="140" y2="92.5" width="0.4064" layer="1"/>
 </signal>
-<signal name="2V5+" class="1" airwireshidden="yes">
+<signal name="2V5+" class="1">
 <contactref element="IC26" pad="15"/>
 <contactref element="IC26" pad="16"/>
 <contactref element="IC26" pad="1"/>
@@ -18544,30 +18652,60 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="61.55" y1="121.75" x2="61.55" y2="122.7" width="0.1524" layer="1"/>
 <wire x1="35.05" y1="24.85" x2="35.05" y2="26" width="0.1524" layer="1"/>
 <wire x1="35.05" y1="26" x2="35.2" y2="26.15" width="0.1524" layer="1"/>
-<wire x1="69.35" y1="115.5" x2="71.6" y2="115.5" width="0" layer="19" extent="1-1"/>
-<wire x1="62.05" y1="120.75" x2="67.05" y2="115" width="0" layer="19" extent="1-1"/>
-<wire x1="69.05" y1="102.75" x2="67.05" y2="115" width="0" layer="19" extent="1-1"/>
-<wire x1="67.05" y1="102.5" x2="69.05" y2="102.75" width="0" layer="19" extent="1-1"/>
-<wire x1="71.85" y1="102.75" x2="69.05" y2="102.75" width="0" layer="19" extent="1-1"/>
-<wire x1="73.95" y1="102.5" x2="71.85" y2="102.75" width="0" layer="19" extent="1-1"/>
-<wire x1="55.875" y1="105.438" x2="67.05" y2="102.5" width="0" layer="19" extent="1-1"/>
-<wire x1="56" y1="107.95" x2="55.875" y2="105.438" width="0" layer="19" extent="1-1"/>
-<wire x1="48.05" y1="113" x2="56" y2="107.95" width="0" layer="19" extent="1-1"/>
-<wire x1="47.562" y1="115.025" x2="48.05" y2="113" width="0" layer="19" extent="1-1"/>
-<wire x1="22.85" y1="124.3" x2="47.562" y2="115.025" width="0" layer="19" extent="1-1"/>
-<wire x1="22.5" y1="125" x2="22.85" y2="124.3" width="0" layer="19" extent="1-1"/>
+<polygon width="0.1524" layer="14" isolate="0.16" rank="3">
+<vertex x="7.5" y="2.5"/>
+<vertex x="91.5" y="2.5"/>
+<vertex x="91.5" y="55.5"/>
+<vertex x="85.5" y="61.5"/>
+<vertex x="56.5" y="61.5"/>
+<vertex x="54" y="64"/>
+<vertex x="54" y="95.5"/>
+<vertex x="79.5" y="95.5"/>
+<vertex x="79.5" y="99.5"/>
+<vertex x="83" y="103"/>
+<vertex x="83" y="151.5"/>
+<vertex x="78.5" y="156"/>
+<vertex x="7.5" y="156"/>
+</polygon>
+<wire x1="146.85" y1="31.01" x2="141.84" y2="26" width="1.27" layer="5"/>
+<wire x1="141.84" y1="26" x2="91.5" y2="26" width="1.27" layer="5"/>
+<wire x1="91.5" y1="26" x2="87" y2="21.5" width="1.27" layer="5"/>
+<wire x1="87" y1="21.5" x2="87" y2="16.5" width="1.27" layer="5"/>
+<via x="87" y="16.5" extent="1-16" drill="0.35"/>
+<via x="87" y="19.5" extent="1-16" drill="0.35"/>
+<via x="88.5" y="23" extent="1-16" drill="0.35"/>
+<via x="34.5" y="26" extent="1-16" drill="0.35"/>
+<via x="47" y="114" extent="1-16" drill="0.2"/>
+<via x="54.5" y="107.5" extent="1-16" drill="0.2"/>
+<via x="63.5" y="123" extent="1-16" drill="0.2"/>
+<via x="66" y="113.5" extent="1-16" drill="0.2"/>
+<via x="74" y="114" extent="1-16" drill="0.2"/>
+<via x="73.5" y="103.5" extent="1-16" drill="0.2"/>
+<via x="65.5" y="103" extent="1-16" drill="0.2"/>
+<via x="79" y="23.5" extent="1-16" drill="0.35"/>
+<via x="75" y="33.5" extent="1-16" drill="0.35"/>
+<via x="87" y="49" extent="1-16" drill="0.35"/>
+<wire x1="74" y1="114" x2="73.95" y2="115" width="0" layer="19" extent="1-1"/>
+<wire x1="35.2" y1="26.15" x2="34.5" y2="26" width="0" layer="19" extent="1-1"/>
+<wire x1="35.55" y1="24.85" x2="35.05" y2="24.85" width="0" layer="19" extent="1-1"/>
+<wire x1="22.85" y1="124.3" x2="22.5" y2="125" width="0" layer="19" extent="1-1"/>
+<wire x1="73.95" y1="102.5" x2="73.5" y2="103.5" width="0" layer="19" extent="1-1"/>
 <wire x1="21.55" y1="124.45" x2="22.5" y2="125" width="0" layer="19" extent="1-1"/>
 <wire x1="21.55" y1="123.95" x2="21.55" y2="124.45" width="0" layer="19" extent="1-1"/>
-<wire x1="68.05" y1="54" x2="67.05" y2="102.5" width="0" layer="19" extent="1-1"/>
-<wire x1="74.5" y1="42.5" x2="72.95" y2="53.75" width="0" layer="19" extent="1-1"/>
-<wire x1="76.335" y1="33.585" x2="74.95" y2="41.5" width="0" layer="19" extent="1-1"/>
-<wire x1="77.062" y1="25.525" x2="76.3" y2="33.55" width="0" layer="19" extent="1-1"/>
-<wire x1="86.125" y1="51.062" x2="74.95" y2="54" width="0" layer="19" extent="1-1"/>
-<wire x1="35.2" y1="26.15" x2="68.05" y2="41.5" width="0" layer="19" extent="1-1"/>
-<wire x1="35.55" y1="24.85" x2="35.05" y2="24.85" width="0" layer="19" extent="1-1"/>
-<wire x1="146.85" y1="31.01" x2="86" y2="48.55" width="0" layer="19" extent="1-1"/>
+<wire x1="86" y1="48.55" x2="87" y2="49" width="0" layer="19" extent="1-1"/>
+<wire x1="47.562" y1="115.025" x2="47" y2="114" width="0" layer="19" extent="1-1"/>
+<wire x1="76.3" y1="33.55" x2="75" y2="33.5" width="0" layer="19" extent="1-1"/>
+<wire x1="48.05" y1="113" x2="47" y2="114" width="0" layer="19" extent="1-1"/>
+<wire x1="77.55" y1="23.5" x2="79" y2="23.5" width="0" layer="19" extent="1-1"/>
+<wire x1="56" y1="107.95" x2="54.5" y2="107.5" width="0" layer="19" extent="1-1"/>
+<wire x1="67.05" y1="102.5" x2="65.5" y2="103" width="0" layer="19" extent="1-1"/>
+<wire x1="71.85" y1="102.75" x2="73.5" y2="103.5" width="0" layer="19" extent="1-1"/>
+<wire x1="67.05" y1="115" x2="66" y2="113.5" width="0" layer="19" extent="1-1"/>
+<wire x1="61.55" y1="122.7" x2="63.5" y2="123" width="0" layer="19" extent="1-1"/>
+<wire x1="69.05" y1="102.75" x2="67.05" y2="102.5" width="0" layer="19" extent="1-1"/>
+<wire x1="55.875" y1="105.438" x2="54.5" y2="107.5" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="2V5-" class="1" airwireshidden="yes">
+<signal name="2V5-" class="1">
 <contactref element="IC25" pad="5"/>
 <contactref element="C251" pad="1"/>
 <contactref element="J34" pad="1"/>
@@ -18674,23 +18812,42 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="36.8" y1="25.1" x2="36.55" y2="24.85" width="0.1524" layer="1"/>
 <wire x1="36.55" y1="24.85" x2="36.55" y2="24.55" width="0.1524" layer="1"/>
 <wire x1="36.55" y1="24.55" x2="35.8" y2="23.8" width="0.1524" layer="1"/>
+<polygon width="0.1524" layer="16" isolate="0.16" rank="3">
+<vertex x="90.5" y="4"/>
+<vertex x="7" y="4"/>
+<vertex x="7" y="153.5"/>
+<vertex x="82.5" y="153.5"/>
+<vertex x="84.5" y="151.5"/>
+<vertex x="84.5" y="101"/>
+<vertex x="85" y="100.5"/>
+<vertex x="80" y="100.5"/>
+<vertex x="74.5" y="95"/>
+<vertex x="55.5" y="95"/>
+<vertex x="53.5" y="93"/>
+<vertex x="53.5" y="62.5"/>
+<vertex x="83" y="62.5"/>
+<vertex x="90.5" y="55"/>
+</polygon>
+<wire x1="146.92" y1="19.02" x2="137.4" y2="9.5" width="1.27" layer="5"/>
+<wire x1="137.4" y1="9.5" x2="84.5" y2="9.5" width="1.27" layer="5"/>
+<via x="84.5" y="9.5" extent="1-16" drill="0.35"/>
+<via x="87" y="9.5" extent="1-16" drill="0.35"/>
+<via x="89.5" y="9.5" extent="1-16" drill="0.35"/>
+<via x="37.5" y="26" extent="1-16" drill="0.35"/>
+<via x="51.5" y="119" extent="1-16" drill="0.2"/>
 <wire x1="69.35" y1="116.5" x2="71.65" y2="116.5" width="0" layer="19" extent="1-1"/>
 <wire x1="61.65" y1="118.3" x2="67.05" y2="117" width="0" layer="19" extent="1-1"/>
 <wire x1="52.95" y1="119" x2="61" y2="120.5" width="0" layer="19" extent="1-1"/>
+<wire x1="51.5" y1="119" x2="52.95" y2="119" width="0" layer="19" extent="1-1"/>
+<wire x1="36.8" y1="26.15" x2="37.5" y2="26" width="0" layer="19" extent="1-1"/>
+<wire x1="22.85" y1="122.7" x2="22.5" y2="122" width="0" layer="19" extent="1-1"/>
+<wire x1="21.55" y1="122.95" x2="22.85" y2="122.7" width="0" layer="19" extent="1-1"/>
+<wire x1="20.5" y1="123.7" x2="21.55" y2="122.95" width="0" layer="19" extent="1-1"/>
+<wire x1="80.65" y1="33.55" x2="82.45" y2="29.5" width="0" layer="19" extent="1-1"/>
 <wire x1="73.95" y1="104.5" x2="71.65" y2="116.5" width="0" layer="19" extent="1-1"/>
 <wire x1="71.85" y1="104.25" x2="73.95" y2="104.5" width="0" layer="19" extent="1-1"/>
 <wire x1="69.05" y1="104.25" x2="71.85" y2="104.25" width="0" layer="19" extent="1-1"/>
 <wire x1="67.05" y1="104.2" x2="69.05" y2="104.25" width="0" layer="19" extent="1-1"/>
-<wire x1="22.85" y1="122.7" x2="52.95" y2="119" width="0" layer="19" extent="1-1"/>
-<wire x1="22.5" y1="122" x2="22.85" y2="122.7" width="0" layer="19" extent="1-1"/>
-<wire x1="21.55" y1="122.95" x2="22.85" y2="122.7" width="0" layer="19" extent="1-1"/>
-<wire x1="20.5" y1="123.7" x2="21.55" y2="122.95" width="0" layer="19" extent="1-1"/>
-<wire x1="71.5" y1="52.4" x2="71.85" y2="104.25" width="0" layer="19" extent="1-1"/>
-<wire x1="70.35" y1="40" x2="69.2" y2="52" width="0" layer="19" extent="1-1"/>
-<wire x1="79.25" y1="33.55" x2="74.5" y2="38.5" width="0" layer="19" extent="1-1"/>
-<wire x1="82.45" y1="29.5" x2="80.65" y2="33.55" width="0" layer="19" extent="1-1"/>
-<wire x1="36.8" y1="26.15" x2="68.05" y2="39.5" width="0" layer="19" extent="1-1"/>
-<wire x1="146.92" y1="19.02" x2="82.938" y2="27.475" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCS3_IN1">
 <contactref element="IC5" pad="G7"/>
@@ -18883,7 +19040,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="R10" pad="P$2"/>
 <via x="120.5" y="78" extent="1-16" drill="0.2"/>
 <wire x1="110.34" y1="20.5" x2="120.5" y2="78" width="0" layer="19" extent="1-1"/>
-<wire x1="44" y1="45.5" x2="120.5" y2="78" width="0" layer="19" extent="1-1"/>
+<wire x1="44" y1="45.5" x2="110.34" y2="20.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BOARDOUT7">
 <contactref element="J10" pad="8"/>
@@ -19348,7 +19505,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="21.55" y1="34.9" x2="17" y2="39.45" width="0.1524" layer="1"/>
 <wire x1="23" y1="34.9" x2="30" y2="34.9" width="0.1524" layer="1"/>
 </signal>
-<signal name="5V" class="1" airwireshidden="yes">
+<signal name="5V" class="1">
 <contactref element="K10" pad="1"/>
 <contactref element="K11" pad="1"/>
 <contactref element="K12" pad="1"/>
@@ -19463,9 +19620,11 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C293" pad="1"/>
 <wire x1="172.3" y1="107.2" x2="172.3" y2="104.2" width="1.27" layer="1"/>
 <wire x1="172.3" y1="104.2" x2="172.3" y2="101.2" width="1.27" layer="1"/>
-<wire x1="172.3" y1="101.2" x2="172.3" y2="98.2" width="1.27" layer="1"/>
+<wire x1="172.3" y1="101.2" x2="172.3" y2="99" width="1.27" layer="1"/>
+<wire x1="172.3" y1="99" x2="172.3" y2="98.2" width="1.27" layer="1"/>
 <wire x1="172.3" y1="104.2" x2="173.3" y2="103.2" width="1.27" layer="1"/>
-<wire x1="173.3" y1="103.2" x2="176.3" y2="103.2" width="1.27" layer="1"/>
+<wire x1="173.3" y1="103.2" x2="174" y2="103.2" width="1.27" layer="1"/>
+<wire x1="174" y1="103.2" x2="176.3" y2="103.2" width="1.27" layer="1"/>
 <wire x1="171.5874" y1="108.20115" x2="171.12615" y2="108.6624" width="1.27" layer="1"/>
 <wire x1="171.12615" y1="108.6624" x2="170.2" y2="108.6624" width="1.27" layer="1"/>
 <wire x1="170.2" y1="108.6624" x2="169.27385" y2="108.6624" width="1.27" layer="1"/>
@@ -19494,20 +19653,58 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="22.7" y1="138.8" x2="23" y2="138.5" width="0.1524" layer="1"/>
 <wire x1="42.5" y1="138.5" x2="40.8" y2="138.5" width="0.1524" layer="1"/>
 <wire x1="40.8" y1="138.5" x2="40.45" y2="138.85" width="0.1524" layer="1"/>
-<wire x1="191.935" y1="24.988" x2="194.75" y2="39.2" width="0" layer="19" extent="1-1"/>
-<wire x1="194.75" y1="10.7" x2="194.75" y2="24.7" width="0" layer="19" extent="1-1"/>
-<wire x1="194.85615" y1="109.7" x2="196.7" y2="105.2" width="0" layer="19" extent="1-1"/>
-<wire x1="159.6" y1="101.2" x2="165.2" y2="101.47" width="0" layer="19" extent="1-1"/>
-<wire x1="159.45" y1="98.2" x2="159.6" y2="101.2" width="0" layer="19" extent="1-1"/>
-<wire x1="194.85615" y1="128.14385" x2="192.935" y2="114.988" width="0" layer="19" extent="1-1"/>
-<wire x1="194.85615" y1="142.14385" x2="192.935" y2="129.988" width="0" layer="19" extent="1-1"/>
-<wire x1="197.536" y1="88.7085" x2="198.2" y2="105.2" width="0" layer="19" extent="1-1"/>
-<wire x1="195.7655" y1="88.603" x2="197.536" y2="88.7085" width="0" layer="19" extent="1-1"/>
-<wire x1="200.1045" y1="88.3915" x2="197.536" y2="88.7085" width="0" layer="19" extent="1-1"/>
-<wire x1="44.5" y1="38" x2="12.91" y2="72.8" width="0" layer="19" extent="1-1"/>
-<wire x1="23" y1="38.1" x2="44.5" y2="38" width="0" layer="19" extent="1-1"/>
-<wire x1="67.9" y1="18.4" x2="23" y2="38.1" width="0" layer="19" extent="1-1"/>
+<wire x1="200.1045" y1="88.3915" x2="197.853" y2="88.3915" width="0.508" layer="1"/>
+<wire x1="197.853" y1="88.3915" x2="197.536" y2="88.7085" width="0.508" layer="1"/>
+<wire x1="197.536" y1="88.7085" x2="195.871" y2="88.7085" width="0.508" layer="1"/>
+<wire x1="195.871" y1="88.7085" x2="195.7655" y2="88.603" width="0.508" layer="1"/>
+<via x="194.5" y="88.5" extent="1-16" drill="0.35"/>
+<via x="193.5" y="88.5" extent="1-16" drill="0.35"/>
+<via x="192.5" y="88.5" extent="1-16" drill="0.35"/>
+<wire x1="195.7655" y1="88.603" x2="195.6625" y2="88.5" width="0.508" layer="1"/>
+<wire x1="195.6625" y1="88.5" x2="194.5" y2="88.5" width="0.508" layer="1"/>
+<wire x1="194.5" y1="88.5" x2="193.5" y2="88.5" width="0.508" layer="1"/>
+<wire x1="193.5" y1="88.5" x2="192.5" y2="88.5" width="0.508" layer="1"/>
+<via x="25.5" y="37.5" extent="1-16" drill="0.35"/>
+<via x="46.5" y="37" extent="1-16" drill="0.35"/>
+<via x="172.5" y="96" extent="1-16" drill="0.35"/>
+<via x="176.5" y="99" extent="1-16" drill="0.35"/>
+<via x="195" y="112" extent="1-16" drill="0.35"/>
+<via x="194.5" y="110" extent="1-16" drill="0.35"/>
+<via x="194.5" y="128" extent="1-16" drill="0.35"/>
+<via x="193" y="129" extent="1-16" drill="0.35"/>
+<via x="194.5" y="142.5" extent="1-16" drill="0.35"/>
+<via x="193.5" y="143.5" extent="1-16" drill="0.35"/>
+<via x="192" y="39" extent="1-16" drill="0.35"/>
+<via x="194.5" y="39" extent="1-16" drill="0.35"/>
+<via x="194" y="23.5" extent="1-16" drill="0.35"/>
+<via x="192.5" y="23.5" extent="1-16" drill="0.35"/>
+<via x="184.5" y="6" extent="1-16" drill="0.35"/>
+<via x="187" y="6" extent="1-16" drill="0.35"/>
+<via x="195.5" y="9.5" extent="1-16" drill="0.35"/>
+<via x="147" y="72" extent="1-16" drill="0.35"/>
+<wire x1="147.2815" y1="72.9408" x2="147.2815" y2="73.3785" width="0.25" layer="1"/>
+<wire x1="147.2815" y1="73.3785" x2="147.4145" y2="73.5115" width="0.25" layer="1"/>
+<wire x1="147" y1="72" x2="147" y2="72.6593" width="0.25" layer="1"/>
+<wire x1="147" y1="72.6593" x2="147.2815" y2="72.9408" width="0.25" layer="1"/>
+<wire x1="159.45" y1="98.2" x2="159.45" y2="101.05" width="0.25" layer="1"/>
+<wire x1="159.45" y1="101.05" x2="159.6" y2="101.2" width="0.25" layer="1"/>
+<wire x1="163.06138125" y1="101.47" x2="165.2" y2="101.47" width="0.25" layer="1"/>
+<wire x1="162.40438125" y1="102.127" x2="163.06138125" y2="101.47" width="0.25" layer="1"/>
+<wire x1="159.6" y1="101.2" x2="160.527" y2="102.127" width="0.25" layer="1"/>
+<wire x1="160.527" y1="102.127" x2="162.40438125" y2="102.127" width="0.25" layer="1"/>
+<wire x1="172.3" y1="99" x2="172.5" y2="98.8" width="1.27" layer="1"/>
+<wire x1="172.5" y1="98.8" x2="172.5" y2="96" width="1.27" layer="1"/>
+<wire x1="174" y1="103.2" x2="176.5" y2="100.7" width="1.27" layer="1"/>
+<wire x1="176.5" y1="100.7" x2="176.5" y2="99" width="1.27" layer="1"/>
+<wire x1="194.5" y1="39" x2="194.75" y2="39.2" width="0" layer="19" extent="1-1"/>
+<wire x1="194.85615" y1="128.14385" x2="194.5" y2="128" width="0" layer="19" extent="1-1"/>
+<wire x1="194.85615" y1="109.7" x2="194.5" y2="110" width="0" layer="19" extent="1-1"/>
+<wire x1="194.85615" y1="142.14385" x2="194.5" y2="142.5" width="0" layer="19" extent="1-1"/>
+<wire x1="194.75" y1="24.7" x2="194" y2="23.5" width="0" layer="19" extent="1-1"/>
+<wire x1="44.5" y1="38" x2="46.5" y2="37" width="0" layer="19" extent="1-1"/>
+<wire x1="23" y1="38.1" x2="25.5" y2="37.5" width="0" layer="19" extent="1-1"/>
 <wire x1="147.4145" y1="73.5115" x2="159.45" y2="98.2" width="0" layer="19" extent="1-1"/>
+<wire x1="67.9" y1="18.4" x2="46.5" y2="37" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="COIL1-">
 <contactref element="Q7" pad="3"/>
@@ -19744,12 +19941,16 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <signal name="CC1">
 <contactref element="X1" pad="A5"/>
 <contactref element="R183" pad="P$2"/>
-<wire x1="211.88" y1="76.62" x2="158.0815" y2="66.3555" width="0" layer="19" extent="1-1"/>
+<wire x1="207.4185" y1="74.6445" x2="209.394" y2="76.62" width="0.2032" layer="1"/>
+<wire x1="209.394" y1="76.62" x2="211.88" y2="76.62" width="0.2032" layer="1"/>
 </signal>
 <signal name="CC2">
 <contactref element="X1" pad="B5"/>
 <contactref element="R182" pad="P$2"/>
-<wire x1="211.88" y1="79.62" x2="158.9185" y2="80.264" width="0" layer="19" extent="1-1"/>
+<wire x1="207.4185" y1="79.764" x2="211.2002125" y2="79.764" width="0.2032" layer="1"/>
+<wire x1="211.2002125" y1="79.764" x2="211.2103125" y2="79.7539" width="0.2032" layer="1"/>
+<wire x1="211.2103125" y1="79.7539" x2="211.7461" y2="79.7539" width="0.2032" layer="1"/>
+<wire x1="211.7461" y1="79.7539" x2="211.88" y2="79.62" width="0.2032" layer="1"/>
 </signal>
 <signal name="VCC3V3">
 <contactref element="IC8" pad="39"/>
@@ -19809,9 +20010,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="X1" pad="A4B9"/>
 <contactref element="C118" pad="2"/>
 <contactref element="FB2" pad="1"/>
+<wire x1="201.8045" y1="88.3915" x2="203.8595" y2="88.3915" width="0.508" layer="1"/>
+<wire x1="203.8595" y1="88.3915" x2="203.9235" y2="88.3275" width="0.508" layer="1"/>
+<wire x1="203.9235" y1="88.3275" x2="209" y2="83.251" width="0.508" layer="1"/>
+<wire x1="209" y1="83.251" x2="209" y2="80.5" width="0.508" layer="1"/>
+<wire x1="209" y1="80.5" x2="209.23" y2="80.27" width="0.508" layer="1"/>
+<wire x1="209.23" y1="80.27" x2="211.88" y2="80.27" width="0.508" layer="1"/>
 <wire x1="211.88" y1="75.47" x2="211.88" y2="80.27" width="0" layer="19" extent="1-1"/>
-<wire x1="203.9235" y1="88.3275" x2="211.88" y2="80.27" width="0" layer="19" extent="1-1"/>
-<wire x1="201.8045" y1="88.3915" x2="203.9235" y2="88.3275" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$80">
 <contactref element="IC8" pad="29"/>
@@ -19819,7 +20024,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="142.3825" y1="79.1375" x2="143.3585" y2="78.1615" width="0.15" layer="1"/>
 <wire x1="143.3585" y1="78.1615" x2="144.7645" y2="78.1615" width="0.15" layer="1"/>
 </signal>
-<signal name="+3V3" airwireshidden="yes">
+<signal name="+3V3">
 <contactref element="U2" pad="10"/>
 <contactref element="U2" pad="6"/>
 <contactref element="U2" pad="16"/>
@@ -19876,7 +20081,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="37.5" y1="74.55" x2="38.05" y2="74" width="0.1524" layer="1"/>
 <wire x1="40.5" y1="82.6" x2="45.5" y2="86.55" width="0" layer="19" extent="1-1"/>
 <wire x1="38.95" y1="77.75" x2="38.95" y2="80.75" width="0" layer="19" extent="1-1"/>
-<wire x1="38.3" y1="74" x2="38.95" y2="77.75" width="0" layer="19" extent="1-1"/>
+<wire x1="37.25" y1="76.55" x2="38.95" y2="77.75" width="0" layer="19" extent="1-1"/>
 <wire x1="34.05" y1="77.25" x2="37.25" y2="76.55" width="0" layer="19" extent="1-1"/>
 <wire x1="34.05" y1="79.25" x2="34.05" y2="77.25" width="0" layer="19" extent="1-1"/>
 <wire x1="41.4" y1="69.95" x2="41.4" y2="74.6" width="0" layer="19" extent="1-1"/>
@@ -20647,7 +20852,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C242" pad="1"/>
 <contactref element="D7" pad="ANODE"/>
 <contactref element="CN2" pad="PWR"/>
-<wire x1="209.7" y1="94.815" x2="209.7" y2="100.2" width="1.27" layer="1"/>
+<wire x1="209.7" y1="94.815" x2="209.7" y2="95.5" width="1.27" layer="1"/>
+<wire x1="209.7" y1="95.5" x2="209.7" y2="100.2" width="1.27" layer="1"/>
 <wire x1="209.7" y1="100.2" x2="209.7" y2="101.2" width="1.27" layer="1"/>
 <wire x1="208.6" y1="110.72" x2="208.6" y2="109.2" width="1.27" layer="1"/>
 <wire x1="208.6" y1="109.2" x2="208.6" y2="101.3" width="1.27" layer="1"/>
@@ -20659,9 +20865,12 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C319" pad="1"/>
 <contactref element="C320" pad="1"/>
 <wire x1="211.3" y1="90.4" x2="214.3" y2="90.4" width="1.27" layer="1"/>
-<wire x1="209.7" y1="94.815" x2="210.505" y2="94.01" width="0" layer="19" extent="1-1"/>
-<wire x1="211.3" y1="90.4" x2="210.505" y2="94.01" width="0" layer="19" extent="1-1"/>
-<wire x1="195.65" y1="99.2" x2="209.7" y2="101.2" width="0" layer="19" extent="1-1"/>
+<wire x1="209.7" y1="101.2" x2="206.4381" y2="97.9381" width="1.27" layer="1"/>
+<wire x1="206.4381" y1="97.9381" x2="194.75615" y2="97.9381" width="1.27" layer="1"/>
+<wire x1="211.3" y1="90.4" x2="210.505" y2="91.195" width="1.27" layer="1"/>
+<wire x1="210.505" y1="91.195" x2="210.505" y2="94.01" width="1.27" layer="1"/>
+<wire x1="209.7" y1="95.5" x2="210.505" y2="94.695" width="1.27" layer="1"/>
+<wire x1="210.505" y1="94.695" x2="210.505" y2="94.01" width="1.27" layer="1"/>
 </signal>
 <signal name="N$129">
 <contactref element="C284" pad="1"/>
@@ -20697,7 +20906,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <signal name="N$133">
 <contactref element="D9" pad="CATHODE"/>
 <contactref element="R235" pad="P$2"/>
-<wire x1="161.9" y1="96.3" x2="161.95" y2="98.2" width="0" layer="19" extent="1-1"/>
+<wire x1="161.9" y1="96.3" x2="161.9" y2="98.15" width="0.25" layer="1"/>
+<wire x1="161.9" y1="98.15" x2="161.95" y2="98.2" width="0.25" layer="1"/>
 </signal>
 <signal name="SW1">
 </signal>
@@ -20727,7 +20937,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC5" pad="F10"/>
 <contactref element="IC2" pad="6"/>
 <via x="117.5" y="81" extent="1-16" drill="0.2"/>
-<wire x1="117.5" y1="81" x2="138.438" y2="69.475" width="0" layer="19" extent="1-1"/>
+<wire x1="117.5" y1="81" x2="98.438" y2="106.475" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="FL2" pad="6"/>
@@ -20755,7 +20965,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <signal name="N$13">
 <contactref element="K5" pad="1"/>
 <contactref element="R136" pad="P$1"/>
-<wire x1="59.07" y1="135" x2="60.85" y2="134.9" width="0" layer="19" extent="1-1"/>
+<wire x1="60.85" y1="134.9" x2="59.07" y2="135" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ACDC_CONTROL2">
 <contactref element="R136" pad="P$2"/>
@@ -20830,7 +21040,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <signal name="N$18">
 <contactref element="Q5" pad="1"/>
 <contactref element="R141" pad="P$1"/>
-<wire x1="45.434" y1="146.939" x2="42.75" y2="147" width="0" layer="19" extent="1-1"/>
+<wire x1="42.75" y1="147" x2="45.434" y2="146.939" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ATT_CONTROL2">
 <contactref element="R141" pad="P$2"/>
@@ -21040,41 +21250,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="45.05" y1="120" x2="45.05" y2="118" width="0.1524" layer="1"/>
 <wire x1="45.05" y1="118" x2="53.438" y2="115.675" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="VS+">
-<polygon width="0.1524" layer="14" isolate="0.16" rank="3">
-<vertex x="7.5" y="2.5"/>
-<vertex x="91.5" y="2.5"/>
-<vertex x="91.5" y="55.5"/>
-<vertex x="85.5" y="61.5"/>
-<vertex x="56.5" y="61.5"/>
-<vertex x="54" y="64"/>
-<vertex x="54" y="95.5"/>
-<vertex x="79.5" y="95.5"/>
-<vertex x="79.5" y="99.5"/>
-<vertex x="83" y="103"/>
-<vertex x="83" y="151.5"/>
-<vertex x="78.5" y="156"/>
-<vertex x="7.5" y="156"/>
-</polygon>
-</signal>
-<signal name="VS-">
-<polygon width="0.1524" layer="16" isolate="0.16" rank="3">
-<vertex x="90.5" y="4"/>
-<vertex x="7" y="4"/>
-<vertex x="7" y="153.5"/>
-<vertex x="82.5" y="153.5"/>
-<vertex x="84.5" y="151.5"/>
-<vertex x="84.5" y="101"/>
-<vertex x="85" y="100.5"/>
-<vertex x="80" y="100.5"/>
-<vertex x="74.5" y="95"/>
-<vertex x="55.5" y="95"/>
-<vertex x="53.5" y="93"/>
-<vertex x="53.5" y="62.5"/>
-<vertex x="83" y="62.5"/>
-<vertex x="90.5" y="55"/>
-</polygon>
-</signal>
 <signal name="CLK3">
 <contactref element="IC5" pad="T1"/>
 </signal>
@@ -21109,7 +21284,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="59.51583125" y1="121.1032" x2="59.8032" y2="121.1032" width="0.1524" layer="1"/>
 <wire x1="59.8032" y1="121.1032" x2="59.95" y2="121.25" width="0.1524" layer="1"/>
 </signal>
-<signal name="GND1" class="4" airwireshidden="yes">
+<signal name="GND1" class="4">
 <polygon width="0.254" layer="2" pour="cutout">
 <vertex x="77" y="30.05"/>
 <vertex x="77" y="32.05"/>
@@ -21125,7 +21300,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 </signal>
 <signal name="2V5-1" class="1">
 </signal>
-<signal name="GND2" class="4" airwireshidden="yes">
+<signal name="GND2" class="4">
 <polygon width="0.254" layer="2" pour="cutout">
 <vertex x="20.2" y="123.2"/>
 <vertex x="18.2" y="123.2"/>
@@ -21139,7 +21314,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <vertex x="20.2" y="125.2"/>
 </polygon>
 </signal>
-<signal name="GND3" class="4" airwireshidden="yes">
+<signal name="GND3" class="4">
 <polygon width="0.254" layer="2" pour="cutout">
 <vertex x="60.8" y="121.9"/>
 <vertex x="60.8" y="119.9"/>
