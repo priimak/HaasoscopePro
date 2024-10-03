@@ -25972,7 +25972,7 @@ Diode with low voltage drop</description>
 </class>
 <class number="4" name="gnd" width="0" drill="0">
 </class>
-<class number="5" name="critical" width="0" drill="0">
+<class number="5" name="critical" width="0.12" drill="0">
 </class>
 </classes>
 <parts>
@@ -26798,6 +26798,10 @@ Diode with low voltage drop</description>
 <part name="R22" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="OUTSPLPIT" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="50"/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="R23" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
+<part name="R24" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
+<part name="R25" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
+<part name="R26" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
 </parts>
 <sheets>
 <sheet>
@@ -32564,6 +32568,22 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <attribute name="NAME" x="-8.89" y="494.2586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-8.89" y="489.458" size="1.778" layer="96"/>
 </instance>
+<instance part="R23" gate="G$1" x="363.22" y="528.32" smashed="yes">
+<attribute name="NAME" x="358.14" y="533.4" size="1.016" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="358.14" y="530.86" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="R24" gate="G$1" x="363.22" y="523.24" smashed="yes">
+<attribute name="NAME" x="358.14" y="528.32" size="1.016" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="358.14" y="525.78" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="R25" gate="G$1" x="363.22" y="518.16" smashed="yes">
+<attribute name="NAME" x="358.14" y="523.24" size="1.016" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="358.14" y="520.7" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="R26" gate="G$1" x="363.22" y="513.08" smashed="yes">
+<attribute name="NAME" x="358.14" y="518.16" size="1.016" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="358.14" y="515.62" size="1.016" layer="96" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -33569,7 +33589,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="533.4" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK11" class="5">
+<net name="CLK11" class="0">
 <segment>
 <wire x1="238.76" y1="530.86" x2="226.06" y2="530.86" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK11"/>
@@ -33581,7 +33601,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="Y2" gate="G$1" pin="OUT"/>
 </segment>
 </net>
-<net name="CLK9" class="5">
+<net name="CLK9" class="0">
 <segment>
 <wire x1="238.76" y1="528.32" x2="226.06" y2="528.32" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK9"/>
@@ -34008,12 +34028,22 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="IC5" gate="G$1" pin="IO_63"/>
 <label x="226.06" y="391.16" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R24" gate="G$1" pin="2"/>
+<wire x1="368.3" y1="523.24" x2="391.16" y2="523.24" width="0.1524" layer="91"/>
+<label x="368.3" y="523.24" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_TRIG_P" class="2">
 <segment>
 <wire x1="238.76" y1="393.7" x2="226.06" y2="393.7" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_62"/>
 <label x="226.06" y="393.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R24" gate="G$1" pin="1"/>
+<wire x1="358.14" y1="523.24" x2="332.74" y2="523.24" width="0.1524" layer="91"/>
+<label x="332.74" y="523.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCS3_ADC" class="0">
@@ -34132,7 +34162,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="226.06" y="284.48" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK1" class="5">
+<net name="CLK1" class="0">
 <segment>
 <wire x1="238.76" y1="276.86" x2="226.06" y2="276.86" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK1"/>
@@ -34371,12 +34401,22 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="IC5" gate="G$1" pin="IO_80"/>
 <label x="226.06" y="335.28" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R25" gate="G$1" pin="2"/>
+<wire x1="368.3" y1="518.16" x2="391.16" y2="518.16" width="0.1524" layer="91"/>
+<label x="368.3" y="518.16" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_SPARE0_P" class="2">
 <segment>
 <wire x1="238.76" y1="337.82" x2="226.06" y2="337.82" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_79"/>
 <label x="226.06" y="337.82" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R25" gate="G$1" pin="1"/>
+<wire x1="358.14" y1="518.16" x2="332.74" y2="518.16" width="0.1524" layer="91"/>
+<label x="332.74" y="518.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO113" class="0">
@@ -34500,12 +34540,22 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="IC5" gate="G$1" pin="IO_96"/>
 <label x="226.06" y="279.4" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R26" gate="G$1" pin="2"/>
+<wire x1="368.3" y1="513.08" x2="391.16" y2="513.08" width="0.1524" layer="91"/>
+<label x="368.3" y="513.08" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_SPARE1_P" class="2">
 <segment>
 <wire x1="238.76" y1="281.94" x2="226.06" y2="281.94" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_95"/>
 <label x="226.06" y="281.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R26" gate="G$1" pin="1"/>
+<wire x1="358.14" y1="513.08" x2="332.74" y2="513.08" width="0.1524" layer="91"/>
+<label x="332.74" y="513.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO130" class="0">
@@ -35385,12 +35435,22 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="IC5" gate="G$1" pin="CLK5"/>
 <label x="226.06" y="223.52" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R23" gate="G$1" pin="2"/>
+<wire x1="368.3" y1="528.32" x2="391.16" y2="528.32" width="0.1524" layer="91"/>
+<label x="368.3" y="528.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_CLK_P" class="2">
 <segment>
 <wire x1="238.76" y1="226.06" x2="226.06" y2="226.06" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK4"/>
 <label x="226.06" y="226.06" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R23" gate="G$1" pin="1"/>
+<wire x1="358.14" y1="528.32" x2="332.74" y2="528.32" width="0.1524" layer="91"/>
+<label x="332.74" y="528.32" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO206" class="0">
@@ -35543,14 +35603,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="284.48" y="345.44" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK6" class="5">
+<net name="CLK6" class="0">
 <segment>
 <wire x1="292.1" y1="337.82" x2="279.4" y2="337.82" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK6"/>
 <label x="284.48" y="337.82" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK7" class="5">
+<net name="CLK7" class="0">
 <segment>
 <wire x1="292.1" y1="335.28" x2="279.4" y2="335.28" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK7"/>
@@ -36195,14 +36255,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="419.1" y="546.1" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK15" class="5">
+<net name="CLK15" class="0">
 <segment>
 <wire x1="292.1" y1="83.82" x2="279.4" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK15"/>
 <label x="284.48" y="83.82" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK13" class="5">
+<net name="CLK13" class="0">
 <segment>
 <wire x1="292.1" y1="81.28" x2="279.4" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK13"/>
@@ -36376,14 +36436,14 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <label x="439.42" y="546.1" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK14" class="5">
+<net name="CLK14" class="0">
 <segment>
 <wire x1="292.1" y1="27.94" x2="279.4" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK14"/>
 <label x="284.48" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CLK12" class="5">
+<net name="CLK12" class="0">
 <segment>
 <wire x1="292.1" y1="25.4" x2="279.4" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="CLK12"/>
@@ -41015,6 +41075,8 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="106,6,60.96,220.98,BG,,,,,"/>
 <approved hash="106,6,60.96,302.26,CALTRIG,,,,,"/>
 <approved hash="106,7,238.76,276.86,CLK1,,,,,"/>
+<approved hash="106,7,279.4,386.08,CLK2,,,,,"/>
+<approved hash="106,7,279.4,388.62,CLK3,,,,,"/>
 <approved hash="106,7,279.4,337.82,CLK6,,,,,"/>
 <approved hash="106,7,279.4,335.28,CLK7,,,,,"/>
 <approved hash="106,7,238.76,528.32,CLK9,,,,,"/>
@@ -41055,6 +41117,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="106,7,238.76,236.22,IO109,,,,,"/>
 <approved hash="106,7,238.76,233.68,IO110,,,,,"/>
 <approved hash="106,7,238.76,210.82,IO113,,,,,"/>
+<approved hash="106,7,238.76,208.28,IO114,,,,,"/>
 <approved hash="106,7,238.76,205.74,IO115,,,,,"/>
 <approved hash="106,7,238.76,203.2,IO116,,,,,"/>
 <approved hash="106,7,238.76,198.12,IO117,,,,,"/>
@@ -41069,6 +41132,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="106,7,238.76,160.02,IO130,,,,,"/>
 <approved hash="106,7,238.76,157.48,IO131,,,,,"/>
 <approved hash="106,7,238.76,154.94,IO132,,,,,"/>
+<approved hash="106,7,238.76,152.4,IO133,,,,,"/>
 <approved hash="106,7,238.76,149.86,IO134,,,,,"/>
 <approved hash="106,7,238.76,147.32,IO135,,,,,"/>
 <approved hash="106,7,238.76,124.46,IO136,,,,,"/>
