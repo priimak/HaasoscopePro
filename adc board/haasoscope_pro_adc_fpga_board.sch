@@ -22356,7 +22356,6 @@ Diode with low voltage drop</description>
 <part name="R5" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="C3" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
-<part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C5" library="NFM31PC276B0J3L" deviceset="NFM31PC276B0J3L" device=""/>
 <part name="C6" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
@@ -22881,7 +22880,6 @@ Diode with low voltage drop</description>
 <part name="GND214" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="R217" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="5.1k"/>
 <part name="R218" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="5.1k"/>
-<part name="GND215" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="IC27" library="TPS7A7200RGTR" deviceset="TPS7A7200RGTR" device=""/>
 <part name="R219" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="J36" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
@@ -23200,6 +23198,7 @@ Diode with low voltage drop</description>
 <part name="LED2" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="LED3" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="IC4" library="TLV9102IPWR" deviceset="TLV9102IPWR" device=""/>
+<part name="GND1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -26743,9 +26742,6 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="-59.944" y="179.959" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-59.944" y="185.039" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND1" gate="1" x="-68.58" y="177.8" smashed="yes">
-<attribute name="VALUE" x="-71.12" y="175.26" size="1.778" layer="96"/>
-</instance>
 <instance part="GND2" gate="1" x="-58.42" y="177.8" smashed="yes">
 <attribute name="VALUE" x="-60.96" y="175.26" size="1.778" layer="96"/>
 </instance>
@@ -26883,12 +26879,11 @@ for CL05A105KA5NQNC</text>
 <label x="-83.82" y="200.66" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="C3" gate="C$1" pin="1"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="C4" gate="C$1" pin="1"/>
 <pinref part="GND2" gate="1" pin="GND"/>
+<pinref part="C3" gate="C$1" pin="1"/>
+<wire x1="-68.58" y1="180.34" x2="-58.42" y2="180.34" width="0.1524" layer="91"/>
+<junction x="-58.42" y="180.34"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="AGND_1"/>
@@ -34301,9 +34296,6 @@ between the two signals at the input buffer.</text>
 <attribute name="NAME" x="318.77" y="496.3414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="318.77" y="501.142" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND215" gate="1" x="320.04" y="492.76" smashed="yes">
-<attribute name="VALUE" x="320.04" y="492.506" size="1.778" layer="96" align="top-center"/>
-</instance>
 <instance part="IC27" gate="G$1" x="337.82" y="327.66" smashed="yes">
 <attribute name="NAME" x="364.49" y="345.44" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="364.49" y="342.9" size="1.778" layer="96" align="center-left"/>
@@ -34844,6 +34836,9 @@ between the two signals at the input buffer.</text>
 <attribute name="NAME" x="51.816" y="18.288" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="53.975" y="18.288" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="GND1" gate="1" x="320.04" y="492.76" smashed="yes">
+<attribute name="VALUE" x="320.04" y="492.506" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -35055,11 +35050,6 @@ between the two signals at the input buffer.</text>
 <pinref part="IC26" gate="G$1" pin="1.6V"/>
 <wire x1="281.94" y1="165.1" x2="292.1" y2="165.1" width="0.1524" layer="91"/>
 <label x="284.48" y="165.1" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R218" gate="G$1" pin="P$1"/>
-<pinref part="GND215" gate="1" pin="GND"/>
-<wire x1="320.04" y1="495.3" x2="320.04" y2="497.84" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC27" gate="G$1" pin="EP"/>
@@ -35430,6 +35420,11 @@ between the two signals at the input buffer.</text>
 <segment>
 <wire x1="106.68" y1="12.7" x2="99.06" y2="12.7" width="0.1524" layer="91"/>
 <label x="99.06" y="12.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R218" gate="G$1" pin="P$1"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="320.04" y1="495.3" x2="320.04" y2="497.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="2V8+" class="0">
@@ -36349,7 +36344,7 @@ between the two signals at the input buffer.</text>
 <pinref part="R163" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="GND1" class="4">
+<net name="N$138" class="0">
 <segment>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <pinref part="R218" gate="G$1" pin="P$2"/>

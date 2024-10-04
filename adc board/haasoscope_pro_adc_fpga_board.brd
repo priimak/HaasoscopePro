@@ -11713,7 +11713,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="IC2" pad="8"/>
 <contactref element="IC2" pad="10"/>
 <contactref element="IC2" pad="9"/>
-<contactref element="C3" pad="1"/>
 <contactref element="C4" pad="1"/>
 <contactref element="C6" pad="1"/>
 <contactref element="C7" pad="1"/>
@@ -12092,7 +12091,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="128.5" y="116" extent="1-16" drill="0.5"/>
 <via x="151.5" y="103" extent="1-16" drill="0.5"/>
 <via x="91.5" y="101" extent="1-16" drill="0.5"/>
-<via x="97.5" y="101" extent="1-16" drill="0.5"/>
 <via x="103.5" y="79" extent="1-16" drill="0.2"/>
 <via x="116.5" y="71" extent="1-16" drill="0.2"/>
 <via x="110.5" y="76" extent="1-16" drill="0.2"/>
@@ -12569,7 +12567,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="C254" pad="2"/>
 <contactref element="IC26" pad="10"/>
 <contactref element="R217" pad="P$1"/>
-<contactref element="R218" pad="P$1"/>
 <contactref element="IC27" pad="17"/>
 <contactref element="J36" pad="1"/>
 <contactref element="C255" pad="2"/>
@@ -13081,8 +13078,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="92.562" y1="108.438" x2="92.562" y2="107.775" width="0.1524" layer="1"/>
 <wire x1="91.45" y1="102" x2="91.5" y2="101.95" width="0.1524" layer="1"/>
 <wire x1="91.5" y1="101.95" x2="91.5" y2="101" width="0.1524" layer="1"/>
-<wire x1="97.45" y1="102" x2="97.5" y2="101.95" width="0.1524" layer="1"/>
-<wire x1="97.5" y1="101.95" x2="97.5" y2="101" width="0.1524" layer="1"/>
 <contactref element="R41" pad="P$1"/>
 <contactref element="R152" pad="P$1"/>
 <contactref element="R163" pad="P$1"/>
@@ -13095,6 +13090,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="R158" pad="P$1"/>
 <contactref element="R161" pad="P$1"/>
 <contactref element="IC4" pad="4"/>
+<contactref element="C3" pad="1"/>
+<contactref element="R218" pad="P$1"/>
 <wire x1="148.4145" y1="73.5115" x2="148.6645" y2="77.4115" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="3V3" class="1">
@@ -20799,11 +20796,12 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="R203" pad="1"/>
 <wire x1="103" y1="103.93306875" x2="103" y2="105.06693125" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="GND1" class="4">
+<signal name="N$138">
 <contactref element="LED1" pad="C"/>
 <contactref element="R218" pad="P$2"/>
-<wire x1="156.25" y1="145.5" x2="156.25" y2="144.07" width="0.254" layer="1"/>
-<wire x1="156.25" y1="144.07" x2="155.96" y2="143.78" width="0.254" layer="1"/>
+<wire x1="155.96" y1="143.78" x2="155.96" y2="143.83" width="0.254" layer="1"/>
+<wire x1="155.96" y1="143.83" x2="156.25" y2="144.12" width="0.254" layer="1"/>
+<wire x1="156.25" y1="144.12" x2="156.25" y2="145.5" width="0.254" layer="1"/>
 </signal>
 <signal name="N$59">
 <contactref element="R217" pad="P$2"/>
