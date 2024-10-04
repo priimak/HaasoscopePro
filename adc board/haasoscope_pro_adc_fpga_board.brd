@@ -10717,6 +10717,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="PS2" library="LMR33630ADDA" package="SOIC127P600X170-9N" value="LMR33630ADDA" x="192.3" y="147.7" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="SIMPLE SWITCHER 3.8V to 36V, 3A Synchronous Buck Converter With Ultra-Low EMI" x="192.3" y="147.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="1.7mm" x="192.3" y="147.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C841384" x="192.3" y="147.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="192.3" y="147.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMR33630ADDA" x="192.3" y="147.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMR33630ADDA" x="192.3" y="147.7" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10750,6 +10751,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="PS9" library="LMR33630ADDA" package="SOIC127P600X170-9N" value="LMR33630ADDA" x="192.3" y="132.7" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="SIMPLE SWITCHER 3.8V to 36V, 3A Synchronous Buck Converter With Ultra-Low EMI" x="192.3" y="132.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="1.7mm" x="192.3" y="132.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C841384" x="192.3" y="132.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="192.3" y="132.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMR33630ADDA" x="192.3" y="132.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMR33630ADDA" x="192.3" y="132.7" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10783,6 +10785,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="PS10" library="LMR33630ADDA" package="SOIC127P600X170-9N" value="LMR33630ADDA" x="192.3" y="117.7" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="SIMPLE SWITCHER 3.8V to 36V, 3A Synchronous Buck Converter With Ultra-Low EMI" x="192.3" y="117.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="1.7mm" x="192.3" y="117.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C841384" x="192.3" y="117.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="192.3" y="117.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMR33630ADDA" x="192.3" y="117.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMR33630ADDA" x="192.3" y="117.7" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10816,6 +10819,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="PS11" library="LMR33630ADDA" package="SOIC127P600X170-9N" value="LMR33630ADDA" x="191.3" y="42.2" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="SIMPLE SWITCHER 3.8V to 36V, 3A Synchronous Buck Converter With Ultra-Low EMI" x="191.3" y="42.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="1.7mm" x="191.3" y="42.2" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C841384" x="191.3" y="42.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="191.3" y="42.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMR33630ADDA" x="191.3" y="42.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMR33630ADDA" x="191.3" y="42.2" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10849,6 +10853,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="PS12" library="LMR33630ADDA" package="SOIC127P600X170-9N" value="LMR33630ADDA" x="191.3" y="27.7" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="SIMPLE SWITCHER 3.8V to 36V, 3A Synchronous Buck Converter With Ultra-Low EMI" x="191.3" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="1.7mm" x="191.3" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C841384" x="191.3" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="191.3" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMR33630ADDA" x="191.3" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMR33630ADDA" x="191.3" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10882,6 +10887,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="PS13" library="LMR33630ADDA" package="SOIC127P600X170-9N" value="LMR33630ADDA" x="191.3" y="13.7" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="SIMPLE SWITCHER 3.8V to 36V, 3A Synchronous Buck Converter With Ultra-Low EMI" x="191.3" y="13.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="1.7mm" x="191.3" y="13.7" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C841384" x="191.3" y="13.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="191.3" y="13.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMR33630ADDA" x="191.3" y="13.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMR33630ADDA" x="191.3" y="13.7" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10915,6 +10921,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="PS14" library="LMR33630ADDA" package="SOIC127P600X170-9N" value="LMR33630ADDA" x="192.2" y="102.2" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="SIMPLE SWITCHER 3.8V to 36V, 3A Synchronous Buck Converter With Ultra-Low EMI" x="192.2" y="102.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="1.7mm" x="192.2" y="102.2" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C841384" x="192.2" y="102.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="192.2" y="102.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMR33630ADDA" x="192.2" y="102.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMR33630ADDA" x="192.2" y="102.2" size="1.778" layer="27" rot="R90" display="off"/>

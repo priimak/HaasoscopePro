@@ -22895,7 +22895,9 @@ Diode with low voltage drop</description>
 <part name="C258" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND217" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="CN2" library="adafruit" deviceset="DCBARREL" device="PTH" value="12Vin"/>
-<part name="PS2" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
+<part name="PS2" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
+<attribute name="LCSC" value="C841384"/>
+</part>
 <part name="C259" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND218" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C260" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -22909,7 +22911,9 @@ Diode with low voltage drop</description>
 <part name="R221" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="R222" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="39k"/>
 <part name="GND220" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="PS9" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
+<part name="PS9" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
+<attribute name="LCSC" value="C841384"/>
+</part>
 <part name="C263" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND221" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C264" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -22923,7 +22927,9 @@ Diode with low voltage drop</description>
 <part name="R223" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="R224" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="GND223" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="PS10" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
+<part name="PS10" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
+<attribute name="LCSC" value="C841384"/>
+</part>
 <part name="C267" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND224" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C268" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -22937,7 +22943,9 @@ Diode with low voltage drop</description>
 <part name="R225" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="R226" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="GND226" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="PS11" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
+<part name="PS11" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
+<attribute name="LCSC" value="C841384"/>
+</part>
 <part name="C271" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND227" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C272" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -22951,7 +22959,9 @@ Diode with low voltage drop</description>
 <part name="R227" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="R228" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
 <part name="GND229" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="PS12" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
+<part name="PS12" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
+<attribute name="LCSC" value="C841384"/>
+</part>
 <part name="C275" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND230" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C276" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
@@ -22965,7 +22975,9 @@ Diode with low voltage drop</description>
 <part name="R229" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="R230" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
 <part name="GND232" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="PS13" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
+<part name="PS13" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
+<attribute name="LCSC" value="C841384"/>
+</part>
 <part name="C279" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C280" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C281" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="1uF"/>
@@ -22976,7 +22988,9 @@ Diode with low voltage drop</description>
 <part name="J44" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R231" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="R232" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
-<part name="PS14" library="LMR33630ADDA" deviceset="LMR33630ADDA" device=""/>
+<part name="PS14" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
+<attribute name="LCSC" value="C841384"/>
+</part>
 <part name="C283" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF">
 <attribute name="LCSC" value="C307331"/>
 </part>
@@ -34341,6 +34355,7 @@ between the two signals at the input buffer.</text>
 <instance part="PS2" gate="G$1" x="114.3" y="459.74" smashed="yes">
 <attribute name="NAME" x="120.65" y="467.36" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="120.65" y="464.82" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="114.3" y="459.74" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C259" gate="C$1" x="96.52" y="454.66" smashed="yes">
 <attribute name="NAME" x="98.044" y="455.041" size="1.778" layer="95"/>
@@ -34384,6 +34399,7 @@ between the two signals at the input buffer.</text>
 <instance part="PS9" gate="G$1" x="114.3" y="393.7" smashed="yes">
 <attribute name="NAME" x="120.65" y="401.32" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="120.65" y="398.78" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="114.3" y="393.7" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C263" gate="C$1" x="96.52" y="388.62" smashed="yes">
 <attribute name="NAME" x="98.044" y="389.001" size="1.778" layer="95"/>
@@ -34427,6 +34443,7 @@ between the two signals at the input buffer.</text>
 <instance part="PS10" gate="G$1" x="116.84" y="322.58" smashed="yes">
 <attribute name="NAME" x="123.19" y="330.2" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="123.19" y="327.66" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="116.84" y="322.58" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C267" gate="C$1" x="99.06" y="317.5" smashed="yes">
 <attribute name="NAME" x="100.584" y="317.881" size="1.778" layer="95"/>
@@ -34470,6 +34487,7 @@ between the two signals at the input buffer.</text>
 <instance part="PS11" gate="G$1" x="119.38" y="248.92" smashed="yes">
 <attribute name="NAME" x="125.73" y="256.54" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="125.73" y="254" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="119.38" y="248.92" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C271" gate="C$1" x="101.6" y="243.84" smashed="yes">
 <attribute name="NAME" x="103.124" y="244.221" size="1.778" layer="95"/>
@@ -34513,6 +34531,7 @@ between the two signals at the input buffer.</text>
 <instance part="PS12" gate="G$1" x="119.38" y="165.1" smashed="yes">
 <attribute name="NAME" x="125.73" y="172.72" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="125.73" y="170.18" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="119.38" y="165.1" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C275" gate="C$1" x="101.6" y="160.02" smashed="yes">
 <attribute name="NAME" x="103.124" y="160.401" size="1.778" layer="95"/>
@@ -34556,6 +34575,7 @@ between the two signals at the input buffer.</text>
 <instance part="PS13" gate="G$1" x="119.38" y="111.76" smashed="yes">
 <attribute name="NAME" x="125.73" y="119.38" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="125.73" y="116.84" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="119.38" y="111.76" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C279" gate="C$1" x="101.6" y="106.68" smashed="yes">
 <attribute name="NAME" x="103.124" y="107.061" size="1.778" layer="95"/>
@@ -34590,6 +34610,7 @@ between the two signals at the input buffer.</text>
 <instance part="PS14" gate="G$1" x="119.38" y="63.5" smashed="yes">
 <attribute name="NAME" x="125.73" y="71.12" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="125.73" y="68.58" size="1.778" layer="96" align="center-left"/>
+<attribute name="LCSC" x="119.38" y="63.5" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C283" gate="C$1" x="101.6" y="58.42" smashed="yes">
 <attribute name="NAME" x="103.124" y="58.801" size="1.778" layer="95"/>
