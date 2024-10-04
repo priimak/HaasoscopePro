@@ -29915,7 +29915,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="GND173" gate="1" pin="GND"/>
 </segment>
 </net>
-<net name="+3V3" class="0">
+<net name="3V3" class="1">
 <segment>
 <wire x1="195.58" y1="109.22" x2="195.58" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="195.58" y1="73.66" x2="195.58" y2="81.28" width="0.1524" layer="91"/>
