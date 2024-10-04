@@ -281,8 +281,8 @@ GND</text>
 <text x="213.728" y="113.211" size="0.8128" layer="21">12V</text>
 <text x="136.5" y="16.5" size="0.8128" layer="21" rot="R90">BI6</text>
 <text x="118.5" y="152" size="0.8128" layer="21" rot="R180">Reload</text>
-<wire x1="220" y1="157" x2="0" y2="157" width="0.254" layer="47"/>
-<wire x1="220" y1="3" x2="0" y2="3" width="0.254" layer="47"/>
+<wire x1="220" y1="157" x2="0" y2="157" width="0.254" layer="21"/>
+<wire x1="220" y1="3" x2="0" y2="3" width="0.254" layer="21"/>
 <text x="203.728" y="136.711" size="0.8128" layer="21">LVDS OUT</text>
 <text x="203.728" y="43.211" size="0.8128" layer="21">LVDS IN</text>
 </plain>
@@ -10962,6 +10962,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="191.3" y="10.2" size="0.8128" layer="21" rot="R180"/>
 </element>
 <element name="D10" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" package="SMA-DIODE" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A" x="155.3" y="11.7" smashed="yes" rot="R90">
+<attribute name="JLC_ROTATION" value="180" x="155.3" y="11.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C64982" x="155.3" y="11.7" size="0.8128" layer="27" rot="R90" display="off"/>
 <attribute name="PROD_ID" value="DIO-09886" x="155.3" y="11.7" size="0.8128" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="156.951" y="11.7" size="0.8128" layer="21" font="vector" rot="R90" align="top-center"/>
@@ -11490,8 +11491,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R12" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="128.5" y="75.5" smashed="yes" rot="R180"/>
 <element name="R13" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="128.5" y="74.5" smashed="yes" rot="R180"/>
 <element name="R22" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="128.5" y="73.5" smashed="yes" rot="R180"/>
-<element name="OUTSPLPIT" library="adafruit" package="SMA_EDGELAUNCH" value="50" x="1" y="12.5" smashed="yes">
-<attribute name="NAME" x="8.58" y="19.485" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<element name="OUTSPLPIT" library="adafruit" package="SMA_EDGELAUNCH" value="50" x="1" y="15.5" smashed="yes">
+<attribute name="NAME" x="8.58" y="22.485" size="0.8128" layer="25" ratio="18" rot="R180"/>
 </element>
 <element name="R23" library="PP_Passives" package="0201" value="100" x="116.5" y="69.5" smashed="yes" rot="R270"/>
 <element name="R24" library="PP_Passives" package="0201" value="100" x="119.5" y="69.5" smashed="yes" rot="R270"/>
@@ -13034,13 +13035,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <vertex x="20.2" y="125.2"/>
 </polygon>
 <wire x1="178.3" y1="16.7" x2="197.3" y2="16.7" width="0.3048" layer="16"/>
-<via x="12.95" y="15.55" extent="1-16" drill="0.2"/>
-<via x="11.95" y="10.05" extent="1-16" drill="0.2"/>
-<via x="21.95" y="10.55" extent="1-16" drill="0.2"/>
-<via x="22.95" y="15.55" extent="1-16" drill="0.2"/>
-<via x="35.45" y="15.05" extent="1-16" drill="0.2"/>
-<via x="36.45" y="10.05" extent="1-16" drill="0.2"/>
-<via x="45.95" y="13.05" extent="1-16" drill="0.2"/>
+<via x="13.45" y="18.05" extent="1-16" drill="0.2"/>
+<via x="11.45" y="13.55" extent="1-16" drill="0.2"/>
+<via x="20.95" y="13.55" extent="1-16" drill="0.2"/>
+<via x="26.45" y="17.55" extent="1-16" drill="0.2"/>
+<via x="36.45" y="17.55" extent="1-16" drill="0.2"/>
+<via x="32.45" y="13.55" extent="1-16" drill="0.2"/>
+<via x="43.95" y="13.05" extent="1-16" drill="0.2"/>
 <via x="46.45" y="18.05" extent="1-16" drill="0.2"/>
 <via x="13.95" y="35.55" extent="1-16" drill="0.2"/>
 <via x="38.45" y="35.05" extent="1-16" drill="0.2"/>
@@ -19321,9 +19322,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="R169" pad="P$2"/>
 <contactref element="R170" pad="P$2"/>
 <contactref element="OUTSPLPIT" pad="P"/>
-<wire x1="3.032" y1="12.5" x2="40" y2="12.5" width="0.1524" layer="1"/>
-<wire x1="40" y1="12.5" x2="43" y2="15.5" width="0.1524" layer="1"/>
-<wire x1="43" y1="15.5" x2="50.85" y2="15.5" width="0.1524" layer="1"/>
+<wire x1="3.032" y1="15.5" x2="50.85" y2="15.5" width="0.1524" layer="1"/>
 <wire x1="50.85" y1="15.5" x2="50.9" y2="15.45" width="0.1524" layer="1"/>
 <wire x1="50.9" y1="15.45" x2="52.5" y2="15.45" width="0.1524" layer="1"/>
 <wire x1="52.5" y1="15.45" x2="52.75" y2="15.7" width="0.1524" layer="1"/>
