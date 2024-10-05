@@ -285,6 +285,9 @@ GND</text>
 <text x="203.728" y="43.211" size="0.8128" layer="21">LVDS IN</text>
 <text x="149.388" y="154.305" size="0.8128" layer="21" rot="R180">3.3V</text>
 <text x="148.888" y="106.305" size="0.8128" layer="21" rot="R180">GND</text>
+<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.00
+by DrAndyHaas
+October 2024</text>
 </plain>
 <libraries>
 <library name="con-coax" urn="urn:adsk.eagle:library:133">
@@ -22714,7 +22717,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 </signal>
 </signals>
 <mfgpreviewcolors>
-<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8AA0000"/>
 <mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
 <mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
