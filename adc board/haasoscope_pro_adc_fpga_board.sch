@@ -22342,6 +22342,12 @@ Diode with low voltage drop</description>
 <class number="4" name="gnd" width="0" drill="0">
 </class>
 <class number="5" name="critical" width="0.12" drill="0">
+<clearance class="0" value="0.15"/>
+<clearance class="1" value="0.15"/>
+<clearance class="2" value="0.15"/>
+<clearance class="3" value="0.15"/>
+<clearance class="4" value="0.15"/>
+<clearance class="5" value="0.15"/>
 </class>
 </classes>
 <parts>
@@ -33763,14 +33769,6 @@ between the two signals at the input buffer.</text>
 <junction x="81.28" y="40.64"/>
 </segment>
 </net>
-<net name="VCCA" class="1">
-<segment>
-<pinref part="IC8" gate="IC" pin="VCCA"/>
-<wire x1="73.66" y1="111.76" x2="86.36" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="C115" gate="C$1" pin="2"/>
-<label x="73.66" y="111.76" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="N$74" class="0">
 <segment>
 <pinref part="IC8" gate="IC" pin="!RESET"/>
@@ -34108,6 +34106,14 @@ between the two signals at the input buffer.</text>
 <segment>
 <pinref part="R179" gate="G$1" pin="P$2"/>
 <pinref part="R157" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="VCCA_FTDI" class="1">
+<segment>
+<pinref part="C115" gate="C$1" pin="2"/>
+<pinref part="IC8" gate="IC" pin="VCCA"/>
+<wire x1="73.66" y1="111.76" x2="86.36" y2="111.76" width="0.1524" layer="91"/>
+<label x="73.66" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -37663,6 +37669,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="102,5,220.98,185.42,+3V3,3V3,,,,"/>
 <approved hash="102,5,269.24,66.04,+3V3,3V3,,,,"/>
 <approved hash="102,8,86.36,114.3,VCCCORE,VCC1V8,,,,"/>
+<approved hash="102,8,86.36,111.76,VCCA,VCCA_FTDI,,,,"/>
 <approved hash="104,1,106.68,243.84,FL3,VS+,2V5+,,,"/>
 <approved hash="104,1,106.68,238.76,FL3,VS-,2V5-,,,"/>
 <approved hash="104,1,327.66,71.12,J15,VCC,5V,,,"/>
