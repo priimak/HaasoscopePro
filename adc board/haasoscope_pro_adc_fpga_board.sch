@@ -23388,7 +23388,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="SUPPLY82" gate="GND" pin="GND"/>
 <pinref part="C75" gate="G$1" pin="P$2"/>
@@ -24169,7 +24169,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="SUPPLY28" gate="GND" pin="GND"/>
 <pinref part="C84" gate="G$1" pin="P$2"/>
@@ -24970,7 +24970,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="C57" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="190.5" x2="45.72" y2="187.96" width="0.1524" layer="91"/>
@@ -25491,7 +25491,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="IC21" gate="G$1" pin="PD"/>
 <wire x1="86.36" y1="137.16" x2="96.52" y2="137.16" width="0.1524" layer="91"/>
@@ -26318,7 +26318,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="GND146" gate="1" pin="GND"/>
 <pinref part="C148" gate="G$1" pin="P$1"/>
@@ -26868,7 +26868,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="DIR4"/>
 <wire x1="-116.84" y1="200.66" x2="-127" y2="200.66" width="0.1524" layer="91"/>
@@ -28980,7 +28980,7 @@ between the two signals at the input buffer.</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="GND_1"/>
 <wire x1="238.76" y1="612.14" x2="226.06" y2="612.14" width="0.1524" layer="91"/>
@@ -33584,7 +33584,7 @@ between the two signals at the input buffer.</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="IC8" gate="IC" pin="AGND"/>
 <wire x1="99.06" y1="15.24" x2="99.06" y2="10.16" width="0.1524" layer="91"/>
@@ -34904,7 +34904,7 @@ between the two signals at the input buffer.</text>
 <label x="215.9" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="J30" gate="G$1" pin="1"/>
 <wire x1="35.56" y1="58.42" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
@@ -36737,7 +36737,7 @@ between the two signals at the input buffer.</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="C6" gate="C$1" pin="1"/>
 <pinref part="GND3" gate="1" pin="GND"/>
@@ -37426,7 +37426,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="4">
+<net name="GND" class="0">
 <segment>
 <pinref part="C44" gate="G$1" pin="2"/>
 <pinref part="SUPPLY61" gate="GND" pin="GND"/>
