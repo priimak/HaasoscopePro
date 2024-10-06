@@ -23352,21 +23352,11 @@ for CL05A105KA5NQNC</text>
 <attribute name="VALUE" x="349.25" y="185.42" size="1.778" layer="96" align="center-left"/>
 <attribute name="LCSC" x="342.9" y="185.42" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
-<instance part="U$3" gate="G$1" x="180.34" y="66.04" smashed="yes">
-<attribute name="NAME" x="176.51583125" y="82.0753" size="1.778" layer="95"/>
-<attribute name="VALUE" x="176.5228" y="79.355" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY107" gate="GND" x="177.8" y="45.72" smashed="yes"/>
 <instance part="J15" gate="G$1" x="320.04" y="63.5" smashed="yes">
 <attribute name="NAME" x="307.34" y="76.2" size="1.778" layer="95"/>
 <attribute name="VALUE" x="307.34" y="73.66" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY108" gate="GND" x="327.66" y="53.34" smashed="yes"/>
-<instance part="U$1" gate="G$1" x="238.76" y="66.04" smashed="yes">
-<attribute name="NAME" x="234.93583125" y="82.0753" size="1.778" layer="95"/>
-<attribute name="VALUE" x="234.9428" y="79.355" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY5" gate="GND" x="236.22" y="45.72" smashed="yes"/>
 <instance part="OUTSPLPIT" gate="G$1" x="421.64" y="254" smashed="yes" rot="MR180">
 <attribute name="NAME" x="429.26" y="251.46" size="1.27" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="429.26" y="254" size="1.27" layer="95" rot="MR180"/>
@@ -23463,16 +23453,8 @@ for CL05A105KA5NQNC</text>
 <wire x1="342.9" y1="185.42" x2="345.44" y2="185.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="SHIELD"/>
-<pinref part="SUPPLY107" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="J15" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY108" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="SHIELD"/>
-<pinref part="SUPPLY5" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="OUTSPLPIT" gate="G$1" pin="GND4"/>
@@ -23878,118 +23860,6 @@ for CL05A105KA5NQNC</text>
 <wire x1="360.68" y1="177.8" x2="373.38" y2="177.8" width="0.1524" layer="91"/>
 <label x="365.76" y="177.8" size="1.778" layer="95"/>
 <pinref part="K12" gate="G$1" pin="COIL-"/>
-</segment>
-</net>
-<net name="LVDSOUT_TRIG_P" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="1"/>
-<wire x1="203.2" y1="73.66" x2="193.04" y2="73.66" width="0.1524" layer="91"/>
-<label x="195.58" y="73.66" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSOUT_TRIG_N" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="2"/>
-<wire x1="203.2" y1="71.12" x2="193.04" y2="71.12" width="0.1524" layer="91"/>
-<label x="195.58" y="71.12" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSOUT_SPARE1_P" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="4"/>
-<wire x1="203.2" y1="66.04" x2="193.04" y2="66.04" width="0.1524" layer="91"/>
-<label x="195.58" y="66.04" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSOUT_SPARE1_N" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="5"/>
-<wire x1="203.2" y1="63.5" x2="193.04" y2="63.5" width="0.1524" layer="91"/>
-<label x="195.58" y="63.5" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSOUT_SPARE0_N" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="6"/>
-<wire x1="203.2" y1="60.96" x2="193.04" y2="60.96" width="0.1524" layer="91"/>
-<label x="195.58" y="60.96" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSOUT_CLK_P" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="7"/>
-<wire x1="203.2" y1="58.42" x2="193.04" y2="58.42" width="0.1524" layer="91"/>
-<label x="195.58" y="58.42" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSOUT_CLK_N" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="8"/>
-<wire x1="203.2" y1="55.88" x2="193.04" y2="55.88" width="0.1524" layer="91"/>
-<label x="195.58" y="55.88" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSOUT_SPARE0_P" class="2">
-<segment>
-<pinref part="U$3" gate="G$1" pin="3"/>
-<wire x1="203.2" y1="68.58" x2="193.04" y2="68.58" width="0.1524" layer="91"/>
-<label x="195.58" y="68.58" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_TRIG_P" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="1"/>
-<wire x1="261.62" y1="73.66" x2="251.46" y2="73.66" width="0.1524" layer="91"/>
-<label x="254" y="73.66" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_TRIG_N" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="2"/>
-<wire x1="261.62" y1="71.12" x2="251.46" y2="71.12" width="0.1524" layer="91"/>
-<label x="254" y="71.12" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_SPARE0_P" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="3"/>
-<wire x1="261.62" y1="68.58" x2="251.46" y2="68.58" width="0.1524" layer="91"/>
-<label x="254" y="68.58" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_SPARE1_P" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="4"/>
-<wire x1="261.62" y1="66.04" x2="251.46" y2="66.04" width="0.1524" layer="91"/>
-<label x="254" y="66.04" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_SPARE1_N" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="5"/>
-<wire x1="261.62" y1="63.5" x2="251.46" y2="63.5" width="0.1524" layer="91"/>
-<label x="254" y="63.5" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_SPARE0_N" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="6"/>
-<wire x1="261.62" y1="60.96" x2="251.46" y2="60.96" width="0.1524" layer="91"/>
-<label x="254" y="60.96" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_CLK_P" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="7"/>
-<wire x1="261.62" y1="58.42" x2="251.46" y2="58.42" width="0.1524" layer="91"/>
-<label x="254" y="58.42" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="LVDSIN_CLK_N" class="2">
-<segment>
-<pinref part="U$1" gate="G$1" pin="8"/>
-<wire x1="261.62" y1="55.88" x2="251.46" y2="55.88" width="0.1524" layer="91"/>
-<label x="254" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -28976,6 +28846,16 @@ between the two signals at the input buffer.</text>
 <attribute name="NAME" x="358.14" y="518.16" size="1.016" layer="95" font="vector" rot="MR180"/>
 <attribute name="VALUE" x="358.14" y="515.62" size="1.016" layer="96" font="vector"/>
 </instance>
+<instance part="U$3" gate="G$1" x="2.54" y="332.74" smashed="yes">
+<attribute name="NAME" x="-1.28416875" y="348.7753" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-1.2772" y="346.055" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY107" gate="GND" x="0" y="312.42" smashed="yes"/>
+<instance part="U$1" gate="G$1" x="60.96" y="332.74" smashed="yes">
+<attribute name="NAME" x="57.13583125" y="348.7753" size="1.778" layer="95"/>
+<attribute name="VALUE" x="57.1428" y="346.055" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY5" gate="GND" x="58.42" y="312.42" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -29462,6 +29342,14 @@ between the two signals at the input buffer.</text>
 <pinref part="LED47" gate="G$1" pin="C"/>
 <junction x="38.1" y="520.7"/>
 <pinref part="GND56" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SHIELD"/>
+<pinref part="SUPPLY107" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SHIELD"/>
+<pinref part="SUPPLY5" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -30365,6 +30253,11 @@ between the two signals at the input buffer.</text>
 <wire x1="368.3" y1="523.24" x2="391.16" y2="523.24" width="0.1524" layer="91"/>
 <label x="368.3" y="523.24" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="2"/>
+<wire x1="83.82" y1="337.82" x2="73.66" y2="337.82" width="0.1524" layer="91"/>
+<label x="76.2" y="337.82" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_TRIG_P" class="2">
 <segment>
@@ -30376,6 +30269,11 @@ between the two signals at the input buffer.</text>
 <pinref part="R24" gate="G$1" pin="1"/>
 <wire x1="358.14" y1="523.24" x2="332.74" y2="523.24" width="0.1524" layer="91"/>
 <label x="332.74" y="523.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="1"/>
+<wire x1="83.82" y1="340.36" x2="73.66" y2="340.36" width="0.1524" layer="91"/>
+<label x="76.2" y="340.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCS3_ADC" class="0">
@@ -30502,12 +30400,22 @@ between the two signals at the input buffer.</text>
 <pinref part="IC5" gate="G$1" pin="IO_97"/>
 <label x="226.06" y="271.78" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="2"/>
+<wire x1="25.4" y1="337.82" x2="15.24" y2="337.82" width="0.1524" layer="91"/>
+<label x="17.78" y="337.82" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSOUT_TRIG_P" class="2">
 <segment>
 <wire x1="238.76" y1="269.24" x2="226.06" y2="269.24" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_98"/>
 <label x="226.06" y="269.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="340.36" x2="15.24" y2="340.36" width="0.1524" layer="91"/>
+<label x="17.78" y="340.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO99" class="0">
@@ -30733,6 +30641,11 @@ between the two signals at the input buffer.</text>
 <wire x1="368.3" y1="518.16" x2="391.16" y2="518.16" width="0.1524" layer="91"/>
 <label x="368.3" y="518.16" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="6"/>
+<wire x1="83.82" y1="327.66" x2="73.66" y2="327.66" width="0.1524" layer="91"/>
+<label x="76.2" y="327.66" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_SPARE0_P" class="2">
 <segment>
@@ -30744,6 +30657,11 @@ between the two signals at the input buffer.</text>
 <pinref part="R25" gate="G$1" pin="1"/>
 <wire x1="358.14" y1="518.16" x2="332.74" y2="518.16" width="0.1524" layer="91"/>
 <label x="332.74" y="518.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="3"/>
+<wire x1="83.82" y1="335.28" x2="73.66" y2="335.28" width="0.1524" layer="91"/>
+<label x="76.2" y="335.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO113" class="0">
@@ -30758,6 +30676,11 @@ between the two signals at the input buffer.</text>
 <wire x1="238.76" y1="162.56" x2="226.06" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_129"/>
 <label x="226.06" y="162.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="7"/>
+<wire x1="25.4" y1="325.12" x2="15.24" y2="325.12" width="0.1524" layer="91"/>
+<label x="17.78" y="325.12" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO115" class="0">
@@ -30872,6 +30795,11 @@ between the two signals at the input buffer.</text>
 <wire x1="368.3" y1="513.08" x2="391.16" y2="513.08" width="0.1524" layer="91"/>
 <label x="368.3" y="513.08" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="5"/>
+<wire x1="83.82" y1="330.2" x2="73.66" y2="330.2" width="0.1524" layer="91"/>
+<label x="76.2" y="330.2" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_SPARE1_P" class="2">
 <segment>
@@ -30883,6 +30811,11 @@ between the two signals at the input buffer.</text>
 <pinref part="R26" gate="G$1" pin="1"/>
 <wire x1="358.14" y1="513.08" x2="332.74" y2="513.08" width="0.1524" layer="91"/>
 <label x="332.74" y="513.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="4"/>
+<wire x1="83.82" y1="332.74" x2="73.66" y2="332.74" width="0.1524" layer="91"/>
+<label x="76.2" y="332.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO130" class="0">
@@ -30911,6 +30844,11 @@ between the two signals at the input buffer.</text>
 <wire x1="238.76" y1="165.1" x2="226.06" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_128"/>
 <label x="226.06" y="165.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="8"/>
+<wire x1="25.4" y1="322.58" x2="15.24" y2="322.58" width="0.1524" layer="91"/>
+<label x="17.78" y="322.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO134" class="0">
@@ -31767,6 +31705,11 @@ between the two signals at the input buffer.</text>
 <wire x1="368.3" y1="528.32" x2="391.16" y2="528.32" width="0.1524" layer="91"/>
 <label x="368.3" y="528.32" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="8"/>
+<wire x1="83.82" y1="322.58" x2="73.66" y2="322.58" width="0.1524" layer="91"/>
+<label x="76.2" y="322.58" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSIN_CLK_P" class="2">
 <segment>
@@ -31778,6 +31721,11 @@ between the two signals at the input buffer.</text>
 <pinref part="R23" gate="G$1" pin="1"/>
 <wire x1="358.14" y1="528.32" x2="332.74" y2="528.32" width="0.1524" layer="91"/>
 <label x="332.74" y="528.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="7"/>
+<wire x1="83.82" y1="325.12" x2="73.66" y2="325.12" width="0.1524" layer="91"/>
+<label x="76.2" y="325.12" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO206" class="0">
@@ -33336,12 +33284,22 @@ between the two signals at the input buffer.</text>
 <pinref part="IC5" gate="G$1" pin="IO_112"/>
 <label x="226.06" y="218.44" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="4"/>
+<wire x1="25.4" y1="332.74" x2="15.24" y2="332.74" width="0.1524" layer="91"/>
+<label x="17.78" y="332.74" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSOUT_SPARE1_N" class="2">
 <segment>
 <wire x1="238.76" y1="220.98" x2="226.06" y2="220.98" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_111"/>
 <label x="226.06" y="220.98" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="5"/>
+<wire x1="25.4" y1="330.2" x2="15.24" y2="330.2" width="0.1524" layer="91"/>
+<label x="17.78" y="330.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSOUT_SPARE0_P" class="2">
@@ -33350,12 +33308,22 @@ between the two signals at the input buffer.</text>
 <pinref part="IC5" gate="G$1" pin="IO_82"/>
 <label x="226.06" y="330.2" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="3"/>
+<wire x1="25.4" y1="335.28" x2="15.24" y2="335.28" width="0.1524" layer="91"/>
+<label x="17.78" y="335.28" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LVDSOUT_SPARE0_N" class="2">
 <segment>
 <wire x1="238.76" y1="332.74" x2="226.06" y2="332.74" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_81"/>
 <label x="226.06" y="332.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="6"/>
+<wire x1="25.4" y1="327.66" x2="15.24" y2="327.66" width="0.1524" layer="91"/>
+<label x="17.78" y="327.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CLK3" class="0">
