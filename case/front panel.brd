@@ -170,6 +170,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
+<fusionsync huburn="a.YnVzaW5lc3M6eWFob28zMDIxODA" projecturn="a.YnVzaW5lc3M6eWFob28zMDIxODAjRDIwMjMwMzEzNjE5OTc3MDAx" f3durn="urn:adsk.wipprod:dm.lineage:pVvtWlPkS7yhgk37HH_hmQ" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="8b4b67a5-cfe7-420c-969d-1ed290a912fc" lastsyncedrevisionid="8b4b67a5-cfe7-420c-969d-1ed290a912fc" lastboardhashguid="32e4d9ab-492d-7df6-15b7-2cb58b874027" lastpushedtime="2024-10-07T17:53:11Z" linktopcb3d="true"/>
 <plain>
 <wire x1="-2.5" y1="26.23" x2="-2.5" y2="4.1" width="0" layer="20"/>
 <wire x1="-2.5" y1="4.1" x2="1.5" y2="0.1" width="0" layer="20" curve="90"/>
@@ -721,6 +722,11 @@ design rules under a new name.</description>
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
 with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports Fusion synchronisation.
+This feature will not be available in this version and saving
+the document will break the link to the Fusion PCB feature.
 </note>
 <note version="8.3" severity="warning">
 Since Version 8.3, EAGLE supports URNs for individual library
