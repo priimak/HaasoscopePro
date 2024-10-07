@@ -22321,6 +22321,70 @@ Diode with low voltage drop</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Seeed-Resistor" urn="urn:adsk.eagle:library:474">
+<packages>
+<package name="R0603" urn="urn:adsk.eagle:footprint:32775/1" library_version="1">
+<wire x1="0.635" y1="1.397" x2="0.635" y2="-1.397" width="0.127" layer="21"/>
+<wire x1="0.635" y1="-1.397" x2="-0.635" y2="-1.397" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-1.397" x2="-0.635" y2="1.397" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="1.397" x2="0.635" y2="1.397" width="0.127" layer="21"/>
+<smd name="1" x="0" y="0.762" dx="0.889" dy="0.889" layer="1" roundness="25" rot="R270"/>
+<smd name="2" x="0" y="-0.762" dx="0.889" dy="0.889" layer="1" roundness="25" rot="R270"/>
+<text x="-1.016" y="-1.905" size="0.889" layer="25" ratio="11" rot="R90">&gt;NAME</text>
+<text x="1.435" y="-1.605" size="0.635" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="R0603" urn="urn:adsk.eagle:package:32791/1" type="box" library_version="1">
+<packageinstances>
+<packageinstance name="R0603"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="THERMISTOR-RES-NTC-100K(0603)" urn="urn:adsk.eagle:symbol:32790/1" library_version="1">
+<pin name="1" x="-7.62" y="0" visible="pin" length="short"/>
+<pin name="2" x="7.62" y="0" visible="pin" length="short" rot="R180"/>
+<text x="-6.35" y="2.54" size="1.27" layer="95" ratio="10">&gt;NAME</text>
+<text x="0" y="2.54" size="1.27" layer="96" ratio="10">&gt;VALUE</text>
+<wire x1="-3.81" y1="1.27" x2="3.81" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="1.27" x2="3.81" y2="0" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="0" x2="3.81" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="-1.27" x2="-3.81" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="-1.27" x2="-3.81" y2="0" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="0" x2="-3.81" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-3.81" y2="0" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="0" x2="3.81" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="3.81" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="-3.175" y2="-3.175" width="0.1524" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="THERMISTOR-RES-NTC-100K(0603)" urn="urn:adsk.eagle:component:32876/1" prefix="R" uservalue="yes" library_version="1">
+<description>314110001</description>
+<gates>
+<gate name="G$1" symbol="THERMISTOR-RES-NTC-100K(0603)" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="R0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:32791/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="NCP18WF104F03RC"/>
+<attribute name="VALUE" value="NCP18WF104F03RC" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -22627,7 +22691,7 @@ Diode with low voltage drop</description>
 <part name="R128" library="passives" deviceset="RESISTOR" device="0402_RES" value="0"/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R129" library="passives" deviceset="RESISTOR" device="0402_RES" value="0"/>
-<part name="R130" library="passives" deviceset="RESISTOR" device="0402_RES" value="0"/>
+<part name="R130" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
 <part name="C50" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="GND52" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -23205,6 +23269,14 @@ Diode with low voltage drop</description>
 <part name="LED3" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="IC4" library="TLV9102IPWR" deviceset="TLV9102IPWR" device=""/>
 <part name="GND1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="R206" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
+<part name="J1" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
+<part name="GND53" library="supply1" deviceset="GND" device=""/>
+<part name="R207" library="Seeed-Resistor" library_urn="urn:adsk.eagle:library:474" deviceset="THERMISTOR-RES-NTC-100K(0603)" device="" package3d_urn="urn:adsk.eagle:package:32791/1" value="NCP18WF104F03RC">
+<attribute name="LCSC" value="C13564"/>
+<attribute name="MPN" value="NCP18XH103F03RB"/>
+</part>
+<part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -28856,6 +28928,16 @@ between the two signals at the input buffer.</text>
 <attribute name="VALUE" x="57.1428" y="346.055" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY5" gate="GND" x="58.42" y="312.42" smashed="yes"/>
+<instance part="R206" gate="G$1" x="-5.08" y="490.22" smashed="yes">
+<attribute name="NAME" x="-8.89" y="491.7186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-8.89" y="486.918" size="1.778" layer="96"/>
+</instance>
+<instance part="J1" gate="G$1" x="15.24" y="467.36" smashed="yes">
+<attribute name="NAME" x="13.97" y="473.71" size="1.27" layer="95" ratio="10"/>
+</instance>
+<instance part="GND53" gate="1" x="7.62" y="462.28" smashed="yes">
+<attribute name="VALUE" x="5.08" y="459.74" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -29350,6 +29432,10 @@ between the two signals at the input buffer.</text>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SHIELD"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="2"/>
+<pinref part="GND53" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -29942,6 +30028,7 @@ between the two signals at the input buffer.</text>
 <pinref part="J10" gate="G$1" pin="4"/>
 <wire x1="7.62" y1="490.22" x2="0" y2="490.22" width="0.1524" layer="91"/>
 <label x="0" y="490.22" size="1.778" layer="95"/>
+<pinref part="R206" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="IO35" class="0">
@@ -33352,6 +33439,18 @@ between the two signals at the input buffer.</text>
 <wire x1="238.76" y1="208.28" x2="226.06" y2="208.28" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="IO_114"/>
 <label x="226.06" y="208.28" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="10KHZOUT" class="0">
+<segment>
+<wire x1="-22.86" y1="490.22" x2="-10.16" y2="490.22" width="0.1524" layer="91"/>
+<pinref part="R206" gate="G$1" pin="P$1"/>
+<label x="-22.86" y="490.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="469.9" x2="-7.62" y2="469.9" width="0.1524" layer="91"/>
+<label x="-7.62" y="469.9" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -37250,7 +37349,8 @@ between the two signals at the input buffer.</text>
 is 0.681 when ADC running with clock, 0.731 when off</text>
 <text x="68.58" y="96.52" size="1.778" layer="90">Gain=1+3/1=4</text>
 <text x="68.58" y="71.12" size="1.778" layer="90">Gain=1+1/1=2</text>
-<text x="99.06" y="58.42" size="1.778" layer="90">Measure 1.1V</text>
+<text x="111.76" y="35.56" size="1.778" layer="90">10kΩ 310uA 100mW ±1% 3380K ±1%
+0603 NTC Thermistors ROHS</text>
 </plain>
 <instances>
 <instance part="IC3" gate="G$1" x="43.18" y="17.78" smashed="yes">
@@ -37280,8 +37380,8 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <instance part="R129" gate="G$1" x="124.46" y="88.9" smashed="yes">
 <attribute name="VALUE" x="124.714" y="88.392" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R130" gate="G$1" x="124.46" y="53.34" smashed="yes">
-<attribute name="VALUE" x="124.714" y="52.832" size="1.778" layer="96" rot="R180"/>
+<instance part="R130" gate="G$1" x="106.68" y="48.26" smashed="yes" rot="R270">
+<attribute name="VALUE" x="106.172" y="48.006" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C50" gate="G$1" x="10.16" y="15.24" smashed="yes">
 <attribute name="NAME" x="11.684" y="18.161" size="1.778" layer="95"/>
@@ -37310,6 +37410,12 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <attribute name="NAME" x="49.53" y="50.8" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="49.53" y="48.26" size="1.778" layer="96" align="center-left"/>
 </instance>
+<instance part="R207" gate="G$1" x="106.68" y="38.1" smashed="yes" rot="R90">
+<attribute name="NAME" x="104.14" y="31.75" size="1.27" layer="95" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="104.14" y="38.1" size="1.27" layer="96" ratio="10" rot="R90"/>
+<attribute name="LCSC" x="134.62" y="22.86" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
+<instance part="SUPPLY7" gate="GND" x="106.68" y="27.94" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -37345,6 +37451,10 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="C50" gate="G$1" pin="2"/>
 <pinref part="SUPPLY4" gate="GND" pin="GND"/>
 </segment>
+<segment>
+<pinref part="R207" gate="G$1" pin="1"/>
+<pinref part="SUPPLY7" gate="GND" pin="GND"/>
+</segment>
 </net>
 <net name="3V3" class="1">
 <segment>
@@ -37371,6 +37481,11 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="C50" gate="G$1" pin="1"/>
 <wire x1="10.16" y1="17.78" x2="10.16" y2="22.86" width="0.1524" layer="91"/>
 <label x="7.62" y="20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R130" gate="G$1" pin="1"/>
+<wire x1="106.68" y1="53.34" x2="106.68" y2="60.96" width="0.1524" layer="91"/>
+<label x="104.14" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCLK3" class="0">
@@ -37425,8 +37540,10 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </segment>
 <segment>
 <pinref part="R130" gate="G$1" pin="2"/>
-<wire x1="127" y1="53.34" x2="147.32" y2="53.34" width="0.1524" layer="91"/>
-<label x="129.54" y="53.34" size="1.778" layer="95"/>
+<wire x1="106.68" y1="45.72" x2="127" y2="45.72" width="0.1524" layer="91"/>
+<label x="109.22" y="45.72" size="1.778" layer="95"/>
+<pinref part="R207" gate="G$1" pin="2"/>
+<junction x="106.68" y="45.72"/>
 </segment>
 </net>
 <net name="SLOWADCIN2-" class="0">
@@ -37509,13 +37626,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <pinref part="IC4" gate="G$1" pin="IN1-"/>
 <wire x1="43.18" y1="40.64" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
 <label x="22.86" y="40.64" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="VD11" class="1">
-<segment>
-<pinref part="R130" gate="G$1" pin="1"/>
-<wire x1="119.38" y1="53.34" x2="106.68" y2="53.34" width="0.1524" layer="91"/>
-<label x="106.68" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$49" class="0">

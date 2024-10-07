@@ -252,6 +252,15 @@
 <wire x1="147.746" y1="19.5" x2="148" y2="19.246" width="0.1524" layer="20" curve="-90"/>
 <wire x1="148" y1="19.246" x2="148" y2="12.754" width="0.1524" layer="20"/>
 <wire x1="148" y1="12.754" x2="147.746" y2="12.5" width="0.1524" layer="20" curve="-90"/>
+<wire x1="47" y1="18.146" x2="47" y2="12.654" width="0.1524" layer="20"/>
+<wire x1="47" y1="12.654" x2="47.254" y2="12.4" width="0.1524" layer="20" curve="90"/>
+<wire x1="47.254" y1="12.4" x2="52.746" y2="12.4" width="0.1524" layer="20"/>
+<wire x1="52.746" y1="12.4" x2="53" y2="12.654" width="0.1524" layer="20" curve="90"/>
+<wire x1="53" y1="12.654" x2="53" y2="18.146" width="0.1524" layer="20"/>
+<wire x1="53" y1="18.146" x2="52.746" y2="18.4" width="0.1524" layer="20" curve="90"/>
+<wire x1="52.746" y1="18.4" x2="47.254" y2="18.4" width="0.1524" layer="20"/>
+<wire x1="47.254" y1="18.4" x2="47" y2="18.146" width="0.1524" layer="20" curve="90"/>
+<text x="43" y="6.5" size="1.778" layer="21" font="vector">10kHz | GND</text>
 </plain>
 <libraries>
 </libraries>
