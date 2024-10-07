@@ -22808,7 +22808,9 @@ Diode with low voltage drop</description>
 <part name="SUPPLY107" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="J15" library="FlashPCB_Connectors" deviceset="USB-TYPE-A" device="THT-RA" value="test1"/>
 <part name="SUPPLY108" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="IC8" library="microbuilder" deviceset="FT232H" device="Q"/>
+<part name="IC8" library="microbuilder" deviceset="FT232H" device="Q">
+<attribute name="JLC_ROTATION" value="270"/>
+</part>
 <part name="GND70" library="supply1" deviceset="GND" device=""/>
 <part name="GND71" library="supply1" deviceset="GND" device=""/>
 <part name="GND72" library="supply1" deviceset="GND" device=""/>
@@ -33463,6 +33465,7 @@ between the two signals at the input buffer.</text>
 <instance part="IC8" gate="IC" x="119.38" y="83.82" smashed="yes">
 <attribute name="NAME" x="88.9" y="139.7" size="1.27" layer="95"/>
 <attribute name="VALUE" x="88.9" y="15.24" size="1.27" layer="96"/>
+<attribute name="JLC_ROTATION" x="119.38" y="83.82" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND70" gate="1" x="111.76" y="7.62" smashed="yes">
 <attribute name="VALUE" x="109.22" y="5.08" size="1.778" layer="96"/>
