@@ -28,7 +28,7 @@ set_false_path -from [get_registers fpga_top_ft232h_tx_mass*wptr_grey*] -to [get
 
 ## IO constraints
 set_max_delay -to [get_ports clk*] 10
-set_min_delay -to [get_ports clk*] 0
+set_min_delay -to [get_ports clk*] -1
 set_max_delay -to [get_ports ftdi_*] 10
 set_min_delay -to [get_ports ftdi_*] 0
 set_max_delay -from [get_ports ftdi_*] 10
@@ -50,10 +50,14 @@ set_output_delay -clock ftdi_clk 1 [get_ports ftdi_oe_n ]
 set_output_delay -clock ftdi_clk 1 [get_ports ftdi_rd_n ]
 set_output_delay -clock ftdi_clk 1 [get_ports ftdi_wr_n ]
 
-set_input_delay -clock clk50 0 [get_ports spimiso* ]
-set_output_delay -clock clk50 5 [get_ports spiclk ]
-set_output_delay -clock clk50 1 [get_ports spics* ]
-set_output_delay -clock clk50 1 [get_ports spimosi ]
+set_min_delay -from [get_ports spimiso* ] 0
+set_max_delay -from [get_ports spimiso* ] 10
+set_min_delay -to [get_ports spiclk ] 0
+set_max_delay -to [get_ports spiclk ] 10
+set_min_delay -to [get_ports spics* ] 0
+set_max_delay -to [get_ports spics* ] 10
+set_min_delay -to [get_ports spimosi ] 0
+set_max_delay -to [get_ports spimosi ] 10
 
 set_input_delay -clock clk50 0 [get_ports boardin* ]
 set_input_delay -clock clk50 0 [get_ports overrange* ]

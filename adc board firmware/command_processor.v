@@ -30,12 +30,8 @@ module command_processor (
 	
 	input wire [139:0] lvds1bits, lvds2bits, lvds3bits, lvds4bits,// rx_in[0] drives data to rx_out[(J-1)..0], rx_in[1] drives data to the next J number of bits on rx_out
 	input wire			clklvds, // clk1, runs at LVDS bit rate (ADC clk input rate) / 2
-	output reg			lvds1wr,
-	output reg			lvds1rd,
-	input wire			lvds1wrfull,
-	input wire			lvds1wrempty,
-	input wire			lvds1rdfull,
-	input wire			lvds1rdempty,
+	output reg			ram_wr=0,
+	output reg [9:0]	ram_wr_address=0, ram_rd_address=0,
 	output reg [559:0] lvds1bitsfifoout, //output bits to fifo
 	input wire [559:0] lvds1bitsfifoin, // input bits from fifo
 	input wire [19:0] lvdsbits_o2, lvdsbits_other,
@@ -53,7 +49,7 @@ module command_processor (
 	
 	input wire [7:0] boardin,
 	output wire [7:0] boardout,
-	output reg spireset_L,
+	output reg spireset_L=1'b1,
 	input wire clk50, // needed while doing pllreset,
 	input wire lvdsin_trig,
 	output reg lvdsout_trig=0,
@@ -62,7 +58,7 @@ module command_processor (
 	output reg lvdsout_spare[2]
 );
 
-integer version = 15; // firmware version
+integer version = 16; // firmware version
 
 assign debugout[0] = locked;
 assign debugout[1] = spics[4];
@@ -73,43 +69,26 @@ assign debugout[5] = overrange[1];
 assign debugout[6] = overrange[2];
 assign debugout[7] = overrange[3];
 assign debugout[11:8] = state;
-
 assign lvdsout_trig = lvdsin_trig;
 assign lvdsout_spare = lvdsin_spare;
-assign boardout = boardin;
+assign boardout = boardin;  
 
-//for clock phase
-reg[7:0] pllclock_counter=0;
-reg[7:0] scanclk_cycles=0;
-  
-
-//variables in clk domain
-localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=4'd4, TX_DATA2=4'd5, TX_DATA3=4'd6, TX_DATA4=4'd7, PLLCLOCK=4'd8, BOOTUP=4'd9;
-reg [ 3:0]	state = INIT;
-reg			bootup = 0;
-reg [ 3:0]	rx_counter = 0;
-reg [ 7:0]	rx_data[7:0];
-integer		length = 0;
-reg [ 3:0]	spistate = 0;
-reg [5:0]	channel = 0;
-reg [5:0]	spicscounter = 0;
-
-//variables in clklvds domain
+//variables in clklvds domain, writing into the RAM buffer
 reg [ 2:0]  acqstate=0;
+reg signed [11:0]  lowerthresh=-12'd10, upperthresh=12'd10;
+reg signed [11:0]  samplevalue[40];
+reg [1:0] sampleclkstr[40];
+
+//variables synced between domains
 reg [15:0]	triggercounter=0, triggercounter_sync=0;
 reg [15:0]	eventcounter=0, eventcounter_sync=0;
 reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
 reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
-reg signed [11:0]  lowerthresh=-12'd10, upperthresh=12'd10;
-
-reg signed [11:0]  samplevalue[40];
-reg [1:0] sampleclkstr[40];
 
 integer i;
-always @ (posedge clklvds) begin
-	
+always @ (posedge clklvds) begin	
 	triggerlive_sync <= triggerlive;
 	lengthtotake_sync <= lengthtotake;
 	triggertype_sync <= triggertype;
@@ -125,16 +104,24 @@ always @ (posedge clklvds) begin
 		samplevalue[30+i]  <= {lvdsbits_o2[0+i],lvds4bits[100+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
 		sampleclkstr[30+i] <= {lvds4bits[130+i],lvds4bits[120+i]};
 	end
+	
+	lvds1bitsfifoout <= {
+		sampleclkstr[39],samplevalue[39],sampleclkstr[38],samplevalue[38],sampleclkstr[37],samplevalue[37],sampleclkstr[36],samplevalue[36],sampleclkstr[35],samplevalue[35],sampleclkstr[34],samplevalue[34],sampleclkstr[33],samplevalue[33],sampleclkstr[32],samplevalue[32],sampleclkstr[31],samplevalue[31],sampleclkstr[30],samplevalue[30],
+		sampleclkstr[29],samplevalue[29],sampleclkstr[28],samplevalue[28],sampleclkstr[27],samplevalue[27],sampleclkstr[26],samplevalue[26],sampleclkstr[25],samplevalue[25],sampleclkstr[24],samplevalue[24],sampleclkstr[23],samplevalue[23],sampleclkstr[22],samplevalue[22],sampleclkstr[21],samplevalue[21],sampleclkstr[20],samplevalue[20],
+		sampleclkstr[19],samplevalue[19],sampleclkstr[18],samplevalue[18],sampleclkstr[17],samplevalue[17],sampleclkstr[16],samplevalue[16],sampleclkstr[15],samplevalue[15],sampleclkstr[14],samplevalue[14],sampleclkstr[13],samplevalue[13],sampleclkstr[12],samplevalue[12],sampleclkstr[11],samplevalue[11],sampleclkstr[10],samplevalue[10],	
+		sampleclkstr[9],samplevalue[9],sampleclkstr[8],samplevalue[8],sampleclkstr[7],samplevalue[7],sampleclkstr[6],samplevalue[6],sampleclkstr[5],samplevalue[5],sampleclkstr[4],samplevalue[4],sampleclkstr[3],samplevalue[3],sampleclkstr[2],samplevalue[2],sampleclkstr[1],samplevalue[1],sampleclkstr[0],samplevalue[0]
+		};
 end
 
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
-	lvds1wr <= 1'b0;
+	ram_wr <= 1'b0;
 	acqstate <= 3'd0;
  end else begin
 	case (acqstate)
 	0 : begin // ready
-		lvds1wr <= 1'b0;
+		ram_wr <= 1'b1;//always writing
+		ram_wr_address <= 10'd0;
 		triggercounter<=0;
 		if (triggerlive_sync) begin
 			if (triggertype_sync==8'd1) acqstate <= 3'd1; // threshold trigger
@@ -148,19 +135,11 @@ always @ (posedge clklvds or negedge rstn)
 		if (samplevalue[0]>upperthresh) acqstate <= 3'd3;
 	end
 	3 : begin // taking data
-		lvds1bitsfifoout <= {
-		sampleclkstr[39],samplevalue[39],sampleclkstr[38],samplevalue[38],sampleclkstr[37],samplevalue[37],sampleclkstr[36],samplevalue[36],sampleclkstr[35],samplevalue[35],sampleclkstr[34],samplevalue[34],sampleclkstr[33],samplevalue[33],sampleclkstr[32],samplevalue[32],sampleclkstr[31],samplevalue[31],sampleclkstr[30],samplevalue[30],
-		sampleclkstr[29],samplevalue[29],sampleclkstr[28],samplevalue[28],sampleclkstr[27],samplevalue[27],sampleclkstr[26],samplevalue[26],sampleclkstr[25],samplevalue[25],sampleclkstr[24],samplevalue[24],sampleclkstr[23],samplevalue[23],sampleclkstr[22],samplevalue[22],sampleclkstr[21],samplevalue[21],sampleclkstr[20],samplevalue[20],
-		sampleclkstr[19],samplevalue[19],sampleclkstr[18],samplevalue[18],sampleclkstr[17],samplevalue[17],sampleclkstr[16],samplevalue[16],sampleclkstr[15],samplevalue[15],sampleclkstr[14],samplevalue[14],sampleclkstr[13],samplevalue[13],sampleclkstr[12],samplevalue[12],sampleclkstr[11],samplevalue[11],sampleclkstr[10],samplevalue[10],	
-		sampleclkstr[9],samplevalue[9],sampleclkstr[8],samplevalue[8],sampleclkstr[7],samplevalue[7],sampleclkstr[6],samplevalue[6],sampleclkstr[5],samplevalue[5],sampleclkstr[4],samplevalue[4],sampleclkstr[3],samplevalue[3],sampleclkstr[2],samplevalue[2],sampleclkstr[1],samplevalue[1],sampleclkstr[0],samplevalue[0]
-		};
-		//lvds1bitsfifoout <= {56{triggercounter[9:0]}}; // for testing the queue
-		if ((!lvds1wrfull) && triggercounter<lengthtotake_sync) begin
-			lvds1wr <= 1'b1;
+		if (triggercounter<lengthtotake_sync) begin
+			ram_wr_address <= ram_wr_address + 10'd1;
 			triggercounter<=triggercounter+16'd1;
 		end
 		else begin
-			lvds1wr <= 1'b0;
 			eventcounter <= eventcounter+16'd1;
 			acqstate <= 3'd4;
 		end
@@ -175,9 +154,21 @@ always @ (posedge clklvds or negedge rstn)
 	endcase
  end
  
+//variables in clk domain, reading out of the RAM buffer
+localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=4'd4, TX_DATA2=4'd5, TX_DATA3=4'd6, TX_DATA4=4'd7, PLLCLOCK=4'd8, BOOTUP=4'd9;
+reg [ 3:0]	state = INIT;
+reg			bootup = 0;
+reg [ 3:0]	rx_counter = 0;
+reg [ 7:0]	rx_data[7:0];
+integer		length = 0;
+reg [ 3:0]	spistate = 0;
+reg [5:0]	channel = 0;
+reg [5:0]	spicscounter = 0;
+reg[7:0] pllclock_counter=0;//for clock phase
+reg[7:0] scanclk_cycles=0;
 integer overrange_counter[4];
-always @ (posedge clk) begin
-	
+
+always @ (posedge clk) begin	
 	triggercounter_sync <= triggercounter;
 	eventcounter_sync <= eventcounter;
 	
@@ -185,23 +176,6 @@ always @ (posedge clk) begin
 	if (overrange[1]) overrange_counter[1]<=overrange_counter[1]+1;
 	if (overrange[2]) overrange_counter[2]<=overrange_counter[2]+1;
 	if (overrange[3]) overrange_counter[3]<=overrange_counter[3]+1;
-end
-
-reg [1:0] pllresetstate=0;
-reg pllreset2=0;
-always @ (posedge clk50) begin
-	case (pllresetstate)
-   0 : begin
-		if (pllreset2) begin
-			pllreset<=1'b1;
-			pllresetstate<=2'd1;
-		end
-	end
-	1 : begin
-		pllreset<=1'b0;
-		if (!pllreset2) pllresetstate<=2'd0;
-	end
-	endcase
 end
 
 always @ (posedge clk or negedge rstn)
@@ -214,7 +188,6 @@ always @ (posedge clk or negedge rstn)
    INIT : begin
 		spireset_L <= 1'b1;
 		pllreset2 <= 1'b0;
-		lvds1rd <= 1'b0;
    	rx_counter <= 0;
 		length <= 0;
 		spistate <= 0;
@@ -239,8 +212,7 @@ always @ (posedge clk or negedge rstn)
 	PROCESS : begin // do something, based on the command in the first byte
 		case (rx_data[0])
 			
-		0 : begin // send a length of bytes
-			didreadout <= 1'b1; // tell it we have read out this event
+		0 : begin // send a length of bytes from the RAM buffer
 			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
 			state <= TX_DATA1;
 		end
@@ -249,7 +221,6 @@ always @ (posedge clk or negedge rstn)
 			triggertype <= rx_data[1]; // while we're at it, set the trigger type
 			lengthtotake <= {rx_data[5],rx_data[4]};
 			if (triggercounter_sync == 0) triggerlive <= 1'b1; // gets reset in INIT state
-			//else triggerlive <= 1'b0;
 			o_tdata <= {eventcounter_sync,triggercounter_sync}; // return triggercounter, so we can see if we have an event ready to be read out
 			length <= 4;
 			o_tvalid <= 1'b1;
@@ -270,8 +241,7 @@ always @ (posedge clk or negedge rstn)
 			0 : begin
 				spimisossel <= rx_data[1][2:0]; // select requested data from chip
 				spics[rx_data[1][2:0]]<=1'b0; //select requested chip
-				spitx <= rx_data[2];//first byte to send
-				
+				spitx <= rx_data[2];//first byte to send				
 				if (spicscounter==6'd10) begin // wait a bit for cs to go low
 					spicscounter<=6'd0;
 					spistate <= 4'd1;
@@ -394,26 +364,20 @@ always @ (posedge clk or negedge rstn)
 	TX_DATA1 : begin //channel==0
 		o_tvalid <= 1'b0;
 		if (o_tready) begin
-			if (lvds1rdempty) begin // wait for data
-				lvds1rd <= 1'b0;
-			end
-			else begin
-				lvds1rd <= 1'b1;
-				state <= TX_DATA2;
-			end
+			//wait for data
+			state <= TX_DATA2;
 		end
 	end
 	
-	TX_DATA2 : begin // wait for read
-		lvds1rd <= 1'b0;
+	TX_DATA2 : begin
 		o_tvalid <= 1'b0;
 		if (o_tready) begin
+			//wait for data
 			state <= TX_DATA3;
 		end
 	end
 	
 	TX_DATA3 : begin
-		lvds1rd <= 1'b0;
 		if (o_tready) begin
 			o_tvalid <= 1'b1;
 			if (channel==48) o_tdata <= {16'hbeef,16'hdead};//marker
@@ -448,13 +412,13 @@ always @ (posedge clk or negedge rstn)
 	end
 	
 	TX_DATA4 : begin
-		lvds1rd <= 1'b0;
 		if (o_tready) begin
 			o_tvalid <= 1'b0;
 			if (length >= 4) begin
 				length <= length - 16'd4;
 				if (channel==50) begin
 					channel <= 0;
+					ram_rd_address <= ram_rd_address + 10'd1;
 					state <= TX_DATA1;
 				end
 				else state <= TX_DATA3;
@@ -462,6 +426,8 @@ always @ (posedge clk or negedge rstn)
 			else begin
 				length <= 0;
 				channel<=0;
+				didreadout <= 1'b1; // tell it we have read out this event (could be moved earlier?)
+				ram_rd_address <= 10'd1;
 				state <= RX;
 			end
 		end
@@ -480,20 +446,39 @@ always @ (posedge clk or negedge rstn)
 	
 	BOOTUP : begin // runs once at startup
 		bootup <= 1'b1;
-		rx_data[0]<=8'd3;
-		rx_data[1]<=8'd0;
-		rx_data[2]<=8'h00;
-		rx_data[3]<=8'h02;
+		rx_data[0]<=8'd3;//SPI command
+		rx_data[1]<=8'd0;//talk to ADC
+		rx_data[2]<=8'h00;//ADC address 1
+		rx_data[3]<=8'h02;//ADC address 2
 		rx_data[4]<=8'h03;//power down ADC
 		state<=PROCESS;
 	end
 	
 	default :
-		state <= RX;
+		state <= INIT;
 	
   endcase
  end
 
+// for pll reset, need to run the logic on the crystal directly, not the pll output
+reg [1:0] pllresetstate=0;
+reg pllreset2=0;
+always @ (posedge clk50) begin
+	case (pllresetstate)
+   0 : begin
+		if (pllreset2) begin
+			pllreset<=1'b1;
+			pllresetstate<=2'd1;
+		end
+	end
+	1 : begin
+		pllreset<=1'b0;
+		if (!pllreset2) pllresetstate<=2'd0;
+	end
+	endcase
+end
+
+//for FT232H
 assign i_tready = (state == RX);
 assign o_tkeep  = (length>=4) ? 4'b1111 :
                   (length==3) ? 4'b0111 :
@@ -501,4 +486,5 @@ assign o_tkeep  = (length>=4) ? 4'b1111 :
                   (length==1) ? 4'b0001 :
                  /*length==0*/  4'b0000;
 assign o_tlast  = (length>=4) ? 1'b0 : 1'b1;
+
 endmodule
