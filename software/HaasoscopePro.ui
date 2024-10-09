@@ -84,10 +84,10 @@
        <property name="midLineWidth">
         <number>0</number>
        </property>
-       <widget class="QSlider" name="verticalSlider">
+       <widget class="QSlider" name="threshold">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>130</x>
           <y>30</y>
           <width>10</width>
           <height>241</height>
@@ -120,7 +120,7 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider">
+       <widget class="QSlider" name="thresholdPos">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -148,6 +148,9 @@
         </property>
         <property name="maximum">
          <number>255</number>
+        </property>
+        <property name="pageStep">
+         <number>10</number>
         </property>
         <property name="value">
          <number>128</number>
@@ -195,7 +198,7 @@
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>170</x>
+          <x>110</x>
           <y>10</y>
           <width>51</width>
           <height>20</height>
@@ -209,12 +212,15 @@
         <property name="text">
          <string>Threshold</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
        <widget class="QPushButton" name="rollingButton">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>40</y>
+          <y>70</y>
           <width>71</width>
           <height>23</height>
          </rect>
@@ -261,8 +267,8 @@
        <widget class="QPushButton" name="singleButton">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>10</y>
+          <x>10</x>
+          <y>40</y>
           <width>71</width>
           <height>23</height>
          </rect>
@@ -319,9 +325,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>80</y>
-          <width>141</width>
-          <height>181</height>
+          <y>110</y>
+          <width>101</width>
+          <height>151</height>
          </rect>
         </property>
         <property name="font">
@@ -372,7 +378,7 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>150</y>
+           <y>70</y>
            <width>51</width>
            <height>22</height>
           </rect>
@@ -393,7 +399,7 @@
          <property name="geometry">
           <rect>
            <x>70</x>
-           <y>160</y>
+           <y>80</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -424,6 +430,70 @@
          <font>
           <family>Arial</family>
          </font>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>10</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>Threshold
+Delta</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QSlider" name="thresholdDelta">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>50</y>
+          <width>10</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>10</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>10</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>64</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </widget>

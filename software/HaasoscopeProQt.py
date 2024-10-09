@@ -208,8 +208,9 @@ class MainWindow(TemplateBaseClass):
         self.ui = WindowTemplate()
         self.ui.setupUi(self)
         self.ui.runButton.clicked.connect(self.dostartstop)
-        self.ui.verticalSlider.valueChanged.connect(self.triggerlevelchanged)
-        self.ui.horizontalSlider.valueChanged.connect(self.triggerposchanged)
+        self.ui.threshold.valueChanged.connect(self.triggerlevelchanged)
+        self.ui.thresholdDelta.valueChanged.connect(self.triggerdeltachanged)
+        self.ui.thresholdPos.valueChanged.connect(self.triggerposchanged)
         self.ui.rollingButton.clicked.connect(self.rolling)
         self.ui.singleButton.clicked.connect(self.single)
         self.ui.timeslowButton.clicked.connect(self.timeslow)
@@ -383,27 +384,39 @@ class MainWindow(TemplateBaseClass):
             self.paused=True
             self.ui.runButton.setChecked(False)
 
-    def triggerlevelchanged(self,value):
-        self.settriggerthresh(value)
-        self.hline = (float(  value-128  )*self.yscale/256.)
-        self.otherlines[1].setData( [self.min_x, self.max_x], [self.hline, self.hline] ) # horizontal line showing trigger threshold
-
     downsample=0
     xscale=1
     xscaling=1
+    yscale=1
     min_y=-pow(2,12)
     max_y=pow(2,12)
-    def settriggerpoint(self,point):
+    triggerlevel = 128
+    triggerdelta = 4
+    triggerpos = 128*expect_samples/1024
+    triggerpossamples=int(expect_samples*0.5)
+    def triggerlevelchanged(self,value):
+        self.triggerlevel=255-value
+        self.sendtriggerinfo()
         return
+        self.hline = (float(  value-128  )*self.yscale/256.)
+        self.otherlines[1].setData( [self.min_x, self.max_x], [self.hline, self.hline] ) # horizontal line showing trigger threshold
+    def triggerdeltachanged(self, value):
+        self.triggerdelta=value
+        self.sendtriggerinfo()
     def triggerposchanged(self,value):
-        if value>253 or value<3: return
+        self.triggerpos = value*self.expect_samples/1024
+        self.triggerpossamples = int(self.expect_samples * self.triggerpos/255)
+        self.sendtriggerinfo()
+        return
         offset=5.0 # trig to readout delay
         scal = self.expect_samples/256.
         point = value*scal + offset/pow(2,self.downsample)
         if self.downsample<0: point = 128*scal + (point-128*scal)*pow(2,self.downsample)
-        self.settriggerpoint(int(point))
         self.vline = float(  2*(value-128)/256. *self.xscale /self.xscaling)
         self.otherlines[0].setData( [self.vline, self.vline], [self.min_y, self.max_y] ) # vertical line showing trigger time
+    def sendtriggerinfo(self):
+        usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos), 100, 100, 100, 100]))
+        tres = usb.recv(4)
 
     def rolling(self):
         self.triggertype = not self.triggertype
@@ -557,7 +570,7 @@ class MainWindow(TemplateBaseClass):
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
-        usb.send(bytes([1, self.triggertype, 99, 99] + inttobytes(self.expect_samples+1)))  # length to take (last 4 bytes)
+        usb.send(bytes([1, self.triggertype, 99, 99] + inttobytes(self.expect_samples-self.triggerpossamples+1)))  # length to take (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
         eventcountertemp = triggercounter[3]*256+triggercounter[2]
@@ -687,7 +700,7 @@ class MainWindow(TemplateBaseClass):
     def init(self):
         self.pllreset()
         self.adfreset()
-
+        self.sendtriggerinfo()
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])
@@ -751,7 +764,6 @@ if __name__ == '__main__':
             win.cleanup()
             sys.exit()
         win.launch()
-        win.triggerposchanged(128)  # center the trigger
         win.dostartstop()
     except DeviceError:
         print("device com failed!")

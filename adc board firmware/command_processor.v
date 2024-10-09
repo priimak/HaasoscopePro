@@ -144,8 +144,8 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	3 : begin // triggered, now taking more data
+		ram_wr_address <= ram_wr_address + 10'd1;
 		if (triggercounter<lengthtotake_sync) begin
-			ram_wr_address <= ram_wr_address + 10'd1;
 			triggercounter<=triggercounter+16'd1;
 		end
 		else begin
@@ -154,7 +154,8 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	4 : begin // ready to be read out
-		ram_wr <= 1'b0;
+		ram_wr <= 1'b0;//not writing
+		//ram_wr_address <= ram_wr_address + 10'd1;//not writing
 		triggercounter<= -16'd1;
 		if (didreadout_sync) acqstate <= 3'd0;
 	end
@@ -208,7 +209,6 @@ always @ (posedge clk or negedge rstn)
 		channel <= 6'd0;
 		triggerlive <= 1'b0;
 		didreadout <= 1'b0;
-		ram_preoffset <= 10'd50;
 		if (bootup) state <= RX;
 		else state <= BOOTUP;
 	end
@@ -227,7 +227,7 @@ always @ (posedge clk or negedge rstn)
 			
 		0 : begin // send a length of bytes from the RAM buffer
 			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
-			ram_rd_address <= ram_address_triggered - ram_preoffset; // set the address to read from at the triggered point - an offset, to see what happened before the trigger
+			ram_rd_address <= ram_address_triggered_sync - ram_preoffset; // set the address to read from at the triggered point - an offset, to see what happened before the trigger
 			state <= TX_DATA1;
 		end
 		
@@ -354,6 +354,16 @@ always @ (posedge clk or negedge rstn)
 		7 : begin // try to switch clocks
 			clkswitch <= ~clkswitch;
 			o_tdata <= {8'd0,8'd0,8'd0,7'd0,~clkswitch};
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
+		end
+		
+		8 : begin // trigger settings
+			lowerthresh <= (rx_data[1]-rx_data[2]-128)*16+12'd8;
+			upperthresh <= (rx_data[1]+rx_data[2]-128)*16+12'd8;
+			ram_preoffset <= rx_data[3]*4;
+			o_tdata <= 37;
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
