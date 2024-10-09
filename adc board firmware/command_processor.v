@@ -362,9 +362,9 @@ always @ (posedge clk or negedge rstn)
 		end
 		
 		8 : begin // trigger settings
-			lowerthresh <= (rx_data[1]-rx_data[2]-128)*16+12'd8;
-			upperthresh <= (rx_data[1]+rx_data[2]-128)*16+12'd8;
-			ram_preoffset <= rx_data[3]*256+rx_data[4];
+			lowerthresh <= ((rx_data[1]-rx_data[2]-12'd128)<<4)+12'd8;
+			upperthresh <= ((rx_data[1]+rx_data[2]-12'd128)<<4)+12'd8;
+			ram_preoffset <= (rx_data[3][1:0]<<8)+rx_data[4];
 			o_tdata <= 37;
 			length <= 4;
 			o_tvalid <= 1'b1;

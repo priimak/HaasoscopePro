@@ -394,14 +394,16 @@ class MainWindow(TemplateBaseClass):
     triggerdelta = 4
     triggerpos = int(expect_samples * 128/255)
     def triggerlevelchanged(self,value):
-        self.triggerlevel=255-value
-        self.sendtriggerinfo()
+        if value+self.triggerdelta < 255 and value-self.triggerdelta > 0:
+            self.triggerlevel = 255 - value
+            self.sendtriggerinfo()
         return
         self.hline = (float(  value-128  )*self.yscale/256.)
         self.otherlines[1].setData( [self.min_x, self.max_x], [self.hline, self.hline] ) # horizontal line showing trigger threshold
     def triggerdeltachanged(self, value):
-        self.triggerdelta=value
-        self.sendtriggerinfo()
+        if self.triggerlevel+value < 255 and self.triggerlevel-value > 0:
+            self.triggerdelta=value
+            self.sendtriggerinfo()
     def triggerposchanged(self,value):
         self.triggerpos = int(self.expect_samples * value/255)
         self.sendtriggerinfo()
