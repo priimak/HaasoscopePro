@@ -86,6 +86,7 @@ reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
 reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
+reg [ 9:0]	ram_address_triggered=0, ram_address_triggered_sync=0;
 
 integer i;
 always @ (posedge clklvds) begin	
@@ -120,21 +121,29 @@ always @ (posedge clklvds or negedge rstn)
  end else begin
 	case (acqstate)
 	0 : begin // ready
-		ram_wr <= 1'b1;//always writing
-		ram_wr_address <= 10'd0;
+		ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
+		ram_wr_address <= ram_wr_address + 10'd1;
 		triggercounter<=0;
 		if (triggerlive_sync) begin
 			if (triggertype_sync==8'd1) acqstate <= 3'd1; // threshold trigger
-			else acqstate <= 3'd3; // go straight to taking data, no trigger, triggertype==0
+			else begin
+				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				acqstate <= 3'd3; // go straight to taking more data, no trigger, triggertype==0
+			end
 		end
 	end
 	1 : begin // ready for first part of trigger condition to be met
+		ram_wr_address <= ram_wr_address + 10'd1;
 		if (samplevalue[0]<lowerthresh) acqstate <= 3'd2;
 	end
 	2 : begin // ready for second part of trigger condition to be met
-		if (samplevalue[0]>upperthresh) acqstate <= 3'd3;
+		ram_wr_address <= ram_wr_address + 10'd1;
+		if (samplevalue[0]>upperthresh) begin
+			ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+			acqstate <= 3'd3;
+		end
 	end
-	3 : begin // taking data
+	3 : begin // triggered, now taking more data
 		if (triggercounter<lengthtotake_sync) begin
 			ram_wr_address <= ram_wr_address + 10'd1;
 			triggercounter<=triggercounter+16'd1;
@@ -145,6 +154,7 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	4 : begin // ready to be read out
+		ram_wr <= 1'b0;
 		triggercounter<= -16'd1;
 		if (didreadout_sync) acqstate <= 3'd0;
 	end
@@ -164,13 +174,15 @@ integer		length = 0;
 reg [ 3:0]	spistate = 0;
 reg [5:0]	channel = 0;
 reg [5:0]	spicscounter = 0;
-reg[7:0] pllclock_counter=0;//for clock phase
-reg[7:0] scanclk_cycles=0;
+reg [7:0] pllclock_counter=0;//for clock phase
+reg [7:0] scanclk_cycles=0;
+reg [9:0] ram_preoffset=0;
 integer overrange_counter[4];
 
-always @ (posedge clk) begin	
+always @ (posedge clk) begin
 	triggercounter_sync <= triggercounter;
 	eventcounter_sync <= eventcounter;
+	ram_address_triggered_sync <= ram_address_triggered;
 	
 	if (overrange[0]) overrange_counter[0]<=overrange_counter[0]+1;
 	if (overrange[1]) overrange_counter[1]<=overrange_counter[1]+1;
@@ -196,6 +208,7 @@ always @ (posedge clk or negedge rstn)
 		channel <= 6'd0;
 		triggerlive <= 1'b0;
 		didreadout <= 1'b0;
+		ram_preoffset <= 10'd50;
 		if (bootup) state <= RX;
 		else state <= BOOTUP;
 	end
@@ -214,6 +227,7 @@ always @ (posedge clk or negedge rstn)
 			
 		0 : begin // send a length of bytes from the RAM buffer
 			length <= {rx_data[7],rx_data[6],rx_data[5],rx_data[4]};
+			ram_rd_address <= ram_address_triggered - ram_preoffset; // set the address to read from at the triggered point - an offset, to see what happened before the trigger
 			state <= TX_DATA1;
 		end
 		
@@ -427,7 +441,6 @@ always @ (posedge clk or negedge rstn)
 				length <= 0;
 				channel<=0;
 				didreadout <= 1'b1; // tell it we have read out this event (could be moved earlier?)
-				ram_rd_address <= 10'd1;
 				state <= RX;
 			end
 		end
