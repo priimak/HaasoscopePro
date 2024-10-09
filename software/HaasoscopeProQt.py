@@ -198,7 +198,7 @@ class MainWindow(TemplateBaseClass):
     xydata_overlapped=False
     total_rx_len = 0
     time_start = time.time()
-    triggertype = 1  # 0 no trigger, 1 threshold trigger
+    triggertype = 1  # 0 no trigger, 1 threshold trigger falling, 2 threshold trigger rising, ...
     if dopattern: triggertype = 0
     selectedchannel=0
     def __init__(self):
@@ -419,9 +419,15 @@ class MainWindow(TemplateBaseClass):
         tres = usb.recv(4)
 
     def rolling(self):
-        self.triggertype = not self.triggertype
-        self.ui.rollingButton.setChecked(self.triggertype)
-        if self.triggertype: self.ui.rollingButton.setText("Normal")
+        if self.triggertype>0:
+            self.oldtriggertype=self.triggertype
+            self.triggertype=0
+            self.ui.risingedgeCheck.setEnabled(False)
+        else:
+            self.triggertype=self.oldtriggertype
+        if self.triggertype==1 or self.triggertype==2: self.ui.risingedgeCheck.setEnabled(True)
+        self.ui.rollingButton.setChecked(self.triggertype>0)
+        if self.triggertype>0: self.ui.rollingButton.setText("Normal")
         else: self.ui.rollingButton.setText("Auto")
 
     getone=False
@@ -455,7 +461,10 @@ class MainWindow(TemplateBaseClass):
 
     def risingfalling(self):
         self.fallingedge=not self.ui.risingedgeCheck.checkState()
-        self.settriggertype(self.fallingedge)
+        if self.triggertype==1:
+            if not self.fallingedge: self.triggertype=2
+        if self.triggertype==2:
+            if self.fallingedge: self.triggertype = 1
 
     dodrawing=True
     def drawing(self):
@@ -700,6 +709,7 @@ class MainWindow(TemplateBaseClass):
     def init(self):
         self.pllreset()
         self.adfreset()
+        self.risingfalling()
         self.sendtriggerinfo()
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):

@@ -74,7 +74,7 @@ assign lvdsout_spare = lvdsin_spare;
 assign boardout = boardin;  
 
 //variables in clklvds domain, writing into the RAM buffer
-reg [ 2:0]  acqstate=0;
+reg [ 7:0]  acqstate=0;
 reg signed [11:0]  samplevalue[40];
 reg [1:0] sampleclkstr[40];
 
@@ -119,9 +119,9 @@ end
 
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
-	acqstate <= 3'd0;
+	acqstate <= 8'd0;
  end else begin
-	if (acqstate<4) begin
+	if (acqstate<251) begin
 		ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
 		ram_wr_address <= ram_wr_address + 10'd1;
 	end
@@ -132,37 +132,52 @@ always @ (posedge clklvds or negedge rstn)
 	0 : begin // ready
 		triggercounter<=0;
 		if (triggerlive_sync) begin
-			if (triggertype_sync==8'd1) acqstate <= 3'd1; // threshold trigger
+			if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger falling edge
+			else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger rising edge
 			else begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				acqstate <= 3'd3; // go straight to taking more data, no trigger, triggertype==0
+				acqstate <= 8'd250; // go straight to taking more data, no trigger, triggertype==0
 			end
 		end
 	end
+	
+	// falling edge trigger
 	1 : begin // ready for first part of trigger condition to be met
-		if (samplevalue[0]<lowerthresh_sync) acqstate <= 3'd2;
+		if (samplevalue[0]<lowerthresh_sync) acqstate <= 8'd2;
 	end
 	2 : begin // ready for second part of trigger condition to be met
 		if (samplevalue[0]>upperthresh_sync) begin
 			ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-			acqstate <= 3'd3;
+			acqstate <= 8'd250;
 		end
 	end
-	3 : begin // triggered, now taking more data
+	
+	//rising edge trigger
+	3 : begin // ready for first part of trigger condition to be met
+		if (samplevalue[0]>upperthresh_sync) acqstate <= 8'd4;
+	end
+	4 : begin // ready for second part of trigger condition to be met
+		if (samplevalue[0]<lowerthresh_sync) begin
+			ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+			acqstate <= 8'd250;
+		end
+	end
+	
+	250 : begin // triggered, now taking more data
 		if (triggercounter<lengthtotake_sync) begin
 			triggercounter<=triggercounter+16'd1;
 		end
 		else begin
 			eventcounter <= eventcounter+16'd1;
-			acqstate <= 3'd4;
+			acqstate <= 8'd251;
 		end
 	end
-	4 : begin // ready to be read out
+	251 : begin // ready to be read out, not writing into RAM
 		triggercounter<= -16'd1;
-		if (didreadout_sync) acqstate <= 3'd0;
+		if (didreadout_sync) acqstate <= 8'd0;
 	end
 	default : begin
-		acqstate <= 3'd0;
+		acqstate <= 8'd0;
 	end
 	endcase
  end
