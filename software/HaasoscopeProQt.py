@@ -392,8 +392,7 @@ class MainWindow(TemplateBaseClass):
     max_y=pow(2,12)
     triggerlevel = 128
     triggerdelta = 4
-    triggerpos = 128*expect_samples/1024
-    triggerpossamples=int(expect_samples*0.5)
+    triggerpos = int(expect_samples * 128/255)
     def triggerlevelchanged(self,value):
         self.triggerlevel=255-value
         self.sendtriggerinfo()
@@ -404,8 +403,7 @@ class MainWindow(TemplateBaseClass):
         self.triggerdelta=value
         self.sendtriggerinfo()
     def triggerposchanged(self,value):
-        self.triggerpos = value*self.expect_samples/1024
-        self.triggerpossamples = int(self.expect_samples * self.triggerpos/255)
+        self.triggerpos = int(self.expect_samples * value/255)
         self.sendtriggerinfo()
         return
         offset=5.0 # trig to readout delay
@@ -415,7 +413,7 @@ class MainWindow(TemplateBaseClass):
         self.vline = float(  2*(value-128)/256. *self.xscale /self.xscaling)
         self.otherlines[0].setData( [self.vline, self.vline], [self.min_y, self.max_y] ) # vertical line showing trigger time
     def sendtriggerinfo(self):
-        usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos), 100, 100, 100, 100]))
+        usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, 100, 100, 100]))
         tres = usb.recv(4)
 
     def rolling(self):
@@ -570,7 +568,7 @@ class MainWindow(TemplateBaseClass):
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
-        usb.send(bytes([1, self.triggertype, 99, 99] + inttobytes(self.expect_samples-self.triggerpossamples+1)))  # length to take (last 4 bytes)
+        usb.send(bytes([1, self.triggertype, 99, 99] + inttobytes(self.expect_samples-self.triggerpos+1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
         eventcountertemp = triggercounter[3]*256+triggercounter[2]
