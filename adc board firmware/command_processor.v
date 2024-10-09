@@ -75,11 +75,12 @@ assign boardout = boardin;
 
 //variables in clklvds domain, writing into the RAM buffer
 reg [ 2:0]  acqstate=0;
-reg signed [11:0]  lowerthresh=-12'd10, upperthresh=12'd10;
 reg signed [11:0]  samplevalue[40];
 reg [1:0] sampleclkstr[40];
 
 //variables synced between domains
+reg signed [11:0]  lowerthresh=0, lowerthresh_sync=0;
+reg signed [11:0]  upperthresh=0, upperthresh_sync=0;
 reg [15:0]	triggercounter=0, triggercounter_sync=0;
 reg [15:0]	eventcounter=0, eventcounter_sync=0;
 reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
@@ -94,6 +95,8 @@ always @ (posedge clklvds) begin
 	lengthtotake_sync <= lengthtotake;
 	triggertype_sync <= triggertype;
 	didreadout_sync <= didreadout;
+	lowerthresh_sync <= lowerthresh;
+	upperthresh_sync <= upperthresh;
 
 	for (i=0;i<10;i=i+1) begin
 		samplevalue[i]  <= {lvds1bits[110+i],lvds1bits[100+i],lvds1bits[90+i],lvds1bits[80+i],lvds1bits[70+i],lvds1bits[60+i],lvds1bits[50+i],lvds1bits[40+i],lvds1bits[30+i],lvds1bits[20+i],lvds1bits[10+i],lvds1bits[0+i]};
@@ -116,13 +119,17 @@ end
 
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
-	ram_wr <= 1'b0;
 	acqstate <= 3'd0;
  end else begin
-	case (acqstate)
-	0 : begin // ready
+	if (acqstate<4) begin
 		ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
 		ram_wr_address <= ram_wr_address + 10'd1;
+	end
+	else begin
+		ram_wr <= 1'b0;//not writing
+	end
+	case (acqstate)
+	0 : begin // ready
 		triggercounter<=0;
 		if (triggerlive_sync) begin
 			if (triggertype_sync==8'd1) acqstate <= 3'd1; // threshold trigger
@@ -133,18 +140,15 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	1 : begin // ready for first part of trigger condition to be met
-		ram_wr_address <= ram_wr_address + 10'd1;
-		if (samplevalue[0]<lowerthresh) acqstate <= 3'd2;
+		if (samplevalue[0]<lowerthresh_sync) acqstate <= 3'd2;
 	end
 	2 : begin // ready for second part of trigger condition to be met
-		ram_wr_address <= ram_wr_address + 10'd1;
-		if (samplevalue[0]>upperthresh) begin
+		if (samplevalue[0]>upperthresh_sync) begin
 			ram_address_triggered <= ram_wr_address; // remember where the trigger happened
 			acqstate <= 3'd3;
 		end
 	end
 	3 : begin // triggered, now taking more data
-		ram_wr_address <= ram_wr_address + 10'd1;
 		if (triggercounter<lengthtotake_sync) begin
 			triggercounter<=triggercounter+16'd1;
 		end
@@ -154,8 +158,6 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	4 : begin // ready to be read out
-		ram_wr <= 1'b0;//not writing
-		//ram_wr_address <= ram_wr_address + 10'd1;//not writing
 		triggercounter<= -16'd1;
 		if (didreadout_sync) acqstate <= 3'd0;
 	end
