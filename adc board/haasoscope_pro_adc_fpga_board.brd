@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.01" altunitdist="mm" altunit="mm"/>
@@ -216,7 +216,7 @@
 <text x="100.5" y="13" size="0.8128" layer="21" rot="R270">D8</text>
 <text x="97.5" y="13" size="0.8128" layer="21" rot="R270">D9</text>
 <text x="94.5" y="13" size="0.8128" layer="21" rot="R270">D10</text>
-<text x="91.5" y="13" size="0.8128" layer="21" rot="R270">D11</text>
+<text x="91.5" y="13" size="0.8128" layer="21" rot="R270">Fan</text>
 <text x="136.5" y="13" size="0.8128" layer="21" rot="R270">LED0</text>
 <text x="133.5" y="13" size="0.8128" layer="21" rot="R270">LED1</text>
 <text x="130.5" y="13" size="0.8128" layer="21" rot="R270">LED2</text>
@@ -285,9 +285,23 @@ GND</text>
 <text x="203.728" y="43.211" size="0.8128" layer="21">LVDS IN</text>
 <text x="149.388" y="154.305" size="0.8128" layer="21" rot="R180">3.3V</text>
 <text x="148.888" y="106.305" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.00
+<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.01
 by DrAndyHaas
 October 2024</text>
+<wire x1="62" y1="49" x2="102" y2="49" width="0.1524" layer="21"/>
+<wire x1="102" y1="49" x2="102" y2="9" width="0.1524" layer="21"/>
+<wire x1="102" y1="9" x2="62" y2="9" width="0.1524" layer="21"/>
+<wire x1="62" y1="9" x2="62" y2="49" width="0.1524" layer="21"/>
+<wire x1="220" y1="8" x2="0" y2="8" width="0.254" layer="21"/>
+<wire x1="220" y1="152" x2="0" y2="152" width="0.254" layer="21"/>
+<text x="96" y="44" size="1.27" layer="21">Fan</text>
+<wire x1="97.5" y1="32" x2="97.5" y2="40.5" width="0.1524" layer="21"/>
+<wire x1="97.5" y1="40.5" x2="96" y2="39" width="0.1524" layer="21"/>
+<wire x1="96" y1="39" x2="96" y2="38.5" width="0.1524" layer="21"/>
+<wire x1="97.5" y1="40.5" x2="99" y2="39" width="0.1524" layer="21"/>
+<wire x1="99" y1="39" x2="99" y2="38.5" width="0.1524" layer="21"/>
+<text x="195.818" y="59.645" size="0.8128" layer="21" rot="R180">+</text>
+<text x="200.318" y="59.645" size="0.8128" layer="21" rot="R180">-</text>
 </plain>
 <libraries>
 <library name="con-coax" urn="urn:adsk.eagle:library:133">
@@ -9163,6 +9177,39 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 </package3d>
 </packages3d>
 </library>
+<library name="SparkFun-Connectors">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find connectors and sockets- basically anything that can be plugged into or onto.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="1X02">
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.905" y2="1.27" width="0.2032" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="3.175" y2="1.27" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="3.81" y2="0.635" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="-0.635" x2="3.175" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="1.905" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="0.635" x2="3.81" y2="-0.635" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -9680,8 +9727,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="C76" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="141.5" y="100.5" smashed="yes" rot="R90"/>
 <element name="C77" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="139.5" y="100.5" smashed="yes" rot="R90"/>
 <element name="U6" library="MF_IC_Power" package="SOT-223-3" value="AMS1117-1.2" x="146.5" y="100.5" smashed="yes" rot="R90">
-<attribute name="JLC_ROTATION" value="180" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="NO" x="158.5" y="100.5" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="JLC_ROTATION" value="180" x="0" y="0" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="AMS1117-1.2" x="158.5" y="100.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="145.75" y="101" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="158.5" y="100.5" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10039,9 +10086,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VOLTAGE" value="" x="83" y="26.5" size="0.8128" layer="27" display="off"/>
 </element>
 <element name="IC17" library="DAC8562SDGSR" package="SOP50P490X110-10N" value="DAC8562SDGSR" x="45" y="103" smashed="yes">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value="16-bit, dual-channel, low-power, ultra-low glitch, voltage output DAC with 2.5V, 4ppm/C reference" x="45" y="103" size="0.8128" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1.1mm" x="45" y="103" size="0.8128" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="45" y="103" size="0.8128" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="DAC8562SDGSR" x="45" y="103" size="0.8128" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-DAC8562SDGSR" x="45" y="103" size="0.8128" layer="27" display="off"/>
@@ -10140,7 +10187,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="BNCIN2" library="connector" package="MOLEX-BNC-73100-0105" value="MOLEX_BNC_73100-0105" x="8.5" y="40.4" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="WM5524-ND" x="37.5" y="51.4" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="73100-0105" x="37.5" y="51.4" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="9.6" y="36.9" size="0.8128" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
+<attribute name="NAME" x="9.6" y="36.9" size="0.8128" layer="25" font="vector" rot="R270" align="bottom-center"/>
 </element>
 <element name="K9" library="relay" library_urn="urn:adsk.eagle:library:339" package="SOP04" package3d_urn="urn:adsk.eagle:package:24376/1" value="AQY21SOP" x="47.8" y="36.5" smashed="yes" rot="R180">
 <attribute name="LCSC" value="C7435105" x="47.8" y="36.5" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10154,7 +10201,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R160" library="MF_Passives" package="R0402" value="1k" x="47.4" y="42.9" smashed="yes">
 <attribute name="HOUSEPART" value="" x="47.4" y="42.9" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="47.4" y="42.9" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="46.8" y="41" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="46.8" y="41" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="47.4" y="42.9" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="47.4" y="42.9" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="47.4" y="42.9" size="1.778" layer="27" display="off"/>
@@ -10165,13 +10212,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="JLC_ROTATION" value="270" x="26.8" y="45.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="26.8" y="45.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="26.8" y="45.3" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="28.705" y="47.205" size="0.8128" layer="25" ratio="11" rot="R270"/>
-<attribute name="VALUE" x="24.006" y="46.57" size="0.8128" layer="27" ratio="10" rot="R270"/>
+<attribute name="NAME" x="28.705" y="47.205" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="24.006" y="46.57" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R162" library="MF_Passives" package="R0402" value="1k" x="22.7" y="45.8" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="22.7" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="22.7" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="20.8" y="46.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="20.8" y="46.9" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="22.7" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="22.7" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="22.7" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10193,13 +10240,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="JLC_ROTATION" value="270" x="26.8" y="45.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="61.4" y="50.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="61.4" y="50.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="44.305" y="47.205" size="0.8128" layer="25" ratio="11" rot="R270"/>
-<attribute name="VALUE" x="39.606" y="46.57" size="0.8128" layer="27" ratio="10" rot="R270"/>
+<attribute name="NAME" x="44.305" y="47.205" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="39.606" y="46.57" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R164" library="MF_Passives" package="R0402" value="1k" x="38.2" y="45.7" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="50.2" y="55.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="50.2" y="55.2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="36.4" y="46.7" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="36.4" y="46.7" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="50.2" y="55.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="50.2" y="55.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="50.2" y="55.2" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10220,7 +10267,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R165" library="MF_Passives" package="R0402" value="75" x="36.6" y="23.5" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="36.6" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="36.6" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="34.5" y="24.6" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="34.5" y="24.6" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="36.6" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="36.6" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="36.6" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10230,7 +10277,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R166" library="MF_Passives" package="R0402" value="75" x="41" y="23.5" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="41" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="41" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="42.1" y="24.6" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="42.1" y="24.6" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="41" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="41" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="41" y="23.5" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10240,7 +10287,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R167" library="MF_Passives" package="R0402" value="120" x="38.8" y="23.9" smashed="yes">
 <attribute name="HOUSEPART" value="" x="38.8" y="23.9" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="38.8" y="23.9" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="37.7" y="22" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="37.7" y="22" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="38.8" y="23.9" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="38.8" y="23.9" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="38.8" y="23.9" size="1.778" layer="27" display="off"/>
@@ -10250,7 +10297,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R168" library="MF_Passives" package="R0402" value="47" x="59.1" y="23.3" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="59.1" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="59.1" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="60" y="24.2" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="60" y="24.2" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="59.1" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="59.1" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="59.1" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10260,7 +10307,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R169" library="MF_Passives" package="R0402" value="47" x="57.3" y="23.3" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="57.3" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="57.3" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="55.4" y="24.2" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="55.4" y="24.2" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="57.3" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="57.3" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="57.3" y="23.3" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10270,7 +10317,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R170" library="MF_Passives" package="R0402" value="47" x="58.1" y="20.9" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="58.1" y="20.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="58.1" y="20.9" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="59.4" y="20" size="0.8128" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="59.4" y="20" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="58.1" y="20.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="58.1" y="20.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="58.1" y="20.9" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10282,7 +10329,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="HOUSEPART" value="" x="47.8" y="31.6" size="1.778" layer="27" display="off"/>
 <attribute name="LCSC" value="C52923" x="47.8" y="31.6" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="47.8" y="31.6" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="46.9" y="29.7" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="46.9" y="29.7" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="47.8" y="31.6" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="47.8" y="31.6" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="47.8" y="31.6" size="1.778" layer="27" display="off"/>
@@ -10292,8 +10339,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="JLC_ROTATION" value="270" x="26.8" y="45.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="78.6" y="50.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="78.6" y="50.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="62.105" y="47.305" size="0.8128" layer="25" ratio="11" rot="R270"/>
-<attribute name="VALUE" x="57.406" y="46.67" size="0.8128" layer="27" ratio="10" rot="R270"/>
+<attribute name="NAME" x="62.105" y="47.305" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="57.406" y="46.67" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R171" library="MF_Passives" package="R0402" value="1k" x="56.1" y="45.3" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="67.9" y="54.7" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10321,7 +10368,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="JLC_ROTATION" value="270" x="148.6645" y="77.4115" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="IC9" library="microchip" package="SOT23-6" value="93LC56B" x="149.089053125" y="67.43989375" smashed="yes" rot="R180">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="MICROCHIP" x="149.089053125" y="67.43989375" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="93LC76AT-I/OT" x="149.089053125" y="67.43989375" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_FARNELL" value="1556170" x="149.089053125" y="67.43989375" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10369,7 +10416,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="30.5" y="80" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="30.5" y="80" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="30.5" y="80" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="29.4" y="81.1" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="29.4" y="81.1" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="30.5" y="80" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="30.5" y="80" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="30.5" y="80" size="1.778" layer="27" display="off"/>
@@ -10378,7 +10425,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R153" library="MF_Passives" package="R0402" value="47" x="44.5" y="78" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="44.5" y="78" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="44.5" y="78" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="45.6" y="79.1" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="45.6" y="79.1" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="44.5" y="78" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="44.5" y="78" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="44.5" y="78" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10389,7 +10436,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R154" library="MF_Passives" package="R0402" value="47" x="44.5" y="80.5" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="44.5" y="80.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="44.5" y="80.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="43.4" y="79.4" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="43.4" y="79.4" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="44.5" y="80.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="44.5" y="80.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="44.5" y="80.5" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10399,7 +10446,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R155" library="MF_Passives" package="R0402" value="0" x="45.5" y="86" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="45.5" y="86" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="45.5" y="86" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="48.3" y="87" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="48.3" y="87" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="45.5" y="86" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="45.5" y="86" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="45.5" y="86" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10410,7 +10457,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="38.4" y="82.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="38.4" y="82.9" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10420,7 +10467,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="30.5" y="84" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="30.5" y="84" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="30.5" y="84" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="27.5" y="83.5" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="27.5" y="83.5" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="30.5" y="84" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="30.5" y="84" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="30.5" y="84" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10430,7 +10477,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="30.5" y="86" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="30.5" y="86" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="30.5" y="86" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="27.5" y="85.5" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="27.5" y="85.5" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="30.5" y="86" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="30.5" y="86" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="30.5" y="86" size="1.778" layer="27" display="off"/>
@@ -10440,7 +10487,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="38.6" y="85.1" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="38.6" y="85.1" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10450,7 +10497,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="41.5" y="76" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="41.5" y="76" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="41.5" y="76" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="42.6" y="74.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="42.6" y="74.9" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="41.5" y="76" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="41.5" y="76" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="41.5" y="76" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10460,7 +10507,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="37.5" y="74" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="" x="37.5" y="74" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="37.5" y="74" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="36.4" y="72.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="36.4" y="72.9" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="37.5" y="74" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="37.5" y="74" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="37.5" y="74" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10469,7 +10516,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R156" library="MF_Passives" package="R0402" value="10k" x="38.4" y="69.4" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="38.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="38.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="37.3" y="68.3" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="37.3" y="68.3" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="38.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="38.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="38.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10479,7 +10526,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R173" library="MF_Passives" package="R0402" value="10k" x="35.4" y="69.4" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="35.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="35.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="34.3" y="68.3" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="34.3" y="68.3" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="35.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="35.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="35.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10489,7 +10536,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R174" library="MF_Passives" package="R0402" value="10k" x="32.4" y="69.4" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="32.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="32.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="31.3" y="68.3" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="31.3" y="68.3" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="32.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="32.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="32.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10499,7 +10546,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R175" library="MF_Passives" package="R0402" value="10k" x="41.4" y="69.4" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="41.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="41.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="40.3" y="68.3" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="40.3" y="68.3" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="41.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="41.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="41.4" y="69.4" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10510,7 +10557,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="30.5" y="77" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="30.5" y="77" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="30.5" y="77" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="31.6" y="75.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="31.6" y="75.9" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="30.5" y="77" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="30.5" y="77" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="30.5" y="77" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10520,7 +10567,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="47.5" y="86" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="" x="47.5" y="86" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="47.5" y="86" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="44.8" y="85.4" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="44.8" y="85.4" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="47.5" y="86" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="47.5" y="86" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="47.5" y="86" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10529,7 +10576,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R176" library="MF_Passives" package="R0402" value="5.1k" x="34.5" y="85" smashed="yes">
 <attribute name="HOUSEPART" value="" x="34.5" y="85" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="34.5" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="33.4" y="86.1" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="33.4" y="86.1" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="34.5" y="85" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="34.5" y="85" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="34.5" y="85" size="1.778" layer="27" display="off"/>
@@ -10540,7 +10587,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="48.6" y="78.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="48.6" y="78.9" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10550,7 +10597,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="48.6" y="77.4" size="0.8128" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="48.6" y="77.4" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10560,7 +10607,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="21.5" y="81.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="" x="21.5" y="81.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="21.5" y="81.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="20.4" y="80.4" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="20.4" y="80.4" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="21.5" y="81.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="21.5" y="81.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="21.5" y="81.5" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10569,7 +10616,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R177" library="MF_Passives" package="R0402" value="47" x="21.5" y="78.5" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="21.5" y="78.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="21.5" y="78.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="20.9" y="75.5" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="20.9" y="75.5" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="21.5" y="78.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="21.5" y="78.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="21.5" y="78.5" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10580,7 +10627,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="24.5" y="79" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="24.5" y="79" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="24.5" y="79" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="25.6" y="77.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="25.6" y="77.9" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="24.5" y="79" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="24.5" y="79" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="24.5" y="79" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10590,7 +10637,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="37.5" y="91" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="37.5" y="91" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="37.5" y="91" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="38.6" y="92.1" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="38.6" y="92.1" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="37.5" y="91" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="37.5" y="91" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="37.5" y="91" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10600,7 +10647,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="33.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="" x="33.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="33.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="32.4" y="89.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="32.4" y="89.9" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="33.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="33.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="33.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10609,7 +10656,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R178" library="MF_Passives" package="R0402" value="1k" x="35.5" y="91" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="35.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="35.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="34.4" y="88.4" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="34.4" y="88.4" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="35.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="35.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="35.5" y="91" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10619,7 +10666,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R185" library="MF_Passives" package="R0402" value="357" x="35.5" y="94" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="35.5" y="94" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="35.5" y="94" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="34.4" y="92.9" size="0.8128" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="34.4" y="92.9" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="35.5" y="94" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="35.5" y="94" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="35.5" y="94" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10630,7 +10677,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="DIELECTRIC" value="" x="37.5" y="94" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="37.5" y="94" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="37.5" y="94" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="38.6" y="95.1" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="38.6" y="95.1" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="37.5" y="94" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="37.5" y="94" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="37.5" y="94" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10646,9 +10693,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="209.703" y="112.816" size="0.8128" layer="21" rot="R270"/>
 </element>
 <element name="IC22" library="TPS7A7200RGTR" package="QFN50P300X300X100-17N" value="TPS7A7200RGTR" x="159.35" y="150.14" smashed="yes">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value="2A, Single Output, Very Low Input, Configurable Fixed (0.9 to 5.0V) Low-Dropout Linear Regulator" x="159.35" y="150.14" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1mm" x="159.35" y="150.14" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="159.35" y="150.14" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS7A7200RGTR" x="159.35" y="150.14" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS7A7200RGTR" x="159.35" y="150.14" size="1.778" layer="27" display="off"/>
@@ -10662,9 +10709,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="C244" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="153" y="150.14" smashed="yes" rot="R270"/>
 <element name="C245" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="150.46" y="150.14" smashed="yes" rot="R270"/>
 <element name="IC23" library="TPS7A7200RGTR" package="QFN50P300X300X100-17N" value="TPS7A7200RGTR" x="159.35" y="119.66" smashed="yes">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value="2A, Single Output, Very Low Input, Configurable Fixed (0.9 to 5.0V) Low-Dropout Linear Regulator" x="159.35" y="119.66" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1mm" x="159.35" y="119.66" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="159.35" y="119.66" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS7A7200RGTR" x="159.35" y="119.66" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS7A7200RGTR" x="159.35" y="119.66" size="1.778" layer="27" display="off"/>
@@ -10678,9 +10725,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="C246" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="153" y="119.66" smashed="yes" rot="R270"/>
 <element name="C247" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="150.46" y="119.66" smashed="yes" rot="R270"/>
 <element name="IC24" library="TPS7A7200RGTR" package="QFN50P300X300X100-17N" value="TPS7A7200RGTR" x="159.35" y="134.9" smashed="yes">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value="2A, Single Output, Very Low Input, Configurable Fixed (0.9 to 5.0V) Low-Dropout Linear Regulator" x="159.35" y="134.9" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1mm" x="159.35" y="134.9" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="159.35" y="134.9" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS7A7200RGTR" x="159.35" y="134.9" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS7A7200RGTR" x="159.35" y="134.9" size="1.778" layer="27" display="off"/>
@@ -10694,9 +10741,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="C248" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="153" y="134.9" smashed="yes" rot="R270"/>
 <element name="C249" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="150.46" y="134.9" smashed="yes" rot="R270"/>
 <element name="IC25" library="TPS72325DBVR" package="SOT95P280X145-5N" value="TPS72325DBVR" x="154.54" y="19.02" smashed="yes" rot="R180">
-<attribute name="JLC_ROTATION" value="180" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="DESCRIPTION" value="TEXAS INSTRUMENTS - TPS72325DBVR - LDO, FIXED, -2.5V, 0.2A, SOT-23-5" x="154.54" y="19.02" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HEIGHT" value="1.45mm" x="154.54" y="19.02" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="JLC_ROTATION" value="180" x="0" y="0" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="154.54" y="19.02" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS72325DBVR" x="154.54" y="19.02" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS72325DBVR" x="154.54" y="19.02" size="1.778" layer="27" rot="R180" display="off"/>
@@ -10711,9 +10758,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="MPN" value="P125-1102A0BS116A1" x="146.92" y="17.75" size="1.778" layer="27" display="off"/>
 </element>
 <element name="IC26" library="TPS7A7200RGTR" package="QFN50P300X300X100-17N" value="TPS7A7200RGTR" x="158.28" y="29.74" smashed="yes">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value="2A, Single Output, Very Low Input, Configurable Fixed (0.9 to 5.0V) Low-Dropout Linear Regulator" x="158.28" y="29.74" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1mm" x="158.28" y="29.74" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="158.28" y="29.74" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS7A7200RGTR" x="158.28" y="29.74" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS7A7200RGTR" x="158.28" y="29.74" size="1.778" layer="27" display="off"/>
@@ -10729,9 +10776,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R217" library="FlashPCB_Resistors" package="RES-0402" value="5.1k" x="216.19" y="111.19" smashed="yes" rot="R90"/>
 <element name="R218" library="FlashPCB_Resistors" package="RES-0402" value="5.1k" x="155.46" y="143.78" smashed="yes"/>
 <element name="IC27" library="TPS7A7200RGTR" package="QFN50P300X300X100-17N" value="TPS7A7200RGTR" x="159.35" y="109.5" smashed="yes">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value="2A, Single Output, Very Low Input, Configurable Fixed (0.9 to 5.0V) Low-Dropout Linear Regulator" x="154.27" y="122.2" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1mm" x="154.27" y="122.2" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="154.27" y="122.2" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS7A7200RGTR" x="154.27" y="122.2" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS7A7200RGTR" x="154.27" y="122.2" size="1.778" layer="27" display="off"/>
@@ -10745,9 +10792,9 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="C255" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="153" y="109.5" smashed="yes" rot="R270"/>
 <element name="C256" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="150.46" y="109.5" smashed="yes" rot="R270"/>
 <element name="IC28" library="TPS7A7200RGTR" package="QFN50P300X300X100-17N" value="TPS7A7200RGTR" x="158.35" y="44.57" smashed="yes">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value="2A, Single Output, Very Low Input, Configurable Fixed (0.9 to 5.0V) Low-Dropout Linear Regulator" x="158.35" y="44.57" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1mm" x="158.35" y="44.57" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="158.35" y="44.57" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS7A7200RGTR" x="158.35" y="44.57" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS7A7200RGTR" x="158.35" y="44.57" size="1.778" layer="27" display="off"/>
@@ -10782,7 +10829,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="192.6" y="151.7" size="0.8128" layer="21"/>
 </element>
 <element name="L1" library="SparkFun-Passives" package="CDRH125" value="10uH" x="181.3" y="148.7" smashed="yes" rot="R270">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C339970" x="181.3" y="148.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="174.57" y="152.16" size="0.8128" layer="21" rot="R90"/>
 </element>
@@ -10817,7 +10864,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="192.6" y="136.7" size="0.8128" layer="21"/>
 </element>
 <element name="L9" library="SparkFun-Passives" package="CDRH125" value="10uH" x="181.3" y="133.7" smashed="yes" rot="R270">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C339970" x="181.3" y="133.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="174.57" y="137.16" size="0.8128" layer="21" rot="R90"/>
 </element>
@@ -10852,7 +10899,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="192.6" y="121.7" size="0.8128" layer="21"/>
 </element>
 <element name="L10" library="SparkFun-Passives" package="CDRH125" value="10uH" x="181.3" y="118.7" smashed="yes" rot="R270">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C339970" x="181.3" y="118.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="174.57" y="122.16" size="0.8128" layer="21" rot="R90"/>
 </element>
@@ -10887,7 +10934,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="191.6" y="46.2" size="0.8128" layer="21"/>
 </element>
 <element name="L11" library="SparkFun-Passives" package="CDRH125" value="10uH" x="180.3" y="43.2" smashed="yes" rot="R270">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C339970" x="180.3" y="43.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="173.57" y="46.66" size="0.8128" layer="21" rot="R90"/>
 </element>
@@ -10922,7 +10969,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="191.6" y="31.7" size="0.8128" layer="21"/>
 </element>
 <element name="L12" library="SparkFun-Passives" package="CDRH125" value="10uH" x="180.3" y="28.7" smashed="yes" rot="R270">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C339970" x="180.3" y="28.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="173.57" y="32.16" size="0.8128" layer="21" rot="R90"/>
 </element>
@@ -10957,7 +11004,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="191.6" y="17.7" size="0.8128" layer="21"/>
 </element>
 <element name="L13" library="SparkFun-Passives" package="CDRH125" value="10uH" x="180.3" y="14.7" smashed="yes" rot="R270">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C339970" x="180.3" y="14.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="173.57" y="18.16" size="0.8128" layer="21" rot="R90"/>
 </element>
@@ -10993,7 +11040,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="VALUE" x="192.5" y="106.2" size="0.8128" layer="21"/>
 </element>
 <element name="L14" library="SparkFun-Passives" package="CDRH125" value="10uH" x="181.2" y="103.2" smashed="yes" rot="R270">
-<attribute name="JLC_ROTATION" value="270" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C339970" x="181.2" y="103.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="174.47" y="106.66" size="0.8128" layer="21" rot="R90"/>
 </element>
@@ -11116,7 +11163,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="BNCIN1" library="connector" package="MOLEX-BNC-73100-0105" value="MOLEX_BNC_73100-0105" x="8.5" y="133.4" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="WM5524-ND" x="37.5" y="144.4" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="73100-0105" x="37.5" y="144.4" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="9.6" y="129.9" size="0.8128" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
+<attribute name="NAME" x="9.6" y="129.9" size="0.8128" layer="25" font="vector" rot="R270" align="bottom-center"/>
 </element>
 <element name="K5" library="relay" library_urn="urn:adsk.eagle:library:339" package="SOP04" package3d_urn="urn:adsk.eagle:package:24376/1" value="AQY21SOP" x="57.8" y="132" smashed="yes" rot="R180">
 <attribute name="LCSC" value="C7435105" x="57.8" y="132" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11130,7 +11177,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R136" library="MF_Passives" package="R0402" value="1k" x="57.4" y="138.4" smashed="yes">
 <attribute name="HOUSEPART" value="" x="57.4" y="138.4" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="57.4" y="138.4" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="56.8" y="136.5" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="56.8" y="136.5" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="57.4" y="138.4" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="57.4" y="138.4" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="57.4" y="138.4" size="1.778" layer="27" display="off"/>
@@ -11141,13 +11188,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="JLC_ROTATION" value="270" x="25.35" y="146.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="25.35" y="146.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="25.35" y="146.7" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="27.255" y="148.605" size="0.8128" layer="25" ratio="11" rot="R270"/>
-<attribute name="VALUE" x="22.556" y="147.97" size="0.8128" layer="27" ratio="10" rot="R270"/>
+<attribute name="NAME" x="27.255" y="148.605" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="22.556" y="147.97" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R140" library="MF_Passives" package="R0402" value="1k" x="21.25" y="147.2" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="19.35" y="148.3" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="19.35" y="148.3" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11169,13 +11216,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="JLC_ROTATION" value="270" x="26.8" y="45.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="65.45" y="152.05" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="65.45" y="152.05" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="48.355" y="148.455" size="0.8128" layer="25" ratio="11" rot="R270"/>
-<attribute name="VALUE" x="43.656" y="147.82" size="0.8128" layer="27" ratio="10" rot="R270"/>
+<attribute name="NAME" x="48.355" y="148.455" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="43.656" y="147.82" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R141" library="MF_Passives" package="R0402" value="1k" x="42.75" y="146.95" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="40.95" y="147.95" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="40.95" y="147.95" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11196,7 +11243,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R148" library="MF_Passives" package="R0402" value="75" x="41.55" y="124.85" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="41.55" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="41.55" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="39.45" y="125.95" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="39.45" y="125.95" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="41.55" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="41.55" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="41.55" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11206,7 +11253,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R149" library="MF_Passives" package="R0402" value="75" x="45.95" y="124.85" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="45.95" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="45.95" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="47.05" y="125.95" size="0.8128" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="47.05" y="125.95" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="45.95" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="45.95" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="45.95" y="124.85" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11216,7 +11263,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R150" library="MF_Passives" package="R0402" value="120" x="43.75" y="125.25" smashed="yes">
 <attribute name="HOUSEPART" value="" x="43.75" y="125.25" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="43.75" y="125.25" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="42.65" y="123.35" size="0.8128" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="42.65" y="123.35" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="43.75" y="125.25" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="43.75" y="125.25" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="43.75" y="125.25" size="1.778" layer="27" display="off"/>
@@ -11228,7 +11275,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="HOUSEPART" value="" x="57.8" y="127.1" size="1.778" layer="27" display="off"/>
 <attribute name="LCSC" value="C52923" x="57.8" y="127.1" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="57.8" y="127.1" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="59.1" y="126.3" size="0.8128" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="59.1" y="126.3" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="57.8" y="127.1" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="57.8" y="127.1" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="57.8" y="127.1" size="1.778" layer="27" display="off"/>
@@ -11551,7 +11598,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <element name="R13" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="57.5" y="140" smashed="yes" rot="R180"/>
 <element name="R22" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="39" y="147" smashed="yes" rot="R90"/>
 <element name="OUTSPLPIT" library="adafruit" package="SMA_EDGELAUNCH" value="50" x="0.22" y="15.52" smashed="yes">
-<attribute name="NAME" x="7.8" y="22.505" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="7.8" y="22.505" size="0.8128" layer="25" rot="R180"/>
 </element>
 <element name="R23" library="PP_Passives" package="0201" value="100" x="116.5" y="69.5" smashed="yes" rot="MR270"/>
 <element name="R24" library="PP_Passives" package="0201" value="100" x="119.5" y="69.5" smashed="yes" rot="MR270"/>
@@ -11722,7 +11769,26 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <attribute name="JLC_ROTATION" value="90" x="0" y="0" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C13564" x="99" y="98.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="NCP18XH103F03RB" x="99" y="98.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="104.605" y="97.435" size="0.8128" layer="21" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="104.605" y="97.435" size="0.8128" layer="21" rot="R180"/>
+</element>
+<element name="Q1" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="198.5" y="71" smashed="yes" rot="R270">
+<attribute name="LCSC" value="C7420370" x="205.5" y="76" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="S8050" x="205.5" y="76" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="200.405" y="72.905" size="0.889" layer="25" rot="R270"/>
+<attribute name="VALUE" x="195.706" y="72.27" size="0.635" layer="27" rot="R270"/>
+</element>
+<element name="R208" library="MF_Passives" package="R0402" value="1k" x="192.5" y="71.5" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="199" y="76.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="199" y="76.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="193.6" y="72.6" size="1.016" layer="25" font="vector" rot="R270"/>
+<attribute name="POPULATE" value="1" x="199" y="76.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="199" y="76.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="199" y="76.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="199" y="76.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="199" y="76.5" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="JST_FAN" library="SparkFun-Connectors" package="1X02" value="Fan" x="197" y="64" smashed="yes">
+<attribute name="VALUE" x="196.73" y="58.325" size="1.27" layer="21"/>
 </element>
 </elements>
 <signals>
@@ -12360,8 +12426,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="66.95" y1="40.95" x2="66.5" y2="40.5" width="0.1524" layer="1"/>
 <wire x1="66.95" y1="41.5" x2="66.95" y2="42.05" width="0.1524" layer="1"/>
 <wire x1="66.95" y1="42.05" x2="66.5" y2="42.5" width="0.1524" layer="1"/>
-<wire x1="70.5" y1="42.5" x2="70.5" y2="41.9" width="0.1524" layer="1"/>
-<wire x1="70.5" y1="41.9" x2="70.742" y2="41.658" width="0.1524" layer="1"/>
 <wire x1="72.5" y1="42.5" x2="72.5" y2="41.9" width="0.1524" layer="1"/>
 <wire x1="72.5" y1="41.9" x2="72.25" y2="41.65" width="0.1524" layer="1"/>
 <via x="68.5" y="33.5" extent="1-16" drill="0.35"/>
@@ -12857,7 +12921,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="164.57" y1="24.7" x2="168.3" y2="24.7" width="1.27" layer="1"/>
 <wire x1="168.3" y1="24.7" x2="168.3" y2="27.7" width="1.27" layer="1"/>
 <wire x1="168.3" y1="27.7" x2="168.3" y2="30.7" width="1.27" layer="1"/>
-<wire x1="168.3" y1="30.7" x2="168.3" y2="33.23841875" width="1.27" layer="1"/>
 <wire x1="170.4" y1="10.7" x2="170.4" y2="13.7" width="1.27" layer="1"/>
 <wire x1="170.4" y1="13.7" x2="170.4" y2="14.7" width="1.27" layer="1"/>
 <wire x1="170.4" y1="14.7" x2="170.4" y2="16.7" width="1.27" layer="1"/>
@@ -12887,7 +12950,6 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="169.03" y1="129.43" x2="165.3" y2="129.43" width="1.27" layer="1"/>
 <wire x1="169.3" y1="144.7" x2="169.3" y2="147.7" width="1.27" layer="1"/>
 <wire x1="169.3" y1="147.7" x2="169.3" y2="150.7" width="1.27" layer="1"/>
-<wire x1="169.3" y1="150.7" x2="169.3" y2="153.23841875" width="1.27" layer="1"/>
 <wire x1="165.3" y1="144.43" x2="165.57" y2="144.7" width="1.27" layer="1"/>
 <wire x1="165.57" y1="144.7" x2="169.3" y2="144.7" width="1.27" layer="1"/>
 <wire x1="170.2" y1="107.2" x2="170.2" y2="104.2" width="1.27" layer="1"/>
@@ -13316,6 +13378,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <via x="97.25" y="98.55" extent="1-16" drill="0.5"/>
 <wire x1="97.25" y1="98.55" x2="98.188" y2="98.55" width="0.1524" layer="1"/>
 <wire x1="98.188" y1="98.55" x2="98.238" y2="98.5" width="0.1524" layer="1"/>
+<contactref element="Q1" pad="2"/>
 </signal>
 <signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>
@@ -15319,7 +15382,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="105.5" y1="8.5" x2="105.375" y2="8.375" width="0.0889" layer="1"/>
 <wire x1="105.375" y1="5.5" x2="105.28" y2="5.5" width="0.0889" layer="1"/>
 </signal>
-<signal name="DEBUGOUT11">
+<signal name="FAN_CONTROL">
 <contactref element="J11" pad="8"/>
 <contactref element="R30" pad="P$1"/>
 <contactref element="IC5" pad="B16"/>
@@ -15331,7 +15394,8 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="122.75" y1="78.375" x2="121.25" y2="78.375" width="0.0889" layer="3"/>
 <wire x1="124.125" y1="77" x2="122.75" y2="78.375" width="0.0889" layer="3"/>
 <wire x1="124.125" y1="75.75" x2="124.125" y2="77" width="0.0889" layer="3"/>
-<wire x1="124.125" y1="27.125" x2="124.125" y2="75.75" width="0.0889" layer="1"/>
+<wire x1="124.125" y1="27.125" x2="124.125" y2="47" width="0.0889" layer="1"/>
+<wire x1="124.125" y1="47" x2="124.125" y2="75.75" width="0.0889" layer="1"/>
 <wire x1="109.375" y1="12.375" x2="124.125" y2="27.125" width="0.0889" layer="1"/>
 <wire x1="109.375" y1="6.125" x2="109.375" y2="12.375" width="0.0889" layer="1"/>
 <wire x1="109" y1="5.75" x2="109.375" y2="6.125" width="0.0889" layer="1"/>
@@ -15344,6 +15408,13 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="95" y1="5.5" x2="93.5" y2="7" width="0.0889" layer="1"/>
 <wire x1="95" y1="5.5" x2="95.12" y2="5.5" width="0.0889" layer="1"/>
 <via x="124.125" y="75.75" extent="1-16" drill="0.2"/>
+<contactref element="R208" pad="P$2"/>
+<wire x1="192.5" y1="70.95" x2="191.05" y2="69.5" width="0.1524" layer="1"/>
+<wire x1="191.05" y1="69.5" x2="191" y2="69.5" width="0.1524" layer="1"/>
+<via x="191" y="69.5" extent="1-16" drill="0.35"/>
+<wire x1="168.5" y1="47" x2="124.125" y2="47" width="0.1524" layer="16"/>
+<via x="124.125" y="47" extent="1-16" drill="0.2"/>
+<wire x1="191" y1="69.5" x2="168.5" y2="47" width="0.1524" layer="16"/>
 </signal>
 <signal name="DEBUGOUT10">
 <contactref element="J11" pad="7"/>
@@ -21076,6 +21147,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <wire x1="191.1" y1="5.5" x2="191" y2="5.5" width="1.27" layer="1"/>
 <wire x1="194.85615" y1="112" x2="194.85615" y2="110.64385" width="1.27" layer="1"/>
 <wire x1="194.85615" y1="110.64385" x2="195" y2="110.5" width="1.27" layer="1"/>
+<contactref element="JST_FAN" pad="1"/>
 </signal>
 <signal name="COIL1-">
 <contactref element="Q7" pad="3"/>
@@ -22835,6 +22907,18 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 <contactref element="J1" pad="1"/>
 <wire x1="1.17" y1="111.29" x2="4.03" y2="111.29" width="0.1524" layer="1"/>
 <wire x1="4.03" y1="111.29" x2="4.1" y2="111.22" width="0.1524" layer="1"/>
+</signal>
+<signal name="N$10">
+<contactref element="Q1" pad="1"/>
+<contactref element="R208" pad="P$1"/>
+<wire x1="192.5" y1="72.05" x2="197.323" y2="72.05" width="0.1524" layer="1"/>
+<wire x1="197.323" y1="72.05" x2="197.484" y2="71.889" width="0.1524" layer="1"/>
+</signal>
+<signal name="FAN-">
+<contactref element="Q1" pad="3"/>
+<contactref element="JST_FAN" pad="2"/>
+<wire x1="199.54" y1="64" x2="199.516" y2="64.024" width="1.016" layer="1"/>
+<wire x1="199.516" y1="64.024" x2="199.516" y2="71" width="1.016" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
