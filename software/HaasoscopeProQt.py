@@ -233,6 +233,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.upposButton4.clicked.connect(self.uppos4)
         self.ui.downposButton4.clicked.connect(self.downpos4)
         self.ui.chanBox.valueChanged.connect(self.selectchannel)
+        self.ui.gainBox.valueChanged.connect(self.setgain)
         self.ui.offsetBox.valueChanged.connect(self.changeoffset)
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
@@ -289,13 +290,10 @@ class MainWindow(TemplateBaseClass):
             if not self.acdc[self.selectedchannel]:
                 self.setacdc()
 
-    def setgain(self):
-        if self.ui.gainCheck.checkState() == QtCore.Qt.Checked: #x10
-            if self.gain[self.selectedchannel]:
-                self.tellswitchgain(self.selectedchannel)
-        if self.ui.gainCheck.checkState() == QtCore.Qt.Unchecked: #x1
-            if not self.gain[self.selectedchannel]:
-                self.tellswitchgain(self.selectedchannel)
+    def setgain(self,value):
+        spimode(0)
+        gain = 0x1a  # 00 to 20 is 26 to -6 dB, 0x1a is no gain
+        spicommand("Amp Gain", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
 
     phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
