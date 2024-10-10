@@ -387,9 +387,11 @@ class MainWindow(TemplateBaseClass):
     downsample=0
     xscale=1
     xscaling=1
-    yscale=1
-    min_y=-pow(2,12)
-    max_y=pow(2,12)
+    yscale=16.
+    min_y=-pow(2,11)
+    max_y=pow(2,11)
+    min_x=0
+    max_x=4*10*expect_samples/samplerate
     triggerlevel = 128
     triggerdelta = 4
     triggerpos = int(expect_samples * 128/255)
@@ -397,9 +399,6 @@ class MainWindow(TemplateBaseClass):
         if value+self.triggerdelta < 255 and value-self.triggerdelta > 0:
             self.triggerlevel = 255 - value
             self.sendtriggerinfo()
-        return
-        self.hline = (float(  value-128  )*self.yscale/256.)
-        self.otherlines[1].setData( [self.min_x, self.max_x], [self.hline, self.hline] ) # horizontal line showing trigger threshold
     def triggerdeltachanged(self, value):
         if self.triggerlevel+value < 255 and self.triggerlevel-value > 0:
             self.triggerdelta=value
@@ -407,16 +406,16 @@ class MainWindow(TemplateBaseClass):
     def triggerposchanged(self,value):
         self.triggerpos = int(self.expect_samples * value/255)
         self.sendtriggerinfo()
-        return
-        offset=5.0 # trig to readout delay
-        scal = self.expect_samples/256.
-        point = value*scal + offset/pow(2,self.downsample)
-        if self.downsample<0: point = 128*scal + (point-128*scal)*pow(2,self.downsample)
-        self.vline = float(  2*(value-128)/256. *self.xscale /self.xscaling)
-        self.otherlines[0].setData( [self.vline, self.vline], [self.min_y, self.max_y] ) # vertical line showing trigger time
     def sendtriggerinfo(self):
         usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, 100, 100, 100]))
         tres = usb.recv(4)
+
+        self.hline = float(255 - self.triggerlevel - 128) * self.yscale
+        self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
+
+        point = self.triggerpos + 1.25
+        self.vline = float(4 * 10 * point / self.samplerate)
+        self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),min(self.hline + self.max_y / 2,self.max_y)])  # vertical line showing trigger time
 
     def rolling(self):
         if self.triggertype>0:
@@ -534,7 +533,7 @@ class MainWindow(TemplateBaseClass):
         #other stuff
         self.ui.plot.setLabel('bottom',"Time (ns)")
         self.ui.plot.setLabel('left', "Voltage (ADC sample value)")
-        self.ui.plot.setRange(yRange=(-2100, 2100),padding=0)
+        self.ui.plot.setRange(yRange=(self.min_y,self.max_y),padding=0.01)
         #self.timechanged()
         self.ui.totBox.setMaximum(self.expect_samples)
         self.ui.plot.showGrid(x=True, y=True)
@@ -709,8 +708,6 @@ class MainWindow(TemplateBaseClass):
     def init(self):
         self.pllreset()
         self.adfreset()
-        self.risingfalling()
-        self.sendtriggerinfo()
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])
@@ -774,6 +771,7 @@ if __name__ == '__main__':
             win.cleanup()
             sys.exit()
         win.launch()
+        win.sendtriggerinfo()
         win.dostartstop()
     except DeviceError:
         print("device com failed!")
