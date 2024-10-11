@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.01" altunitdist="mm" altunit="mm"/>
@@ -1828,8 +1828,8 @@ Example Datasheet</description>
 </package>
 </packages>
 </library>
-<library name="ADC102S021CIMM_NOPB">
-<description>&lt;2 Channel, 50 ksps to 200 ksps, 10-Bit A/D Converter&lt;/b&gt;&lt;p&gt;
+<library name="ADC122S021CIMM_NOPB">
+<description>&lt;2 Channel, 50 ksps to 200 ksps, 12-Bit A/D Converter&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
 <package name="SOP65P490X110-8N">
@@ -9812,19 +9812,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="C43" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="147.5" y="92" smashed="yes" rot="R270"/>
 <element name="C41" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="117.5" y="108.5" smashed="yes" rot="R270"/>
 <element name="C42" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="138.5" y="92" smashed="yes" rot="R270"/>
-<element name="IC3" library="ADC102S021CIMM_NOPB" package="SOP65P490X110-8N" value="ADC102S021CIMM_NOPB" x="117.5" y="102" smashed="yes">
-<attribute name="DESCRIPTION" value="2 Channel, 50 ksps to 200 ksps, 10-Bit A/D Converter" x="117.5" y="102" size="1.778" layer="27" display="off"/>
+<element name="IC3" library="ADC122S021CIMM_NOPB" package="SOP65P490X110-8N" value="ADC122S021CIMM_NOPB" x="117.5" y="102" smashed="yes">
+<attribute name="DESCRIPTION" value="2 Channel, 50 ksps to 200 ksps, 12-Bit A/D Converter" x="117.5" y="102" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1.1mm" x="117.5" y="102" size="1.778" layer="27" display="off"/>
 <attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="117.5" y="102" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="ADC102S021CIMM/NOPB" x="117.5" y="102" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="926-AD102S021CIMMNPB" x="117.5" y="102" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ADC102S021CIMM-NOPB?qs=7X5t%252BdzoRHDLCWKeMhJPog%3D%3D" x="117.5" y="102" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="ADC122S021CIMM/NOPB" x="117.5" y="102" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C44" library="passives" package="0402_CAP" value="0.1uF" x="110.5" y="105" smashed="yes"/>
 <element name="R126" library="passives" package="0402_RES" value="1k" x="112.5" y="102" smashed="yes" rot="R90"/>
 <element name="R124" library="passives" package="0402_RES" value="1k" x="103" y="101.5" smashed="yes" rot="R90"/>
-<element name="R125" library="passives" package="0402_RES" value="1k" x="112.5" y="100" smashed="yes" rot="R90"/>
+<element name="R125" library="passives" package="0402_RES" value="10k" x="112.5" y="100" smashed="yes" rot="R90"/>
 <element name="R128" library="passives" package="0402_RES" value="0" x="60" y="74.5" smashed="yes" rot="R180"/>
 <element name="R129" library="passives" package="0402_RES" value="0" x="105" y="105" smashed="yes"/>
 <element name="R130" library="passives" package="0402_RES" value="10k" x="110.5" y="100" smashed="yes" rot="R180"/>

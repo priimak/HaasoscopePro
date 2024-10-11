@@ -8208,8 +8208,8 @@ Example Datasheet</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="ADC102S021CIMM_NOPB">
-<description>&lt;2 Channel, 50 ksps to 200 ksps, 10-Bit A/D Converter&lt;/b&gt;&lt;p&gt;
+<library name="ADC122S021CIMM_NOPB">
+<description>&lt;2 Channel, 50 ksps to 200 ksps, 12-Bit A/D Converter&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
 <package name="SOP65P490X110-8N">
@@ -8242,7 +8242,7 @@ Example Datasheet</description>
 </package>
 </packages>
 <symbols>
-<symbol name="ADC102S021CIMM_NOPB">
+<symbol name="ADC122S021CIMM_NOPB">
 <wire x1="5.08" y1="2.54" x2="22.86" y2="2.54" width="0.254" layer="94"/>
 <wire x1="22.86" y1="-10.16" x2="22.86" y2="2.54" width="0.254" layer="94"/>
 <wire x1="22.86" y1="-10.16" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
@@ -8260,11 +8260,11 @@ Example Datasheet</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="ADC102S021CIMM_NOPB" prefix="IC">
-<description>&lt;b&gt;2 Channel, 50 ksps to 200 ksps, 10-Bit A/D Converter&lt;/b&gt;&lt;p&gt;
+<deviceset name="ADC122S021CIMM_NOPB" prefix="IC">
+<description>&lt;b&gt;2 Channel, 50 ksps to 200 ksps, 12-Bit A/D Converter&lt;/b&gt;&lt;p&gt;
 Source: &lt;a href="http://www.ti.com/lit/ds/symlink/adc102s021.pdf"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="ADC102S021CIMM_NOPB" x="0" y="0"/>
+<gate name="G$1" symbol="ADC122S021CIMM_NOPB" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="SOP65P490X110-8N">
@@ -8280,12 +8280,10 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/adc102s021.pdf"&gt; Datashe
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DESCRIPTION" value="2 Channel, 50 ksps to 200 ksps, 10-Bit A/D Converter" constant="no"/>
+<attribute name="DESCRIPTION" value="2 Channel, 50 ksps to 200 ksps, 12-Bit A/D Converter" constant="no"/>
 <attribute name="HEIGHT" value="1.1mm" constant="no"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="ADC102S021CIMM/NOPB" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="926-AD102S021CIMMNPB" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ADC102S021CIMM-NOPB?qs=7X5t%252BdzoRHDLCWKeMhJPog%3D%3D" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="ADC122S021CIMM/NOPB" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -23366,13 +23364,13 @@ part number 2062-2P from STA</description>
 <part name="C43" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
 <part name="C41" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
 <part name="C42" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
-<part name="IC3" library="ADC102S021CIMM_NOPB" deviceset="ADC102S021CIMM_NOPB" device=""/>
+<part name="IC3" library="ADC122S021CIMM_NOPB" deviceset="ADC122S021CIMM_NOPB" device=""/>
 <part name="C44" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
 <part name="SUPPLY61" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R126" library="passives" deviceset="RESISTOR" device="0402_RES" value="1k"/>
 <part name="R124" library="passives" deviceset="RESISTOR" device="0402_RES" value="1k"/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R125" library="passives" deviceset="RESISTOR" device="0402_RES" value="1k"/>
+<part name="R125" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R128" library="passives" deviceset="RESISTOR" device="0402_RES" value="0"/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -38084,18 +38082,19 @@ between the two signals at the input buffer.</text>
 <sheet>
 <description>Temp mon</description>
 <plain>
-<text x="17.78" y="106.68" size="1.778" layer="90">Slow adc for temp momitoring</text>
+<text x="22.86" y="17.78" size="1.778" layer="90">Slow adc for temp momitoring</text>
 <text x="99.06" y="101.6" size="1.778" layer="90">V across TDIODE, with 0.1mA
 is 0.681 when ADC running with clock, 0.731 when off</text>
 <text x="68.58" y="96.52" size="1.778" layer="90">Gain=1+3/1=4</text>
-<text x="68.58" y="71.12" size="1.778" layer="90">Gain=1+1/1=2</text>
+<text x="68.58" y="71.12" size="1.778" layer="90">Gain=1+1/10=1.1</text>
 <text x="111.76" y="35.56" size="1.778" layer="90">10kΩ 310uA 100mW ±1% 3380K ±1%
 0603 NTC Thermistors ROHS</text>
+<text x="25.4" y="111.76" size="1.778" layer="90">Op amp buffer for temp monitoring</text>
 </plain>
 <instances>
-<instance part="IC3" gate="G$1" x="43.18" y="17.78" smashed="yes">
-<attribute name="NAME" x="67.31" y="25.4" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="67.31" y="22.86" size="1.778" layer="96" align="center-left"/>
+<instance part="IC3" gate="G$1" x="43.18" y="7.62" smashed="yes">
+<attribute name="NAME" x="67.31" y="15.24" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="67.31" y="12.7" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="C44" gate="G$1" x="10.16" y="40.64" smashed="yes">
 <attribute name="NAME" x="11.684" y="43.561" size="1.778" layer="95"/>
@@ -38123,11 +38122,11 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <instance part="R130" gate="G$1" x="106.68" y="48.26" smashed="yes" rot="R270">
 <attribute name="VALUE" x="106.172" y="48.006" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C50" gate="G$1" x="10.16" y="15.24" smashed="yes">
-<attribute name="NAME" x="11.684" y="18.161" size="1.778" layer="95"/>
-<attribute name="VALUE" x="11.684" y="13.081" size="1.778" layer="96"/>
+<instance part="C50" gate="G$1" x="10.16" y="5.08" smashed="yes">
+<attribute name="NAME" x="11.684" y="8.001" size="1.778" layer="95"/>
+<attribute name="VALUE" x="11.684" y="2.921" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY4" gate="GND" x="10.16" y="7.62" smashed="yes"/>
+<instance part="SUPPLY4" gate="GND" x="10.16" y="-2.54" smashed="yes"/>
 <instance part="R127" gate="G$1" x="111.76" y="96.52" smashed="yes">
 <attribute name="VALUE" x="108.966" y="97.028" size="1.778" layer="96"/>
 </instance>
@@ -38172,8 +38171,8 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="GND"/>
-<wire x1="43.18" y1="12.7" x2="27.94" y2="12.7" width="0.1524" layer="91"/>
-<label x="30.48" y="12.7" size="1.778" layer="95"/>
+<wire x1="43.18" y1="2.54" x2="27.94" y2="2.54" width="0.1524" layer="91"/>
+<label x="30.48" y="2.54" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R124" gate="G$1" pin="1"/>
@@ -38209,8 +38208,8 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="VA"/>
-<wire x1="43.18" y1="15.24" x2="27.94" y2="15.24" width="0.1524" layer="91"/>
-<label x="30.48" y="15.24" size="1.778" layer="95"/>
+<wire x1="43.18" y1="5.08" x2="27.94" y2="5.08" width="0.1524" layer="91"/>
+<label x="30.48" y="5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="99.06" y1="96.52" x2="106.68" y2="96.52" width="0.1524" layer="91"/>
@@ -38219,8 +38218,8 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </segment>
 <segment>
 <pinref part="C50" gate="G$1" pin="1"/>
-<wire x1="10.16" y1="17.78" x2="10.16" y2="22.86" width="0.1524" layer="91"/>
-<label x="7.62" y="20.32" size="1.778" layer="95"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="12.7" width="0.1524" layer="91"/>
+<label x="7.62" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R130" gate="G$1" pin="1"/>
@@ -38231,15 +38230,15 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <net name="SCLK3" class="0">
 <segment>
 <pinref part="IC3" gate="G$1" pin="SCLK"/>
-<wire x1="71.12" y1="17.78" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
-<label x="78.74" y="17.78" size="1.778" layer="95"/>
+<wire x1="71.12" y1="7.62" x2="99.06" y2="7.62" width="0.1524" layer="91"/>
+<label x="78.74" y="7.62" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDI3" class="0">
 <segment>
 <pinref part="IC3" gate="G$1" pin="DIN"/>
-<wire x1="71.12" y1="12.7" x2="99.06" y2="12.7" width="0.1524" layer="91"/>
-<label x="78.74" y="12.7" size="1.778" layer="95"/>
+<wire x1="71.12" y1="2.54" x2="99.06" y2="2.54" width="0.1524" layer="91"/>
+<label x="78.74" y="2.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SLOWADCOUT1" class="0">
@@ -38251,8 +38250,8 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="IN1"/>
-<wire x1="71.12" y1="10.16" x2="99.06" y2="10.16" width="0.1524" layer="91"/>
-<label x="78.74" y="10.16" size="1.778" layer="95"/>
+<wire x1="71.12" y1="0" x2="99.06" y2="0" width="0.1524" layer="91"/>
+<label x="78.74" y="0" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC4" gate="G$1" pin="OUT1"/>
@@ -38311,8 +38310,8 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="IN2"/>
-<wire x1="43.18" y1="10.16" x2="20.32" y2="10.16" width="0.1524" layer="91"/>
-<label x="22.86" y="10.16" size="1.778" layer="95"/>
+<wire x1="43.18" y1="0" x2="20.32" y2="0" width="0.1524" layer="91"/>
+<label x="22.86" y="0" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC4" gate="G$1" pin="OUT2"/>
@@ -38323,15 +38322,15 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <net name="SCS3_SLOWADC" class="0">
 <segment>
 <pinref part="IC3" gate="G$1" pin="!CS"/>
-<wire x1="43.18" y1="17.78" x2="20.32" y2="17.78" width="0.1524" layer="91"/>
-<label x="22.86" y="17.78" size="1.778" layer="95"/>
+<wire x1="43.18" y1="7.62" x2="20.32" y2="7.62" width="0.1524" layer="91"/>
+<label x="22.86" y="7.62" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDO3_SLOWADC" class="0">
 <segment>
 <pinref part="IC3" gate="G$1" pin="DOUT"/>
-<wire x1="71.12" y1="15.24" x2="99.06" y2="15.24" width="0.1524" layer="91"/>
-<label x="78.74" y="15.24" size="1.778" layer="95"/>
+<wire x1="71.12" y1="5.08" x2="99.06" y2="5.08" width="0.1524" layer="91"/>
+<label x="78.74" y="5.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TDIODE1" class="0">
