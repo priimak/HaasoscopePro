@@ -347,10 +347,6 @@ class MainWindow(TemplateBaseClass):
     def exttrig(self):
         self.toggleuseexttrig()
 
-    def tot(self):
-        self.triggertimethresh = self.ui.totBox.value()
-        self.settriggertime(self.triggertimethresh)
-
     def grid(self):
         if self.ui.gridCheck.isChecked():
             self.ui.plot.showGrid(x=True, y=True)
@@ -390,9 +386,10 @@ class MainWindow(TemplateBaseClass):
     max_y=pow(2,11)
     min_x=0
     max_x=4*10*expect_samples/samplerate
-    triggerlevel = 128
+    triggerlevel = 127
     triggerdelta = 4
     triggerpos = int(expect_samples * 128/255)
+    triggertimethresh = 0
     def triggerlevelchanged(self,value):
         if value+self.triggerdelta < 255 and value-self.triggerdelta > 0:
             self.triggerlevel = 255 - value
@@ -405,7 +402,7 @@ class MainWindow(TemplateBaseClass):
         self.triggerpos = int(self.expect_samples * value/255)
         self.sendtriggerinfo()
     def sendtriggerinfo(self):
-        usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, 100, 100, 100]))
+        usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, self.triggertimethresh, 100, 100]))
         tres = usb.recv(4)
 
         self.hline = float(255 - self.triggerlevel - 128) * self.yscale
@@ -414,6 +411,10 @@ class MainWindow(TemplateBaseClass):
         point = self.triggerpos + 1.25
         self.vline = float(4 * 10 * point / self.samplerate)
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),min(self.hline + self.max_y / 2,self.max_y)])  # vertical line showing trigger time
+
+    def tot(self):
+        self.triggertimethresh = self.ui.totBox.value()
+        self.sendtriggerinfo()
 
     def rolling(self):
         if self.triggertype>0:

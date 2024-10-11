@@ -74,9 +74,10 @@ assign lvdsout_spare = lvdsin_spare;
 assign boardout = boardin;  
 
 //variables in clklvds domain, writing into the RAM buffer
-reg [ 7:0]  acqstate=0;
-reg signed [11:0]  samplevalue[40];
-reg [1:0] sampleclkstr[40];
+reg [ 7:0]	acqstate=0;
+reg signed [11:0]	samplevalue[40];
+reg [1:0] 	sampleclkstr[40];
+reg [7:0]	tot_counter=0;
 
 //variables synced between domains
 reg signed [11:0]  lowerthresh=0, lowerthresh_sync=0;
@@ -88,6 +89,7 @@ reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
 reg [ 9:0]	ram_address_triggered=0, ram_address_triggered_sync=0;
+reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
 
 integer i;
 always @ (posedge clklvds) begin	
@@ -97,6 +99,7 @@ always @ (posedge clklvds) begin
 	didreadout_sync <= didreadout;
 	lowerthresh_sync <= lowerthresh;
 	upperthresh_sync <= upperthresh;
+	triggerToT_sync <= triggerToT;
 
 	for (i=0;i<10;i=i+1) begin
 		samplevalue[i]  <= {lvds1bits[110+i],lvds1bits[100+i],lvds1bits[90+i],lvds1bits[80+i],lvds1bits[70+i],lvds1bits[60+i],lvds1bits[50+i],lvds1bits[40+i],lvds1bits[30+i],lvds1bits[20+i],lvds1bits[10+i],lvds1bits[0+i]};
@@ -131,6 +134,7 @@ always @ (posedge clklvds or negedge rstn)
 	case (acqstate)
 	0 : begin // ready
 		triggercounter<=0;
+		tot_counter<=0;
 		if (triggerlive_sync) begin
 			if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger falling edge
 			else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger rising edge
@@ -147,8 +151,11 @@ always @ (posedge clklvds or negedge rstn)
 	end
 	2 : begin // ready for second part of trigger condition to be met
 		if (samplevalue[0]>upperthresh_sync) begin
-			ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-			acqstate <= 8'd250;
+			tot_counter <= tot_counter+8'd1;
+			if (tot_counter>=triggerToT_sync) begin
+				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				acqstate <= 8'd250;
+			end
 		end
 	end
 	
@@ -158,8 +165,11 @@ always @ (posedge clklvds or negedge rstn)
 	end
 	4 : begin // ready for second part of trigger condition to be met
 		if (samplevalue[0]<lowerthresh_sync) begin
-			ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-			acqstate <= 8'd250;
+			tot_counter <= tot_counter+8'd1;
+			if (tot_counter>=triggerToT_sync) begin
+				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				acqstate <= 8'd250;
+			end
 		end
 	end
 	
@@ -380,6 +390,7 @@ always @ (posedge clk or negedge rstn)
 			lowerthresh <= ((rx_data[1]-rx_data[2]-12'd128)<<4)+12'd8;
 			upperthresh <= ((rx_data[1]+rx_data[2]-12'd128)<<4)+12'd8;
 			ram_preoffset <= (rx_data[3][1:0]<<8)+rx_data[4];
+			triggerToT <= rx_data[5];
 			o_tdata <= 37;
 			length <= 4;
 			o_tvalid <= 1'b1;
