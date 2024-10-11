@@ -228,6 +228,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.totBox.valueChanged.connect(self.tot)
         self.ui.gridCheck.stateChanged.connect(self.grid)
         self.ui.markerCheck.stateChanged.connect(self.marker)
+        self.ui.highresCheck.stateChanged.connect(self.highres)
         self.ui.pllresetButton.clicked.connect(self.pllreset)
         self.ui.adfresetButton.clicked.connect(self.adfreset)
         self.ui.upposButton0.clicked.connect(self.uppos)
@@ -382,6 +383,7 @@ class MainWindow(TemplateBaseClass):
             self.ui.runButton.setChecked(False)
 
     downsample=0
+    highresval=1
     xscale=1
     xscaling=1
     yscale=16.
@@ -436,11 +438,14 @@ class MainWindow(TemplateBaseClass):
         self.getone = not self.getone
         self.ui.singleButton.setChecked(self.getone)
 
-    highres=0
+    def highres(self,value):
+        self.highresval=value>0
+        #print("highres",self.highresval)
+        self.telldownsample(self.downsample)
     def telldownsample(self,ds):
         self.downsample=ds
         if ds<0: ds=0
-        usb.send(bytes([9, ds, self.highres, 100, 100, 100, 100, 100]))
+        usb.send(bytes([9, ds, self.highresval, 100, 100, 100, 100, 100]))
         usb.recv(4)
 
     def timefast(self):

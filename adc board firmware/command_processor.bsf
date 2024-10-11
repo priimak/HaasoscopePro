@@ -352,13 +352,7 @@ refer to the applicable agreement for further details.
 		(text "lvdsout_spare[0..1]" (rect 184 411 259 423)(font "Arial" ))
 		(line (pt 280 416)(pt 264 416)(line_width 3))
 	)
-	(parameter
-		"maxhighres"
-		"6"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 264 448)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 296 -64 396 16))
 )

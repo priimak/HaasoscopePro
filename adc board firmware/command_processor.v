@@ -75,10 +75,10 @@ assign boardout = boardin;
 
 //variables in clklvds domain, writing into the RAM buffer
 reg [ 7:0]	acqstate=0;
-parameter 	maxhighres=6;
-reg [maxhighres:0] highrescounter=0;
+reg [8:0]	highrescounter=1;
 integer		downsamplecounter=1;
-reg signed [maxhighres+11:0] highressamplevalue[40];
+reg signed [8+11:0] highressamplevalue[40];
+reg signed [11:0] highressamplevaluereg[40];
 reg signed [11:0] samplevalue[40];
 reg [1:0] 	sampleclkstr[40];
 reg [7:0]	tot_counter=0;
@@ -95,7 +95,7 @@ reg [ 7:0]	triggertype=0, triggertype_sync=0;
 reg [ 9:0]	ram_address_triggered=0, ram_address_triggered_sync=0;
 reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
 reg [4:0] 	downsample=0, downsample_sync=0;
-reg [7:0] 	dohighres=0, dohighres_sync=0;
+reg [4:0]	highres=0, highres_sync=0;
 
 integer i;
 always @ (posedge clklvds) begin	
@@ -107,7 +107,12 @@ always @ (posedge clklvds) begin
 	upperthresh_sync <= upperthresh;
 	triggerToT_sync <= triggerToT;
 	downsample_sync <= downsample;
-	dohighres_sync <= dohighres;
+	highres_sync <= highres;
+	
+	if (highrescounter[highres_sync]) begin
+		highrescounter <= 1;
+	end
+	else highrescounter <= highrescounter+9'd1;
 
 	for (i=0;i<10;i=i+1) begin
 		samplevalue[i]  <= {lvds1bits[110+i],lvds1bits[100+i],lvds1bits[90+i],lvds1bits[80+i],lvds1bits[70+i],lvds1bits[60+i],lvds1bits[50+i],lvds1bits[40+i],lvds1bits[30+i],lvds1bits[20+i],lvds1bits[10+i],lvds1bits[0+i]};
@@ -118,14 +123,37 @@ always @ (posedge clklvds) begin
 		sampleclkstr[20+i] <= {lvds3bits[130+i],lvds3bits[120+i]};
 		samplevalue[30+i]  <= {lvdsbits_o2[0+i],lvds4bits[100+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
 		sampleclkstr[30+i] <= {lvds4bits[130+i],lvds4bits[120+i]};
-	end
+		
+		if (highrescounter[highres_sync]) begin
+		highressamplevalue[30+i] <= samplevalue[30+i];
+		highressamplevalue[20+i] <= samplevalue[20+i];
+		highressamplevalue[10+i] <= samplevalue[10+i];
+		highressamplevalue[i] <= samplevalue[i]; // reset sums (on next cycle)
+		highressamplevaluereg[30+i] <= highressamplevalue[30+i][highres_sync+:12];
+		highressamplevaluereg[20+i] <= highressamplevalue[20+i][highres_sync+:12];
+		highressamplevaluereg[10+i] <= highressamplevalue[10+i][highres_sync+:12];
+		highressamplevaluereg[   i] <= highressamplevalue[   i][highres_sync+:12]; // ignore least significant bits is like dividing by 2^highres
+		end
+		else begin
+		highressamplevalue[30+i] <= highressamplevalue[30+i] + samplevalue[30+i];
+		highressamplevalue[20+i] <= highressamplevalue[20+i] + samplevalue[20+i];
+		highressamplevalue[10+i] <= highressamplevalue[10+i] + samplevalue[10+i];
+		highressamplevalue[i] <= highressamplevalue[i] + samplevalue[i];
+		end
 	
-	lvdsbitsout <= {
-		sampleclkstr[39],samplevalue[39],sampleclkstr[38],samplevalue[38],sampleclkstr[37],samplevalue[37],sampleclkstr[36],samplevalue[36],sampleclkstr[35],samplevalue[35],sampleclkstr[34],samplevalue[34],sampleclkstr[33],samplevalue[33],sampleclkstr[32],samplevalue[32],sampleclkstr[31],samplevalue[31],sampleclkstr[30],samplevalue[30],
-		sampleclkstr[29],samplevalue[29],sampleclkstr[28],samplevalue[28],sampleclkstr[27],samplevalue[27],sampleclkstr[26],samplevalue[26],sampleclkstr[25],samplevalue[25],sampleclkstr[24],samplevalue[24],sampleclkstr[23],samplevalue[23],sampleclkstr[22],samplevalue[22],sampleclkstr[21],samplevalue[21],sampleclkstr[20],samplevalue[20],
-		sampleclkstr[19],samplevalue[19],sampleclkstr[18],samplevalue[18],sampleclkstr[17],samplevalue[17],sampleclkstr[16],samplevalue[16],sampleclkstr[15],samplevalue[15],sampleclkstr[14],samplevalue[14],sampleclkstr[13],samplevalue[13],sampleclkstr[12],samplevalue[12],sampleclkstr[11],samplevalue[11],sampleclkstr[10],samplevalue[10],	
-		sampleclkstr[9],samplevalue[9],sampleclkstr[8],samplevalue[8],sampleclkstr[7],samplevalue[7],sampleclkstr[6],samplevalue[6],sampleclkstr[5],samplevalue[5],sampleclkstr[4],samplevalue[4],sampleclkstr[3],samplevalue[3],sampleclkstr[2],samplevalue[2],sampleclkstr[1],samplevalue[1],sampleclkstr[0],samplevalue[0]
-		};
+		if (highres_sync==0) begin
+		lvdsbitsout[14*(30+i) +:14] <= {sampleclkstr[30+i],samplevalue[30+i]};
+		lvdsbitsout[14*(20+i) +:14] <= {sampleclkstr[20+i],samplevalue[20+i]};
+		lvdsbitsout[14*(10+i) +:14] <= {sampleclkstr[10+i],samplevalue[10+i]};
+		lvdsbitsout[14*i      +:14] <= {sampleclkstr[   i],samplevalue[   i]}; // for i=0 it's bits [0:13]
+		end
+		else begin
+		lvdsbitsout[14*(30+i) +:14] <= {sampleclkstr[30+i],highressamplevaluereg[30+i]};
+		lvdsbitsout[14*(20+i) +:14] <= {sampleclkstr[20+i],highressamplevaluereg[20+i]};
+		lvdsbitsout[14*(10+i) +:14] <= {sampleclkstr[10+i],highressamplevaluereg[10+i]};
+		lvdsbitsout[14*i      +:14] <= {sampleclkstr[   i],highressamplevaluereg[   i]};
+		end
+	end
 end
 
 always @ (posedge clklvds or negedge rstn)
@@ -414,7 +442,11 @@ always @ (posedge clk or negedge rstn)
 		
 		9 : begin // downsample and highres settings
 			downsample <= rx_data[1][4:0];
-			dohighres  <= rx_data[2];
+			if (rx_data[2]) begin
+				if (rx_data[1]>8) highres <= 5'd8;
+				else highres <= rx_data[1][4:0];
+			end
+			else highres <= 5'd0;
 			o_tdata <= 9;
 			length <= 4;
 			o_tvalid <= 1'b1;
