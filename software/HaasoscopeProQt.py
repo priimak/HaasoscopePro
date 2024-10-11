@@ -183,6 +183,14 @@ def board_setup(dopattern=False):
 
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
+
+
+def setgain(value):
+    spimode(0)
+    # 00 to 20 is 26 to -6 dB, 0x1a is no gain
+    spicommand("Amp Gain", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
+
+
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
     samplerate= 3.2 # freq in GHz
@@ -233,7 +241,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.upposButton4.clicked.connect(self.uppos4)
         self.ui.downposButton4.clicked.connect(self.downpos4)
         self.ui.chanBox.valueChanged.connect(self.selectchannel)
-        self.ui.gainBox.valueChanged.connect(self.setgain)
+        self.ui.gainBox.valueChanged.connect(setgain)
         self.ui.offsetBox.valueChanged.connect(self.changeoffset)
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
@@ -289,11 +297,6 @@ class MainWindow(TemplateBaseClass):
         if self.ui.acdcCheck.checkState() == QtCore.Qt.Unchecked: #dc coupled
             if not self.acdc[self.selectedchannel]:
                 self.setacdc()
-
-    def setgain(self,value):
-        spimode(0)
-        gain = 0x1a  # 00 to 20 is 26 to -6 dB, 0x1a is no gain
-        spicommand("Amp Gain", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
 
     phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
@@ -403,7 +406,7 @@ class MainWindow(TemplateBaseClass):
         self.sendtriggerinfo()
     def sendtriggerinfo(self):
         usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, self.triggertimethresh, 100, 100]))
-        tres = usb.recv(4)
+        usb.recv(4)
 
         self.hline = float(255 - self.triggerlevel - 128) * self.yscale
         self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
