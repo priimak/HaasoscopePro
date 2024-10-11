@@ -439,12 +439,9 @@ class MainWindow(TemplateBaseClass):
     highres=0
     def telldownsample(self,ds):
         self.downsample=ds
-        ds=ds-1
-        if ds>-1: ds=ds+128
         if ds<0: ds=0
-        print("ds is",ds)
         usb.send(bytes([9, ds, self.highres, 100, 100, 100, 100, 100]))
-        print("ds got back",usb.recv(4)[0])
+        usb.recv(4)
 
     def timefast(self):
         amount=1
@@ -546,7 +543,8 @@ class MainWindow(TemplateBaseClass):
         self.ui.plot.setLabel('bottom',"Time (ns)")
         self.ui.plot.setLabel('left', "Voltage (ADC sample value)")
         self.ui.plot.setRange(yRange=(self.min_y,self.max_y),padding=0.01)
-        #self.timechanged()
+        self.telldownsample(0)
+        self.timechanged()
         self.ui.totBox.setMaximum(self.expect_samples)
         self.ui.plot.showGrid(x=True, y=True)
 

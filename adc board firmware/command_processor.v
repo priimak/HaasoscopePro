@@ -77,7 +77,7 @@ assign boardout = boardin;
 reg [ 7:0]	acqstate=0;
 parameter 	maxhighres=6;
 reg [maxhighres:0] highrescounter=0;
-integer		downsamplecounter=0;
+integer		downsamplecounter=1;
 reg signed [maxhighres+11:0] highressamplevalue[40];
 reg signed [11:0] samplevalue[40];
 reg [1:0] 	sampleclkstr[40];
@@ -94,7 +94,6 @@ reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
 reg [ 9:0]	ram_address_triggered=0, ram_address_triggered_sync=0;
 reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
-reg			dodownsample=0, dodownsample_sync=0;
 reg [4:0] 	downsample=0, downsample_sync=0;
 reg [7:0] 	dohighres=0, dohighres_sync=0;
 
@@ -107,7 +106,6 @@ always @ (posedge clklvds) begin
 	lowerthresh_sync <= lowerthresh;
 	upperthresh_sync <= upperthresh;
 	triggerToT_sync <= triggerToT;
-	dodownsample_sync <= dodownsample;
 	downsample_sync <= downsample;
 	dohighres_sync <= dohighres;
 
@@ -136,15 +134,15 @@ always @ (posedge clklvds or negedge rstn)
  end else begin
 	if (acqstate<251) begin
 		ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
-		if (~dodownsample_sync || downsamplecounter[downsample_sync]) begin
-			downsamplecounter<=0;
+		if (downsamplecounter[downsample_sync]) begin
+			downsamplecounter<=1;
 			ram_wr_address <= ram_wr_address + 10'd1;
 		end
-		else downsamplecounter <= downsamplecounter+16'd1;
+		else downsamplecounter <= downsamplecounter+1;
 	end
 	else begin
 		ram_wr <= 1'b0;//not writing
-		downsamplecounter<=0;
+		downsamplecounter<=1;
 	end
 	case (acqstate)
 	0 : begin // ready
@@ -190,7 +188,7 @@ always @ (posedge clklvds or negedge rstn)
 	
 	250 : begin // triggered, now taking more data
 		if (triggercounter<lengthtotake_sync) begin
-			if (~dodownsample_sync || downsamplecounter[downsample_sync]) begin
+			if (downsamplecounter[downsample_sync]) begin
 				triggercounter<=triggercounter+16'd1;
 			end
 		end
@@ -416,7 +414,6 @@ always @ (posedge clk or negedge rstn)
 		
 		9 : begin // downsample and highres settings
 			downsample <= rx_data[1][4:0];
-			dodownsample <= rx_data[1][7];
 			dohighres  <= rx_data[2];
 			o_tdata <= 9;
 			length <= 4;
