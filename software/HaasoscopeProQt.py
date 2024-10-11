@@ -436,6 +436,16 @@ class MainWindow(TemplateBaseClass):
         self.getone = not self.getone
         self.ui.singleButton.setChecked(self.getone)
 
+    highres=0
+    def telldownsample(self,ds):
+        self.downsample=ds
+        ds=ds-1
+        if ds>-1: ds=ds+128
+        if ds<0: ds=0
+        print("ds is",ds)
+        usb.send(bytes([9, ds, self.highres, 100, 100, 100, 100, 100]))
+        print("ds got back",usb.recv(4)[0])
+
     def timefast(self):
         amount=1
         modifiers = app.keyboardModifiers()
@@ -453,11 +463,11 @@ class MainWindow(TemplateBaseClass):
         self.timechanged()
 
     def timechanged(self):
-        self.ui.plot.setRange(xRange=(self.min_x, self.max_x), yRange=(self.min_y, self.max_y))
-        self.ui.plot.setMouseEnabled(x=False,y=False)
-        self.ui.plot.setLabel('bottom', self.xlabel)
-        self.ui.plot.setLabel('left', self.ylabel)
-        self.triggerposchanged(self.ui.horizontalSlider.value())
+        #self.ui.plot.setRange(xRange=(self.min_x, self.max_x), yRange=(self.min_y, self.max_y))
+        #self.ui.plot.setMouseEnabled(x=False,y=False)
+        #self.ui.plot.setLabel('bottom', self.xlabel)
+        #self.ui.plot.setLabel('left', self.ylabel)
+        #self.triggerposchanged(self.ui.horizontalSlider.value())
         self.ui.timebaseBox.setText("downsample "+str(self.downsample))
 
     def risingfalling(self):

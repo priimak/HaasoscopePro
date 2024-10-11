@@ -473,6 +473,12 @@
           <family>Arial</family>
          </font>
         </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </widget>
       <widget class="QGroupBox" name="channelgroupBox">

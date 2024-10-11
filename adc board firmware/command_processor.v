@@ -32,8 +32,8 @@ module command_processor (
 	input wire			clklvds, // clk1, runs at LVDS bit rate (ADC clk input rate) / 2
 	output reg			ram_wr=0,
 	output reg [9:0]	ram_wr_address=0, ram_rd_address=0,
-	output reg [559:0] lvds1bitsfifoout, //output bits to fifo
-	input wire [559:0] lvds1bitsfifoin, // input bits from fifo
+	output reg [559:0] lvdsbitsout, //output bits to fifo
+	input wire [559:0] lvdsbitsin, // input bits from fifo
 	input wire [19:0] lvdsbits_o2, lvdsbits_other,
 	
 	output reg[2:0] phasecounterselect, // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
@@ -75,7 +75,11 @@ assign boardout = boardin;
 
 //variables in clklvds domain, writing into the RAM buffer
 reg [ 7:0]	acqstate=0;
-reg signed [11:0]	samplevalue[40];
+parameter 	maxhighres=6;
+reg [maxhighres:0] highrescounter=0;
+integer		downsamplecounter=0;
+reg signed [maxhighres+11:0] highressamplevalue[40];
+reg signed [11:0] samplevalue[40];
 reg [1:0] 	sampleclkstr[40];
 reg [7:0]	tot_counter=0;
 
@@ -90,6 +94,9 @@ reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
 reg [ 9:0]	ram_address_triggered=0, ram_address_triggered_sync=0;
 reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
+reg			dodownsample=0, dodownsample_sync=0;
+reg [4:0] 	downsample=0, downsample_sync=0;
+reg [7:0] 	dohighres=0, dohighres_sync=0;
 
 integer i;
 always @ (posedge clklvds) begin	
@@ -100,6 +107,9 @@ always @ (posedge clklvds) begin
 	lowerthresh_sync <= lowerthresh;
 	upperthresh_sync <= upperthresh;
 	triggerToT_sync <= triggerToT;
+	dodownsample_sync <= dodownsample;
+	downsample_sync <= downsample;
+	dohighres_sync <= dohighres;
 
 	for (i=0;i<10;i=i+1) begin
 		samplevalue[i]  <= {lvds1bits[110+i],lvds1bits[100+i],lvds1bits[90+i],lvds1bits[80+i],lvds1bits[70+i],lvds1bits[60+i],lvds1bits[50+i],lvds1bits[40+i],lvds1bits[30+i],lvds1bits[20+i],lvds1bits[10+i],lvds1bits[0+i]};
@@ -112,7 +122,7 @@ always @ (posedge clklvds) begin
 		sampleclkstr[30+i] <= {lvds4bits[130+i],lvds4bits[120+i]};
 	end
 	
-	lvds1bitsfifoout <= {
+	lvdsbitsout <= {
 		sampleclkstr[39],samplevalue[39],sampleclkstr[38],samplevalue[38],sampleclkstr[37],samplevalue[37],sampleclkstr[36],samplevalue[36],sampleclkstr[35],samplevalue[35],sampleclkstr[34],samplevalue[34],sampleclkstr[33],samplevalue[33],sampleclkstr[32],samplevalue[32],sampleclkstr[31],samplevalue[31],sampleclkstr[30],samplevalue[30],
 		sampleclkstr[29],samplevalue[29],sampleclkstr[28],samplevalue[28],sampleclkstr[27],samplevalue[27],sampleclkstr[26],samplevalue[26],sampleclkstr[25],samplevalue[25],sampleclkstr[24],samplevalue[24],sampleclkstr[23],samplevalue[23],sampleclkstr[22],samplevalue[22],sampleclkstr[21],samplevalue[21],sampleclkstr[20],samplevalue[20],
 		sampleclkstr[19],samplevalue[19],sampleclkstr[18],samplevalue[18],sampleclkstr[17],samplevalue[17],sampleclkstr[16],samplevalue[16],sampleclkstr[15],samplevalue[15],sampleclkstr[14],samplevalue[14],sampleclkstr[13],samplevalue[13],sampleclkstr[12],samplevalue[12],sampleclkstr[11],samplevalue[11],sampleclkstr[10],samplevalue[10],	
@@ -126,10 +136,15 @@ always @ (posedge clklvds or negedge rstn)
  end else begin
 	if (acqstate<251) begin
 		ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
-		ram_wr_address <= ram_wr_address + 10'd1;
+		if (~dodownsample_sync || downsamplecounter[downsample_sync]) begin
+			downsamplecounter<=0;
+			ram_wr_address <= ram_wr_address + 10'd1;
+		end
+		else downsamplecounter <= downsamplecounter+16'd1;
 	end
 	else begin
 		ram_wr <= 1'b0;//not writing
+		downsamplecounter<=0;
 	end
 	case (acqstate)
 	0 : begin // ready
@@ -175,7 +190,9 @@ always @ (posedge clklvds or negedge rstn)
 	
 	250 : begin // triggered, now taking more data
 		if (triggercounter<lengthtotake_sync) begin
-			triggercounter<=triggercounter+16'd1;
+			if (~dodownsample_sync || downsamplecounter[downsample_sync]) begin
+				triggercounter<=triggercounter+16'd1;
+			end
 		end
 		else begin
 			eventcounter <= eventcounter+16'd1;
@@ -362,7 +379,7 @@ always @ (posedge clk or negedge rstn)
 		
 		5 : begin // reset plls
 			pllreset2 <= 1'b1;
-			o_tdata <= 33;
+			o_tdata <= 5;
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
@@ -391,7 +408,17 @@ always @ (posedge clk or negedge rstn)
 			upperthresh <= ((rx_data[1]+rx_data[2]-12'd128)<<4)+12'd8;
 			ram_preoffset <= (rx_data[3][1:0]<<8)+rx_data[4];
 			triggerToT <= rx_data[5];
-			o_tdata <= 37;
+			o_tdata <= 8;
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
+		end
+		
+		9 : begin // downsample and highres settings
+			downsample <= rx_data[1][4:0];
+			dodownsample <= rx_data[1][7];
+			dohighres  <= rx_data[2];
+			o_tdata <= 9;
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
@@ -435,29 +462,29 @@ always @ (posedge clk or negedge rstn)
 			if (channel==48) o_tdata <= {16'hbeef,16'hdead};//marker
 			else if (channel==46) o_tdata  <= {
 				12'd0,
-				lvds1bitsfifoin[14*39+12 +: 2], //sampleclkstr39
-				lvds1bitsfifoin[14*38+12 +: 2],lvds1bitsfifoin[14*37+12 +: 2],lvds1bitsfifoin[14*36+12 +: 2],lvds1bitsfifoin[14*35+12 +: 2],lvds1bitsfifoin[14*34+12 +: 2],lvds1bitsfifoin[14*33+12 +: 2],lvds1bitsfifoin[14*32+12 +: 2],lvds1bitsfifoin[14*31+12 +: 2],
-				lvds1bitsfifoin[14*30+12 +: 2], //sampleclkstr30
+				lvdsbitsin[14*39+12 +: 2], //sampleclkstr39
+				lvdsbitsin[14*38+12 +: 2],lvdsbitsin[14*37+12 +: 2],lvdsbitsin[14*36+12 +: 2],lvdsbitsin[14*35+12 +: 2],lvdsbitsin[14*34+12 +: 2],lvdsbitsin[14*33+12 +: 2],lvdsbitsin[14*32+12 +: 2],lvdsbitsin[14*31+12 +: 2],
+				lvdsbitsin[14*30+12 +: 2], //sampleclkstr30
 				};
 			else if (channel==44) o_tdata  <= {
 				12'd0,
-				lvds1bitsfifoin[14*29+12 +: 2], //sampleclkstr29
-				lvds1bitsfifoin[14*28+12 +: 2],lvds1bitsfifoin[14*27+12 +: 2],lvds1bitsfifoin[14*26+12 +: 2],lvds1bitsfifoin[14*25+12 +: 2],lvds1bitsfifoin[14*24+12 +: 2],lvds1bitsfifoin[14*23+12 +: 2],lvds1bitsfifoin[14*22+12 +: 2],lvds1bitsfifoin[14*21+12 +: 2],
-				lvds1bitsfifoin[14*20+12 +: 2], //sampleclkstr20
+				lvdsbitsin[14*29+12 +: 2], //sampleclkstr29
+				lvdsbitsin[14*28+12 +: 2],lvdsbitsin[14*27+12 +: 2],lvdsbitsin[14*26+12 +: 2],lvdsbitsin[14*25+12 +: 2],lvdsbitsin[14*24+12 +: 2],lvdsbitsin[14*23+12 +: 2],lvdsbitsin[14*22+12 +: 2],lvdsbitsin[14*21+12 +: 2],
+				lvdsbitsin[14*20+12 +: 2], //sampleclkstr20
 				};
 			else if (channel==42) o_tdata  <= {
 				12'd0,
-				lvds1bitsfifoin[14*19+12 +: 2], //sampleclkstr19
-				lvds1bitsfifoin[14*18+12 +: 2],lvds1bitsfifoin[14*17+12 +: 2],lvds1bitsfifoin[14*16+12 +: 2],lvds1bitsfifoin[14*15+12 +: 2],lvds1bitsfifoin[14*14+12 +: 2],lvds1bitsfifoin[14*13+12 +: 2],lvds1bitsfifoin[14*12+12 +: 2],lvds1bitsfifoin[14*11+12 +: 2],
-				lvds1bitsfifoin[14*10+12 +: 2], //sampleclkstr10
+				lvdsbitsin[14*19+12 +: 2], //sampleclkstr19
+				lvdsbitsin[14*18+12 +: 2],lvdsbitsin[14*17+12 +: 2],lvdsbitsin[14*16+12 +: 2],lvdsbitsin[14*15+12 +: 2],lvdsbitsin[14*14+12 +: 2],lvdsbitsin[14*13+12 +: 2],lvdsbitsin[14*12+12 +: 2],lvdsbitsin[14*11+12 +: 2],
+				lvdsbitsin[14*10+12 +: 2], //sampleclkstr10
 				};
 			else if (channel==40) o_tdata  <= {
 				12'd0,
-				lvds1bitsfifoin[14*9+12 +: 2], //sampleclkstr9
-				lvds1bitsfifoin[14*8+12 +: 2],lvds1bitsfifoin[14*7+12 +: 2],lvds1bitsfifoin[14*6+12 +: 2],lvds1bitsfifoin[14*5+12 +: 2],lvds1bitsfifoin[14*4+12 +: 2],lvds1bitsfifoin[14*3+12 +: 2],lvds1bitsfifoin[14*2+12 +: 2],lvds1bitsfifoin[14*1+12 +: 2],
-				lvds1bitsfifoin[14*0+12 +: 2], //sampleclkstr0
+				lvdsbitsin[14*9+12 +: 2], //sampleclkstr9
+				lvdsbitsin[14*8+12 +: 2],lvdsbitsin[14*7+12 +: 2],lvdsbitsin[14*6+12 +: 2],lvdsbitsin[14*5+12 +: 2],lvdsbitsin[14*4+12 +: 2],lvdsbitsin[14*3+12 +: 2],lvdsbitsin[14*2+12 +: 2],lvdsbitsin[14*1+12 +: 2],
+				lvdsbitsin[14*0+12 +: 2], //sampleclkstr0
 				};
-			else o_tdata  <= {4'd0, lvds1bitsfifoin[14*(channel+1) +: 12], 4'd0, lvds1bitsfifoin[14*channel +: 12]};
+			else o_tdata  <= {4'd0, lvdsbitsin[14*(channel+1) +: 12], 4'd0, lvdsbitsin[14*channel +: 12]};
 			channel<=channel+6'd2;
 			state <= TX_DATA4;
 		end

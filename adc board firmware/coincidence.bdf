@@ -1567,8 +1567,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 256)
 		(input)
-		(text "lvds1bitsfifoin[559..0]" (rect 0 0 108 12)(font "Arial" ))
-		(text "lvds1bitsfifoin[559..0]" (rect 21 251 129 263)(font "Arial" ))
+		(text "lvdsbitsin[559..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "lvdsbitsin[559..0]" (rect 21 251 105 263)(font "Arial" ))
 		(line (pt 0 256)(pt 16 256)(line_width 3))
 	)
 	(port
@@ -1707,8 +1707,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 224)
 		(output)
-		(text "lvds1bitsfifoout[559..0]" (rect 0 0 115 12)(font "Arial" ))
-		(text "lvds1bitsfifoout[559..0]" (rect 162 219 259 231)(font "Arial" ))
+		(text "lvdsbitsout[559..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "lvdsbitsout[559..0]" (rect 182 219 259 231)(font "Arial" ))
 		(line (pt 280 224)(pt 264 224)(line_width 3))
 	)
 	(port
@@ -1795,9 +1795,15 @@ refer to the applicable agreement for further details.
 		(text "lvdsout_spare[0..1]" (rect 179 411 259 423)(font "Arial" ))
 		(line (pt 280 416)(pt 264 416)(line_width 3))
 	)
+	(parameter
+		"maxhighres"
+		"6"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 264 448))
 	)
+	(annotation_block (parameter)(rect 456 856 632 896))
 )
 (connector
 	(pt 952 648)
@@ -2289,12 +2295,6 @@ refer to the applicable agreement for further details.
 	(pt 1000 1072)
 )
 (connector
-	(text "lvds1bitsin[559..0]" (rect -241 1448 -155 1465)(font "Intel Clear" ))
-	(pt -256 1464)
-	(pt -160 1464)
-	(bus)
-)
-(connector
 	(text "clklvdsout" (rect -215 1528 -166 1545)(font "Intel Clear" ))
 	(pt -240 1544)
 	(pt -160 1544)
@@ -2303,18 +2303,6 @@ refer to the applicable agreement for further details.
 	(text "clkout" (rect -215 1544 -186 1561)(font "Intel Clear" ))
 	(pt -240 1560)
 	(pt -160 1560)
-)
-(connector
-	(text "lvds1bitsout[559..0]" (rect 110 1504 203 1521)(font "Intel Clear" ))
-	(pt 96 1520)
-	(pt 208 1520)
-	(bus)
-)
-(connector
-	(text "lvds1bitsout[559..0]" (rect 542 1136 635 1153)(font "Intel Clear" ))
-	(pt 648 1152)
-	(pt 520 1152)
-	(bus)
 )
 (connector
 	(pt 504 1200)
@@ -2377,12 +2365,6 @@ refer to the applicable agreement for further details.
 	(text "phasecounterselect[2..0]" (rect 950 1120 1065 1137)(font "Intel Clear" ))
 	(pt 1056 1136)
 	(pt 928 1136)
-	(bus)
-)
-(connector
-	(text "lvds1bitsin[559..0]" (rect 948 1104 1034 1121)(font "Intel Clear" ))
-	(pt 928 1120)
-	(pt 1040 1120)
 	(bus)
 )
 (connector
@@ -2449,6 +2431,30 @@ refer to the applicable agreement for further details.
 	(text "ram_wr" (rect -216 1480 -180 1497)(font "Intel Clear" ))
 	(pt -160 1496)
 	(pt -240 1496)
+)
+(connector
+	(text "lvdsbitsout[559..0]" (rect 542 1136 629 1153)(font "Intel Clear" ))
+	(pt 648 1152)
+	(pt 520 1152)
+	(bus)
+)
+(connector
+	(text "lvdsbitsin[559..0]" (rect 948 1104 1028 1121)(font "Intel Clear" ))
+	(pt 928 1120)
+	(pt 1040 1120)
+	(bus)
+)
+(connector
+	(text "lvdsbitsout[559..0]" (rect 110 1504 197 1521)(font "Intel Clear" ))
+	(pt 96 1520)
+	(pt 208 1520)
+	(bus)
+)
+(connector
+	(text "lvdsbitsin[559..0]" (rect -241 1448 -161 1465)(font "Intel Clear" ))
+	(pt -256 1464)
+	(pt -160 1464)
+	(bus)
 )
 (junction (pt 288 528))
 (junction (pt 288 544))
