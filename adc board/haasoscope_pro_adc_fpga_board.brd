@@ -9238,6 +9238,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <clearance class="4" value="0.15"/>
 <clearance class="5" value="0.15"/>
 </class>
+<class number="6" name="adiffpair" width="0.1016" drill="0">
+<clearance class="0" value="0.127"/>
+<clearance class="1" value="0.127"/>
+<clearance class="2" value="0.127"/>
+<clearance class="3" value="0.127"/>
+<clearance class="4" value="0.127"/>
+<clearance class="5" value="0.127"/>
+<clearance class="6" value="0.127"/>
+</class>
 </classes>
 <designrules name="jlcpcb-10layers-haas *">
 <description language="en">&lt;b&gt;Haas JLCPCB design rules (10 layers)&lt;/b&gt;
@@ -10583,25 +10592,25 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VOLTAGE" value="" x="34.5" y="85" size="1.778" layer="27" display="off"/>
 <attribute name="WATTAGE" value="" x="34.5" y="85" size="1.778" layer="27" display="off"/>
 </element>
-<element name="C151" library="MF_Passives" package="C0402" value="0.1uF" x="47.5" y="80" smashed="yes" rot="R180">
-<attribute name="DIELECTRIC" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="HOUSEPART" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="48.6" y="78.9" size="0.8128" layer="25" font="vector" rot="R180"/>
-<attribute name="POPULATE" value="1" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="TOLERANCE" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="URL" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VOLTAGE" value="" x="47.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C151" library="MF_Passives" package="C0402" value="0.1uF" x="46.5" y="80" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="46.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="46.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="46.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="47.6" y="78.9" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="POPULATE" value="1" x="46.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="46.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="46.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="46.5" y="80" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C152" library="MF_Passives" package="C0402" value="0.1uF" x="47.5" y="78.5" smashed="yes" rot="R180">
-<attribute name="DIELECTRIC" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="HOUSEPART" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="48.6" y="77.4" size="0.8128" layer="25" font="vector" rot="R180"/>
-<attribute name="POPULATE" value="1" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="TOLERANCE" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="URL" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VOLTAGE" value="" x="47.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C152" library="MF_Passives" package="C0402" value="0.1uF" x="46.5" y="78.5" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="46.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="46.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="46.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="47.6" y="77.4" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="POPULATE" value="1" x="46.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="46.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="46.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="46.5" y="78.5" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="C153" library="MF_Passives" package="C0402" value="0.1uF" x="21.5" y="81.5" smashed="yes" rot="R90">
 <attribute name="DIELECTRIC" value="" x="21.5" y="81.5" size="1.778" layer="27" rot="R90" display="off"/>
@@ -11312,15 +11321,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="70.5" y="116" size="0.8128" layer="25" rot="R270" align="center"/>
 <attribute name="VALUE" x="77.5" y="116" size="0.8128" layer="21" rot="R90" align="center"/>
 </element>
-<element name="IC29" library="LMH6401IRMZR" package="LMH6401IRMZR" value="LMH6401IRMZR" x="70.5" y="103.5" smashed="yes" rot="R270">
-<attribute name="DESCRIPTION" value="Differential Amplifiers 4.5 GHz Ultra Wideband Digital Variable Gain Amplifier 16-UQFN-HR -40 to 85" x="70.5" y="103.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="0.65mm" x="70.5" y="103.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="70.5" y="103.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="LMH6401IRMZR" x="70.5" y="103.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="595-LMH6401IRMZR" x="70.5" y="103.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH6401IRMZR?qs=zEQ6BYqA5vFvz%252BaadXvvtQ%3D%3D" x="70.5" y="103.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="70.45" y="103.5" size="0.8128" layer="25" rot="R270" align="center"/>
-<attribute name="VALUE" x="77.55" y="103.5" size="0.8128" layer="21" rot="R90" align="center"/>
+<element name="IC29" library="LMH6401IRMZR" package="LMH6401IRMZR" value="LMH6401IRMZR" x="70.78" y="103.64" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="Differential Amplifiers 4.5 GHz Ultra Wideband Digital Variable Gain Amplifier 16-UQFN-HR -40 to 85" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="0.65mm" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LMH6401IRMZR" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-LMH6401IRMZR" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH6401IRMZR?qs=zEQ6BYqA5vFvz%252BaadXvvtQ%3D%3D" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="70.73" y="103.64" size="0.8128" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="77.83" y="103.64" size="0.8128" layer="21" rot="R90" align="center"/>
 </element>
 <element name="R187" library="MF_Passives" package="R0402" value="39" x="70" y="110" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="70" y="110" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11432,45 +11441,45 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VOLTAGE" value="" x="93.5" y="107.5" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="WATTAGE" value="" x="93.5" y="107.5" size="0.8128" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C111" library="MF_Passives" package="C0402" value="0.1uF" x="66.5" y="102.5" smashed="yes" rot="R180">
-<attribute name="DIELECTRIC" value="" x="66.5" y="102.5" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="HOUSEPART" value="" x="66.5" y="102.5" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="" x="66.5" y="102.5" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="67.6" y="101.4" size="0.8128" layer="25" font="vector" rot="R180"/>
-<attribute name="POPULATE" value="1" x="66.5" y="102.5" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="TOLERANCE" value="" x="66.5" y="102.5" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="URL" value="" x="66.5" y="102.5" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="VOLTAGE" value="" x="66.5" y="102.5" size="0.8128" layer="27" rot="R180" display="off"/>
+<element name="C111" library="MF_Passives" package="C0402" value="0.1uF" x="66.78" y="102.64" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="66.78" y="102.64" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="66.78" y="102.64" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="66.78" y="102.64" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="67.88" y="101.54" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="POPULATE" value="1" x="66.78" y="102.64" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="66.78" y="102.64" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="66.78" y="102.64" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="66.78" y="102.64" size="0.8128" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C112" library="MF_Passives" package="C0402" value="0.1uF" x="66.5" y="104.2" smashed="yes" rot="R180">
-<attribute name="DIELECTRIC" value="" x="69.5" y="108.2" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="HOUSEPART" value="" x="69.5" y="108.2" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="" x="69.5" y="108.2" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="67.6" y="106.1" size="0.8128" layer="25" font="vector" rot="R180"/>
-<attribute name="POPULATE" value="1" x="69.5" y="108.2" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="TOLERANCE" value="" x="69.5" y="108.2" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="URL" value="" x="69.5" y="108.2" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="VOLTAGE" value="" x="69.5" y="108.2" size="0.8128" layer="27" rot="R180" display="off"/>
+<element name="C112" library="MF_Passives" package="C0402" value="0.1uF" x="66.78" y="104.34" smashed="yes" rot="R180">
+<attribute name="DIELECTRIC" value="" x="69.78" y="108.34" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="HOUSEPART" value="" x="69.78" y="108.34" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="69.78" y="108.34" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="67.88" y="106.24" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="POPULATE" value="1" x="69.78" y="108.34" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="" x="69.78" y="108.34" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="URL" value="" x="69.78" y="108.34" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="VOLTAGE" value="" x="69.78" y="108.34" size="0.8128" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C113" library="MF_Passives" package="C0402" value="0.1uF" x="74.5" y="102.5" smashed="yes">
-<attribute name="DIELECTRIC" value="" x="74.5" y="98.5" size="0.8128" layer="27" display="off"/>
-<attribute name="HOUSEPART" value="" x="74.5" y="98.5" size="0.8128" layer="27" display="off"/>
-<attribute name="MPN" value="" x="74.5" y="98.5" size="0.8128" layer="27" display="off"/>
-<attribute name="NAME" x="73.4" y="100.6" size="0.8128" layer="25" font="vector"/>
-<attribute name="POPULATE" value="1" x="74.5" y="98.5" size="0.8128" layer="27" display="off"/>
-<attribute name="TOLERANCE" value="" x="74.5" y="98.5" size="0.8128" layer="27" display="off"/>
-<attribute name="URL" value="" x="74.5" y="98.5" size="0.8128" layer="27" display="off"/>
-<attribute name="VOLTAGE" value="" x="74.5" y="98.5" size="0.8128" layer="27" display="off"/>
+<element name="C113" library="MF_Passives" package="C0402" value="0.1uF" x="74.78" y="102.64" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="74.78" y="98.64" size="0.8128" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="74.78" y="98.64" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="74.78" y="98.64" size="0.8128" layer="27" display="off"/>
+<attribute name="NAME" x="73.68" y="100.74" size="0.8128" layer="25" font="vector"/>
+<attribute name="POPULATE" value="1" x="74.78" y="98.64" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="74.78" y="98.64" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="74.78" y="98.64" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="74.78" y="98.64" size="0.8128" layer="27" display="off"/>
 </element>
-<element name="C129" library="MF_Passives" package="C0402" value="0.1uF" x="74.5" y="104.5" smashed="yes">
-<attribute name="DIELECTRIC" value="" x="71.5" y="96.5" size="0.8128" layer="27" display="off"/>
-<attribute name="HOUSEPART" value="" x="71.5" y="96.5" size="0.8128" layer="27" display="off"/>
-<attribute name="MPN" value="" x="71.5" y="96.5" size="0.8128" layer="27" display="off"/>
-<attribute name="NAME" x="73.4" y="105.6" size="0.8128" layer="25" font="vector"/>
-<attribute name="POPULATE" value="1" x="71.5" y="96.5" size="0.8128" layer="27" display="off"/>
-<attribute name="TOLERANCE" value="" x="71.5" y="96.5" size="0.8128" layer="27" display="off"/>
-<attribute name="URL" value="" x="71.5" y="96.5" size="0.8128" layer="27" display="off"/>
-<attribute name="VOLTAGE" value="" x="71.5" y="96.5" size="0.8128" layer="27" display="off"/>
+<element name="C129" library="MF_Passives" package="C0402" value="0.1uF" x="74.78" y="104.64" smashed="yes">
+<attribute name="DIELECTRIC" value="" x="71.78" y="96.64" size="0.8128" layer="27" display="off"/>
+<attribute name="HOUSEPART" value="" x="71.78" y="96.64" size="0.8128" layer="27" display="off"/>
+<attribute name="MPN" value="" x="71.78" y="96.64" size="0.8128" layer="27" display="off"/>
+<attribute name="NAME" x="73.68" y="105.74" size="0.8128" layer="25" font="vector"/>
+<attribute name="POPULATE" value="1" x="71.78" y="96.64" size="0.8128" layer="27" display="off"/>
+<attribute name="TOLERANCE" value="" x="71.78" y="96.64" size="0.8128" layer="27" display="off"/>
+<attribute name="URL" value="" x="71.78" y="96.64" size="0.8128" layer="27" display="off"/>
+<attribute name="VOLTAGE" value="" x="71.78" y="96.64" size="0.8128" layer="27" display="off"/>
 </element>
 <element name="IC30" library="SN74AVC4T774PWR" package="SOP65P640X120-16N" value="SN74AVC4T774PWR" x="57.5" y="102.5" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="4-Bit Dual-Supply Bus Transceiver With Configurable Voltage-Level Shifting and 3-State Outputs" x="57.5" y="97.5" size="0.8128" layer="27" rot="R90" display="off"/>
@@ -13188,8 +13197,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="76.5" y="116" extent="1-16" drill="0.35"/>
 <via x="72" y="124" extent="1-16" drill="0.35"/>
 <via x="60.5" y="117.5" extent="1-16" drill="0.35"/>
-<via x="76" y="103.5" extent="1-16" drill="0.35"/>
-<via x="65" y="103.5" extent="1-16" drill="0.35"/>
+<via x="76.28" y="103.64" extent="1-16" drill="0.35"/>
+<via x="65.28" y="103.64" extent="1-16" drill="0.35"/>
 <via x="58.5" y="107.5" extent="1-16" drill="0.35"/>
 <via x="58.5" y="89" extent="1-16" drill="0.35"/>
 <via x="58.5" y="93" extent="1-16" drill="0.35"/>
@@ -13275,17 +13284,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="93.55" y="65.45" extent="1-16" drill="0.2"/>
 <via x="100" y="78.6" extent="1-16" drill="0.2"/>
 <via x="94.05" y="81.95" extent="1-16" drill="0.2"/>
-<wire x1="75.05" y1="104.5" x2="76" y2="103.55" width="0.2" layer="1"/>
-<wire x1="76" y1="103.55" x2="76" y2="103.5" width="0.2" layer="1"/>
-<wire x1="76" y1="103.5" x2="76" y2="103.45" width="0.2" layer="1"/>
-<wire x1="76" y1="103.45" x2="75.05" y2="102.5" width="0.2" layer="1"/>
-<wire x1="65" y1="103.5" x2="65.95" y2="102.55" width="0.2" layer="1"/>
-<wire x1="65.95" y1="102.55" x2="65.95" y2="102.5" width="0.2" layer="1"/>
-<wire x1="65" y1="103.5" x2="65.7" y2="104.2" width="0.2" layer="1"/>
-<wire x1="65.7" y1="104.2" x2="65.95" y2="104.2" width="0.2" layer="1"/>
-<wire x1="65" y1="103.5" x2="68.8" y2="103.5" width="0.2" layer="1"/>
-<wire x1="68.8" y1="103.5" x2="69.05" y2="103.25" width="0.2" layer="1"/>
-<wire x1="69.05" y1="103.25" x2="69.05" y2="103.75" width="0.2" layer="1"/>
+<wire x1="75.33" y1="104.64" x2="76.28" y2="103.69" width="0.2" layer="1"/>
+<wire x1="76.28" y1="103.69" x2="76.28" y2="103.64" width="0.2" layer="1"/>
+<wire x1="76.28" y1="103.64" x2="76.28" y2="103.59" width="0.2" layer="1"/>
+<wire x1="76.28" y1="103.59" x2="75.33" y2="102.64" width="0.2" layer="1"/>
+<wire x1="65.28" y1="103.64" x2="66.23" y2="102.69" width="0.2" layer="1"/>
+<wire x1="66.23" y1="102.69" x2="66.23" y2="102.64" width="0.2" layer="1"/>
+<wire x1="65.28" y1="103.64" x2="65.98" y2="104.34" width="0.2" layer="1"/>
+<wire x1="65.98" y1="104.34" x2="66.23" y2="104.34" width="0.2" layer="1"/>
+<wire x1="65.28" y1="103.64" x2="69.08" y2="103.64" width="0.2" layer="1"/>
+<wire x1="69.08" y1="103.64" x2="69.33" y2="103.39" width="0.2" layer="1"/>
+<wire x1="69.33" y1="103.39" x2="69.33" y2="103.89" width="0.2" layer="1"/>
 <wire x1="59.5" y1="122.7" x2="60.45" y2="122.7" width="0.2" layer="1"/>
 <wire x1="60.5" y1="117.5" x2="60.55" y2="117.55" width="0.2" layer="1"/>
 <wire x1="60.55" y1="117.55" x2="60.55" y2="118.3" width="0.2" layer="1"/>
@@ -13363,7 +13372,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="152.0995" y1="68.103" x2="152.0995" y2="69.857" width="0.1524" layer="1"/>
 <wire x1="152.0995" y1="69.857" x2="152.1395" y2="69.897" width="0.1524" layer="1"/>
 <via x="108.13" y="147.8" extent="1-16" drill="0.35"/>
-<via x="72.5" y="106.5" extent="1-16" drill="0.35"/>
+<via x="72.92" y="106.11" extent="1-16" drill="0.35"/>
 <via x="32.5" y="79.5" extent="1-16" drill="0.35"/>
 <via x="54.5" y="129.5" extent="1-16" drill="0.35"/>
 <via x="61" y="129.5" extent="1-16" drill="0.35"/>
@@ -14016,7 +14025,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="102.5" y="75" extent="1-16" drill="0.2"/>
 <wire x1="102.325" y1="75" x2="102.5" y2="75" width="0.1524" layer="16"/>
 </signal>
-<signal name="INA_P" class="3">
+<signal name="INA_P" class="6">
 <contactref element="IC1" pad="A4"/>
 <contactref element="R194" pad="P$2"/>
 <wire x1="70" y1="97.95" x2="70" y2="97.3452" width="0.1524" layer="1"/>
@@ -14025,7 +14034,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="70.5" y1="88.4786" x2="70.5" y2="87" width="0.1524" layer="1"/>
 <wire x1="70.5214" y1="88.5" x2="70.5" y2="88.4786" width="0.1524" layer="1"/>
 </signal>
-<signal name="INA_N" class="3">
+<signal name="INA_N" class="6">
 <contactref element="IC1" pad="A5"/>
 <contactref element="R195" pad="P$2"/>
 <wire x1="71.5" y1="97.95" x2="71.5" y2="97.3452" width="0.1524" layer="1"/>
@@ -16575,7 +16584,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="101.5" y="75" extent="1-16" drill="0.2"/>
 <wire x1="101.675" y1="75" x2="101.5" y2="75" width="0.1524" layer="16"/>
 </signal>
-<signal name="INB_N" class="3">
+<signal name="INB_N" class="6">
 <contactref element="IC1" pad="T5"/>
 <contactref element="R138" pad="P$2"/>
 <wire x1="72" y1="58.55" x2="72" y2="59.1548" width="0.1524" layer="1"/>
@@ -16586,7 +16595,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.495953125" y1="68.517353125" x2="71.495953125" y2="70.82824375" width="0.1524" layer="1"/>
 <wire x1="71.4786" y1="68.5" x2="71.495953125" y2="68.517353125" width="0.1524" layer="1"/>
 </signal>
-<signal name="INB_P" class="3">
+<signal name="INB_P" class="6">
 <contactref element="IC1" pad="T4"/>
 <contactref element="R139" pad="P$2"/>
 <wire x1="70.5" y1="58.55" x2="70.5" y2="59.1548" width="0.1524" layer="1"/>
@@ -16597,29 +16606,29 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.0214" y1="69.658925" x2="71.038753125" y2="69.676278125" width="0.1524" layer="1"/>
 <wire x1="71.0214" y1="59.6762" x2="71.0214" y2="69.658925" width="0.1524" layer="1"/>
 </signal>
-<signal name="CLK_P" class="3">
+<signal name="CLK_P" class="6">
 <contactref element="C2" pad="1"/>
 <contactref element="C151" pad="P$1"/>
-<wire x1="48.05" y1="80" x2="48.6548" y2="80" width="0.1524" layer="1"/>
-<wire x1="48.6548" y1="80" x2="49.1762" y2="79.4786" width="0.1524" layer="1"/>
+<wire x1="47.05" y1="80" x2="47.1548" y2="80" width="0.1524" layer="1"/>
+<wire x1="47.1548" y1="80" x2="47.6762" y2="79.4786" width="0.1524" layer="1"/>
 <wire x1="57.959790625" y1="80.1" x2="58.35" y2="80.1" width="0.1524" layer="1"/>
 <wire x1="57.170790625" y1="79.311" x2="57.959790625" y2="80.1" width="0.1524" layer="1"/>
 <wire x1="56.615559375" y1="79.311" x2="57.170790625" y2="79.311" width="0.1524" layer="1"/>
 <wire x1="56.447959375" y1="79.4786" x2="56.615559375" y2="79.311" width="0.1524" layer="1"/>
-<wire x1="49.1762" y1="79.4786" x2="56.447959375" y2="79.4786" width="0.1524" layer="1"/>
+<wire x1="47.6762" y1="79.4786" x2="56.447959375" y2="79.4786" width="0.1524" layer="1"/>
 </signal>
-<signal name="CLK_N" class="3">
+<signal name="CLK_N" class="6">
 <contactref element="C1" pad="2"/>
 <contactref element="C152" pad="P$1"/>
-<wire x1="48.05" y1="78.5" x2="48.6548" y2="78.5" width="0.1524" layer="1"/>
-<wire x1="48.6548" y1="78.5" x2="49.1762" y2="79.0214" width="0.1524" layer="1"/>
-<wire x1="49.1762" y1="79.0214" x2="55.5" y2="79.0214" width="0.1524" layer="1"/>
+<wire x1="47.05" y1="78.5" x2="47.1548" y2="78.5" width="0.1524" layer="1"/>
+<wire x1="47.1548" y1="78.5" x2="47.6762" y2="79.0214" width="0.1524" layer="1"/>
+<wire x1="47.6762" y1="79.0214" x2="55.5" y2="79.0214" width="0.1524" layer="1"/>
 <wire x1="57.19704375" y1="78.8" x2="58.35" y2="78.8" width="0.1524" layer="1"/>
 <wire x1="57.14324375" y1="78.8538" x2="57.19704375" y2="78.8" width="0.1524" layer="1"/>
 <wire x1="55.6676" y1="78.8538" x2="57.14324375" y2="78.8538" width="0.1524" layer="1"/>
 <wire x1="55.5" y1="79.0214" x2="55.6676" y2="78.8538" width="0.1524" layer="1"/>
 </signal>
-<signal name="CLK_AC_P" class="3">
+<signal name="CLK_AC_P" class="6">
 <contactref element="C2" pad="2"/>
 <contactref element="IC1" pad="H1"/>
 <wire x1="59.45" y1="80.1" x2="59.8714" y2="79.6786" width="0.1524" layer="1"/>
@@ -16629,7 +16638,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="65.964878125" y1="79.6786" x2="66.124759375" y2="79.51871875" width="0.1524" layer="1"/>
 <wire x1="59.8714" y1="79.6786" x2="65.964878125" y2="79.6786" width="0.1524" layer="1"/>
 </signal>
-<signal name="CLK_AC_N" class="3">
+<signal name="CLK_AC_N" class="6">
 <contactref element="C1" pad="1"/>
 <contactref element="IC1" pad="J1"/>
 <wire x1="59.45" y1="78.8" x2="59.8714" y2="79.2214" width="0.1524" layer="1"/>
@@ -19432,8 +19441,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="62.4" y="122.7" extent="1-16" drill="0.2"/>
 <via x="67" y="114" extent="1-16" drill="0.2"/>
 <via x="74" y="114" extent="1-16" drill="0.2"/>
-<via x="74" y="101.5" extent="1-16" drill="0.2"/>
-<via x="67.5" y="101.05" extent="1-16" drill="0.2"/>
+<via x="74.28" y="101.64" extent="1-16" drill="0.2"/>
+<via x="67.78" y="101.19" extent="1-16" drill="0.2"/>
 <via x="79" y="20.5" extent="1-16" drill="0.35"/>
 <via x="75" y="33.5" extent="1-16" drill="0.35"/>
 <via x="87" y="49" extent="1-16" drill="0.35"/>
@@ -19441,14 +19450,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="24.15" y1="23.85" x2="24.15" y2="23.3" width="0.1524" layer="1"/>
 <wire x1="75" y1="33.5" x2="75.05" y2="33.55" width="0.1524" layer="1"/>
 <wire x1="75.05" y1="33.55" x2="76.3" y2="33.55" width="0.1524" layer="1"/>
-<wire x1="67.5" y1="101.05" x2="67.05" y2="101.5" width="0.2" layer="1"/>
-<wire x1="67.05" y1="101.5" x2="67.05" y2="102.5" width="0.2" layer="1"/>
-<wire x1="67.05" y1="102.5" x2="67.3" y2="102.75" width="0.2" layer="1"/>
-<wire x1="67.3" y1="102.75" x2="69.05" y2="102.75" width="0.2" layer="1"/>
-<wire x1="71.85" y1="102.75" x2="73.7" y2="102.75" width="0.2" layer="1"/>
-<wire x1="73.7" y1="102.75" x2="73.95" y2="102.5" width="0.2" layer="1"/>
-<wire x1="73.95" y1="102.5" x2="74" y2="102.45" width="0.2" layer="1"/>
-<wire x1="74" y1="102.45" x2="74" y2="101.5" width="0.2" layer="1"/>
+<wire x1="67.78" y1="101.19" x2="67.33" y2="101.64" width="0.2" layer="1"/>
+<wire x1="67.33" y1="101.64" x2="67.33" y2="102.64" width="0.2" layer="1"/>
+<wire x1="67.33" y1="102.64" x2="67.58" y2="102.89" width="0.2" layer="1"/>
+<wire x1="67.58" y1="102.89" x2="69.33" y2="102.89" width="0.2" layer="1"/>
+<wire x1="72.13" y1="102.89" x2="73.98" y2="102.89" width="0.2" layer="1"/>
+<wire x1="73.98" y1="102.89" x2="74.23" y2="102.64" width="0.2" layer="1"/>
+<wire x1="74.23" y1="102.64" x2="74.28" y2="102.59" width="0.2" layer="1"/>
+<wire x1="74.28" y1="102.59" x2="74.28" y2="101.64" width="0.2" layer="1"/>
 <wire x1="74" y1="114" x2="73.95" y2="114.05" width="0.2" layer="1"/>
 <wire x1="73.95" y1="114.05" x2="73.95" y2="115" width="0.2" layer="1"/>
 <wire x1="67" y1="114" x2="67" y2="114.95" width="0.2" layer="1"/>
@@ -19479,15 +19488,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="47.5" y1="114" x2="47.5" y2="115" width="0.1524" layer="1"/>
 <wire x1="47.5" y1="115" x2="47.562" y2="115.025" width="0.1524" layer="1"/>
 <wire x1="87" y1="49" x2="86" y2="49" width="0.1524" layer="1"/>
-<via x="70.5" y="103" extent="1-16" drill="0.35"/>
-<wire x1="71.85" y1="102.75" x2="71.49" y2="102.75" width="0.2" layer="1"/>
-<wire x1="71.49" y1="102.75" x2="71.23" y2="103.01" width="0.2" layer="1"/>
-<wire x1="71.23" y1="103.01" x2="70.51" y2="103.01" width="0.2" layer="1"/>
-<wire x1="70.51" y1="103.01" x2="70.5" y2="103" width="0.2" layer="1"/>
-<wire x1="70.5" y1="103" x2="69.546025" y2="103" width="0.2" layer="1"/>
-<wire x1="69.546025" y1="103" x2="69.444025" y2="102.898" width="0.2" layer="1"/>
-<wire x1="69.444025" y1="102.898" x2="69.198" y2="102.898" width="0.2" layer="1"/>
-<wire x1="69.198" y1="102.898" x2="69.05" y2="102.75" width="0.2" layer="1"/>
+<via x="70.78" y="103.14" extent="1-16" drill="0.35"/>
+<wire x1="72.13" y1="102.89" x2="71.77" y2="102.89" width="0.2" layer="1"/>
+<wire x1="71.77" y1="102.89" x2="71.51" y2="103.15" width="0.2" layer="1"/>
+<wire x1="71.51" y1="103.15" x2="70.79" y2="103.15" width="0.2" layer="1"/>
+<wire x1="70.79" y1="103.15" x2="70.78" y2="103.14" width="0.2" layer="1"/>
+<wire x1="70.78" y1="103.14" x2="69.826025" y2="103.14" width="0.2" layer="1"/>
+<wire x1="69.826025" y1="103.14" x2="69.724025" y2="103.038" width="0.2" layer="1"/>
+<wire x1="69.724025" y1="103.038" x2="69.478" y2="103.038" width="0.2" layer="1"/>
+<wire x1="69.478" y1="103.038" x2="69.33" y2="102.89" width="0.2" layer="1"/>
 <via x="70.78" y="115.7" extent="1-16" drill="0.35"/>
 <wire x1="70.58" y1="115.5" x2="70.78" y2="115.7" width="0.1524" layer="1"/>
 <wire x1="69.35" y1="115.5" x2="70.58" y2="115.5" width="0.1524" layer="1"/>
@@ -19635,16 +19644,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="67" y="118" extent="1-16" drill="0.2"/>
 <via x="74" y="118" extent="1-16" drill="0.2"/>
 <via x="61.65" y="117.45" extent="1-16" drill="0.2"/>
-<via x="74" y="105.5" extent="1-16" drill="0.2"/>
-<via x="67" y="105.5" extent="1-16" drill="0.2"/>
-<wire x1="73.95" y1="104.5" x2="73.95" y2="105.45" width="0.2" layer="1"/>
-<wire x1="73.95" y1="105.45" x2="74" y2="105.5" width="0.2" layer="1"/>
-<wire x1="73.95" y1="104.5" x2="73.7" y2="104.25" width="0.2" layer="1"/>
-<wire x1="73.7" y1="104.25" x2="71.85" y2="104.25" width="0.2" layer="1"/>
-<wire x1="69.05" y1="104.25" x2="69" y2="104.2" width="0.2" layer="1"/>
-<wire x1="69" y1="104.2" x2="67.05" y2="104.2" width="0.2" layer="1"/>
-<wire x1="67.05" y1="104.2" x2="67" y2="104.25" width="0.2" layer="1"/>
-<wire x1="67" y1="104.25" x2="67" y2="105.5" width="0.2" layer="1"/>
+<via x="74.28" y="105.64" extent="1-16" drill="0.2"/>
+<via x="67.28" y="105.64" extent="1-16" drill="0.2"/>
+<wire x1="74.23" y1="104.64" x2="74.23" y2="105.59" width="0.2" layer="1"/>
+<wire x1="74.23" y1="105.59" x2="74.28" y2="105.64" width="0.2" layer="1"/>
+<wire x1="74.23" y1="104.64" x2="73.98" y2="104.39" width="0.2" layer="1"/>
+<wire x1="73.98" y1="104.39" x2="72.13" y2="104.39" width="0.2" layer="1"/>
+<wire x1="69.33" y1="104.39" x2="69.28" y2="104.34" width="0.2" layer="1"/>
+<wire x1="69.28" y1="104.34" x2="67.33" y2="104.34" width="0.2" layer="1"/>
+<wire x1="67.33" y1="104.34" x2="67.28" y2="104.39" width="0.2" layer="1"/>
+<wire x1="67.28" y1="104.39" x2="67.28" y2="105.64" width="0.2" layer="1"/>
 <wire x1="74" y1="118" x2="74" y2="117.05" width="0.2" layer="1"/>
 <wire x1="74" y1="117.05" x2="73.95" y2="117" width="0.2" layer="1"/>
 <wire x1="67" y1="118" x2="67" y2="117.05" width="0.2" layer="1"/>
@@ -19659,14 +19668,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="21.5" y1="123" x2="21.55" y2="122.95" width="0.1524" layer="1"/>
 <wire x1="20.5" y1="123.625" x2="20.5" y2="123.7" width="0.1524" layer="1"/>
 <wire x1="51.5" y1="119" x2="52.95" y2="119" width="0.1524" layer="1"/>
-<via x="70.5" y="104" extent="1-16" drill="0.35"/>
-<wire x1="69.05" y1="104.25" x2="69.38" y2="104.25" width="0.2" layer="1"/>
-<wire x1="69.63" y1="104" x2="70.5" y2="104" width="0.2" layer="1"/>
-<wire x1="69.63" y1="104" x2="69.38" y2="104.25" width="0.2" layer="1"/>
-<wire x1="70.5" y1="104" x2="71.353975" y2="104" width="0.2" layer="1"/>
-<wire x1="71.353975" y1="104" x2="71.455975" y2="104.102" width="0.2" layer="1"/>
-<wire x1="71.455975" y1="104.102" x2="71.702" y2="104.102" width="0.2" layer="1"/>
-<wire x1="71.702" y1="104.102" x2="71.85" y2="104.25" width="0.2" layer="1"/>
+<via x="70.78" y="104.14" extent="1-16" drill="0.35"/>
+<wire x1="69.33" y1="104.39" x2="69.66" y2="104.39" width="0.2" layer="1"/>
+<wire x1="69.91" y1="104.14" x2="70.78" y2="104.14" width="0.2" layer="1"/>
+<wire x1="69.91" y1="104.14" x2="69.66" y2="104.39" width="0.2" layer="1"/>
+<wire x1="70.78" y1="104.14" x2="71.633975" y2="104.14" width="0.2" layer="1"/>
+<wire x1="71.633975" y1="104.14" x2="71.735975" y2="104.242" width="0.2" layer="1"/>
+<wire x1="71.735975" y1="104.242" x2="71.982" y2="104.242" width="0.2" layer="1"/>
+<wire x1="71.982" y1="104.242" x2="72.13" y2="104.39" width="0.2" layer="1"/>
 <via x="70.15" y="116.34" extent="1-16" drill="0.35"/>
 <wire x1="69.35" y1="116.5" x2="69.51" y2="116.34" width="0.1524" layer="1"/>
 <wire x1="70.15" y1="116.34" x2="69.51" y2="116.34" width="0.1524" layer="1"/>
@@ -20391,9 +20400,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="134.375" y1="20.5" x2="134.34" y2="20.5" width="0.0889" layer="1"/>
 <wire x1="33.125" y1="75.5" x2="26.5" y2="75.5" width="0.0889" layer="1"/>
 <wire x1="36.125" y1="75.5" x2="33.125" y2="75.5" width="0.0889" layer="3"/>
-<wire x1="57.125" y1="54.5" x2="36.125" y2="75.5" width="0.0889" layer="3"/>
-<wire x1="123.625" y1="54.5" x2="57.125" y2="54.5" width="0.0889" layer="3"/>
-<wire x1="127.625" y1="50.5" x2="123.625" y2="54.5" width="0.0889" layer="3"/>
+<wire x1="36.125" y1="75.5" x2="57.125" y2="54.5" width="0.0889" layer="3"/>
+<wire x1="123.625" y1="54.5" x2="127.625" y2="50.5" width="0.0889" layer="3"/>
 <wire x1="128" y1="50.5" x2="127.625" y2="50.5" width="0.0889" layer="1"/>
 <via x="127" y="78.625" extent="1-16" drill="0.2"/>
 <via x="33.125" y="75.5" extent="1-16" drill="0.2"/>
@@ -20406,6 +20414,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="126.5" y1="62" x2="126.5" y2="54.5253125" width="0.0889" layer="14"/>
 <wire x1="127.37145" y1="53.62855" x2="128" y2="53" width="0.0889" layer="14"/>
 <via x="128" y="52.5" extent="1-16" drill="0.2"/>
+<wire x1="57.125" y1="54.5" x2="123.625" y2="54.5" width="0.0889" layer="3"/>
 </signal>
 <signal name="BOARDIN7">
 <contactref element="J8" pad="8"/>
@@ -20574,15 +20583,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="109.5" y1="98.5" x2="109.5" y2="99.43306875" width="0.1524" layer="1"/>
 <wire x1="109.5" y1="99.43306875" x2="110.06693125" y2="100" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUT_P" class="2">
+<signal name="AOUT_P" class="6">
 <contactref element="IC13" pad="13"/>
 <contactref element="R45" pad="P$1"/>
-<wire x1="70.75" y1="45.9" x2="70.75" y2="45.2952" width="0.1524" layer="1"/>
-<wire x1="70.75" y1="45.2952" x2="71.37935" y2="44.66585" width="0.1524" layer="1"/>
-<wire x1="71.37935" y1="44.66585" x2="71.37935" y2="42.5" width="0.1524" layer="1"/>
-<wire x1="71.25" y1="42.160325" x2="71.25" y2="41.65" width="0.1524" layer="1"/>
-<wire x1="71.314675" y1="42.225" x2="71.25" y2="42.160325" width="0.1524" layer="1"/>
-<wire x1="71.37935" y1="42.5" x2="71.314675" y2="42.225" width="0.1524" layer="1"/>
+<wire x1="71.25" y1="41.65" x2="71.25" y2="42.1532" width="0.1016" layer="1"/>
+<wire x1="71.25" y1="42.1532" x2="71.3857" y2="42.2889" width="0.1016" layer="1"/>
+<wire x1="71.3857" y1="42.2889" x2="71.3857" y2="45.5" width="0.1016" layer="1"/>
+<wire x1="70.8" y1="45.9" x2="70.75" y2="45.9" width="0.1016" layer="1"/>
+<wire x1="71.2" y1="45.5" x2="70.8" y2="45.9" width="0.1016" layer="1"/>
+<wire x1="71.3857" y1="45.5" x2="71.2" y2="45.5" width="0.1016" layer="1"/>
 </signal>
 <signal name="N$8">
 <contactref element="IC13" pad="7"/>
@@ -20590,7 +20599,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="73.55" y1="37.5" x2="72.25" y2="38.8" width="0.1524" layer="1"/>
 <wire x1="72.25" y1="38.8" x2="72.25" y2="39.35" width="0.1524" layer="1"/>
 </signal>
-<signal name="AIN_N" class="2">
+<signal name="AIN_N" class="6">
 <contactref element="IC13" pad="5"/>
 <contactref element="R132" pad="P$1"/>
 <contactref element="R134" pad="P$2"/>
@@ -20605,27 +20614,27 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="69.95" y1="37.5" x2="69.95" y2="38.55" width="0.1524" layer="1"/>
 <wire x1="69.95" y1="38.55" x2="70.75" y2="39.35" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUTSMA_N" class="2">
+<signal name="AOUTSMA_N" class="6">
 <contactref element="R44" pad="P$2"/>
 <contactref element="IC14" pad="3"/>
-<wire x1="71.8" y1="51.6" x2="71.8" y2="50.9952" width="0.1524" layer="1"/>
-<wire x1="71.8" y1="50.9952" x2="71.67065" y2="50.86585" width="0.1524" layer="1"/>
-<wire x1="71.67065" y1="50.86585" x2="71.67065" y2="48" width="0.1524" layer="1"/>
-<wire x1="72.25" y1="47.3779875" x2="72.25" y2="47" width="0.1524" layer="1"/>
-<wire x1="71.8154875" y1="47.8125" x2="72.25" y2="47.3779875" width="0.1524" layer="1"/>
-<wire x1="71.67065" y1="48" x2="71.8154875" y2="47.8125" width="0.1524" layer="1"/>
+<wire x1="71.8" y1="51.6" x2="71.8" y2="51.0968" width="0.1016" layer="1"/>
+<wire x1="71.8" y1="51.0968" x2="71.6643" y2="50.9611" width="0.1016" layer="1"/>
+<wire x1="71.6643" y1="50.9611" x2="71.6643" y2="47.5" width="0.1016" layer="1"/>
+<wire x1="72.2" y1="47" x2="72.25" y2="47" width="0.1016" layer="1"/>
+<wire x1="71.7" y1="47.5" x2="72.2" y2="47" width="0.1016" layer="1"/>
+<wire x1="71.6643" y1="47.5" x2="71.7" y2="47.5" width="0.1016" layer="1"/>
 </signal>
-<signal name="AOUTSMA_P" class="2">
+<signal name="AOUTSMA_P" class="6">
 <contactref element="R45" pad="P$2"/>
 <contactref element="IC14" pad="2"/>
-<wire x1="71.3" y1="51.6" x2="71.3" y2="50.9952" width="0.1524" layer="1"/>
-<wire x1="71.3" y1="50.9952" x2="71.42935" y2="50.86585" width="0.1524" layer="1"/>
-<wire x1="71.42935" y1="50.86585" x2="71.42935" y2="48" width="0.1524" layer="1"/>
-<wire x1="70.75" y1="47.3029875" x2="70.75" y2="47" width="0.1524" layer="1"/>
-<wire x1="71.2595125" y1="47.8125" x2="70.75" y2="47.3029875" width="0.1524" layer="1"/>
-<wire x1="71.42935" y1="48" x2="71.2595125" y2="47.8125" width="0.1524" layer="1"/>
+<wire x1="71.3" y1="51.6" x2="71.3" y2="51.0968" width="0.1016" layer="1"/>
+<wire x1="71.3" y1="51.0968" x2="71.4357" y2="50.9611" width="0.1016" layer="1"/>
+<wire x1="71.4357" y1="50.9611" x2="71.4357" y2="47.5" width="0.1016" layer="1"/>
+<wire x1="70.8" y1="47" x2="70.75" y2="47" width="0.1016" layer="1"/>
+<wire x1="71.3" y1="47.5" x2="70.8" y2="47" width="0.1016" layer="1"/>
+<wire x1="71.4357" y1="47.5" x2="71.3" y2="47.5" width="0.1016" layer="1"/>
 </signal>
-<signal name="AIN_P" class="2">
+<signal name="AIN_P" class="6">
 <contactref element="IC13" pad="6"/>
 <contactref element="R131" pad="P$1"/>
 <contactref element="R133" pad="P$2"/>
@@ -20633,15 +20642,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.75" y1="38.2" x2="72.45" y2="37.5" width="0.1524" layer="1"/>
 <wire x1="72.45" y1="37.5" x2="72.45" y2="35.5" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUT_N" class="2">
+<signal name="AOUT_N" class="6">
 <contactref element="IC13" pad="12"/>
 <contactref element="R44" pad="P$1"/>
-<wire x1="72.25" y1="45.9" x2="72.25" y2="45.2952" width="0.1524" layer="1"/>
-<wire x1="72.25" y1="45.2952" x2="71.62065" y2="44.66585" width="0.1524" layer="1"/>
-<wire x1="71.62065" y1="44.66585" x2="71.62065" y2="42.5" width="0.1524" layer="1"/>
-<wire x1="71.75" y1="42.160325" x2="71.75" y2="41.65" width="0.1524" layer="1"/>
-<wire x1="71.685325" y1="42.225" x2="71.75" y2="42.160325" width="0.1524" layer="1"/>
-<wire x1="71.62065" y1="42.5" x2="71.685325" y2="42.225" width="0.1524" layer="1"/>
+<wire x1="71.75" y1="41.65" x2="71.75" y2="42.1532" width="0.1016" layer="1"/>
+<wire x1="71.75" y1="42.1532" x2="71.6143" y2="42.2889" width="0.1016" layer="1"/>
+<wire x1="71.6143" y1="42.2889" x2="71.6143" y2="45.5" width="0.1016" layer="1"/>
+<wire x1="72.2" y1="45.9" x2="72.25" y2="45.9" width="0.1016" layer="1"/>
+<wire x1="71.8" y1="45.5" x2="72.2" y2="45.9" width="0.1016" layer="1"/>
+<wire x1="71.6143" y1="45.5" x2="71.8" y2="45.5" width="0.1016" layer="1"/>
 </signal>
 <signal name="AMPSDI">
 <contactref element="IC14" pad="1"/>
@@ -20671,28 +20680,23 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="82" y1="48.5" x2="83.5" y2="50" width="0.1524" layer="1"/>
 <wire x1="83.5" y1="50" x2="83.5" y2="51.125" width="0.1524" layer="1"/>
 </signal>
-<signal name="AMPOUT_N" class="2">
+<signal name="AMPOUT_N" class="6">
 <contactref element="IC14" pad="10"/>
 <contactref element="R138" pad="P$1"/>
-<wire x1="72" y1="57.45" x2="72" y2="56.8452" width="0.1524" layer="1"/>
-<wire x1="72" y1="56.8452" x2="71.37065" y2="56.21585" width="0.1524" layer="1"/>
-<wire x1="71.37065" y1="56.21585" x2="71.37065" y2="56" width="0.1524" layer="1"/>
-<wire x1="71.8" y1="54.966571875" x2="71.8" y2="54.4" width="0.1524" layer="1"/>
-<wire x1="71.37065" y1="55.395921875" x2="71.8" y2="54.966571875" width="0.1524" layer="1"/>
-<wire x1="71.37065" y1="55.9487875" x2="71.37065" y2="55.395921875" width="0.1524" layer="1"/>
-<wire x1="71.370659375" y1="55.999971875" x2="71.37065" y2="55.9487875" width="0.1524" layer="1"/>
-<wire x1="71.37065" y1="56" x2="71.370659375" y2="55.999971875" width="0.1524" layer="1"/>
+<wire x1="71.8" y1="54.4" x2="71.8" y2="54.9032" width="0.1016" layer="1"/>
+<wire x1="71.8" y1="54.9032" x2="71.6643" y2="55.0389" width="0.1016" layer="1"/>
+<wire x1="71.95" y1="57.45" x2="72" y2="57.45" width="0.1016" layer="1"/>
+<wire x1="71.6643" y1="57.1643" x2="71.95" y2="57.45" width="0.1016" layer="1"/>
+<wire x1="71.6643" y1="55.0389" x2="71.6643" y2="57.1643" width="0.1016" layer="1"/>
 </signal>
-<signal name="AMPOUT_P" class="2">
+<signal name="AMPOUT_P" class="6">
 <contactref element="IC14" pad="11"/>
 <contactref element="R139" pad="P$1"/>
-<wire x1="70.5" y1="57.45" x2="70.5" y2="56.8452" width="0.1524" layer="1"/>
-<wire x1="70.5" y1="56.8452" x2="71.12935" y2="56.21585" width="0.1524" layer="1"/>
-<wire x1="71.12935" y1="56.21585" x2="71.12935" y2="56" width="0.1524" layer="1"/>
-<wire x1="71.12935" y1="54.57065" x2="71.3" y2="54.4" width="0.1524" layer="1"/>
-<wire x1="71.12935" y1="55.741059375" x2="71.12935" y2="54.57065" width="0.1524" layer="1"/>
-<wire x1="71.1293375" y1="55.999971875" x2="71.12935" y2="55.741059375" width="0.1524" layer="1"/>
-<wire x1="71.12935" y1="56" x2="71.1293375" y2="55.999971875" width="0.1524" layer="1"/>
+<wire x1="71.3" y1="54.4" x2="71.3" y2="54.9032" width="0.1016" layer="1"/>
+<wire x1="71.3" y1="54.9032" x2="71.4357" y2="55.0389" width="0.1016" layer="1"/>
+<wire x1="70.55" y1="57.45" x2="70.5" y2="57.45" width="0.1016" layer="1"/>
+<wire x1="71.4357" y1="56.5643" x2="70.55" y2="57.45" width="0.1016" layer="1"/>
+<wire x1="71.4357" y1="55.0389" x2="71.4357" y2="56.5643" width="0.1016" layer="1"/>
 </signal>
 <signal name="AMPSCLK">
 <contactref element="IC14" pad="14"/>
@@ -21558,35 +21562,37 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="35.05" y1="85" x2="35.75" y2="84.3" width="0.1524" layer="1"/>
 <wire x1="35.75" y1="84.3" x2="35.75" y2="81.45" width="0.1524" layer="1"/>
 </signal>
-<signal name="RFOUTA_P" class="2">
+<signal name="RFOUTA_P" class="6">
 <contactref element="U2" pad="12"/>
 <contactref element="R153" pad="P$1"/>
 <contactref element="C152" pad="P$2"/>
-<wire x1="44.5" y1="78.55" x2="43.8952" y2="78.55" width="0.1524" layer="1"/>
-<wire x1="43.8952" y1="78.55" x2="43.31585" y2="79.12935" width="0.1524" layer="1"/>
-<wire x1="39.6032" y1="79.12935" x2="39.6032" y2="79.1037" width="0.1524" layer="1"/>
-<wire x1="43.31585" y1="79.12935" x2="39.6032" y2="79.12935" width="0.1524" layer="1"/>
-<wire x1="44.5" y1="78.55" x2="45.1048" y2="78.55" width="0.1524" layer="1"/>
-<wire x1="45.1048" y1="78.55" x2="45.68415" y2="79.12935" width="0.1524" layer="1"/>
-<wire x1="45.68415" y1="79.12935" x2="46.5" y2="79.12935" width="0.1524" layer="1"/>
-<wire x1="46.5" y1="79.12935" x2="46.95" y2="78.67935" width="0.1524" layer="1"/>
-<wire x1="46.95" y1="78.67935" x2="46.95" y2="78.5" width="0.1524" layer="1"/>
-<wire x1="39.6032" y1="79.1037" x2="39.2495" y2="78.75" width="0.1524" layer="1"/>
-<wire x1="39.2495" y1="78.75" x2="38.95" y2="78.75" width="0.1524" layer="1"/>
+<wire x1="38.95" y1="78.75" x2="39.6032" y2="78.75" width="0.1016" layer="1"/>
+<wire x1="39.6032" y1="78.75" x2="39.7389" y2="78.8857" width="0.1016" layer="1"/>
+<wire x1="44.45" y1="78.55" x2="44.5" y2="78.55" width="0.1016" layer="1"/>
+<wire x1="44.1143" y1="78.8857" x2="44.45" y2="78.55" width="0.1016" layer="1"/>
+<wire x1="39.7389" y1="78.8857" x2="44.1143" y2="78.8857" width="0.1016" layer="1"/>
+<wire x1="45.5" y1="79.1357" x2="45.0032" y2="79.1357" width="0.1016" layer="1"/>
+<wire x1="45.5" y1="79.1357" x2="45.56785" y2="79.06785" width="0.1016" layer="1"/>
+<wire x1="45.0032" y1="79.1357" x2="44.5" y2="78.6325" width="0.1016" layer="1"/>
+<wire x1="44.5" y1="78.6325" x2="44.5" y2="78.55" width="0.1016" layer="1"/>
+<wire x1="45.56785" y1="79.06785" x2="45.95" y2="78.6857" width="0.1016" layer="1"/>
+<wire x1="45.95" y1="78.6857" x2="45.95" y2="78.5" width="0.1016" layer="1"/>
 </signal>
-<signal name="RFOUTA_N" class="2">
+<signal name="RFOUTA_N" class="6">
 <contactref element="U2" pad="13"/>
 <contactref element="R154" pad="P$1"/>
 <contactref element="C151" pad="P$2"/>
-<wire x1="44.5" y1="79.95" x2="43.8952" y2="79.95" width="0.1524" layer="1"/>
-<wire x1="43.31585" y1="79.37065" x2="43.8952" y2="79.95" width="0.1524" layer="1"/>
-<wire x1="44.5" y1="79.95" x2="45.1048" y2="79.95" width="0.1524" layer="1"/>
-<wire x1="45.1048" y1="79.95" x2="45.68415" y2="79.37065" width="0.1524" layer="1"/>
-<wire x1="45.68415" y1="79.37065" x2="46.5" y2="79.37065" width="0.1524" layer="1"/>
-<wire x1="46.5" y1="79.37065" x2="46.95" y2="79.82065" width="0.1524" layer="1"/>
-<wire x1="46.95" y1="79.82065" x2="46.95" y2="80" width="0.1524" layer="1"/>
-<wire x1="38.95" y1="79.25" x2="39.07065" y2="79.37065" width="0.1524" layer="1"/>
-<wire x1="39.07065" y1="79.37065" x2="43.31585" y2="79.37065" width="0.1524" layer="1"/>
+<wire x1="38.95" y1="79.25" x2="39.6032" y2="79.25" width="0.1016" layer="1"/>
+<wire x1="39.6032" y1="79.25" x2="39.7389" y2="79.1143" width="0.1016" layer="1"/>
+<wire x1="44.5" y1="79.6143" x2="44.5" y2="79.95" width="0.1016" layer="1"/>
+<wire x1="44" y1="79.1143" x2="44.5" y2="79.6143" width="0.1016" layer="1"/>
+<wire x1="39.7389" y1="79.1143" x2="44" y2="79.1143" width="0.1016" layer="1"/>
+<wire x1="45.5" y1="79.3643" x2="45.0032" y2="79.3643" width="0.1016" layer="1"/>
+<wire x1="45.5" y1="79.3643" x2="45.81785" y2="79.68215" width="0.1016" layer="1"/>
+<wire x1="45.0032" y1="79.3643" x2="44.5" y2="79.8675" width="0.1016" layer="1"/>
+<wire x1="44.5" y1="79.8675" x2="44.5" y2="79.95" width="0.1016" layer="1"/>
+<wire x1="45.81785" y1="79.68215" x2="45.81785" y2="79.86785" width="0.1016" layer="1"/>
+<wire x1="45.81785" y1="79.86785" x2="45.95" y2="80" width="0.1016" layer="1"/>
 </signal>
 <signal name="ADFCE">
 <contactref element="U2" pad="4"/>
@@ -22482,8 +22488,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="K7" pad="6"/>
 <contactref element="C72" pad="P$1"/>
 <wire x1="47.45" y1="133.45" x2="48.55" y2="133.45" width="0.1524" layer="1"/>
-<wire x1="56.53" y1="129" x2="56.53" y2="127.82" width="0.1524" layer="1"/>
-<wire x1="56.53" y1="127.82" x2="57.25" y2="127.1" width="0.1524" layer="1"/>
+<wire x1="56.53" y1="129" x2="57.25" y2="128.28" width="0.1524" layer="1"/>
+<wire x1="57.25" y1="128.28" x2="57.25" y2="127.1" width="0.1524" layer="1"/>
 <wire x1="54.9" y1="127.1" x2="57.25" y2="127.1" width="0.1524" layer="1"/>
 <wire x1="48.55" y1="133.45" x2="54.9" y2="127.1" width="0.1524" layer="1"/>
 </signal>
@@ -22540,15 +22546,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="70.9" y1="121.55" x2="70.95" y2="121.6" width="0.1524" layer="1"/>
 <wire x1="70.95" y1="121.6" x2="70.95" y2="123" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUT2_P" class="2">
+<signal name="AOUT2_P" class="6">
 <contactref element="IC21" pad="13"/>
 <contactref element="R188" pad="P$1"/>
-<wire x1="70.75" y1="114.85" x2="70.75" y2="114.2452" width="0.1524" layer="1"/>
-<wire x1="70.75" y1="114.2452" x2="70.62065" y2="114.11585" width="0.1524" layer="1"/>
-<wire x1="70.8404875" y1="111.2095125" x2="71.5" y2="110.55" width="0.1524" layer="1"/>
-<wire x1="70.8404875" y1="111.325" x2="70.8404875" y2="111.2095125" width="0.1524" layer="1"/>
-<wire x1="70.62065" y1="111.5" x2="70.8404875" y2="111.325" width="0.1524" layer="1"/>
-<wire x1="70.62065" y1="114.11585" x2="70.62065" y2="111.5" width="0.1524" layer="1"/>
+<wire x1="70.75" y1="114.85" x2="70.75" y2="114.3468" width="0.1016" layer="1"/>
+<wire x1="70.75" y1="114.3468" x2="70.6143" y2="114.2111" width="0.1016" layer="1"/>
+<wire x1="71.098390625" y1="110.55" x2="71.5" y2="110.55" width="0.1016" layer="1"/>
+<wire x1="70.47970625" y1="111.168684375" x2="71.098390625" y2="110.55" width="0.1016" layer="1"/>
+<wire x1="70.47970625" y1="111.437859375" x2="70.47970625" y2="111.168684375" width="0.1016" layer="1"/>
+<wire x1="70.6143" y1="111.572453125" x2="70.47970625" y2="111.437859375" width="0.1016" layer="1"/>
+<wire x1="70.6143" y1="114.2111" x2="70.6143" y2="111.572453125" width="0.1016" layer="1"/>
 </signal>
 <signal name="N$5">
 <contactref element="IC21" pad="7"/>
@@ -22556,18 +22563,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="68.45" y1="119" x2="69.75" y2="117.7" width="0.1524" layer="1"/>
 <wire x1="69.75" y1="117.7" x2="69.75" y2="117.15" width="0.1524" layer="1"/>
 </signal>
-<signal name="AIN2_N" class="2">
+<signal name="AIN2_N" class="6">
 <contactref element="IC21" pad="5"/>
 <contactref element="R190" pad="P$1"/>
 <contactref element="R192" pad="P$2"/>
 <wire x1="70.9" y1="120.45" x2="70.9" y2="119.05" width="0.1524" layer="1"/>
 <wire x1="70.9" y1="119.05" x2="70.95" y2="119" width="0.1524" layer="1"/>
 <wire x1="70.95" y1="119" x2="70.95" y2="118.95" width="0.1524" layer="1"/>
-<wire x1="70.95" y1="118.95" x2="70.5" y2="118.5" width="0.1524" layer="1"/>
-<wire x1="70.5" y1="118.5" x2="70.5" y2="117.53914375" width="0.1524" layer="1"/>
-<wire x1="70.5" y1="117.53914375" x2="70.5782" y2="117.46094375" width="0.1524" layer="1"/>
-<wire x1="70.5782" y1="117.46094375" x2="70.5782" y2="117.3218" width="0.1524" layer="1"/>
-<wire x1="70.5782" y1="117.3218" x2="70.75" y2="117.15" width="0.1524" layer="1"/>
+<wire x1="70.75" y1="117.15" x2="70.75" y2="117.6532" width="0.1016" layer="1"/>
+<wire x1="70.75" y1="117.6532" x2="70.6143" y2="117.7889" width="0.1016" layer="1"/>
+<wire x1="70.6143" y1="118.6143" x2="70.95" y2="118.95" width="0.1016" layer="1"/>
+<wire x1="70.6143" y1="117.7889" x2="70.6143" y2="118.6143" width="0.1016" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="IC21" pad="4"/>
@@ -22575,131 +22581,124 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.25" y1="117.15" x2="71.25" y2="118.2" width="0.1524" layer="1"/>
 <wire x1="71.25" y1="118.2" x2="72.05" y2="119" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUTSMA2_N" class="2">
+<signal name="AOUTSMA2_N" class="6">
 <contactref element="R187" pad="P$2"/>
 <contactref element="IC29" pad="3"/>
-<wire x1="70" y1="109.45" x2="70" y2="108.8452" width="0.1524" layer="1"/>
-<wire x1="70" y1="108.8452" x2="70.28415" y2="108.8452" width="0.1524" layer="1"/>
-<wire x1="70.28415" y1="108.8452" x2="70.62935" y2="108.5" width="0.1524" layer="1"/>
-<wire x1="70.62935" y1="108.5" x2="70.62935" y2="106.12935" width="0.1524" layer="1"/>
-<wire x1="70.2587" y1="105.7587" x2="70.2587" y2="105.21241875" width="0.1524" layer="1"/>
-<wire x1="70.2587" y1="105.21241875" x2="70.2869" y2="105.18421875" width="0.1524" layer="1"/>
-<wire x1="70.2869" y1="104.8131" x2="70.2869" y2="105.18421875" width="0.1524" layer="1"/>
-<wire x1="70.62935" y1="106.12935" x2="70.2587" y2="105.7587" width="0.1524" layer="1"/>
-<wire x1="70.2" y1="104.9" x2="70.2869" y2="104.8131" width="0.1524" layer="1"/>
+<wire x1="70.48" y1="105.04" x2="70.48" y2="105.5432" width="0.1016" layer="1"/>
+<wire x1="70.48" y1="105.5432" x2="70.6157" y2="105.6789" width="0.1016" layer="1"/>
+<wire x1="70.05" y1="109.45" x2="70" y2="109.45" width="0.1016" layer="1"/>
+<wire x1="70.6157" y1="108.8843" x2="70.05" y2="109.45" width="0.1016" layer="1"/>
+<wire x1="70.6157" y1="105.6789" x2="70.6157" y2="108.8843" width="0.1016" layer="1"/>
 </signal>
-<signal name="AOUTSMA2_P" class="2">
+<signal name="AOUTSMA2_P" class="6">
 <contactref element="R188" pad="P$2"/>
 <contactref element="IC29" pad="2"/>
-<wire x1="71.5" y1="109.45" x2="71.5" y2="108.8452" width="0.1524" layer="1"/>
-<wire x1="71.5" y1="108.8452" x2="71.21585" y2="108.8452" width="0.1524" layer="1"/>
-<wire x1="71.21585" y1="108.8452" x2="70.87065" y2="108.5" width="0.1524" layer="1"/>
-<wire x1="70.87065" y1="108.5" x2="70.87065" y2="106.0294" width="0.1524" layer="1"/>
-<wire x1="70.5" y1="105.65875" x2="70.5" y2="105.5" width="0.1524" layer="1"/>
-<wire x1="70.87065" y1="106.0294" x2="70.5" y2="105.65875" width="0.1524" layer="1"/>
-<wire x1="70.5" y1="105.5" x2="70.7" y2="105.3" width="0.1524" layer="1"/>
-<wire x1="70.7" y1="105.3" x2="70.7" y2="104.9" width="0.1524" layer="1"/>
+<wire x1="70.98" y1="105.04" x2="70.98" y2="105.5432" width="0.1016" layer="1"/>
+<wire x1="70.98" y1="105.5432" x2="70.8443" y2="105.6789" width="0.1016" layer="1"/>
+<wire x1="71.45" y1="109.45" x2="71.5" y2="109.45" width="0.1016" layer="1"/>
+<wire x1="70.8443" y1="108.8443" x2="71.45" y2="109.45" width="0.1016" layer="1"/>
+<wire x1="70.8443" y1="105.6789" x2="70.8443" y2="108.8443" width="0.1016" layer="1"/>
 </signal>
-<signal name="AIN2_P" class="2">
+<signal name="AIN2_P" class="6">
 <contactref element="IC21" pad="6"/>
 <contactref element="R189" pad="P$1"/>
 <contactref element="R191" pad="P$2"/>
 <wire x1="69.55" y1="121" x2="69.55" y2="119" width="0.1524" layer="1"/>
-<wire x1="70.25" y1="118.25" x2="69.55" y2="118.95" width="0.1524" layer="1"/>
-<wire x1="69.55" y1="119" x2="69.55" y2="118.95" width="0.1524" layer="1"/>
-<wire x1="70.25" y1="118.25" x2="70.25" y2="117.15" width="0.1524" layer="1"/>
+<wire x1="70.25" y1="117.15" x2="70.25" y2="117.6532" width="0.1016" layer="1"/>
+<wire x1="70.25" y1="117.6532" x2="70.3857" y2="117.7889" width="0.1016" layer="1"/>
+<wire x1="70.3857" y1="117.7889" x2="70.3857" y2="118.5" width="0.1016" layer="1"/>
+<wire x1="69.8857" y1="119" x2="69.55" y2="119" width="0.1016" layer="1"/>
+<wire x1="70.3857" y1="118.5" x2="69.8857" y2="119" width="0.1016" layer="1"/>
 </signal>
-<signal name="AOUT2_N" class="2">
+<signal name="AOUT2_N" class="6">
 <contactref element="IC21" pad="12"/>
 <contactref element="R187" pad="P$1"/>
-<wire x1="70.25" y1="114.85" x2="70.25" y2="114.2452" width="0.1524" layer="1"/>
-<wire x1="70.25" y1="114.2452" x2="70.37935" y2="114.11585" width="0.1524" layer="1"/>
-<wire x1="70" y1="111.0404875" x2="70" y2="110.55" width="0.1524" layer="1"/>
-<wire x1="70.2845125" y1="111.325" x2="70" y2="111.0404875" width="0.1524" layer="1"/>
-<wire x1="70.37935" y1="111.5" x2="70.2845125" y2="111.325" width="0.1524" layer="1"/>
-<wire x1="70.37935" y1="114.11585" x2="70.37935" y2="111.5" width="0.1524" layer="1"/>
+<wire x1="70.25" y1="114.85" x2="70.25" y2="114.3468" width="0.1016" layer="1"/>
+<wire x1="70.25" y1="114.3468" x2="70.3857" y2="114.2111" width="0.1016" layer="1"/>
+<wire x1="70" y1="111.19674375" x2="70" y2="110.55" width="0.1016" layer="1"/>
+<wire x1="70.111903125" y1="111.308646875" x2="70" y2="111.19674375" width="0.1016" layer="1"/>
+<wire x1="70.111903125" y1="111.39335" x2="70.111903125" y2="111.308646875" width="0.1016" layer="1"/>
+<wire x1="70.3857" y1="111.667146875" x2="70.111903125" y2="111.39335" width="0.1016" layer="1"/>
+<wire x1="70.3857" y1="114.2111" x2="70.3857" y2="111.667146875" width="0.1016" layer="1"/>
 </signal>
 <signal name="AMPSDI2">
 <contactref element="IC29" pad="1"/>
 <contactref element="IC30" pad="12"/>
-<wire x1="72.70833125" y1="105.29166875" x2="72.985" y2="105.015" width="0.0889" layer="3"/>
-<wire x1="72.70833125" y1="105.29166875" x2="68.625" y2="107.625" width="0.0889" layer="3"/>
+<wire x1="72.98833125" y1="105.43166875" x2="73.265" y2="105.155" width="0.0889" layer="3"/>
+<wire x1="72.98833125" y1="105.43166875" x2="69.15" y2="107.625" width="0.0889" layer="3"/>
+<wire x1="69.15" y1="107.625" x2="68.625" y2="107.625" width="0.0889" layer="3"/>
 <wire x1="59.375" y1="107.625" x2="68.625" y2="107.625" width="0.0889" layer="1"/>
 <wire x1="57.875" y1="106.125" x2="59.375" y2="107.625" width="0.0889" layer="1"/>
 <wire x1="57.875" y1="105.5" x2="57.875" y2="106.125" width="0.0889" layer="1"/>
 <wire x1="57.875" y1="105.5" x2="57.825" y2="105.438" width="0.0889" layer="1"/>
-<via x="72.985" y="105.015" extent="1-16" drill="0.2"/>
+<via x="73.265" y="105.155" extent="1-16" drill="0.2"/>
 <via x="68.625" y="107.625" extent="1-16" drill="0.2"/>
-<wire x1="71.94601875" y1="105.04645" x2="71.97746875" y2="105.015" width="0.0889" layer="1"/>
-<wire x1="71.97746875" y1="105.015" x2="72.985" y2="105.015" width="0.0889" layer="1"/>
-<wire x1="71.2" y1="104.8" x2="71.44645" y2="105.04645" width="0.0889" layer="1"/>
-<wire x1="71.44645" y1="105.04645" x2="71.94601875" y2="105.04645" width="0.0889" layer="1"/>
+<wire x1="72.22601875" y1="105.18645" x2="72.25746875" y2="105.155" width="0.0889" layer="1"/>
+<wire x1="72.25746875" y1="105.155" x2="73.265" y2="105.155" width="0.0889" layer="1"/>
+<wire x1="71.48" y1="104.94" x2="71.72645" y2="105.18645" width="0.0889" layer="1"/>
+<wire x1="71.72645" y1="105.18645" x2="72.22601875" y2="105.18645" width="0.0889" layer="1"/>
 </signal>
 <signal name="AMPSDO2">
 <contactref element="IC29" pad="4"/>
 <contactref element="IC30" pad="11"/>
-<wire x1="68.25" y1="106.375" x2="69.625" y2="105" width="0.0889" layer="1"/>
-<wire x1="58.75" y1="106.375" x2="68.25" y2="106.375" width="0.0889" layer="1"/>
-<wire x1="58.5" y1="106.125" x2="58.75" y2="106.375" width="0.0889" layer="1"/>
+<wire x1="68.53" y1="106.515" x2="69.905" y2="105.14" width="0.0889" layer="1"/>
+<wire x1="58.89" y1="106.515" x2="68.53" y2="106.515" width="0.0889" layer="1"/>
+<wire x1="58.5" y1="106.125" x2="58.89" y2="106.515" width="0.0889" layer="1"/>
 <wire x1="58.5" y1="105.5" x2="58.5" y2="106.125" width="0.0889" layer="1"/>
-<wire x1="69.625" y1="105" x2="69.7" y2="104.9" width="0.0889" layer="1"/>
+<wire x1="69.905" y1="105.14" x2="69.98" y2="105.04" width="0.0889" layer="1"/>
 <wire x1="58.5" y1="105.5" x2="58.475" y2="105.438" width="0.0889" layer="1"/>
 </signal>
-<signal name="AMPOUT2_N" class="2">
+<signal name="AMPOUT2_N" class="6">
 <contactref element="IC29" pad="10"/>
 <contactref element="R194" pad="P$1"/>
-<wire x1="70.2" y1="102.1" x2="70.2" y2="101.4952" width="0.1524" layer="1"/>
-<wire x1="70.2" y1="101.4952" x2="70.32935" y2="101.36585" width="0.1524" layer="1"/>
-<wire x1="70.32935" y1="101.36585" x2="70.32935" y2="100" width="0.1524" layer="1"/>
-<wire x1="70" y1="99.5779875" x2="70" y2="99.05" width="0.1524" layer="1"/>
-<wire x1="70.2470125" y1="99.825" x2="70" y2="99.5779875" width="0.1524" layer="1"/>
-<wire x1="70.32935" y1="100" x2="70.2470125" y2="99.825" width="0.1524" layer="1"/>
+<wire x1="70.48" y1="102.24" x2="70.48" y2="101.7368" width="0.1016" layer="1"/>
+<wire x1="70.48" y1="101.7368" x2="70.6157" y2="101.6011" width="0.1016" layer="1"/>
+<wire x1="70.05" y1="99.05" x2="70" y2="99.05" width="0.1016" layer="1"/>
+<wire x1="70.6157" y1="99.6157" x2="70.05" y2="99.05" width="0.1016" layer="1"/>
+<wire x1="70.6157" y1="101.6011" x2="70.6157" y2="99.6157" width="0.1016" layer="1"/>
 </signal>
-<signal name="AMPOUT2_P" class="2">
+<signal name="AMPOUT2_P" class="6">
 <contactref element="IC29" pad="11"/>
 <contactref element="R195" pad="P$1"/>
-<wire x1="70.7" y1="102.1" x2="70.7" y2="101.4952" width="0.1524" layer="1"/>
-<wire x1="70.7" y1="101.4952" x2="70.57065" y2="101.36585" width="0.1524" layer="1"/>
-<wire x1="70.57065" y1="101.36585" x2="70.57065" y2="100" width="0.1524" layer="1"/>
-<wire x1="70.8029875" y1="99.7470125" x2="71.5" y2="99.05" width="0.1524" layer="1"/>
-<wire x1="70.8029875" y1="99.825" x2="70.8029875" y2="99.7470125" width="0.1524" layer="1"/>
-<wire x1="70.57065" y1="100" x2="70.8029875" y2="99.825" width="0.1524" layer="1"/>
+<wire x1="70.98" y1="102.24" x2="70.98" y2="101.7368" width="0.1016" layer="1"/>
+<wire x1="70.98" y1="101.7368" x2="70.8443" y2="101.6011" width="0.1016" layer="1"/>
+<wire x1="70.8443" y1="101.6011" x2="70.8443" y2="100" width="0.1016" layer="1"/>
+<wire x1="71.5" y1="99.3443" x2="71.5" y2="99.05" width="0.1016" layer="1"/>
+<wire x1="70.8443" y1="100" x2="71.5" y2="99.3443" width="0.1016" layer="1"/>
 </signal>
 <signal name="AMPSCLK2">
 <contactref element="IC29" pad="14"/>
 <contactref element="IC30" pad="14"/>
-<wire x1="73.875" y1="103.25" x2="71.85" y2="103.25" width="0.0889" layer="1"/>
-<wire x1="74.625" y1="104" x2="73.875" y2="103.25" width="0.0889" layer="1"/>
-<wire x1="74.625" y1="107.5" x2="74.625" y2="104" width="0.0889" layer="1"/>
-<wire x1="56.625" y1="106.75" x2="59.9375" y2="110.0625" width="0.0889" layer="1"/>
-<wire x1="60" y1="110.125" x2="59.9375" y2="110.0625" width="0.0889" layer="1"/>
+<wire x1="73.9302375" y1="103.27761875" x2="72.24238125" y2="103.27761875" width="0.0889" layer="1"/>
+<wire x1="72.13" y1="103.39" x2="72.24238125" y2="103.27761875" width="0.0889" layer="1"/>
+<wire x1="74.8802375" y1="104.22761875" x2="73.9302375" y2="103.27761875" width="0.0889" layer="1"/>
+<wire x1="74.6802375" y1="108.8197625" x2="74.8802375" y2="108.6197625" width="0.0889" layer="1"/>
+<wire x1="74.8802375" y1="108.6197625" x2="74.8802375" y2="104.22761875" width="0.0889" layer="1"/>
+<wire x1="56.625" y1="106.75" x2="60.375" y2="110.5" width="0.0889" layer="1"/>
 <wire x1="56.625" y1="105.5" x2="56.625" y2="106.75" width="0.0889" layer="1"/>
 <wire x1="56.625" y1="105.5" x2="56.525" y2="105.438" width="0.0889" layer="1"/>
-<wire x1="60" y1="110.125" x2="60.375" y2="110.5" width="0.0889" layer="1"/>
 <wire x1="63.5" y1="110.5" x2="65" y2="109" width="0.0889" layer="1"/>
 <via x="65" y="109" extent="1-16" drill="0.2"/>
 <wire x1="65" y1="109" x2="74.5" y2="109" width="0.0889" layer="14"/>
 <wire x1="74.5" y1="109" x2="74.6802375" y2="108.8197625" width="0.0889" layer="14"/>
 <via x="74.6802375" y="108.8197625" extent="1-16" drill="0.2"/>
-<wire x1="74.6802375" y1="108.8197625" x2="74.6802375" y2="107.5552375" width="0.0889" layer="1"/>
-<wire x1="74.6802375" y1="107.5552375" x2="74.625" y2="107.5" width="0.0889" layer="1"/>
 <wire x1="60.375" y1="110.5" x2="63.5" y2="110.5" width="0.0889" layer="1"/>
 </signal>
 <signal name="AMPSCS2">
 <contactref element="IC29" pad="15"/>
 <contactref element="IC30" pad="13"/>
-<wire x1="74" y1="103.75" x2="71.85" y2="103.75" width="0.0889" layer="1"/>
-<wire x1="74" y1="103.75" x2="74.375" y2="104.125" width="0.0889" layer="1"/>
+<wire x1="74.28" y1="103.89" x2="72.13" y2="103.89" width="0.0889" layer="1"/>
+<wire x1="74.28" y1="103.89" x2="74.655" y2="104.265" width="0.0889" layer="1"/>
 <wire x1="60.125" y1="109.875" x2="57.125" y2="106.875" width="0.0889" layer="1"/>
 <wire x1="57.125" y1="105.5" x2="57.125" y2="106.875" width="0.0889" layer="1"/>
 <wire x1="57.125" y1="105.5" x2="57.175" y2="105.438" width="0.0889" layer="1"/>
-<wire x1="74.375" y1="107.9337875" x2="74.3087875" y2="108" width="0.0889" layer="1"/>
+<wire x1="74.655" y1="107.6537875" x2="74.3087875" y2="108" width="0.0889" layer="1"/>
 <via x="74.3087875" y="108" extent="1-16" drill="0.2"/>
 <wire x1="74.3087875" y1="108" x2="63.5" y2="108" width="0.0889" layer="14"/>
 <via x="63.5" y="108" extent="1-16" drill="0.2"/>
 <wire x1="63.5" y1="108" x2="61.625" y2="109.875" width="0.0889" layer="1"/>
 <wire x1="61.625" y1="109.875" x2="60.125" y2="109.875" width="0.0889" layer="1"/>
-<wire x1="74.375" y1="104.125" x2="74.375" y2="107.9337875" width="0.0889" layer="1"/>
+<wire x1="74.655" y1="104.265" x2="74.655" y2="107.6537875" width="0.0889" layer="1"/>
 </signal>
 <signal name="AOFFSET2">
 <contactref element="R191" pad="P$1"/>
