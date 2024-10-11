@@ -87,7 +87,7 @@
        <widget class="QSlider" name="threshold">
         <property name="geometry">
          <rect>
-          <x>130</x>
+          <x>150</x>
           <y>30</y>
           <width>10</width>
           <height>241</height>
@@ -180,7 +180,7 @@
        <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>86</x>
           <y>270</y>
           <width>47</width>
           <height>13</height>
@@ -198,7 +198,7 @@
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>130</x>
           <y>10</y>
           <width>51</width>
           <height>20</height>
@@ -399,7 +399,7 @@
          <property name="geometry">
           <rect>
            <x>70</x>
-           <y>80</y>
+           <y>73</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -411,6 +411,48 @@
          </property>
          <property name="text">
           <string>ToT</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="thresholdDelta">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>100</y>
+           <width>51</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_15">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>103</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>Delta</string>
          </property>
         </widget>
        </widget>
@@ -430,70 +472,6 @@
          <font>
           <family>Arial</family>
          </font>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_13">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>130</y>
-          <width>51</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="text">
-         <string>Threshold
-Delta</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QSlider" name="thresholdDelta">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>170</y>
-          <width>10</width>
-          <height>101</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>10</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>10</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>64</number>
-        </property>
-        <property name="value">
-         <number>1</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </widget>
@@ -518,7 +496,7 @@ Delta</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>40</y>
+          <y>20</y>
           <width>70</width>
           <height>17</height>
          </rect>
@@ -533,24 +511,6 @@ Delta</string>
         </property>
         <property name="checked">
          <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="logicCheck">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>91</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="text">
-         <string>Logic analyzer</string>
         </property>
        </widget>
       </widget>
