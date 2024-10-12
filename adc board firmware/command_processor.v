@@ -129,9 +129,13 @@ always @ (posedge clklvds) begin
 		sampleclkstr[30+i+1] <= {lvds4bits[130+i+1],lvds4bits[120+i+1]};
 	end
 
+	for (i=0;i<40;i=i+1) begin
+		lvdsbitsout[14*i+12 +:2] <= sampleclkstr[i]; // always use the same clk and str bits
+	end
+	
 	if (downsamplemerging_sync==1) begin
 	for (i=0;i<40;i=i+1) begin
-		lvdsbitsout[14*i +:14] <= {sampleclkstr[i],samplevalue[i]}; // this is normal
+		lvdsbitsout[14*i +:12] <= samplevalue[i]; // this is normal
 	end
 	end
 	
@@ -139,16 +143,16 @@ always @ (posedge clklvds) begin
 	for (i=0;i<10;i=i+1) begin
 		if (highres_sync) begin
 			highressamplevalue[0*10+i] = samplevalue[20+1*i] + samplevalue[30+1*i]; // every bit from chan 3 into bit 0,2,4...18, and add in the other bits
-			lvdsbitsout[14*(i*2+0) +:14] <= {sampleclkstr[i],highressamplevalue[0*10+i][1+:12]};
+			lvdsbitsout[14*(i*2+0) +:12] <= highressamplevalue[0*10+i][1+:12];
 			highressamplevalue[1*10+i] = samplevalue[0+1*i] + samplevalue[10+1*i]; // every bit from chan 1 into bit 1,3,5...19, add in the other bits
-			lvdsbitsout[14*(i*2+1) +:14] <= {sampleclkstr[i],highressamplevalue[1*10+i][1+:12]};//shift left 1 bit, thus dividing by 2
+			lvdsbitsout[14*(i*2+1) +:12] <= highressamplevalue[1*10+i][1+:12];//shift left 1 bit, thus dividing by 2
 		end
 		else begin
-			lvdsbitsout[14*(i*2+0) +:14] <= {sampleclkstr[i],samplevalue[20+1*i]}; // every bit from chan 3 into bit 0,2,4...18
-			lvdsbitsout[14*(i*2+1) +:14] <= {sampleclkstr[i],samplevalue[0+1*i]}; // every bit from chan 1 into bit 1,3,5...19
+			lvdsbitsout[14*(i*2+0) +:12] <= samplevalue[20+1*i]; // every bit from chan 3 into bit 0,2,4...18
+			lvdsbitsout[14*(i*2+1) +:12] <= samplevalue[0+1*i]; // every bit from chan 1 into bit 1,3,5...19
 		end
-		lvdsbitsout[14*(i*2+20) +:14] <= lvdsbitsout[14*(i*2+0) +:14]; // move what was in first 20 into second 20
-		lvdsbitsout[14*(i*2+21) +:14] <= lvdsbitsout[14*(i*2+1) +:14];
+		lvdsbitsout[14*(i*2+20) +:12] <= lvdsbitsout[14*(i*2+0) +:12]; // move what was in first 20 into second 20
+		lvdsbitsout[14*(i*2+21) +:12] <= lvdsbitsout[14*(i*2+1) +:12];
 	end
 	end
 	
@@ -156,13 +160,13 @@ always @ (posedge clklvds) begin
 	for (i=0;i<10;i=i+1) begin
 		if (highres_sync) begin
 			highressamplevalue[i] = samplevalue[0+1*i] + samplevalue[10+1*i] + samplevalue[20+1*i] + samplevalue[30+1*i]; // every bit of chan 1, and add in the other bits
-			lvdsbitsout[14*i +:14] <= {sampleclkstr[i],highressamplevalue[i][2+:12]}; // shift left 2 bits, thus dividing by 4
+			lvdsbitsout[14*i +:12] <= highressamplevalue[i][2+:12]; // shift left 2 bits, thus dividing by 4
 		end
 		else begin
-			lvdsbitsout[14*i +:14] <= {sampleclkstr[i],samplevalue[0+1*i]}; // every bit of chan 1
+			lvdsbitsout[14*i +:12] <= samplevalue[0+1*i]; // every bit of chan 1
 		end
 		for (j=0;j<30;j=j+10) begin
-			lvdsbitsout[14*(i+10+j) +:14] <= lvdsbitsout[14*(i+j) +:14]; // move what was in first 10 into second 10
+			lvdsbitsout[14*(i+10+j) +:12] <= lvdsbitsout[14*(i+j) +:12]; // move what was in first 10 into second 10
 		end
 	end
 	end
@@ -171,13 +175,13 @@ always @ (posedge clklvds) begin
 	for (i=0;i<5;i=i+1) begin
 		if (highres_sync) begin
 			highressamplevalue[i] = samplevalue[0+2*i] + samplevalue[1+2*i] + samplevalue[10+2*i] + samplevalue[11+2*i] + samplevalue[20+2*i] + samplevalue[21+2*i] + samplevalue[30+2*i] + samplevalue[31+2*i]; // every other bit of chan 1, and add in the other bits
-			lvdsbitsout[14*i +:14] <= {sampleclkstr[i],highressamplevalue[i][3+:12]}; // shift left 3 bits, thus dividing by 8
+			lvdsbitsout[14*i +:12] <= highressamplevalue[i][3+:12]; // shift left 3 bits, thus dividing by 8
 		end
 		else begin
-			lvdsbitsout[14*i +:14] <= {sampleclkstr[i],samplevalue[0+2*i]}; // every other bit of chan 1
+			lvdsbitsout[14*i +:12] <= samplevalue[0+2*i]; // every other bit of chan 1
 		end
 		for (j=0;j<35;j=j+5) begin
-			lvdsbitsout[14*(i+5+j) +:14] <= lvdsbitsout[14*(i+j) +:14]; // move what was in first 5 into second 5
+			lvdsbitsout[14*(i+5+j) +:12] <= lvdsbitsout[14*(i+j) +:12]; // move what was in first 5 into second 5
 		end
 	end
 	end
@@ -189,13 +193,13 @@ always @ (posedge clklvds) begin
 											samplevalue[10+5*i] + samplevalue[11+5*i] + samplevalue[12+5*i] + samplevalue[13+5*i] +
 											samplevalue[20+5*i] + samplevalue[21+5*i] + samplevalue[22+5*i] + samplevalue[23+5*i] +
 											samplevalue[30+5*i] + samplevalue[31+5*i] + samplevalue[32+5*i] + samplevalue[33+5*i]; // every first and fifth bit of chan 1, and add in the other bits
-			lvdsbitsout[14*i +:14] <= {sampleclkstr[i],highressamplevalue[0][4+:12]}; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
+			lvdsbitsout[14*i +:12] <= highressamplevalue[0][4+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
 		end
 		else begin
-			lvdsbitsout[14*i +:14] <= {sampleclkstr[i],samplevalue[0+5*i]}; // every first and fifth bit of chan 1
+			lvdsbitsout[14*i +:12] <= samplevalue[0+5*i]; // every first and fifth bit of chan 1
 		end
 		for (j=0;j<38;j=j+2) begin
-			lvdsbitsout[14*(i+2+j) +:14] <= lvdsbitsout[14*(i+j) +:14]; // move what was in first 2 into second 2
+			lvdsbitsout[14*(i+2+j) +:12] <= lvdsbitsout[14*(i+j) +:12]; // move what was in first 2 into second 2
 		end
 	end
 	end
@@ -206,13 +210,13 @@ always @ (posedge clklvds) begin
 											samplevalue[10] + samplevalue[11] + samplevalue[12] + samplevalue[13] + samplevalue[15] + samplevalue[16] + samplevalue[17] + samplevalue[18] +
 											samplevalue[20] + samplevalue[21] + samplevalue[22] + samplevalue[23] + samplevalue[25] + samplevalue[26] + samplevalue[27] + samplevalue[28] +
 											samplevalue[30] + samplevalue[31] + samplevalue[32] + samplevalue[33] + samplevalue[35] + samplevalue[36] + samplevalue[37] + samplevalue[38]; // every first bit of chan 1, and add in the other bits
-			lvdsbitsout[0 +:14] <= {sampleclkstr[0],highressamplevalue[0][5+:12]}; // would like to have divided by 40, but instead skip every 5th bit, and divide by 32
+			lvdsbitsout[0 +:12] <= highressamplevalue[0][5+:12]; // would like to have divided by 40, but instead skip every 5th bit, and divide by 32
 		end
 		else begin
-			lvdsbitsout[0 +:14] <= {sampleclkstr[0],samplevalue[0]}; // every first bit of chan 1
+			lvdsbitsout[0 +:12] <= samplevalue[0]; // every first bit of chan 1
 		end
 		for (j=0;j<39;j=j+1) begin
-			lvdsbitsout[14*(1+j) +:14] <= lvdsbitsout[14*(j) +:14]; // move what was in first 1 into second 1
+			lvdsbitsout[14*(1+j) +:12] <= lvdsbitsout[14*(j) +:12]; // move what was in first 1 into second 1
 		end
 	end
 	

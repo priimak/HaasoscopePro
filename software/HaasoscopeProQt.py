@@ -711,7 +711,7 @@ class MainWindow(TemplateBaseClass):
             time.sleep(.5)
             #oldbytes()
 
-        if self.downsamplemerging==1 and self.nbadclkA == 2*self.expect_samples: # adjust phase by 90 deg
+        if self.nbadclkA == 2*self.expect_samples: # adjust phase by 90 deg
             for i in range(6): self.dophase(4, 1, pllnum=0, quiet=(i != 6 - 1))  # adjust phase of clkout
 
         return rx_len
