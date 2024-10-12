@@ -194,6 +194,7 @@ def setgain(value):
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
     samplerate= 3.2 # freq in GHz
+    nsunits=1
     num_chan_per_board = 4
     num_board = 1
     num_logic_inputs = 1
@@ -383,6 +384,7 @@ class MainWindow(TemplateBaseClass):
             self.ui.runButton.setChecked(False)
 
     downsample=0
+    downsamplefactor=1
     highresval=1
     xscale=1
     xscaling=1
@@ -390,7 +392,7 @@ class MainWindow(TemplateBaseClass):
     min_y=-pow(2,11)
     max_y=pow(2,11)
     min_x=0
-    max_x=4*10*expect_samples/samplerate
+    max_x=4*10*expect_samples*downsamplefactor/nsunits/samplerate
     triggerlevel = 127
     triggerdelta = 4
     triggerpos = int(expect_samples * 128/255)
@@ -409,12 +411,12 @@ class MainWindow(TemplateBaseClass):
     def sendtriggerinfo(self):
         usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, self.triggertimethresh, 100, 100]))
         usb.recv(4)
-
+        self.drawtriggerlines()
+    def drawtriggerlines(self):
         self.hline = float(255 - self.triggerlevel - 128) * self.yscale
         self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
-
         point = self.triggerpos + 1.25
-        self.vline = float(4 * 10 * point / self.samplerate)
+        self.vline = float(4 * 10 * point * self.downsamplefactor / self.nsunits / self.samplerate)
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),min(self.hline + self.max_y / 2,self.max_y)])  # vertical line showing trigger time
 
     def tot(self):
@@ -467,7 +469,8 @@ class MainWindow(TemplateBaseClass):
         if ds>5:
             ds=ds-5
             self.downsamplemerging=40
-        print("ds, dsm:",ds,self.downsamplemerging)
+        self.downsamplefactor = self.downsamplemerging*pow(2,ds)
+        print("ds, dsm, dsf",ds,self.downsamplemerging,self.downsamplefactor)
         usb.send(bytes([9, ds, self.highresval, self.downsamplemerging, 100, 100, 100, 100]))
         usb.recv(4)
 
@@ -488,11 +491,32 @@ class MainWindow(TemplateBaseClass):
         self.timechanged()
 
     def timechanged(self):
-        #self.ui.plot.setRange(xRange=(self.min_x, self.max_x), yRange=(self.min_y, self.max_y))
-        #self.ui.plot.setMouseEnabled(x=False,y=False)
-        #self.ui.plot.setLabel('bottom', self.xlabel)
-        #self.ui.plot.setLabel('left', self.ylabel)
-        #self.triggerposchanged(self.ui.horizontalSlider.value())
+        self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+        baremaxx = 4 * 10 * self.expect_samples * self.downsamplefactor / self.samplerate
+        if baremaxx>5:
+            self.nsunits = 1
+            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.ui.plot.setLabel('bottom', "Time (ns)")
+        if baremaxx>5000:
+            self.nsunits = 1000
+            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.ui.plot.setLabel('bottom', "Time (us)")
+        if baremaxx>5000000:
+            self.nsunits = 1000000
+            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.ui.plot.setLabel('bottom', "Time (ms)")
+        if baremaxx>5000000000:
+            self.nsunits = 1000000000
+            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.ui.plot.setLabel('bottom', "Time (s)")
+        if self.xydata_overlapped:
+            for c in range(self.num_chan_per_board):
+                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])*self.downsamplefactor / self.nsunits /self.samplerate
+        else:
+            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*self.downsamplefactor / self.nsunits /self.samplerate
+        self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
+        self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
+        self.drawtriggerlines()
         self.ui.timebaseBox.setText("downsample "+str(self.downsample))
 
     def risingfalling(self):
@@ -754,9 +778,9 @@ class MainWindow(TemplateBaseClass):
         self.adfreset()
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
-                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])
+                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)]) / self.nsunits / self.samplerate
         else:
-            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])/self.samplerate
+            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)]) / self.nsunits /self.samplerate
         return 1
 
     @staticmethod
