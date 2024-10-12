@@ -587,11 +587,10 @@ class MainWindow(TemplateBaseClass):
     else:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 4*10*expect_samples], dtype=float)
 
+    statuscounter=0
     def updateplot(self):
         self.mainloop()
-        if not self.dodrawing: return
-        for li in range(self.nlines):
-            self.lines[li].setData(self.xydata[li][0],self.xydata[li][1])
+        self.statuscounter=self.statuscounter+1
         now = time.time()
         dt = now - self.lastTime + 0.00001
         self.lastTime = now
@@ -600,8 +599,10 @@ class MainWindow(TemplateBaseClass):
         else:
             s = np.clip(dt*3., 0, 1)
             self.fps = self.fps * (1-s) + (1.0/dt) * s
+        if self.statuscounter%20==0: self.ui.statusBar.showMessage("%0.2f fps, %d events, %0.2f Hz, %0.2f MB/s"%(self.fps,self.nevents,self.lastrate,self.lastrate*self.lastsize/1e6))
+        if not self.dodrawing: return
         #self.ui.plot.setTitle("%0.2f fps, %d events, %0.2f Hz, %0.2f MB/s"%(self.fps,self.nevents,self.lastrate,self.lastrate*self.lastsize/1e6))
-        self.ui.statusBar.showMessage("%0.2f fps, %d events, %0.2f Hz, %0.2f MB/s"%(self.fps,self.nevents,self.lastrate,self.lastrate*self.lastsize/1e6))
+        for li in range(self.nlines): self.lines[li].setData(self.xydata[li][0],self.xydata[li][1])
         app.processEvents()
 
     nevents=0
