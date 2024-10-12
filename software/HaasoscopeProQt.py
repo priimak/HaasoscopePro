@@ -413,10 +413,10 @@ class MainWindow(TemplateBaseClass):
         usb.recv(4)
         self.drawtriggerlines()
     def drawtriggerlines(self):
-        self.hline = float(255 - self.triggerlevel - 128) * self.yscale
+        self.hline = (255 - self.triggerlevel - 128) * self.yscale
         self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
         point = self.triggerpos + 1.25
-        self.vline = float(4 * 10 * point * self.downsamplefactor / self.nsunits / self.samplerate)
+        self.vline = 4 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),min(self.hline + self.max_y / 2,self.max_y)])  # vertical line showing trigger time
 
     def tot(self):
@@ -491,29 +491,29 @@ class MainWindow(TemplateBaseClass):
         self.timechanged()
 
     def timechanged(self):
-        self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+        self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
         baremaxx = 4 * 10 * self.expect_samples * self.downsamplefactor / self.samplerate
         if baremaxx>5:
             self.nsunits = 1
-            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
             self.ui.plot.setLabel('bottom', "Time (ns)")
         if baremaxx>5000:
             self.nsunits = 1000
-            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
             self.ui.plot.setLabel('bottom', "Time (us)")
         if baremaxx>5000000:
             self.nsunits = 1000000
-            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
             self.ui.plot.setLabel('bottom', "Time (ms)")
         if baremaxx>5000000000:
             self.nsunits = 1000000000
-            self.max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+            self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
             self.ui.plot.setLabel('bottom', "Time (s)")
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
-                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])*self.downsamplefactor / self.nsunits /self.samplerate
+                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         else:
-            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*self.downsamplefactor / self.nsunits /self.samplerate
+            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
         self.drawtriggerlines()
