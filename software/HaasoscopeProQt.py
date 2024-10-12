@@ -438,6 +438,7 @@ class MainWindow(TemplateBaseClass):
         self.getone = not self.getone
         self.ui.singleButton.setChecked(self.getone)
 
+    downsamplemerging=1
     def highres(self,value):
         self.highresval=value>0
         #print("highres",self.highresval)
@@ -445,7 +446,29 @@ class MainWindow(TemplateBaseClass):
     def telldownsample(self,ds):
         self.downsample=ds
         if ds<0: ds=0
-        usb.send(bytes([9, ds, self.highresval, 100, 100, 100, 100, 100]))
+        if ds==0:
+            ds=0
+            self.downsamplemerging=1
+        if ds==1:
+            ds=0
+            self.downsamplemerging=2
+        if ds==2:
+            ds=0
+            self.downsamplemerging=4
+        if ds==3:
+            ds=0
+            self.downsamplemerging=8
+        if ds==4:
+            ds=0
+            self.downsamplemerging=20
+        if ds==5:
+            ds=0
+            self.downsamplemerging=40
+        if ds>5:
+            ds=ds-5
+            self.downsamplemerging=40
+        print("ds, dsm:",ds,self.downsamplemerging)
+        usb.send(bytes([9, ds, self.highresval, self.downsamplemerging, 100, 100, 100, 100]))
         usb.recv(4)
 
     def timefast(self):
@@ -670,22 +693,26 @@ class MainWindow(TemplateBaseClass):
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
-                        if samp % 2 == 1: # account for switching of bits form DDR in lvds reciever?
-                            samp = samp - 1
+                        if self.downsamplemerging==1:
+                            samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
+                            # if samp % 2 == 1: # account for switching of bits from DDR in lvds reciever?
+                            #     samp = samp - 1
+                            # else:
+                            #     samp = samp + 1
+                            if self.xydata_overlapped:
+                                self.xydata[chan][1][samp] = -val
+                            else:
+                                self.xydata[0][1][chan+ 4*samp] = -val
                         else:
-                            samp = samp + 1
-                        if self.xydata_overlapped:
-                            self.xydata[chan][1][samp] = -val
-                        else:
-                            self.xydata[0][1][chan+ 4*samp] = -val
+                            samp = s * 40 +39 - n
+                            self.xydata[0][1][samp] = -val
 
         if self.debug:
             time.sleep(.5)
             #oldbytes()
 
-        if self.nbadclkA == 2*self.expect_samples: # adjust phase by 90 deg
-            for i in range(6): self.dophase(4, 1, pllnum=0, quiet=(i != 6 - 1))  # adjust phase of clkout
+        #if self.nbadclkA == 2*self.expect_samples: # adjust phase by 90 deg
+        #    for i in range(6): self.dophase(4, 1, pllnum=0, quiet=(i != 6 - 1))  # adjust phase of clkout
 
         return rx_len
 
