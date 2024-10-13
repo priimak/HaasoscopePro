@@ -7485,7 +7485,7 @@ design rules under a new name.
 </elements>
 <signals>
 <signal name="GND" airwireshidden="yes">
-<polygon width="0.254" layer="2">
+<polygon width="0.254" layer="2" isolate="0.1524">
 <vertex x="88" y="54.5"/>
 <vertex x="88" y="-31"/>
 <vertex x="-13.2" y="-31"/>
@@ -7505,7 +7505,7 @@ design rules under a new name.
 <contactref element="BNCIN" pad="GND1"/>
 <contactref element="K1" pad="2"/>
 <contactref element="R5" pad="1"/>
-<polygon width="0.254" layer="1">
+<polygon width="0.254" layer="1" isolate="0.1524">
 <vertex x="-11.2" y="-29.5"/>
 <vertex x="-11.2" y="51.5"/>
 <vertex x="-10.7" y="52"/>
@@ -7701,7 +7701,7 @@ design rules under a new name.
 <contactref element="J1" pad="P$4"/>
 </signal>
 <signal name="VS+" airwireshidden="yes">
-<polygon width="0.254" layer="16" rank="2">
+<polygon width="0.254" layer="16" isolate="0.1524" rank="2">
 <vertex x="-10.2" y="51"/>
 <vertex x="86" y="51.4"/>
 <vertex x="86" y="-30.2"/>
@@ -7727,7 +7727,7 @@ design rules under a new name.
 <wire x1="2.7" y1="28.3" x2="3.65" y2="28.3" width="0.254" layer="1"/>
 </signal>
 <signal name="VS-" airwireshidden="yes">
-<polygon width="0.254" layer="15" rank="2">
+<polygon width="0.254" layer="15" isolate="0.1524" rank="2">
 <vertex x="-12.2" y="53.5"/>
 <vertex x="87" y="53.9"/>
 <vertex x="87" y="-28.8"/>
