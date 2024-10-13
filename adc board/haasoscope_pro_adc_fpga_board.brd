@@ -9222,11 +9222,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </class>
 <class number="2" name="diffpair" width="0.0889" drill="0">
 </class>
-<class number="3" name="loosediffpair" width="0.1524" drill="0">
-<clearance class="0" value="0.3048"/>
-<clearance class="1" value="0.3048"/>
-<clearance class="2" value="0.3048"/>
-<clearance class="3" value="0.3048"/>
+<class number="3" name="loosediffpair" width="0.1016" drill="0">
+<clearance class="0" value="0.127"/>
+<clearance class="1" value="0.127"/>
+<clearance class="2" value="0.127"/>
+<clearance class="3" value="0.127"/>
 </class>
 <class number="4" name="gnd" width="0" drill="0">
 </class>
@@ -9238,14 +9238,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <clearance class="4" value="0.15"/>
 <clearance class="5" value="0.15"/>
 </class>
-<class number="6" name="adiffpair" width="0.1016" drill="0">
-<clearance class="0" value="0.127"/>
-<clearance class="1" value="0.127"/>
-<clearance class="2" value="0.127"/>
-<clearance class="3" value="0.127"/>
-<clearance class="4" value="0.127"/>
-<clearance class="5" value="0.127"/>
-<clearance class="6" value="0.127"/>
+<class number="6" name="looserdiffpair" width="0.1524" drill="0">
+<clearance class="0" value="0.3048"/>
+<clearance class="1" value="0.3048"/>
+<clearance class="2" value="0.3048"/>
+<clearance class="3" value="0.3048"/>
+<clearance class="4" value="0.3048"/>
+<clearance class="5" value="0.3048"/>
+<clearance class="6" value="0.3048"/>
 </class>
 </classes>
 <designrules name="jlcpcb-10layers-haas *">
@@ -11846,7 +11846,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="R20" pad="1"/>
 <wire x1="110.325" y1="84" x2="110.5" y2="84" width="0.0889" layer="16"/>
 </signal>
-<signal name="GND">
+<signal name="GND" class="4">
 <contactref element="CLKEXT" pad="5"/>
 <contactref element="CLKEXT" pad="3"/>
 <contactref element="CLKEXT" pad="4"/>
@@ -20586,7 +20586,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="109.5" y1="98.5" x2="109.5" y2="99.43306875" width="0.1524" layer="1"/>
 <wire x1="109.5" y1="99.43306875" x2="110.06693125" y2="100" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUT_P" class="6">
+<signal name="AOUT_P" class="3">
 <contactref element="IC13" pad="13"/>
 <contactref element="R45" pad="P$1"/>
 <wire x1="71.25" y1="41.65" x2="71.25" y2="42.1532" width="0.1016" layer="1"/>
@@ -20602,7 +20602,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="73.55" y1="37.5" x2="72.25" y2="38.8" width="0.1524" layer="1"/>
 <wire x1="72.25" y1="38.8" x2="72.25" y2="39.35" width="0.1524" layer="1"/>
 </signal>
-<signal name="AIN_N" class="6">
+<signal name="AIN_N" class="3">
 <contactref element="IC13" pad="5"/>
 <contactref element="R132" pad="P$1"/>
 <contactref element="R134" pad="P$2"/>
@@ -20617,7 +20617,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="69.95" y1="37.5" x2="69.95" y2="38.55" width="0.1524" layer="1"/>
 <wire x1="69.95" y1="38.55" x2="70.75" y2="39.35" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUTSMA_N" class="6">
+<signal name="AOUTSMA_N" class="3">
 <contactref element="R44" pad="P$2"/>
 <contactref element="IC14" pad="3"/>
 <wire x1="71.8" y1="51.6" x2="71.8" y2="51.0968" width="0.1016" layer="1"/>
@@ -20627,7 +20627,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.7" y1="47.5" x2="72.2" y2="47" width="0.1016" layer="1"/>
 <wire x1="71.6643" y1="47.5" x2="71.7" y2="47.5" width="0.1016" layer="1"/>
 </signal>
-<signal name="AOUTSMA_P" class="6">
+<signal name="AOUTSMA_P" class="3">
 <contactref element="R45" pad="P$2"/>
 <contactref element="IC14" pad="2"/>
 <wire x1="71.3" y1="51.6" x2="71.3" y2="51.0968" width="0.1016" layer="1"/>
@@ -20637,7 +20637,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.3" y1="47.5" x2="70.8" y2="47" width="0.1016" layer="1"/>
 <wire x1="71.4357" y1="47.5" x2="71.3" y2="47.5" width="0.1016" layer="1"/>
 </signal>
-<signal name="AIN_P" class="6">
+<signal name="AIN_P" class="3">
 <contactref element="IC13" pad="6"/>
 <contactref element="R131" pad="P$1"/>
 <contactref element="R133" pad="P$2"/>
@@ -20645,7 +20645,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.75" y1="38.2" x2="72.45" y2="37.5" width="0.1524" layer="1"/>
 <wire x1="72.45" y1="37.5" x2="72.45" y2="35.5" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUT_N" class="6">
+<signal name="AOUT_N" class="3">
 <contactref element="IC13" pad="12"/>
 <contactref element="R44" pad="P$1"/>
 <wire x1="71.75" y1="41.65" x2="71.75" y2="42.1532" width="0.1016" layer="1"/>
@@ -20683,7 +20683,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="82" y1="48.5" x2="83.5" y2="50" width="0.1524" layer="1"/>
 <wire x1="83.5" y1="50" x2="83.5" y2="51.125" width="0.1524" layer="1"/>
 </signal>
-<signal name="AMPOUT_N" class="6">
+<signal name="AMPOUT_N" class="3">
 <contactref element="IC14" pad="10"/>
 <contactref element="R138" pad="P$1"/>
 <wire x1="71.8" y1="54.4" x2="71.8" y2="54.9032" width="0.1016" layer="1"/>
@@ -20692,7 +20692,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.6643" y1="57.1643" x2="71.95" y2="57.45" width="0.1016" layer="1"/>
 <wire x1="71.6643" y1="55.0389" x2="71.6643" y2="57.1643" width="0.1016" layer="1"/>
 </signal>
-<signal name="AMPOUT_P" class="6">
+<signal name="AMPOUT_P" class="3">
 <contactref element="IC14" pad="11"/>
 <contactref element="R139" pad="P$1"/>
 <wire x1="71.3" y1="54.4" x2="71.3" y2="54.9032" width="0.1016" layer="1"/>
@@ -21300,42 +21300,35 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="K12" pad="2"/>
 <wire x1="54.6" y1="34.7" x2="61.6" y2="34.7" width="0.1524" layer="1"/>
 </signal>
-<signal name="USB_D_N" class="2">
+<signal name="USB_D_N" class="3">
 <contactref element="IC8" pad="7"/>
 <contactref element="X1" pad="B6"/>
 <contactref element="X1" pad="A6"/>
-<wire x1="152.5645" y1="77.6615" x2="153.3693" y2="77.6615" width="0.1524" layer="1"/>
-<wire x1="153.3693" y1="77.6615" x2="153.49865" y2="77.53215" width="0.1524" layer="1"/>
-<wire x1="153.49865" y1="77.53215" x2="202.5" y2="77.53215" width="0.1524" layer="1"/>
-<wire x1="210.707509375" y1="77.62" x2="211" y2="77.62" width="0.1524" layer="1"/>
-<wire x1="211" y1="77.62" x2="211.88" y2="77.62" width="0.1524" layer="1"/>
-<wire x1="210.703571875" y1="77.6160625" x2="210.707509375" y2="77.62" width="0.1524" layer="1"/>
-<wire x1="202.9732125" y1="77.6160625" x2="210.703571875" y2="77.6160625" width="0.1524" layer="1"/>
-<wire x1="202.8915125" y1="77.5343625" x2="202.9732125" y2="77.6160625" width="0.1524" layer="1"/>
-<wire x1="202.72185" y1="77.5343625" x2="202.8915125" y2="77.5343625" width="0.1524" layer="1"/>
-<wire x1="202.5" y1="77.53215" x2="202.72185" y2="77.5343625" width="0.1524" layer="1"/>
-<wire x1="211" y1="77.62" x2="211" y2="78.5" width="0.1524" layer="1"/>
-<wire x1="211" y1="78.5" x2="211.12" y2="78.62" width="0.1524" layer="1"/>
-<wire x1="211.12" y1="78.62" x2="211.88" y2="78.62" width="0.1524" layer="1"/>
+<wire x1="152.5645" y1="77.6615" x2="153.2677" y2="77.6615" width="0.1016" layer="1"/>
+<wire x1="153.2677" y1="77.6615" x2="153.4034" y2="77.5258" width="0.1016" layer="1"/>
+<wire x1="211.0942" y1="77.62" x2="211.88" y2="77.62" width="0.1016" layer="1"/>
+<wire x1="211" y1="77.5258" x2="211.0942" y2="77.62" width="0.1016" layer="1"/>
+<wire x1="153.4034" y1="77.5258" x2="211" y2="77.5258" width="0.1016" layer="1"/>
+<wire x1="211.370659375" y1="77.62" x2="211.88" y2="77.62" width="0.1016" layer="1"/>
+<wire x1="211.127190625" y1="77.86346875" x2="211.370659375" y2="77.62" width="0.1016" layer="1"/>
+<wire x1="211.127190625" y1="78.37653125" x2="211.127190625" y2="77.86346875" width="0.1016" layer="1"/>
+<wire x1="211.370659375" y1="78.62" x2="211.127190625" y2="78.37653125" width="0.1016" layer="1"/>
+<wire x1="211.88" y1="78.62" x2="211.370659375" y2="78.62" width="0.1016" layer="1"/>
 </signal>
-<signal name="USB_D_P" class="2">
+<signal name="USB_D_P" class="3">
 <contactref element="IC8" pad="6"/>
 <contactref element="X1" pad="B7"/>
 <contactref element="X1" pad="A7"/>
-<wire x1="153.49865" y1="77.29085" x2="153.3693" y2="77.1615" width="0.1524" layer="1"/>
-<wire x1="153.49865" y1="77.29085" x2="202.5" y2="77.29085" width="0.1524" layer="1"/>
-<wire x1="210.7052625" y1="77.3747625" x2="210.960025" y2="77.12" width="0.1524" layer="1"/>
-<wire x1="203.180940625" y1="77.3747625" x2="210.7052625" y2="77.3747625" width="0.1524" layer="1"/>
-<wire x1="203.092721875" y1="77.28654375" x2="203.180940625" y2="77.3747625" width="0.1524" layer="1"/>
-<wire x1="202.72185" y1="77.28654375" x2="203.092721875" y2="77.28654375" width="0.1524" layer="1"/>
-<wire x1="202.5" y1="77.29085" x2="202.72185" y2="77.28654375" width="0.1524" layer="1"/>
-<wire x1="210.960025" y1="77.12" x2="211.88" y2="77.12" width="0.1524" layer="1"/>
-<wire x1="153.3693" y1="77.1615" x2="152.5645" y2="77.1615" width="0.1524" layer="1"/>
-<wire x1="211.88" y1="78.12" x2="212.63" y2="78.12" width="0.1524" layer="1"/>
-<wire x1="212.85" y1="77.9" x2="212.85" y2="77.3" width="0.1524" layer="1"/>
-<wire x1="212.85" y1="77.3" x2="212.67" y2="77.12" width="0.1524" layer="1"/>
-<wire x1="212.67" y1="77.12" x2="211.88" y2="77.12" width="0.1524" layer="1"/>
-<wire x1="212.63" y1="78.12" x2="212.85" y2="77.9" width="0.1524" layer="1"/>
+<wire x1="152.5645" y1="77.1615" x2="153.2677" y2="77.1615" width="0.1016" layer="1"/>
+<wire x1="153.2677" y1="77.1615" x2="153.4034" y2="77.2972" width="0.1016" layer="1"/>
+<wire x1="211.1772" y1="77.12" x2="211.88" y2="77.12" width="0.1016" layer="1"/>
+<wire x1="211" y1="77.2972" x2="211.1772" y2="77.12" width="0.1016" layer="1"/>
+<wire x1="153.4034" y1="77.2972" x2="211" y2="77.2972" width="0.1016" layer="1"/>
+<wire x1="212.389340625" y1="77.12" x2="211.88" y2="77.12" width="0.1016" layer="1"/>
+<wire x1="212.632809375" y1="77.36346875" x2="212.389340625" y2="77.12" width="0.1016" layer="1"/>
+<wire x1="212.632809375" y1="77.87653125" x2="212.632809375" y2="77.36346875" width="0.1016" layer="1"/>
+<wire x1="212.389340625" y1="78.12" x2="212.632809375" y2="77.87653125" width="0.1016" layer="1"/>
+<wire x1="211.88" y1="78.12" x2="212.389340625" y2="78.12" width="0.1016" layer="1"/>
 </signal>
 <signal name="N$72">
 <contactref element="IC8" pad="1"/>
@@ -21565,7 +21558,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="35.05" y1="85" x2="35.75" y2="84.3" width="0.1524" layer="1"/>
 <wire x1="35.75" y1="84.3" x2="35.75" y2="81.45" width="0.1524" layer="1"/>
 </signal>
-<signal name="RFOUTA_P" class="6">
+<signal name="RFOUTA_P" class="3">
 <contactref element="U2" pad="12"/>
 <contactref element="R153" pad="P$1"/>
 <contactref element="C152" pad="P$2"/>
@@ -21581,7 +21574,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="45.56785" y1="79.06785" x2="45.95" y2="78.6857" width="0.1016" layer="1"/>
 <wire x1="45.95" y1="78.6857" x2="45.95" y2="78.5" width="0.1016" layer="1"/>
 </signal>
-<signal name="RFOUTA_N" class="6">
+<signal name="RFOUTA_N" class="3">
 <contactref element="U2" pad="13"/>
 <contactref element="R154" pad="P$1"/>
 <contactref element="C151" pad="P$2"/>
@@ -22549,7 +22542,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="70.9" y1="121.55" x2="70.95" y2="121.6" width="0.1524" layer="1"/>
 <wire x1="70.95" y1="121.6" x2="70.95" y2="123" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUT2_P" class="6">
+<signal name="AOUT2_P" class="3">
 <contactref element="IC21" pad="13"/>
 <contactref element="R188" pad="P$1"/>
 <wire x1="70.75" y1="114.85" x2="70.75" y2="114.3468" width="0.1016" layer="1"/>
@@ -22566,7 +22559,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="68.45" y1="119" x2="69.75" y2="117.7" width="0.1524" layer="1"/>
 <wire x1="69.75" y1="117.7" x2="69.75" y2="117.15" width="0.1524" layer="1"/>
 </signal>
-<signal name="AIN2_N" class="6">
+<signal name="AIN2_N" class="3">
 <contactref element="IC21" pad="5"/>
 <contactref element="R190" pad="P$1"/>
 <contactref element="R192" pad="P$2"/>
@@ -22584,7 +22577,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="71.25" y1="117.15" x2="71.25" y2="118.2" width="0.1524" layer="1"/>
 <wire x1="71.25" y1="118.2" x2="72.05" y2="119" width="0.1524" layer="1"/>
 </signal>
-<signal name="AOUTSMA2_N" class="6">
+<signal name="AOUTSMA2_N" class="3">
 <contactref element="R187" pad="P$2"/>
 <contactref element="IC29" pad="3"/>
 <wire x1="70.48" y1="105.04" x2="70.48" y2="105.5432" width="0.1016" layer="1"/>
@@ -22593,7 +22586,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="70.6157" y1="108.8843" x2="70.05" y2="109.45" width="0.1016" layer="1"/>
 <wire x1="70.6157" y1="105.6789" x2="70.6157" y2="108.8843" width="0.1016" layer="1"/>
 </signal>
-<signal name="AOUTSMA2_P" class="6">
+<signal name="AOUTSMA2_P" class="3">
 <contactref element="R188" pad="P$2"/>
 <contactref element="IC29" pad="2"/>
 <wire x1="70.98" y1="105.04" x2="70.98" y2="105.5432" width="0.1016" layer="1"/>
@@ -22602,7 +22595,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="70.8443" y1="108.8443" x2="71.45" y2="109.45" width="0.1016" layer="1"/>
 <wire x1="70.8443" y1="105.6789" x2="70.8443" y2="108.8443" width="0.1016" layer="1"/>
 </signal>
-<signal name="AIN2_P" class="6">
+<signal name="AIN2_P" class="3">
 <contactref element="IC21" pad="6"/>
 <contactref element="R189" pad="P$1"/>
 <contactref element="R191" pad="P$2"/>
@@ -22613,7 +22606,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="69.8857" y1="119" x2="69.55" y2="119" width="0.1016" layer="1"/>
 <wire x1="70.3857" y1="118.5" x2="69.8857" y2="119" width="0.1016" layer="1"/>
 </signal>
-<signal name="AOUT2_N" class="6">
+<signal name="AOUT2_N" class="3">
 <contactref element="IC21" pad="12"/>
 <contactref element="R187" pad="P$1"/>
 <wire x1="70.25" y1="114.85" x2="70.25" y2="114.3468" width="0.1016" layer="1"/>
@@ -22651,7 +22644,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="69.905" y1="105.14" x2="69.98" y2="105.04" width="0.0889" layer="1"/>
 <wire x1="58.5" y1="105.5" x2="58.475" y2="105.438" width="0.0889" layer="1"/>
 </signal>
-<signal name="AMPOUT2_N" class="6">
+<signal name="AMPOUT2_N" class="3">
 <contactref element="IC29" pad="10"/>
 <contactref element="R194" pad="P$1"/>
 <wire x1="70.48" y1="102.24" x2="70.48" y2="101.7368" width="0.1016" layer="1"/>
@@ -22660,7 +22653,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="70.6157" y1="99.6157" x2="70.05" y2="99.05" width="0.1016" layer="1"/>
 <wire x1="70.6157" y1="101.6011" x2="70.6157" y2="99.6157" width="0.1016" layer="1"/>
 </signal>
-<signal name="AMPOUT2_P" class="6">
+<signal name="AMPOUT2_P" class="3">
 <contactref element="IC29" pad="11"/>
 <contactref element="R195" pad="P$1"/>
 <wire x1="70.98" y1="102.24" x2="70.98" y2="101.7368" width="0.1016" layer="1"/>

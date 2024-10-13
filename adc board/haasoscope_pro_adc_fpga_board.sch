@@ -23072,11 +23072,11 @@ part number 2062-2P from STA</description>
 </class>
 <class number="2" name="diffpair" width="0.0889" drill="0">
 </class>
-<class number="3" name="loosediffpair" width="0.1524" drill="0">
-<clearance class="0" value="0.3048"/>
-<clearance class="1" value="0.3048"/>
-<clearance class="2" value="0.3048"/>
-<clearance class="3" value="0.3048"/>
+<class number="3" name="loosediffpair" width="0.1016" drill="0">
+<clearance class="0" value="0.127"/>
+<clearance class="1" value="0.127"/>
+<clearance class="2" value="0.127"/>
+<clearance class="3" value="0.127"/>
 </class>
 <class number="4" name="gnd" width="0" drill="0">
 </class>
@@ -23088,14 +23088,14 @@ part number 2062-2P from STA</description>
 <clearance class="4" value="0.15"/>
 <clearance class="5" value="0.15"/>
 </class>
-<class number="6" name="adiffpair" width="0.1016" drill="0">
-<clearance class="0" value="0.127"/>
-<clearance class="1" value="0.127"/>
-<clearance class="2" value="0.127"/>
-<clearance class="3" value="0.127"/>
-<clearance class="4" value="0.127"/>
-<clearance class="5" value="0.127"/>
-<clearance class="6" value="0.127"/>
+<class number="6" name="looserdiffpair" width="0.1524" drill="0">
+<clearance class="0" value="0.3048"/>
+<clearance class="1" value="0.3048"/>
+<clearance class="2" value="0.3048"/>
+<clearance class="3" value="0.3048"/>
+<clearance class="4" value="0.3048"/>
+<clearance class="5" value="0.3048"/>
+<clearance class="6" value="0.3048"/>
 </class>
 </classes>
 <parts>
@@ -24142,7 +24142,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="SUPPLY82" gate="GND" pin="GND"/>
 <pinref part="C75" gate="G$1" pin="P$2"/>
@@ -24803,7 +24803,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="SUPPLY28" gate="GND" pin="GND"/>
 <pinref part="C84" gate="G$1" pin="P$2"/>
@@ -25112,7 +25112,7 @@ for CL05A105KA5NQNC</text>
 <label x="111.76" y="-93.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AOUT_P" class="6">
+<net name="AOUT_P" class="3">
 <segment>
 <pinref part="IC13" gate="G$1" pin="OUT+"/>
 <wire x1="121.92" y1="-53.34" x2="129.54" y2="-53.34" width="0.1524" layer="91"/>
@@ -25129,7 +25129,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R131" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AIN_N" class="6">
+<net name="AIN_N" class="3">
 <segment>
 <pinref part="IC13" gate="G$1" pin="IN-"/>
 <label x="83.82" y="-50.8" size="1.778" layer="95"/>
@@ -25147,7 +25147,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R132" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AOUTSMA_N" class="6">
+<net name="AOUTSMA_N" class="3">
 <segment>
 <pinref part="R44" gate="G$1" pin="P$2"/>
 <wire x1="149.86" y1="-50.8" x2="165.1" y2="-50.8" width="0.1524" layer="91"/>
@@ -25159,7 +25159,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="IC14" gate="G$1" pin="INM"/>
 </segment>
 </net>
-<net name="AOUTSMA_P" class="6">
+<net name="AOUTSMA_P" class="3">
 <segment>
 <pinref part="R45" gate="G$1" pin="P$2"/>
 <wire x1="149.86" y1="-53.34" x2="165.1" y2="-53.34" width="0.1524" layer="91"/>
@@ -25180,7 +25180,7 @@ for CL05A105KA5NQNC</text>
 <label x="38.1" y="-50.8" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AIN_P" class="6">
+<net name="AIN_P" class="3">
 <segment>
 <pinref part="IC13" gate="G$1" pin="IN+"/>
 <label x="83.82" y="-53.34" size="1.778" layer="95"/>
@@ -25191,7 +25191,7 @@ for CL05A105KA5NQNC</text>
 <junction x="71.12" y="-53.34"/>
 </segment>
 </net>
-<net name="AOUT_N" class="6">
+<net name="AOUT_N" class="3">
 <segment>
 <pinref part="IC13" gate="G$1" pin="OUT-"/>
 <wire x1="121.92" y1="-50.8" x2="129.54" y2="-50.8" width="0.1524" layer="91"/>
@@ -25225,7 +25225,7 @@ for CL05A105KA5NQNC</text>
 <label x="238.76" y="-111.76" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT_N" class="6">
+<net name="AMPOUT_N" class="3">
 <segment>
 <wire x1="205.74" y1="-60.96" x2="195.58" y2="-60.96" width="0.1524" layer="91"/>
 <pinref part="IC14" gate="G$1" pin="OUTM"/>
@@ -25237,7 +25237,7 @@ for CL05A105KA5NQNC</text>
 <label x="261.62" y="-48.26" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT_P" class="6">
+<net name="AMPOUT_P" class="3">
 <segment>
 <wire x1="246.38" y1="-38.1" x2="236.22" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="IC14" gate="G$1" pin="OUTP"/>
@@ -25604,7 +25604,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="C57" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="190.5" x2="45.72" y2="187.96" width="0.1524" layer="91"/>
@@ -26125,7 +26125,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="IC21" gate="G$1" pin="PD"/>
 <wire x1="86.36" y1="137.16" x2="96.52" y2="137.16" width="0.1524" layer="91"/>
@@ -26410,7 +26410,7 @@ for CL05A105KA5NQNC</text>
 <label x="76.2" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AOUT2_P" class="6">
+<net name="AOUT2_P" class="3">
 <segment>
 <pinref part="IC21" gate="G$1" pin="OUT+"/>
 <wire x1="86.36" y1="127" x2="93.98" y2="127" width="0.1524" layer="91"/>
@@ -26427,7 +26427,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R189" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AIN2_N" class="6">
+<net name="AIN2_N" class="3">
 <segment>
 <pinref part="IC21" gate="G$1" pin="IN-"/>
 <label x="48.26" y="129.54" size="1.778" layer="95"/>
@@ -26445,7 +26445,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R190" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="AOUTSMA2_N" class="6">
+<net name="AOUTSMA2_N" class="3">
 <segment>
 <pinref part="R187" gate="G$1" pin="P$2"/>
 <wire x1="114.3" y1="129.54" x2="129.54" y2="129.54" width="0.1524" layer="91"/>
@@ -26457,7 +26457,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="IC29" gate="G$1" pin="INM"/>
 </segment>
 </net>
-<net name="AOUTSMA2_P" class="6">
+<net name="AOUTSMA2_P" class="3">
 <segment>
 <pinref part="R188" gate="G$1" pin="P$2"/>
 <wire x1="114.3" y1="127" x2="129.54" y2="127" width="0.1524" layer="91"/>
@@ -26478,7 +26478,7 @@ for CL05A105KA5NQNC</text>
 <label x="2.54" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AIN2_P" class="6">
+<net name="AIN2_P" class="3">
 <segment>
 <pinref part="IC21" gate="G$1" pin="IN+"/>
 <label x="48.26" y="127" size="1.778" layer="95"/>
@@ -26489,7 +26489,7 @@ for CL05A105KA5NQNC</text>
 <junction x="35.56" y="127"/>
 </segment>
 </net>
-<net name="AOUT2_N" class="6">
+<net name="AOUT2_N" class="3">
 <segment>
 <pinref part="IC21" gate="G$1" pin="OUT-"/>
 <wire x1="86.36" y1="129.54" x2="93.98" y2="129.54" width="0.1524" layer="91"/>
@@ -26523,7 +26523,7 @@ for CL05A105KA5NQNC</text>
 <label x="203.2" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT2_N" class="6">
+<net name="AMPOUT2_N" class="3">
 <segment>
 <wire x1="170.18" y1="119.38" x2="160.02" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="IC29" gate="G$1" pin="OUTM"/>
@@ -26535,7 +26535,7 @@ for CL05A105KA5NQNC</text>
 <label x="226.06" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AMPOUT2_P" class="6">
+<net name="AMPOUT2_P" class="3">
 <segment>
 <wire x1="210.82" y1="142.24" x2="200.66" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="IC29" gate="G$1" pin="OUTP"/>
@@ -26952,7 +26952,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="GND146" gate="1" pin="GND"/>
 <pinref part="C148" gate="G$1" pin="P$1"/>
@@ -27155,7 +27155,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="R176" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="RFOUTA_P" class="6">
+<net name="RFOUTA_P" class="3">
 <segment>
 <wire x1="205.74" y1="109.22" x2="205.74" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="25.4" x2="236.22" y2="25.4" width="0.1524" layer="91"/>
@@ -27168,7 +27168,7 @@ for CL05A105KA5NQNC</text>
 <pinref part="C152" gate="G$1" pin="P$2"/>
 </segment>
 </net>
-<net name="RFOUTA_N" class="6">
+<net name="RFOUTA_N" class="3">
 <segment>
 <wire x1="228.6" y1="48.26" x2="228.6" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="109.22" x2="210.82" y2="35.56" width="0.1524" layer="91"/>
@@ -27502,7 +27502,7 @@ for CL05A105KA5NQNC</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="IC2" gate="G$1" pin="DIR4"/>
 <wire x1="-116.84" y1="200.66" x2="-127" y2="200.66" width="0.1524" layer="91"/>
@@ -29648,7 +29648,7 @@ between the two signals at the input buffer.</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="IC5" gate="G$1" pin="GND_1"/>
 <wire x1="238.76" y1="612.14" x2="226.06" y2="612.14" width="0.1524" layer="91"/>
@@ -34389,7 +34389,7 @@ between the two signals at the input buffer.</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="IC8" gate="IC" pin="AGND"/>
 <wire x1="99.06" y1="15.24" x2="99.06" y2="10.16" width="0.1524" layer="91"/>
@@ -34530,7 +34530,7 @@ between the two signals at the input buffer.</text>
 <pinref part="GND89" gate="1" pin="GND"/>
 </segment>
 </net>
-<net name="USB_D_N" class="2">
+<net name="USB_D_N" class="3">
 <segment>
 <pinref part="IC8" gate="IC" pin="USBD+"/>
 <wire x1="78.74" y1="93.98" x2="86.36" y2="93.98" width="0.1524" layer="91"/>
@@ -34542,7 +34542,7 @@ between the two signals at the input buffer.</text>
 <label x="50.8" y="205.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="USB_D_P" class="2">
+<net name="USB_D_P" class="3">
 <segment>
 <pinref part="IC8" gate="IC" pin="USBD-"/>
 <wire x1="86.36" y1="96.52" x2="78.74" y2="96.52" width="0.1524" layer="91"/>
@@ -35708,7 +35708,7 @@ between the two signals at the input buffer.</text>
 <label x="215.9" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="J30" gate="G$1" pin="1"/>
 <wire x1="137.16" y1="60.96" x2="137.16" y2="50.8" width="0.1524" layer="91"/>
@@ -37504,7 +37504,7 @@ between the two signals at the input buffer.</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="C6" gate="C$1" pin="1"/>
 <pinref part="GND3" gate="1" pin="GND"/>
@@ -38159,7 +38159,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="4">
 <segment>
 <pinref part="C44" gate="G$1" pin="2"/>
 <pinref part="SUPPLY61" gate="GND" pin="GND"/>

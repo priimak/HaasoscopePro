@@ -470,7 +470,7 @@ class MainWindow(TemplateBaseClass):
             ds=ds-5
             self.downsamplemerging=40
         self.downsamplefactor = self.downsamplemerging*pow(2,ds)
-        print("ds, dsm, dsf",ds,self.downsamplemerging,self.downsamplefactor)
+        #print("ds, dsm, dsf",ds,self.downsamplemerging,self.downsamplefactor)
         usb.send(bytes([9, ds, self.highresval, self.downsamplemerging, 100, 100, 100, 100]))
         usb.recv(4)
 
