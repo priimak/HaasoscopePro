@@ -11604,7 +11604,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R12" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="18" y="147" smashed="yes" rot="R90"/>
 <element name="R13" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="57.5" y="140" smashed="yes" rot="R180"/>
 <element name="R22" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="39" y="147" smashed="yes" rot="R90"/>
-<element name="OUTSPLPIT" library="adafruit" package="SMA_EDGELAUNCH" value="50" x="0.22" y="15.52" smashed="yes">
+<element name="OUTSPLIT" library="adafruit" package="SMA_EDGELAUNCH" value="50" x="0.22" y="15.52" smashed="yes">
 <attribute name="NAME" x="7.8" y="22.505" size="0.8128" layer="25" rot="R180"/>
 </element>
 <element name="R23" library="PP_Passives" package="0201" value="100" x="116.5" y="69.5" smashed="yes" rot="MR270"/>
@@ -13021,10 +13021,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="C132" pad="P$2"/>
 <contactref element="C135" pad="P$2"/>
 <contactref element="C134" pad="P$2"/>
-<contactref element="OUTSPLPIT" pad="GND@1"/>
-<contactref element="OUTSPLPIT" pad="GND@3"/>
-<contactref element="OUTSPLPIT" pad="GND@4"/>
-<contactref element="OUTSPLPIT" pad="GND@2"/>
+<contactref element="OUTSPLIT" pad="GND@1"/>
+<contactref element="OUTSPLIT" pad="GND@3"/>
+<contactref element="OUTSPLIT" pad="GND@4"/>
+<contactref element="OUTSPLIT" pad="GND@2"/>
 <polygon width="0.1524" layer="15" isolate="0.1524">
 <vertex x="-5.5" y="163"/>
 <vertex x="227" y="163"/>
@@ -21262,7 +21262,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="OUTSPLIT" class="5">
 <contactref element="R169" pad="P$2"/>
 <contactref element="R170" pad="P$2"/>
-<contactref element="OUTSPLPIT" pad="P"/>
+<contactref element="OUTSPLIT" pad="P"/>
 <wire x1="57.55" y1="20.9" x2="57.5" y2="20.85" width="0.1524" layer="1"/>
 <wire x1="57.55" y1="20.9" x2="57.55" y2="22.5" width="0.1524" layer="1"/>
 <wire x1="57.55" y1="22.5" x2="57.3" y2="22.75" width="0.1524" layer="1"/>

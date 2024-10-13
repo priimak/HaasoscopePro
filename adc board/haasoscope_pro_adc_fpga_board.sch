@@ -23910,7 +23910,7 @@ part number 2062-2P from STA</description>
 <part name="R12" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R13" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R22" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
-<part name="OUTSPLPIT" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="50"/>
+<part name="OUTSPLIT" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="50"/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R23" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
 <part name="R24" library="PP_Passives" deviceset="RESISTOR" device="_0201" value="100"/>
@@ -24121,7 +24121,7 @@ for CL05A105KA5NQNC</text>
 <attribute name="VALUE" x="408.94" y="167.64" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY108" gate="GND" x="429.26" y="147.32" smashed="yes"/>
-<instance part="OUTSPLPIT" gate="G$1" x="421.64" y="254" smashed="yes" rot="MR180">
+<instance part="OUTSPLIT" gate="G$1" x="421.64" y="254" smashed="yes" rot="MR180">
 <attribute name="NAME" x="429.26" y="251.46" size="1.27" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="429.26" y="254" size="1.27" layer="95" rot="MR180"/>
 </instance>
@@ -24221,12 +24221,12 @@ for CL05A105KA5NQNC</text>
 <pinref part="SUPPLY108" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="OUTSPLPIT" gate="G$1" pin="GND4"/>
+<pinref part="OUTSPLIT" gate="G$1" pin="GND4"/>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
-<pinref part="OUTSPLPIT" gate="G$1" pin="GND2"/>
-<pinref part="OUTSPLPIT" gate="G$1" pin="GND1"/>
+<pinref part="OUTSPLIT" gate="G$1" pin="GND2"/>
+<pinref part="OUTSPLIT" gate="G$1" pin="GND1"/>
 <wire x1="424.18" y1="246.38" x2="419.1" y2="246.38" width="0.1524" layer="91"/>
-<pinref part="OUTSPLPIT" gate="G$1" pin="GND3"/>
+<pinref part="OUTSPLIT" gate="G$1" pin="GND3"/>
 <wire x1="419.1" y1="246.38" x2="419.1" y2="261.62" width="0.1524" layer="91"/>
 <junction x="419.1" y="246.38"/>
 <wire x1="419.1" y1="261.62" x2="424.18" y2="261.62" width="0.1524" layer="91"/>
@@ -24569,7 +24569,7 @@ for CL05A105KA5NQNC</text>
 <junction x="347.98" y="254"/>
 <wire x1="414.02" y1="254" x2="347.98" y2="254" width="0.1524" layer="91"/>
 <label x="388.62" y="254" size="1.778" layer="95"/>
-<pinref part="OUTSPLPIT" gate="G$1" pin="ANT"/>
+<pinref part="OUTSPLIT" gate="G$1" pin="ANT"/>
 </segment>
 </net>
 <net name="OUTMAIN" class="0">
