@@ -4,7 +4,9 @@ import pyqtgraph as pg
 from ftd2xx import DeviceError
 # noinspection PyUnresolvedReferences
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
-import control as ct
+
+import warnings
+from scipy.optimize import curve_fit
 
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
 
@@ -192,8 +194,17 @@ def setgain(value):
     spicommand("Amp Gain", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
 
 
+def fit_rise(x, top, left, right, bot):  # a function for fitting to find risetime
+    val = bot + (x - left) * (top - bot) / (right - left)
+    inbottom = (x <= left)
+    val[inbottom] = bot
+    intop = (x >= right)
+    val[intop] = top
+    return val
+
+
 class MainWindow(TemplateBaseClass):
-    expect_samples = 100
+    expect_samples = 10
     samplerate= 3.2 # freq in GHz
     nsunits=1
     num_chan_per_board = 4
@@ -491,25 +502,27 @@ class MainWindow(TemplateBaseClass):
         self.telldownsample(self.downsample+amount)
         self.timechanged()
 
+    units = "ns"
     def timechanged(self):
         self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
         baremaxx = 4 * 10 * self.expect_samples * self.downsamplefactor / self.samplerate
         if baremaxx>5:
             self.nsunits = 1
             self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
-            self.ui.plot.setLabel('bottom', "Time (ns)")
+            self.units="ns"
         if baremaxx>5000:
             self.nsunits = 1000
             self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
-            self.ui.plot.setLabel('bottom', "Time (us)")
+            self.units = "us"
         if baremaxx>5000000:
             self.nsunits = 1000000
             self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
-            self.ui.plot.setLabel('bottom', "Time (ms)")
+            self.units = "ms"
         if baremaxx>5000000000:
             self.nsunits = 1000000000
             self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
-            self.ui.plot.setLabel('bottom', "Time (s)")
+            self.units = "s"
+        self.ui.plot.setLabel('bottom', "Time ("+self.units+")")
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
@@ -750,21 +763,32 @@ class MainWindow(TemplateBaseClass):
         print("Board in bits", res[0], binprint(res[0]))
         return res[0]
 
+    fitwidthfraction=0.2
     def drawtext(self): # happens once per second
         thestr = "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
         thestr +="\n"+"Nbadstrobes "+str(self.nbadstr)
         thestr +="\n"+"Trigger threshold " + str(round(self.hline,3))
         thestr +="\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
         thestr +="\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
+
         if dooverrange:
             usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
             res = usb.recv(4)
             #print("Overrange0", res[3], res[2], res[1], res[0])
             thestr += "\n" + "Overrange0 " + str(bytestoint(res))
 
-        S = ct.step_info(self.xydata[0][1],self.xydata[0][0])
-        # for k in S: print(f"{k}: {S[k]:3.4}")
-        thestr +="\n"+"Rise time "+str(S['RiseTime'].round(2))
+        p0 = [max(self.xydata[0][1]), self.vline-10, self.vline+10, min(self.xydata[0][1])]  # this is an initial guess
+        fitwidth = (self.max_x - self.min_x)* self.fitwidthfraction
+        x2 = self.xydata[0][0][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]  # only fit in range
+        y2 = self.xydata[0][1][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            popt, pcov = curve_fit(fit_rise, x2, y2, p0)
+            perr = np.sqrt(np.diag(pcov))
+        risetime=0.8 * (popt[2] - popt[1])
+        risetimeerr = perr[1]+perr[2]
+        if risetimeerr<risetime: thestr +="\n"+"Rise time "+str(risetime.round(2))+"+-"+str(risetimeerr.round(2))+" "+self.units
+        else: thestr +="\n"+"Rise time not found"
 
         self.ui.textBrowser.setText(thestr)
 
@@ -802,7 +826,9 @@ class MainWindow(TemplateBaseClass):
         else:
             try:
                 rx_len=self.getchannels()
-                if self.getone and rx_len>0: self.dostartstop()
+                if self.getone and rx_len>0:
+                    self.dostartstop()
+                    self.drawtext()
             except DeviceError:
                 print("Device error")
                 sys.exit(1)
