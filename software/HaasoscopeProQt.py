@@ -4,6 +4,7 @@ import pyqtgraph as pg
 from ftd2xx import DeviceError
 # noinspection PyUnresolvedReferences
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
+import control as ct
 
 from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
 
@@ -752,14 +753,19 @@ class MainWindow(TemplateBaseClass):
     def drawtext(self): # happens once per second
         thestr = "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
         thestr +="\n"+"Nbadstrobes "+str(self.nbadstr)
+        thestr +="\n"+"Trigger threshold " + str(round(self.hline,3))
         thestr +="\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
         thestr +="\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
-        thestr +="\n"+"Trigger threshold: " + str(round(self.hline,3))
         if dooverrange:
             usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
             res = usb.recv(4)
             #print("Overrange0", res[3], res[2], res[1], res[0])
             thestr += "\n" + "Overrange0 " + str(bytestoint(res))
+
+        S = ct.step_info(self.xydata[0][1],self.xydata[0][0])
+        # for k in S: print(f"{k}: {S[k]:3.4}")
+        thestr +="\n"+"Rise time "+str(S['RiseTime'].round(2))
+
         self.ui.textBrowser.setText(thestr)
 
     def setup_connections(self):
