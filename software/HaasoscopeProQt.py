@@ -203,6 +203,35 @@ def fit_rise(x, top, left, right, bot):  # a function for fitting to find riseti
     return val
 
 
+def setchanimpedance(chan, onemeg):
+    if chan==0: controlbit=0
+    elif chan==1: controlbit=4
+    else: return
+    usb.send(bytes([10, controlbit, onemeg, 0, 0, 0, 0, 0]))
+    usb.recv(4)
+
+def setchanacdc(chan, ac):
+    if chan==0: controlbit=1
+    elif chan==1: controlbit=5
+    else: return
+    usb.send(bytes([10, controlbit, ac, 0, 0, 0, 0, 0]))
+    usb.recv(4)
+    print("AC for chan",chan,ac)
+
+def setchanatt(chan, att):
+    if chan==0: controlbit=2
+    elif chan==1: controlbit=6
+    else: return
+    usb.send(bytes([10, controlbit, att, 0, 0, 0, 0, 0]))
+    usb.recv(4)
+    print("Att for chan",chan,att)
+
+def setsplit(split):
+    controlbit=7
+    usb.send(bytes([10, controlbit, split, 0, 0, 0, 0, 0]))
+    usb.recv(4)
+    print("Split",split)
+
 class MainWindow(TemplateBaseClass):
     expect_samples = 10
     samplerate= 3.2 # freq in GHz
@@ -258,6 +287,8 @@ class MainWindow(TemplateBaseClass):
         self.ui.gainBox.valueChanged.connect(setgain)
         self.ui.offsetBox.valueChanged.connect(self.changeoffset)
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
+        self.ui.ohmCheck.stateChanged.connect(self.setohm)
+        self.ui.oversampCheck.stateChanged.connect(self.setoversamp)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
@@ -305,12 +336,13 @@ class MainWindow(TemplateBaseClass):
             self.lines[self.selectedchannel].setVisible(False)
 
     def setacdc(self):
-        if self.ui.acdcCheck.checkState() == QtCore.Qt.Checked: #ac coupled
-            if self.acdc[self.selectedchannel]:
-                self.setacdc()
-        if self.ui.acdcCheck.checkState() == QtCore.Qt.Unchecked: #dc coupled
-            if not self.acdc[self.selectedchannel]:
-                self.setacdc()
+        setchanacdc(self.selectedchannel,self.ui.acdcCheck.checkState() == QtCore.Qt.Checked) # will be True for AC, False for DC
+
+    def setohm(self):
+        setchanimpedance(self.selectedchannel,self.ui.ohmCheck.checkState() == QtCore.Qt.Checked) # will be True for 1M ohm, False for 50 ohm
+
+    def setoversamp(self):
+        setsplit(self.ui.oversampCheck.checkState() == QtCore.Qt.Checked) # will be True for oversampling, False otherwise
 
     phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4

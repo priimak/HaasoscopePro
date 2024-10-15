@@ -698,7 +698,7 @@
        </widget>
        <widget class="QCheckBox" name="ohmCheck">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -714,7 +714,7 @@
          </font>
         </property>
         <property name="text">
-         <string>50 Ohm</string>
+         <string>1 MOhm</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -745,7 +745,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>380</y>
+          <y>410</y>
           <width>121</width>
           <height>17</height>
          </rect>

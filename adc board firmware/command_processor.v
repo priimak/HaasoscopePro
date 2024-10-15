@@ -48,7 +48,7 @@ module command_processor (
 	output reg [1:0] spi_mode=0,
 	
 	input wire [7:0] boardin,
-	output wire [7:0] boardout,
+	output wire [7:0] boardout=0,
 	output reg spireset_L=1'b1,
 	input wire clk50, // needed while doing pllreset,
 	input wire lvdsin_trig,
@@ -71,7 +71,6 @@ assign debugout[7] = overrange[3];
 assign debugout[11:8] = state;
 assign lvdsout_trig = lvdsin_trig;
 assign lvdsout_spare = lvdsin_spare;
-assign boardout = boardin;  
 
 //variables in clklvds domain, writing into the RAM buffer
 reg [ 7:0]	acqstate=0;
@@ -517,6 +516,14 @@ always @ (posedge clk or negedge rstn)
 			highres <= rx_data[2][0];
 			downsamplemerging <= rx_data[3];
 			o_tdata <= 9;
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
+		end
+		
+		10 : begin // boardout controls
+			boardout[rx_data[1][2:0]] <= rx_data[2][0]; // set bit given by rx_data1 to value in rx_data2
+			o_tdata <= boardout;
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
