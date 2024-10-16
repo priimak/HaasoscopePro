@@ -233,7 +233,7 @@ def setsplit(split):
     print("Split",split)
 
 class MainWindow(TemplateBaseClass):
-    expect_samples = 10
+    expect_samples = 100
     samplerate= 3.2 # freq in GHz
     nsunits=1
     num_chan_per_board = 4
