@@ -232,6 +232,20 @@ def setsplit(split):
     usb.recv(4)
     print("Split",split)
 
+
+def boardinbits():
+    usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
+    res = usb.recv(4)
+    print("Board in bits", res[0], binprint(res[0]))
+    return res[0]
+
+
+def cleanup():
+    spimode(0)
+    spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
+    return 1
+
+
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
     samplerate= 3.2 # freq in GHz
@@ -331,7 +345,7 @@ class MainWindow(TemplateBaseClass):
         #adf4350(150.0, None, 10) # need larger rcounter for low freq
         adf4350(self.samplerate*1000/2, None, themuxout=self.themuxoutV)
         time.sleep(0.1)
-        res=self.boardinbits()
+        res= boardinbits()
         if not getbit(res,0): print("Pll not locked?") # should be 1 if locked
         if getbit(res,1) == self.themuxoutV: print("Pll not setup?") # should be 1 for MuxOut.DVdd
 
@@ -659,7 +673,7 @@ class MainWindow(TemplateBaseClass):
         print("Handling closeEvent",event)
         self.timer.stop()
         self.timer2.stop()
-        win.cleanup()
+        cleanup()
 
     if xydata_overlapped:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 10*expect_samples], dtype=float)
@@ -797,13 +811,6 @@ class MainWindow(TemplateBaseClass):
 
         return rx_len
 
-    @staticmethod
-    def boardinbits():
-        usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
-        res = usb.recv(4)
-        print("Board in bits", res[0], binprint(res[0]))
-        return res[0]
-
     fitwidthfraction=0.2
     def drawtext(self): # happens once per second
         thestr = "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
@@ -854,12 +861,6 @@ class MainWindow(TemplateBaseClass):
             self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)]) / self.nsunits /self.samplerate
         return 1
 
-    @staticmethod
-    def cleanup():
-        spimode(0)
-        spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
-        return 1
-
     lastrate=0
     lastsize=0
     def mainloop(self):
@@ -905,11 +906,11 @@ if __name__ == '__main__':
         win.setWindowTitle('Haasoscope Qt')
         if not win.setup_connections():
             print("Exiting now - failed setup_connections!")
-            win.cleanup()
+            cleanup()
             sys.exit(1)
         if not win.init():
             print("Exiting now - failed init!")
-            win.cleanup()
+            cleanup()
             sys.exit()
         win.launch()
         win.sendtriggerinfo()
