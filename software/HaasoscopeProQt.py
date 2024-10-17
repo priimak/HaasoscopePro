@@ -70,7 +70,6 @@ def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(fourth),hex(third))
 
 def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True, themuxout=False):
-    # For now use cs=2 for clk, later can use cs=3 on new board revision
     print('ADF4350 being set to %0.2f MHz' % freq)
     if themuxout:
         muxout=MuxOut.DGND
@@ -100,7 +99,7 @@ def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_double
         print("adf4350 reg", r, binprint(regs[r]), hex(regs[r]))
         fourbytes = inttobytes(regs[r])
         # for i in range(4): print(binprint(fourbytes[i]))
-        spicommand("ADF4350 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=2, nbyte=4)
+        spicommand("ADF4350 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=3, nbyte=4) # was cs=2 on alpha board v1.11
     spimode(0)
 
 def dooffset(val): #val goes from -100% to 100%
@@ -209,6 +208,7 @@ def setchanimpedance(chan, onemeg):
     else: return
     usb.send(bytes([10, controlbit, onemeg, 0, 0, 0, 0, 0]))
     usb.recv(4)
+    print("1M for chan",chan,onemeg)
 
 def setchanacdc(chan, ac):
     if chan==0: controlbit=1
@@ -289,6 +289,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
         self.ui.ohmCheck.stateChanged.connect(self.setohm)
         self.ui.oversampCheck.stateChanged.connect(self.setoversamp)
+        self.ui.attCheck.stateChanged.connect(self.setatt)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
@@ -340,6 +341,9 @@ class MainWindow(TemplateBaseClass):
 
     def setohm(self):
         setchanimpedance(self.selectedchannel,self.ui.ohmCheck.checkState() == QtCore.Qt.Checked) # will be True for 1M ohm, False for 50 ohm
+
+    def setatt(self):
+        setchanatt(self.selectedchannel,self.ui.attCheck.checkState() == QtCore.Qt.Checked) # will be True for attenuation on
 
     def setoversamp(self):
         setsplit(self.ui.oversampCheck.checkState() == QtCore.Qt.Checked) # will be True for oversampling, False otherwise
