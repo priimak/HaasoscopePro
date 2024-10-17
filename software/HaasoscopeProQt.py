@@ -186,21 +186,19 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 
-
 def setgain(value):
     spimode(0)
     # 00 to 20 is 26 to -6 dB, 0x1a is no gain
     spicommand("Amp Gain", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
 
 
-def fit_rise(x, top, left, right, bot):  # a function for fitting to find risetime
-    val = bot + (x - left) * (top - bot) / (right - left)
+def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
+    val = bot + (x - left) * (top - bot) / leftplus
     inbottom = (x <= left)
     val[inbottom] = bot
-    intop = (x >= right)
+    intop = (x >= (left+leftplus))
     val[intop] = top
     return val
-
 
 def setchanimpedance(chan, onemeg):
     if chan==0: controlbit=0
@@ -232,19 +230,16 @@ def setsplit(split):
     usb.recv(4)
     print("Split",split)
 
-
 def boardinbits():
     usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
     res = usb.recv(4)
     print("Board in bits", res[0], binprint(res[0]))
     return res[0]
 
-
 def cleanup():
     spimode(0)
     spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
     return 1
-
 
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
@@ -825,7 +820,7 @@ class MainWindow(TemplateBaseClass):
             #print("Overrange0", res[3], res[2], res[1], res[0])
             thestr += "\n" + "Overrange0 " + str(bytestoint(res))
 
-        p0 = [max(self.xydata[0][1]), self.vline-10, self.vline+10, min(self.xydata[0][1])]  # this is an initial guess
+        p0 = [max(self.xydata[0][1]), self.vline-10, 20, min(self.xydata[0][1])]  # this is an initial guess
         fitwidth = (self.max_x - self.min_x)* self.fitwidthfraction
         x2 = self.xydata[0][0][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]  # only fit in range
         y2 = self.xydata[0][1][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]
@@ -833,10 +828,10 @@ class MainWindow(TemplateBaseClass):
             warnings.simplefilter("ignore")
             popt, pcov = curve_fit(fit_rise, x2, y2, p0)
             perr = np.sqrt(np.diag(pcov))
-        risetime=0.8 * (popt[2] - popt[1])
-        risetimeerr = perr[1]+perr[2]
-        if risetimeerr<risetime: thestr +="\n"+"Rise time "+str(risetime.round(2))+"+-"+str(risetimeerr.round(2))+" "+self.units
-        else: thestr +="\n"+"Rise time not found"
+        risetime=0.8 * popt[2]
+        risetimeerr = perr[2]
+        #print(popt)
+        thestr +="\n"+"Rise time "+str(risetime.round(2))+"+-"+str(risetimeerr.round(2))+" "+self.units
 
         self.ui.textBrowser.setText(thestr)
 
