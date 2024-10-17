@@ -38440,10 +38440,10 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="104,3,78.74,203.2,FL2,VS+,2V5+,,,"/>
 <approved hash="104,3,78.74,198.12,FL2,VS-,2V5-,,,"/>
 <approved hash="104,3,269.24,127,J2,VCC,5V,,,"/>
-<approved hash="104,1,419.1,246.38,OUTSPLPIT,GND1,GND,,,"/>
-<approved hash="104,1,424.18,246.38,OUTSPLPIT,GND2,GND,,,"/>
-<approved hash="104,1,419.1,261.62,OUTSPLPIT,GND3,GND,,,"/>
-<approved hash="104,1,424.18,261.62,OUTSPLPIT,GND4,GND,,,"/>
+<approved hash="104,1,419.1,246.38,OUTSPLIT,GND1,GND,,,"/>
+<approved hash="104,1,424.18,246.38,OUTSPLIT,GND2,GND,,,"/>
+<approved hash="104,1,419.1,261.62,OUTSPLIT,GND3,GND,,,"/>
+<approved hash="104,1,424.18,261.62,OUTSPLIT,GND4,GND,,,"/>
 <approved hash="104,2,109.22,-88.9,FL1,VS+,2V5+,,,"/>
 <approved hash="104,2,109.22,-93.98,FL1,VS-,2V5-,,,"/>
 <approved hash="104,4,73.66,91.44,FL4,VS+,2V5+,,,"/>
