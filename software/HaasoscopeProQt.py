@@ -135,8 +135,8 @@ def board_setup(dopattern=False):
     spicommand("LCTRL",0x02,0x04,0x0a,False) # use LSYNC_N (software), 2's complement
     #spicommand("LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
 
-    #spicommand("INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
-    spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+    spicommand("INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
+    #spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
 
     if dooverrange:
         spicommand("OVR_CFG", 0x02, 0x13, 0x0f, False)  # overrange on
@@ -293,6 +293,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
+        self.ui.fwfBox.valueChanged.connect(self.fwf)
         self.db=False
         self.lastTime = time.time()
         self.fps = None
@@ -319,6 +320,10 @@ class MainWindow(TemplateBaseClass):
 
     def changeoffset(self):
         dooffset(self.ui.offsetBox.value())
+
+    def fwf(self):
+        self.fitwidthfraction=self.ui.fwfBox.value()/100.
+        print("fwf now",self.fitwidthfraction)
 
     themuxoutV = True
     def adfreset(self):
@@ -374,7 +379,7 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
-        #for i in range(1): self.dophase(4,1,pllnum=0,quiet=(i!=1-1)) # adjust phase of clkout
+        for i in range(4): self.dophase(4,0,pllnum=0,quiet=(i!=4-1)) # adjust phase of clkout
         #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
         #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
         #for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60
@@ -787,7 +792,7 @@ class MainWindow(TemplateBaseClass):
             time.sleep(.5)
             #oldbytes()
 
-        if self.nbadclkA == 2*self.expect_samples: # adjust phase by 90 deg
+        if self.nbadclkA == 2*self.expect_samples and self.phasec[0][4]<12: # adjust phase by 90 deg
             for i in range(6): self.dophase(4, 1, pllnum=0, quiet=(i != 6 - 1))  # adjust phase of clkout
 
         return rx_len
