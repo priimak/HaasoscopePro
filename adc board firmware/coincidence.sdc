@@ -33,8 +33,8 @@ set_max_delay -to [get_ports ftdi_*] 10
 set_min_delay -to [get_ports ftdi_*] 0
 set_max_delay -from [get_ports ftdi_*] 10
 set_min_delay -from [get_ports ftdi_*] 0
-set_max_delay -from [get_ports lvds*in*] 10
-set_min_delay -from [get_ports lvds*in*] 0
+set_max_delay -from [get_ports lvds*in*] 6
+set_min_delay -from [get_ports lvds*in*] 2
 set_max_delay -to [get_ports lvdsout*] 10
 set_min_delay -to [get_ports lvdsout*] 0
 set_max_delay -to [get_ports led* ] 10

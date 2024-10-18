@@ -117,7 +117,7 @@ def spimode(mode): # set SPI mode (polarity of clk and data)
     if debugspi: print("SPI mode now",spires[0])
 
 dooverrange=False
-tad = 50
+tad = 0
 def board_setup(dopattern=False):
     spimode(0)
     spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x00, False) # power up
@@ -400,8 +400,12 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
-        n=1 # amount to adjust clkout (positive)
-        for i in range(n): self.dophase(2,1,pllnum=0,quiet=(i!=n-1)) # adjust phase of clkout
+        n = -2  # amount to adjust (+ or -)
+        for i in range(abs(n)): self.dophase(2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of clkout
+        n = -2  # amount to adjust (+ or -)
+        for i in range(abs(n)): self.dophase(3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
+        n = 0  # amount to adjust (+ or -)
+        for i in range(abs(n)): self.dophase(4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
 
     def wheelEvent(self, event): #QWheelEvent
         if hasattr(event,"delta"):
