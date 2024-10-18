@@ -23586,7 +23586,6 @@ part number 2062-2P from STA</description>
 <part name="R176" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="5.1k"/>
 <part name="C151" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="C152" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
-<part name="C153" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="R177" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="GND170" library="supply1" deviceset="GND" device=""/>
 <part name="C154" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
@@ -26904,20 +26903,16 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="265.684" y="22.86" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
 <attribute name="VALUE" x="262.636" y="22.86" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
-<instance part="C153" gate="G$1" x="132.08" y="30.48" smashed="yes" rot="R270">
-<attribute name="NAME" x="133.604" y="27.94" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="130.556" y="27.94" size="1.016" layer="96" font="vector" rot="R270"/>
+<instance part="R177" gate="G$1" x="167.64" y="220.98" smashed="yes" rot="R180">
+<attribute name="NAME" x="168.656" y="218.44" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
+<attribute name="VALUE" x="168.656" y="223.52" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
-<instance part="R177" gate="G$1" x="139.7" y="25.4" smashed="yes" rot="R180">
-<attribute name="NAME" x="140.716" y="22.86" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="140.716" y="27.94" size="1.016" layer="96" font="vector" rot="R270"/>
+<instance part="GND170" gate="1" x="167.64" y="213.36" smashed="yes">
+<attribute name="VALUE" x="165.1" y="210.82" size="1.778" layer="96"/>
 </instance>
-<instance part="GND170" gate="1" x="139.7" y="17.78" smashed="yes">
-<attribute name="VALUE" x="137.16" y="15.24" size="1.778" layer="96"/>
-</instance>
-<instance part="C154" gate="G$1" x="147.32" y="30.48" smashed="yes" rot="R270">
-<attribute name="NAME" x="148.844" y="27.94" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="145.796" y="27.94" size="1.016" layer="96" font="vector" rot="R270"/>
+<instance part="C154" gate="G$1" x="175.26" y="226.06" smashed="yes" rot="R270">
+<attribute name="NAME" x="176.784" y="223.52" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="173.736" y="223.52" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
 <instance part="C155" gate="G$1" x="101.6" y="96.52" smashed="yes">
 <attribute name="NAME" x="104.14" y="98.044" size="1.016" layer="95" font="vector" align="top-left"/>
@@ -27299,14 +27294,14 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="REF_CLK" class="0">
 <segment>
-<wire x1="205.74" y1="200.66" x2="205.74" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="C154" gate="G$1" pin="P$1"/>
+<wire x1="177.8" y1="226.06" x2="205.74" y2="226.06" width="0.1524" layer="91"/>
+<label x="185.42" y="226.06" size="1.778" layer="95"/>
+<wire x1="205.74" y1="200.66" x2="205.74" y2="198.12" width="0.1524" layer="91"/>
 <label x="205.74" y="190.5" size="1.778" layer="95" rot="R90"/>
 <pinref part="U2" gate="G$1" pin="REFIN"/>
-</segment>
-<segment>
-<pinref part="C154" gate="G$1" pin="P$1"/>
-<wire x1="149.86" y1="30.48" x2="170.18" y2="30.48" width="0.1524" layer="91"/>
-<label x="157.48" y="30.48" size="1.778" layer="95"/>
+<wire x1="205.74" y1="198.12" x2="205.74" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="226.06" x2="205.74" y2="200.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="CLK_P" class="6">
@@ -27325,19 +27320,12 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="CLKOUT" class="5">
 <segment>
-<wire x1="109.22" y1="30.48" x2="129.54" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="C153" gate="G$1" pin="P$2"/>
-<label x="109.22" y="30.48" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$23" class="0">
-<segment>
-<pinref part="C153" gate="G$1" pin="P$1"/>
+<wire x1="137.16" y1="226.06" x2="167.64" y2="226.06" width="0.1524" layer="91"/>
+<label x="137.16" y="226.06" size="1.778" layer="95"/>
 <pinref part="R177" gate="G$1" pin="P$2"/>
-<wire x1="134.62" y1="30.48" x2="139.7" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="C154" gate="G$1" pin="P$2"/>
-<wire x1="139.7" y1="30.48" x2="144.78" y2="30.48" width="0.1524" layer="91"/>
-<junction x="139.7" y="30.48"/>
+<wire x1="167.64" y1="226.06" x2="172.72" y2="226.06" width="0.1524" layer="91"/>
+<junction x="167.64" y="226.06"/>
 </segment>
 </net>
 <net name="N$24" class="0">
