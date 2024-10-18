@@ -400,8 +400,8 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
-        n=1 # amount to adjust clkout (plus or munus)
-        for i in range(n): self.dophase(4,n>0,pllnum=0,quiet=(i!=abs(n)-1)) # adjust phase of clkout
+        n=1 # amount to adjust clkout (positive)
+        for i in range(n): self.dophase(2,1,pllnum=0,quiet=(i!=n-1)) # adjust phase of clkout
 
     def wheelEvent(self, event): #QWheelEvent
         if hasattr(event,"delta"):
@@ -806,14 +806,12 @@ class MainWindow(TemplateBaseClass):
                         else:
                             samp = s * 40 +39 - n
                             self.xydata[0][1][samp] = val # actually will need to invert only input B, since A is already swapped P<->N on the board
-
         if self.debug:
             time.sleep(.5)
             #oldbytes()
-
         if self.nbadclkA == 2*self.expect_samples and self.phasec[0][4]<12: # adjust phase by 90 deg
-            for i in range(6): self.dophase(4, 1, pllnum=0, quiet=(i != 6 - 1))  # adjust phase of clkout
-
+            n = 6  # amount to adjust clkout (positive)
+            for i in range(n): self.dophase(2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
         return rx_len
 
     fitwidthfraction=0.2

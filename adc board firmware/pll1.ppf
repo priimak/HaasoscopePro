@@ -13,6 +13,8 @@
 <pin name="activeclock" direction="output" scope="external"  />
 <pin name="c0" direction="output" scope="external" source="clock"  />
 <pin name="c1" direction="output" scope="external" source="clock"  />
+<pin name="c2" direction="output" scope="external" source="clock"  />
+<pin name="c3" direction="output" scope="external" source="clock"  />
 <pin name="c4" direction="output" scope="external" source="clock"  />
 <pin name="clkbad0" direction="output" scope="external"  />
 <pin name="clkbad1" direction="output" scope="external"  />
