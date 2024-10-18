@@ -261,7 +261,7 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     debugstrobe = False
     dofast = False
-    xydata_overlapped=False
+    xydata_overlapped=True
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger falling, 2 threshold trigger rising, ...
@@ -584,6 +584,7 @@ class MainWindow(TemplateBaseClass):
             self.units = "s"
         self.ui.plot.setLabel('bottom', "Time ("+self.units+")")
         if self.xydata_overlapped:
+            self.max_x = self.max_x/4
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         else:
@@ -809,7 +810,7 @@ class MainWindow(TemplateBaseClass):
         if self.debug:
             time.sleep(.5)
             #oldbytes()
-        if self.nbadclkA == 2*self.expect_samples and self.phasec[0][4]<12: # adjust phase by 90 deg
+        if self.nbadclkA == 2*self.expect_samples and self.phasec[0][2]<12: # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
             for i in range(n): self.dophase(2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
         return rx_len
