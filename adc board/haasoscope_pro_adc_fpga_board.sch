@@ -23968,6 +23968,7 @@ part number 2062-2P from STA</description>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R208" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="JST_FAN" library="SparkFun-Connectors" deviceset="M02" device="PTH" value="Fan"/>
+<part name="C51" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -26943,6 +26944,10 @@ for CL05A105KA5NQNC</text>
 <instance part="GND173" gate="1" x="114.3" y="81.28" smashed="yes">
 <attribute name="VALUE" x="111.76" y="78.74" size="1.778" layer="96"/>
 </instance>
+<instance part="C51" gate="G$1" x="160.02" y="226.06" smashed="yes" rot="R270">
+<attribute name="NAME" x="161.544" y="223.52" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="158.496" y="223.52" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -27320,18 +27325,25 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="CLKOUT" class="5">
 <segment>
-<wire x1="137.16" y1="226.06" x2="167.64" y2="226.06" width="0.1524" layer="91"/>
 <label x="137.16" y="226.06" size="1.778" layer="95"/>
-<pinref part="R177" gate="G$1" pin="P$2"/>
-<pinref part="C154" gate="G$1" pin="P$2"/>
-<wire x1="167.64" y1="226.06" x2="172.72" y2="226.06" width="0.1524" layer="91"/>
-<junction x="167.64" y="226.06"/>
+<wire x1="137.16" y1="226.06" x2="157.48" y2="226.06" width="0.1524" layer="91"/>
+<pinref part="C51" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="N$24" class="0">
 <segment>
 <pinref part="R185" gate="G$1" pin="P$2"/>
 <pinref part="C157" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="N$11" class="5">
+<segment>
+<pinref part="C154" gate="G$1" pin="P$2"/>
+<pinref part="R177" gate="G$1" pin="P$2"/>
+<wire x1="167.64" y1="226.06" x2="172.72" y2="226.06" width="0.1524" layer="91"/>
+<junction x="167.64" y="226.06"/>
+<wire x1="162.56" y1="226.06" x2="167.64" y2="226.06" width="0.1524" layer="91"/>
+<pinref part="C51" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 </nets>
