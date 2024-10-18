@@ -34,7 +34,6 @@ module command_processor (
 	output reg [9:0]	ram_wr_address=0, ram_rd_address=0,
 	output reg [559:0] lvdsbitsout, //output bits to fifo
 	input wire [559:0] lvdsbitsin, // input bits from fifo
-	input wire [19:0] lvdsbits_o2, lvdsbits_other,
 	
 	output reg[2:0] phasecounterselect, // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
 	output reg phaseupdown=1, // Dynamic phase shift direction; 1:UP, 0:DOWN. Registered in the PLL on the rising edge of scanclk.
@@ -112,18 +111,18 @@ always @ (posedge clklvds) begin
 	for (i=0;i<10;i=i+2) begin // account for switching of bits from DDR in lvds reciever?
 		samplevalue[i]  <= {lvds1bits[110+i+1],lvds1bits[100+i+1],lvds1bits[90+i+1],lvds1bits[80+i+1],lvds1bits[70+i+1],lvds1bits[60+i+1],lvds1bits[50+i+1],lvds1bits[40+i+1],lvds1bits[30+i+1],lvds1bits[20+i+1],lvds1bits[10+i+1],lvds1bits[0+i+1]};
 		samplevalue[i+1]  <= {lvds1bits[110+i],lvds1bits[100+i],lvds1bits[90+i],lvds1bits[80+i],lvds1bits[70+i],lvds1bits[60+i],lvds1bits[50+i],lvds1bits[40+i],lvds1bits[30+i],lvds1bits[20+i],lvds1bits[10+i],lvds1bits[0+i]};
-		sampleclkstr[i] <= {lvds1bits[130+i],lvds1bits[120+i]};
-		sampleclkstr[i+1] <= {lvds1bits[130+i+1],lvds1bits[120+i+1]};
-		samplevalue[10+i]  <= {lvds2bits[110+i+1],lvds2bits[100+i+1],lvds2bits[90+i+1],lvds2bits[80+i+1],lvdsbits_other[0+i+1],lvdsbits_other[10+i+1],lvds2bits[50+i+1],lvds2bits[40+i+1],lvds2bits[30+i+1],lvds2bits[20+i+1],lvds2bits[10+i+1],lvds2bits[0+i+1]};
-		samplevalue[10+i+1]  <= {lvds2bits[110+i],lvds2bits[100+i],lvds2bits[90+i],lvds2bits[80+i],lvdsbits_other[0+i],lvdsbits_other[10+i],lvds2bits[50+i],lvds2bits[40+i],lvds2bits[30+i],lvds2bits[20+i],lvds2bits[10+i],lvds2bits[0+i]};
-		sampleclkstr[10+i] <= {lvds2bits[130+i],lvds2bits[120+i]};
-		sampleclkstr[10+i+1] <= {lvds2bits[130+i+1],lvds2bits[120+i+1]};
+		samplevalue[10+i]  <= {lvds2bits[110+i+1],lvds2bits[100+i+1],lvds2bits[90+i+1],lvds2bits[80+i+1],lvds2bits[70+i+1],lvds2bits[60+i+1],lvds2bits[50+i+1],lvds2bits[40+i+1],lvds2bits[30+i+1],lvds2bits[20+i+1],lvds2bits[10+i+1],lvds2bits[0+i+1]};
+		samplevalue[10+i+1]  <= {lvds2bits[110+i],lvds2bits[100+i],lvds2bits[90+i],lvds2bits[80+i],lvds2bits[70+i],lvds2bits[60+i],lvds2bits[50+i],lvds2bits[40+i],lvds2bits[30+i],lvds2bits[20+i],lvds2bits[10+i],lvds2bits[0+i]};
 		samplevalue[20+i]  <= {lvds3bits[110+i+1],lvds3bits[100+i+1],lvds3bits[90+i+1],lvds3bits[80+i+1],lvds3bits[70+i+1],lvds3bits[60+i+1],lvds3bits[50+i+1],lvds3bits[40+i+1],lvds3bits[30+i+1],lvds3bits[20+i+1],lvds3bits[10+i+1],lvds3bits[0+i+1]};
 		samplevalue[20+i+1]  <= {lvds3bits[110+i],lvds3bits[100+i],lvds3bits[90+i],lvds3bits[80+i],lvds3bits[70+i],lvds3bits[60+i],lvds3bits[50+i],lvds3bits[40+i],lvds3bits[30+i],lvds3bits[20+i],lvds3bits[10+i],lvds3bits[0+i]};
+		samplevalue[30+i]  <= {lvds4bits[110+i+1],lvds4bits[100+i+1],lvds4bits[90+i+1],lvds4bits[80+i+1],lvds4bits[70+i+1],lvds4bits[60+i+1],lvds4bits[50+i+1],lvds4bits[40+i+1],lvds4bits[30+i+1],lvds4bits[20+i+1],lvds4bits[10+i+1],lvds4bits[0+i+1]};
+		samplevalue[30+i+1]  <= {lvds4bits[110+i],lvds4bits[100+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
+		sampleclkstr[i] <= {lvds1bits[130+i],lvds1bits[120+i]};
+		sampleclkstr[i+1] <= {lvds1bits[130+i+1],lvds1bits[120+i+1]};
+		sampleclkstr[10+i] <= {lvds2bits[130+i],lvds2bits[120+i]};
+		sampleclkstr[10+i+1] <= {lvds2bits[130+i+1],lvds2bits[120+i+1]};
 		sampleclkstr[20+i] <= {lvds3bits[130+i],lvds3bits[120+i]};
 		sampleclkstr[20+i+1] <= {lvds3bits[130+i+1],lvds3bits[120+i+1]};
-		samplevalue[30+i]  <= {lvdsbits_o2[0+i+1],lvds4bits[100+i+1],lvds4bits[90+i+1],lvds4bits[80+i+1],lvds4bits[70+i+1],lvds4bits[60+i+1],lvds4bits[50+i+1],lvds4bits[40+i+1],lvds4bits[30+i+1],lvds4bits[20+i+1],lvds4bits[10+i+1],lvds4bits[0+i+1]};
-		samplevalue[30+i+1]  <= {lvdsbits_o2[0+i],lvds4bits[100+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
 		sampleclkstr[30+i] <= {lvds4bits[130+i],lvds4bits[120+i]};
 		sampleclkstr[30+i+1] <= {lvds4bits[130+i+1],lvds4bits[120+i+1]};
 	end

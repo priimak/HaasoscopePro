@@ -10,8 +10,6 @@ pll1	pll1_inst (
 	.activeclock ( activeclock_sig ),
 	.c0 ( c0_sig ),
 	.c1 ( c1_sig ),
-	.c2 ( c2_sig ),
-	.c3 ( c3_sig ),
 	.c4 ( c4_sig ),
 	.clkbad0 ( clkbad0_sig ),
 	.clkbad1 ( clkbad1_sig ),

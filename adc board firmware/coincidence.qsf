@@ -322,10 +322,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to spimisos[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clkout2
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other[1]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other[0]
-set_location_assignment PIN_N19 -to lvdsin_other[0]
-set_location_assignment PIN_N20 -to "lvdsin_other[0](n)"
-set_location_assignment PIN_M19 -to lvdsin_other[1]
-set_location_assignment PIN_M20 -to "lvdsin_other[1](n)"
 set_location_assignment PIN_AA7 -to lvds3in[10]
 set_location_assignment PIN_AB7 -to "lvds3in[10](n)"
 set_location_assignment PIN_AA20 -to lvds4in[7]
@@ -342,8 +338,6 @@ set_location_assignment PIN_AA16 -to lvds4in[9]
 set_location_assignment PIN_AB16 -to "lvds4in[9](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other2[1]
 set_instance_assignment -name IO_STANDARD LVDS -to lvdsin_other2[0]
-set_location_assignment PIN_AA14 -to lvdsin_other2[0]
-set_location_assignment PIN_AB14 -to "lvdsin_other2[0](n)"
 set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE BALANCED
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE 12.5%
 set_global_assignment -name POWER_USE_INPUT_FILES OFF
@@ -387,8 +381,12 @@ set_location_assignment PIN_F2 -to lvdsout_spare[0]
 set_location_assignment PIN_F1 -to "lvdsout_spare[0](n)"
 set_location_assignment PIN_H2 -to lvdsout_spare[1]
 set_location_assignment PIN_H1 -to "lvdsout_spare[1](n)"
-set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to clkout
-set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to clkout2
+set_location_assignment PIN_AA14 -to lvds4in[11]
+set_location_assignment PIN_AB14 -to "lvds4in[11](n)"
+set_location_assignment PIN_M19 -to lvds2in[6]
+set_location_assignment PIN_M20 -to "lvds2in[6](n)"
+set_location_assignment PIN_N19 -to lvds2in[7]
+set_location_assignment PIN_N20 -to "lvds2in[7](n)"
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
 set_global_assignment -name VERILOG_FILE command_processor.v
