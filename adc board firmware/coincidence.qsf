@@ -61,7 +61,7 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
 set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
-set_global_assignment -name OPTIMIZATION_MODE BALANCED
+set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
 set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
@@ -387,6 +387,8 @@ set_location_assignment PIN_F2 -to lvdsout_spare[0]
 set_location_assignment PIN_F1 -to "lvdsout_spare[0](n)"
 set_location_assignment PIN_H2 -to lvdsout_spare[1]
 set_location_assignment PIN_H1 -to "lvdsout_spare[1](n)"
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to clkout
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to clkout2
 set_global_assignment -name BDF_FILE coincidence.bdf
 set_global_assignment -name SDC_FILE coincidence.sdc
 set_global_assignment -name VERILOG_FILE command_processor.v

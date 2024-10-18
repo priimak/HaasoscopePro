@@ -388,7 +388,7 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
-        for i in range(4): self.dophase(4,0,pllnum=0,quiet=(i!=4-1)) # adjust phase of clkout
+        #for i in range(4): self.dophase(4,0,pllnum=0,quiet=(i!=4-1)) # adjust phase of clkout
         #self.dophase(2, 1, pllnum=0) # adjust phase of pll 0 c2 (lvds2 6 7)
         #self.dophase(3, 0, pllnum=0) # adjust phase of pll 0 c3 (lvds4 11)
         #for i in range(25): self.dophase(0, 0, pllnum=2, quiet=(i!=25-1))  # adjust phase of ftdi_clk60
