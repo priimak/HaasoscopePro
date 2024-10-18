@@ -116,6 +116,7 @@ def spimode(mode): # set SPI mode (polarity of clk and data)
     if debugspi: print("SPI mode now",spires[0])
 
 dooverrange=False
+tad = 20
 def board_setup(dopattern=False):
     spimode(0)
     spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x00, False) # power up
@@ -137,6 +138,11 @@ def board_setup(dopattern=False):
 
     spicommand("INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
     #spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+
+    #spicommand("TAD", 0x02, 0xB7, 0x01, False)  # invert clk
+    spicommand("TAD", 0x02, 0xB7, 0x00, False) # don't invert clk
+
+    spicommand("TAD", 0x02, 0xB6, tad, False) # adjust TAD (time of ADC relative to clk)
 
     if dooverrange:
         spicommand("OVR_CFG", 0x02, 0x13, 0x0f, False)  # overrange on
@@ -190,7 +196,6 @@ def setgain(value):
     spimode(0)
     # 00 to 20 is 26 to -6 dB, 0x1a is no gain
     spicommand("Amp Gain", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
-
 
 def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
     val = bot + (x - left) * (top - bot) / leftplus
@@ -303,6 +308,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
         self.ui.fwfBox.valueChanged.connect(self.fwf)
+        self.ui.tadBox.valueChanged.connect(self.setTAD)
         self.db=False
         self.lastTime = time.time()
         self.fps = None
@@ -333,6 +339,10 @@ class MainWindow(TemplateBaseClass):
     def fwf(self):
         self.fitwidthfraction=self.ui.fwfBox.value()/100.
         print("fwf now",self.fitwidthfraction)
+
+    def setTAD(self):
+        self.tad = self.ui.tadBox.value()
+        spicommand("TAD", 0x02, 0xB6, self.tad, False)
 
     themuxoutV = True
     def adfreset(self):
@@ -820,18 +830,19 @@ class MainWindow(TemplateBaseClass):
             #print("Overrange0", res[3], res[2], res[1], res[0])
             thestr += "\n" + "Overrange0 " + str(bytestoint(res))
 
-        p0 = [max(self.xydata[0][1]), self.vline-10, 20, min(self.xydata[0][1])]  # this is an initial guess
-        fitwidth = (self.max_x - self.min_x)* self.fitwidthfraction
-        x2 = self.xydata[0][0][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]  # only fit in range
-        y2 = self.xydata[0][1][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore")
-            popt, pcov = curve_fit(fit_rise, x2, y2, p0)
-            perr = np.sqrt(np.diag(pcov))
-        risetime=0.8 * popt[2]
-        risetimeerr = perr[2]
-        #print(popt)
-        thestr +="\n"+"Rise time "+str(risetime.round(2))+"+-"+str(risetimeerr.round(2))+" "+self.units
+        if not self.xydata_overlapped:
+            p0 = [max(self.xydata[0][1]), self.vline-10, 20, min(self.xydata[0][1])]  # this is an initial guess
+            fitwidth = (self.max_x - self.min_x)* self.fitwidthfraction
+            x2 = self.xydata[0][0][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]  # only fit in range
+            y2 = self.xydata[0][1][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                popt, pcov = curve_fit(fit_rise, x2, y2, p0)
+                perr = np.sqrt(np.diag(pcov))
+            risetime=0.8 * popt[2]
+            risetimeerr = perr[2]
+            #print(popt)
+            thestr +="\n"+"Rise time "+str(risetime.round(2))+"+-"+str(risetimeerr.round(2))+" "+self.units
 
         self.ui.textBrowser.setText(thestr)
 
