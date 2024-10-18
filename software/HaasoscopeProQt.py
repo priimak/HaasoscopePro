@@ -102,11 +102,12 @@ def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_double
         spicommand("ADF4350 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=3, nbyte=4) # was cs=2 on alpha board v1.11
     spimode(0)
 
-def dooffset(val): #val goes from -100% to 100%
+def dooffset(chan, val): #val goes from -100% to 100%
     spimode(1)
     dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
     #print("dacval is", dacval)
-    spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    if chan==1: spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    if chan==0: spicommand("DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(0)
 
 debugspi=False
@@ -187,7 +188,8 @@ def board_setup(dopattern=False):
     spicommand("DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
     spicommand("DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
     spimode(0)
-    dooffset(0)
+    dooffset(0,0)
+    dooffset(1,0)
 
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
@@ -334,7 +336,7 @@ class MainWindow(TemplateBaseClass):
             else:   self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
 
     def changeoffset(self):
-        dooffset(self.ui.offsetBox.value())
+        dooffset(self.selectedchannel, self.ui.offsetBox.value())
 
     def fwf(self):
         self.fitwidthfraction=self.ui.fwfBox.value()/100.
@@ -798,12 +800,12 @@ class MainWindow(TemplateBaseClass):
                             # else:
                             #     samp = samp + 1
                             if self.xydata_overlapped:
-                                self.xydata[chan][1][samp] = -val
+                                self.xydata[chan][1][samp] = val
                             else:
-                                self.xydata[0][1][chan+ 4*samp] = -val
+                                self.xydata[0][1][chan+ 4*samp] = val
                         else:
                             samp = s * 40 +39 - n
-                            self.xydata[0][1][samp] = -val
+                            self.xydata[0][1][samp] = val # actually will need to invert only input B, since A is already swapped P<->N on the board
 
         if self.debug:
             time.sleep(.5)
