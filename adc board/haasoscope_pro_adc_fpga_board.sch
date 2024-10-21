@@ -23447,7 +23447,6 @@ part number 2062-2P from STA</description>
 <part name="R160" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="SUPPLY86" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY87" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY88" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="Q7" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" deviceset="SMD-TRANSISTORS-NPN-25V-500MW-S8050(SOT-23)" device="" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050">
 <attribute name="LCSC" value="C7420370"/>
 </part>
@@ -23829,7 +23828,6 @@ part number 2062-2P from STA</description>
 <part name="R136" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
 <part name="SUPPLY41" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY42" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY43" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="Q4" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" deviceset="SMD-TRANSISTORS-NPN-25V-500MW-S8050(SOT-23)" device="" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050">
 <attribute name="LCSC" value="C7420370"/>
 </part>
@@ -23946,9 +23944,7 @@ part number 2062-2P from STA</description>
 <part name="R204" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1M"/>
 <part name="R205" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1M"/>
 <part name="R42" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1M"/>
-<part name="R137" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="?50?"/>
 <part name="R158" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1M"/>
-<part name="R161" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="?50?"/>
 <part name="LED1" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="LED2" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="LED3" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
@@ -24034,7 +24030,6 @@ for CL05A105KA5NQNC</text>
 </instance>
 <instance part="SUPPLY86" gate="GND" x="271.78" y="259.08" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY87" gate="GND" x="96.52" y="157.48" smashed="yes"/>
-<instance part="SUPPLY88" gate="GND" x="63.5" y="195.58" smashed="yes" rot="MR0"/>
 <instance part="Q7" gate="G$1" x="99.06" y="137.16" smashed="yes">
 <attribute name="NAME" x="96.52" y="139.7" size="1.27" layer="95" ratio="10"/>
 <attribute name="VALUE" x="102.87" y="139.7" size="1.27" layer="96" ratio="10"/>
@@ -24134,10 +24129,6 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="64.516" y="231.14" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="64.516" y="236.22" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
-<instance part="R161" gate="G$1" x="63.5" y="203.2" smashed="yes" rot="R180">
-<attribute name="NAME" x="64.516" y="200.66" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="64.516" y="205.74" size="1.016" layer="96" font="vector" rot="R270"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -24232,10 +24223,6 @@ for CL05A105KA5NQNC</text>
 <wire x1="419.1" y1="261.62" x2="424.18" y2="261.62" width="0.1524" layer="91"/>
 <junction x="419.1" y="261.62"/>
 <junction x="424.18" y="261.62"/>
-</segment>
-<segment>
-<pinref part="SUPPLY88" gate="GND" pin="GND"/>
-<pinref part="R161" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="2V5+" class="1">
@@ -24356,12 +24343,9 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="50PATH" class="0">
 <segment>
-<wire x1="48.26" y1="208.28" x2="63.5" y2="208.28" width="0.1524" layer="91"/>
 <label x="50.8" y="208.28" size="1.778" layer="95"/>
 <label x="127" y="208.28" size="1.778" layer="95"/>
-<pinref part="R161" gate="G$1" pin="P$2"/>
-<wire x1="63.5" y1="208.28" x2="139.7" y2="208.28" width="0.1524" layer="91"/>
-<junction x="63.5" y="208.28"/>
+<wire x1="48.26" y1="208.28" x2="139.7" y2="208.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="78.74" y1="175.26" x2="66.04" y2="175.26" width="0.1524" layer="91"/>
@@ -25530,7 +25514,6 @@ for CL05A105KA5NQNC</text>
 </instance>
 <instance part="SUPPLY41" gate="GND" x="243.84" y="218.44" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY42" gate="GND" x="68.58" y="116.84" smashed="yes"/>
-<instance part="SUPPLY43" gate="GND" x="35.56" y="154.94" smashed="yes" rot="MR0"/>
 <instance part="Q4" gate="G$1" x="71.12" y="96.52" smashed="yes">
 <attribute name="NAME" x="68.58" y="99.06" size="1.27" layer="95" ratio="10"/>
 <attribute name="VALUE" x="74.93" y="99.06" size="1.27" layer="96" ratio="10"/>
@@ -25595,10 +25578,6 @@ for CL05A105KA5NQNC</text>
 <instance part="R42" gate="G$1" x="35.56" y="193.04" smashed="yes" rot="R180">
 <attribute name="NAME" x="36.576" y="190.5" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="36.576" y="195.58" size="1.016" layer="96" font="vector" rot="R270"/>
-</instance>
-<instance part="R137" gate="G$1" x="35.56" y="162.56" smashed="yes" rot="R180">
-<attribute name="NAME" x="36.576" y="160.02" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="36.576" y="165.1" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -25668,10 +25647,6 @@ for CL05A105KA5NQNC</text>
 <segment>
 <pinref part="SUPPLY60" gate="GND" pin="GND"/>
 <pinref part="J2" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="SUPPLY43" gate="GND" pin="GND"/>
-<pinref part="R137" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="2V5+" class="1">
@@ -25792,12 +25767,9 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="50PATH2" class="0">
 <segment>
-<wire x1="20.32" y1="167.64" x2="35.56" y2="167.64" width="0.1524" layer="91"/>
 <label x="22.86" y="167.64" size="1.778" layer="95"/>
 <label x="99.06" y="167.64" size="1.778" layer="95"/>
-<pinref part="R137" gate="G$1" pin="P$2"/>
-<wire x1="35.56" y1="167.64" x2="111.76" y2="167.64" width="0.1524" layer="91"/>
-<junction x="35.56" y="167.64"/>
+<wire x1="20.32" y1="167.64" x2="111.76" y2="167.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="50.8" y1="134.62" x2="38.1" y2="134.62" width="0.1524" layer="91"/>
