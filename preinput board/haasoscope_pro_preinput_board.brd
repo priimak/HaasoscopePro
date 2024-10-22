@@ -1689,46 +1689,6 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </package>
 </packages>
 </library>
-<library name="relay" urn="urn:adsk.eagle:library:339">
-<description>&lt;b&gt;Relays&lt;/b&gt;&lt;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Eichhoff
-&lt;li&gt;Finder
-&lt;li&gt;Fujitsu
-&lt;li&gt;HAMLIN
-&lt;li&gt;OMRON
-&lt;li&gt;Matsushita
-&lt;li&gt;NAiS
-&lt;li&gt;Siemens
-&lt;li&gt;Schrack
-&lt;/ul&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="SOP04" urn="urn:adsk.eagle:footprint:24056/1" library_version="1">
-<description>&lt;b&gt;SOP 04 - 4.3x4.4mm RM 2.54mm&lt;/b&gt; AQY21, AQY22, AQY61 Series NAiS&lt;p&gt;Source: http://www.mew-europe.com/..  pti_en.pdf</description>
-<wire x1="-2" y1="2.075" x2="2" y2="2.075" width="0.254" layer="21"/>
-<wire x1="2" y1="2.075" x2="2" y2="-2.075" width="0.254" layer="21"/>
-<wire x1="2" y1="-2.075" x2="-2" y2="-2.075" width="0.254" layer="21"/>
-<wire x1="-2" y1="-2.075" x2="-2" y2="2.075" width="0.254" layer="21"/>
-<circle x="-1.27" y="-1.524" radius="0.254" width="0" layer="21"/>
-<smd name="1" x="-1.27" y="-3" dx="0.8" dy="1.2" layer="1"/>
-<smd name="2" x="1.27" y="-3" dx="0.8" dy="1.2" layer="1"/>
-<smd name="3" x="1.27" y="3" dx="0.8" dy="1.2" layer="1"/>
-<smd name="4" x="-1.27" y="3" dx="0.8" dy="1.2" layer="1"/>
-<text x="-2.54" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="3.81" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.5" y1="-3.35" x2="-1" y2="-2.1" layer="51"/>
-<rectangle x1="1.04" y1="-3.35" x2="1.54" y2="-2.1" layer="51"/>
-<rectangle x1="1" y1="2.1" x2="1.5" y2="3.35" layer="51"/>
-<rectangle x1="-1.54" y1="2.1" x2="-1.04" y2="3.35" layer="51"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="SOP04" urn="urn:adsk.eagle:package:24376/1" type="box" library_version="1">
-<description>SOP 04 - 4.3x4.4mm RM 2.54mm AQY21, AQY22, AQY61 Series NAiSSource: http://www.mew-europe.com/..  pti_en.pdf</description>
-</package3d>
-</packages3d>
-</library>
 <library name="Seeed-Transistor" urn="urn:adsk.eagle:library:477">
 <packages>
 <package name="SOT-23" urn="urn:adsk.eagle:footprint:33010/1" library_version="1">
@@ -6963,6 +6923,80 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </package>
 </packages>
 </library>
+<library name="G6K-2F-RF-T-TR03_DC5">
+<description>&lt;High Frequency / RF Relays 3GHz SpSavGrd NoLtch DPDT 5DC 100mW TR300&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="G6K2FRFTTR03DC5">
+<description>&lt;b&gt;G6K-2F-RF-T-TR03 DC5-1&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-5.4" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="2" x="-2.2" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="3" x="0" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="4" x="2.2" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="5" x="2.2" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="6" x="0" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="7" x="-2.2" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="8" x="-5.4" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP1" x="-6.75" y="-3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
+<smd name="MP2" x="-3.3" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP3" x="-1.1" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP4" x="1.1" y="-3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP5" x="3.55" y="-3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
+<smd name="MP6" x="3.55" y="3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
+<smd name="MP7" x="1.1" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP8" x="-1.1" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP9" x="-3.3" y="3" dx="4.8" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP10" x="-6.75" y="3" dx="4.8" dy="1.15" layer="1" rot="R90"/>
+<text x="-1.6" y="-0.35" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="-1.6" y="-0.35" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-6.95" y1="3.45" x2="3.75" y2="3.45" width="0.2" layer="51"/>
+<wire x1="3.75" y1="3.45" x2="3.75" y2="-3.45" width="0.2" layer="51"/>
+<wire x1="3.75" y1="-3.45" x2="-6.95" y2="-3.45" width="0.2" layer="51"/>
+<wire x1="-6.95" y1="-3.45" x2="-6.95" y2="3.45" width="0.2" layer="51"/>
+<wire x1="-8.325" y1="6.4" x2="5.125" y2="6.4" width="0.1" layer="51"/>
+<wire x1="5.125" y1="6.4" x2="5.125" y2="-7.1" width="0.1" layer="51"/>
+<wire x1="5.125" y1="-7.1" x2="-8.325" y2="-7.1" width="0.1" layer="51"/>
+<wire x1="-8.325" y1="-7.1" x2="-8.325" y2="6.4" width="0.1" layer="51"/>
+<wire x1="-5.6" y1="-6" x2="-5.6" y2="-6" width="0.2" layer="21"/>
+<wire x1="-5.6" y1="-6" x2="-5.4" y2="-6" width="0.2" layer="21" curve="180"/>
+<wire x1="-5.4" y1="-6" x2="-5.4" y2="-6" width="0.2" layer="21"/>
+<wire x1="-5.4" y1="-6" x2="-5.6" y2="-6" width="0.2" layer="21" curve="180"/>
+<wire x1="3.75" y1="0.25" x2="3.75" y2="-0.35" width="0.1" layer="21"/>
+<wire x1="-4.6" y1="-3.45" x2="-4.2" y2="-3.45" width="0.1" layer="21"/>
+<wire x1="-4.6" y1="3.45" x2="-4.2" y2="3.45" width="0.1" layer="21"/>
+<wire x1="-6.95" y1="0.2" x2="-6.95" y2="-0.2" width="0.1" layer="21"/>
+</package>
+</packages>
+</library>
+<library name="TLP3440_TP_F">
+<description>&lt;Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="TLP3440TPF">
+<description>&lt;b&gt;11-2D1A_2022&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-0.4" y="-0.875" dx="1" dy="0.55" layer="1" rot="R90"/>
+<smd name="2" x="0.4" y="-0.875" dx="1" dy="0.55" layer="1" rot="R90"/>
+<smd name="3" x="0.4" y="0.875" dx="1" dy="0.55" layer="1" rot="R90"/>
+<smd name="4" x="-0.4" y="0.875" dx="1" dy="0.55" layer="1" rot="R90"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-0.725" y1="1.225" x2="0.725" y2="1.225" width="0.1" layer="51"/>
+<wire x1="0.725" y1="1.225" x2="0.725" y2="-1.225" width="0.1" layer="51"/>
+<wire x1="0.725" y1="-1.225" x2="-0.725" y2="-1.225" width="0.1" layer="51"/>
+<wire x1="-0.725" y1="-1.225" x2="-0.725" y2="1.225" width="0.1" layer="51"/>
+<wire x1="-1.725" y1="2.375" x2="1.725" y2="2.375" width="0.1" layer="51"/>
+<wire x1="1.725" y1="2.375" x2="1.725" y2="-2.375" width="0.1" layer="51"/>
+<wire x1="1.725" y1="-2.375" x2="-1.725" y2="-2.375" width="0.1" layer="51"/>
+<wire x1="-1.725" y1="-2.375" x2="-1.725" y2="2.375" width="0.1" layer="51"/>
+<wire x1="-0.4" y1="-1.8" x2="-0.4" y2="-1.8" width="0.1" layer="21"/>
+<wire x1="-0.4" y1="-1.8" x2="-0.4" y2="-1.9" width="0.1" layer="21" curve="180"/>
+<wire x1="-0.4" y1="-1.9" x2="-0.4" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="-0.4" y1="-1.9" x2="-0.4" y2="-1.8" width="0.1" layer="21" curve="180"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7205,7 +7239,7 @@ design rules under a new name.
 <attribute name="VOLTAGE" value="" x="4.2" y="26.7" size="0.8128" layer="27" display="off"/>
 </element>
 <element name="OUTMAIN" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="84.5" y="44.2" smashed="yes" rot="R180">
-<attribute name="NAME" x="84.08" y="39.685" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="84.08" y="39.685" size="0.8128" layer="25" rot="R180"/>
 </element>
 <element name="FL1" library="OPA859IDSGR" package="SON50P200X200X80-9N" value="OPA859IDSGR" x="1.3" y="27.7" smashed="yes">
 <attribute name="DESCRIPTION" value="1.8 GHz Unity-Gain Bandwidth, 3.3 nV/Hz, FET Input Amplifier" x="1.3" y="27.7" size="1.778" layer="27" display="off"/>
@@ -7214,60 +7248,37 @@ design rules under a new name.
 <attribute name="MANUFACTURER_PART_NUMBER" value="OPA859IDSGR" x="1.3" y="27.7" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-OPA859IDSGR" x="1.3" y="27.7" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA859IDSGR?qs=qSfuJ%252Bfl%2Fd54IFp3Wwx4ug%3D%3D" x="1.3" y="27.7" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="1.3" y="27.7" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="1.3" y="27.7" size="1.27" layer="27" align="center"/>
+<attribute name="NAME" x="1.3" y="27.7" size="0.8128" layer="25" align="center"/>
+<attribute name="VALUE" x="1.3" y="27.7" size="0.8128" layer="27" align="center"/>
 </element>
 <element name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1M" x="-4.2" y="33" smashed="yes" rot="R90">
-<attribute name="NAME" x="-5.47" y="32.365" size="1.27" layer="25" rot="R90"/>
-<attribute name="VALUE" x="-1.76" y="32.065" size="1.27" layer="21" rot="R90"/>
+<attribute name="NAME" x="-5.47" y="32.365" size="0.8128" layer="25" rot="R90"/>
+<attribute name="VALUE" x="-1.76" y="32.065" size="0.8128" layer="21" rot="R90"/>
 </element>
 <element name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="?10?" x="0.8" y="33" smashed="yes" rot="R90">
-<attribute name="NAME" x="-0.37" y="32.13" size="1.27" layer="25" rot="R90"/>
-<attribute name="VALUE" x="3.34" y="30.73" size="1.27" layer="21" rot="R90"/>
+<attribute name="NAME" x="-0.37" y="32.13" size="0.8128" layer="25" rot="R90"/>
+<attribute name="VALUE" x="3.34" y="30.73" size="0.8128" layer="21" rot="R90"/>
 </element>
 <element name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47" x="7.7" y="27.4" smashed="yes" rot="R180">
-<attribute name="NAME" x="8.335" y="26.13" size="1.27" layer="25" rot="R180"/>
-<attribute name="VALUE" x="8.435" y="29.54" size="1.27" layer="21" rot="R180"/>
+<attribute name="NAME" x="8.335" y="26.13" size="0.8128" layer="25" rot="R180"/>
+<attribute name="VALUE" x="8.435" y="29.54" size="0.8128" layer="21" rot="R180"/>
 </element>
 <element name="BNCIN" library="connector" package="MOLEX-BNC-73100-0105" value="MOLEX_BNC_73100-0105" x="-3.1" y="41.5" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="WM5524-ND" x="7.9" y="12.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="73100-0105" x="7.9" y="12.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="-6.6" y="40.4" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
-</element>
-<element name="K1" library="relay" library_urn="urn:adsk.eagle:library:339" package="SOP04" package3d_urn="urn:adsk.eagle:package:24376/1" value="AQY21SOP" x="48.8" y="43.5" smashed="yes" rot="R180">
-<attribute name="LCSC" value="C7435105" x="48.8" y="43.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="" x="70.3" y="40.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="AQY210S" x="70.3" y="40.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="44.56" y="44.14" size="1.27" layer="25"/>
-<attribute name="OC_FARNELL" value="unknown" x="70.3" y="40.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="70.3" y="40.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VALUE" x="44.36" y="42.39" size="1.27" layer="27"/>
-</element>
-<element name="R4" library="MF_Passives" package="R0402" value="1k" x="52.4" y="46.4" smashed="yes">
-<attribute name="HOUSEPART" value="" x="52.4" y="46.4" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="52.4" y="46.4" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="51.8" y="44.5" size="1.016" layer="25" font="vector" ratio="16"/>
-<attribute name="POPULATE" value="1" x="52.4" y="46.4" size="1.778" layer="27" display="off"/>
-<attribute name="TOLERANCE" value="" x="52.4" y="46.4" size="1.778" layer="27" display="off"/>
-<attribute name="URL" value="" x="52.4" y="46.4" size="1.778" layer="27" display="off"/>
-<attribute name="VOLTAGE" value="" x="52.4" y="46.4" size="1.778" layer="27" display="off"/>
-<attribute name="WATTAGE" value="" x="52.4" y="46.4" size="1.778" layer="27" display="off"/>
-</element>
-<element name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="?50?" x="12.5" y="46.9" smashed="yes" rot="R270">
-<attribute name="NAME" x="13.77" y="47.535" size="1.27" layer="25" rot="R270"/>
-<attribute name="VALUE" x="9.96" y="48.535" size="1.27" layer="21" rot="R270"/>
+<attribute name="NAME" x="-6.6" y="40.4" size="0.8128" layer="25" font="vector" rot="R180" align="bottom-center"/>
 </element>
 <element name="Q1" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="16.7" y="27.7" smashed="yes" rot="R90">
 <attribute name="JLC_ROTATION" value="270" x="16.7" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C7420370" x="16.7" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="S8050" x="16.7" y="27.7" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="14.795" y="25.795" size="0.889" layer="25" ratio="11" rot="R90"/>
-<attribute name="VALUE" x="19.494" y="26.43" size="0.635" layer="27" ratio="10" rot="R90"/>
+<attribute name="NAME" x="14.795" y="25.795" size="0.8128" layer="25" ratio="11" rot="R90"/>
+<attribute name="VALUE" x="19.494" y="26.43" size="0.8128" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="R6" library="MF_Passives" package="R0402" value="1k" x="20.8" y="27.2" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="20.8" y="27.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="20.8" y="27.2" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="22.7" y="26.1" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="22.7" y="26.1" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="20.8" y="27.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="20.8" y="27.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="20.8" y="27.2" size="1.778" layer="27" rot="R90" display="off"/>
@@ -7278,44 +7289,33 @@ design rules under a new name.
 <attribute name="HOUSEPART" value="NO" x="26.7" y="26.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C2286" x="26.7" y="26.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="26.7" y="26.8" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="25.6" y="25.1" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="25.6" y="25.1" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="26.7" y="26.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="26.7" y="26.8" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="R7" library="MF_Passives" package="R0402" value="1k" x="26.7" y="23.3" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="26.7" y="23.3" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="26.7" y="23.3" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="25.6" y="22.2" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="25.6" y="22.2" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="26.7" y="23.3" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="26.7" y="23.3" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="26.7" y="23.3" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VOLTAGE" value="" x="26.7" y="23.3" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="WATTAGE" value="" x="26.7" y="23.3" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="K3" library="G6K-2F-RF-DC3" package="G6K2FRFDC3" value="G6K-2F-RF-DC3" x="11.8" y="37" smashed="yes" rot="R180">
-<attribute name="DESCRIPTION" value="High Frequency / RF Relays 1GHz Std Grd NoLatch DPDT 3VDC 100mW" x="11.8" y="37" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="HEIGHT" value="5.7mm" x="11.8" y="37" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="LCSC" value="C397195" x="11.8" y="37" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Omron Electronics" x="11.8" y="37" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-DC3" x="11.8" y="37" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="653-G6K-2F-RF-DC3" x="11.8" y="37" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-DC3?qs=Pjd0UV7BHP8BL6Nr%252BzW3GA%3D%3D" x="11.8" y="37" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="11.8" y="37.4" size="1.27" layer="25" rot="R180" align="center"/>
-<attribute name="VALUE" x="11.8" y="30.9" size="1.27" layer="21" rot="R180" align="center"/>
-</element>
 <element name="OUTSPLIT" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="84.5" y="29.3" smashed="yes" rot="R180">
-<attribute name="NAME" x="84.08" y="25.285" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="84.08" y="25.285" size="0.8128" layer="25" rot="R180"/>
 </element>
 <element name="Q2" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="29.1" y="46.7" smashed="yes" rot="R90">
 <attribute name="LCSC" value="C7420370" x="10.1" y="41.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="S8050" x="10.1" y="41.2" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="27.195" y="44.795" size="0.889" layer="25" ratio="11" rot="R90"/>
-<attribute name="VALUE" x="31.894" y="45.43" size="0.635" layer="27" ratio="10" rot="R90"/>
+<attribute name="NAME" x="27.195" y="44.795" size="0.8128" layer="25" ratio="11" rot="R90"/>
+<attribute name="VALUE" x="31.894" y="45.43" size="0.8128" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="R3" library="MF_Passives" package="R0402" value="1k" x="32.8" y="46.3" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="20.8" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="20.8" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="34.6" y="45.3" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="34.6" y="45.3" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="20.8" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="20.8" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="20.8" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
@@ -7330,13 +7330,13 @@ design rules under a new name.
 <attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-DC3" x="26.8" y="34.5" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="653-G6K-2F-RF-DC3" x="26.8" y="34.5" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-DC3?qs=Pjd0UV7BHP8BL6Nr%252BzW3GA%3D%3D" x="26.8" y="34.5" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="31.8" y="37.6" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="31.8" y="31.1" size="1.27" layer="21" align="center"/>
+<attribute name="NAME" x="31.8" y="37.6" size="0.8128" layer="25" align="center"/>
+<attribute name="VALUE" x="31.8" y="31.1" size="0.8128" layer="21" align="center"/>
 </element>
 <element name="R15" library="MF_Passives" package="R0402" value="75" x="42" y="35.6" smashed="yes">
 <attribute name="HOUSEPART" value="" x="42" y="35.6" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="42" y="35.6" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="40.9" y="33.5" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="40.9" y="33.5" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="42" y="35.6" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="42" y="35.6" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="42" y="35.6" size="1.778" layer="27" display="off"/>
@@ -7346,7 +7346,7 @@ design rules under a new name.
 <element name="R16" library="MF_Passives" package="R0402" value="75" x="42" y="40" smashed="yes">
 <attribute name="HOUSEPART" value="" x="42" y="40" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="42" y="40" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="40.9" y="41.1" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="40.9" y="41.1" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="42" y="40" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="42" y="40" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="42" y="40" size="1.778" layer="27" display="off"/>
@@ -7356,7 +7356,7 @@ design rules under a new name.
 <element name="R11" library="MF_Passives" package="R0402" value="120" x="41.6" y="37.8" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="41.6" y="37.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="41.6" y="37.8" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="43.5" y="36.7" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="43.5" y="36.7" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="41.6" y="37.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="41.6" y="37.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="41.6" y="37.8" size="1.778" layer="27" rot="R90" display="off"/>
@@ -7366,7 +7366,7 @@ design rules under a new name.
 <element name="R8" library="MF_Passives" package="R0402" value="47" x="73.2" y="38.6" smashed="yes">
 <attribute name="HOUSEPART" value="" x="73.2" y="38.6" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="73.2" y="38.6" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="72.3" y="39.5" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="72.3" y="39.5" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="73.2" y="38.6" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="73.2" y="38.6" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="73.2" y="38.6" size="1.778" layer="27" display="off"/>
@@ -7376,7 +7376,7 @@ design rules under a new name.
 <element name="R9" library="MF_Passives" package="R0402" value="47" x="73.2" y="36.8" smashed="yes">
 <attribute name="HOUSEPART" value="" x="73.2" y="36.8" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="73.2" y="36.8" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="72.3" y="34.9" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="72.3" y="34.9" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="73.2" y="36.8" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="73.2" y="36.8" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="73.2" y="36.8" size="1.778" layer="27" display="off"/>
@@ -7386,7 +7386,7 @@ design rules under a new name.
 <element name="R10" library="MF_Passives" package="R0402" value="47" x="75.6" y="37.6" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="75.6" y="37.6" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="75.6" y="37.6" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="76.5" y="38.9" size="1.016" layer="25" font="vector" ratio="16" rot="R270"/>
+<attribute name="NAME" x="76.5" y="38.9" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="75.6" y="37.6" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="75.6" y="37.6" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="75.6" y="37.6" size="1.778" layer="27" rot="R270" display="off"/>
@@ -7398,7 +7398,7 @@ design rules under a new name.
 <attribute name="HOUSEPART" value="" x="48.8" y="38.6" size="1.778" layer="27" display="off"/>
 <attribute name="LCSC" value="C52923" x="48.8" y="38.6" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="48.8" y="38.6" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="47.9" y="36.7" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="47.9" y="36.7" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="48.8" y="38.6" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="48.8" y="38.6" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="48.8" y="38.6" size="1.778" layer="27" display="off"/>
@@ -7407,13 +7407,13 @@ design rules under a new name.
 <element name="Q3" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="60.8" y="46.6" smashed="yes" rot="R90">
 <attribute name="LCSC" value="C7420370" x="42.4" y="41.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="S8050" x="42.4" y="41.2" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="58.895" y="44.695" size="0.889" layer="25" ratio="11" rot="R90"/>
-<attribute name="VALUE" x="63.594" y="45.33" size="0.635" layer="27" ratio="10" rot="R90"/>
+<attribute name="NAME" x="58.895" y="44.695" size="0.8128" layer="25" ratio="11" rot="R90"/>
+<attribute name="VALUE" x="63.594" y="45.33" size="0.8128" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="R13" library="MF_Passives" package="R0402" value="1k" x="66.4" y="46.2" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="54.6" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="54.6" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="65.3" y="45.1" size="1.016" layer="25" font="vector" ratio="16" rot="R90"/>
+<attribute name="NAME" x="65.3" y="45.1" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="54.6" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="54.6" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="54.6" y="36.8" size="1.778" layer="27" rot="R90" display="off"/>
@@ -7428,36 +7428,36 @@ design rules under a new name.
 <attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-DC3" x="57.2" y="33.8" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="653-G6K-2F-RF-DC3" x="57.2" y="33.8" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-DC3?qs=Pjd0UV7BHP8BL6Nr%252BzW3GA%3D%3D" x="57.2" y="33.8" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="62.4" y="37.2" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="62.4" y="30.6" size="1.27" layer="27" align="center"/>
+<attribute name="NAME" x="62.4" y="37.2" size="0.8128" layer="25" align="center"/>
+<attribute name="VALUE" x="62.4" y="30.6" size="0.8128" layer="27" align="center"/>
 </element>
 <element name="TESTBNC1" library="connector" package="MOLEX-BNC-73100-0105" value="MOLEX_BNC_73100-0105" x="-0.8" y="10.8" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="WM5524-ND" x="-0.8" y="10.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="73100-0105" x="-0.8" y="10.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="-5.2" y="16.6" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center"/>
+<attribute name="NAME" x="-5.2" y="16.6" size="0.8128" layer="25" font="vector" align="bottom-center"/>
 </element>
 <element name="TESTBNC2" library="connector" package="MOLEX-BNC-73100-0105" value="MOLEX_BNC_73100-0105" x="76.6" y="10.8" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="WM5524-ND" x="76.6" y="10.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="73100-0105" x="76.6" y="10.8" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="80.6" y="16.6" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center"/>
+<attribute name="NAME" x="80.6" y="16.6" size="0.8128" layer="25" font="vector" align="bottom-center"/>
 </element>
 <element name="TESTSMA1" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="-8.8" y="-5.6" smashed="yes">
-<attribute name="NAME" x="-1.52" y="1.585" size="1.016" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="-1.52" y="1.585" size="0.8128" layer="25" ratio="18" rot="R180"/>
 </element>
 <element name="TESTSMA2" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="84.4" y="-5.6" smashed="yes" rot="R180">
-<attribute name="NAME" x="77.52" y="0.615" size="1.016" layer="25" ratio="18"/>
+<attribute name="NAME" x="77.52" y="0.615" size="0.8128" layer="25" ratio="18"/>
 </element>
 <element name="TESTSMA3" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="-8.8" y="-21.8" smashed="yes">
-<attribute name="NAME" x="-1.32" y="-15.015" size="1.016" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="-1.32" y="-15.015" size="0.8128" layer="25" ratio="18" rot="R180"/>
 </element>
 <element name="TESTSMA4" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="84.6" y="-21.8" smashed="yes" rot="R180">
-<attribute name="NAME" x="77.42" y="-16.185" size="1.016" layer="25" ratio="18"/>
+<attribute name="NAME" x="77.42" y="-16.185" size="0.8128" layer="25" ratio="18"/>
 </element>
 <element name="C3" library="MF_Passives" package="C0402" value="1uF" x="72.5" y="-21.8" smashed="yes">
 <attribute name="DIELECTRIC" value="" x="72.5" y="-21.8" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="72.5" y="-21.8" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="72.5" y="-21.8" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="71.4" y="-20.7" size="1.016" layer="25" font="vector" ratio="16"/>
+<attribute name="NAME" x="71.4" y="-20.7" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="72.5" y="-21.8" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="72.5" y="-21.8" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="72.5" y="-21.8" size="1.778" layer="27" display="off"/>
@@ -7466,7 +7466,7 @@ design rules under a new name.
 <element name="R14" library="MF_Passives" package="R0402" value="0" x="4.2" y="-21.8" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="4.2" y="-21.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="4.2" y="-21.8" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="5.3" y="-19.7" size="1.016" layer="25" font="vector" ratio="16" rot="R180"/>
+<attribute name="NAME" x="5.3" y="-19.7" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="4.2" y="-21.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="4.2" y="-21.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="4.2" y="-21.8" size="1.778" layer="27" rot="R180" display="off"/>
@@ -7481,6 +7481,27 @@ design rules under a new name.
 </element>
 <element name="J1" library="FlashPCB_Connectors" package="USB-2.0-A-THT-RA-TE_AMP-292303-1" value="test1" x="18.7" y="-20.3" smashed="yes">
 <attribute name="VALUE" x="12.35" y="-15.855" size="0.8128" layer="27" font="vector"/>
+</element>
+<element name="K5" library="G6K-2F-RF-T-TR03_DC5" package="G6K2FRFTTR03DC5" value="G6K-2F-RF-T-TR03_DC5" x="11" y="37.7" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="High Frequency / RF Relays 3GHz SpSavGrd NoLtch DPDT 5DC 100mW TR300" x="11" y="37.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.7mm" x="11" y="37.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Omron Electronics" x="11" y="37.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="G6K-2F-RF-T-TR03 DC5" x="11" y="37.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="653-G6K2FRFTTR03DC5" x="11" y="37.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Omron-Electronics/G6K-2F-RF-T-TR03-DC5?qs=bR9%2Fh8%2FHa7Q3LGohyKHVjA%3D%3D" x="11" y="37.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="7.25" y="38.9" size="0.8128" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="11" y="46.05" size="0.8128" layer="27" align="center"/>
+</element>
+<element name="K3" library="TLP3440_TP_F" package="TLP3440TPF" value="TLP3440_TP,F" x="48.8" y="41.2" smashed="yes" rot="R180">
+<attribute name="DESCRIPTION" value="Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm" x="48.8" y="41.2" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="1.4mm" x="48.8" y="41.2" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C2152220" x="48.8" y="41.2" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Toshiba" x="48.8" y="41.2" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475R(TP,F" x="48.8" y="41.2" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="757-TLP3440TPF" x="48.8" y="41.2" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Toshiba/TLP3440TPF?qs=bYcAidFZG4jqnlmzhh150Q%3D%3D" x="48.8" y="41.2" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="48.8" y="41.2" size="0.8128" layer="25" rot="R180" align="center"/>
+<attribute name="VALUE" x="48.8" y="44.1" size="0.8128" layer="27" rot="R180" align="center"/>
 </element>
 </elements>
 <signals>
@@ -7503,8 +7524,6 @@ design rules under a new name.
 <contactref element="R1" pad="1"/>
 <contactref element="BNCIN" pad="GND2"/>
 <contactref element="BNCIN" pad="GND1"/>
-<contactref element="K1" pad="2"/>
-<contactref element="R5" pad="1"/>
 <polygon width="0.254" layer="1" isolate="0.1524">
 <vertex x="-11.2" y="-29.5"/>
 <vertex x="-11.2" y="51.5"/>
@@ -7527,8 +7546,6 @@ design rules under a new name.
 </polygon>
 <contactref element="Q1" pad="2"/>
 <contactref element="R7" pad="P$1"/>
-<contactref element="K3" pad="MP2"/>
-<contactref element="K3" pad="MP1"/>
 <contactref element="OUTSPLIT" pad="GND@1"/>
 <contactref element="OUTSPLIT" pad="GND@3"/>
 <contactref element="OUTSPLIT" pad="GND@4"/>
@@ -7627,8 +7644,8 @@ design rules under a new name.
 <via x="-1" y="35.6" extent="1-16" drill="0.35"/>
 <via x="2.4" y="39" extent="1-16" drill="0.35"/>
 <via x="1.2" y="41.4" extent="1-16" drill="0.35"/>
-<via x="9.8" y="43" extent="1-16" drill="0.35"/>
-<via x="10" y="35.8" extent="1-16" drill="0.35"/>
+<via x="7.5" y="47.3" extent="1-16" drill="0.35"/>
+<via x="19.3" y="43.9" extent="1-16" drill="0.35"/>
 <via x="9.6" y="30.2" extent="1-16" drill="0.35"/>
 <via x="15.4" y="31.8" extent="1-16" drill="0.35"/>
 <via x="20.4" y="29.6" extent="1-16" drill="0.35"/>
@@ -7699,6 +7716,17 @@ design rules under a new name.
 <via x="45.8" y="-14.9" extent="1-16" drill="0.35"/>
 <via x="40" y="-20.6" extent="1-16" drill="0.35"/>
 <contactref element="J1" pad="P$4"/>
+<contactref element="K5" pad="MP5"/>
+<contactref element="K5" pad="MP4"/>
+<contactref element="K5" pad="MP3"/>
+<contactref element="K5" pad="MP2"/>
+<contactref element="K5" pad="MP1"/>
+<contactref element="K5" pad="MP6"/>
+<contactref element="K5" pad="MP7"/>
+<contactref element="K5" pad="MP8"/>
+<contactref element="K5" pad="MP9"/>
+<contactref element="K5" pad="MP10"/>
+<contactref element="K3" pad="2"/>
 </signal>
 <signal name="VS+" airwireshidden="yes">
 <polygon width="0.254" layer="16" isolate="0.1524" rank="2">
@@ -7771,26 +7799,22 @@ design rules under a new name.
 </signal>
 <signal name="INPATH">
 <contactref element="BNCIN" pad="SIGNAL"/>
-<contactref element="K3" pad="3"/>
-<wire x1="10.2" y1="40.5" x2="8.1" y2="42.6" width="0.254" layer="1"/>
-<wire x1="-0.8" y1="37.6" x2="-3.1" y2="37.6" width="0.254" layer="1"/>
-<wire x1="8.1" y1="42.6" x2="4.2" y2="42.6" width="0.254" layer="1"/>
-<wire x1="4.2" y1="42.6" x2="-0.8" y2="37.6" width="0.254" layer="1"/>
-</signal>
-<signal name="N$11">
-<contactref element="K1" pad="1"/>
-<contactref element="R4" pad="P$1"/>
-<wire x1="50.07" y1="46.5" x2="51.75" y2="46.5" width="0.254" layer="1"/>
-<wire x1="51.75" y1="46.5" x2="51.85" y2="46.4" width="0.254" layer="1"/>
+<contactref element="K5" pad="3"/>
+<wire x1="-3.1" y1="37.6" x2="6.1" y2="37.6" width="0.254" layer="1"/>
+<wire x1="6.1" y1="37.6" x2="7.3" y2="37.6" width="0.254" layer="1"/>
+<wire x1="7.3" y1="37.6" x2="7.4" y2="37.7" width="0.254" layer="1"/>
+<wire x1="8" y1="37.7" x2="7.9" y2="37.6" width="0.254" layer="1"/>
+<wire x1="7.9" y1="37.6" x2="7.3" y2="37.6" width="0.254" layer="1"/>
 </signal>
 <signal name="ACDC_CONTROL">
-<contactref element="R4" pad="P$2"/>
 <contactref element="J4" pad="4"/>
-<wire x1="52.95" y1="46.4" x2="52.95" y2="44.45" width="0.254" layer="1"/>
 <wire x1="52.95" y1="44.45" x2="53" y2="44.4" width="0.254" layer="1"/>
 <via x="53" y="44.4" extent="1-16" drill="0.35"/>
 <wire x1="53" y1="44.4" x2="37.82" y2="29.22" width="0.254" layer="15"/>
 <wire x1="37.82" y1="29.22" x2="37.82" y2="27.6" width="0.254" layer="15"/>
+<contactref element="K3" pad="1"/>
+<wire x1="49.2" y1="42.075" x2="51.525" y2="44.4" width="0.254" layer="1"/>
+<wire x1="51.525" y1="44.4" x2="53" y2="44.4" width="0.254" layer="1"/>
 </signal>
 <signal name="50_1M_CONTROL">
 <contactref element="J4" pad="5"/>
@@ -7804,41 +7828,40 @@ design rules under a new name.
 <contactref element="FL1" pad="4"/>
 <contactref element="R1" pad="2"/>
 <contactref element="C1" pad="2"/>
-<contactref element="K3" pad="4"/>
-<wire x1="8" y1="40.5" x2="5.5" y2="40.5" width="0.254" layer="1"/>
-<wire x1="0.8" y1="35.8" x2="0.8" y2="33.95" width="0.254" layer="1"/>
-<wire x1="5.5" y1="40.5" x2="0.8" y2="35.8" width="0.254" layer="1"/>
 <wire x1="0.8" y1="33.95" x2="-4.2" y2="33.95" width="0.254" layer="1"/>
 <wire x1="0.8" y1="33.95" x2="-1.8" y2="31.35" width="0.254" layer="1"/>
 <wire x1="-1.8" y1="27.4" x2="-1.2" y2="26.8" width="0.254" layer="1"/>
 <wire x1="-1.2" y1="26.8" x2="0.1" y2="26.8" width="0.254" layer="1"/>
 <wire x1="0.1" y1="26.8" x2="0.25" y2="26.95" width="0.254" layer="1"/>
 <wire x1="-1.8" y1="31.35" x2="-1.8" y2="27.4" width="0.254" layer="1"/>
+<contactref element="K5" pad="4"/>
+<wire x1="0.8" y1="33.95" x2="2.45" y2="33.95" width="0.254" layer="1"/>
+<wire x1="4" y1="35.5" x2="8" y2="35.5" width="0.254" layer="1"/>
+<wire x1="2.45" y1="33.95" x2="4" y2="35.5" width="0.254" layer="1"/>
 </signal>
 <signal name="OUTPATH">
-<contactref element="K3" pad="6"/>
 <contactref element="K2" pad="3"/>
-<wire x1="33.4" y1="34.5" x2="29.7" y2="30.8" width="0.254" layer="1"/>
-<wire x1="11.6" y1="30.8" x2="10.2" y2="32.2" width="0.254" layer="1"/>
-<wire x1="10.2" y1="32.2" x2="10.2" y2="33.5" width="0.254" layer="1"/>
-<wire x1="29.7" y1="30.8" x2="11.6" y2="30.8" width="0.254" layer="1"/>
+<wire x1="33.4" y1="34.5" x2="29.95" y2="31.05" width="0.254" layer="1"/>
+<contactref element="K5" pad="6"/>
+<wire x1="29.95" y1="31.05" x2="29.7" y2="30.8" width="0.254" layer="1"/>
+<wire x1="29.95" y1="31.05" x2="24.95" y2="31.05" width="0.254" layer="1"/>
+<wire x1="14" y1="37.7" x2="18.3" y2="37.7" width="0.254" layer="1"/>
+<wire x1="24.95" y1="31.05" x2="18.3" y2="37.7" width="0.254" layer="1"/>
+<wire x1="14" y1="37.7" x2="13.4" y2="37.7" width="0.254" layer="1"/>
 </signal>
 <signal name="50PATH">
-<contactref element="R5" pad="2"/>
-<contactref element="K3" pad="7"/>
-<contactref element="K3" pad="2"/>
-<wire x1="12.5" y1="45.95" x2="12.4" y2="45.85" width="0.254" layer="1"/>
-<wire x1="12.4" y1="45.85" x2="12.4" y2="40.5" width="0.254" layer="1"/>
-<wire x1="12.4" y1="40.5" x2="12.4" y2="33.5" width="0.254" layer="1"/>
+<contactref element="K5" pad="2"/>
+<contactref element="K5" pad="7"/>
+<wire x1="14" y1="39.9" x2="14.6" y2="39.9" width="0.254" layer="1"/>
+<wire x1="8" y1="39.9" x2="14" y2="39.9" width="0.254" layer="1"/>
 </signal>
 <signal name="5V">
 <contactref element="J4" pad="1"/>
 <contactref element="D2" pad="ANODE"/>
-<contactref element="K3" pad="1"/>
 <contactref element="K2" pad="1"/>
 <contactref element="K4" pad="1"/>
-<wire x1="15.6" y1="40.5" x2="25.5" y2="40.5" width="0.254" layer="1"/>
-<wire x1="25.5" y1="40.5" x2="28" y2="38" width="0.254" layer="1"/>
+<wire x1="25.5" y1="40.5" x2="25.7" y2="40.3" width="0.254" layer="1"/>
+<wire x1="25.7" y1="40.3" x2="28" y2="38" width="0.254" layer="1"/>
 <wire x1="28" y1="38" x2="28" y2="34.5" width="0.254" layer="1"/>
 <wire x1="26.7" y1="27.55" x2="30.15" y2="27.55" width="0.254" layer="1"/>
 <wire x1="30.15" y1="27.55" x2="30.2" y2="27.6" width="0.254" layer="1"/>
@@ -7864,23 +7887,39 @@ design rules under a new name.
 <wire x1="29.7" y1="27.2" x2="30.2" y2="27.7" width="0.8128" layer="16"/>
 <wire x1="15.2" y1="-4.4" x2="29.7" y2="10.1" width="0.8128" layer="16"/>
 <wire x1="29.7" y1="10.1" x2="29.7" y2="27.2" width="0.8128" layer="16"/>
+<contactref element="K5" pad="1"/>
+<wire x1="25.5" y1="40.5" x2="18.8" y2="47.2" width="0.254" layer="1"/>
+<wire x1="8.25815" y1="47.2" x2="7.75135" y2="46.6932" width="0.254" layer="1"/>
+<wire x1="6.2932" y1="46.6932" x2="4.2" y2="44.6" width="0.254" layer="1"/>
+<wire x1="7.75135" y1="46.6932" x2="6.2932" y2="46.6932" width="0.254" layer="1"/>
+<wire x1="4.2" y1="44.6" x2="5.7" y2="43.1" width="0.254" layer="1"/>
+<wire x1="5.7" y1="43.1" x2="8" y2="43.1" width="0.254" layer="1"/>
+<wire x1="18.8" y1="47.2" x2="8.25815" y2="47.2" width="0.254" layer="1"/>
 </signal>
 <signal name="COIL1-">
 <contactref element="Q1" pad="3"/>
-<contactref element="K3" pad="8"/>
 <wire x1="15.684" y1="27.7" x2="13.9" y2="27.7" width="0.254" layer="1"/>
 <wire x1="13.9" y1="27.7" x2="13.8" y2="27.8" width="0.254" layer="1"/>
 <via x="13.8" y="27.8" extent="1-16" drill="0.35"/>
-<wire x1="13.8" y1="27.8" x2="13.8" y2="33.4" width="0.254" layer="15"/>
-<wire x1="13.8" y1="33.4" x2="15.6" y2="35.2" width="0.254" layer="15"/>
-<via x="15.6" y="35.2" extent="1-16" drill="0.35"/>
-<wire x1="15.6" y1="35.2" x2="15.6" y2="33.5" width="0.254" layer="1"/>
+<wire x1="17.6" y1="42.2" x2="13.8" y2="38.4" width="0.254" layer="15"/>
+<wire x1="13.8" y1="27.8" x2="13.8" y2="38.4" width="0.254" layer="15"/>
+<via x="17.6" y="42.2" extent="1-16" drill="0.35"/>
+<contactref element="K5" pad="8"/>
+<wire x1="14" y1="43.1" x2="16.7" y2="43.1" width="0.254" layer="1"/>
+<wire x1="16.7" y1="43.1" x2="17.6" y2="42.2" width="0.254" layer="1"/>
 </signal>
 <signal name="1MPATH50">
 <contactref element="R2" pad="1"/>
-<contactref element="K3" pad="5"/>
-<wire x1="8" y1="33.5" x2="8" y2="28.05" width="0.254" layer="1"/>
 <wire x1="8" y1="28.05" x2="8.65" y2="27.4" width="0.254" layer="1"/>
+<contactref element="K5" pad="5"/>
+<wire x1="8.65" y1="27.4" x2="12.35" y2="31.1" width="0.254" layer="1"/>
+<wire x1="12.35" y1="31.1" x2="17.7" y2="31.1" width="0.254" layer="1"/>
+<wire x1="17.7" y1="31.1" x2="17.8" y2="31.2" width="0.254" layer="1"/>
+<wire x1="17.8" y1="31.2" x2="17.8" y2="35" width="0.254" layer="1"/>
+<wire x1="15.34865" y1="35.8068" x2="15.04185" y2="35.5" width="0.254" layer="1"/>
+<wire x1="15.04185" y1="35.5" x2="14" y2="35.5" width="0.254" layer="1"/>
+<wire x1="17.8" y1="35" x2="16.9932" y2="35.8068" width="0.254" layer="1"/>
+<wire x1="16.9932" y1="35.8068" x2="15.34865" y2="35.8068" width="0.254" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="Q1" pad="1"/>
@@ -7911,16 +7950,16 @@ design rules under a new name.
 <wire x1="75.15" y1="38.6" x2="75.6" y2="38.15" width="0.254" layer="1"/>
 </signal>
 <signal name="OUTPATHFILT">
-<contactref element="K1" pad="3"/>
 <contactref element="K2" pad="6"/>
 <contactref element="C2" pad="P$1"/>
-<wire x1="47.53" y1="40.5" x2="47.53" y2="39.32" width="0.254" layer="1"/>
-<wire x1="47.53" y1="39.32" x2="48.25" y2="38.6" width="0.254" layer="1"/>
 <wire x1="48.25" y1="38.6" x2="46.4" y2="38.6" width="0.254" layer="1"/>
 <wire x1="40.8" y1="44.2" x2="35.8" y2="44.2" width="0.254" layer="1"/>
 <wire x1="35.8" y1="44.2" x2="33.4" y2="41.8" width="0.254" layer="1"/>
 <wire x1="33.4" y1="41.8" x2="33.4" y2="41.5" width="0.254" layer="1"/>
 <wire x1="46.4" y1="38.6" x2="40.8" y2="44.2" width="0.254" layer="1"/>
+<contactref element="K3" pad="3"/>
+<wire x1="48.4" y1="40.325" x2="48.4" y2="38.75" width="0.254" layer="1"/>
+<wire x1="48.4" y1="38.75" x2="48.25" y2="38.6" width="0.254" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="Q2" pad="1"/>
@@ -7969,15 +8008,14 @@ design rules under a new name.
 <wire x1="31.2" y1="41.5" x2="31.2" y2="34.5" width="0.254" layer="1"/>
 </signal>
 <signal name="OUTPATHACDC">
-<contactref element="K1" pad="4"/>
 <contactref element="C2" pad="P$2"/>
 <contactref element="K4" pad="3"/>
 <wire x1="64" y1="34.1" x2="61.7" y2="31.8" width="0.254" layer="1"/>
-<wire x1="56.15" y1="31.8" x2="49.375" y2="38.575" width="0.254" layer="1"/>
-<wire x1="49.375" y1="38.575" x2="49.35" y2="38.6" width="0.254" layer="1"/>
+<wire x1="56.15" y1="31.8" x2="49.35" y2="38.6" width="0.254" layer="1"/>
 <wire x1="61.7" y1="31.8" x2="56.15" y2="31.8" width="0.254" layer="1"/>
-<wire x1="50.07" y1="40.5" x2="50.07" y2="39.27" width="0.254" layer="1"/>
-<wire x1="50.07" y1="39.27" x2="49.375" y2="38.575" width="0.254" layer="1"/>
+<contactref element="K3" pad="4"/>
+<wire x1="49.2" y1="40.325" x2="49.2" y2="38.75" width="0.254" layer="1"/>
+<wire x1="49.2" y1="38.75" x2="49.35" y2="38.6" width="0.254" layer="1"/>
 </signal>
 <signal name="OUTSPLIT">
 <contactref element="OUTSPLIT" pad="P"/>
