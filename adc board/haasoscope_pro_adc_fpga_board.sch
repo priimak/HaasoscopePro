@@ -23638,7 +23638,7 @@ part number 2062-2P from STA</description>
 <part name="C282" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J44" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="R231" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
-<part name="R232" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="56k"/>
+<part name="R232" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
 <part name="PS14" library="LMR33630ADDA" deviceset="LMR33630ADDA" device="">
 <attribute name="LCSC" value="C841384"/>
 </part>
@@ -23881,6 +23881,8 @@ part number 2062-2P from STA</description>
 <part name="C77" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="J4" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="GND59" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="R209" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="100k"/>
+<part name="GND60" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -34817,7 +34819,7 @@ between the two signals at the input buffer.</text>
 <text x="180.34" y="444.5" size="1.778" layer="90">Rbot = Rtop/(Vout-1)
 =100k/(3.7-1) = ~37k</text>
 <text x="71.12" y="-5.08" size="1.778" layer="90">V+ for FPGA reg ~ 1.5V</text>
-<text x="124.46" y="124.46" size="1.778" layer="90">V- for input amp reg ~ -2.8V</text>
+<text x="124.46" y="124.46" size="1.778" layer="90">V- for input amp reg ~ -3.0V</text>
 <text x="121.92" y="335.28" size="1.778" layer="90">V for 1.9V reg ~ 2.2V</text>
 <text x="119.38" y="406.4" size="1.778" layer="90">V for 1.1V reg ~ 1.5V</text>
 <text x="119.38" y="472.44" size="1.778" layer="90">V for 3.3V reg ~ 3.7V</text>
@@ -34846,8 +34848,8 @@ between the two signals at the input buffer.</text>
 =100k/(2.8-1) = ~55k</text>
 <text x="132.08" y="-33.02" size="1.778" layer="90">Rbot = Rtop/(Vout-1)
 =100k/(1.5-1) = 200k</text>
-<text x="182.88" y="96.52" size="1.778" layer="90">Rbot = Rtop/(Vout-1)
-=100k/(2.8-1) = ~55k</text>
+<text x="190.5" y="96.52" size="1.778" layer="90">Rbot = Rtop/(Vout-1)
+=100k/(3.0-1) = 50k</text>
 <text x="210.82" y="76.2" size="1.778" layer="90">Make 5V from 12V in case USB C insufficient</text>
 <wire x1="5.08" y1="297.18" x2="381" y2="297.18" width="0.1524" layer="97"/>
 <text x="284.48" y="50.8" size="1.778" layer="90">Rbot = Rtop/(Vout-1)
@@ -35611,11 +35613,18 @@ and each of these negative regulators can only make 200mA</text>
 <instance part="GND59" gate="1" x="383.54" y="109.22" smashed="yes">
 <attribute name="VALUE" x="383.54" y="108.966" size="1.778" layer="96" align="top-center"/>
 </instance>
+<instance part="R209" gate="G$1" x="182.88" y="99.06" smashed="yes" rot="R90">
+<attribute name="NAME" x="181.3814" y="95.25" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="186.182" y="95.25" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND60" gate="1" x="289.56" y="160.02" smashed="yes">
+<attribute name="VALUE" x="289.56" y="159.766" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="2V8-" class="0">
+<net name="3V0-" class="0">
 <segment>
 <pinref part="IC25" gate="G$1" pin="IN"/>
 <wire x1="243.84" y1="116.84" x2="236.22" y2="116.84" width="0.1524" layer="91"/>
@@ -35644,6 +35653,9 @@ and each of these negative regulators can only make 200mA</text>
 <label x="139.7" y="91.44" size="1.778" layer="95"/>
 <wire x1="114.3" y1="91.44" x2="134.62" y2="91.44" width="0.1524" layer="91"/>
 <junction x="134.62" y="91.44"/>
+<pinref part="R209" gate="G$1" pin="P$1"/>
+<wire x1="182.88" y1="93.98" x2="175.26" y2="93.98" width="0.1524" layer="91"/>
+<junction x="175.26" y="93.98"/>
 </segment>
 <segment>
 <pinref part="C282" gate="C$1" pin="2"/>
@@ -35826,11 +35838,8 @@ and each of these negative regulators can only make 200mA</text>
 </segment>
 <segment>
 <pinref part="IC26" gate="G$1" pin="1.6V"/>
-<wire x1="276.86" y1="165.1" x2="287.02" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="165.1" x2="284.48" y2="165.1" width="0.1524" layer="91"/>
 <label x="279.4" y="165.1" size="1.778" layer="95"/>
-<pinref part="C73" gate="C$1" pin="2"/>
-<wire x1="287.02" y1="165.1" x2="287.02" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="287.02" y1="162.56" x2="289.56" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC27" gate="G$1" pin="EP"/>
@@ -36254,6 +36263,10 @@ and each of these negative regulators can only make 200mA</text>
 <segment>
 <pinref part="GND59" gate="1" pin="GND"/>
 <pinref part="J4" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="C73" gate="C$1" pin="2"/>
+<pinref part="GND60" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$101" class="0">
@@ -36857,6 +36870,8 @@ and each of these negative regulators can only make 200mA</text>
 <pinref part="PS13" gate="G$1" pin="FB"/>
 <wire x1="149.86" y1="104.14" x2="175.26" y2="104.14" width="0.1524" layer="91"/>
 <junction x="175.26" y="104.14"/>
+<pinref part="R209" gate="G$1" pin="P$2"/>
+<wire x1="182.88" y1="104.14" x2="175.26" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$128" class="0">
