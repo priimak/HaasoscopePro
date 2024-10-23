@@ -23874,6 +23874,13 @@ part number 2062-2P from STA</description>
 <part name="C54" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="GND57" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C73" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
+<part name="IC10" library="TPS72325DBVR" deviceset="TPS72325DBVR" device=""/>
+<part name="C74" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
+<part name="C76" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
+<part name="GND58" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="C77" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
+<part name="J4" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
+<part name="GND59" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24149,7 +24156,7 @@ for CL05A105KA5NQNC</text>
 <label x="109.22" y="231.14" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="2V5-" class="1">
+<net name="2V5-1" class="1">
 <segment>
 <wire x1="114.3" y1="238.76" x2="106.68" y2="238.76" width="0.1524" layer="91"/>
 <label x="109.22" y="238.76" size="1.778" layer="95"/>
@@ -24937,7 +24944,7 @@ for CL05A105KA5NQNC</text>
 <label x="111.76" y="-88.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="2V5-" class="1">
+<net name="2V5-1" class="1">
 <segment>
 <pinref part="C85" gate="G$1" pin="P$1"/>
 <wire x1="101.6" y1="-20.32" x2="101.6" y2="-15.24" width="0.1524" layer="91"/>
@@ -25573,7 +25580,7 @@ for CL05A105KA5NQNC</text>
 <label x="81.28" y="190.5" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="2V5-" class="1">
+<net name="2V5-2" class="1">
 <segment>
 <wire x1="86.36" y1="198.12" x2="78.74" y2="198.12" width="0.1524" layer="91"/>
 <label x="81.28" y="198.12" size="1.778" layer="95"/>
@@ -26223,7 +26230,7 @@ for CL05A105KA5NQNC</text>
 <label x="76.2" y="91.44" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="2V5-" class="1">
+<net name="2V5-2" class="1">
 <segment>
 <pinref part="C108" gate="G$1" pin="P$1"/>
 <wire x1="66.04" y1="160.02" x2="66.04" y2="165.1" width="0.1524" layer="91"/>
@@ -34829,7 +34836,7 @@ between the two signals at the input buffer.</text>
 <text x="236.22" y="474.98" size="1.778" layer="90">3V3</text>
 <text x="233.68" y="264.16" size="1.778" layer="90">VFPGA25 = 2.5V</text>
 <text x="231.14" y="180.34" size="1.778" layer="90">2V5+</text>
-<text x="246.38" y="124.46" size="1.778" layer="90">2V5-</text>
+<text x="246.38" y="124.46" size="1.778" layer="90">2V5- 1</text>
 <text x="279.4" y="236.22" size="1.778" layer="90">= 0.5 + grounded inputs</text>
 <text x="180.34" y="378.46" size="1.778" layer="90">Rbot = Rtop/(Vout-1)
 =100k/(1.5-1) = 200k</text>
@@ -34853,6 +34860,12 @@ Only ~300mA needed</text>
 <text x="248.92" y="-45.72" size="1.778" layer="90">= 0.5 + grounded inputs</text>
 <text x="205.74" y="-20.32" size="1.778" layer="90">1V2
 for FPGA</text>
+<text x="327.66" y="464.82" size="1.778" layer="90">2A max current
+180mV dropout at 2A</text>
+<text x="119.38" y="487.68" size="1.778" layer="90">3A max current</text>
+<text x="335.28" y="124.46" size="1.778" layer="90">2V5- 2</text>
+<text x="266.7" y="96.52" size="1.778" layer="90">Need separate -2v5 supplies for inputs A and B because each needs more than 100mA
+and each of these negative regulators can only make 200mA</text>
 </plain>
 <instances>
 <instance part="GND207" gate="1" x="144.78" y="48.26" smashed="yes">
@@ -35573,6 +35586,31 @@ for FPGA</text>
 <attribute name="NAME" x="291.084" y="168.021" size="1.778" layer="95"/>
 <attribute name="VALUE" x="291.084" y="163.449" size="1.778" layer="96"/>
 </instance>
+<instance part="IC10" gate="G$1" x="332.74" y="119.38" smashed="yes">
+<attribute name="NAME" x="356.87" y="127" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="356.87" y="124.46" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="C74" gate="C$1" x="370.84" y="114.3" smashed="yes">
+<attribute name="NAME" x="372.364" y="109.601" size="1.778" layer="95"/>
+<attribute name="VALUE" x="372.364" y="112.649" size="1.778" layer="96"/>
+</instance>
+<instance part="C76" gate="C$1" x="360.68" y="114.3" smashed="yes">
+<attribute name="NAME" x="362.204" y="109.601" size="1.778" layer="95"/>
+<attribute name="VALUE" x="362.204" y="112.649" size="1.778" layer="96"/>
+</instance>
+<instance part="GND58" gate="1" x="360.68" y="106.68" smashed="yes">
+<attribute name="VALUE" x="360.68" y="106.426" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="C77" gate="C$1" x="325.12" y="114.3" smashed="yes">
+<attribute name="NAME" x="326.644" y="109.601" size="1.778" layer="95"/>
+<attribute name="VALUE" x="326.644" y="112.649" size="1.778" layer="96"/>
+</instance>
+<instance part="J4" gate="G$1" x="391.16" y="114.3" smashed="yes">
+<attribute name="NAME" x="389.89" y="120.65" size="1.27" layer="95" ratio="10"/>
+</instance>
+<instance part="GND59" gate="1" x="383.54" y="109.22" smashed="yes">
+<attribute name="VALUE" x="383.54" y="108.966" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -35630,6 +35668,12 @@ for FPGA</text>
 <wire x1="205.74" y1="127" x2="220.98" y2="127" width="0.1524" layer="91"/>
 <junction x="205.74" y="127"/>
 <label x="215.9" y="127" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="332.74" y1="116.84" x2="325.12" y2="116.84" width="0.1524" layer="91"/>
+<label x="327.66" y="116.84" size="1.778" layer="95"/>
+<pinref part="IC10" gate="G$1" pin="IN"/>
+<pinref part="C77" gate="C$1" pin="1"/>
 </segment>
 </net>
 <net name="GND" class="4">
@@ -36193,6 +36237,24 @@ for FPGA</text>
 <pinref part="C54" gate="C$1" pin="2"/>
 <pinref part="GND57" gate="1" pin="GND"/>
 </segment>
+<segment>
+<wire x1="370.84" y1="109.22" x2="360.68" y2="109.22" width="0.1524" layer="91"/>
+<junction x="360.68" y="109.22"/>
+<wire x1="325.12" y1="109.22" x2="320.04" y2="109.22" width="0.1524" layer="91"/>
+<junction x="325.12" y="109.22"/>
+<wire x1="320.04" y1="109.22" x2="320.04" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="119.38" x2="320.04" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="360.68" y1="109.22" x2="325.12" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="IC10" gate="G$1" pin="GND"/>
+<pinref part="C74" gate="C$1" pin="2"/>
+<pinref part="C76" gate="C$1" pin="2"/>
+<pinref part="GND58" gate="1" pin="GND"/>
+<pinref part="C77" gate="C$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="GND59" gate="1" pin="GND"/>
+<pinref part="J4" gate="G$1" pin="2"/>
+</segment>
 </net>
 <net name="N$101" class="0">
 <segment>
@@ -36401,7 +36463,7 @@ for FPGA</text>
 <label x="243.84" y="391.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="2V5-" class="1">
+<net name="2V5-1" class="1">
 <segment>
 <pinref part="IC25" gate="G$1" pin="OUT"/>
 <pinref part="C251" gate="C$1" pin="1"/>
@@ -37149,6 +37211,28 @@ for FPGA</text>
 <pinref part="C53" gate="C$1" pin="1"/>
 <wire x1="254" y1="2.54" x2="264.16" y2="2.54" width="0.1524" layer="91"/>
 <junction x="254" y="2.54"/>
+</segment>
+</net>
+<net name="N$61" class="0">
+<segment>
+<wire x1="360.68" y1="119.38" x2="370.84" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="370.84" y1="119.38" x2="370.84" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="IC10" gate="G$1" pin="NR/FB"/>
+<pinref part="C74" gate="C$1" pin="1"/>
+</segment>
+</net>
+<net name="2V5-2" class="1">
+<segment>
+<wire x1="360.68" y1="116.84" x2="368.3" y2="116.84" width="0.1524" layer="91"/>
+<junction x="360.68" y="116.84"/>
+<label x="363.22" y="116.84" size="1.778" layer="95"/>
+<pinref part="IC10" gate="G$1" pin="OUT"/>
+<pinref part="C76" gate="C$1" pin="1"/>
+</segment>
+<segment>
+<wire x1="383.54" y1="116.84" x2="378.46" y2="116.84" width="0.1524" layer="91"/>
+<label x="378.46" y="116.84" size="1.778" layer="95"/>
+<pinref part="J4" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
@@ -38366,7 +38450,7 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="102,8,86.36,114.3,VCCCORE,VCC1V8,,,,"/>
 <approved hash="102,8,86.36,111.76,VCCA,VCCA_FTDI,,,,"/>
 <approved hash="104,1,106.68,243.84,FL3,VS+,2V5+,,,"/>
-<approved hash="104,1,106.68,238.76,FL3,VS-,2V5-,,,"/>
+<approved hash="104,1,106.68,238.76,FL3,VS-,2V5-1,,,"/>
 <approved hash="104,1,429.26,165.1,J15,VCC,5V,,,"/>
 <approved hash="104,8,86.36,121.92,IC8,VREGIN,5V,,,"/>
 <approved hash="104,8,99.06,15.24,IC8,AGND,GND,,,"/>
@@ -38396,16 +38480,16 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="104,9,114.3,66.04,CN2,PWR,12V,,,"/>
 <approved hash="104,9,114.3,63.5,CN2,GNDBREAK,GND,,,"/>
 <approved hash="104,3,78.74,203.2,FL2,VS+,2V5+,,,"/>
-<approved hash="104,3,78.74,198.12,FL2,VS-,2V5-,,,"/>
+<approved hash="104,3,78.74,198.12,FL2,VS-,2V5-2,,,"/>
 <approved hash="104,3,269.24,127,J2,VCC,5V,,,"/>
 <approved hash="104,1,419.1,246.38,OUTSPLIT,GND1,GND,,,"/>
 <approved hash="104,1,424.18,246.38,OUTSPLIT,GND2,GND,,,"/>
 <approved hash="104,1,419.1,261.62,OUTSPLIT,GND3,GND,,,"/>
 <approved hash="104,1,424.18,261.62,OUTSPLIT,GND4,GND,,,"/>
 <approved hash="104,2,109.22,-88.9,FL1,VS+,2V5+,,,"/>
-<approved hash="104,2,109.22,-93.98,FL1,VS-,2V5-,,,"/>
+<approved hash="104,2,109.22,-93.98,FL1,VS-,2V5-1,,,"/>
 <approved hash="104,4,73.66,91.44,FL4,VS+,2V5+,,,"/>
-<approved hash="104,4,73.66,86.36,FL4,VS-,2V5-,,,"/>
+<approved hash="104,4,73.66,86.36,FL4,VS-,2V5-2,,,"/>
 <approved hash="106,6,60.96,220.98,BG,,,,,"/>
 <approved hash="106,6,60.96,302.26,CALTRIG,,,,,"/>
 <approved hash="106,7,238.76,276.86,CLK1,,,,,"/>
