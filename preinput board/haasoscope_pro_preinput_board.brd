@@ -1755,11 +1755,11 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </package>
 </packages>
 </library>
-<library name="TLP3440_TP_F">
+<library name="TLP3475R_TP_F">
 <description>&lt;Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
-<package name="TLP3440TPF">
+<package name="TLP3475RTPF">
 <description>&lt;b&gt;11-2D1A_2022&lt;/b&gt;&lt;br&gt;
 </description>
 <smd name="1" x="-0.4" y="-0.875" dx="1" dy="0.55" layer="1" rot="R90"/>
@@ -2203,14 +2203,14 @@ design rules under a new name.
 <attribute name="NAME" x="29.95" y="26.3" size="0.8128" layer="25" rot="R270" align="center"/>
 <attribute name="VALUE" x="33.7" y="33.45" size="0.8128" layer="27" align="center"/>
 </element>
-<element name="K3" library="TLP3440_TP_F" package="TLP3440TPF" value="TLP3440_TP,F" x="62.4" y="27.8" smashed="yes" rot="R180">
+<element name="K3" library="TLP3475R_TP_F" package="TLP3475RTPF" value="TLP3475R_TP,F" x="62.4" y="27.8" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HEIGHT" value="1.4mm" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="LCSC" value="C2152220" x="62.4" y="27.8" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Toshiba" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475R(TP,F" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="757-TLP3440TPF" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Toshiba/TLP3440TPF?qs=bYcAidFZG4jqnlmzhh150Q%3D%3D" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="757-TLP3475RTPF" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Toshiba/TLP3475RTPF?qs=bYcAidFZG4jqnlmzhh150Q%3D%3D" x="62.4" y="27.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="62.4" y="27.8" size="0.8128" layer="25" rot="R180" align="center"/>
 <attribute name="VALUE" x="62.4" y="30.7" size="0.8128" layer="27" rot="R180" align="center"/>
 </element>

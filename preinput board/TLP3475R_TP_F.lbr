@@ -60,7 +60,7 @@
 <description>&lt;Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
-<package name="TLP3440TPF">
+<package name="TLP3475RTPF">
 <description>&lt;b&gt;11-2D1A_2022&lt;/b&gt;&lt;br&gt;
 </description>
 <smd name="1" x="-0.400" y="-0.875" dx="1.000" dy="0.550" layer="1" rot="R90"/>
@@ -84,7 +84,7 @@
 </package>
 </packages>
 <symbols>
-<symbol name="TLP3440_TP,F">
+<symbol name="TLP3475R_TP,F">
 <wire x1="5.08" y1="2.54" x2="30.48" y2="2.54" width="0.254" layer="94"/>
 <wire x1="30.48" y1="-5.08" x2="30.48" y2="2.54" width="0.254" layer="94"/>
 <wire x1="30.48" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
@@ -98,14 +98,14 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TLP3440_TP,F" prefix="K">
+<deviceset name="TLP3475R_TP,F" prefix="K">
 <description>&lt;b&gt;Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=15250&amp;prodName=TLP3440"&gt; Datasheet &lt;/a&gt;</description>
+Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=15250&amp;prodName=TLP3475R"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="TLP3440_TP,F" x="0" y="0"/>
+<gate name="G$1" symbol="TLP3475R_TP,F" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TLP3440TPF">
+<device name="" package="TLP3475RTPF">
 <connects>
 <connect gate="G$1" pin="ANODE" pad="1"/>
 <connect gate="G$1" pin="CATHODE" pad="2"/>
@@ -114,10 +114,10 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 </connects>
 <technologies>
 <technology name="">
-<attribute name="Mouser_Part_Number" value="757-TLP3440TPF" constant="no"/>
-<attribute name="Mouser_Price-Stock" value="https://www.mouser.co.uk/ProductDetail/Toshiba/TLP3440TPF?qs=bYcAidFZG4jqnlmzhh150Q%3D%3D" constant="no"/>
+<attribute name="Mouser_Part_Number" value="757-TLP3475RTPF" constant="no"/>
+<attribute name="Mouser_Price-Stock" value="https://www.mouser.co.uk/ProductDetail/Toshiba/TLP3475RTPF?qs=bYcAidFZG4jqnlmzhh150Q%3D%3D" constant="no"/>
 <attribute name="Manufacturer_Name" value="Toshiba" constant="no"/>
-<attribute name="Manufacturer_Part_Number" value="TLP3440(TP,F" constant="no"/>
+<attribute name="Manufacturer_Part_Number" value="TLP3475R(TP,F" constant="no"/>
 <attribute name="Description" value="Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm" constant="no"/>
 <attribute name="Height" value="1.4mm" constant="no"/>
 </technology>
