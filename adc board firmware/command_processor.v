@@ -68,11 +68,16 @@ assign debugout[4] = lockinfo[0]; //locked
 assign debugout[5] = lockinfo[1]; //activeclock
 assign debugout[6] = lockinfo[2]; //clkbad0
 assign debugout[7] = lockinfo[3]; //clkbad1
-assign debugout[11:8] = state;
+assign debugout[8] = 0;
+assign debugout[9] = 0;
+assign debugout[10] = 0;
 
-integer lvdstestcounter=0;
+reg fanon=1;
+assign debugout[11] = fanon;
+
+reg [15:0]	lvdstestcounter=0;
 always @ (posedge clk50) begin
-	lvdstestcounter<=lvdstestcounter+1;
+	lvdstestcounter<=lvdstestcounter+16'd1;
 end
 assign lvdsout_trig = lvdstestcounter[2];
 assign lvdsout_spare[0] = lvdstestcounter[3];
@@ -355,8 +360,10 @@ always @ (posedge clk or negedge rstn)
  if (~rstn) begin
 	bootup <= 1'b0;
 	state  <= INIT;
- end else begin
- 
+ end else begin 
+  
+  boardout[3]=lvdstestcounter[15]; // for probe compensation, 50000 kHz / 2^16 = 0.762939453125 kHz
+  
   case (state)
    INIT : begin
 		spireset_L <= 1'b1;
