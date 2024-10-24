@@ -437,7 +437,10 @@ always @ (posedge clk or negedge rstn)
 			4 : begin
 				spitxdv <= 1'b0;
 				spitx <= rx_data[4];//third byte to send (ignored during read)
-				spistate <= 4'd5;
+				if (spirxdv) begin
+					spistate <= 4'd5;
+					o_tdata[15:8] <= spirx; // send back the SPI data read during byte 1 (used for slowadc)
+				end
 			end
 			5 : begin
 				if (spitxready) begin
@@ -461,7 +464,7 @@ always @ (posedge clk or negedge rstn)
 				spitxdv <= 1'b0;
 				if (spirxdv) begin
 					spistate <= 4'd9;
-					o_tdata <= spirx; // send back the SPI data read
+					o_tdata[7:0] <= spirx; // send back the SPI data read
 				end
 			end
 			9 : begin

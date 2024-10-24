@@ -2,18 +2,22 @@ import numpy as np
 import sys, time
 import pyqtgraph as pg
 from ftd2xx import DeviceError
+import ftd2xx
 # noinspection PyUnresolvedReferences
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 
 import warnings
 from scipy.optimize import curve_fit
 
-from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
+from USB_FTX232H_FT60X import USB_FTX232H_sync245mode # see USB_FTX232H_FT60X.py
 
 # https://github.com/drandyhaas/pyadf435x
 from adf435x import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, BandSelectClockMode, FeedbackSelect, PDPolarity
 
-usb = USB_FTX232H_FT60X_sync245mode(device_to_open_list=(('FTX232H','HaasoscopePro USB2'),('FT60X','Haasoscope USB3')))
+print(ftd2xx.listDevices())
+
+port=6
+usb = USB_FTX232H_sync245mode('FTX232H','HaasoscopePro USB2',port)
 usb.set_recv_timeout(250) #ms
 usb.set_latencyt(1) #ms
 
@@ -49,7 +53,7 @@ def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=
     if quiet: return
     if read:
         if show_bin: print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[0]))
-        else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[0]))
+        else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[1]), hex(spires[0]))
     else:
         if nbyte==4: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third),hex(fourth))
         else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third))
@@ -261,7 +265,7 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     debugstrobe = False
     dofast = False
-    xydata_overlapped=True
+    xydata_overlapped=False
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger falling, 2 threshold trigger rising, ...
@@ -848,6 +852,12 @@ class MainWindow(TemplateBaseClass):
             thestr +="\n"+"Rise time "+str(risetime.round(2))+"+-"+str(risetimeerr.round(2))+" "+self.units
 
         self.ui.textBrowser.setText(thestr)
+
+        spimode(0)
+        spicommand("SlowDAC1", 0x00, 0x00, 0x00, True, cs=6, nbyte=2,quiet=True) # first conversion may be for old input
+        spicommand("SlowDAC1", 0x00, 0x00, 0x00, True, cs=6, nbyte=2)
+        spicommand("SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2,quiet=True) # first conversion may be for old input
+        spicommand("SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2)
 
     def setup_connections(self):
         print("Starting")
