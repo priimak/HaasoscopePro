@@ -38139,7 +38139,7 @@ and each of these negative regulators can only make 200mA</text>
 <sheet>
 <description>Temp mon</description>
 <plain>
-<text x="22.86" y="17.78" size="1.778" layer="90">Slow adc for temp momitoring</text>
+<text x="22.86" y="17.78" size="1.778" layer="90">Slow adc for temp monitoring</text>
 <text x="99.06" y="101.6" size="1.778" layer="90">V across TDIODE, with 0.1mA
 is 0.681 when ADC running with clock, 0.731 when off</text>
 <text x="68.58" y="96.52" size="1.778" layer="90">Gain=1+3/1=4</text>

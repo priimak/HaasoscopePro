@@ -11718,11 +11718,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="J1" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" package="H2-2.54" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54" x="1.17" y="110.02" smashed="yes">
 <attribute name="MPN" value="P125-1102A0BS116A1" x="1.17" y="110.02" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R207" library="Seeed-Resistor" library_urn="urn:adsk.eagle:library:474" package="R0603" package3d_urn="urn:adsk.eagle:package:32791/1" value="NCP18WF104F03RC" x="99" y="98.5" smashed="yes" rot="R90">
-<attribute name="JLC_ROTATION" value="90" x="0" y="0" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="LCSC" value="C13564" x="99" y="98.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="NCP18XH103F03RB" x="99" y="98.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="104.605" y="97.435" size="0.8128" layer="21" rot="R180"/>
+<element name="R207" library="Seeed-Resistor" library_urn="urn:adsk.eagle:library:474" package="R0603" package3d_urn="urn:adsk.eagle:package:32791/1" value="NCP18WF104F03RC" x="109.5" y="98.5" smashed="yes" rot="R90">
+<attribute name="JLC_ROTATION" value="90" x="10.5" y="0" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C13564" x="109.5" y="98.5" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="NCP18XH103F03RB" x="109.5" y="98.5" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="115.105" y="97.435" size="0.8128" layer="21" rot="R180"/>
 </element>
 <element name="Q1" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="198.5" y="54" smashed="yes" rot="R270">
 <attribute name="LCSC" value="C7420370" x="205.5" y="59" size="1.778" layer="27" rot="R270" display="off"/>
@@ -13363,8 +13363,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="J1" pad="2"/>
 <contactref element="R207" pad="1"/>
 <via x="97.25" y="98.55" extent="1-16" drill="0.5"/>
-<wire x1="97.25" y1="98.55" x2="98.188" y2="98.55" width="0.1524" layer="1"/>
-<wire x1="98.188" y1="98.55" x2="98.238" y2="98.5" width="0.1524" layer="1"/>
 <contactref element="Q1" pad="2"/>
 <contactref element="R137" pad="P$1"/>
 <contactref element="IC7" pad="7"/>
@@ -17135,6 +17133,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="101.3532" y1="107.1468" x2="99" y2="107.1468" width="0.254" layer="1"/>
 <wire x1="98.438" y1="103.225" x2="98.438" y2="103.875" width="0.254" layer="1"/>
 <wire x1="98.438" y1="103.225" x2="92.562" y2="103.225" width="0.254" layer="1"/>
+<wire x1="98.438" y1="103.875" x2="98.55" y2="103.763" width="0.254" layer="1"/>
+<wire x1="98.55" y1="103.763" x2="98.55" y2="102" width="0.254" layer="1"/>
 </signal>
 <signal name="SCLK3">
 <contactref element="IC2" pad="3"/>
@@ -17342,7 +17342,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="94.5" y1="108.5" x2="94.5" y2="105" width="0.2032" layer="1"/>
 <wire x1="94.5" y1="105" x2="93.375" y2="103.875" width="0.2032" layer="1"/>
 <wire x1="93.375" y1="103.875" x2="92.562" y2="103.875" width="0.2032" layer="1"/>
-<wire x1="91.5512125" y1="103.5" x2="90.5" y2="103.5" width="0.2032" layer="1"/>
+<wire x1="90.5" y1="103.5" x2="91.5512125" y2="103.5" width="0.2032" layer="1"/>
 <wire x1="91.5959" y1="103.5446875" x2="91.5512125" y2="103.5" width="0.2032" layer="1"/>
 <wire x1="91.7298125" y1="102.7714" x2="91.5959" y2="102.9053125" width="0.2032" layer="1"/>
 <wire x1="91.5959" y1="102.9053125" x2="91.5959" y2="103.5446875" width="0.2032" layer="1"/>
@@ -20436,14 +20436,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="110.38" y1="100.967" x2="110.38" y2="100.31306875" width="0.0889" layer="1"/>
 <wire x1="110.38" y1="100.31306875" x2="110.06693125" y2="100" width="0.0889" layer="1"/>
 <contactref element="R207" pad="2"/>
-<wire x1="99.762" y1="98.5" x2="102.5" y2="98.5" width="0.1524" layer="1"/>
-<via x="102.5" y="98.5" extent="1-16" drill="0.35"/>
-<wire x1="102.5" y1="98.5" x2="104" y2="100" width="0.1524" layer="14"/>
-<wire x1="104" y1="100" x2="108" y2="100" width="0.1524" layer="14"/>
-<wire x1="108" y1="100" x2="109.5" y2="98.5" width="0.1524" layer="14"/>
-<via x="109.5" y="98.5" extent="1-16" drill="0.35"/>
-<wire x1="109.5" y1="98.5" x2="109.5" y2="99.43306875" width="0.1524" layer="1"/>
-<wire x1="109.5" y1="99.43306875" x2="110.06693125" y2="100" width="0.1524" layer="1"/>
+<wire x1="110.262" y1="98.5" x2="110.06693125" y2="98.69506875" width="0.1524" layer="1"/>
+<wire x1="110.06693125" y1="98.69506875" x2="110.06693125" y2="100" width="0.1524" layer="1"/>
 </signal>
 <signal name="AOUT_P" class="3">
 <contactref element="IC13" pad="13"/>
