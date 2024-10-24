@@ -50,13 +50,15 @@ def spicommand(name, first, second, third, read, fourth=100, show_bin=False, cs=
     if read: first = first + 0x80 #set the highest bit for read, i.e. add 0x80
     usb.send(bytes([3, cs, first, second, third, fourth, 100, nbyte]))  # get SPI result from command
     spires = usb.recv(4)
-    if quiet: return
     if read:
-        if show_bin: print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[0]))
-        else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[1]), hex(spires[0]))
+        if not quiet:
+            if show_bin: print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[1]), binprint(spires[0]))
+            else: print("SPI read:\t"+name, "(",hex(first),hex(second),")",hex(spires[1]), hex(spires[0]))
+        return spires
     else:
-        if nbyte==4: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third),hex(fourth))
-        else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third))
+        if not quiet:
+            if nbyte==4: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third),hex(fourth))
+            else: print("SPI write:\t"+name, "(",hex(first),hex(second),")",hex(third))
 
 def spicommand2(name,first,second,third,fourth,read, cs=0, nbyte=3):
     # first byte to send, start of address
@@ -210,6 +212,11 @@ def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find ris
     intop = (x >= (left+leftplus))
     val[intop] = top
     return val
+
+def clockswitch():
+    usb.send(bytes([7, 0, 0, 0, 99, 99, 99, 99]))
+    clockinfo = usb.recv(4)
+    print("Clockinfo", binprint(clockinfo[1]), binprint(clockinfo[0]))
 
 def setchanimpedance(chan, onemeg):
     if chan==0: controlbit=0
@@ -377,6 +384,7 @@ class MainWindow(TemplateBaseClass):
 
     def setoversamp(self):
         setsplit(self.ui.oversampCheck.checkState() == QtCore.Qt.Checked) # will be True for oversampling, False otherwise
+        clockswitch() # just testing - would need more logic here to select the right clock
 
     phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
@@ -405,7 +413,7 @@ class MainWindow(TemplateBaseClass):
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
         n = -2  # amount to adjust (+ or -)
-        for i in range(abs(n)): self.dophase(2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of clkout
+        for i in range(abs(n)): self.dophase(2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
         n = -2  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
         n = 0  # amount to adjust (+ or -)
@@ -818,7 +826,8 @@ class MainWindow(TemplateBaseClass):
         if self.debug:
             time.sleep(.5)
             #oldbytes()
-        if self.nbadclkA == 2*self.expect_samples and self.phasec[0][2]<12: # adjust phase by 90 deg
+        if ((self.nbadclkA == 2*self.expect_samples or self.nbadclkB == 2*self.expect_samples or self.nbadclkC == 2*self.expect_samples or self.nbadclkD == 2*self.expect_samples)
+                and self.phasec[0][2]<12): # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
             for i in range(n): self.dophase(2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
         return rx_len
@@ -851,13 +860,18 @@ class MainWindow(TemplateBaseClass):
             #print(popt)
             thestr +="\n"+"Rise time "+str(risetime.round(2))+"+-"+str(risetimeerr.round(2))+" "+self.units
 
-        self.ui.textBrowser.setText(thestr)
-
         spimode(0)
         spicommand("SlowDAC1", 0x00, 0x00, 0x00, True, cs=6, nbyte=2,quiet=True) # first conversion may be for old input
-        spicommand("SlowDAC1", 0x00, 0x00, 0x00, True, cs=6, nbyte=2)
+        slowdac1 = spicommand("SlowDAC1", 0x00, 0x00, 0x00, True, cs=6, nbyte=2,quiet=True)
+        slowdac1amp = 4.0
+        slowdac1V = (256*slowdac1[1]+slowdac1[0])*3300/pow(2,12)/slowdac1amp
         spicommand("SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2,quiet=True) # first conversion may be for old input
-        spicommand("SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2)
+        slowdac2 = spicommand("SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2,quiet=True)
+        slowdac2amp=2.0 # 1.1 in new board
+        slowdac2V = (256*slowdac2[1]+slowdac2[0])*3300/pow(2,12)/slowdac2amp
+        thestr += "\n" + "Temp voltages (ADC Board): " + str(round(slowdac1V,2)) + " " + str(round(slowdac2V,2))
+
+        self.ui.textBrowser.setText(thestr)
 
     def setup_connections(self):
         print("Starting")

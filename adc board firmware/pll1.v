@@ -224,7 +224,7 @@ module pll1 (
 		altpll_component.port_extclk3 = "PORT_UNUSED",
 		altpll_component.primary_clock = "inclk0",
 		altpll_component.self_reset_on_loss_lock = "OFF",
-		altpll_component.switch_over_type = "MANUAL",
+		altpll_component.switch_over_type = "AUTO",
 		altpll_component.vco_frequency_control = "MANUAL_PHASE",
 		altpll_component.vco_phase_shift_step = 1,
 		altpll_component.width_clock = 5,
@@ -273,7 +273,7 @@ endmodule
 // Retrieval info: PRIVATE: GLOCKED_FEATURE_ENABLED STRING "0"
 // Retrieval info: PRIVATE: GLOCKED_MODE_CHECK STRING "0"
 // Retrieval info: PRIVATE: GLOCK_COUNTER_EDIT NUMERIC "1048575"
-// Retrieval info: PRIVATE: HAS_MANUAL_SWITCHOVER STRING "1"
+// Retrieval info: PRIVATE: HAS_MANUAL_SWITCHOVER STRING "0"
 // Retrieval info: PRIVATE: INCLK0_FREQ_EDIT STRING "50.000"
 // Retrieval info: PRIVATE: INCLK0_FREQ_UNIT_COMBO STRING "MHz"
 // Retrieval info: PRIVATE: INCLK1_FREQ_EDIT STRING "50.000"
@@ -446,7 +446,7 @@ endmodule
 // Retrieval info: CONSTANT: PORT_extclk3 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PRIMARY_CLOCK STRING "inclk0"
 // Retrieval info: CONSTANT: SELF_RESET_ON_LOSS_LOCK STRING "OFF"
-// Retrieval info: CONSTANT: SWITCH_OVER_TYPE STRING "MANUAL"
+// Retrieval info: CONSTANT: SWITCH_OVER_TYPE STRING "AUTO"
 // Retrieval info: CONSTANT: VCO_FREQUENCY_CONTROL STRING "MANUAL_PHASE"
 // Retrieval info: CONSTANT: VCO_PHASE_SHIFT_STEP NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_CLOCK NUMERIC "5"

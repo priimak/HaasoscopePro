@@ -26,7 +26,7 @@ module command_processor (
 	input  reg			spirxdv,
 	output reg [7:0]	spics, // which chip to talk to
 	
-	input wire			locked, // clock is locked
+	input wire [3:0]	lockinfo, // clock info
 	
 	input wire [139:0] lvds1bits, lvds2bits, lvds3bits, lvds4bits,// rx_in[0] drives data to rx_out[(J-1)..0], rx_in[1] drives data to the next J number of bits on rx_out
 	input wire			clklvds, // clk1, runs at LVDS bit rate (ADC clk input rate) / 2
@@ -60,17 +60,23 @@ module command_processor (
 
 integer version = 17; // firmware version
 
-assign debugout[0] = locked;
-assign debugout[1] = spics[4];
-assign debugout[2] = spics[5];
-assign debugout[3] = phaseupdown;
-assign debugout[4] = overrange[0];
-assign debugout[5] = overrange[1];
-assign debugout[6] = overrange[2];
-assign debugout[7] = overrange[3];
+assign debugout[0] = clkswitch;
+assign debugout[1] = lvdsin_trig;
+assign debugout[2] = lvdsin_spare[0];
+assign debugout[3] = lvdsin_spare[1];
+assign debugout[4] = lockinfo[0]; //locked
+assign debugout[5] = lockinfo[1]; //activeclock
+assign debugout[6] = lockinfo[2]; //clkbad0
+assign debugout[7] = lockinfo[3]; //clkbad1
 assign debugout[11:8] = state;
-assign lvdsout_trig = lvdsin_trig;
-assign lvdsout_spare = lvdsin_spare;
+
+integer lvdstestcounter=0;
+always @ (posedge clk50) begin
+	lvdstestcounter<=lvdstestcounter+1;
+end
+assign lvdsout_trig = lvdstestcounter[2];
+assign lvdsout_spare[0] = lvdstestcounter[3];
+assign lvdsout_spare[1] = lvdstestcounter[4];
 
 //variables in clklvds domain, writing into the RAM buffer
 reg [ 7:0]	acqstate=0;
@@ -510,7 +516,7 @@ always @ (posedge clk or negedge rstn)
 		
 		7 : begin // try to switch clocks
 			clkswitch <= ~clkswitch;
-			o_tdata <= {8'd0,8'd0,8'd0,7'd0,~clkswitch};
+			o_tdata <= {8'd0,8'd0,4'd0,lockinfo,7'd0,~clkswitch};
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
