@@ -16,7 +16,7 @@ from adf435x import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, B
 
 print(ftd2xx.listDevices())
 
-port=6
+port=5
 usb = USB_FTX232H_sync245mode('FTX232H','HaasoscopePro USB2',port)
 usb.set_recv_timeout(250) #ms
 usb.set_latencyt(1) #ms
@@ -108,14 +108,6 @@ def adf4350(freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_double
         spicommand("ADF4350 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0], cs=3, nbyte=4) # was cs=2 on alpha board v1.11
     spimode(0)
 
-def dooffset(chan, val): #val goes from -100% to 100%
-    spimode(1)
-    dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
-    #print("dacval is", dacval)
-    if chan==1: spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    if chan==0: spicommand("DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    spimode(0)
-
 debugspi=False
 def spimode(mode): # set SPI mode (polarity of clk and data)
     usb.send(bytes([4, mode, 0, 0, 0, 0, 0, 0]))
@@ -132,8 +124,8 @@ def board_setup(dopattern=False):
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
 
-    #spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
-    spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
+    spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
+    #spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
     #spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel
     #spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
 
@@ -200,10 +192,19 @@ def board_setup(dopattern=False):
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 
-def setgain(value):
+def setgain(chan,value):
     spimode(0)
     # 00 to 20 is 26 to -6 dB, 0x1a is no gain
-    spicommand("Amp Gain", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
+    if chan==1: spicommand("Amp Gain 0", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
+    if chan==0: spicommand("Amp Gain 1", 0x02, 0x00, 26-value, False, cs=2, nbyte=2)
+
+def dooffset(chan, val): #val goes from -100% to 100%
+    spimode(1)
+    dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
+    #print("dacval is", dacval)
+    if chan==1: spicommand("DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    if chan==0: spicommand("DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    spimode(0)
 
 def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
     val = bot + (x - left) * (top - bot) / leftplus
@@ -272,7 +273,7 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     debugstrobe = False
     dofast = False
-    xydata_overlapped=False
+    xydata_overlapped=True
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger falling, 2 threshold trigger rising, ...
@@ -311,7 +312,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.upposButton4.clicked.connect(self.uppos4)
         self.ui.downposButton4.clicked.connect(self.downpos4)
         self.ui.chanBox.valueChanged.connect(self.selectchannel)
-        self.ui.gainBox.valueChanged.connect(setgain)
+        self.ui.gainBox.valueChanged.connect(self.changegain)
         self.ui.offsetBox.valueChanged.connect(self.changeoffset)
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
         self.ui.ohmCheck.stateChanged.connect(self.setohm)
@@ -349,6 +350,8 @@ class MainWindow(TemplateBaseClass):
     def changeoffset(self):
         dooffset(self.selectedchannel, self.ui.offsetBox.value())
 
+    def changegain(self):
+        setgain(self.selectedchannel, self.ui.gainBox.value())
     def fwf(self):
         self.fitwidthfraction=self.ui.fwfBox.value()/100.
         print("fwf now",self.fitwidthfraction)
@@ -534,6 +537,9 @@ class MainWindow(TemplateBaseClass):
         #print("highres",self.highresval)
         self.telldownsample(self.downsample)
     def telldownsample(self,ds):
+        if (ds-5)>31:
+            print("downsample too large!")
+            return
         self.downsample=ds
         if ds<0: ds=0
         if ds==0:
