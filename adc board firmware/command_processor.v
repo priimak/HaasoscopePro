@@ -252,15 +252,15 @@ always @ (posedge clklvds or negedge rstn)
  end else begin
 	if (acqstate<251) begin
 		ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
-		if (downsamplecounter[downsample_sync]) begin
-			downsamplecounter<=1;
-			if (downsamplemergingcounter==downsamplemerging_sync) begin
-				downsamplemergingcounter <= 8'd1;
+		if (downsamplemergingcounter==downsamplemerging_sync) begin
+			downsamplemergingcounter <= 8'd1;
+			if (downsamplecounter[downsample_sync]) begin
+				downsamplecounter<=1;
 				ram_wr_address <= ram_wr_address + 10'd1;
 			end
-			else downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
+			else downsamplecounter <= downsamplecounter+1;
 		end
-		else downsamplecounter <= downsamplecounter+1;
+		else downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
 	end
 	else begin
 		ram_wr <= 1'b0;//not writing
