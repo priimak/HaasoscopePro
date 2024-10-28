@@ -852,10 +852,8 @@ class MainWindow(TemplateBaseClass):
                             if self.xydata_overlapped:
                                 print("downsampling not supported in overlap mode yet")
                             elif self.xydata_twochannel:
-                                if n>20:
-                                    samp = s * 20 + chan*10+9 - n
-                                else:
-                                    samp = s * 20 + chan*10+9 - n +10
+                                samp = s * 20 + chan*10+9 - n
+                                if n<20: samp = samp + 10
                                 self.xydata[chan%2][1][samp] = val
                             else:
                                 samp = s * 40 +39 - n
