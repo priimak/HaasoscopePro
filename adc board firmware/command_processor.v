@@ -87,7 +87,7 @@ assign lvdsout_spare[1] = lvdstestcounter[4];
 //variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter=1;
 reg signed [5+11:0] highressamplevalue[20];
-reg signed [11:0] samplevalue[40];
+reg signed [11:0] samplevalue[40], samplevaluereg[40];
 reg [1:0] 	sampleclkstr[40];
 reg [7:0]	tot_counter=0;
 reg [7:0]	downsamplemergingcounter=1;
@@ -102,18 +102,21 @@ reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
 reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
+reg 			channeltype=0, channeltype_sync=0;
 reg [ 9:0]	ram_address_triggered=0, ram_address_triggered_sync=0;
 reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
 reg [4:0] 	downsample=0, downsample_sync=0;
 reg			highres=0, highres_sync=0;
 reg [7:0]	downsamplemerging=1, downsamplemerging_sync=1;
 reg [7:0]  	sample_triggered=0, sample_triggered_sync=0;
+reg 			triggerchan=0, triggerchan_sync=0;
 
 integer i, j;
 always @ (posedge clklvds) begin	
 	triggerlive_sync <= triggerlive;
 	lengthtotake_sync <= lengthtotake;
 	triggertype_sync <= triggertype;
+	channeltype_sync <= channeltype;
 	didreadout_sync <= didreadout;
 	lowerthresh_sync <= lowerthresh;
 	upperthresh_sync <= upperthresh;
@@ -121,6 +124,7 @@ always @ (posedge clklvds) begin
 	downsample_sync <= downsample;
 	downsamplemerging_sync <= downsamplemerging;
 	highres_sync <= highres;
+	triggerchan_sync <= triggerchan;
 
 //	for (i=0;i<10;i=i+2) begin // account for switching of bits from DDR in lvds reciever?
 //		samplevalue[i]  <= {lvds1bits[110+i+1],lvds1bits[100+i+1],lvds1bits[90+i+1],lvds1bits[80+i+1],lvds1bits[70+i+1],lvds1bits[60+i+1],lvds1bits[50+i+1],lvds1bits[40+i+1],lvds1bits[30+i+1],lvds1bits[20+i+1],lvds1bits[10+i+1],lvds1bits[0+i+1]};
@@ -143,10 +147,21 @@ always @ (posedge clklvds) begin
 //	end
 	
 	for (i=0;i<10;i=i+1) begin
-		samplevalue[0 +i]  <= {lvds1bits[110+i],lvds1bits[100+i],lvds1bits[90+i],lvds1bits[80+i],lvds1bits[70+i],lvds1bits[60+i],lvds1bits[50+i],lvds1bits[40+i],lvds1bits[30+i],lvds1bits[20+i],lvds1bits[10+i],lvds1bits[0+i]};
-		samplevalue[10+i]  <= {lvds2bits[110+i],lvds2bits[100+i],lvds2bits[90+i],lvds2bits[80+i],lvds2bits[70+i],lvds2bits[60+i],lvds2bits[50+i],lvds2bits[40+i],lvds2bits[30+i],lvds2bits[20+i],lvds2bits[10+i],lvds2bits[0+i]};
-		samplevalue[20+i]  <= {lvdsEbits[0+i  ],lvdsEbits[ 10+i],lvds3bits[90+i],lvds3bits[80+i],lvds3bits[70+i],lvds3bits[60+i],lvds3bits[50+i],lvds3bits[40+i],lvds3bits[30+i],lvds3bits[20+i],lvds3bits[10+i],lvds3bits[0+i]};
-		samplevalue[30+i]  <= {lvdsEbits[ 20+i],lvds4bits[100+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
+		samplevaluereg[0 +i]  <= {lvds1bits[110+i],lvds1bits[100+i],lvds1bits[90+i],lvds1bits[80+i],lvds1bits[70+i],lvds1bits[60+i],lvds1bits[50+i],lvds1bits[40+i],lvds1bits[30+i],lvds1bits[20+i],lvds1bits[10+i],lvds1bits[0+i]};
+		samplevaluereg[10+i]  <= {lvds2bits[110+i],lvds2bits[100+i],lvds2bits[90+i],lvds2bits[80+i],lvds2bits[70+i],lvds2bits[60+i],lvds2bits[50+i],lvds2bits[40+i],lvds2bits[30+i],lvds2bits[20+i],lvds2bits[10+i],lvds2bits[0+i]};
+		samplevaluereg[20+i]  <= {lvdsEbits[  0+i],lvdsEbits[ 10+i],lvds3bits[90+i],lvds3bits[80+i],lvds3bits[70+i],lvds3bits[60+i],lvds3bits[50+i],lvds3bits[40+i],lvds3bits[30+i],lvds3bits[20+i],lvds3bits[10+i],lvds3bits[0+i]};
+		samplevaluereg[30+i]  <= {lvdsEbits[ 20+i],lvdsLbits[  0+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
+
+		samplevalue[0 +i] <= -samplevaluereg[0 +i];
+		samplevalue[20+i] <= -samplevaluereg[20+i];
+		if (channeltype_sync == 0) begin // single
+			samplevalue[10+i] <= -samplevaluereg[10+i];
+			samplevalue[30+i] <= -samplevaluereg[30+i];
+		end
+		else begin // dual, not inverted on input B
+			samplevalue[10+i] <= samplevaluereg[10+i];
+			samplevalue[30+i] <= samplevaluereg[30+i];
+		end
 		
 		sampleclkstr[i]    <= {lvds1bits[130+i],lvds1bits[120+i]};
 		sampleclkstr[10+i] <= {lvds2bits[130+i],lvds2bits[120+i]};
@@ -280,8 +295,8 @@ always @ (posedge clklvds or negedge rstn)
 		triggercounter<=0;
 		tot_counter<=0;
 		if (triggerlive_sync) begin
-			if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger falling edge
-			else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger rising edge
+			if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger rising edge
+			else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger falling edge
 			else begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
 				sample_triggered <= 0; // doesn't matter, random trigger
@@ -290,49 +305,51 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	
-	// falling edge trigger
+	// rising edge trigger
 	1 : begin // ready for first part of trigger condition to be met
-	for (i=0;i<40;i=i+1) begin
-		if (samplevalue[i]<lowerthresh_sync) acqstate <= 8'd2;
+	for (i=0;i<10;i=i+1) begin
+		if (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) acqstate <= 8'd2;//chan 0 trig
+		if (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) acqstate <= 8'd2;//chan 1 trig
 	end
 	end
 	2 : begin // ready for second part of trigger condition to be met
-	for (i=0;i<40;i=i+1) begin
-		if (samplevalue[i]>upperthresh_sync) begin
+	for (i=0;i<10;i=i+1) begin
+		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				sample_triggered <= i[7:0];
+				sample_triggered <= i[7:0]; // remember the sample that caused the trigger
 				acqstate <= 8'd250;
 			end
 		end
-		else begin
-			tot_counter<=8'd0;
-			acqstate <= 8'd1;
-		end
+//		else begin
+//			tot_counter<=8'd0;
+//			acqstate <= 8'd1;
+//		end
 	end
 	end
 	
-	//rising edge trigger
+	//falling edge trigger
 	3 : begin // ready for first part of trigger condition to be met
-	for (i=0;i<40;i=i+1) begin
-		if (samplevalue[i]>upperthresh_sync) acqstate <= 8'd4;
+	for (i=0;i<10;i=i+1) begin
+		if (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) acqstate <= 8'd4;//chan 0 trig
+		if (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) acqstate <= 8'd4;//chan 1 trig
 	end
 	end
 	4 : begin // ready for second part of trigger condition to be met
-	for (i=0;i<40;i=i+1) begin
-		if (samplevalue[i]<lowerthresh_sync) begin
+	for (i=0;i<10;i=i+1) begin
+		if ( (triggerchan_sync==1'b0 && samplevalue[i]>lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				sample_triggered <= i[7:0];
+				sample_triggered <= i[7:0]; // remember the sample that caused the trigger
 				acqstate <= 8'd250;
 			end
 		end
-		else begin
-			tot_counter<=8'd0;
-			acqstate <= 8'd3;
-		end
+//		else begin
+//			tot_counter<=8'd0;
+//			acqstate <= 8'd3;
+//		end
 	end
 	end
 	
@@ -431,6 +448,7 @@ always @ (posedge clk or negedge rstn)
 		
 		1 : begin // sets length of data to take, activates trigger for new event if we don't alrady have one
 			triggertype <= rx_data[1]; // while we're at it, set the trigger type
+			channeltype <= rx_data[2][0]; // and the channel type (single or dual)
 			lengthtotake <= {rx_data[5],rx_data[4]};
 			if (acqstate_sync == 0) triggerlive <= 1'b1; // gets reset in INIT state
 			o_tdata <= {eventcounter_sync,sample_triggered_sync,acqstate_sync}; // return acqstate, so we can see if we have an event ready to be read out
@@ -565,6 +583,7 @@ always @ (posedge clk or negedge rstn)
 			upperthresh <= ((rx_data[1]+rx_data[2]-12'd128)<<4)+12'd8;
 			ram_preoffset <= (rx_data[3][1:0]<<8)+rx_data[4];
 			triggerToT <= rx_data[5];
+			triggerchan <= rx_data[6][0];
 			o_tdata <= 8;
 			length <= 4;
 			o_tvalid <= 1'b1;

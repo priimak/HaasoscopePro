@@ -125,11 +125,12 @@ def board_setup(dopattern, twochannel):
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
 
     if twochannel:
-        spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
-        # spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel
+        spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel, 12-bit
+        # spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel, 12-bit
     else:
-        spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
-        #spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
+        spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel, 12-bit
+        #spicommand("LMODE", 0x02, 0x01, 0x37, False)  # LVDS mode: aligned, demux, single channel, 8-bit
+        #spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel, 12-bit
 
     spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
     #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
@@ -276,12 +277,12 @@ class MainWindow(TemplateBaseClass):
     debugstrobe = False
     dofast = False
     xydata_overlapped=False
-    xydata_twochannel=True
+    xydata_twochannel=False
     total_rx_len = 0
     time_start = time.time()
-    triggertype = 1  # 0 no trigger, 1 threshold trigger falling, 2 threshold trigger rising, ...
+    triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
     if dopattern: triggertype = 0
-    selectedchannel=0
+    selectedchannel=1
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -299,6 +300,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.risingedgeCheck.stateChanged.connect(self.risingfalling)
         self.ui.exttrigCheck.stateChanged.connect(self.exttrig)
         self.ui.totBox.valueChanged.connect(self.tot)
+        self.ui.triggerChanBox.valueChanged.connect(self.triggerchanchanged)
         self.ui.gridCheck.stateChanged.connect(self.grid)
         self.ui.markerCheck.stateChanged.connect(self.marker)
         self.ui.highresCheck.stateChanged.connect(self.highres)
@@ -347,8 +349,11 @@ class MainWindow(TemplateBaseClass):
     def selectchannel(self):
         self.selectedchannel=self.ui.chanBox.value()
         if len(self.lines)>0:
-            if self.lines[self.selectedchannel].isVisible():   self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
+            if self.lines[self.selectedchannel].isVisible(): self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
             else:   self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
+
+    def triggerchanchanged(self):
+        self.triggerchan = self.ui.triggerChanBox.value()
 
     def changeoffset(self):
         dooffset(self.selectedchannel, self.ui.offsetBox.value())
@@ -489,25 +494,26 @@ class MainWindow(TemplateBaseClass):
     max_x=4*10*expect_samples*downsamplefactor/nsunits/samplerate
     triggerlevel = 127
     triggerdelta = 4
-    triggerpos = int(expect_samples * 128/255)
+    triggerpos = int(expect_samples * 128/256)
     triggertimethresh = 0
+    triggerchan = 1
     def triggerlevelchanged(self,value):
-        if value+self.triggerdelta < 255 and value-self.triggerdelta > 0:
-            self.triggerlevel = 255 - value
+        if value+self.triggerdelta < 256 and value-self.triggerdelta > 0:
+            self.triggerlevel = value
             self.sendtriggerinfo()
     def triggerdeltachanged(self, value):
-        if self.triggerlevel+value < 255 and self.triggerlevel-value > 0:
+        if value+self.triggerlevel < 256 and self.triggerlevel-value > 0:
             self.triggerdelta=value
             self.sendtriggerinfo()
     def triggerposchanged(self,value):
-        self.triggerpos = int(self.expect_samples * value/255)
+        self.triggerpos = int(self.expect_samples * value/256)
         self.sendtriggerinfo()
     def sendtriggerinfo(self):
-        usb.send(bytes([8, self.triggerlevel, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, self.triggertimethresh, 100, 100]))
+        usb.send(bytes([8, self.triggerlevel+1, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, self.triggertimethresh, self.triggerchan, 100]))
         usb.recv(4)
         self.drawtriggerlines()
     def drawtriggerlines(self):
-        self.hline = (255 - self.triggerlevel - 128) * self.yscale
+        self.hline = (self.triggerlevel -127)* self.yscale
         self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
         point = self.triggerpos + 1.25
         self.vline = 4 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
@@ -626,9 +632,9 @@ class MainWindow(TemplateBaseClass):
     def risingfalling(self):
         self.fallingedge=not self.ui.risingedgeCheck.checkState()
         if self.triggertype==1:
-            if not self.fallingedge: self.triggertype=2
+            if self.fallingedge: self.triggertype=2
         if self.triggertype==2:
-            if self.fallingedge: self.triggertype = 1
+            if not self.fallingedge: self.triggertype = 1
 
     dodrawing=True
     def drawing(self):
@@ -748,11 +754,11 @@ class MainWindow(TemplateBaseClass):
 
     def getchannels(self):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
-        usb.send(bytes([1, self.triggertype, 99, 99] + inttobytes(self.expect_samples-self.triggerpos+1)))  # length to take after trigger (last 4 bytes)
+        usb.send(bytes([1, self.triggertype, self.xydata_twochannel, 99] + inttobytes(self.expect_samples-self.triggerpos+1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
         eventcountertemp = triggercounter[3]*256+triggercounter[2]
-        self.sample_triggered = triggercounter[1]
+        sample_triggered = triggercounter[1]
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
             if eventcountertemp != self.eventcounter + 1 and eventcountertemp != 0: #check event count, but account for rollover
@@ -777,7 +783,7 @@ class MainWindow(TemplateBaseClass):
             self.nbadclkC = 0
             self.nbadclkD = 0
             self.nbadstr = 0
-            for s in range(0, int(self.expect_samples)):
+            for s in range(0, self.expect_samples):
                 chan = -1
                 for n in range(nsubsamples): # the subsample to get
                     pbyte = nsubsamples*2*s + 2*n
@@ -826,24 +832,25 @@ class MainWindow(TemplateBaseClass):
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        if self.xydata_twochannel and chan%2==1: val = -val # actually will need to invert only input B, since A is already swapped P<->N on the board
+                        #if s==0 and n==0: print("sample triggered",sample_triggered)
                         if self.downsamplemerging==1:
                             samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
+                            if s<(self.expect_samples-1): samp = samp + sample_triggered
                             # if samp % 2 == 1: # account for switching of bits from DDR in lvds reciever?
                             #     samp = samp - 1
                             # else:
                             #     samp = samp + 1
                             if self.xydata_overlapped:
-                                self.xydata[chan][1][samp] = -val
+                                self.xydata[chan][1][samp] = val
                             elif self.xydata_twochannel:
                                 if chan%2==0: chani=int(chan/2)
                                 else: chani=int((chan-1)/2)
-                                self.xydata[chan%2][1][chani+ 2*samp] = -val
+                                self.xydata[chan%2][1][chani+ 2*samp] = val
                             else:
-                                self.xydata[0][1][chan+ 4*samp] = -val
+                                self.xydata[0][1][chan+ 4*samp] = val
                         else:
                             samp = s * 40 +39 - n
-                            self.xydata[0][1][samp] = -val
+                            self.xydata[0][1][samp] = val
         if self.debug:
             time.sleep(.5)
             #oldbytes()

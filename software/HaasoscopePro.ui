@@ -355,6 +355,9 @@
          <property name="text">
           <string>Rising edge</string>
          </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
         </widget>
         <widget class="QCheckBox" name="exttrigCheck">
          <property name="geometry">
@@ -378,7 +381,7 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>70</y>
+           <y>90</y>
            <width>51</width>
            <height>22</height>
           </rect>
@@ -389,7 +392,7 @@
           </font>
          </property>
          <property name="maximum">
-          <number>250</number>
+          <number>255</number>
          </property>
          <property name="value">
           <number>0</number>
@@ -399,7 +402,7 @@
          <property name="geometry">
           <rect>
            <x>70</x>
-           <y>73</y>
+           <y>93</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -417,7 +420,7 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>100</y>
+           <y>120</y>
            <width>51</width>
            <height>22</height>
           </rect>
@@ -434,14 +437,14 @@
           <number>100</number>
          </property>
          <property name="value">
-          <number>1</number>
+          <number>4</number>
          </property>
         </widget>
         <widget class="QLabel" name="label_15">
          <property name="geometry">
           <rect>
            <x>70</x>
-           <y>103</y>
+           <y>123</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -453,6 +456,48 @@
          </property>
          <property name="text">
           <string>Delta</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="triggerChanBox">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>51</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_13">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>64</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>Chan</string>
          </property>
         </widget>
        </widget>
