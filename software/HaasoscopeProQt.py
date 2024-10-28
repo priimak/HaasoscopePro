@@ -277,7 +277,7 @@ class MainWindow(TemplateBaseClass):
     debugstrobe = False
     dofast = False
     xydata_overlapped=False
-    xydata_twochannel=False
+    xydata_twochannel=True
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
@@ -496,7 +496,7 @@ class MainWindow(TemplateBaseClass):
     triggerdelta = 4
     triggerpos = int(expect_samples * 128/256)
     triggertimethresh = 0
-    triggerchan = 1
+    triggerchan = 0
     def triggerlevelchanged(self,value):
         if value+self.triggerdelta < 256 and value-self.triggerdelta > 0:
             self.triggerlevel = value
@@ -849,8 +849,17 @@ class MainWindow(TemplateBaseClass):
                             else:
                                 self.xydata[0][1][chan+ 4*samp] = val
                         else:
-                            samp = s * 40 +39 - n
-                            self.xydata[0][1][samp] = val
+                            if self.xydata_overlapped:
+                                print("downsampling not supported in overlap mode yet")
+                            elif self.xydata_twochannel:
+                                if n>20:
+                                    samp = s * 20 + chan*10+9 - n
+                                else:
+                                    samp = s * 20 + chan*10+9 - n +10
+                                self.xydata[chan%2][1][samp] = val
+                            else:
+                                samp = s * 40 +39 - n
+                                self.xydata[0][1][samp] = val
         if self.debug:
             time.sleep(.5)
             #oldbytes()
