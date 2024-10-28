@@ -58,7 +58,7 @@ module command_processor (
 	input wire [69:0] lvdsEbits, lvdsLbits
 );
 
-integer version = 17; // firmware version
+integer version = 18; // firmware version
 
 assign debugout[0] = clkswitch;
 assign debugout[1] = lvdsin_trig;
@@ -85,18 +85,18 @@ assign lvdsout_spare[0] = lvdstestcounter[3];
 assign lvdsout_spare[1] = lvdstestcounter[4];
 
 //variables in clklvds domain, writing into the RAM buffer
-reg [ 7:0]	acqstate=0;
 integer		downsamplecounter=1;
-reg signed [5+11:0] highressamplevalue[40];
+reg signed [5+11:0] highressamplevalue[20];
 reg signed [11:0] samplevalue[40];
 reg [1:0] 	sampleclkstr[40];
 reg [7:0]	tot_counter=0;
 reg [7:0]	downsamplemergingcounter=1;
+reg [15:0]	triggercounter=0;
 
 //variables synced between domains
+reg [ 7:0]	acqstate=0, acqstate_sync=0;
 reg signed [11:0]  lowerthresh=0, lowerthresh_sync=0;
 reg signed [11:0]  upperthresh=0, upperthresh_sync=0;
-reg [15:0]	triggercounter=0, triggercounter_sync=0;
 reg [15:0]	eventcounter=0, eventcounter_sync=0;
 reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
 reg 			triggerlive=0, triggerlive_sync=0;
@@ -107,6 +107,7 @@ reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
 reg [4:0] 	downsample=0, downsample_sync=0;
 reg			highres=0, highres_sync=0;
 reg [7:0]	downsamplemerging=1, downsamplemerging_sync=1;
+reg [7:0]  	sample_triggered=0, sample_triggered_sync=0;
 
 integer i, j;
 always @ (posedge clklvds) begin	
@@ -161,6 +162,12 @@ always @ (posedge clklvds) begin
 	for (i=0;i<40;i=i+1) begin
 		lvdsbitsout[14*i +:12] <= samplevalue[i]; // this is normal
 	end
+//	for (i=0;i<10;i=i+1) begin // could straighten them out, but makes showing separate lvds channels more complicated on the python side
+//		lvdsbitsout[14*(i*4+0) +:12] <= samplevalue[30+1*i]; // every bit from chan 4 into bit 0,4...16
+//		lvdsbitsout[14*(i*4+1) +:12] <= samplevalue[20+1*i]; // every bit from chan 3 into bit 1,5...17
+//		lvdsbitsout[14*(i*4+2) +:12] <= samplevalue[10+1*i]; // every bit from chan 2 into bit 2,6...18
+//		lvdsbitsout[14*(i*4+3) +:12] <= samplevalue[ 0+1*i]; // every bit from chan 1 into bit 3,7...19
+//	end
 	end
 	
 	if (downsamplemerging_sync==2) begin
@@ -228,7 +235,7 @@ always @ (posedge clklvds) begin
 	end
 	end
 	
-	if (downsamplemerging_sync==40) begin
+	if (downsamplemerging_sync==40 && downsamplecounter[downsample_sync]) begin
 		if (highres_sync) begin
 			highressamplevalue[0] = samplevalue[0] + samplevalue[1] + samplevalue[2] + samplevalue[3] + samplevalue[5] + samplevalue[6] + samplevalue[7] + samplevalue[8] +
 											samplevalue[10] + samplevalue[11] + samplevalue[12] + samplevalue[13] + samplevalue[15] + samplevalue[16] + samplevalue[17] + samplevalue[18] +
@@ -250,22 +257,24 @@ always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
 	acqstate <= 8'd0;
  end else begin
+
 	if (acqstate<251) begin
 		ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
-		if (downsamplemergingcounter==downsamplemerging_sync) begin
-			downsamplemergingcounter <= 8'd1;
-			if (downsamplecounter[downsample_sync]) begin
-				downsamplecounter<=1;
+		if (downsamplecounter[downsample_sync]) begin
+			downsamplecounter<=1;
+			if (downsamplemergingcounter==downsamplemerging_sync) begin
+				downsamplemergingcounter <= 8'd1;
 				ram_wr_address <= ram_wr_address + 10'd1;
 			end
-			else downsamplecounter <= downsamplecounter+1;
+			else downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
 		end
-		else downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
+		else downsamplecounter <= downsamplecounter+1;
 	end
 	else begin
 		ram_wr <= 1'b0;//not writing
 		downsamplecounter<=1;
 	end
+	
 	case (acqstate)
 	0 : begin // ready
 		triggercounter<=0;
@@ -275,6 +284,7 @@ always @ (posedge clklvds or negedge rstn)
 			else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger rising edge
 			else begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				sample_triggered <= 0; // doesn't matter, random trigger
 				acqstate <= 8'd250; // go straight to taking more data, no trigger, triggertype==0
 			end
 		end
@@ -282,30 +292,48 @@ always @ (posedge clklvds or negedge rstn)
 	
 	// falling edge trigger
 	1 : begin // ready for first part of trigger condition to be met
-		if (samplevalue[0]<lowerthresh_sync) acqstate <= 8'd2;
+	for (i=0;i<40;i=i+1) begin
+		if (samplevalue[i]<lowerthresh_sync) acqstate <= 8'd2;
+	end
 	end
 	2 : begin // ready for second part of trigger condition to be met
-		if (samplevalue[0]>upperthresh_sync) begin
+	for (i=0;i<40;i=i+1) begin
+		if (samplevalue[i]>upperthresh_sync) begin
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				sample_triggered <= i[7:0];
 				acqstate <= 8'd250;
 			end
 		end
+		else begin
+			tot_counter<=8'd0;
+			acqstate <= 8'd1;
+		end
+	end
 	end
 	
 	//rising edge trigger
 	3 : begin // ready for first part of trigger condition to be met
-		if (samplevalue[0]>upperthresh_sync) acqstate <= 8'd4;
+	for (i=0;i<40;i=i+1) begin
+		if (samplevalue[i]>upperthresh_sync) acqstate <= 8'd4;
+	end
 	end
 	4 : begin // ready for second part of trigger condition to be met
-		if (samplevalue[0]<lowerthresh_sync) begin
+	for (i=0;i<40;i=i+1) begin
+		if (samplevalue[i]<lowerthresh_sync) begin
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				sample_triggered <= i[7:0];
 				acqstate <= 8'd250;
 			end
 		end
+		else begin
+			tot_counter<=8'd0;
+			acqstate <= 8'd3;
+		end
+	end
 	end
 	
 	250 : begin // triggered, now taking more data
@@ -347,9 +375,10 @@ reg [9:0] ram_preoffset=0;
 integer overrange_counter[4];
 
 always @ (posedge clk) begin
-	triggercounter_sync <= triggercounter;
+	acqstate_sync <= acqstate;
 	eventcounter_sync <= eventcounter;
 	ram_address_triggered_sync <= ram_address_triggered;
+	sample_triggered_sync <= sample_triggered;
 	
 	if (overrange[0]) overrange_counter[0]<=overrange_counter[0]+1;
 	if (overrange[1]) overrange_counter[1]<=overrange_counter[1]+1;
@@ -403,8 +432,8 @@ always @ (posedge clk or negedge rstn)
 		1 : begin // sets length of data to take, activates trigger for new event if we don't alrady have one
 			triggertype <= rx_data[1]; // while we're at it, set the trigger type
 			lengthtotake <= {rx_data[5],rx_data[4]};
-			if (triggercounter_sync == 0) triggerlive <= 1'b1; // gets reset in INIT state
-			o_tdata <= {eventcounter_sync,triggercounter_sync}; // return triggercounter, so we can see if we have an event ready to be read out
+			if (acqstate_sync == 0) triggerlive <= 1'b1; // gets reset in INIT state
+			o_tdata <= {eventcounter_sync,sample_triggered_sync,acqstate_sync}; // return acqstate, so we can see if we have an event ready to be read out
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;

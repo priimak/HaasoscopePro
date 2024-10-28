@@ -116,7 +116,7 @@ def spimode(mode): # set SPI mode (polarity of clk and data)
 
 dooverrange=False
 tad = 0
-def board_setup(dopattern=False):
+def board_setup(dopattern, twochannel):
     spimode(0)
     spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x00, False) # power up
     #spicommand("DEVICE_CONFIG", 0x00, 0x02, 0x03, False) # power down
@@ -124,10 +124,12 @@ def board_setup(dopattern=False):
     spicommand("LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
     spicommand("CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
 
-    spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
-    #spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
-    #spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel
-    #spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
+    if twochannel:
+        spicommand("LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel
+        # spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel
+    else:
+        spicommand("LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel
+        #spicommand("LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel
 
     spicommand("LVDS_SWING", 0x00, 0x48, 0x00, False)  #high swing mode
     #spicommand("LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
@@ -135,8 +137,8 @@ def board_setup(dopattern=False):
     spicommand("LCTRL",0x02,0x04,0x0a,False) # use LSYNC_N (software), 2's complement
     #spicommand("LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
 
-    spicommand("INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
-    #spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+    #spicommand("INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
+    spicommand("INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
 
     #spicommand("TAD", 0x02, 0xB7, 0x01, False)  # invert clk
     spicommand("TAD", 0x02, 0xB7, 0x00, False) # don't invert clk
@@ -273,7 +275,8 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     debugstrobe = False
     dofast = False
-    xydata_overlapped=True
+    xydata_overlapped=False
+    xydata_twochannel=True
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger falling, 2 threshold trigger rising, ...
@@ -609,6 +612,10 @@ class MainWindow(TemplateBaseClass):
             self.max_x = self.max_x/4
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
+        elif self.xydata_twochannel:
+            self.max_x = self.max_x/2
+            for c in range(int(self.num_chan_per_board/2)):
+                self.xydata[c][0] = np.array([range(0,2*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         else:
             self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
@@ -705,6 +712,8 @@ class MainWindow(TemplateBaseClass):
 
     if xydata_overlapped:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 10*expect_samples], dtype=float)
+    elif xydata_twochannel:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 2*10*expect_samples], dtype=float)
     else:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 4*10*expect_samples], dtype=float)
 
@@ -743,8 +752,9 @@ class MainWindow(TemplateBaseClass):
         triggercounter = usb.recv(4)  # get the 4 bytes
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
         eventcountertemp = triggercounter[3]*256+triggercounter[2]
-
-        if triggercounter[0]==255 and triggercounter[1]==255:
+        self.sample_triggered = triggercounter[1]
+        acqstate = triggercounter[0]
+        if acqstate == 251:  # an event is ready to be read out
             if eventcountertemp != self.eventcounter + 1 and eventcountertemp != 0: #check event count, but account for rollover
                 print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter)
             self.eventcounter = eventcountertemp
@@ -816,6 +826,7 @@ class MainWindow(TemplateBaseClass):
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
+                        if self.xydata_twochannel and chan%2==1: val = -val # actually will need to invert only input B, since A is already swapped P<->N on the board
                         if self.downsamplemerging==1:
                             samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
                             # if samp % 2 == 1: # account for switching of bits from DDR in lvds reciever?
@@ -823,12 +834,16 @@ class MainWindow(TemplateBaseClass):
                             # else:
                             #     samp = samp + 1
                             if self.xydata_overlapped:
-                                self.xydata[chan][1][samp] = val
+                                self.xydata[chan][1][samp] = -val
+                            elif self.xydata_twochannel:
+                                if chan%2==0: chani=int(chan/2)
+                                else: chani=int((chan-1)/2)
+                                self.xydata[chan%2][1][chani+ 2*samp] = -val
                             else:
-                                self.xydata[0][1][chan+ 4*samp] = val
+                                self.xydata[0][1][chan+ 4*samp] = -val
                         else:
                             samp = s * 40 +39 - n
-                            self.xydata[0][1][samp] = val # actually will need to invert only input B, since A is already swapped P<->N on the board
+                            self.xydata[0][1][samp] = -val
         if self.debug:
             time.sleep(.5)
             #oldbytes()
@@ -887,7 +902,7 @@ class MainWindow(TemplateBaseClass):
         res = usb.recv(4)
         print("Version", res[3], res[2], res[1], res[0])
 
-        board_setup(self.dopattern)
+        board_setup(self.dopattern, self.xydata_twochannel)
         return 1
 
     def init(self):
@@ -895,7 +910,10 @@ class MainWindow(TemplateBaseClass):
         self.adfreset()
         if self.xydata_overlapped:
             for c in range(self.num_chan_per_board):
-                self.xydata[c][0] = np.array([range(0,10*self.expect_samples)]) / self.nsunits / self.samplerate
+                self.xydata[c][0] = np.array([range(0, 10*self.expect_samples)]) / self.nsunits / self.samplerate
+        elif self.xydata_twochannel:
+            for c in range(int(self.num_chan_per_board/2)):
+                self.xydata[c][0] = np.array([range(0, 2*10*self.expect_samples)]) / self.nsunits / self.samplerate
         else:
             self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)]) / self.nsunits /self.samplerate
         return 1
