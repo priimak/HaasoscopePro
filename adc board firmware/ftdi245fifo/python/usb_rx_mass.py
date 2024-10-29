@@ -5,7 +5,7 @@
 # The corresponding FPGA top-level design can be found in fpga_top_ft232h_tx_mass.v (if you are using FT232H or FT2232H chips)
 # Or see fpga_top_ft600_rx_mass.v (if you are using an FT600 chip)
 
-from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FTX232H_FT60X.py
+from USB_FTX232H_FT60X import USB_FTX232H_FT60X_sync245mode # see USB_FT232H.py
 import time
 
 def binprint(x):

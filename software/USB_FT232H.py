@@ -1,42 +1,42 @@
-def open_ft_usb_device(device_type, device_name, port):
+def open_ft_usb_device(device_type, device_name, serial):
     b_device_name = bytes(device_name, encoding="ASCII")
     try:
-        import ftd2xx  # import #
+        import ftd2xx
     except:
         return None, 'Failed to import ftd2xx'
-    for i in range(16):
-        try:
-            usb = ftd2xx.open(i)
-        except:
-            continue
-        if usb.description != b_device_name:
-            usb.close()
-            continue
+    try:
+        usb = ftd2xx.openEx(serial)
+    except:
+        return None, 'Faled to open device'
+    if usb.description != b_device_name:
+        usb.close()
+        #print('Device did not match:', usb.description, b_device_name)
+        return None, 'Other type of USB device: '+str(usb.description)
+    else:
         usb.setBitMode(0xff, 0x40)
-        print(usb.getDeviceInfo())
-        print(usb.getComPortNumber())
-        if port==usb.getComPortNumber():
-            return usb, 'Successfully opened %s USB device: %s %s' % (device_type, device_name, port)
-    return None, 'Could not open %s USB device: %s %s' % (device_type, device_name, port)
+        #print(usb.getDeviceInfo())
+        #print(usb.getComPortNumber())
+        return usb, 'Successfully opened %s USB device: %s %s' % (device_type, device_name, serial)
 
-class USB_FTX232H_sync245mode:
+class UsbFt232hSync245mode:
 
-    def __init__(self, device_type, device_name, port):
-        usb, message = open_ft_usb_device(device_type, device_name, port)
+    def __init__(self, device_type, device_name, serial):
+        usb, message = open_ft_usb_device(device_type, device_name, serial)
         print(message)
+        self.good=False
         if usb is not None:
+            self.good=True
             self.device_type = device_type
             self.device_name = device_name
-            self.port = port
+            self.serial = serial
             self._usb = usb
-            self._recv_timeout = 2000
+            self._recv_timeout = 250
             self._send_timeout = 2000
             self.set_recv_timeout(self._recv_timeout)
             self.set_send_timeout(self._send_timeout)
+            self.set_latencyt(1)  # ms
             self._chunk = 65536
             usb.setUSBParameters(self._chunk * 4, self._chunk * 4)
-        else:
-            raise Exception('Could not open USB device on port', port)
 
     def close(self):
         self._usb.close()

@@ -9,17 +9,20 @@ from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 import warnings
 from scipy.optimize import curve_fit
 
-from USB_FTX232H_FT60X import USB_FTX232H_sync245mode # see USB_FTX232H_FT60X.py
+from USB_FT232H import UsbFt232hSync245mode # see USB_FT232H.py
 
 # https://github.com/drandyhaas/pyadf435x
 from adf435x import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, BandSelectClockMode, FeedbackSelect, PDPolarity
 
-print(ftd2xx.listDevices())
-
-port=5
-usb = USB_FTX232H_sync245mode('FTX232H','HaasoscopePro USB2',port)
-usb.set_recv_timeout(250) #ms
-usb.set_latencyt(1) #ms
+usbs=[]
+ftds=ftd2xx.listDevices()
+print("Found devices:",ftds)
+for ftdserial in ftds:
+    #print("FTD serial:",ftdserial)
+    usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
+    print(usbdevice)
+    if usbdevice.good: usbs.append(usbdevice)
+usb = usbs[1]
 
 def binprint(x):
     return bin(x)[2:].zfill(8)
@@ -277,7 +280,7 @@ class MainWindow(TemplateBaseClass):
     debugstrobe = False
     dofast = False
     xydata_overlapped=False
-    xydata_twochannel=True
+    xydata_twochannel=False
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
@@ -583,7 +586,7 @@ class MainWindow(TemplateBaseClass):
                 ds=ds-4
                 self.downsamplemerging=20
         self.downsamplefactor = self.downsamplemerging*pow(2,ds)
-        print("ds, dsm, dsf",ds,self.downsamplemerging,self.downsamplefactor)
+        #print("ds, dsm, dsf",ds,self.downsamplemerging,self.downsamplefactor)
         usb.send(bytes([9, ds, self.highresval, self.downsamplemerging, 100, 100, 100, 100]))
         usb.recv(4)
 
