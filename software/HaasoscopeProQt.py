@@ -354,6 +354,7 @@ class MainWindow(TemplateBaseClass):
 
     def triggerchanchanged(self):
         self.triggerchan = self.ui.triggerChanBox.value()
+        self.sendtriggerinfo()
 
     def changeoffset(self):
         dooffset(self.selectedchannel, self.ui.offsetBox.value())
@@ -423,9 +424,9 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
-        n = -2  # amount to adjust (+ or -)
+        n = -1 # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
-        n = -2  # amount to adjust (+ or -)
+        n = -1  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
         n = 0  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
@@ -562,18 +563,26 @@ class MainWindow(TemplateBaseClass):
             self.downsamplemerging=4
         if ds==3:
             ds=0
-            self.downsamplemerging=8
+            if not self.xydata_twochannel:
+                self.downsamplemerging=8
+            else:
+                self.downsamplemerging=10
         if ds==4:
             ds=0
             self.downsamplemerging=20
-        if ds==5:
-            ds=0
-            self.downsamplemerging=40
-        if ds>5:
-            ds=ds-5
-            self.downsamplemerging=40
+        if not self.xydata_twochannel:
+            if ds==5:
+                ds=0
+                self.downsamplemerging=40
+            if ds>5:
+                ds=ds-5
+                self.downsamplemerging=40
+        else:
+            if ds>4:
+                ds=ds-4
+                self.downsamplemerging=20
         self.downsamplefactor = self.downsamplemerging*pow(2,ds)
-        #print("ds, dsm, dsf",ds,self.downsamplemerging,self.downsamplefactor)
+        print("ds, dsm, dsf",ds,self.downsamplemerging,self.downsamplefactor)
         usb.send(bytes([9, ds, self.highresval, self.downsamplemerging, 100, 100, 100, 100]))
         usb.recv(4)
 
