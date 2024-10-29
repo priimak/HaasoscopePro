@@ -152,11 +152,11 @@ always @ (posedge clklvds) begin
 		samplevaluereg[20+i]  <= {lvdsEbits[  0+i],lvdsEbits[ 10+i],lvds3bits[90+i],lvds3bits[80+i],lvds3bits[70+i],lvds3bits[60+i],lvds3bits[50+i],lvds3bits[40+i],lvds3bits[30+i],lvds3bits[20+i],lvds3bits[10+i],lvds3bits[0+i]};
 		samplevaluereg[30+i]  <= {lvdsEbits[ 20+i],lvdsLbits[  0+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
 
-		samplevalue[0 +i] <= -samplevaluereg[0 +i];
-		samplevalue[20+i] <= -samplevaluereg[20+i];
+		samplevalue[0 +i] <= (samplevaluereg[0 +i]== -12'd2048) ? 12'd2047: -samplevaluereg[0 +i];
+		samplevalue[20+i] <= (samplevaluereg[20+i]== -12'd2048) ? 12'd2047: -samplevaluereg[20+i];
 		if (channeltype_sync == 0) begin // single
-			samplevalue[10+i] <= -samplevaluereg[10+i];
-			samplevalue[30+i] <= -samplevaluereg[30+i];
+			samplevalue[10+i] <= (samplevaluereg[10+i]== -12'd2048) ? 12'd2047: -samplevaluereg[10+i];
+			samplevalue[30+i] <= (samplevaluereg[30+i]== -12'd2048) ? 12'd2047: -samplevaluereg[30+i];
 		end
 		else begin // dual, not inverted on input B
 			samplevalue[10+i] <= samplevaluereg[10+i];
