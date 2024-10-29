@@ -282,7 +282,7 @@ class MainWindow(TemplateBaseClass):
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
     if dopattern: triggertype = 0
-    selectedchannel=1
+    selectedchannel=0
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -517,7 +517,8 @@ class MainWindow(TemplateBaseClass):
         self.hline = (self.triggerlevel -127)* self.yscale
         self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
         point = self.triggerpos + 1.25
-        self.vline = 4 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
+        self.vline = 2 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
+        if not self.xydata_twochannel: self.vline = self.vline*2
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),min(self.hline + self.max_y / 2,self.max_y)])  # vertical line showing trigger time
 
     def tot(self):
@@ -845,10 +846,6 @@ class MainWindow(TemplateBaseClass):
                         if self.downsamplemerging==1:
                             samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
                             if s<(self.expect_samples-1): samp = samp + sample_triggered
-                            # if samp % 2 == 1: # account for switching of bits from DDR in lvds reciever?
-                            #     samp = samp - 1
-                            # else:
-                            #     samp = samp + 1
                             if self.xydata_overlapped:
                                 self.xydata[chan][1][samp] = val
                             elif self.xydata_twochannel:
@@ -863,9 +860,11 @@ class MainWindow(TemplateBaseClass):
                             elif self.xydata_twochannel:
                                 samp = s * 20 + chan*10+9 - n
                                 if n<20: samp = samp + 10
+                                if s < (self.expect_samples - 1): samp = samp + int(2*sample_triggered/self.downsamplefactor)
                                 self.xydata[chan%2][1][samp] = val
                             else:
                                 samp = s * 40 +39 - n
+                                if s < (self.expect_samples - 1): samp = samp + int(4*sample_triggered/self.downsamplefactor)
                                 self.xydata[0][1][samp] = val
         if self.debug:
             time.sleep(.5)
