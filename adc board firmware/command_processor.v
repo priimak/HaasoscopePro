@@ -241,7 +241,7 @@ always @ (posedge clklvds) begin
 											samplevalue[10+5*i] + samplevalue[11+5*i] + samplevalue[13+5*i] + samplevalue[14+5*i] +
 											samplevalue[20+5*i] + samplevalue[21+5*i] + samplevalue[23+5*i] + samplevalue[24+5*i] +
 											samplevalue[30+5*i] + samplevalue[31+5*i] + samplevalue[33+5*i] + samplevalue[34+5*i]; // every first and fifth bit of chan 0, and add in the other bits
-			lvdsbitsout[14*i +:12] <= highressamplevalue[0][4+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
+			lvdsbitsout[14*i +:12] <= highressamplevalue[i][4+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
 		end
 		else begin
 			lvdsbitsout[14*i +:12] <= samplevalue[0+5*i]; // every first and fifth bit of chan 0
