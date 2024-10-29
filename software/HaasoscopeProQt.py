@@ -717,7 +717,6 @@ class MainWindow(TemplateBaseClass):
         self.ui.plot.setRange(yRange=(self.min_y,self.max_y),padding=0.01)
         self.telldownsample(0)
         self.timechanged()
-        self.ui.totBox.setMaximum(self.expect_samples)
         self.ui.plot.showGrid(x=True, y=True)
 
     def closeEvent(self, event):
