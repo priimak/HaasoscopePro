@@ -442,7 +442,7 @@ always @ (posedge clklvds or negedge rstn)
 	end
 	4 : begin // ready for second part of trigger condition to be met
 	for (i=0;i<10;i=i+1) begin
-		if ( (triggerchan_sync==1'b0 && samplevalue[i]>lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
+		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
