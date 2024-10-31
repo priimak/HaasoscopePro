@@ -76,10 +76,6 @@ reg fanon=1;
 assign debugout[11] = fanon;
 
 reg [15:0]	lvdstestcounter=0, probecompcounter=0;
-always @ (posedge clk50) begin
-	lvdstestcounter<=lvdstestcounter+16'd1;
-	probecompcounter<=probecompcounter+16'd1;
-end
 assign lvdsout_trig = lvdstestcounter[2];
 assign lvdsout_spare[0] = lvdstestcounter[3];
 assign lvdsout_spare[1] = lvdstestcounter[4];
@@ -514,8 +510,12 @@ always @ (posedge clk or negedge rstn)
 	state  <= INIT;
  end else begin 
   
-  if (probecompcounter==16'd50000) boardout[3]<=1'b1; // for probe compensation, 1kHz
-  else boardout[3]<=1'b0;
+  lvdstestcounter<=lvdstestcounter+16'd1;
+  if (probecompcounter==16'd50000) begin
+		boardout[3] <= ~boardout[3]; // for probe compensation, 1kHz
+		probecompcounter <= 0;
+  end
+  else probecompcounter<=probecompcounter+16'd1;
   
   case (state)
    INIT : begin
