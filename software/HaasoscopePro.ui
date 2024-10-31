@@ -778,7 +778,7 @@
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>190</y>
+          <y>211</y>
           <width>51</width>
           <height>21</height>
          </rect>
@@ -796,7 +796,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>191</y>
+          <y>212</y>
           <width>47</width>
           <height>20</height>
          </rect>
@@ -1342,7 +1342,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>215</y>
+          <y>236</y>
           <width>47</width>
           <height>19</height>
          </rect>
@@ -1360,7 +1360,7 @@
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>214</y>
+          <y>235</y>
           <width>51</width>
           <height>20</height>
          </rect>
@@ -1381,7 +1381,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>239</y>
+          <y>259</y>
           <width>47</width>
           <height>19</height>
          </rect>
@@ -1399,7 +1399,7 @@
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>238</y>
+          <y>258</y>
           <width>51</width>
           <height>20</height>
          </rect>
@@ -1426,7 +1426,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>371</y>
+          <y>390</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1441,6 +1441,69 @@
         </property>
         <property name="checkable">
          <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="boardBox">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>187</y>
+          <width>51</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="maximum">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_18">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>188</y>
+          <width>47</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>Board</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="tenxCheck">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>370</y>
+          <width>121</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>10x probe</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
         </property>
        </widget>
       </widget>

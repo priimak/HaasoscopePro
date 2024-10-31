@@ -23,9 +23,10 @@ for ftdserial in ftds:
     usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
     #print(usbdevice)
     if usbdevice.good:
-        if usbdevice.serial==b"FT9LYZXP":
-            usbs.append(usbdevice)
-            print("Connected USB device",usbdevice.serial)
+        #if usbdevice.serial != b"FT9M1UIT": continue
+        if usbdevice.serial != b"FT9LYZXP": continue
+        usbs.append(usbdevice)
+        print("Connected USB device",usbdevice.serial)
 print("Connected",len(usbs),"devices")
 
 def binprint(x):
@@ -296,6 +297,7 @@ class MainWindow(TemplateBaseClass):
     num_chan_per_board = 2
     num_board = len(usbs)
     num_logic_inputs = 0
+    tenx=1
     debug = False
     dopattern = False
     debugprint = True
@@ -303,7 +305,7 @@ class MainWindow(TemplateBaseClass):
     debugstrobe = False
     dofast = False
     data_overlapped=False
-    data_twochannel=False
+    data_twochannel=True
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
@@ -327,6 +329,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.risingedgeCheck.stateChanged.connect(self.risingfalling)
         self.ui.exttrigCheck.stateChanged.connect(self.exttrig)
         self.ui.totBox.valueChanged.connect(self.tot)
+        self.ui.boardBox.valueChanged.connect(self.boardchanged)
         self.ui.triggerChanBox.valueChanged.connect(self.triggerchanchanged)
         self.ui.gridCheck.stateChanged.connect(self.grid)
         self.ui.markerCheck.stateChanged.connect(self.marker)
@@ -350,6 +353,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.ohmCheck.stateChanged.connect(self.setohm)
         self.ui.oversampCheck.stateChanged.connect(self.setoversamp)
         self.ui.attCheck.stateChanged.connect(self.setatt)
+        self.ui.tenxCheck.stateChanged.connect(self.settenx)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
@@ -372,6 +376,9 @@ class MainWindow(TemplateBaseClass):
         self.ui.statusBar.showMessage("Hello!")
         self.ui.plot.setBackground('w')
         self.show()
+
+    def boardchanged(self):
+        self.activeusb = usbs[self.ui.boardBox.value()]
 
     def selectchannel(self):
         self.selectedchannel=self.ui.chanBox.value()
@@ -417,6 +424,10 @@ class MainWindow(TemplateBaseClass):
 
     def setatt(self):
         setchanatt(self.activeusb, self.selectedchannel,self.ui.attCheck.checkState() == QtCore.Qt.Checked) # will be True for attenuation on
+
+    def settenx(self):
+        if self.ui.tenxCheck.checkState() == QtCore.Qt.Checked: self.tenx=10
+        else: self.tenx=1
 
     def setoversamp(self):
         setsplit(self.activeusb, self.ui.oversampCheck.checkState() == QtCore.Qt.Checked) # will be True for oversampling, False otherwise
@@ -512,9 +523,9 @@ class MainWindow(TemplateBaseClass):
     highresval=1
     xscale=1
     xscaling=1
-    yscale=16.
-    min_y=-pow(2,11)
-    max_y=pow(2,11)
+    yscale=530/1400 # mV/count on 50 Ohm
+    min_y=-pow(2,11) * yscale
+    max_y=pow(2,11) * yscale
     min_x=0
     max_x=4*10*expect_samples*downsamplefactor/nsunits/samplerate
     triggerlevel = 127
@@ -542,7 +553,7 @@ class MainWindow(TemplateBaseClass):
         usb.send(bytes([8, self.triggerlevel+1, self.triggerdelta, int(self.triggerpos/256), self.triggerpos%256, self.triggertimethresh, self.triggerchan, 100]))
         usb.recv(4)
     def drawtriggerlines(self):
-        self.hline = (self.triggerlevel -127)* self.yscale
+        self.hline = (self.triggerlevel -127) * self.yscale *16
         self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
         point = self.triggerpos + 1.25
         self.vline = 2 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
@@ -721,7 +732,8 @@ class MainWindow(TemplateBaseClass):
             line.curve.sigClicked.connect(self.fastadclineclick)
             self.lines.append(line)
             self.linepens.append(pen)
-        self.ui.chanBox.setMaximum(self.num_chan_per_board*self.num_board-1)
+        self.ui.chanBox.setMaximum(self.num_chan_per_board-1)
+        self.ui.boardBox.setMaximum(self.num_board-1)
 
         #for the logic analyzer
         for li in np.arange(self.num_logic_inputs):
@@ -742,7 +754,7 @@ class MainWindow(TemplateBaseClass):
 
         #other stuff
         self.ui.plot.setLabel('bottom',"Time (ns)")
-        self.ui.plot.setLabel('left', "Voltage (ADC sample value)")
+        self.ui.plot.setLabel('left', "Voltage (mV)")
         self.ui.plot.setRange(yRange=(self.min_y,self.max_y),padding=0.01)
         for usb in usbs: self.telldownsample(usb, 0)
         self.timechanged()
@@ -798,7 +810,7 @@ class MainWindow(TemplateBaseClass):
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
         eventcountertemp = triggercounter[3]
         sample_triggered = 256+triggercounter[2]+triggercounter[1]
-        print("sample triggered", binprint(triggercounter[2]), binprint(triggercounter[1]))
+        #print("sample triggered", binprint(triggercounter[2]), binprint(triggercounter[1]))
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
             if eventcountertemp != self.eventcounter[board] + 1 and eventcountertemp != 0: #check event count, but account for rollover
@@ -872,7 +884,8 @@ class MainWindow(TemplateBaseClass):
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        val = -val
+                        #val = -val # if we're swapping inputs
+                        val = val * self.yscale *self.tenx
                         if self.downsamplemerging==1:
                             samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
                             #if s<(self.expect_samples-1): samp = samp + sample_triggered
