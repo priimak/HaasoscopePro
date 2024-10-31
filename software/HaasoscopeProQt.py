@@ -22,9 +22,11 @@ for ftdserial in ftds:
     #print("FTD serial:",ftdserial)
     usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
     #print(usbdevice)
-    if usbdevice.good: usbs.append(usbdevice)
+    if usbdevice.good:
+        if usbdevice.serial==b"FT9LYZXP":
+            usbs.append(usbdevice)
+            print("Connected USB device",usbdevice.serial)
 print("Connected",len(usbs),"devices")
-#usb = usbs[1]
 
 def binprint(x):
     return bin(x)[2:].zfill(8)
@@ -143,8 +145,8 @@ def board_setup(usb, dopattern, twochannel):
     spicommand(usb, "LCTRL",0x02,0x04,0x0a,False) # use LSYNC_N (software), 2's complement
     #spicommand(usb, "LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
 
-    #spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
-    spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+    spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
+    #spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
 
     #spicommand(usb, "TAD", 0x02, 0xB7, 0x01, False)  # invert clk
     spicommand(usb, "TAD", 0x02, 0xB7, 0x00, False) # don't invert clk
@@ -284,30 +286,30 @@ def gettemps(usb):
     slowdac2 = spicommand(usb, "SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2,quiet=True)
     slowdac2amp=2.0 # 1.1 in new board
     slowdac2V = (256*slowdac2[1]+slowdac2[0])*3300/pow(2,12)/slowdac2amp
-    return "\n" + "Temp voltages (ADC Board): " + str(round(slowdac1V,2)) + " " + str(round(slowdac2V,2))
+    return "Temp voltages (ADC Board): " + str(round(slowdac1V,2)) + " " + str(round(slowdac2V,2))
 
 
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
     samplerate= 3.2 # freq in GHz
     nsunits=1
-    num_chan_per_board = 4
-    num_board = 1
-    num_logic_inputs = 1
+    num_chan_per_board = 2
+    num_board = len(usbs)
+    num_logic_inputs = 0
     debug = False
     dopattern = False
     debugprint = True
     showbinarydata = True
     debugstrobe = False
     dofast = False
-    xydata_overlapped=False
-    xydata_twochannel=False
+    data_overlapped=False
+    data_twochannel=False
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
     if dopattern: triggertype = 0
     selectedchannel=0
-    activeusb = usbs[1]
+    activeusb = usbs[0]
     def __init__(self):
         TemplateBaseClass.__init__(self)
         
@@ -544,7 +546,7 @@ class MainWindow(TemplateBaseClass):
         self.otherlines[1].setData([self.min_x, self.max_x],[self.hline, self.hline])  # horizontal line showing trigger threshold
         point = self.triggerpos + 1.25
         self.vline = 2 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
-        if not self.xydata_twochannel: self.vline = self.vline*2
+        if not self.data_twochannel: self.vline = self.vline * 2
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),min(self.hline + self.max_y / 2,self.max_y)])  # vertical line showing trigger time
 
     def tot(self):
@@ -590,14 +592,14 @@ class MainWindow(TemplateBaseClass):
             self.downsamplemerging=4
         if ds==3:
             ds=0
-            if not self.xydata_twochannel:
+            if not self.data_twochannel:
                 self.downsamplemerging=8
             else:
                 self.downsamplemerging=10
         if ds==4:
             ds=0
             self.downsamplemerging=20
-        if not self.xydata_twochannel:
+        if not self.data_twochannel:
             if ds==5:
                 ds=0
                 self.downsamplemerging=40
@@ -650,16 +652,17 @@ class MainWindow(TemplateBaseClass):
             self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
             self.units = "s"
         self.ui.plot.setLabel('bottom', "Time ("+self.units+")")
-        if self.xydata_overlapped:
+        if self.data_overlapped:
             self.max_x = self.max_x/4
-            for c in range(self.num_chan_per_board):
+            for c in range(4):
                 self.xydata[c][0] = np.array([range(0,10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
-        elif self.xydata_twochannel:
+        elif self.data_twochannel:
             self.max_x = self.max_x/2
-            for c in range(int(self.num_chan_per_board/2)):
+            for c in range(self.num_chan_per_board*self.num_board):
                 self.xydata[c][0] = np.array([range(0,2*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         else:
-            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
+            for c in range(self.num_board):
+                self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
         self.drawtriggerlines()
@@ -751,9 +754,9 @@ class MainWindow(TemplateBaseClass):
         self.timer2.stop()
         for usb in usbs: cleanup(usb)
 
-    if xydata_overlapped:
+    if data_overlapped:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 10*expect_samples], dtype=float)
-    elif xydata_twochannel:
+    elif data_twochannel:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 2*10*expect_samples], dtype=float)
     else:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 4*10*expect_samples], dtype=float)
@@ -785,20 +788,22 @@ class MainWindow(TemplateBaseClass):
     nbadclkC = 0
     nbadclkD = 0
     nbadstr = 0
-    eventcounter = 0
+    eventcounter=[]
+    for n in range(num_board): eventcounter.append(0)
 
-    def getchannels(self,usb):
+    def getchannels(self,usb,board):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
-        usb.send(bytes([1, self.triggertype, self.xydata_twochannel, 99] + inttobytes(self.expect_samples-self.triggerpos+1)))  # length to take after trigger (last 4 bytes)
+        usb.send(bytes([1, self.triggertype, self.data_twochannel, 99] + inttobytes(self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
-        eventcountertemp = triggercounter[3]*256+triggercounter[2]
-        sample_triggered = triggercounter[1]
+        eventcountertemp = triggercounter[3]
+        sample_triggered = 256+triggercounter[2]+triggercounter[1]
+        print("sample triggered", binprint(triggercounter[2]), binprint(triggercounter[1]))
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
-            if eventcountertemp != self.eventcounter + 1 and eventcountertemp != 0: #check event count, but account for rollover
-                print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter)
-            self.eventcounter = eventcountertemp
+            if eventcountertemp != self.eventcounter[board] + 1 and eventcountertemp != 0: #check event count, but account for rollover
+                print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter[board]," for board",board)
+            self.eventcounter[board] = eventcountertemp
 
             expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
             usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
@@ -867,29 +872,29 @@ class MainWindow(TemplateBaseClass):
                             elif n<40:
                                 print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
                     if n<40:
-                        #if s==0 and n==0: print("sample triggered",sample_triggered)
+                        val = -val
                         if self.downsamplemerging==1:
                             samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
-                            if s<(self.expect_samples-1): samp = samp + sample_triggered
-                            if self.xydata_overlapped:
+                            #if s<(self.expect_samples-1): samp = samp + sample_triggered
+                            if self.data_overlapped:
                                 self.xydata[chan][1][samp] = val
-                            elif self.xydata_twochannel:
+                            elif self.data_twochannel:
                                 if chan%2==0: chani=int(chan/2)
                                 else: chani=int((chan-1)/2)
                                 self.xydata[chan%2][1][chani+ 2*samp] = val
                             else:
                                 self.xydata[0][1][chan+ 4*samp] = val
                         else:
-                            if self.xydata_overlapped:
+                            if self.data_overlapped:
                                 print("downsampling not supported in overlap mode yet")
-                            elif self.xydata_twochannel:
+                            elif self.data_twochannel:
                                 samp = s * 20 + chan*10+9 - n
                                 if n<20: samp = samp + 10
-                                if s < (self.expect_samples - 1): samp = samp + int(2*sample_triggered/self.downsamplefactor)
+                                #if s < (self.expect_samples - 1): samp = samp + int(2*sample_triggered/self.downsamplefactor)
                                 self.xydata[chan%2][1][samp] = val
                             else:
                                 samp = s * 40 +39 - n
-                                if s < (self.expect_samples - 1): samp = samp + int(4*sample_triggered/self.downsamplefactor)
+                                #if s < (self.expect_samples - 1): samp = samp + int(4*sample_triggered/self.downsamplefactor)
                                 self.xydata[0][1][samp] = val
         if self.debug:
             time.sleep(.5)
@@ -908,7 +913,7 @@ class MainWindow(TemplateBaseClass):
         thestr +="\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
         thestr +="\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
 
-        if not self.xydata_overlapped:
+        if not self.data_overlapped:
             p0 = [max(self.xydata[0][1]), self.vline-10, 20, min(self.xydata[0][1])]  # this is an initial guess
             fitwidth = (self.max_x - self.min_x)* self.fitwidthfraction
             x2 = self.xydata[0][0][(self.xydata[0][0] > self.vline-fitwidth) & (self.xydata[0][0] < self.vline+fitwidth)]  # only fit in range
@@ -934,7 +939,7 @@ class MainWindow(TemplateBaseClass):
         res = usb.recv(4)
         print("Version", res[3], res[2], res[1], res[0])
 
-        board_setup(usb, self.dopattern, self.xydata_twochannel)
+        board_setup(usb, self.dopattern, self.data_twochannel)
         return 1
 
     def init(self):
@@ -944,10 +949,10 @@ class MainWindow(TemplateBaseClass):
             self.pllreset()
             self.adfreset()
         self.activeusb = oldactiveusb
-        if self.xydata_overlapped:
+        if self.data_overlapped:
             for c in range(self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0, 10*self.expect_samples)]) / self.nsunits / self.samplerate
-        elif self.xydata_twochannel:
+        elif self.data_twochannel:
             for c in range(int(self.num_chan_per_board/2)):
                 self.xydata[c][0] = np.array([range(0, 2*10*self.expect_samples)]) / self.nsunits / self.samplerate
         else:
@@ -961,8 +966,8 @@ class MainWindow(TemplateBaseClass):
         else:
             rx_len=0
             try:
-                for usb in usbs:
-                    rx_len = rx_len + self.getchannels(usb)
+                for board in range(self.num_board):
+                    rx_len = rx_len + self.getchannels(usbs[board],board)
                 if self.getone and rx_len>0:
                     self.dostartstop()
                     self.drawtext()

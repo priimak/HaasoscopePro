@@ -97,7 +97,7 @@ reg [15:0]	triggercounter=0;
 reg [ 7:0]	acqstate=0, acqstate_sync=0;
 reg signed [11:0]  lowerthresh=0, lowerthresh_sync=0;
 reg signed [11:0]  upperthresh=0, upperthresh_sync=0;
-reg [15:0]	eventcounter=0, eventcounter_sync=0;
+reg [7:0]	eventcounter=0, eventcounter_sync=0;
 reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
 reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
@@ -108,7 +108,7 @@ reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
 reg [4:0] 	downsample=0, downsample_sync=0;
 reg			highres=0, highres_sync=0;
 reg [7:0]	downsamplemerging=1, downsamplemerging_sync=1;
-reg [7:0]  	sample_triggered=0, sample_triggered_sync=0;
+reg [15:0] 	sample_triggered=0, sample_triggered_sync=0;
 reg 			triggerchan=0, triggerchan_sync=0;
 
 integer i, j;
@@ -398,6 +398,7 @@ always @ (posedge clklvds or negedge rstn)
 	0 : begin // ready
 		triggercounter<=0;
 		tot_counter<=0;
+		sample_triggered<=0;
 		if (triggerlive_sync) begin
 			if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger rising edge
 			else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger falling edge
@@ -422,7 +423,7 @@ always @ (posedge clklvds or negedge rstn)
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				sample_triggered <= i[7:0]; // remember the sample that caused the trigger
+				sample_triggered[i] <= 1'b1; // remember the sample that caused the trigger
 				acqstate <= 8'd250;
 			end
 		end
@@ -446,7 +447,7 @@ always @ (posedge clklvds or negedge rstn)
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				sample_triggered <= i[7:0]; // remember the sample that caused the trigger
+				sample_triggered[i] <= 1'b1; // remember the sample that caused the trigger
 				acqstate <= 8'd250;
 			end
 		end
@@ -466,7 +467,7 @@ always @ (posedge clklvds or negedge rstn)
 			end
 		end
 		else begin
-			eventcounter <= eventcounter+16'd1;
+			eventcounter <= eventcounter+8'd1;
 			acqstate <= 8'd251;
 		end
 	end
