@@ -487,8 +487,12 @@ class MainWindow(TemplateBaseClass):
         for usb in usbs:
             clockswitch(usb)
 
-    def exttrig(self):
-        self.toggleuseexttrig()
+    doexttrig=[]
+    for usb in usbs: doexttrig.append(0)
+    def exttrig(self,value):
+        board = self.ui.boardBox.value()
+        self.doexttrig[board]=value
+        print("doexttrig",value,"for board",board)
 
     def grid(self):
         if self.ui.gridCheck.isChecked():
@@ -808,7 +812,9 @@ class MainWindow(TemplateBaseClass):
 
     def getchannels(self,usb,board):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
-        usb.send(bytes([1, self.triggertype, self.data_twochannel, 99] + inttobytes(self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
+        tt=self.triggertype
+        if self.doexttrig[board]>0: tt=3
+        usb.send(bytes([1, tt, self.data_twochannel, 99] + inttobytes(self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
         #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
         eventcountertemp = triggercounter[3]
