@@ -484,7 +484,7 @@ class MainWindow(TemplateBaseClass):
         #modifiers = QtWidgets.QApplication.keyboardModifiers()
 
     def actionOutput_clk_left(self):
-        for usb in self.usbs:
+        for usb in usbs:
             clockswitch(usb)
 
     def exttrig(self):
