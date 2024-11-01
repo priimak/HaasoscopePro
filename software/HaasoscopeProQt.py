@@ -24,7 +24,7 @@ for ftdserial in ftds:
     #print(usbdevice)
     if usbdevice.good:
         #if usbdevice.serial != b"FT9M1UIT": continue
-        if usbdevice.serial != b"FT9LYZXP": continue
+        #if usbdevice.serial != b"FT9LYZXP": continue
         usbs.append(usbdevice)
         print("Connected USB device",usbdevice.serial)
 print("Connected",len(usbs),"devices")
@@ -295,7 +295,6 @@ class MainWindow(TemplateBaseClass):
     expect_samples = 100
     samplerate= 3.2 # freq in GHz
     nsunits=1
-    num_chan_per_board = 2
     num_board = len(usbs)
     num_logic_inputs = 0
     tenx=1
@@ -306,7 +305,9 @@ class MainWindow(TemplateBaseClass):
     debugstrobe = False
     dofast = False
     data_overlapped=False
-    data_twochannel=True
+    data_twochannel=False
+    if not data_twochannel: num_chan_per_board = 1
+    else: num_chan_per_board = 2
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
@@ -483,7 +484,8 @@ class MainWindow(TemplateBaseClass):
         #modifiers = QtWidgets.QApplication.keyboardModifiers()
 
     def actionOutput_clk_left(self):
-        self.toggle_clk_last()
+        for usb in self.usbs:
+            clockswitch(usb)
 
     def exttrig(self):
         self.toggleuseexttrig()
@@ -674,7 +676,7 @@ class MainWindow(TemplateBaseClass):
                 self.xydata[c][0] = np.array([range(0,2*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         else:
             for c in range(self.num_board):
-                self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
+                self.xydata[c][0] = np.array([range(0, 4*10*self.expect_samples)])*(self.downsamplefactor / self.nsunits / self.samplerate)
         self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
         self.drawtriggerlines()
@@ -895,9 +897,9 @@ class MainWindow(TemplateBaseClass):
                             elif self.data_twochannel:
                                 if chan%2==0: chani=int(chan/2)
                                 else: chani=int((chan-1)/2)
-                                self.xydata[chan%2][1][chani+ 2*samp] = val
+                                self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
                             else:
-                                self.xydata[0][1][chan+ 4*samp] = val
+                                self.xydata[board][1][chan+ 4*samp] = val
                         else:
                             if self.data_overlapped:
                                 print("downsampling not supported in overlap mode yet")
@@ -905,11 +907,11 @@ class MainWindow(TemplateBaseClass):
                                 samp = s * 20 + chan*10+9 - n
                                 if n<20: samp = samp + 10
                                 #if s < (self.expect_samples - 1): samp = samp + int(2*sample_triggered/self.downsamplefactor)
-                                self.xydata[chan%2][1][samp] = val
+                                self.xydata[board*self.num_chan_per_board + chan%2][1][samp] = val
                             else:
                                 samp = s * 40 +39 - n
                                 #if s < (self.expect_samples - 1): samp = samp + int(4*sample_triggered/self.downsamplefactor)
-                                self.xydata[0][1][samp] = val
+                                self.xydata[board][1][samp] = val
         if self.debug:
             time.sleep(.5)
             #oldbytes()
@@ -921,11 +923,13 @@ class MainWindow(TemplateBaseClass):
 
     fitwidthfraction=0.2
     def drawtext(self): # happens once per second
+        board = self.ui.boardBox.value()
+        chan = board*self.num_chan_per_board + self.selectedchannel
         thestr = "Nbadclks A B C D "+str(self.nbadclkA)+" "+str(self.nbadclkB)+" "+str(self.nbadclkC)+" "+str(self.nbadclkD)
         thestr +="\n"+"Nbadstrobes "+str(self.nbadstr)
         thestr +="\n"+"Trigger threshold " + str(round(self.hline,3))
-        thestr +="\n"+"Mean "+str(np.mean(self.xydata[0][1]).round(2))
-        thestr +="\n"+"RMS "+str(np.std(self.xydata[0][1]).round(2))
+        thestr +="\n"+"Mean "+str(np.mean(self.xydata[chan][1]).round(2))
+        thestr +="\n"+"RMS "+str(np.std(self.xydata[chan][1]).round(2))
 
         if not self.data_overlapped:
             p0 = [max(self.xydata[0][1]), self.vline-10, 20, min(self.xydata[0][1])]  # this is an initial guess
@@ -964,13 +968,14 @@ class MainWindow(TemplateBaseClass):
             self.adfreset()
         self.activeusb = oldactiveusb
         if self.data_overlapped:
-            for c in range(self.num_chan_per_board):
+            for c in range(self.num_board * 4):
                 self.xydata[c][0] = np.array([range(0, 10*self.expect_samples)]) / self.nsunits / self.samplerate
         elif self.data_twochannel:
-            for c in range(int(self.num_chan_per_board/2)):
+            for c in range(self.num_board * self.num_chan_per_board):
                 self.xydata[c][0] = np.array([range(0, 2*10*self.expect_samples)]) / self.nsunits / self.samplerate
         else:
-            self.xydata[0][0] = np.array([range(0, 4*10*self.expect_samples)]) / self.nsunits /self.samplerate
+            for c in range(self.num_board * self.num_chan_per_board):
+                self.xydata[c][0] = np.array([range(0, 4*10*self.expect_samples)]) / self.nsunits /self.samplerate
         return 1
 
     lastrate=0
