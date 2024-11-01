@@ -189,9 +189,8 @@ def board_setup(usb, dopattern, twochannel):
     spimode(usb,0)
     spicommand(usb, "Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
     spicommand(usb, "Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    gain=0x1a #00 to 20 is 26 to -6 dB, 0x1a is no gain
-    spicommand(usb, "Amp Gain", 0x02, 0x00, gain, False, cs=1, nbyte=2)
-    spicommand(usb, "Amp Gain", 0x02, 0x00, 0x00, True, cs=1, nbyte=2)
+    spicommand(usb, "Amp Rev ID", 0x00, 0x00, 0x00, True, cs=2, nbyte=2)
+    spicommand(usb, "Amp Prod ID", 0x01, 0x00, 0x00, True, cs=2, nbyte=2)
 
     spimode(usb,1)
     spicommand(usb, "DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
@@ -199,6 +198,8 @@ def board_setup(usb, dopattern, twochannel):
     spimode(usb,0)
     dooffset(usb, 0,0)
     dooffset(usb, 1,0)
+    setgain(usb, 0,0)
+    setgain(usb, 1,0)
 
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
@@ -206,15 +207,15 @@ WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 def setgain(usb, chan,value):
     spimode(usb, 0)
     # 00 to 20 is 26 to -6 dB, 0x1a is no gain
-    if chan==1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
-    if chan==0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26-value, False, cs=2, nbyte=2)
+    if chan==1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26-value, False, cs=2, nbyte=2)
+    if chan==0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26-value, False, cs=1, nbyte=2)
 
 def dooffset(usb, chan, val): #val goes from -100% to 100%
     spimode(usb, 1)
-    dacval = int((pow(2, 16) - 1) * (-val/2+50)/100)
+    dacval = int((pow(2, 16) - 1) * (val/2+50)/100)
     #print("dacval is", dacval)
-    if chan==1: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    if chan==0: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    if chan==0: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    if chan==1: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(usb, 0)
 
 def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
@@ -231,24 +232,24 @@ def clockswitch(usb):
     print("Clockinfo", binprint(clockinfo[1]), binprint(clockinfo[0]))
 
 def setchanimpedance(usb, chan, onemeg):
-    if chan==0: controlbit=0
-    elif chan==1: controlbit=4
+    if chan==1: controlbit=0
+    elif chan==0: controlbit=4
     else: return
     usb.send(bytes([10, controlbit, onemeg, 0, 0, 0, 0, 0]))
     usb.recv(4)
     print("1M for chan",chan,onemeg)
 
 def setchanacdc(usb, chan, ac):
-    if chan==0: controlbit=1
-    elif chan==1: controlbit=5
+    if chan==1: controlbit=1
+    elif chan==0: controlbit=5
     else: return
     usb.send(bytes([10, controlbit, ac, 0, 0, 0, 0, 0]))
     usb.recv(4)
     print("AC for chan",chan,ac)
 
 def setchanatt(usb, chan, att):
-    if chan==0: controlbit=2
-    elif chan==1: controlbit=6
+    if chan==1: controlbit=2
+    elif chan==0: controlbit=6
     else: return
     usb.send(bytes([10, controlbit, att, 0, 0, 0, 0, 0]))
     usb.recv(4)
