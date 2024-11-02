@@ -11640,6 +11640,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="IC10" library="TPS72325DBVR" package="SOT95P280X145-5N" value="TPS72325DBVR" x="137" y="149" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="TEXAS INSTRUMENTS - TPS72325DBVR - LDO, FIXED, -2.5V, 0.2A, SOT-23-5" x="140.5" y="137" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HEIGHT" value="1.45mm" x="140.5" y="137" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="JLC_ROTATION" value="180" x="137" y="149" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="140.5" y="137" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="TPS72325DBVR" x="140.5" y="137" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-TPS72325DBVR" x="140.5" y="137" size="1.778" layer="27" rot="R180" display="off"/>
