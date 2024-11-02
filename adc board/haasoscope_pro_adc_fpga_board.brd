@@ -285,9 +285,9 @@ GND</text>
 <text x="208.228" y="43.211" size="0.8128" layer="21">LVDS IN</text>
 <text x="149.388" y="154.305" size="0.8128" layer="21" rot="R180">3.3V</text>
 <text x="148.888" y="106.305" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.02
+<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.10
 by DrAndyHaas
-October 2024</text>
+November 2024</text>
 <wire x1="65" y1="50" x2="105" y2="50" width="0.1524" layer="21"/>
 <wire x1="105" y1="50" x2="105" y2="10" width="0.1524" layer="21"/>
 <wire x1="105" y1="10" x2="65" y2="10" width="0.1524" layer="21"/>
@@ -9425,11 +9425,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="67" y="67.5" size="0.8128" layer="25" align="center"/>
 <attribute name="VALUE" x="78" y="67.5" size="0.8128" layer="21" align="center"/>
 </element>
-<element name="C1" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="4.7nF" x="58.9" y="78.8" smashed="yes" rot="R180">
+<element name="C1" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="47nF" x="58.9" y="78.8" smashed="yes" rot="R180">
 <attribute name="NAME" x="57.811" y="76.9985" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="57.8205" y="77.657" size="0.8128" layer="21"/>
 </element>
-<element name="C2" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="4.7nF" x="58.9" y="80.1" smashed="yes">
+<element name="C2" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="47nF" x="58.9" y="80.1" smashed="yes">
 <attribute name="NAME" x="57.811" y="81.6985" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="57.8205" y="80.957" size="0.8128" layer="21"/>
 </element>
@@ -9803,7 +9803,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="67.5" y="41.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="67.5" y="41.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="67.5" y="41.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="65.3" y="42.1" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="67.5" y="41.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="67.5" y="41.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="67.5" y="41.5" size="1.778" layer="27" rot="R180" display="off"/>
@@ -9813,7 +9812,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="67.5" y="39.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="67.5" y="39.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="67.5" y="39.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="65.3" y="40.1" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="67.5" y="39.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="67.5" y="39.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="67.5" y="39.5" size="1.778" layer="27" rot="R180" display="off"/>
@@ -9826,7 +9824,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMH5401IRMST" x="71.5" y="40.5" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMH5401IRMST" x="71.5" y="40.5" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH5401IRMST?qs=pV2tVPdcZ6z49pjv7lt75w%3D%3D" x="71.5" y="40.5" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="71.5" y="40.5" size="0.8128" layer="25" rot="R90" align="center"/>
 <attribute name="VALUE" x="64.5" y="40.5" size="0.8128" layer="21" rot="R270" align="center"/>
 </element>
 <element name="IC14" library="LMH6401IRMZR" package="LMH6401IRMZR" value="LMH6401IRMZR" x="71.5" y="53" smashed="yes" rot="R90">
@@ -9836,7 +9833,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMH6401IRMZR" x="71.5" y="53" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMH6401IRMZR" x="71.5" y="53" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH6401IRMZR?qs=zEQ6BYqA5vFvz%252BaadXvvtQ%3D%3D" x="71.5" y="53" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="71.55" y="53" size="0.8128" layer="25" rot="R90" align="center"/>
 <attribute name="VALUE" x="64.45" y="53" size="0.8128" layer="21" rot="R270" align="center"/>
 </element>
 <element name="R44" library="MF_Passives" package="R0402" value="39" x="72.25" y="46.45" smashed="yes" rot="R90">
@@ -9902,7 +9898,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R135" library="MF_Passives" package="R0402" value="357" x="70.5" y="33.5" smashed="yes">
 <attribute name="HOUSEPART" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="39.9" y="26.2" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
@@ -9913,7 +9908,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="75.5" y="41.5" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="75.5" y="41.5" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="75.5" y="41.5" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="77.9" y="40.9" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="75.5" y="41.5" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="75.5" y="41.5" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="75.5" y="41.5" size="1.778" layer="27" display="off"/>
@@ -9923,7 +9917,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="75.5" y="39.5" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="75.5" y="39.5" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="75.5" y="39.5" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="77.9" y="38.9" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="75.5" y="39.5" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="75.5" y="39.5" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="75.5" y="39.5" size="1.778" layer="27" display="off"/>
@@ -9953,7 +9946,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="75.5" y="54" size="0.8128" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="75.5" y="54" size="0.8128" layer="27" display="off"/>
 <attribute name="MPN" value="" x="75.5" y="54" size="0.8128" layer="27" display="off"/>
-<attribute name="NAME" x="74.4" y="55.1" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="75.5" y="54" size="0.8128" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="75.5" y="54" size="0.8128" layer="27" display="off"/>
 <attribute name="URL" value="" x="75.5" y="54" size="0.8128" layer="27" display="off"/>
@@ -9963,7 +9955,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="72.5" y="48.3" size="0.8128" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="72.5" y="48.3" size="0.8128" layer="27" display="off"/>
 <attribute name="MPN" value="" x="72.5" y="48.3" size="0.8128" layer="27" display="off"/>
-<attribute name="NAME" x="74.4" y="50.4" size="0.8128" layer="25" font="vector"/>
 <attribute name="POPULATE" value="1" x="72.5" y="48.3" size="0.8128" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="72.5" y="48.3" size="0.8128" layer="27" display="off"/>
 <attribute name="URL" value="" x="72.5" y="48.3" size="0.8128" layer="27" display="off"/>
@@ -9973,7 +9964,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="67.5" y="58" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="67.5" y="58" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="67.5" y="58" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="68.6" y="55.9" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="67.5" y="58" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="67.5" y="58" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="67.5" y="58" size="0.8128" layer="27" rot="R180" display="off"/>
@@ -9983,7 +9973,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="70.5" y="60" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="70.5" y="60" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="70.5" y="60" size="0.8128" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="68.6" y="50.9" size="0.8128" layer="25" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="70.5" y="60" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="70.5" y="60" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="70.5" y="60" size="0.8128" layer="27" rot="R180" display="off"/>
@@ -10170,13 +10159,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="JLC_ROTATION" value="270" x="42.3" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="42.3" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="42.3" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="44.205" y="47.705" size="0.8128" layer="25" rot="R270"/>
-<attribute name="VALUE" x="39.506" y="47.07" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R162" library="MF_Passives" package="R0402" value="1k" x="38.2" y="46.3" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="38.2" y="46.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="38.2" y="46.3" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="36.3" y="47.4" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="38.2" y="46.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="38.2" y="46.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="38.2" y="46.3" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10187,13 +10173,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="JLC_ROTATION" value="270" x="42.3" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="76.9" y="51.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="76.9" y="51.3" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="59.805" y="47.705" size="0.8128" layer="25" rot="R270"/>
-<attribute name="VALUE" x="55.106" y="47.07" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R164" library="MF_Passives" package="R0402" value="1k" x="53.7" y="46.2" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="65.7" y="55.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="65.7" y="55.7" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="51.9" y="47.2" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="65.7" y="55.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="65.7" y="55.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="65.7" y="55.7" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10275,8 +10258,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="JLC_ROTATION" value="270" x="-6.7" y="45.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="45.1" y="51.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="45.1" y="51.3" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="28.605" y="47.805" size="0.8128" layer="25" rot="R270"/>
-<attribute name="VALUE" x="23.906" y="47.17" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R171" library="MF_Passives" package="R0402" value="1k" x="22.6" y="45.8" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="34.4" y="55.2" size="1.778" layer="27" rot="R270" display="off"/>
@@ -10382,7 +10363,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="38.4" y="82.9" size="0.8128" layer="25" font="vector" rot="R90"/>
+<attribute name="NAME" x="36.9" y="82.9" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="POPULATE" value="1" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="39.5" y="84" size="1.778" layer="27" rot="R90" display="off"/>
@@ -10412,7 +10393,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="38.6" y="85.1" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="NAME" x="40.1" y="85.1" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="37.5" y="84" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11033,15 +11014,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="25" y="80.73" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="VALUE" x="26" y="80.73" size="0.8128" layer="27" font="vector" rot="R90"/>
 </element>
-<element name="R8" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="35.5" y="46.5" smashed="yes" rot="R90">
-<attribute name="NAME" x="34" y="45.23" size="0.8128" layer="25" font="vector" rot="R90"/>
-<attribute name="VALUE" x="35" y="45.23" size="0.8128" layer="27" font="vector" rot="R90"/>
-</element>
+<element name="R8" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="35.5" y="46.5" smashed="yes" rot="R90"/>
 <element name="R9" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="63.5" y="45" smashed="yes"/>
-<element name="R10" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="50.5" y="46" smashed="yes" rot="R90">
-<attribute name="NAME" x="49" y="44.73" size="0.8128" layer="25" font="vector" rot="R90"/>
-<attribute name="VALUE" x="50" y="44.73" size="0.8128" layer="27" font="vector" rot="R90"/>
-</element>
+<element name="R10" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="50.5" y="46" smashed="yes" rot="R90"/>
 <element name="R11" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="20.3" y="45.75" smashed="yes" rot="R90"/>
 <element name="C55" library="MF_Passives" package="C0402" value="0.1uF" x="23.4" y="124.3" smashed="yes">
 <attribute name="DIELECTRIC" value="" x="23.4" y="124.3" size="0.8128" layer="27" display="off"/>
@@ -11082,13 +11057,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="JLC_ROTATION" value="270" x="25.35" y="146.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="25.35" y="146.7" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="25.35" y="146.7" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="27.255" y="148.605" size="0.8128" layer="25" rot="R270"/>
-<attribute name="VALUE" x="22.556" y="147.97" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R140" library="MF_Passives" package="R0402" value="1k" x="21.25" y="147.2" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="19.35" y="148.3" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="21.25" y="147.2" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11099,13 +11071,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="JLC_ROTATION" value="270" x="26.8" y="45.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="65.45" y="152.05" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="65.45" y="152.05" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="48.355" y="148.455" size="0.8128" layer="25" rot="R270"/>
-<attribute name="VALUE" x="43.656" y="147.82" size="0.8128" layer="27" rot="R270"/>
 </element>
 <element name="R141" library="MF_Passives" package="R0402" value="1k" x="42.75" y="146.95" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="40.95" y="147.95" size="0.8128" layer="25" font="vector" rot="R270"/>
 <attribute name="POPULATE" value="1" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="54.75" y="156.45" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11181,7 +11150,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMH5401IRMST" x="70.5" y="116" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMH5401IRMST" x="70.5" y="116" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH5401IRMST?qs=pV2tVPdcZ6z49pjv7lt75w%3D%3D" x="70.5" y="116" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="70.5" y="116" size="0.8128" layer="25" rot="R270" align="center"/>
 <attribute name="VALUE" x="77.5" y="116" size="0.8128" layer="21" rot="R90" align="center"/>
 </element>
 <element name="IC29" library="LMH6401IRMZR" package="LMH6401IRMZR" value="LMH6401IRMZR" x="70.78" y="103.64" smashed="yes" rot="R270">
@@ -11191,7 +11159,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMH6401IRMZR" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-LMH6401IRMZR" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LMH6401IRMZR?qs=zEQ6BYqA5vFvz%252BaadXvvtQ%3D%3D" x="70.78" y="103.64" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="70.73" y="103.64" size="0.8128" layer="25" rot="R270" align="center"/>
 <attribute name="VALUE" x="77.83" y="103.64" size="0.8128" layer="21" rot="R90" align="center"/>
 </element>
 <element name="R187" library="MF_Passives" package="R0402" value="39" x="70" y="110" smashed="yes" rot="R270">
@@ -13134,8 +13101,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="214.8" y="18.2" extent="1-16" drill="0.35"/>
 <wire x1="216.2" y1="18.3" x2="216.1" y2="18.2" width="1.27" layer="1"/>
 <wire x1="216.1" y1="18.2" x2="214.8" y2="18.2" width="1.27" layer="1"/>
-<via x="158.2" y="79.1" extent="1-16" drill="0.35"/>
-<via x="157.7" y="76.1" extent="1-16" drill="0.35"/>
+<via x="158.2" y="78.6" extent="1-16" drill="0.35"/>
+<via x="158.2" y="76.6" extent="1-16" drill="0.35"/>
 <via x="175.2" y="75.6" extent="1-16" drill="0.35"/>
 <via x="175.2" y="79.1" extent="1-16" drill="0.35"/>
 <via x="195.2" y="75.6" extent="1-16" drill="0.35"/>
@@ -13526,6 +13493,19 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="59.5" y="35.5" extent="1-16" drill="0.35"/>
 <via x="59.5" y="33.5" extent="1-16" drill="0.35"/>
 <via x="60.5" y="28" extent="1-16" drill="0.35"/>
+<via x="195.2" y="79.1" extent="1-16" drill="0.35"/>
+<via x="166.2" y="79.1" extent="1-16" drill="0.35"/>
+<via x="166.2" y="76.1" extent="1-16" drill="0.35"/>
+<via x="185.2" y="79.6" extent="1-16" drill="0.35"/>
+<via x="185.2" y="76.1" extent="1-16" drill="0.35"/>
+<via x="205.7" y="75.6" extent="1-16" drill="0.35"/>
+<via x="205.7" y="79.6" extent="1-16" drill="0.35"/>
+<via x="155.7" y="74.6" extent="1-16" drill="0.35"/>
+<wire x1="152.5645" y1="76.1615" x2="153.512196875" y2="76.1615" width="0.127" layer="1"/>
+<wire x1="153.512196875" y1="76.1615" x2="154.660284375" y2="75.468853125" width="0.127" layer="1"/>
+<wire x1="154.885675" y1="75.414325" x2="155.7" y2="74.6" width="0.127" layer="1"/>
+<wire x1="154.660284375" y1="75.468853125" x2="154.7148125" y2="75.414325" width="0.127" layer="1"/>
+<wire x1="154.7148125" y1="75.414325" x2="154.885675" y2="75.414325" width="0.127" layer="1"/>
 </signal>
 <signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>
@@ -22665,10 +22645,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="REF">
 <contactref element="IC8" pad="5"/>
 <contactref element="R38" pad="P$2"/>
-<wire x1="162" y1="74.5" x2="163.5" y2="74.5" width="0.0889" layer="1"/>
-<wire x1="159.875" y1="76.625" x2="162" y2="74.5" width="0.0889" layer="1"/>
-<wire x1="152.625" y1="76.625" x2="159.875" y2="76.625" width="0.0889" layer="1"/>
-<wire x1="152.625" y1="76.625" x2="152.5645" y2="76.6615" width="0.0889" layer="1"/>
+<wire x1="162.375" y1="75.625" x2="154.78253125" y2="75.625" width="0.0889" layer="1"/>
+<wire x1="162.375" y1="75.625" x2="163.5" y2="74.5" width="0.0889" layer="1"/>
+<wire x1="154.78253125" y1="75.625" x2="153.0645" y2="76.6615" width="0.0889" layer="1"/>
+<wire x1="153.0645" y1="76.6615" x2="152.5645" y2="76.6615" width="0.0889" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="R27" pad="P$1"/>
