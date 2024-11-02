@@ -361,6 +361,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.drawingCheck.clicked.connect(self.drawing)
         self.ui.fwfBox.valueChanged.connect(self.fwf)
         self.ui.tadBox.valueChanged.connect(self.setTAD)
+        self.ui.ToffBox.valueChanged.connect(self.setToff)
         self.db=False
         self.lastTime = time.time()
         self.fps = None
@@ -401,6 +402,10 @@ class MainWindow(TemplateBaseClass):
     def setTAD(self):
         self.tad = self.ui.tadBox.value()
         spicommand(self.activeusb, "TAD", 0x02, 0xB6, self.tad, False)
+
+    toff=0
+    def setToff(self):
+        self.toff = self.ui.ToffBox.value()
 
     themuxoutV = True
     def adfreset(self):
@@ -492,7 +497,7 @@ class MainWindow(TemplateBaseClass):
     def exttrig(self,value):
         board = self.ui.boardBox.value()
         self.doexttrig[board]=value
-        print("doexttrig",value,"for board",board)
+        print("doexttrig",self.doexttrig[board],"for board",board)
 
     def grid(self):
         if self.ui.gridCheck.isChecked():
@@ -536,7 +541,7 @@ class MainWindow(TemplateBaseClass):
     min_x=0
     max_x=4*10*expect_samples*downsamplefactor/nsunits/samplerate
     triggerlevel = 127
-    triggerdelta = 4
+    triggerdelta = 1
     triggerpos = int(expect_samples * 128/256)
     triggertimethresh = 0
     triggerchan = 0
@@ -905,7 +910,8 @@ class MainWindow(TemplateBaseClass):
                                 else: chani=int((chan-1)/2)
                                 self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
                             else:
-                                self.xydata[board][1][chan+ 4*samp] = val
+                                if board==0: self.xydata[board][1][chan+ 4*samp] = val
+                                else: self.xydata[board][1][ (chan+ 4*samp + self.toff) % (40*self.expect_samples)] = val
                         else:
                             if self.data_overlapped:
                                 print("downsampling not supported in overlap mode yet")
@@ -967,6 +973,7 @@ class MainWindow(TemplateBaseClass):
         return 1
 
     def init(self):
+        self.tot()
         oldactiveusb = self.activeusb
         for usb in usbs:
             self.activeusb = usb

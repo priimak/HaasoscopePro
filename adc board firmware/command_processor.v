@@ -77,8 +77,8 @@ assign debugout[11] = fanon;
 
 reg [15:0]	lvdstestcounter=0, probecompcounter=0;
 //assign lvdsout_trig = lvdstestcounter[2];
-assign lvdsout_spare[0] = lvdstestcounter[3];
-assign lvdsout_spare[1] = lvdstestcounter[4];
+assign lvdsout_spare[0] = lvdstestcounter[3]||lvdstestcounter[2];
+assign lvdsout_spare[1] = lvdstestcounter[4]||lvdstestcounter[3]||lvdstestcounter[2];
 
 //variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter=1;
@@ -395,6 +395,7 @@ always @ (posedge clklvds or negedge rstn)
 		triggercounter<=0;
 		tot_counter<=0;
 		sample_triggered<=0;
+		lvdsout_trig <= 0;
 		if (triggerlive_sync) begin
 			if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger rising edge
 			else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger falling edge
@@ -411,13 +412,16 @@ always @ (posedge clklvds or negedge rstn)
 	// rising edge trigger (1)
 	1 : begin // ready for first part of trigger condition to be met
 	if (triggertype_sync!=1) acqstate<=0;
+	else begin
 	for (i=0;i<10;i=i+1) begin
 		if (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) acqstate <= 8'd2;//chan 0 trig
 		if (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) acqstate <= 8'd2;//chan 1 trig
 	end
 	end
+	end
 	2 : begin // ready for second part of trigger condition to be met
 	if (triggertype_sync!=1) acqstate<=0;
+	else begin
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
 			tot_counter <= tot_counter+8'd1;
@@ -434,17 +438,21 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	end
+	end
 	
 	//falling edge trigger (2)
 	3 : begin // ready for first part of trigger condition to be met
 	if (triggertype_sync!=2) acqstate<=0;
+	else begin
 	for (i=0;i<10;i=i+1) begin
 		if (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) acqstate <= 8'd4;//chan 0 trig
 		if (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) acqstate <= 8'd4;//chan 1 trig
 	end
 	end
+	end
 	4 : begin // ready for second part of trigger condition to be met
 	if (triggertype_sync!=2) acqstate<=0;
+	else begin
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
 			tot_counter <= tot_counter+8'd1;
@@ -461,15 +469,18 @@ always @ (posedge clklvds or negedge rstn)
 		end
 	end
 	end
+	end
 	
 	5 : begin // external trigger, like from another board (3)
-		if (triggertype_sync!=3) acqstate<=0;
-		if (lvdsin_trig) begin
-			ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-			sample_triggered <= 0; // ?
-			lvdsout_trig <= 1'b1; // tell the others
-			acqstate <= 8'd250;
-		end
+	if (triggertype_sync!=3) acqstate<=0;
+	else begin
+	if (lvdsin_trig) begin
+		ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+		sample_triggered <= 0; // ?
+		lvdsout_trig <= 1'b1; // tell the others
+		acqstate <= 8'd250;
+	end
+	end
 	end
 	
 	250 : begin // triggered, now taking more data
