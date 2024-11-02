@@ -728,7 +728,7 @@ class MainWindow(TemplateBaseClass):
             chan=li%4
             board=int(li/4)
             if self.db: print("chan =",chan,"and board =",board)
-            if self.num_board>1:
+            if self.num_board>2:
                 if board%4==0: c=(255-0.2*255*chan,0,0)
                 if board%4==1: c=(0,255-0.2*255*chan,0)
                 if board%4==2: c=(0,0,255-0.2*255*chan)
