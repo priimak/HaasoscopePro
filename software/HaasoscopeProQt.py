@@ -23,7 +23,7 @@ for ftdserial in ftds:
     usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
     #print(usbdevice)
     if usbdevice.good:
-        #if usbdevice.serial != b"FT9M1UIT": continue
+        if usbdevice.serial != b"FT9M1UIT": continue
         #if usbdevice.serial != b"FT9LYZXP": continue
         usbs.append(usbdevice)
         print("Connected USB device",usbdevice.serial)
@@ -488,7 +488,8 @@ class MainWindow(TemplateBaseClass):
         if event.key()==QtCore.Qt.Key_Right: self.timeslow()
         #modifiers = QtWidgets.QApplication.keyboardModifiers()
 
-    def actionOutput_clk_left(self):
+    @staticmethod
+    def actionOutput_clk_left():
         for usb in usbs:
             clockswitch(usb)
 
@@ -815,22 +816,29 @@ class MainWindow(TemplateBaseClass):
     eventcounter=[]
     for n in range(num_board): eventcounter.append(0)
 
+    doeventcounter=False
     def getchannels(self,usb,board):
         nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
         tt=self.triggertype
         if self.doexttrig[board]>0: tt=3
         usb.send(bytes([1, tt, self.data_twochannel, 99] + inttobytes(self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
-        #print("Got triggercounter", triggercounter[3], triggercounter[2], triggercounter[1], triggercounter[0])
-        eventcountertemp = triggercounter[3]
-        sample_triggered = 256+triggercounter[2]+triggercounter[1]
-        #print("sample triggered", binprint(triggercounter[2]), binprint(triggercounter[1]))
+        sample_triggered = 0
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
-            if eventcountertemp != self.eventcounter[board] + 1 and eventcountertemp != 0: #check event count, but account for rollover
-                print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter[board]," for board",board)
-            self.eventcounter[board] = eventcountertemp
-
+            #print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
+            for s in range(10):
+                if getbit(triggercounter[int(s/8)+1],s%8)==0:
+                    sample_triggered=s
+                    break
+            #print("sample_triggered", sample_triggered)
+            if self.doeventcounter:
+                usb.send(bytes([2, 3, 100, 100, 100, 100, 100, 100]))  # get eventcounter
+                res = usb.recv(4)
+                eventcountertemp = res[0] + 256 * res[1] + 256 * 256 * res[2] + 256 * 256 * 256 * res[3]
+                if eventcountertemp != self.eventcounter[board] + 1 and eventcountertemp != 0: #check event count, but account for rollover
+                    print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter[board]," for board",board)
+                self.eventcounter[board] = eventcountertemp
             expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
             usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
             data = usb.recv(expect_len)  # recv from usb
@@ -902,7 +910,7 @@ class MainWindow(TemplateBaseClass):
                         val = val * self.yscale *self.tenx
                         if self.downsamplemerging==1:
                             samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
-                            #if s<(self.expect_samples-1): samp = samp + sample_triggered
+                            if s<(self.expect_samples-1): samp = samp + sample_triggered
                             if self.data_overlapped:
                                 self.xydata[chan][1][samp] = val
                             elif self.data_twochannel:
@@ -922,7 +930,7 @@ class MainWindow(TemplateBaseClass):
                                 self.xydata[board*self.num_chan_per_board + chan%2][1][samp] = val
                             else:
                                 samp = s * 40 +39 - n
-                                #if s < (self.expect_samples - 1): samp = samp + int(4*sample_triggered/self.downsamplefactor)
+                                if s < (self.expect_samples - 1): samp = samp + int(4*sample_triggered/self.downsamplefactor)
                                 self.xydata[board][1][samp] = val
         if self.debug:
             time.sleep(.5)

@@ -58,7 +58,7 @@ module command_processor (
 	input wire [69:0] lvdsEbits, lvdsLbits
 );
 
-integer version = 18; // firmware version
+integer version = 19; // firmware version
 
 assign debugout[0] = clkswitch;
 assign debugout[1] = lvdsin_trig;
@@ -93,7 +93,7 @@ reg [15:0]	triggercounter=0;
 reg [ 7:0]	acqstate=0, acqstate_sync=0;
 reg signed [11:0]  lowerthresh=0, lowerthresh_sync=0;
 reg signed [11:0]  upperthresh=0, upperthresh_sync=0;
-reg [7:0]	eventcounter=0, eventcounter_sync=0;
+integer		eventcounter=0, eventcounter_sync=0;
 reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
 reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
@@ -104,7 +104,7 @@ reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
 reg [4:0] 	downsample=0, downsample_sync=0;
 reg			highres=0, highres_sync=0;
 reg [7:0]	downsamplemerging=1, downsamplemerging_sync=1;
-reg [15:0] 	sample_triggered=0, sample_triggered_sync=0;
+reg [19:0] 	sample_triggered=0, sample_triggered_sync=0;
 reg 			triggerchan=0, triggerchan_sync=0;
 
 integer i, j;
@@ -402,7 +402,6 @@ always @ (posedge clklvds or negedge rstn)
 			else if (triggertype_sync==8'd3) acqstate <= 8'd5; // external trigger
 			else begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				sample_triggered <= 0; // doesn't matter, random trigger
 				//lvdsout_trig <= 1'b1; // tell the others
 				acqstate <= 8'd250; // go straight to taking more data, no trigger, triggertype==0
 			end
@@ -414,8 +413,10 @@ always @ (posedge clklvds or negedge rstn)
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
-		if (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) acqstate <= 8'd2;//chan 0 trig
-		if (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) acqstate <= 8'd2;//chan 1 trig
+		if (	(triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) acqstate <= 8'd2;
+		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
+			sample_triggered[i] <= 1'b1; // remember the samples that caused the trigger
+		end			
 	end
 	end
 	end
@@ -424,16 +425,17 @@ always @ (posedge clklvds or negedge rstn)
 	else begin
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
+			if (tot_counter==0) sample_triggered[10+i] <= 1'b1; // remember the samples that caused the trigger
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				sample_triggered[i] <= 1'b1; // remember the sample that caused the trigger
 				lvdsout_trig <= 1'b1; // tell the others
 				acqstate <= 8'd250;
 			end
 		end
 		else begin
 			tot_counter<=8'd0;
+			sample_triggered<=0;
 			acqstate <= 8'd1;
 		end
 	end
@@ -445,8 +447,10 @@ always @ (posedge clklvds or negedge rstn)
 	if (triggertype_sync!=2) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
-		if (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) acqstate <= 8'd4;//chan 0 trig
-		if (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) acqstate <= 8'd4;//chan 1 trig
+		if (	(triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) acqstate <= 8'd4;
+		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
+			sample_triggered[i] <= 1'b1; // remember the samples that caused the trigger
+		end
 	end
 	end
 	end
@@ -455,16 +459,17 @@ always @ (posedge clklvds or negedge rstn)
 	else begin
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
+			if (tot_counter==0) sample_triggered[10+i] <= 1'b1; // remember the samples that caused the trigger
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-				sample_triggered[i] <= 1'b1; // remember the sample that caused the trigger
 				lvdsout_trig <= 1'b1; // tell the others
 				acqstate <= 8'd250;
 			end
 		end
 		else begin
 			tot_counter<=8'd0;
+			sample_triggered<=0;
 			acqstate <= 8'd3;
 		end
 	end
@@ -476,7 +481,6 @@ always @ (posedge clklvds or negedge rstn)
 	else begin
 	if (lvdsin_trig) begin
 		ram_address_triggered <= ram_wr_address; // remember where the trigger happened
-		sample_triggered <= 0; // ?
 		lvdsout_trig <= 1'b1; // tell the others
 		acqstate <= 8'd250;
 	end
@@ -493,7 +497,7 @@ always @ (posedge clklvds or negedge rstn)
 			end
 		end
 		else begin
-			eventcounter <= eventcounter+8'd1;
+			eventcounter <= eventcounter+1;
 			acqstate <= 8'd251;
 		end
 	end
@@ -586,7 +590,7 @@ always @ (posedge clk or negedge rstn)
 			channeltype <= rx_data[2][0]; // and the channel type (single or dual)
 			lengthtotake <= {rx_data[5],rx_data[4]};
 			if (acqstate_sync == 0) triggerlive <= 1'b1; // gets reset in INIT state
-			o_tdata <= {eventcounter_sync,sample_triggered_sync,acqstate_sync}; // return acqstate, so we can see if we have an event ready to be read out
+			o_tdata <= {4'd0,sample_triggered_sync,acqstate_sync}; // return acqstate, so we can see if we have an event ready to be read out, and which samples triggered (to prevent jitter)
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
@@ -596,6 +600,7 @@ always @ (posedge clk or negedge rstn)
 			if (rx_data[1]==0) o_tdata <= version;
 			if (rx_data[1]==1) o_tdata <= {boardin,boardin,boardin,boardin};
 			if (rx_data[1]==2) o_tdata <= overrange_counter[rx_data[2][1:0]];
+			if (rx_data[1]==3) o_tdata <= eventcounter_sync;
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
