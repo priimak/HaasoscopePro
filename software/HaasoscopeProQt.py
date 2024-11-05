@@ -380,8 +380,10 @@ class MainWindow(TemplateBaseClass):
         self.ui.plot.setBackground('w')
         self.show()
 
+    activeboard=0
     def boardchanged(self):
         self.activeusb = usbs[self.ui.boardBox.value()]
+        self.activeboard = self.ui.boardBox.value()
 
     def selectchannel(self):
         self.selectedchannel=self.ui.chanBox.value()
@@ -408,12 +410,13 @@ class MainWindow(TemplateBaseClass):
         self.toff = self.ui.ToffBox.value()
 
     themuxoutV = True
-    def adfreset(self):
+    def adfreset(self,board):
+        usb = usbs[board]
         self.themuxoutV = not self.themuxoutV
         #adf4350(150.0, None, 10) # need larger rcounter for low freq
-        adf4350(self.activeusb, self.samplerate*1000/2, None, themuxout=self.themuxoutV)
+        adf4350(usb, self.samplerate*1000/2, None, themuxout=self.themuxoutV)
         time.sleep(0.1)
-        res= boardinbits(self.activeusb)
+        res= boardinbits(usb)
         if not getbit(res,0): print("Pll not locked?") # should be 1 if locked
         if getbit(res,1) == self.themuxoutV: print("Pll not setup?") # should be 1 for MuxOut.DVdd
 
@@ -439,39 +442,39 @@ class MainWindow(TemplateBaseClass):
     def setoversamp(self):
         setsplit(self.activeusb, self.ui.oversampCheck.checkState() == QtCore.Qt.Checked) # will be True for oversampling, False otherwise
 
-    phasec = [ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ]
+    phasecs = []
+    for ph in range(len(usbs)): phasecs.append([ [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0] ])
     # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
     # for 4th byte, 1 is up, 0 is down
-    def dophase(self,plloutnum,updown,pllnum=None,quiet=False):
+    def dophase(self,board,plloutnum,updown,pllnum=None,quiet=False):
         if pllnum is None: pllnum = int(self.ui.pllBox.value())
-        self.activeusb.send(bytes([6,pllnum, int(plloutnum+2), updown, 100, 100, 100, 100]))
-        if updown: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]+1
-        else: self.phasec[pllnum][plloutnum] = self.phasec[pllnum][plloutnum]-1
-        if not quiet: print("phase for pllnum",pllnum,"plloutnum",plloutnum,"now",self.phasec[pllnum][plloutnum])
-    def uppos(self): self.dophase(plloutnum=0,updown=1)
-    def uppos1(self): self.dophase(plloutnum=1,updown=1)
-    def uppos2(self): self.dophase(plloutnum=2,updown=1)
-    def uppos3(self): self.dophase(plloutnum=3,updown=1)
-    def uppos4(self): self.dophase(plloutnum=4,updown=1)
-    def downpos(self): self.dophase(plloutnum=0,updown=0)
-    def downpos1(self): self.dophase(plloutnum=1,updown=0)
-    def downpos2(self): self.dophase(plloutnum=2,updown=0)
-    def downpos3(self): self.dophase(plloutnum=3,updown=0)
-    def downpos4(self): self.dophase(plloutnum=4,updown=0)
+        usbs[board].send(bytes([6,pllnum, int(plloutnum+2), updown, 100, 100, 100, 100]))
+        if updown: self.phasecs[board][pllnum][plloutnum] = self.phasecs[board][pllnum][plloutnum]+1
+        else: self.phasecs[board][pllnum][plloutnum] = self.phasecs[board][pllnum][plloutnum]-1
+        if not quiet: print("phase for pllnum",pllnum,"plloutnum",plloutnum,"on board",board,"now",self.phasecs[board][pllnum][plloutnum])
+    def uppos(self): self.dophase(self.activeboard, plloutnum=0,updown=1)
+    def uppos1(self): self.dophase(self.activeboard, plloutnum=1,updown=1)
+    def uppos2(self): self.dophase(self.activeboard, plloutnum=2,updown=1)
+    def uppos3(self): self.dophase(self.activeboard, plloutnum=3,updown=1)
+    def uppos4(self): self.dophase(self.activeboard, plloutnum=4,updown=1)
+    def downpos(self): self.dophase(self.activeboard, plloutnum=0,updown=0)
+    def downpos1(self): self.dophase(self.activeboard, plloutnum=1,updown=0)
+    def downpos2(self): self.dophase(self.activeboard, plloutnum=2,updown=0)
+    def downpos3(self): self.dophase(self.activeboard, plloutnum=3,updown=0)
+    def downpos4(self): self.dophase(self.activeboard, plloutnum=4,updown=0)
 
-    def pllreset(self):
-        usb = self.activeusb
-        usb.send(bytes([5, 99, 99, 99, 100, 100, 100, 100]))
-        tres = usb.recv(4)
+    def pllreset(self,board):
+        usbs[board].send(bytes([5, 99, 99, 99, 100, 100, 100, 100]))
+        tres = usbs[board].recv(4)
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
-        self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
+        self.phasecs[board] = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
         n = 1 # amount to adjust (+ or -)
-        for i in range(abs(n)): self.dophase(2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
+        for i in range(abs(n)): self.dophase(board, 2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
         n = -1  # amount to adjust (+ or -)
-        for i in range(abs(n)): self.dophase(3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
+        for i in range(abs(n)): self.dophase(board, 3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
         n = 0  # amount to adjust (+ or -)
-        for i in range(abs(n)): self.dophase(4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
+        for i in range(abs(n)): self.dophase(board, 4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
 
     def wheelEvent(self, event): #QWheelEvent
         if hasattr(event,"delta"):
@@ -832,19 +835,6 @@ class MainWindow(TemplateBaseClass):
         triggercounter = usb.recv(4)  # get the 4 bytes
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
-            if self.doeventcounter:
-                usb.send(bytes([2, 3, 100, 100, 100, 100, 100, 100]))  # get eventcounter
-                res = usb.recv(4)
-                eventcountertemp = res[0] + 256 * res[1] + 256 * 256 * res[2] + 256 * 256 * 256 * res[3]
-                if eventcountertemp != self.eventcounter[board] + 1 and eventcountertemp != 0: #check event count, but account for rollover
-                    print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter[board]," for board",board)
-                self.eventcounter[board] = eventcountertemp
-            if self.downsamplemerging>1:
-                usb.send(bytes([2, 4, 100, 100, 100, 100, 100, 100]))  # get downsamplemergingcounter
-                res = usb.recv(4)
-                self.downsamplemergingcounter = res[0]
-                if self.downsamplemergingcounter == self.downsamplemerging: self.downsamplemergingcounter = 0
-                #print("downsamplemergingcounter", self.downsamplemergingcounter)
             # print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
             for s in range(10):
                 if getbit(triggercounter[int(s / 8) + 1], s % 8) == 0:
@@ -855,6 +845,27 @@ class MainWindow(TemplateBaseClass):
             return 1
         else:
             return 0
+
+    def getpredata(self,usb,board):
+        if self.doeventcounter:
+            usb.send(bytes([2, 3, 100, 100, 100, 100, 100, 100]))  # get eventcounter
+            res = usb.recv(4)
+            eventcountertemp = res[0] + 256 * res[1] + 256 * 256 * res[2] + 256 * 256 * 256 * res[3]
+            if eventcountertemp != self.eventcounter[board] + 1 and eventcountertemp != 0: #check event count, but account for rollover
+                print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter[board]," for board",board)
+            self.eventcounter[board] = eventcountertemp
+        downsamplemergingcounter=0
+        if self.downsamplemerging>1:
+            usb.send(bytes([2, 4, 100, 100, 100, 100, 100, 100]))  # get downsamplemergingcounter
+            res = usb.recv(4)
+            downsamplemergingcounter = res[0]
+            if downsamplemergingcounter == self.downsamplemerging:
+                if board==0 and self.doexttrig[0]:
+                    pass
+                else:
+                    downsamplemergingcounter = 0
+            #print("downsamplemergingcounter", downsamplemergingcounter)
+        return downsamplemergingcounter
 
     def getdata(self,usb):
         expect_len = self.expect_samples * 2 * self.nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
@@ -869,13 +880,13 @@ class MainWindow(TemplateBaseClass):
             #oldbytes()
         return data
 
-    def drawchannels(self, data, board):
+    def drawchannels(self, data, board, downsamplemergingcounter):
         if self.dofast: return
         if self.doexttrig[0]: self.sample_triggered = self.sample_triggered_board1
-        self.nbadclkA = 0
-        self.nbadclkB = 0
-        self.nbadclkC = 0
-        self.nbadclkD = 0
+        nbadclkA = 0
+        nbadclkB = 0
+        nbadclkC = 0
+        nbadclkD = 0
         self.nbadstr = 0
         for s in range(0, self.expect_samples):
             chan = -1
@@ -889,22 +900,22 @@ class MainWindow(TemplateBaseClass):
                 if n % 10 == 0: chan = chan + 1
 
                 if n==40 and val&0x5555!=4369 and val&0x5555!=17476:
-                    self.nbadclkA=self.nbadclkA+1
+                    nbadclkA=nbadclkA+1
                 if n==41 and val&0x5555!=1 and val&0x5555!=4:
-                    self.nbadclkA=self.nbadclkA+1
+                    nbadclkA=nbadclkA+1
                 if n==42 and val&0x5555!=4369 and val&0x5555!=17476:
-                    self.nbadclkB=self.nbadclkB+1
+                    nbadclkB=nbadclkB+1
                 if n==43 and val&0x5555!=1 and val&0x5555!=4:
-                    self.nbadclkB=self.nbadclkB+1
+                    nbadclkB=nbadclkB+1
                 if n==44 and val&0x5555!=4369 and val&0x5555!=17476:
-                    self.nbadclkC=self.nbadclkC+1
+                    nbadclkC=nbadclkC+1
                 if n==45 and val&0x5555!=1 and val&0x5555!=4:
-                    self.nbadclkC=self.nbadclkC+1
+                    nbadclkC=nbadclkC+1
                 if n==46 and val&0x5555!=4369 and val&0x5555!=17476:
-                    self.nbadclkD=self.nbadclkD+1
+                    nbadclkD=nbadclkD+1
                 if n==47 and val&0x5555!=1 and val&0x5555!=4:
-                    self.nbadclkD=self.nbadclkD+1
-                #if 40<=n<48 and self.nbadclkD:
+                    nbadclkD=nbadclkD+1
+                #if 40<=n<48 and nbadclkD:
                 #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
 
                 if 40 <= n < 48:
@@ -950,14 +961,21 @@ class MainWindow(TemplateBaseClass):
                             self.xydata[board*self.num_chan_per_board + chan%2][1][samp] = val
                         else:
                             samp = s * 40 +39 - n
-                            if s<(self.expect_samples-1): samp = samp + int(4*(self.sample_triggered-(self.downsamplemergingcounter-1)*10)/self.downsamplemerging)
-                            self.xydata[board][1][samp] = val
+                            if s<(self.expect_samples-1): samp = samp + int(4*(self.sample_triggered-(downsamplemergingcounter-1)*10)/self.downsamplemerging)
+                            if board==0: self.xydata[board][1][samp] = val
+                            else: self.xydata[board][1][(samp + self.toff) % (40*self.expect_samples)] = val
+        self.adjustclocks(board,nbadclkA,nbadclkB,nbadclkC,nbadclkD)
+        if board==self.activeboard:
+            self.nbadclkA=nbadclkA
+            self.nbadclkB=nbadclkB
+            self.nbadclkC=nbadclkC
+            self.nbadclkD=nbadclkD
 
-    def adjustclocks(self):
-        if ((self.nbadclkA == 2*self.expect_samples or self.nbadclkB == 2*self.expect_samples or self.nbadclkC == 2*self.expect_samples or self.nbadclkD == 2*self.expect_samples)
-                and self.phasec[0][2]<12): # adjust phase by 90 deg
+    def adjustclocks(self,board,nbadclkA,nbadclkB,nbadclkC,nbadclkD):
+        if ((nbadclkA == 2*self.expect_samples or nbadclkB == 2*self.expect_samples or nbadclkC == 2*self.expect_samples or nbadclkD == 2*self.expect_samples)
+                and self.phasecs[board][0][2]<12): # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
-            for i in range(n): self.dophase(2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
+            for i in range(n): self.dophase(board,2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
     fitwidthfraction=0.2
     def drawtext(self): # happens once per second
@@ -1000,12 +1018,9 @@ class MainWindow(TemplateBaseClass):
 
     def init(self):
         self.tot()
-        oldactiveusb = self.activeusb
-        for usb in usbs:
-            self.activeusb = usb
-            self.pllreset()
-            self.adfreset()
-        self.activeusb = oldactiveusb
+        for board in range(len(usbs)):
+            self.pllreset(board)
+            self.adfreset(board)
         if self.data_overlapped:
             for c in range(self.num_board * 4):
                 self.xydata[c][0] = np.array([range(0, 10*self.expect_samples)]) / self.nsunits / self.samplerate
@@ -1030,10 +1045,10 @@ class MainWindow(TemplateBaseClass):
                     readyevent.append(rd)
                 for board in reversed(range(self.num_board)):
                     if not readyevent[board]: continue
+                    downsamplemergingcounter = self.getpredata(usbs[board],board)
                     data = self.getdata(usbs[board])
                     rx_len = rx_len + len(data)
-                    self.drawchannels(data,board)
-                    self.adjustclocks()
+                    self.drawchannels(data,board,downsamplemergingcounter)
                 if self.getone and rx_len>0:
                     self.dostartstop()
                     self.drawtext()

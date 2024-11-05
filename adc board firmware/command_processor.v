@@ -492,6 +492,8 @@ always @ (posedge clklvds or negedge rstn)
 	if (lvdsin_trig) begin
 		ram_address_triggered <= ram_wr_address; // remember where the trigger happened
 		lvdsout_trig <= 1'b1; // tell the others
+		sample_triggered <= 0; // not used, since we didn't measure the trigger edge - will take it from the board that caused the trigger
+		downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that we were on when we got this trigger
 		acqstate <= 8'd250;
 	end
 	end
