@@ -23,7 +23,7 @@ for ftdserial in ftds:
     usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
     #print(usbdevice)
     if usbdevice.good:
-        if usbdevice.serial != b"FT9M1UIT": continue
+        #if usbdevice.serial != b"FT9M1UIT": continue
         #if usbdevice.serial != b"FT9LYZXP": continue
         usbs.append(usbdevice)
         print("Connected USB device",usbdevice.serial)
@@ -466,7 +466,7 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasec = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]] # reset counters
         #adjust other phases
-        n = -1 # amount to adjust (+ or -)
+        n = 1 # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
         n = -1  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
@@ -598,12 +598,9 @@ class MainWindow(TemplateBaseClass):
     def highres(self,value):
         self.highresval=value>0
         #print("highres",self.highresval)
-        self.telldownsample(self.activeusb, self.downsample)
+        for usb in usbs: self.telldownsample(usb,self.downsample)
+
     def telldownsample(self,usb,ds):
-        if (ds-5)>31:
-            print("downsample too large!")
-            return
-        self.downsample=ds
         if ds<0: ds=0
         if ds==0:
             ds=0
@@ -644,7 +641,11 @@ class MainWindow(TemplateBaseClass):
         modifiers = app.keyboardModifiers()
         if modifiers == QtCore.Qt.ShiftModifier:
             amount*=5
-        self.telldownsample(self.activeusb, self.downsample-amount)
+        if (self.downsample-amount)<0:
+            print("downsample too small!")
+            return
+        self.downsample=self.downsample-amount
+        for usb in usbs: self.telldownsample(usb, self.downsample)
         self.timechanged()
 
     def timeslow(self):
@@ -652,7 +653,11 @@ class MainWindow(TemplateBaseClass):
         modifiers = app.keyboardModifiers()
         if modifiers == QtCore.Qt.ShiftModifier:
             amount*=5
-        self.telldownsample(self.activeusb, self.downsample+amount)
+        if (self.downsample+amount-5)>31:
+            print("downsample too large!")
+            return
+        self.downsample=self.downsample+amount
+        for usb in usbs: self.telldownsample(usb, self.downsample)
         self.timechanged()
 
     units = "ns"
@@ -815,16 +820,16 @@ class MainWindow(TemplateBaseClass):
     nbadstr = 0
     eventcounter=[]
     for n in range(num_board): eventcounter.append(0)
-
+    nsubsamples = 10 * 4 + 8 + 2  # extra 4 for clk+str, and 2 dead beef
+    sample_triggered = 0
+    sample_triggered_board1 = 0
+    downsamplemergingcounter = 0
     doeventcounter=False
     def getchannels(self,usb,board):
-        nsubsamples = 10*4 + 8+2  # extra 4 for clk+str, and 2 dead beef
         tt=self.triggertype
         if self.doexttrig[board]>0: tt=3
         usb.send(bytes([1, tt, self.data_twochannel, 99] + inttobytes(self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usb.recv(4)  # get the 4 bytes
-        sample_triggered = 0
-        downsamplemergingcounter = 0
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
             if self.doeventcounter:
@@ -837,117 +842,122 @@ class MainWindow(TemplateBaseClass):
             if self.downsamplemerging>1:
                 usb.send(bytes([2, 4, 100, 100, 100, 100, 100, 100]))  # get downsamplemergingcounter
                 res = usb.recv(4)
-                downsamplemergingcounter = res[0]
-                #print("downsamplemergingcounter", downsamplemergingcounter)
+                self.downsamplemergingcounter = res[0]
+                if self.downsamplemergingcounter == self.downsamplemerging: self.downsamplemergingcounter = 0
+                #print("downsamplemergingcounter", self.downsamplemergingcounter)
             # print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
             for s in range(10):
                 if getbit(triggercounter[int(s / 8) + 1], s % 8) == 0:
-                    sample_triggered = s
+                    self.sample_triggered = s
                     break
-            #print("sample_triggered", sample_triggered)
-            if downsamplemergingcounter == self.downsamplemerging: downsamplemergingcounter = 0
-
-            expect_len = self.expect_samples * 2 * nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
-            usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
-            data = usb.recv(expect_len)  # recv from usb
-            rx_len = len(data)
+            #print("sample_triggered", self.sample_triggered)
+            if board==1: self.sample_triggered_board1 = self.sample_triggered
+            return 1
         else:
             return 0
 
+    def getdata(self,usb):
+        expect_len = self.expect_samples * 2 * self.nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
+        usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
+        data = usb.recv(expect_len)  # recv from usb
+        rx_len = len(data)
         self.total_rx_len += rx_len
         if expect_len != rx_len:
             print('*** expect_len (%d) and rx_len (%d) mismatch' % (expect_len, rx_len))
-
-        else:
-            if self.dofast: return rx_len
-            self.nbadclkA = 0
-            self.nbadclkB = 0
-            self.nbadclkC = 0
-            self.nbadclkD = 0
-            self.nbadstr = 0
-            for s in range(0, self.expect_samples):
-                chan = -1
-                for n in range(nsubsamples): # the subsample to get
-                    pbyte = nsubsamples*2*s + 2*n
-                    lowbits = data[pbyte + 0]
-                    highbits = data[pbyte + 1]
-                    if n<40 and getbit(highbits,3): highbits = (highbits - 16)*256
-                    else: highbits = highbits*256
-                    val = highbits + lowbits
-                    if n % 10 == 0: chan = chan + 1
-
-                    if n==40 and val&0x5555!=4369 and val&0x5555!=17476:
-                        self.nbadclkA=self.nbadclkA+1
-                    if n==41 and val&0x5555!=1 and val&0x5555!=4:
-                        self.nbadclkA=self.nbadclkA+1
-                    if n==42 and val&0x5555!=4369 and val&0x5555!=17476:
-                        self.nbadclkB=self.nbadclkB+1
-                    if n==43 and val&0x5555!=1 and val&0x5555!=4:
-                        self.nbadclkB=self.nbadclkB+1
-                    if n==44 and val&0x5555!=4369 and val&0x5555!=17476:
-                        self.nbadclkC=self.nbadclkC+1
-                    if n==45 and val&0x5555!=1 and val&0x5555!=4:
-                        self.nbadclkC=self.nbadclkC+1
-                    if n==46 and val&0x5555!=4369 and val&0x5555!=17476:
-                        self.nbadclkD=self.nbadclkD+1
-                    if n==47 and val&0x5555!=1 and val&0x5555!=4:
-                        self.nbadclkD=self.nbadclkD+1
-                    #if 40<=n<48 and self.nbadclkD:
-                    #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
-
-                    if 40 <= n < 48:
-                        strobe = val&0xaaaa
-                        if strobe != 0:
-                            if strobe!=8 and strobe!=128 and strobe!=2048 and strobe!=32768:
-                                if strobe*4!=8 and strobe*4!=128 and strobe*4!=2048 and strobe*4!=32768:
-                                    if self.debugstrobe: print("s=",s,"n=",n,"str",binprint(strobe),strobe)
-                                    self.nbadstr=self.nbadstr+1
-
-                    if self.debug and self.debugprint:
-                        goodval=-1
-                        if s<0 or (n<40 and val!=0 and val!=goodval):
-                            if self.showbinarydata and n<40:
-                                #if s<0 or chan!=3 or (chan==3 and val!=255 and val!=511 and val!=1023 and val!=2047):
-                                if s<100:
-                                    if lowbits>0 or highbits>0:
-                                        print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
-                            elif n<40:
-                                print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
-                    if n<40:
-                        #val = -val # if we're swapping inputs
-                        val = val * self.yscale *self.tenx
-                        if self.downsamplemerging==1:
-                            samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
-                            if s<(self.expect_samples-1): samp = samp + sample_triggered
-                            if self.data_overlapped:
-                                self.xydata[chan][1][samp] = val
-                            elif self.data_twochannel:
-                                if chan%2==0: chani=int(chan/2)
-                                else: chani=int((chan-1)/2)
-                                self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
-                            else:
-                                if board==0: self.xydata[board][1][chan+ 4*samp] = val
-                                else: self.xydata[board][1][ (chan+ 4*samp + self.toff) % (40*self.expect_samples)] = val
-                        else:
-                            if self.data_overlapped:
-                                print("downsampling not supported in overlap mode yet")
-                            elif self.data_twochannel:
-                                samp = s * 20 + chan*10+9 - n
-                                if n<20: samp = samp + 10
-                                #if s<(self.expect_samples-1): samp = samp + int(2*sample_triggered/self.downsamplefactor)
-                                self.xydata[board*self.num_chan_per_board + chan%2][1][samp] = val
-                            else:
-                                samp = s * 40 +39 - n
-                                if s<(self.expect_samples-1): samp = samp + int(4*(sample_triggered-(downsamplemergingcounter-1)*10)/self.downsamplemerging)
-                                self.xydata[board][1][samp] = val
         if self.debug:
             time.sleep(.5)
             #oldbytes()
+        return data
+
+    def drawchannels(self, data, board):
+        if self.dofast: return
+        if self.doexttrig[0]: self.sample_triggered = self.sample_triggered_board1
+        self.nbadclkA = 0
+        self.nbadclkB = 0
+        self.nbadclkC = 0
+        self.nbadclkD = 0
+        self.nbadstr = 0
+        for s in range(0, self.expect_samples):
+            chan = -1
+            for n in range(self.nsubsamples): # the subsample to get
+                pbyte = self.nsubsamples*2*s + 2*n
+                lowbits = data[pbyte + 0]
+                highbits = data[pbyte + 1]
+                if n<40 and getbit(highbits,3): highbits = (highbits - 16)*256
+                else: highbits = highbits*256
+                val = highbits + lowbits
+                if n % 10 == 0: chan = chan + 1
+
+                if n==40 and val&0x5555!=4369 and val&0x5555!=17476:
+                    self.nbadclkA=self.nbadclkA+1
+                if n==41 and val&0x5555!=1 and val&0x5555!=4:
+                    self.nbadclkA=self.nbadclkA+1
+                if n==42 and val&0x5555!=4369 and val&0x5555!=17476:
+                    self.nbadclkB=self.nbadclkB+1
+                if n==43 and val&0x5555!=1 and val&0x5555!=4:
+                    self.nbadclkB=self.nbadclkB+1
+                if n==44 and val&0x5555!=4369 and val&0x5555!=17476:
+                    self.nbadclkC=self.nbadclkC+1
+                if n==45 and val&0x5555!=1 and val&0x5555!=4:
+                    self.nbadclkC=self.nbadclkC+1
+                if n==46 and val&0x5555!=4369 and val&0x5555!=17476:
+                    self.nbadclkD=self.nbadclkD+1
+                if n==47 and val&0x5555!=1 and val&0x5555!=4:
+                    self.nbadclkD=self.nbadclkD+1
+                #if 40<=n<48 and self.nbadclkD:
+                #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+
+                if 40 <= n < 48:
+                    strobe = val&0xaaaa
+                    if strobe != 0:
+                        if strobe!=8 and strobe!=128 and strobe!=2048 and strobe!=32768:
+                            if strobe*4!=8 and strobe*4!=128 and strobe*4!=2048 and strobe*4!=32768:
+                                if self.debugstrobe: print("s=",s,"n=",n,"str",binprint(strobe),strobe)
+                                self.nbadstr=self.nbadstr+1
+
+                if self.debug and self.debugprint:
+                    goodval=-1
+                    if s<0 or (n<40 and val!=0 and val!=goodval):
+                        if self.showbinarydata and n<40:
+                            #if s<0 or chan!=3 or (chan==3 and val!=255 and val!=511 and val!=1023 and val!=2047):
+                            if s<100:
+                                if lowbits>0 or highbits>0:
+                                    print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
+                        elif n<40:
+                            print("s=",s,"n=",n, "pbyte=",pbyte, "chan=",chan, hex(data[pbyte + 1]), hex(data[pbyte + 0]))
+                if n<40:
+                    #val = -val # if we're swapping inputs
+                    val = val * self.yscale *self.tenx
+                    if self.downsamplemerging==1:
+                        samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
+                        if s<(self.expect_samples-1): samp = samp + self.sample_triggered
+                        if self.data_overlapped:
+                            self.xydata[chan][1][samp] = val
+                        elif self.data_twochannel:
+                            if chan%2==0: chani=int(chan/2)
+                            else: chani=int((chan-1)/2)
+                            self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
+                        else:
+                            if board==0: self.xydata[board][1][chan+ 4*samp] = val
+                            else: self.xydata[board][1][ (chan+ 4*samp + self.toff) % (40*self.expect_samples)] = val
+                    else:
+                        if self.data_overlapped:
+                            print("downsampling not supported in overlap mode yet")
+                        elif self.data_twochannel:
+                            samp = s * 20 + chan*10+9 - n
+                            if n<20: samp = samp + 10
+                            #if s<(self.expect_samples-1): samp = samp + int(2*self.sample_triggered/self.downsamplefactor)
+                            self.xydata[board*self.num_chan_per_board + chan%2][1][samp] = val
+                        else:
+                            samp = s * 40 +39 - n
+                            if s<(self.expect_samples-1): samp = samp + int(4*(self.sample_triggered-(self.downsamplemergingcounter-1)*10)/self.downsamplemerging)
+                            self.xydata[board][1][samp] = val
+
+    def adjustclocks(self):
         if ((self.nbadclkA == 2*self.expect_samples or self.nbadclkB == 2*self.expect_samples or self.nbadclkC == 2*self.expect_samples or self.nbadclkD == 2*self.expect_samples)
                 and self.phasec[0][2]<12): # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
             for i in range(n): self.dophase(2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
-        return rx_len
 
     fitwidthfraction=0.2
     def drawtext(self): # happens once per second
@@ -1014,8 +1024,16 @@ class MainWindow(TemplateBaseClass):
         else:
             rx_len=0
             try:
+                readyevent=[]
                 for board in range(self.num_board):
-                    rx_len = rx_len + self.getchannels(usbs[board],board)
+                    rd = self.getchannels(usbs[board],board)
+                    readyevent.append(rd)
+                for board in reversed(range(self.num_board)):
+                    if not readyevent[board]: continue
+                    data = self.getdata(usbs[board])
+                    rx_len = rx_len + len(data)
+                    self.drawchannels(data,board)
+                    self.adjustclocks()
                 if self.getone and rx_len>0:
                     self.dostartstop()
                     self.drawtext()
