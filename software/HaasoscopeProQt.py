@@ -305,7 +305,7 @@ class MainWindow(TemplateBaseClass):
     debugstrobe = False
     dofast = False
     data_overlapped=False
-    data_twochannel=False
+    data_twochannel=True
     if not data_twochannel: num_chan_per_board = 1
     else: num_chan_per_board = 2
     total_rx_len = 0
@@ -652,6 +652,9 @@ class MainWindow(TemplateBaseClass):
         self.timechanged()
 
     def timeslow(self):
+        if self.data_overlapped:
+            print("downsampling not supported in overlap mode")
+            return
         amount=1
         modifiers = app.keyboardModifiers()
         if modifiers == QtCore.Qt.ShiftModifier:
@@ -824,8 +827,8 @@ class MainWindow(TemplateBaseClass):
     eventcounter=[]
     for n in range(num_board): eventcounter.append(0)
     nsubsamples = 10 * 4 + 8 + 2  # extra 4 for clk+str, and 2 dead beef
-    sample_triggered = 0
-    sample_triggered_board1 = 0
+    sample_triggered = []
+    for s in range(len(usbs)): sample_triggered.append(0)
     downsamplemergingcounter = 0
     doeventcounter=False
     def getchannels(self,usb,board):
@@ -838,10 +841,9 @@ class MainWindow(TemplateBaseClass):
             # print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
             for s in range(10):
                 if getbit(triggercounter[int(s / 8) + 1], s % 8) == 0:
-                    self.sample_triggered = s
+                    self.sample_triggered[board] = s
                     break
-            #print("sample_triggered", self.sample_triggered)
-            if board==1: self.sample_triggered_board1 = self.sample_triggered
+            #print("sample_triggered", self.sample_triggered[board], "for board", board)
             return 1
         else:
             return 0
@@ -882,7 +884,7 @@ class MainWindow(TemplateBaseClass):
 
     def drawchannels(self, data, board, downsamplemergingcounter):
         if self.dofast: return
-        if self.doexttrig[0]: self.sample_triggered = self.sample_triggered_board1
+        if self.doexttrig[0] and board==0: self.sample_triggered[board] = self.sample_triggered[1] # take from board 1 when interleaving using ext trig
         nbadclkA = 0
         nbadclkB = 0
         nbadclkC = 0
@@ -941,29 +943,29 @@ class MainWindow(TemplateBaseClass):
                     val = val * self.yscale *self.tenx
                     if self.downsamplemerging==1:
                         samp = s * 10 + (9 - (n % 10)) # bits come out last to first in lvds receiver group of 10
-                        if s<(self.expect_samples-1): samp = samp + self.sample_triggered
+                        if s<(self.expect_samples-1): samp = samp + self.sample_triggered[board]
                         if self.data_overlapped:
                             self.xydata[chan][1][samp] = val
                         elif self.data_twochannel:
                             if chan%2==0: chani=int(chan/2)
                             else: chani=int((chan-1)/2)
-                            self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
+                            if self.doexttrig[board]: self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
+                            else: self.xydata[board*self.num_chan_per_board + chan%2][1][ (chani+ 2*samp+ self.toff) % (20*self.expect_samples) ] = val
                         else:
-                            if board==0: self.xydata[board][1][chan+ 4*samp] = val
-                            else: self.xydata[board][1][ (chan+ 4*samp + self.toff) % (40*self.expect_samples)] = val
+                            if self.doexttrig[board]: self.xydata[board][1][chan+ 4*samp] = val
+                            else: self.xydata[board][1][ (chan+ 4*samp + self.toff) % (40*self.expect_samples) ] = val
                     else:
-                        if self.data_overlapped:
-                            print("downsampling not supported in overlap mode yet")
-                        elif self.data_twochannel:
+                        if self.data_twochannel:
                             samp = s * 20 + chan*10+9 - n
                             if n<20: samp = samp + 10
-                            #if s<(self.expect_samples-1): samp = samp + int(2*self.sample_triggered/self.downsamplefactor)
-                            self.xydata[board*self.num_chan_per_board + chan%2][1][samp] = val
+                            if s<(self.expect_samples-1): samp = samp + int(2*(self.sample_triggered[board]-(downsamplemergingcounter-1)*10)/self.downsamplemerging)
+                            if self.doexttrig[board]: self.xydata[board*self.num_chan_per_board + chan%2][1][samp] = val
+                            else: self.xydata[board*self.num_chan_per_board + chan%2][1][ (samp+ self.toff) % (20*self.expect_samples) ] = val
                         else:
                             samp = s * 40 +39 - n
-                            if s<(self.expect_samples-1): samp = samp + int(4*(self.sample_triggered-(downsamplemergingcounter-1)*10)/self.downsamplemerging)
-                            if board==0: self.xydata[board][1][samp] = val
-                            else: self.xydata[board][1][(samp + self.toff) % (40*self.expect_samples)] = val
+                            if s<(self.expect_samples-1): samp = samp + int(4*(self.sample_triggered[board]-(downsamplemergingcounter-1)*10)/self.downsamplemerging)
+                            if self.doexttrig[board]: self.xydata[board][1][samp] = val
+                            else: self.xydata[board][1][(samp + self.toff) % (40*self.expect_samples) ] = val
         self.adjustclocks(board,nbadclkA,nbadclkB,nbadclkC,nbadclkD)
         if board==self.activeboard:
             self.nbadclkA=nbadclkA
