@@ -227,10 +227,13 @@ def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find ris
     val[intop] = top
     return val
 
-def clockswitch(usb):
+def clockswitch(usb,board,quiet):
     usb.send(bytes([7, 0, 0, 0, 99, 99, 99, 99]))
     clockinfo = usb.recv(4)
-    print("Clockinfo", binprint(clockinfo[1]), binprint(clockinfo[0]))
+    if quiet: return
+    print("Clockinfo for board", board, binprint(clockinfo[1]), binprint(clockinfo[0]))
+    if not getbit(clockinfo[1],1) and not getbit(clockinfo[1],3): print("Board",board,"locked to ext board")
+    else: print("Board",board,"locked to internal clock")
 
 def setchanimpedance(usb, chan, onemeg):
     if chan==1: controlbit=0
@@ -507,8 +510,10 @@ class MainWindow(TemplateBaseClass):
 
     @staticmethod
     def actionOutput_clk_left():
-        for usb in usbs:
-            clockswitch(usb)
+        for board in range(len(usbs)):
+            usb=usbs[board]
+            clockswitch(usb,board,True)
+            clockswitch(usb,board,False)
 
     doexttrig=[]
     for usb in usbs: doexttrig.append(0)
