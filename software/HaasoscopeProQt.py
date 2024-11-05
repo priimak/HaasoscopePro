@@ -6,6 +6,7 @@ import ftd2xx
 
 # noinspection PyUnresolvedReferences
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
+from pyqtgraph.Qt.QtGui import QPalette, QColor
 
 import warnings
 from scipy.optimize import curve_fit
@@ -305,7 +306,7 @@ class MainWindow(TemplateBaseClass):
     debugstrobe = False
     dofast = False
     data_overlapped=False
-    data_twochannel=True
+    data_twochannel=False
     if not data_twochannel: num_chan_per_board = 1
     else: num_chan_per_board = 2
     total_rx_len = 0
@@ -384,9 +385,22 @@ class MainWindow(TemplateBaseClass):
     def boardchanged(self):
         self.activeusb = usbs[self.ui.boardBox.value()]
         self.activeboard = self.ui.boardBox.value()
+        self.selectchannel()
 
     def selectchannel(self):
         self.selectedchannel=self.ui.chanBox.value()
+        p = self.ui.chanColor.palette()
+        col = QColor("red")
+        if self.data_twochannel:
+            if self.selectedchannel==1 and self.activeboard==0: col=QColor("green")
+            if self.selectedchannel==0 and self.activeboard==1: col=QColor("blue")
+            if self.selectedchannel==1 and self.activeboard==1: col=QColor("magenta")
+        else:
+            if self.activeboard==1: col=QColor("green")
+            if self.activeboard==2: col=QColor("blue")
+            if self.activeboard==3: col=QColor("magenta")
+        p.setColor(QPalette.Base, col)  # Set background color of box
+        self.ui.chanColor.setPalette(p)
         if len(self.lines)>0:
             if self.lines[self.selectedchannel].isVisible(): self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
             else:   self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
@@ -722,8 +736,9 @@ class MainWindow(TemplateBaseClass):
     def fastadclineclick(self, curve):
         for li in range(self.nlines):
             if curve is self.lines[li].curve:
-                self.ui.chanBox.setValue(li)
                 #print "selected curve", li
+                self.ui.chanBox.setValue(li%self.num_chan_per_board)
+                self.ui.boardBox.setValue(int(li/self.num_chan_per_board))
                 modifiers = app.keyboardModifiers()
                 if modifiers == QtCore.Qt.ShiftModifier:
                     self.ui.trigchanonCheck.toggle()
@@ -746,10 +761,10 @@ class MainWindow(TemplateBaseClass):
                 if board%4==2: c=(0,0,255-0.2*255*chan)
                 if board%4==3: c=(255-0.2*255*chan,0,255-0.2*255*chan)
             else:
-                if chan==0: c="r"
-                if chan==1: c="g"
-                if chan==2: c="b"
-                if chan==3: c="m"
+                if chan==0: c=QColor("red")
+                if chan==1: c=QColor("green")
+                if chan==2: c=QColor("blue")
+                if chan==3: c=QColor("magenta")
             pen = pg.mkPen(color=c) # add linewidth=1.0, alpha=.9
             line = self.ui.plot.plot(pen=pen,name=self.chtext+str(li))
             line.curve.setClickable(True)
@@ -1020,6 +1035,7 @@ class MainWindow(TemplateBaseClass):
 
     def init(self):
         self.tot()
+        self.selectchannel()
         for board in range(len(usbs)):
             self.pllreset(board)
             self.adfreset(board)
