@@ -6,7 +6,7 @@ import PyQt5
 import ftd2xx
 # noinspection PyUnresolvedReferences
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
-from pyqtgraph.Qt.QtGui import QPalette, QColor
+from PyQt5.QtGui import QPalette, QColor
 import warnings
 from scipy.optimize import curve_fit
 from USB_FT232H import UsbFt232hSync245mode
