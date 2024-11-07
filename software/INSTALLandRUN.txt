@@ -1,5 +1,11 @@
+#install python3 and git
+(operating system dependent)
+
 # install dependencies
 pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx
+
+# install driver
+https://ftdichip.com/drivers/d2xx-drivers/
 
 # download
 git clone https://github.com/drandyhaas/HaasoscopePro.git
