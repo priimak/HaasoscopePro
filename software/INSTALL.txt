@@ -1,5 +1,9 @@
 # install dependencies
 pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx
 
+# download
+git clone https://github.com/drandyhaas/HaasoscopePro.git
+
 # run
+cd HaasoscopePro/software
 python3 HaasoscopeProQt.py
