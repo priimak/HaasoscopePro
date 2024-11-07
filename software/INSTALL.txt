@@ -1,2 +1,5 @@
-pip install pyserial numpy scipy pyqtgraph pyqt5 h5py pyftdi ftd2xx
-python HaasoscopeQt.py
+# install dependencies
+pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx
+
+# run
+python3 HaasoscopeProQt.py
