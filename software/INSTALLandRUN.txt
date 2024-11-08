@@ -14,8 +14,9 @@ git clone https://github.com/drandyhaas/HaasoscopePro.git
 cd HaasoscopePro/software
 python3 HaasoscopeProQt.py
 
-# make installer
+# make executable
 pyinstaller .\HaasoscopeProQt.py
+#python3 -m PyInstaller HaasoscopeProQt.py #if pyinstaller exe not found
 
 # run exe
 cd dist/HaasoscopeProQt/
