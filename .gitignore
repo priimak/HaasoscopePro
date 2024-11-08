@@ -7,3 +7,4 @@
 /adc board firmware/*.bak
 /adc board firmware/coincidence.qws
 .idea
+software/dist/*.zip
