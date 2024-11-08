@@ -9,8 +9,8 @@ git clone https://github.com/drandyhaas/HaasoscopePro.git
 
 # install driver
 https://ftdichip.com/drivers/d2xx-drivers/
-# for mac can just do:
-# sudo cp HaasoscopePro/software/libftd2xx.dylib /usr/local/lib/
+# for mac can just do: sudo cp HaasoscopePro/software/libftd2xx.dylib /usr/local/lib/
+# for linux can just do: sudo cp HaasoscopePro/software/libftd2xx.so /usr/lib/
 
 # run
 cd HaasoscopePro/software
@@ -27,3 +27,4 @@ cd dist/Windows_HaasoscopeProQt/
 sudo cp libftd2xx.dylib /usr/local/lib/ # install driver, just need to do once
 cd dist/Mac_HaasoscopeProQt/
 ./HaasoscopeProQt
+
