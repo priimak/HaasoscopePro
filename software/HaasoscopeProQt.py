@@ -30,7 +30,7 @@ for ftdserial in ftds:
         usbs.append(usbdevice)
         print("Connected USB device", usbdevice.serial)
 print("Connected", len(usbs), "devices")
-
+if len(usbs)==0: sys.exit(0)
 
 def binprint(x):
     return bin(x)[2:].zfill(8)

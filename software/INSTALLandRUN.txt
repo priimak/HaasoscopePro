@@ -2,7 +2,7 @@
 (operating system dependent)
 
 # install dependencies
-pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx
+pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx pyinstaller
 
 # install driver
 https://ftdichip.com/drivers/d2xx-drivers/
@@ -13,3 +13,10 @@ git clone https://github.com/drandyhaas/HaasoscopePro.git
 # run
 cd HaasoscopePro/software
 python3 HaasoscopeProQt.py
+
+# make installer
+pyinstaller .\HaasoscopeProQt.py
+
+# run exe
+cd dist/HaasoscopeProQt/
+./HaasoscopeProQt.exe
