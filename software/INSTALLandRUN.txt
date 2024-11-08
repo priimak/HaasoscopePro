@@ -1,23 +1,29 @@
 #install python3 and git
-(operating system dependent)
+#(operating system dependent)
 
 # install dependencies
 pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx pyinstaller
 
+# download code
+git clone https://github.com/drandyhaas/HaasoscopePro.git
+
 # install driver
 https://ftdichip.com/drivers/d2xx-drivers/
-
-# download
-git clone https://github.com/drandyhaas/HaasoscopePro.git
+# for mac can just do:
+# sudo cp HaasoscopePro/software/libftd2xx.dylib /usr/local/lib/
 
 # run
 cd HaasoscopePro/software
 python3 HaasoscopeProQt.py
 
-# make executable
-pyinstaller .\HaasoscopeProQt.py
-#python3 -m PyInstaller HaasoscopeProQt.py #if pyinstaller exe not found
+# to remake exe
+python3 -m PyInstaller HaasoscopeProQt.py
 
-# run exe
-cd dist/HaasoscopeProQt/
+# run exe, windows
+cd dist/Windows_HaasoscopeProQt/
 ./HaasoscopeProQt.exe
+
+# run exe, mac
+sudo cp libftd2xx.dylib /usr/local/lib/ # install driver, just need to do once
+cd dist/Mac_HaasoscopeProQt/
+./HaasoscopeProQt
