@@ -286,7 +286,7 @@ def setchanacdc(usb, chan, ac):
         controlbit = 5
     else:
         return
-    usb.send(bytes([10, controlbit, ac, 0, 0, 0, 0, 0]))
+    usb.send(bytes([10, controlbit, not ac, 0, 0, 0, 0, 0]))
     usb.recv(4)
     print("AC for chan", chan, ac)
 
@@ -707,13 +707,14 @@ class MainWindow(TemplateBaseClass):
         self.triggertimethresh = self.ui.totBox.value()
         for usb in usbs: self.sendtriggerinfo(usb)
 
+    oldtriggertype=0
     def rolling(self):
-        oldtriggertype = self.triggertype
         if self.triggertype > 0:
+            self.oldtriggertype = self.triggertype
             self.triggertype = 0
             self.ui.risingedgeCheck.setEnabled(False)
         else:
-            self.triggertype = oldtriggertype
+            self.triggertype = self.oldtriggertype
         if self.triggertype == 1 or self.triggertype == 2: self.ui.risingedgeCheck.setEnabled(True)
         self.ui.rollingButton.setChecked(self.triggertype > 0)
         if self.triggertype > 0:
@@ -1181,6 +1182,7 @@ class MainWindow(TemplateBaseClass):
         for board in range(len(usbs)):
             self.pllreset(board)
             self.adfreset(board)
+            for c in range(2): setchanacdc(usbs[board],c,0)
         if self.data_overlapped:
             for c in range(self.num_board * 4):
                 self.xydata[c][0] = np.array([range(0, 10 * self.expect_samples)]) / self.nsunits / self.samplerate
