@@ -42,21 +42,59 @@ def connectdevices():
         print("Found no devices")
     return usbs
 
-def orderusbs():
-    first = -1
+def findnextboard(currentboard,firstboard):
     for board in range(len(usbs)):
-        usbs[board].send(bytes([7, 0, 0, 0, 99, 99, 99, 99])) # get clock info
+        usbs[board].send(bytes([2, 5, board==currentboard, 0, 99, 99, 99, 99])) # get lvdsin_spare info, and set spare lvds output 0 high for only the current board
+        usbs[board].recv(4) # have to read it out, even though we don't care
+    nextboard=-1
+    for board in range(len(usbs)): # see which board now has seen a signal from the current board
+        if board==firstboard: continue # that one has no lvds input, so is unreliable, plus we already know it's not the next board
+        usbs[board].send(bytes([2, 5, board==currentboard, 0, 99, 99, 99, 99]))
         res = usbs[board].recv(4)
+        spare = getbit(res[2],0)
+        print("lvds spare 0 for board",board,"is",spare)
+        if spare==1:
+            if nextboard==-1:
+                nextboard=board
+            else:
+                print("We already found the next board to be",nextboard,"for board",currentboard,"but it is also",board,"?!")
+                sys.exit(0)
+    if nextboard==-1:
+        print("Didn't find a next board for board",currentboard,"!")
+        sys.exit(0)
+    return nextboard
+
+def orderusbs():
+    newusbs=[]
+    for board in range(len(usbs)):
+        usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99])) # get clock info
+        res = usbs[board].recv(4)
+        if len(res)<4:
+            print("Couldn't get lvds info from board",board,"!")
+            sys.exit(0)
         if getbit(res[1],3):
             print("Board",board,"has no ext clock")
-            if first != -1:
+            if len(newusbs)>0:
                 print("Found a second device with no external clock in! Make sure there's a sync cable between all devices, from in to out.")
-            first = board
-    return first
+                sys.exit(0)
+            else:
+                print("Board",board,"is the first board")
+                newusbs.append(board)
+    if len(newusbs)==0:
+        print("Didn't find a first board with no external clock!")
+        sys.exit(0)
+    while len(newusbs)<len(usbs):
+        nextboard = findnextboard(newusbs[-1],newusbs[0])
+        print("Found next board to be board",nextboard)
+        newusbs.append(nextboard)
+    newusbcons=[]
+    for u in range(len(newusbs)):
+        newusbcons.append(usbs[u])
+    return newusbcons
 
 connectdevices()
 if len(usbs)==0: sys.exit(0)
-firstusb = orderusbs()
+usbs = orderusbs()
 
 def oldbytes():
     for usb in usbs:
@@ -110,12 +148,10 @@ def spicommand2(usb, name, first, second, third, fourth, read, cs=0, nbyte=3):
 
 def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True, themuxout=False):
     print('ADF4350 being set to %0.2f MHz' % freq)
-    if themuxout:
-        muxout = MuxOut.DGND
-        #print("muxout GND 0")
+    if not themuxout:
+        print("muxout GND 0")
     else:
-        muxout = MuxOut.DVdd
-        #print("muxout V 1")
+        print("muxout VCC 1")
     INT, MOD, FRAC, output_divider, band_select_clock_divider = (calculate_regs(
         device_type=DeviceType.ADF4350, freq=freq, ref_freq=50.0,
         band_select_clock_mode=BandSelectClockMode.Low,
@@ -127,7 +163,7 @@ def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_d
         INT=INT, MOD=MOD, FRAC=FRAC, output_divider=output_divider,
         band_select_clock_divider=band_select_clock_divider, r_counter=r_counter, ref_doubler=ref_doubler,
         ref_div_2=ref_div2,
-        device_type=DeviceType.ADF4350, phase_value=phase, mux_out=muxout, charge_pump_current=2.50,
+        device_type=DeviceType.ADF4350, phase_value=phase, mux_out=themuxout, charge_pump_current=2.50,
         feedback_select=divided, pd_polarity=PDPolarity.Positive, prescaler='4/5',
         band_select_clock_mode=BandSelectClockMode.Low,
         clk_div_mode=ClkDivMode.ResyncEnable, clock_divider_value=1000, csr=False,
@@ -431,7 +467,7 @@ class MainWindow(TemplateBaseClass):
         self.selectchannel()
 
     def selectchannel(self):
-        if self.activeboard==firstusb: self.ui.exttrigCheck.setEnabled(False)
+        if self.activeboard==0: self.ui.exttrigCheck.setEnabled(False)
         else: self.ui.exttrigCheck.setEnabled(True)
         self.selectedchannel = self.ui.chanBox.value()
         p = self.ui.chanColor.palette()
@@ -473,12 +509,14 @@ class MainWindow(TemplateBaseClass):
 
     themuxoutV = True
     def adfreset(self, board):
+        if not board: board=self.activeboard # if called by pressing button
         usb = usbs[board]
         # adf4350(150.0, None, 10) # need larger rcounter for low freq
         adf4350(usb, self.samplerate * 1000 / 2, None, themuxout=self.themuxoutV)
         time.sleep(0.1)
         res = boardinbits(usb)
-        if not getbit(res, 0): print("Pll not locked?")  # should be 1 if locked
+        if not getbit(res, 0): print("Adf pll for board",board,"not locked?")  # should be 1 if locked
+        else: print("Adf pll locked for board",board)
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
@@ -554,9 +592,10 @@ class MainWindow(TemplateBaseClass):
         self.dophase(self.activeboard, plloutnum=4, updown=0)
 
     def pllreset(self, board):
+        if not board: board = self.activeboard # if we called it from the button
         usbs[board].send(bytes([5, 99, 99, 99, 100, 100, 100, 100]))
         tres = usbs[board].recv(4)
-        print("pllreset sent, got back:", tres[3], tres[2], tres[1], tres[0])
+        print("pllreset sent to board",board,"- got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasecs[board] = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]  # reset counters
         # adjust other phases
         n = 1  # amount to adjust (+ or -)
@@ -1102,7 +1141,7 @@ class MainWindow(TemplateBaseClass):
 
     def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD):
         if ((
-                nbadclkA == 2 * self.expect_samples or nbadclkB == 2 * self.expect_samples or nbadclkC == 2 * self.expect_samples or nbadclkD == 2 * self.expect_samples)
+                nbadclkA>self.expect_samples or nbadclkB>self.expect_samples or nbadclkC>self.expect_samples or nbadclkD>self.expect_samples)
                 and self.phasecs[board][0][2] < 12):  # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
@@ -1138,15 +1177,15 @@ class MainWindow(TemplateBaseClass):
 
         self.ui.textBrowser.setText(thestr)
 
-    def setup_connections(self, usb):
-        print("Starting")
+    def setup_connections(self, board):
+        print("Setting up board",board)
         oldbytes()
 
-        usb.send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
-        res = usb.recv(4)
-        print("Version", res[3], res[2], res[1], res[0])
+        usbs[board].send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
+        res = usbs[board].recv(4)
+        print("Firmware version", res[3], res[2], res[1], res[0])
 
-        board_setup(usb, self.dopattern, self.data_twochannel)
+        board_setup(usbs[board], self.dopattern, self.data_twochannel)
         return 1
 
     def init(self):
@@ -1176,11 +1215,9 @@ class MainWindow(TemplateBaseClass):
             rx_len = 0
             try:
                 readyevent = [0]*self.num_board
-                therange = list(range(self.num_board))
-                if self.doexttrig[1]: therange = list(reversed(therange))
-                for board in therange:
+                for board in reversed(range(self.num_board)): # go backwards through the boards to get the triggerinfo for the right events
                     readyevent[board] = self.getchannels(usbs[board], board)
-                for board in reversed(therange):
+                for board in range(self.num_board):
                     if not readyevent[board]: continue
                     downsamplemergingcounter = self.getpredata(usbs[board], board)
                     data = self.getdata(usbs[board])
@@ -1225,10 +1262,10 @@ if __name__ == '__main__':
         app.setFont(font)
         win = MainWindow()
         win.setWindowTitle('Haasoscope Pro Qt')
-        for usbi in usbs:
+        for usbi in range(len(usbs)):
             if not win.setup_connections(usbi):
                 print("Exiting now - failed setup_connections!")
-                cleanup(usbi)
+                cleanup(usbs[usbi])
                 sys.exit(1)
         if not win.init():
             print("Exiting now - failed init!")

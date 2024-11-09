@@ -53,8 +53,8 @@ module command_processor (
 	input wire lvdsin_trig,
 	output reg lvdsout_trig=0,
 	output reg clkswitch=0,
-	input wire lvdsin_spare[2],
-	output reg lvdsout_spare[2],
+	input wire [1:0]	lvdsin_spare,
+	output reg [1:0]	lvdsout_spare=0,
 	input wire [69:0] lvdsEbits, lvdsLbits
 );
 
@@ -75,10 +75,7 @@ assign debugout[10] = 0;
 reg fanon=1;
 assign debugout[11] = fanon;
 
-reg [15:0]	lvdstestcounter=0, probecompcounter=0;
-//assign lvdsout_trig = lvdstestcounter[2];
-assign lvdsout_spare[0] = lvdstestcounter[3]||lvdstestcounter[2];
-assign lvdsout_spare[1] = lvdstestcounter[4]||lvdstestcounter[3]||lvdstestcounter[2];
+reg [15:0]	probecompcounter=0;
 
 //variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter=1;
@@ -552,12 +549,11 @@ always @ (posedge clk) begin
 end
 
 always @ (posedge clk or negedge rstn)
- if (~rstn) begin
+  if (~rstn) begin
 	bootup <= 1'b0;
 	state  <= INIT;
- end else begin 
+  end else begin 
   
-  lvdstestcounter<=lvdstestcounter+16'd1;
   if (probecompcounter==16'd50000) begin
 		boardout[3] <= ~boardout[3]; // for probe compensation, 1kHz
 		probecompcounter <= 0;
@@ -615,6 +611,10 @@ always @ (posedge clk or negedge rstn)
 			if (rx_data[1]==2) o_tdata <= overrange_counter[rx_data[2][1:0]];
 			if (rx_data[1]==3) o_tdata <= eventcounter_sync;
 			if (rx_data[1]==4) o_tdata <= downsamplemergingcounter_triggered_sync;
+			if (rx_data[1]==5) begin
+				lvdsout_spare[0] <= rx_data[2]; // used for telling order of devices
+				o_tdata <= {8'd0, 6'd0,lvdsin_spare[1],lvdsin_spare[0], 4'd0,lockinfo, 7'd0,~clkswitch};
+			end
 			length <= 4;
 			o_tvalid <= 1'b1;
 			state <= TX_DATA_CONST;
