@@ -13,38 +13,50 @@ from USB_FT232H import UsbFt232hSync245mode
 #https://github.com/drandyhaas/pyadf435x
 from adf435x_core import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, BandSelectClockMode, FeedbackSelect, PDPolarity
 
-usbs = []
-ftds = ftd2xx.listDevices()
-if ftds is not None:
-    print("Found devices:", ftds)
-else:
-    print("Found no devices")
-    sys.exit(0)
-for ftdserial in ftds:
-    # print("FTD serial:",ftdserial)
-    usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
-    # print(usbdevice)
-    if usbdevice.good:
-        # if usbdevice.serial != b"FT9M1UIT": continue
-        # if usbdevice.serial != b"FT9LYZXP": continue
-        usbs.append(usbdevice)
-        print("Connected USB device", usbdevice.serial)
-print("Connected", len(usbs), "devices")
-if len(usbs)==0: sys.exit(0)
-#usbs=list(reversed(usbs)) # dan reverse board order, for testing
-
 def binprint(x):
     return bin(x)[2:].zfill(8)
-
 
 # get bit n from byte i
 def getbit(i, n):
     return (i >> n) & 1
 
-
 def bytestoint(thebytes):
     return thebytes[0] + pow(2, 8) * thebytes[1] + pow(2, 16) * thebytes[2] + pow(2, 24) * thebytes[3]
 
+usbs = []
+def connectdevices():
+    ftds = ftd2xx.listDevices()
+    if ftds is not None:
+        print("Found devices:", ftds)
+        for ftdserial in ftds:
+            # print("FTD serial:",ftdserial)
+            usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
+            # print(usbdevice)
+            if usbdevice.good:
+                # if usbdevice.serial != b"FT9M1UIT": continue
+                # if usbdevice.serial != b"FT9LYZXP": continue
+                usbs.append(usbdevice)
+                print("Connected USB device", usbdevice.serial)
+        print("Connected", len(usbs), "devices")
+    else:
+        print("Found no devices")
+    return usbs
+
+def orderusbs():
+    first = -1
+    for board in range(len(usbs)):
+        usbs[board].send(bytes([7, 0, 0, 0, 99, 99, 99, 99])) # get clock info
+        res = usbs[board].recv(4)
+        if getbit(res[1],3):
+            print("Board",board,"has no ext clock")
+            if first != -1:
+                print("Found a second device with no external clock in! Make sure there's a sync cable between all devices, from in to out.")
+            first = board
+    return first
+
+connectdevices()
+if len(usbs)==0: sys.exit(0)
+firstusb = orderusbs()
 
 def oldbytes():
     for usb in usbs:
@@ -53,10 +65,8 @@ def oldbytes():
         if len(olddata) == 0: break
         print("Old byte0:", olddata[0])
 
-
 def inttobytes(theint):  # convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
-
 
 def spicommand(usb, name, first, second, third, read, fourth=100, show_bin=False, cs=0, nbyte=3, quiet=False):
     # first byte to send, start of address
@@ -81,7 +91,6 @@ def spicommand(usb, name, first, second, third, read, fourth=100, show_bin=False
             else:
                 print("SPI write:\t" + name, "(", hex(first), hex(second), ")", hex(third))
 
-
 def spicommand2(usb, name, first, second, third, fourth, read, cs=0, nbyte=3):
     # first byte to send, start of address
     # second byte to send, rest of address
@@ -99,16 +108,14 @@ def spicommand2(usb, name, first, second, third, fourth, read, cs=0, nbyte=3):
     else:
         print("SPI write:\t" + name, "(", hex(first), hex(second), ")", hex(fourth), hex(third))
 
-
-def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True,
-            themuxout=False):
+def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True, themuxout=False):
     print('ADF4350 being set to %0.2f MHz' % freq)
     if themuxout:
         muxout = MuxOut.DGND
-        print("muxout GND 0")
+        #print("muxout GND 0")
     else:
         muxout = MuxOut.DVdd
-        print("muxout V 1")
+        #print("muxout V 1")
     INT, MOD, FRAC, output_divider, band_select_clock_divider = (calculate_regs(
         device_type=DeviceType.ADF4350, freq=freq, ref_freq=50.0,
         band_select_clock_mode=BandSelectClockMode.Low,
@@ -137,15 +144,11 @@ def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_d
                    cs=3, nbyte=4)  # was cs=2 on alpha board v1.11
     spimode(usb, 0)
 
-
 debugspi = False
-
-
 def spimode(usb, mode):  # set SPI mode (polarity of clk and data)
     usb.send(bytes([4, mode, 0, 0, 0, 0, 0, 0]))
     spires = usb.recv(4)
     if debugspi: print("SPI mode now", spires[0])
-
 
 dooverrange = False
 def board_setup(usb, dopattern, twochannel):
@@ -227,17 +230,11 @@ def board_setup(usb, dopattern, twochannel):
     setgain(usb, 0, 0)
     setgain(usb, 1, 0)
 
-
-# Define main window class from template
-WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
-
-
 def setgain(usb, chan, value):
     spimode(usb, 0)
     # 00 to 20 is 26 to -6 dB, 0x1a is no gain
     if chan == 1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2)
     if chan == 0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2)
-
 
 def dooffset(usb, chan, val):  # val goes from -100% to 100%
     spimode(usb, 1)
@@ -247,7 +244,6 @@ def dooffset(usb, chan, val):  # val goes from -100% to 100%
     if chan == 1: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(usb, 0)
 
-
 def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
     val = bot + (x - left) * (top - bot) / leftplus
     inbottom = (x <= left)
@@ -255,7 +251,6 @@ def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find ris
     intop = (x >= (left + leftplus))
     val[intop] = top
     return val
-
 
 def clockswitch(usb, board, quiet):
     usb.send(bytes([7, 0, 0, 0, 99, 99, 99, 99]))
@@ -266,7 +261,6 @@ def clockswitch(usb, board, quiet):
         print("Board", board, "locked to ext board")
     else:
         print("Board", board, "locked to internal clock")
-
 
 def setchanimpedance(usb, chan, onemeg):
     if chan == 1:
@@ -279,7 +273,6 @@ def setchanimpedance(usb, chan, onemeg):
     usb.recv(4)
     print("1M for chan", chan, onemeg)
 
-
 def setchanacdc(usb, chan, ac):
     if chan == 1:
         controlbit = 1
@@ -290,7 +283,6 @@ def setchanacdc(usb, chan, ac):
     usb.send(bytes([10, controlbit, not ac, 0, 0, 0, 0, 0]))
     usb.recv(4)
     print("AC for chan", chan, ac)
-
 
 def setchanatt(usb, chan, att):
     if chan == 1:
@@ -303,13 +295,11 @@ def setchanatt(usb, chan, att):
     usb.recv(4)
     print("Att for chan", chan, att)
 
-
 def setsplit(usb, split):
     controlbit = 7
     usb.send(bytes([10, controlbit, split, 0, 0, 0, 0, 0]))
     usb.recv(4)
     print("Split", split)
-
 
 def boardinbits(usb):
     usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
@@ -317,19 +307,16 @@ def boardinbits(usb):
     print("Board in bits", res[0], binprint(res[0]))
     return res[0]
 
-
 def cleanup(usb):
     spimode(usb, 0)
     spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
     return 1
-
 
 def getoverrange(usb):
     if dooverrange:
         usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
         res = usb.recv(4)
         print("Overrange0", res[3], res[2], res[1], res[0])
-
 
 def gettemps(usb):
     spimode(usb, 0)
@@ -345,7 +332,8 @@ def gettemps(usb):
     slowdac2V = (256 * slowdac2[1] + slowdac2[0]) * 3300 / pow(2, 12) / slowdac2amp
     return "Temp voltages (ADC Board): " + str(round(slowdac1V, 2)) + " " + str(round(slowdac2V, 2))
 
-
+# Define main window class from template
+WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 class MainWindow(TemplateBaseClass):
     expect_samples = 100
     samplerate = 3.2  # freq in GHz
@@ -374,8 +362,6 @@ class MainWindow(TemplateBaseClass):
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
-
-        # Create the main window
         self.ui = WindowTemplate()
         self.ui.setupUi(self)
         self.ui.runButton.clicked.connect(self.dostartstop)
@@ -439,13 +425,14 @@ class MainWindow(TemplateBaseClass):
         self.show()
 
     activeboard = 0
-
     def boardchanged(self):
         self.activeusb = usbs[self.ui.boardBox.value()]
         self.activeboard = self.ui.boardBox.value()
         self.selectchannel()
 
     def selectchannel(self):
+        if self.activeboard==firstusb: self.ui.exttrigCheck.setEnabled(False)
+        else: self.ui.exttrigCheck.setEnabled(True)
         self.selectedchannel = self.ui.chanBox.value()
         p = self.ui.chanColor.palette()
         col = QColor("red")
@@ -481,21 +468,17 @@ class MainWindow(TemplateBaseClass):
         spicommand(self.activeusb, "TAD", 0x02, 0xB6, self.tad, False)
 
     toff = 0
-
     def setToff(self):
         self.toff = self.ui.ToffBox.value()
 
     themuxoutV = True
-
     def adfreset(self, board):
         usb = usbs[board]
-        self.themuxoutV = not self.themuxoutV
         # adf4350(150.0, None, 10) # need larger rcounter for low freq
         adf4350(usb, self.samplerate * 1000 / 2, None, themuxout=self.themuxoutV)
         time.sleep(0.1)
         res = boardinbits(usb)
         if not getbit(res, 0): print("Pll not locked?")  # should be 1 if locked
-        if getbit(res, 1) == self.themuxoutV: print("Pll not setup?")  # should be 1 for MuxOut.DVdd
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
@@ -635,7 +618,6 @@ class MainWindow(TemplateBaseClass):
                 self.lines[li].setSymbol(None)
 
     paused = False
-
     def dostartstop(self):
         if self.paused:
             self.timer.start(0)
@@ -722,13 +704,11 @@ class MainWindow(TemplateBaseClass):
             self.ui.rollingButton.setText("Auto")
 
     getone = False
-
     def single(self):
         self.getone = not self.getone
         self.ui.singleButton.setChecked(self.getone)
 
     downsamplemerging = 1
-
     def highres(self, value):
         self.highresval = value > 0
         # print("highres",self.highresval)
@@ -798,7 +778,6 @@ class MainWindow(TemplateBaseClass):
         self.timechanged()
 
     units = "ns"
-
     def timechanged(self):
         self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
         baremaxx = 4 * 10 * self.expect_samples * self.downsamplefactor / self.samplerate
@@ -846,7 +825,6 @@ class MainWindow(TemplateBaseClass):
             if not fallingedge: self.triggertype = 1
 
     dodrawing = True
-
     def drawing(self):
         if self.ui.drawingCheck.checkState() == QtCore.Qt.Checked:
             self.dodrawing = True
@@ -930,7 +908,6 @@ class MainWindow(TemplateBaseClass):
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 4 * 10 * expect_samples], dtype=float)
 
     statuscounter = 0
-
     def updateplot(self):
         self.mainloop()
         self.statuscounter = self.statuscounter + 1
@@ -1131,7 +1108,6 @@ class MainWindow(TemplateBaseClass):
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
     fitwidthfraction = 0.2
-
     def drawtext(self):  # happens once per second
         board = self.ui.boardBox.value()
         chan = board * self.num_chan_per_board + self.selectedchannel
@@ -1193,7 +1169,6 @@ class MainWindow(TemplateBaseClass):
 
     lastrate = 0
     lastsize = 0
-
     def mainloop(self):
         if self.paused:
             time.sleep(.1)
@@ -1243,14 +1218,13 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication.instance()
     standalone = app is None
     if standalone:
-        # print('INSIDE STANDALONE')
         app = QtWidgets.QApplication(sys.argv)
     try:
         font = app.font()
         font.setPixelSize(11)
         app.setFont(font)
         win = MainWindow()
-        win.setWindowTitle('Haasoscope Qt')
+        win.setWindowTitle('Haasoscope Pro Qt')
         for usbi in usbs:
             if not win.setup_connections(usbi):
                 print("Exiting now - failed setup_connections!")
@@ -1264,9 +1238,9 @@ if __name__ == '__main__':
         for usbi in usbs: win.sendtriggerinfo(usbi)
         win.dostartstop()
     except ftd2xx.DeviceError:
-        print("device com failed!")
+        print("Device com failed!")
     if standalone:
         rv = app.exec_()
         sys.exit(rv)
     else:
-        print("Done, but Qt window still active")
+        print("Done, but Qt window still active!")
