@@ -31,6 +31,7 @@ for ftdserial in ftds:
         print("Connected USB device", usbdevice.serial)
 print("Connected", len(usbs), "devices")
 if len(usbs)==0: sys.exit(0)
+#usbs=list(reversed(usbs)) # dan reverse board order, for testing
 
 def binprint(x):
     return bin(x)[2:].zfill(8)
@@ -261,7 +262,7 @@ def clockswitch(usb, board, quiet):
     clockinfo = usb.recv(4)
     if quiet: return
     print("Clockinfo for board", board, binprint(clockinfo[1]), binprint(clockinfo[0]))
-    if not getbit(clockinfo[1], 1) and not getbit(clockinfo[1], 3):
+    if getbit(clockinfo[1], 1) and not getbit(clockinfo[1], 3):
         print("Board", board, "locked to ext board")
     else:
         print("Board", board, "locked to internal clock")
@@ -609,9 +610,7 @@ class MainWindow(TemplateBaseClass):
             clockswitch(usb, board, True)
             clockswitch(usb, board, False)
 
-    doexttrig = []
-    for usb in usbs: doexttrig.append(0)
-
+    doexttrig = [0]*num_board
     def exttrig(self, value):
         board = self.ui.boardBox.value()
         self.doexttrig[board] = value
@@ -959,11 +958,9 @@ class MainWindow(TemplateBaseClass):
     nbadclkC = 0
     nbadclkD = 0
     nbadstr = 0
-    eventcounter = []
-    for n in range(num_board): eventcounter.append(0)
+    eventcounter = [0]*num_board
     nsubsamples = 10 * 4 + 8 + 2  # extra 4 for clk+str, and 2 dead beef
-    sample_triggered = []
-    for s in range(len(usbs)): sample_triggered.append(0)
+    sample_triggered = [0]*num_board
     downsamplemergingcounter = 0
     doeventcounter = False
 
@@ -999,9 +996,7 @@ class MainWindow(TemplateBaseClass):
             res = usb.recv(4)
             downsamplemergingcounter = res[0]
             if downsamplemergingcounter == self.downsamplemerging:
-                if board == 0 and self.doexttrig[0]:
-                    pass
-                else:
+                if not self.doexttrig[board]:
                     downsamplemergingcounter = 0
             # print("downsamplemergingcounter", downsamplemergingcounter)
         return downsamplemergingcounter
@@ -1021,8 +1016,10 @@ class MainWindow(TemplateBaseClass):
 
     def drawchannels(self, data, board, downsamplemergingcounter):
         if self.dofast: return
-        if self.doexttrig[0] and board == 0: self.sample_triggered[board] = self.sample_triggered[
-            1]  # take from board 1 when interleaving using ext trig
+        if self.doexttrig[board]:
+            if board % 2 == 1: boardtouse = board-1
+            else: boardtouse = board+1
+            self.sample_triggered[board] = self.sample_triggered[boardtouse] # take from the other board when interleaving using ext trig
         nbadclkA = 0
         nbadclkB = 0
         nbadclkC = 0
@@ -1203,11 +1200,12 @@ class MainWindow(TemplateBaseClass):
         else:
             rx_len = 0
             try:
-                readyevent = []
-                for board in range(self.num_board):
-                    rd = self.getchannels(usbs[board], board)
-                    readyevent.append(rd)
-                for board in reversed(range(self.num_board)):
+                readyevent = [0]*self.num_board
+                therange = list(range(self.num_board))
+                if self.doexttrig[1]: therange = list(reversed(therange))
+                for board in therange:
+                    readyevent[board] = self.getchannels(usbs[board], board)
+                for board in reversed(therange):
                     if not readyevent[board]: continue
                     downsamplemergingcounter = self.getpredata(usbs[board], board)
                     data = self.getdata(usbs[board])
