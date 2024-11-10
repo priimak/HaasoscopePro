@@ -466,10 +466,12 @@ class MainWindow(TemplateBaseClass):
         self.activeboard = self.ui.boardBox.value()
         self.selectchannel()
 
+    activexychannel = 0
     def selectchannel(self):
         if self.activeboard==0: self.ui.exttrigCheck.setEnabled(False)
         else: self.ui.exttrigCheck.setEnabled(True)
         self.selectedchannel = self.ui.chanBox.value()
+        self.activexychannel = self.activeboard*self.num_chan_per_board + self.selectedchannel
         p = self.ui.chanColor.palette()
         col = QColor("red")
         if self.data_twochannel:
@@ -716,7 +718,8 @@ class MainWindow(TemplateBaseClass):
         self.hline = (self.triggerlevel - 127) * self.yscale * 16
         self.otherlines[1].setData([self.min_x, self.max_x],
                                    [self.hline, self.hline])  # horizontal line showing trigger threshold
-        point = self.triggerpos + 1.25
+        point = self.triggerpos + 0.0
+        if self.downsample>0: point = point + 1.0/pow(2,self.downsamplefactor-1)
         self.vline = 2 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
         if not self.data_twochannel: self.vline = self.vline * 2
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),
@@ -1148,22 +1151,21 @@ class MainWindow(TemplateBaseClass):
 
     fitwidthfraction = 0.2
     def drawtext(self):  # happens once per second
-        board = self.ui.boardBox.value()
-        chan = board * self.num_chan_per_board + self.selectedchannel
         thestr = "Nbadclks A B C D " + str(self.nbadclkA) + " " + str(self.nbadclkB) + " " + str(
             self.nbadclkC) + " " + str(self.nbadclkD)
         thestr += "\n" + "Nbadstrobes " + str(self.nbadstr)
         thestr += "\n" + "Trigger threshold " + str(round(self.hline, 3))
-        thestr += "\n" + "Mean " + str(np.mean(self.xydata[chan][1]).round(2))
-        thestr += "\n" + "RMS " + str(np.std(self.xydata[chan][1]).round(2))
+        thestr += "\n" + "Mean " + str(np.mean(self.xydata[self.activexychannel][1]).round(2))
+        thestr += "\n" + "RMS " + str(np.std(self.xydata[self.activexychannel][1]).round(2))
 
         if not self.data_overlapped:
-            p0 = [max(self.xydata[0][1]), self.vline - 10, 20, min(self.xydata[0][1])]  # this is an initial guess
+            c = self.activexychannel
+            p0 = [max(self.xydata[c][1]), self.vline - 10, 20, min(self.xydata[c][1])]  # this is an initial guess
             fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
-            x2 = self.xydata[0][0][(self.xydata[0][0] > self.vline - fitwidth) & (
-                        self.xydata[0][0] < self.vline + fitwidth)]  # only fit in range
-            y2 = self.xydata[0][1][
-                (self.xydata[0][0] > self.vline - fitwidth) & (self.xydata[0][0] < self.vline + fitwidth)]
+            x2 = self.xydata[c][0][(self.xydata[c][0] > self.vline - fitwidth) & (
+                        self.xydata[c][0] < self.vline + fitwidth)]  # only fit in range
+            y2 = self.xydata[c][1][
+                (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
                 popt, pcov = curve_fit(fit_rise, x2, y2, p0)
