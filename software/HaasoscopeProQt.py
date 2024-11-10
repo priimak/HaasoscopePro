@@ -1157,6 +1157,8 @@ class MainWindow(TemplateBaseClass):
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
     fitwidthfraction = 0.2
+    exttrigstd = 0
+    exttrigstdavg = 0
     def drawtext(self):  # happens once per second
         thestr = "Nbadclks A B C D " + str(self.nbadclkA) + " " + str(self.nbadclkB) + " " + str(
             self.nbadclkC) + " " + str(self.nbadclkD)
@@ -1186,9 +1188,7 @@ class MainWindow(TemplateBaseClass):
             if not self.data_twochannel and self.doexttrig[self.activeboard]:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1
                 else: c1 = self.activeboard+1
-                yc1 = self.xydata[c1][1][
-                    (self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
-                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(c)+": " + str(np.std(yc1-yc).round(2))
+                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(c)+": " + str(round(self.exttrigstdavg,2))
 
         self.ui.textBrowser.setText(thestr)
 
@@ -1221,6 +1221,19 @@ class MainWindow(TemplateBaseClass):
                 self.xydata[c][0] = np.array([range(0, 4 * 10 * self.expect_samples)]) / self.nsunits / self.samplerate
         return 1
 
+    def calculatethings(self):
+        if self.activeboard % 2 == 1:
+            c1 = self.activeboard - 1
+        else:
+            c1 = self.activeboard + 1
+        c = self.activexychannel
+        fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
+        yc = self.xydata[c][1][
+            (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
+        yc1 = self.xydata[c1][1][
+            (self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
+        self.exttrigstd = self.exttrigstd + np.std(yc1 - yc)
+
     lastrate = 0
     lastsize = 0
     def mainloop(self):
@@ -1238,6 +1251,7 @@ class MainWindow(TemplateBaseClass):
                     data = self.getdata(usbs[board])
                     rx_len = rx_len + len(data)
                     self.drawchannels(data, board, downsamplemergingcounter)
+                self.calculatethings()
                 if self.getone and rx_len > 0:
                     self.dostartstop()
                     self.drawtext()
@@ -1247,6 +1261,10 @@ class MainWindow(TemplateBaseClass):
             if self.db: print(time.time() - self.oldtime, "done with evt", self.nevents)
             if rx_len > 0: self.nevents += 1
             if self.nevents - self.oldnevents >= self.tinterval:
+
+                self.exttrigstdavg = self.exttrigstd / self.tinterval
+                self.exttrigstd =0
+
                 now = time.time()
                 elapsedtime = now - self.oldtime
                 self.oldtime = now
@@ -1254,10 +1272,6 @@ class MainWindow(TemplateBaseClass):
                 self.lastsize = rx_len
                 if not self.dodrawing: print(self.nevents, "events,", self.lastrate, "Hz",
                                              round(self.lastrate * self.lastsize / 1e6, 3), "MB/s")
-                if self.lastrate > 40:
-                    self.tinterval = 500.
-                else:
-                    self.tinterval = 100.
                 self.oldnevents = self.nevents
 
 
