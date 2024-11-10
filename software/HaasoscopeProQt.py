@@ -411,6 +411,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.risingedgeCheck.stateChanged.connect(self.risingfalling)
         self.ui.exttrigCheck.stateChanged.connect(self.exttrig)
         self.ui.totBox.valueChanged.connect(self.tot)
+        self.ui.egainBox.valueChanged.connect(self.egain)
         self.ui.boardBox.valueChanged.connect(self.boardchanged)
         self.ui.triggerChanBox.valueChanged.connect(self.triggerchanchanged)
         self.ui.gridCheck.stateChanged.connect(self.grid)
@@ -499,6 +500,10 @@ class MainWindow(TemplateBaseClass):
     def fwf(self):
         self.fitwidthfraction = self.ui.fwfBox.value() / 100.
         print("fwf now", self.fitwidthfraction)
+
+    exttriggainscaling = 1.0
+    def egain(self):
+        self.exttriggainscaling = 1.0 + self.ui.egainBox.value()/1000.
 
     tad = 0
     def setTAD(self):
@@ -1109,20 +1114,22 @@ class MainWindow(TemplateBaseClass):
                                 chani = int(chan / 2)
                             else:
                                 chani = int((chan - 1) / 2)
-                            if self.doexttrig[board]: self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
-                            else: self.xydata[board*self.num_chan_per_board + chan%2][1][ (chani+ 2*samp+ self.toff) % (20*self.expect_samples) ] = val
+                            if not self.doexttrig[board]:
+                                self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
+                            else:
+                                self.xydata[board*self.num_chan_per_board + chan%2][1][ (chani+ 2*samp+ self.toff) % (20*self.expect_samples) ] = val
                         else:
-                            if self.doexttrig[board]:
+                            if not self.doexttrig[board]:
                                 self.xydata[board][1][chan + 4 * samp] = val
                             else:
-                                self.xydata[board][1][(chan + 4 * samp + self.toff) % (40 * self.expect_samples)] = val
+                                self.xydata[board][1][(chan + 4 * samp + self.toff) % (40 * self.expect_samples)] = val * self.exttriggainscaling
                     else:
                         if self.data_twochannel:
                             samp = s * 20 + chan * 10 + 9 - n
                             if n < 20: samp = samp + 10
                             if s < (self.expect_samples - 1): samp = samp + int(2 * (self.sample_triggered[board] - (
                                         downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
-                            if self.doexttrig[board]:
+                            if not self.doexttrig[board]:
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                             else:
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][
@@ -1131,7 +1138,7 @@ class MainWindow(TemplateBaseClass):
                             samp = s * 40 + 39 - n
                             if s < (self.expect_samples - 1): samp = samp + int(4 * (self.sample_triggered[board] - (
                                         downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
-                            if self.doexttrig[board]:
+                            if not self.doexttrig[board]:
                                 self.xydata[board][1][samp] = val
                             else:
                                 self.xydata[board][1][(samp + self.toff) % (40 * self.expect_samples)] = val
@@ -1154,6 +1161,7 @@ class MainWindow(TemplateBaseClass):
         thestr = "Nbadclks A B C D " + str(self.nbadclkA) + " " + str(self.nbadclkB) + " " + str(
             self.nbadclkC) + " " + str(self.nbadclkD)
         thestr += "\n" + "Nbadstrobes " + str(self.nbadstr)
+        thestr += "\n" + gettemps(self.activeusb)
         thestr += "\n" + "Trigger threshold " + str(round(self.hline, 3))
         thestr += "\n" + "Mean " + str(np.mean(self.xydata[self.activexychannel][1]).round(2))
         thestr += "\n" + "RMS " + str(np.std(self.xydata[self.activexychannel][1]).round(2))
@@ -1162,20 +1170,25 @@ class MainWindow(TemplateBaseClass):
             c = self.activexychannel
             p0 = [max(self.xydata[c][1]), self.vline - 10, 20, min(self.xydata[c][1])]  # this is an initial guess
             fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
-            x2 = self.xydata[c][0][(self.xydata[c][0] > self.vline - fitwidth) & (
+            xc = self.xydata[c][0][(self.xydata[c][0] > self.vline - fitwidth) & (
                         self.xydata[c][0] < self.vline + fitwidth)]  # only fit in range
-            y2 = self.xydata[c][1][
+            yc = self.xydata[c][1][
                 (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                popt, pcov = curve_fit(fit_rise, x2, y2, p0)
+                popt, pcov = curve_fit(fit_rise, xc, yc, p0)
                 perr = np.sqrt(np.diag(pcov))
             risetime = 0.8 * popt[2]
             risetimeerr = perr[2]
             # print(popt)
             thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
 
-        thestr += "\n" + gettemps(self.activeusb)
+            if not self.data_twochannel and self.doexttrig[self.activeboard]:
+                if self.activeboard % 2 == 1: c1 = self.activeboard-1
+                else: c1 = self.activeboard+1
+                yc1 = self.xydata[c1][1][
+                    (self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
+                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(c)+": " + str(np.std(yc1-yc).round(2))
 
         self.ui.textBrowser.setText(thestr)
 

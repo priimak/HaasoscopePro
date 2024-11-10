@@ -245,7 +245,7 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>71</width>
+          <width>81</width>
           <height>23</height>
          </rect>
         </property>
@@ -571,7 +571,7 @@
         <property name="geometry">
          <rect>
           <x>70</x>
-          <y>93</y>
+          <y>74</y>
           <width>31</width>
           <height>16</height>
          </rect>
@@ -589,7 +589,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>90</y>
+          <y>71</y>
           <width>51</width>
           <height>22</height>
          </rect>
@@ -616,7 +616,7 @@
         <property name="geometry">
          <rect>
           <x>70</x>
-          <y>63</y>
+          <y>44</y>
           <width>41</width>
           <height>16</height>
          </rect>
@@ -634,7 +634,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>41</y>
           <width>51</width>
           <height>22</height>
          </rect>
@@ -655,6 +655,51 @@
         </property>
         <property name="value">
          <number>0</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="egainBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>101</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="suffix">
+         <string/>
+        </property>
+        <property name="minimum">
+         <number>-100</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>104</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>EGain</string>
         </property>
        </widget>
       </widget>
@@ -1310,9 +1355,9 @@
         <widget class="QToolButton" name="pllresetButton">
          <property name="geometry">
           <rect>
-           <x>20</x>
+           <x>10</x>
            <y>150</y>
-           <width>51</width>
+           <width>61</width>
            <height>21</height>
           </rect>
          </property>
@@ -1331,9 +1376,9 @@
         <widget class="QToolButton" name="adfresetButton">
          <property name="geometry">
           <rect>
-           <x>90</x>
+           <x>80</x>
            <y>150</y>
-           <width>61</width>
+           <width>71</width>
            <height>21</height>
           </rect>
          </property>
