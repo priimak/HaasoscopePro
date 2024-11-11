@@ -68,12 +68,18 @@ assign debugout[4] = lockinfo[0]; //locked
 assign debugout[5] = lockinfo[1]; //activeclock
 assign debugout[6] = lockinfo[2]; //clkbad0
 assign debugout[7] = lockinfo[3]; //clkbad1
+
 assign debugout[8] = 0;
 assign debugout[9] = 0;
-assign debugout[10] = 0;
+assign debugout[10] = boardout[3]; //1kHz out 50 Ohm
 
 reg fanon=1;
 assign debugout[11] = fanon;
+
+wire exttrigin;
+assign exttrigin = boardin[4];
+
+assign lvdsout_spare[1] = exttrigin; // just temporary since we're not using them yet
 
 reg [15:0]	probecompcounter=0;
 
@@ -612,7 +618,7 @@ always @ (posedge clk or negedge rstn)
 			if (rx_data[1]==3) o_tdata <= eventcounter_sync;
 			if (rx_data[1]==4) o_tdata <= downsamplemergingcounter_triggered_sync;
 			if (rx_data[1]==5) begin
-				lvdsout_spare[0] <= rx_data[2]; // used for telling order of devices
+				lvdsout_spare[0] <= rx_data[2][0]; // used for telling order of devices
 				o_tdata <= {8'd0, 6'd0,lvdsin_spare[1],lvdsin_spare[0], 4'd0,lockinfo, 7'd0,~clkswitch};
 			end
 			length <= 4;
