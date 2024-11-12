@@ -23725,6 +23725,7 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="1KHZOUT50" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="50"/>
 <part name="SUPPLY41" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="R211" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="47"/>
 </parts>
 <sheets>
 <sheet>
@@ -29471,11 +29472,15 @@ between the two signals at the input buffer.</text>
 <attribute name="VALUE" x="162.56" y="525.78" size="1.27" layer="95" rot="MR180"/>
 </instance>
 <instance part="SUPPLY21" gate="GND" x="157.48" y="535.94" smashed="yes" rot="MR180"/>
-<instance part="1KHZOUT50" gate="G$1" x="139.7" y="490.22" smashed="yes" rot="MR180">
-<attribute name="NAME" x="147.32" y="487.68" size="1.27" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="147.32" y="490.22" size="1.27" layer="95" rot="MR180"/>
+<instance part="1KHZOUT50" gate="G$1" x="160.02" y="495.3" smashed="yes" rot="MR180">
+<attribute name="NAME" x="167.64" y="492.76" size="1.27" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="167.64" y="495.3" size="1.27" layer="95" rot="MR180"/>
 </instance>
-<instance part="SUPPLY41" gate="GND" x="142.24" y="500.38" smashed="yes" rot="MR180"/>
+<instance part="SUPPLY41" gate="GND" x="162.56" y="505.46" smashed="yes" rot="MR180"/>
+<instance part="R211" gate="G$1" x="142.24" y="495.3" smashed="yes" rot="R180">
+<attribute name="NAME" x="143.51" y="493.8014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="143.51" y="498.602" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -30006,13 +30011,13 @@ between the two signals at the input buffer.</text>
 <pinref part="SUPPLY41" gate="GND" pin="GND"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND2"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND1"/>
-<wire x1="142.24" y1="482.6" x2="137.16" y2="482.6" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="487.68" x2="157.48" y2="487.68" width="0.1524" layer="91"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND3"/>
-<wire x1="137.16" y1="482.6" x2="137.16" y2="497.84" width="0.1524" layer="91"/>
-<junction x="137.16" y="482.6"/>
-<wire x1="137.16" y1="497.84" x2="142.24" y2="497.84" width="0.1524" layer="91"/>
-<junction x="137.16" y="497.84"/>
-<junction x="142.24" y="497.84"/>
+<wire x1="157.48" y1="487.68" x2="157.48" y2="502.92" width="0.1524" layer="91"/>
+<junction x="157.48" y="487.68"/>
+<wire x1="157.48" y1="502.92" x2="162.56" y2="502.92" width="0.1524" layer="91"/>
+<junction x="157.48" y="502.92"/>
+<junction x="162.56" y="502.92"/>
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="5"/>
@@ -30538,9 +30543,9 @@ between the two signals at the input buffer.</text>
 <label x="226.06" y="520.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="1KHZOUT50" gate="G$1" pin="ANT"/>
-<wire x1="132.08" y1="490.22" x2="116.84" y2="490.22" width="0.1524" layer="91"/>
-<label x="116.84" y="490.22" size="1.778" layer="95"/>
+<pinref part="R211" gate="G$1" pin="P$2"/>
+<wire x1="137.16" y1="495.3" x2="121.92" y2="495.3" width="0.1524" layer="91"/>
+<label x="121.92" y="495.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FAN_CONTROL" class="0">
@@ -34071,6 +34076,14 @@ between the two signals at the input buffer.</text>
 <segment>
 <pinref part="R160" gate="G$1" pin="P$1"/>
 <pinref part="R210" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="N$52" class="0">
+<segment>
+<pinref part="1KHZOUT50" gate="G$1" pin="ANT"/>
+<pinref part="R211" gate="G$1" pin="P$1"/>
+<wire x1="152.4" y1="495.3" x2="147.32" y2="495.3" width="0.1524" layer="91"/>
+<label x="147.32" y="495.3" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -38502,10 +38515,6 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="104,7,157.48,518.16,EXTTRIGIN,GND2,GND,,,"/>
 <approved hash="104,7,152.4,533.4,EXTTRIGIN,GND3,GND,,,"/>
 <approved hash="104,7,157.48,533.4,EXTTRIGIN,GND4,GND,,,"/>
-<approved hash="104,7,137.16,482.6,1KHZOUT50,GND1,GND,,,"/>
-<approved hash="104,7,142.24,482.6,1KHZOUT50,GND2,GND,,,"/>
-<approved hash="104,7,137.16,497.84,1KHZOUT50,GND3,GND,,,"/>
-<approved hash="104,7,142.24,497.84,1KHZOUT50,GND4,GND,,,"/>
 <approved hash="106,6,60.96,220.98,BG,,,,,"/>
 <approved hash="106,6,60.96,302.26,CALTRIG,,,,,"/>
 <approved hash="106,7,238.76,276.86,CLK1,,,,,"/>
