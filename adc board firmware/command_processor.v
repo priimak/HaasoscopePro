@@ -560,7 +560,7 @@ always @ (posedge clk or negedge rstn)
 	state  <= INIT;
   end else begin 
   
-  if (probecompcounter==16'd50000) begin
+  if (probecompcounter==16'd25000) begin
 		boardout[3] <= ~boardout[3]; // for probe compensation, 1kHz
 		probecompcounter <= 0;
   end
