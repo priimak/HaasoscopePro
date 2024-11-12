@@ -252,12 +252,14 @@ Data/Power
 <wire x1="9.5" y1="17" x2="17.5" y2="17" width="0.1524" layer="20"/>
 <wire x1="17.5" y1="17" x2="17.5" y2="8.5" width="0.1524" layer="20"/>
 <wire x1="146.5" y1="12.4" x2="146.5" y2="11.4" width="0.1524" layer="21"/>
-<text x="140" y="2.4" size="1.778" layer="21" font="vector">1 kHz / Aux
-      Out</text>
+<text x="140" y="2.4" size="1.778" layer="21" font="vector">1 kHz / Trig
+   Aux Out</text>
 <wire x1="150.5" y1="8.4" x2="142.5" y2="8.4" width="0.1524" layer="20"/>
 <wire x1="142.5" y1="8.4" x2="142.5" y2="16.9" width="0.1524" layer="20"/>
 <wire x1="142.5" y1="16.9" x2="150.5" y2="16.9" width="0.1524" layer="20"/>
 <wire x1="150.5" y1="16.9" x2="150.5" y2="8.4" width="0.1524" layer="20"/>
+<text x="140" y="19" size="1.778" layer="21" font="vector">2.5V 50Ohm</text>
+<text x="7.5" y="19" size="1.778" layer="21" font="vector">2.5V 50Ohm</text>
 </plain>
 <libraries>
 <library name="MF_LEDs">
