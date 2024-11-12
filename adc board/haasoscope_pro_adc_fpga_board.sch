@@ -38515,6 +38515,10 @@ is 0.681 when ADC running with clock, 0.731 when off</text>
 <approved hash="104,7,157.48,518.16,EXTTRIGIN,GND2,GND,,,"/>
 <approved hash="104,7,152.4,533.4,EXTTRIGIN,GND3,GND,,,"/>
 <approved hash="104,7,157.48,533.4,EXTTRIGIN,GND4,GND,,,"/>
+<approved hash="104,7,157.48,487.68,1KHZOUT50,GND1,GND,,,"/>
+<approved hash="104,7,162.56,487.68,1KHZOUT50,GND2,GND,,,"/>
+<approved hash="104,7,157.48,502.92,1KHZOUT50,GND3,GND,,,"/>
+<approved hash="104,7,162.56,502.92,1KHZOUT50,GND4,GND,,,"/>
 <approved hash="106,6,60.96,220.98,BG,,,,,"/>
 <approved hash="106,6,60.96,302.26,CALTRIG,,,,,"/>
 <approved hash="106,7,238.76,276.86,CLK1,,,,,"/>
