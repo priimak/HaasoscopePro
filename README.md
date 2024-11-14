@@ -10,14 +10,17 @@
 
 #### Routing image: [haasoscope_pro_adc_fpga_board_routing.png](adc%20board%2Fhaasoscope_pro_adc_fpga_board_routing.png)
 
-### Quick start
+### Quick start (Windows/Mac/Linux)
 
 1) Plug Haasoscope Pro into your computer via USB C <br>
 (If not enough power is supplied also plug in the external 12V power adapter)
 2) Download code and unzip it: https://github.com/drandyhaas/HaasoscopePro/archive/refs/heads/main.zip
 3) Run **HaasoscopeProQt** in the <code>HaasoscopePro/software/dist/(OS)_HaasoscopeProQt</code> directory
 
-### Fuller way of running (Windows/Mac/Linux)
+### Tips
+- If board not found on Linux, try: <code>sudo rmmod usbserial ftdi_sio</code>
+
+### Fuller way of running
 
 1) Install python3 and git (operating system dependent)
 2) Install dependencies: <br><code>pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx</code>
@@ -32,6 +35,7 @@
 6) To remake exe for quick start:
 <br><code>pip3 install pyinstaller</code> # install dependency once
 <br><code>python3 -m PyInstaller HaasoscopeProQt.py</code>
+<br><code>mv dist/HaasoscopeProQt dist/Linux_HaasoscopeProQt</code>
 
 ### Repository structure:
 - [adc board](adc%20board/): Design files and documentation for the main hardware board, based on Eagle (9.6.2)
