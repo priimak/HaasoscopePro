@@ -1185,7 +1185,7 @@ class MainWindow(TemplateBaseClass):
             # print(popt)
             thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
 
-            if not self.data_twochannel and self.doexttrig[self.activeboard]:
+            if not self.data_twochannel and self.doexttrig[self.activeboard] and self.num_board>1:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1
                 else: c1 = self.activeboard+1
                 thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(c)+": " + str(round(self.exttrigstdavg,2))
@@ -1251,7 +1251,8 @@ class MainWindow(TemplateBaseClass):
                     data = self.getdata(usbs[board])
                     rx_len = rx_len + len(data)
                     self.drawchannels(data, board, downsamplemergingcounter)
-                self.calculatethings()
+                if not self.data_twochannel and self.doexttrig[self.activeboard] and self.num_board>1:
+                    self.calculatethings()
                 if self.getone and rx_len > 0:
                     self.dostartstop()
                     self.drawtext()
