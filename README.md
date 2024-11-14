@@ -35,7 +35,7 @@
 6) To remake exe for quick start:
 <br><code>pip3 install pyinstaller</code> # install dependency once
 <br><code>python3 -m PyInstaller HaasoscopeProQt.py</code>
-<br><code>mv dist/HaasoscopeProQt dist/Linux_HaasoscopeProQt</code>
+<br><code>mv dist/HaasoscopeProQt dist/(OS)_HaasoscopeProQt</code>
 
 ### Repository structure:
 - [adc board](adc%20board/): Design files and documentation for the main hardware board, based on Eagle (9.6.2)
