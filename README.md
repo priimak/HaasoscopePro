@@ -1,20 +1,25 @@
-# HaasoscopePro
-**2 channel 2 GHz 3.2 GS/s 12 bit open-source open-hardware expandable USB oscilloscope**
+## HaasoscopePro
+
+### An Affordable 2 GHz 3.2 GS/s 12 bit open-source open-hardware expandable USB oscilloscope
+
+### [Available on CrowdSupply](https://www.crowdsupply.com/andy-haas/haasoscope-pro)
+
 ![haasoscope_pro_adc_fpga_board.png](adc%20board%2Fhaasoscope_pro_adc_fpga_board.png)
-Funded on CrowdSupply: [link](https://www.crowdsupply.com/andy-haas/haasoscope-pro)
 
-Schematics in PDF: [haasoscope_pro_adc_fpga_board_schematics.pdf](adc%20board%2Fhaasoscope_pro_adc_fpga_board_schematics.pdf)
+#### Schematics in PDF: [haasoscope_pro_adc_fpga_board_schematics.pdf](adc%20board%2Fhaasoscope_pro_adc_fpga_board_schematics.pdf)
 
-Routing image: [haasoscope_pro_adc_fpga_board_routing.png](adc%20board%2Fhaasoscope_pro_adc_fpga_board_routing.png)
+#### Routing image: [haasoscope_pro_adc_fpga_board_routing.png](adc%20board%2Fhaasoscope_pro_adc_fpga_board_routing.png)
 
-Quick start Windows:
+### Quick start
+
+Windows:
 <pre>
 tinyurl.com/HaasoscopeProWin
 unzip
 run HaasoscopeProQt.exe
 </pre>
 
-Quick start Mac:
+Mac:
 <pre>
 tinyurl.com/HaasoscopeProMac
 unzip
@@ -24,9 +29,9 @@ sudo cp libftd2xx.dylib /usr/local/lib/ # install driver, just need to do once
 
 Also works on Linux...
 
-Fuller way of running (Win/Mac/Linux):
+### Fuller way of running (Win/Mac/Linux)
 <pre>
-#install python3 and git
+# install python3 and git
 #(operating system dependent)
 
 # install dependencies
@@ -49,7 +54,7 @@ pip3 install pyinstaller # install dependency once
 python3 -m PyInstaller HaasoscopeProQt.py
 </pre>
 
-Repository structure:
+### Repository structure:
 - adc board: Design files and documentation for the main hardware board, based on Eagle (9.6.2)
 - adc board firmware: Quartus (23.1 lite) project for the Altera Cyclone IV FPGA firmware
 - case: Front and back PCB panels for the aluminum case
