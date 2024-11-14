@@ -1,1 +1,1 @@
-Open coincidence.qpf with Quartus Prime Lite (tested with version 18.0.0)
+Open coincidence.qpf with Quartus Prime Lite (tested with version 23.1)
