@@ -20,35 +20,23 @@
 ### Fuller way of running (Windows/Mac/Linux)
 
 1) Install python3 and git (operating system dependent)
-
-2) Install dependencies:
-<code>
-<br>pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx
-</code>
-
-3) Get code: <code>
-<br>git clone https://github.com/drandyhaas/HaasoscopePro.git
-</code>
-
-4) Install driver: https://ftdichip.com/drivers/d2xx-drivers/
+2) Install dependencies: <br><code>pip3 install numpy scipy pyqtgraph PyQt5 pyftdi ftd2xx</code>
+3) Get code: <br><code>git clone https://github.com/drandyhaas/HaasoscopePro.git</code>
+4) Install [FTDI D2xx driver](https://ftdichip.com/drivers/d2xx-drivers/)
+<br>for Windows: install using the [setup exe](https://ftdichip.com/wp-content/uploads/2021/08/CDM212364_Setup.zip)
 <br>for Mac can just do: <code>sudo cp HaasoscopePro/software/libftd2xx.dylib /usr/local/lib/</code> 
 <br>for Linux can just do: <code>sudo cp HaasoscopePro/software/libftd2xx.so /usr/lib/</code>
-
-5) Run: <code>
-<br>cd HaasoscopePro/software
-<br>python3 HaasoscopeProQt.py
-</code>
-
+5) Run:
+<br><code>cd HaasoscopePro/software</code>
+<br><code>python3 HaasoscopeProQt.py</code>
 6) To remake exe for quick start:
-<code>
-<br>pip3 install pyinstaller # install dependency once
-<br>python3 -m PyInstaller HaasoscopeProQt.py
-</code>
+<br><code>pip3 install pyinstaller</code> # install dependency once
+<br><code>python3 -m PyInstaller HaasoscopeProQt.py</code>
 
 ### Repository structure:
-- <code>adc board</code>: Design files and documentation for the main hardware board, based on Eagle (9.6.2)
-- <code>adc board firmware</code>: Quartus (23.1 lite) project for the Altera Cyclone IV FPGA firmware
-- <code>case</code>: Front and back PCB panels for the aluminum case
-- <code>software</code>: Python files for the oscilloscope program
+- [adc board](adc%20board/): Design files and documentation for the main hardware board, based on Eagle (9.6.2)
+- [adc board firmware](adc%20board%20firmware/): Quartus lite project for the Altera Cyclone IV FPGA firmware
+- [case](case/): Front and back PCB panels for the aluminum case
+- [software](software/): Python files for the oscilloscope program
 - <code>(other directories)</code>: Design files and documentation for smaller test boards that were used during development 
 
