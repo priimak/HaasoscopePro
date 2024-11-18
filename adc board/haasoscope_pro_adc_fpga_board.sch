@@ -29327,7 +29327,7 @@ so ADC is turned on</text>
 <sheet>
 <description>FPGA and IOs</description>
 <plain>
-<text x="-2.54" y="302.26" size="1.778" layer="90">Cyclone IV E left and right I/O banks support 
+<text x="12.7" y="383.54" size="1.778" layer="90">Cyclone IV E left and right I/O banks support 
 true LVDS transmitters, so use them for LVDS outputs</text>
 <text x="332.74" y="487.68" size="1.778" layer="90">LVDS receivers require an external 100 Ohm termination resistor
 between the two signals at the input buffer
@@ -29336,25 +29336,25 @@ We use 0201 resistors that fit on the bottom of the board and connect
 the vias under the FPGA for each LVDS input pair</text>
 <text x="228.6" y="624.84" size="1.778" layer="90">All the inputs and outputs for the FPGA
 (Yes, this schematic symbol is even terribler.)</text>
-<text x="17.78" y="355.6" size="1.778" layer="90">LVDS outputs and inputs for sync between boards</text>
+<text x="33.02" y="436.88" size="1.778" layer="90">LVDS outputs and inputs for sync between boards</text>
 <text x="335.28" y="441.96" size="1.778" layer="90">For FPGA programming</text>
 <text x="335.28" y="353.06" size="1.778" layer="90">Hard reset (reload firmware) and soft reset (send reset signal to firmware) buttons</text>
-<text x="144.78" y="350.52" size="1.778" layer="90">50 MHz clock for FPGA</text>
+<text x="160.02" y="431.8" size="1.778" layer="90">50 MHz clock for FPGA</text>
 <text x="429.26" y="398.78" size="1.778" layer="90">JTAG interface for FPGA programming</text>
 <text x="431.8" y="447.04" size="1.778" layer="90">Flash for FPGA programming</text>
-<text x="-5.08" y="419.1" size="1.778" layer="90">50 Ohm external trigger input</text>
-<text x="68.58" y="419.1" size="1.778" layer="90">50 Ohm 1kHz / Aux output</text>
-<text x="144.78" y="419.1" size="1.778" layer="90">1kOhm 1kHz output for probe compensation</text>
-<text x="144.78" y="381" size="1.778" layer="90">Extra clock input and output</text>
-<text x="63.5" y="505.46" size="1.778" layer="90">2.5V inputs and outputs to/from
+<text x="10.16" y="500.38" size="1.778" layer="90">50 Ohm external trigger input</text>
+<text x="83.82" y="500.38" size="1.778" layer="90">50 Ohm 1kHz / Aux output</text>
+<text x="160.02" y="500.38" size="1.778" layer="90">1kOhm 1kHz output for probe compensation</text>
+<text x="160.02" y="462.28" size="1.778" layer="90">Extra clock input and output</text>
+<text x="78.74" y="586.74" size="1.778" layer="90">2.5V inputs and outputs to/from
 the FPGA for status monitoring
 and control of things, etc.</text>
-<text x="-7.62" y="508" size="1.778" layer="90">2.5V outputs from
+<text x="7.62" y="589.28" size="1.778" layer="90">2.5V outputs from
 the FPGA for debugging, etc.
 
 These go to LEDs for monitoring</text>
-<text x="73.66" y="487.68" size="1.778" layer="90">Boardin 4 is now the ext trig input</text>
-<text x="-7.62" y="452.12" size="1.778" layer="90">Debugout10 is now the 50 Ohm 1kHz/Aux output</text>
+<text x="88.9" y="568.96" size="1.778" layer="90">Boardin 4 is now the ext trig input</text>
+<text x="7.62" y="533.4" size="1.778" layer="90">Debugout10 is now the 50 Ohm 1kHz/Aux output</text>
 <text x="40.64" y="261.62" size="1.778" layer="90">Comparitors for some analog signals, 
 whose outputs get fed to FPGA</text>
 <text x="35.56" y="203.2" size="1.778" layer="90">CC1 or 2 indicate USB C polarity
@@ -29383,17 +29383,17 @@ Read the voltage on CC1/2, if it is
 <attribute name="VALUE" x="458.47" y="368.554" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="458.47" y="386.588" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="C59" gate="C$1" x="144.78" y="332.74" smashed="yes" rot="R180">
-<attribute name="NAME" x="143.256" y="337.439" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="143.256" y="334.899" size="1.778" layer="96" rot="R180"/>
+<instance part="C59" gate="C$1" x="160.02" y="414.02" smashed="yes" rot="R180">
+<attribute name="NAME" x="158.496" y="418.719" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="158.496" y="416.179" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND75" gate="1" x="144.78" y="327.66" smashed="yes">
-<attribute name="VALUE" x="142.24" y="325.12" size="1.778" layer="96"/>
+<instance part="GND75" gate="1" x="160.02" y="408.94" smashed="yes">
+<attribute name="VALUE" x="157.48" y="406.4" size="1.778" layer="96"/>
 </instance>
-<instance part="Y2" gate="G$1" x="160.02" y="335.28" smashed="yes">
-<attribute name="NAME" x="152.4" y="343.154" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="152.4" y="327.406" size="1.778" layer="96" align="top-left"/>
-<attribute name="LCSC" x="158.75" y="343.154" size="1.778" layer="96"/>
+<instance part="Y2" gate="G$1" x="175.26" y="416.56" smashed="yes">
+<attribute name="NAME" x="167.64" y="424.434" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="167.64" y="408.686" size="1.778" layer="96" align="top-left"/>
+<attribute name="LCSC" x="173.99" y="424.434" size="1.778" layer="96"/>
 </instance>
 <instance part="SW3" gate="G$1" x="342.9" y="332.74" smashed="yes">
 <attribute name="NAME" x="337.82" y="337.82" size="1.27" layer="95" ratio="10"/>
@@ -29685,111 +29685,111 @@ Read the voltage on CC1/2, if it is
 <attribute name="NAME" x="472.44" y="551.18" size="1.016" layer="95" font="vector" rot="MR180"/>
 <attribute name="VALUE" x="472.44" y="548.64" size="1.016" layer="96" font="vector"/>
 </instance>
-<instance part="CLKEXT" gate="G1" x="144.78" y="370.84" smashed="yes" rot="MR0">
-<attribute name="NAME" x="147.32" y="374.142" size="1.778" layer="95" rot="MR0"/>
+<instance part="CLKEXT" gate="G1" x="160.02" y="452.12" smashed="yes" rot="MR0">
+<attribute name="NAME" x="162.56" y="455.422" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="CLKOUT2" gate="G1" x="172.72" y="370.84" smashed="yes">
-<attribute name="NAME" x="170.18" y="374.142" size="1.778" layer="95"/>
+<instance part="CLKOUT2" gate="G1" x="187.96" y="452.12" smashed="yes">
+<attribute name="NAME" x="185.42" y="455.422" size="1.778" layer="95"/>
 </instance>
-<instance part="J8" gate="G$1" x="119.38" y="490.22" smashed="yes" rot="R180"/>
-<instance part="J10" gate="G$1" x="119.38" y="459.74" smashed="yes" rot="R180"/>
-<instance part="J11" gate="G$1" x="17.78" y="459.74" smashed="yes" rot="R180"/>
-<instance part="R30" gate="G$1" x="30.48" y="449.58" smashed="yes">
-<attribute name="VALUE" x="29.21" y="448.818" size="1.778" layer="96"/>
+<instance part="J8" gate="G$1" x="134.62" y="571.5" smashed="yes" rot="R180"/>
+<instance part="J10" gate="G$1" x="134.62" y="541.02" smashed="yes" rot="R180"/>
+<instance part="J11" gate="G$1" x="33.02" y="541.02" smashed="yes" rot="R180"/>
+<instance part="R30" gate="G$1" x="45.72" y="530.86" smashed="yes">
+<attribute name="VALUE" x="44.45" y="530.098" size="1.778" layer="96"/>
 </instance>
-<instance part="R32" gate="G$1" x="30.48" y="454.66" smashed="yes">
-<attribute name="VALUE" x="29.21" y="453.898" size="1.778" layer="96"/>
+<instance part="R32" gate="G$1" x="45.72" y="535.94" smashed="yes">
+<attribute name="VALUE" x="44.45" y="535.178" size="1.778" layer="96"/>
 </instance>
-<instance part="R33" gate="G$1" x="30.48" y="457.2" smashed="yes">
-<attribute name="VALUE" x="29.21" y="456.438" size="1.778" layer="96"/>
+<instance part="R33" gate="G$1" x="45.72" y="538.48" smashed="yes">
+<attribute name="VALUE" x="44.45" y="537.718" size="1.778" layer="96"/>
 </instance>
-<instance part="R34" gate="G$1" x="30.48" y="459.74" smashed="yes">
-<attribute name="VALUE" x="29.21" y="458.978" size="1.778" layer="96"/>
+<instance part="R34" gate="G$1" x="45.72" y="541.02" smashed="yes">
+<attribute name="VALUE" x="44.45" y="540.258" size="1.778" layer="96"/>
 </instance>
-<instance part="R35" gate="G$1" x="30.48" y="462.28" smashed="yes">
-<attribute name="VALUE" x="29.21" y="461.518" size="1.778" layer="96"/>
+<instance part="R35" gate="G$1" x="45.72" y="543.56" smashed="yes">
+<attribute name="VALUE" x="44.45" y="542.798" size="1.778" layer="96"/>
 </instance>
-<instance part="R36" gate="G$1" x="30.48" y="464.82" smashed="yes">
-<attribute name="VALUE" x="29.21" y="464.058" size="1.778" layer="96"/>
+<instance part="R36" gate="G$1" x="45.72" y="546.1" smashed="yes">
+<attribute name="VALUE" x="44.45" y="545.338" size="1.778" layer="96"/>
 </instance>
-<instance part="R37" gate="G$1" x="30.48" y="467.36" smashed="yes">
-<attribute name="VALUE" x="29.21" y="466.598" size="1.778" layer="96"/>
+<instance part="R37" gate="G$1" x="45.72" y="548.64" smashed="yes">
+<attribute name="VALUE" x="44.45" y="547.878" size="1.778" layer="96"/>
 </instance>
-<instance part="LED25" gate="G$1" x="38.1" y="467.36" smashed="yes" rot="R90"/>
-<instance part="LED26" gate="G$1" x="38.1" y="464.82" smashed="yes" rot="R90"/>
-<instance part="LED27" gate="G$1" x="38.1" y="462.28" smashed="yes" rot="R90"/>
-<instance part="LED28" gate="G$1" x="38.1" y="459.74" smashed="yes" rot="R90"/>
-<instance part="LED29" gate="G$1" x="38.1" y="457.2" smashed="yes" rot="R90"/>
-<instance part="LED30" gate="G$1" x="38.1" y="454.66" smashed="yes" rot="R90"/>
-<instance part="LED32" gate="G$1" x="38.1" y="449.58" smashed="yes" rot="R90"/>
-<instance part="GND55" gate="1" x="43.18" y="444.5" smashed="yes">
-<attribute name="VALUE" x="40.64" y="441.96" size="1.778" layer="96"/>
+<instance part="LED25" gate="G$1" x="53.34" y="548.64" smashed="yes" rot="R90"/>
+<instance part="LED26" gate="G$1" x="53.34" y="546.1" smashed="yes" rot="R90"/>
+<instance part="LED27" gate="G$1" x="53.34" y="543.56" smashed="yes" rot="R90"/>
+<instance part="LED28" gate="G$1" x="53.34" y="541.02" smashed="yes" rot="R90"/>
+<instance part="LED29" gate="G$1" x="53.34" y="538.48" smashed="yes" rot="R90"/>
+<instance part="LED30" gate="G$1" x="53.34" y="535.94" smashed="yes" rot="R90"/>
+<instance part="LED32" gate="G$1" x="53.34" y="530.86" smashed="yes" rot="R90"/>
+<instance part="GND55" gate="1" x="58.42" y="525.78" smashed="yes">
+<attribute name="VALUE" x="55.88" y="523.24" size="1.778" layer="96"/>
 </instance>
-<instance part="J13" gate="G$1" x="17.78" y="490.22" smashed="yes" rot="R180"/>
-<instance part="R46" gate="G$1" x="30.48" y="480.06" smashed="yes">
-<attribute name="VALUE" x="29.21" y="479.298" size="1.778" layer="96"/>
+<instance part="J13" gate="G$1" x="33.02" y="571.5" smashed="yes" rot="R180"/>
+<instance part="R46" gate="G$1" x="45.72" y="561.34" smashed="yes">
+<attribute name="VALUE" x="44.45" y="560.578" size="1.778" layer="96"/>
 </instance>
-<instance part="R47" gate="G$1" x="30.48" y="482.6" smashed="yes">
-<attribute name="VALUE" x="29.21" y="481.838" size="1.778" layer="96"/>
+<instance part="R47" gate="G$1" x="45.72" y="563.88" smashed="yes">
+<attribute name="VALUE" x="44.45" y="563.118" size="1.778" layer="96"/>
 </instance>
-<instance part="R48" gate="G$1" x="30.48" y="485.14" smashed="yes">
-<attribute name="VALUE" x="29.21" y="484.378" size="1.778" layer="96"/>
+<instance part="R48" gate="G$1" x="45.72" y="566.42" smashed="yes">
+<attribute name="VALUE" x="44.45" y="565.658" size="1.778" layer="96"/>
 </instance>
-<instance part="R49" gate="G$1" x="30.48" y="487.68" smashed="yes">
-<attribute name="VALUE" x="29.21" y="486.918" size="1.778" layer="96"/>
+<instance part="R49" gate="G$1" x="45.72" y="568.96" smashed="yes">
+<attribute name="VALUE" x="44.45" y="568.198" size="1.778" layer="96"/>
 </instance>
-<instance part="R50" gate="G$1" x="30.48" y="490.22" smashed="yes">
-<attribute name="VALUE" x="29.21" y="489.458" size="1.778" layer="96"/>
+<instance part="R50" gate="G$1" x="45.72" y="571.5" smashed="yes">
+<attribute name="VALUE" x="44.45" y="570.738" size="1.778" layer="96"/>
 </instance>
-<instance part="R51" gate="G$1" x="30.48" y="492.76" smashed="yes">
-<attribute name="VALUE" x="29.21" y="491.998" size="1.778" layer="96"/>
+<instance part="R51" gate="G$1" x="45.72" y="574.04" smashed="yes">
+<attribute name="VALUE" x="44.45" y="573.278" size="1.778" layer="96"/>
 </instance>
-<instance part="R52" gate="G$1" x="30.48" y="495.3" smashed="yes">
-<attribute name="VALUE" x="29.21" y="494.538" size="1.778" layer="96"/>
+<instance part="R52" gate="G$1" x="45.72" y="576.58" smashed="yes">
+<attribute name="VALUE" x="44.45" y="575.818" size="1.778" layer="96"/>
 </instance>
-<instance part="R53" gate="G$1" x="30.48" y="497.84" smashed="yes">
-<attribute name="VALUE" x="29.21" y="497.078" size="1.778" layer="96"/>
+<instance part="R53" gate="G$1" x="45.72" y="579.12" smashed="yes">
+<attribute name="VALUE" x="44.45" y="578.358" size="1.778" layer="96"/>
 </instance>
-<instance part="LED41" gate="G$1" x="38.1" y="497.84" smashed="yes" rot="R90"/>
-<instance part="LED42" gate="G$1" x="38.1" y="495.3" smashed="yes" rot="R90"/>
-<instance part="LED43" gate="G$1" x="38.1" y="492.76" smashed="yes" rot="R90"/>
-<instance part="LED44" gate="G$1" x="38.1" y="490.22" smashed="yes" rot="R90"/>
-<instance part="LED45" gate="G$1" x="38.1" y="487.68" smashed="yes" rot="R90"/>
-<instance part="LED46" gate="G$1" x="38.1" y="485.14" smashed="yes" rot="R90"/>
-<instance part="LED47" gate="G$1" x="38.1" y="482.6" smashed="yes" rot="R90"/>
-<instance part="LED48" gate="G$1" x="38.1" y="480.06" smashed="yes" rot="R90"/>
-<instance part="GND56" gate="1" x="43.18" y="474.98" smashed="yes">
-<attribute name="VALUE" x="40.64" y="472.44" size="1.778" layer="96"/>
+<instance part="LED41" gate="G$1" x="53.34" y="579.12" smashed="yes" rot="R90"/>
+<instance part="LED42" gate="G$1" x="53.34" y="576.58" smashed="yes" rot="R90"/>
+<instance part="LED43" gate="G$1" x="53.34" y="574.04" smashed="yes" rot="R90"/>
+<instance part="LED44" gate="G$1" x="53.34" y="571.5" smashed="yes" rot="R90"/>
+<instance part="LED45" gate="G$1" x="53.34" y="568.96" smashed="yes" rot="R90"/>
+<instance part="LED46" gate="G$1" x="53.34" y="566.42" smashed="yes" rot="R90"/>
+<instance part="LED47" gate="G$1" x="53.34" y="563.88" smashed="yes" rot="R90"/>
+<instance part="LED48" gate="G$1" x="53.34" y="561.34" smashed="yes" rot="R90"/>
+<instance part="GND56" gate="1" x="58.42" y="556.26" smashed="yes">
+<attribute name="VALUE" x="55.88" y="553.72" size="1.778" layer="96"/>
 </instance>
-<instance part="R16" gate="G$1" x="93.98" y="480.06" smashed="yes">
-<attribute name="VALUE" x="92.71" y="479.298" size="1.778" layer="96"/>
+<instance part="R16" gate="G$1" x="109.22" y="561.34" smashed="yes">
+<attribute name="VALUE" x="107.95" y="560.578" size="1.778" layer="96"/>
 </instance>
-<instance part="R6" gate="G$1" x="93.98" y="482.6" smashed="yes">
-<attribute name="VALUE" x="92.71" y="481.838" size="1.778" layer="96"/>
+<instance part="R6" gate="G$1" x="109.22" y="563.88" smashed="yes">
+<attribute name="VALUE" x="107.95" y="563.118" size="1.778" layer="96"/>
 </instance>
-<instance part="R7" gate="G$1" x="93.98" y="485.14" smashed="yes">
-<attribute name="VALUE" x="92.71" y="484.378" size="1.778" layer="96"/>
+<instance part="R7" gate="G$1" x="109.22" y="566.42" smashed="yes">
+<attribute name="VALUE" x="107.95" y="565.658" size="1.778" layer="96"/>
 </instance>
-<instance part="R8" gate="G$1" x="93.98" y="457.2" smashed="yes">
-<attribute name="VALUE" x="92.71" y="456.438" size="1.778" layer="96"/>
+<instance part="R8" gate="G$1" x="109.22" y="538.48" smashed="yes">
+<attribute name="VALUE" x="107.95" y="537.718" size="1.778" layer="96"/>
 </instance>
-<instance part="R9" gate="G$1" x="93.98" y="454.66" smashed="yes">
-<attribute name="VALUE" x="92.71" y="453.898" size="1.778" layer="96"/>
+<instance part="R9" gate="G$1" x="109.22" y="535.94" smashed="yes">
+<attribute name="VALUE" x="107.95" y="535.178" size="1.778" layer="96"/>
 </instance>
-<instance part="R10" gate="G$1" x="93.98" y="452.12" smashed="yes">
-<attribute name="VALUE" x="92.71" y="451.358" size="1.778" layer="96"/>
+<instance part="R10" gate="G$1" x="109.22" y="533.4" smashed="yes">
+<attribute name="VALUE" x="107.95" y="532.638" size="1.778" layer="96"/>
 </instance>
-<instance part="R11" gate="G$1" x="93.98" y="449.58" smashed="yes">
-<attribute name="VALUE" x="92.71" y="448.818" size="1.778" layer="96"/>
+<instance part="R11" gate="G$1" x="109.22" y="530.86" smashed="yes">
+<attribute name="VALUE" x="107.95" y="530.098" size="1.778" layer="96"/>
 </instance>
-<instance part="R12" gate="G$1" x="93.98" y="467.36" smashed="yes">
-<attribute name="VALUE" x="92.71" y="466.598" size="1.778" layer="96"/>
+<instance part="R12" gate="G$1" x="109.22" y="548.64" smashed="yes">
+<attribute name="VALUE" x="107.95" y="547.878" size="1.778" layer="96"/>
 </instance>
-<instance part="R13" gate="G$1" x="93.98" y="464.82" smashed="yes">
-<attribute name="VALUE" x="92.71" y="464.058" size="1.778" layer="96"/>
+<instance part="R13" gate="G$1" x="109.22" y="546.1" smashed="yes">
+<attribute name="VALUE" x="107.95" y="545.338" size="1.778" layer="96"/>
 </instance>
-<instance part="R22" gate="G$1" x="93.98" y="462.28" smashed="yes">
-<attribute name="VALUE" x="92.71" y="461.518" size="1.778" layer="96"/>
+<instance part="R22" gate="G$1" x="109.22" y="543.56" smashed="yes">
+<attribute name="VALUE" x="107.95" y="542.798" size="1.778" layer="96"/>
 </instance>
 <instance part="R23" gate="G$1" x="363.22" y="528.32" smashed="yes">
 <attribute name="NAME" x="358.14" y="533.4" size="1.016" layer="95" font="vector" rot="MR180"/>
@@ -29807,63 +29807,63 @@ Read the voltage on CC1/2, if it is
 <attribute name="NAME" x="358.14" y="518.16" size="1.016" layer="95" font="vector" rot="MR180"/>
 <attribute name="VALUE" x="358.14" y="515.62" size="1.016" layer="96" font="vector"/>
 </instance>
-<instance part="U$3" gate="G$1" x="2.54" y="332.74" smashed="yes">
-<attribute name="NAME" x="-1.28416875" y="348.7753" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-1.2772" y="346.055" size="1.778" layer="96"/>
+<instance part="U$3" gate="G$1" x="17.78" y="414.02" smashed="yes">
+<attribute name="NAME" x="13.95583125" y="430.0553" size="1.778" layer="95"/>
+<attribute name="VALUE" x="13.9628" y="427.335" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY107" gate="GND" x="0" y="312.42" smashed="yes"/>
-<instance part="U$1" gate="G$1" x="60.96" y="332.74" smashed="yes">
-<attribute name="NAME" x="57.13583125" y="348.7753" size="1.778" layer="95"/>
-<attribute name="VALUE" x="57.1428" y="346.055" size="1.778" layer="96"/>
+<instance part="SUPPLY107" gate="GND" x="15.24" y="393.7" smashed="yes"/>
+<instance part="U$1" gate="G$1" x="76.2" y="414.02" smashed="yes">
+<attribute name="NAME" x="72.37583125" y="430.0553" size="1.778" layer="95"/>
+<attribute name="VALUE" x="72.3828" y="427.335" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY5" gate="GND" x="58.42" y="312.42" smashed="yes"/>
-<instance part="R206" gate="G$1" x="93.98" y="459.74" smashed="yes">
-<attribute name="VALUE" x="92.71" y="458.978" size="1.778" layer="96"/>
+<instance part="SUPPLY5" gate="GND" x="73.66" y="393.7" smashed="yes"/>
+<instance part="R206" gate="G$1" x="109.22" y="541.02" smashed="yes">
+<attribute name="VALUE" x="107.95" y="540.258" size="1.778" layer="96"/>
 </instance>
-<instance part="J1" gate="G$1" x="165.1" y="406.4" smashed="yes">
-<attribute name="NAME" x="163.83" y="412.75" size="1.27" layer="95" ratio="10"/>
+<instance part="J1" gate="G$1" x="180.34" y="487.68" smashed="yes">
+<attribute name="NAME" x="179.07" y="494.03" size="1.27" layer="95" ratio="10"/>
 </instance>
-<instance part="GND53" gate="1" x="157.48" y="401.32" smashed="yes">
-<attribute name="VALUE" x="154.94" y="398.78" size="1.778" layer="96"/>
+<instance part="GND53" gate="1" x="172.72" y="482.6" smashed="yes">
+<attribute name="VALUE" x="170.18" y="480.06" size="1.778" layer="96"/>
 </instance>
-<instance part="R31" gate="G$1" x="38.1" y="401.32" smashed="yes" rot="R90">
-<attribute name="NAME" x="36.6014" y="400.05" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="41.402" y="400.05" size="1.778" layer="96" rot="R90"/>
+<instance part="R31" gate="G$1" x="53.34" y="482.6" smashed="yes" rot="R90">
+<attribute name="NAME" x="51.8414" y="481.33" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="56.642" y="481.33" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R136" gate="G$1" x="38.1" y="391.16" smashed="yes" rot="R90">
-<attribute name="NAME" x="36.6014" y="389.89" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="41.402" y="389.89" size="1.778" layer="96" rot="R90"/>
+<instance part="R136" gate="G$1" x="53.34" y="472.44" smashed="yes" rot="R90">
+<attribute name="NAME" x="51.8414" y="471.17" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="56.642" y="471.17" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R160" gate="G$1" x="45.72" y="401.32" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.2214" y="400.05" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="49.022" y="400.05" size="1.778" layer="96" rot="R90"/>
+<instance part="R160" gate="G$1" x="60.96" y="482.6" smashed="yes" rot="R90">
+<attribute name="NAME" x="59.4614" y="481.33" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="64.262" y="481.33" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R210" gate="G$1" x="45.72" y="391.16" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.2214" y="389.89" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="49.022" y="389.89" size="1.778" layer="96" rot="R90"/>
+<instance part="R210" gate="G$1" x="60.96" y="472.44" smashed="yes" rot="R90">
+<attribute name="NAME" x="59.4614" y="471.17" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="64.262" y="471.17" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="EXTTRIGIN" gate="G$1" x="12.7" y="406.4" smashed="yes" rot="MR0">
-<attribute name="NAME" x="5.08" y="408.94" size="1.27" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="5.08" y="406.4" size="1.27" layer="95" rot="MR0"/>
+<instance part="EXTTRIGIN" gate="G$1" x="27.94" y="487.68" smashed="yes" rot="MR0">
+<attribute name="NAME" x="20.32" y="490.22" size="1.27" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="20.32" y="487.68" size="1.27" layer="95" rot="MR0"/>
 </instance>
-<instance part="SUPPLY21" gate="GND" x="10.16" y="396.24" smashed="yes" rot="MR0"/>
-<instance part="1KHZOUT50" gate="G$1" x="106.68" y="406.4" smashed="yes" rot="MR180">
-<attribute name="NAME" x="114.3" y="403.86" size="1.27" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="114.3" y="406.4" size="1.27" layer="95" rot="MR180"/>
+<instance part="SUPPLY21" gate="GND" x="25.4" y="477.52" smashed="yes" rot="MR0"/>
+<instance part="1KHZOUT50" gate="G$1" x="121.92" y="487.68" smashed="yes" rot="MR180">
+<attribute name="NAME" x="129.54" y="485.14" size="1.27" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="129.54" y="487.68" size="1.27" layer="95" rot="MR180"/>
 </instance>
-<instance part="R211" gate="G$1" x="88.9" y="406.4" smashed="yes" rot="R180">
-<attribute name="NAME" x="90.17" y="404.9014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="90.17" y="409.702" size="1.778" layer="96" rot="R180"/>
+<instance part="R211" gate="G$1" x="104.14" y="487.68" smashed="yes" rot="R180">
+<attribute name="NAME" x="105.41" y="486.1814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="105.41" y="490.982" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY42" gate="GND" x="45.72" y="383.54" smashed="yes" rot="MR0"/>
-<instance part="SUPPLY41" gate="GND" x="109.22" y="396.24" smashed="yes" rot="MR0"/>
-<instance part="SUPPLY43" gate="GND" x="142.24" y="365.76" smashed="yes"/>
-<instance part="SUPPLY50" gate="GND" x="175.26" y="365.76" smashed="yes"/>
-<instance part="R236" gate="G$1" x="93.98" y="490.22" smashed="yes">
-<attribute name="VALUE" x="92.71" y="489.458" size="1.778" layer="96"/>
+<instance part="SUPPLY42" gate="GND" x="60.96" y="464.82" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY41" gate="GND" x="124.46" y="477.52" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY43" gate="GND" x="157.48" y="447.04" smashed="yes"/>
+<instance part="SUPPLY50" gate="GND" x="190.5" y="447.04" smashed="yes"/>
+<instance part="R236" gate="G$1" x="109.22" y="571.5" smashed="yes">
+<attribute name="VALUE" x="107.95" y="570.738" size="1.778" layer="96"/>
 </instance>
-<instance part="R238" gate="G$1" x="93.98" y="492.76" smashed="yes">
-<attribute name="VALUE" x="92.71" y="491.998" size="1.778" layer="96"/>
+<instance part="R238" gate="G$1" x="109.22" y="574.04" smashed="yes">
+<attribute name="VALUE" x="107.95" y="573.278" size="1.778" layer="96"/>
 </instance>
 <instance part="IC11" gate="A" x="78.74" y="248.92" smashed="yes">
 <attribute name="NAME" x="81.28" y="252.095" size="1.778" layer="95"/>
@@ -29888,11 +29888,11 @@ Read the voltage on CC1/2, if it is
 <instance part="R241" gate="G$1" x="91.44" y="233.68" smashed="yes" rot="R90">
 <attribute name="VALUE" x="92.202" y="232.41" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R242" gate="G$1" x="93.98" y="497.84" smashed="yes">
-<attribute name="VALUE" x="92.71" y="497.078" size="1.778" layer="96"/>
+<instance part="R242" gate="G$1" x="109.22" y="579.12" smashed="yes">
+<attribute name="VALUE" x="107.95" y="578.358" size="1.778" layer="96"/>
 </instance>
-<instance part="R243" gate="G$1" x="93.98" y="495.3" smashed="yes">
-<attribute name="VALUE" x="92.71" y="494.538" size="1.778" layer="96"/>
+<instance part="R243" gate="G$1" x="109.22" y="576.58" smashed="yes">
+<attribute name="VALUE" x="107.95" y="575.818" size="1.778" layer="96"/>
 </instance>
 <instance part="R244" gate="G$1" x="134.62" y="254" smashed="yes" rot="R90">
 <attribute name="VALUE" x="135.382" y="252.73" size="1.778" layer="96" rot="R90"/>
@@ -30267,8 +30267,8 @@ Read the voltage on CC1/2, if it is
 <label x="474.98" y="373.38" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="170.18" y1="332.74" x2="180.34" y2="332.74" width="0.1524" layer="91"/>
-<label x="175.26" y="332.74" size="1.778" layer="95"/>
+<wire x1="185.42" y1="414.02" x2="195.58" y2="414.02" width="0.1524" layer="91"/>
+<label x="190.5" y="414.02" size="1.778" layer="95"/>
 <pinref part="Y2" gate="G$1" pin="GND"/>
 </segment>
 <segment>
@@ -30330,55 +30330,55 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="LED32" gate="G$1" pin="C"/>
-<wire x1="43.18" y1="447.04" x2="43.18" y2="449.58" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="528.32" x2="58.42" y2="530.86" width="0.1524" layer="91"/>
 <pinref part="LED25" gate="G$1" pin="C"/>
-<junction x="43.18" y="449.58"/>
+<junction x="58.42" y="530.86"/>
 <pinref part="LED26" gate="G$1" pin="C"/>
-<wire x1="43.18" y1="449.58" x2="43.18" y2="452.12" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="452.12" x2="43.18" y2="454.66" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="454.66" x2="43.18" y2="457.2" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="457.2" x2="43.18" y2="459.74" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="459.74" x2="43.18" y2="462.28" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="462.28" x2="43.18" y2="464.82" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="464.82" x2="43.18" y2="467.36" width="0.1524" layer="91"/>
-<junction x="43.18" y="464.82"/>
+<wire x1="58.42" y1="530.86" x2="58.42" y2="533.4" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="533.4" x2="58.42" y2="535.94" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="535.94" x2="58.42" y2="538.48" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="538.48" x2="58.42" y2="541.02" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="541.02" x2="58.42" y2="543.56" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="543.56" x2="58.42" y2="546.1" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="546.1" x2="58.42" y2="548.64" width="0.1524" layer="91"/>
+<junction x="58.42" y="546.1"/>
 <pinref part="LED27" gate="G$1" pin="C"/>
-<junction x="43.18" y="462.28"/>
+<junction x="58.42" y="543.56"/>
 <pinref part="LED28" gate="G$1" pin="C"/>
-<junction x="43.18" y="459.74"/>
+<junction x="58.42" y="541.02"/>
 <pinref part="LED29" gate="G$1" pin="C"/>
-<junction x="43.18" y="457.2"/>
+<junction x="58.42" y="538.48"/>
 <pinref part="LED30" gate="G$1" pin="C"/>
-<junction x="43.18" y="454.66"/>
+<junction x="58.42" y="535.94"/>
 <pinref part="GND55" gate="1" pin="GND"/>
 <pinref part="J11" gate="G$1" pin="7"/>
-<wire x1="43.18" y1="452.12" x2="12.7" y2="452.12" width="0.1524" layer="91"/>
-<junction x="43.18" y="452.12"/>
+<wire x1="58.42" y1="533.4" x2="27.94" y2="533.4" width="0.1524" layer="91"/>
+<junction x="58.42" y="533.4"/>
 </segment>
 <segment>
 <pinref part="LED48" gate="G$1" pin="C"/>
-<wire x1="43.18" y1="477.52" x2="43.18" y2="480.06" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="558.8" x2="58.42" y2="561.34" width="0.1524" layer="91"/>
 <pinref part="LED41" gate="G$1" pin="C"/>
-<wire x1="43.18" y1="480.06" x2="43.18" y2="482.6" width="0.1524" layer="91"/>
-<junction x="43.18" y="480.06"/>
+<wire x1="58.42" y1="561.34" x2="58.42" y2="563.88" width="0.1524" layer="91"/>
+<junction x="58.42" y="561.34"/>
 <pinref part="LED42" gate="G$1" pin="C"/>
-<wire x1="43.18" y1="482.6" x2="43.18" y2="485.14" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="485.14" x2="43.18" y2="487.68" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="487.68" x2="43.18" y2="490.22" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="490.22" x2="43.18" y2="492.76" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="492.76" x2="43.18" y2="495.3" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="495.3" x2="43.18" y2="497.84" width="0.1524" layer="91"/>
-<junction x="43.18" y="495.3"/>
+<wire x1="58.42" y1="563.88" x2="58.42" y2="566.42" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="566.42" x2="58.42" y2="568.96" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="568.96" x2="58.42" y2="571.5" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="571.5" x2="58.42" y2="574.04" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="574.04" x2="58.42" y2="576.58" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="576.58" x2="58.42" y2="579.12" width="0.1524" layer="91"/>
+<junction x="58.42" y="576.58"/>
 <pinref part="LED43" gate="G$1" pin="C"/>
-<junction x="43.18" y="492.76"/>
+<junction x="58.42" y="574.04"/>
 <pinref part="LED44" gate="G$1" pin="C"/>
-<junction x="43.18" y="490.22"/>
+<junction x="58.42" y="571.5"/>
 <pinref part="LED45" gate="G$1" pin="C"/>
-<junction x="43.18" y="487.68"/>
+<junction x="58.42" y="568.96"/>
 <pinref part="LED46" gate="G$1" pin="C"/>
-<junction x="43.18" y="485.14"/>
+<junction x="58.42" y="566.42"/>
 <pinref part="LED47" gate="G$1" pin="C"/>
-<junction x="43.18" y="482.6"/>
+<junction x="58.42" y="563.88"/>
 <pinref part="GND56" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -30396,40 +30396,40 @@ Read the voltage on CC1/2, if it is
 <segment>
 <pinref part="R136" gate="G$1" pin="P$1"/>
 <pinref part="R210" gate="G$1" pin="P$1"/>
-<wire x1="45.72" y1="386.08" x2="38.1" y2="386.08" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="467.36" x2="53.34" y2="467.36" width="0.1524" layer="91"/>
 <pinref part="SUPPLY42" gate="GND" pin="GND"/>
-<junction x="45.72" y="386.08"/>
+<junction x="60.96" y="467.36"/>
 </segment>
 <segment>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND4"/>
 <pinref part="SUPPLY21" gate="GND" pin="GND"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND2"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND1"/>
-<wire x1="10.16" y1="414.02" x2="15.24" y2="414.02" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="495.3" x2="30.48" y2="495.3" width="0.1524" layer="91"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND3"/>
-<wire x1="15.24" y1="414.02" x2="15.24" y2="398.78" width="0.1524" layer="91"/>
-<junction x="15.24" y="414.02"/>
-<wire x1="15.24" y1="398.78" x2="10.16" y2="398.78" width="0.1524" layer="91"/>
-<junction x="15.24" y="398.78"/>
-<junction x="10.16" y="398.78"/>
+<wire x1="30.48" y1="495.3" x2="30.48" y2="480.06" width="0.1524" layer="91"/>
+<junction x="30.48" y="495.3"/>
+<wire x1="30.48" y1="480.06" x2="25.4" y2="480.06" width="0.1524" layer="91"/>
+<junction x="30.48" y="480.06"/>
+<junction x="25.4" y="480.06"/>
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="5"/>
-<wire x1="114.3" y1="487.68" x2="63.5" y2="487.68" width="0.1524" layer="91"/>
-<label x="63.5" y="487.68" size="1.778" layer="95"/>
+<wire x1="129.54" y1="568.96" x2="78.74" y2="568.96" width="0.1524" layer="91"/>
+<label x="78.74" y="568.96" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND4"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND2"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND1"/>
-<wire x1="109.22" y1="398.78" x2="104.14" y2="398.78" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="480.06" x2="119.38" y2="480.06" width="0.1524" layer="91"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND3"/>
-<wire x1="104.14" y1="398.78" x2="104.14" y2="414.02" width="0.1524" layer="91"/>
-<junction x="104.14" y="398.78"/>
-<wire x1="104.14" y1="414.02" x2="109.22" y2="414.02" width="0.1524" layer="91"/>
-<junction x="104.14" y="414.02"/>
+<wire x1="119.38" y1="480.06" x2="119.38" y2="495.3" width="0.1524" layer="91"/>
+<junction x="119.38" y="480.06"/>
+<wire x1="119.38" y1="495.3" x2="124.46" y2="495.3" width="0.1524" layer="91"/>
+<junction x="119.38" y="495.3"/>
 <pinref part="SUPPLY41" gate="GND" pin="GND"/>
-<junction x="109.22" y="398.78"/>
+<junction x="124.46" y="480.06"/>
 </segment>
 <segment>
 <pinref part="CLKEXT" gate="G1" pin="2"/>
@@ -30476,10 +30476,10 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="C59" gate="C$1" pin="2"/>
-<wire x1="144.78" y1="337.82" x2="149.86" y2="337.82" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="337.82" x2="144.78" y2="337.82" width="0.1524" layer="91"/>
-<junction x="144.78" y="337.82"/>
-<label x="134.62" y="337.82" size="1.778" layer="95"/>
+<wire x1="160.02" y1="419.1" x2="165.1" y2="419.1" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="419.1" x2="160.02" y2="419.1" width="0.1524" layer="91"/>
+<junction x="160.02" y="419.1"/>
+<label x="149.86" y="419.1" size="1.778" layer="95"/>
 <pinref part="Y2" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
@@ -30702,11 +30702,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="5"/>
-<wire x1="12.7" y1="487.68" x2="-7.62" y2="487.68" width="0.1524" layer="91"/>
-<label x="-7.62" y="487.68" size="1.778" layer="95"/>
+<wire x1="27.94" y1="568.96" x2="7.62" y2="568.96" width="0.1524" layer="91"/>
+<label x="7.62" y="568.96" size="1.778" layer="95"/>
 <pinref part="R49" gate="G$1" pin="P$1"/>
-<wire x1="12.7" y1="487.68" x2="25.4" y2="487.68" width="0.1524" layer="91"/>
-<junction x="12.7" y="487.68"/>
+<wire x1="27.94" y1="568.96" x2="40.64" y2="568.96" width="0.1524" layer="91"/>
+<junction x="27.94" y="568.96"/>
 </segment>
 </net>
 <net name="LED0" class="0">
@@ -30717,11 +30717,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="497.84" x2="-7.62" y2="497.84" width="0.1524" layer="91"/>
-<label x="-7.62" y="497.84" size="1.778" layer="95"/>
+<wire x1="27.94" y1="579.12" x2="7.62" y2="579.12" width="0.1524" layer="91"/>
+<label x="7.62" y="579.12" size="1.778" layer="95"/>
 <pinref part="R53" gate="G$1" pin="P$1"/>
-<wire x1="12.7" y1="497.84" x2="25.4" y2="497.84" width="0.1524" layer="91"/>
-<junction x="12.7" y="497.84"/>
+<wire x1="27.94" y1="579.12" x2="40.64" y2="579.12" width="0.1524" layer="91"/>
+<junction x="27.94" y="579.12"/>
 </segment>
 </net>
 <net name="LED1" class="0">
@@ -30732,11 +30732,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="2"/>
-<wire x1="12.7" y1="495.3" x2="-7.62" y2="495.3" width="0.1524" layer="91"/>
-<label x="-7.62" y="495.3" size="1.778" layer="95"/>
+<wire x1="27.94" y1="576.58" x2="7.62" y2="576.58" width="0.1524" layer="91"/>
+<label x="7.62" y="576.58" size="1.778" layer="95"/>
 <pinref part="R52" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="495.3" x2="12.7" y2="495.3" width="0.1524" layer="91"/>
-<junction x="12.7" y="495.3"/>
+<wire x1="40.64" y1="576.58" x2="27.94" y2="576.58" width="0.1524" layer="91"/>
+<junction x="27.94" y="576.58"/>
 </segment>
 </net>
 <net name="LED2" class="0">
@@ -30747,11 +30747,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="3"/>
-<wire x1="12.7" y1="492.76" x2="-7.62" y2="492.76" width="0.1524" layer="91"/>
-<label x="-7.62" y="492.76" size="1.778" layer="95"/>
+<wire x1="27.94" y1="574.04" x2="7.62" y2="574.04" width="0.1524" layer="91"/>
+<label x="7.62" y="574.04" size="1.778" layer="95"/>
 <pinref part="R51" gate="G$1" pin="P$1"/>
-<wire x1="12.7" y1="492.76" x2="25.4" y2="492.76" width="0.1524" layer="91"/>
-<junction x="12.7" y="492.76"/>
+<wire x1="27.94" y1="574.04" x2="40.64" y2="574.04" width="0.1524" layer="91"/>
+<junction x="27.94" y="574.04"/>
 </segment>
 </net>
 <net name="LED3" class="0">
@@ -30762,11 +30762,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="4"/>
-<wire x1="12.7" y1="490.22" x2="-7.62" y2="490.22" width="0.1524" layer="91"/>
-<label x="-7.62" y="490.22" size="1.778" layer="95"/>
+<wire x1="27.94" y1="571.5" x2="7.62" y2="571.5" width="0.1524" layer="91"/>
+<label x="7.62" y="571.5" size="1.778" layer="95"/>
 <pinref part="R50" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="490.22" x2="12.7" y2="490.22" width="0.1524" layer="91"/>
-<junction x="12.7" y="490.22"/>
+<wire x1="40.64" y1="571.5" x2="27.94" y2="571.5" width="0.1524" layer="91"/>
+<junction x="27.94" y="571.5"/>
 </segment>
 </net>
 <net name="SDO3_IN1" class="0">
@@ -30784,8 +30784,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="CLKEXT" gate="G1" pin="1"/>
-<wire x1="142.24" y1="370.84" x2="137.16" y2="370.84" width="0.1524" layer="91"/>
-<label x="142.24" y="370.84" size="1.778" layer="95" rot="MR0"/>
+<wire x1="157.48" y1="452.12" x2="152.4" y2="452.12" width="0.1524" layer="91"/>
+<label x="157.48" y="452.12" size="1.778" layer="95" rot="MR0"/>
 </segment>
 </net>
 <net name="DEBUGOUT1" class="0">
@@ -30796,11 +30796,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="6"/>
-<wire x1="12.7" y1="485.14" x2="-7.62" y2="485.14" width="0.1524" layer="91"/>
-<label x="-7.62" y="485.14" size="1.778" layer="95"/>
+<wire x1="27.94" y1="566.42" x2="7.62" y2="566.42" width="0.1524" layer="91"/>
+<label x="7.62" y="566.42" size="1.778" layer="95"/>
 <pinref part="R48" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="485.14" x2="12.7" y2="485.14" width="0.1524" layer="91"/>
-<junction x="12.7" y="485.14"/>
+<wire x1="40.64" y1="566.42" x2="27.94" y2="566.42" width="0.1524" layer="91"/>
+<junction x="27.94" y="566.42"/>
 </segment>
 </net>
 <net name="DEBUGOUT2" class="0">
@@ -30811,11 +30811,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="7"/>
-<wire x1="12.7" y1="482.6" x2="-7.62" y2="482.6" width="0.1524" layer="91"/>
-<label x="-7.62" y="482.6" size="1.778" layer="95"/>
+<wire x1="27.94" y1="563.88" x2="7.62" y2="563.88" width="0.1524" layer="91"/>
+<label x="7.62" y="563.88" size="1.778" layer="95"/>
 <pinref part="R47" gate="G$1" pin="P$1"/>
-<wire x1="12.7" y1="482.6" x2="25.4" y2="482.6" width="0.1524" layer="91"/>
-<junction x="12.7" y="482.6"/>
+<wire x1="27.94" y1="563.88" x2="40.64" y2="563.88" width="0.1524" layer="91"/>
+<junction x="27.94" y="563.88"/>
 </segment>
 </net>
 <net name="DEBUGOUT3" class="0">
@@ -30826,11 +30826,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="8"/>
-<wire x1="12.7" y1="480.06" x2="-7.62" y2="480.06" width="0.1524" layer="91"/>
-<label x="-7.62" y="480.06" size="1.778" layer="95"/>
+<wire x1="27.94" y1="561.34" x2="7.62" y2="561.34" width="0.1524" layer="91"/>
+<label x="7.62" y="561.34" size="1.778" layer="95"/>
 <pinref part="R46" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="480.06" x2="12.7" y2="480.06" width="0.1524" layer="91"/>
-<junction x="12.7" y="480.06"/>
+<wire x1="40.64" y1="561.34" x2="27.94" y2="561.34" width="0.1524" layer="91"/>
+<junction x="27.94" y="561.34"/>
 </segment>
 </net>
 <net name="DEBUGOUT4" class="0">
@@ -30841,11 +30841,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="467.36" x2="-7.62" y2="467.36" width="0.1524" layer="91"/>
-<label x="-7.62" y="467.36" size="1.778" layer="95"/>
+<wire x1="27.94" y1="548.64" x2="7.62" y2="548.64" width="0.1524" layer="91"/>
+<label x="7.62" y="548.64" size="1.778" layer="95"/>
 <pinref part="R37" gate="G$1" pin="P$1"/>
-<wire x1="12.7" y1="467.36" x2="25.4" y2="467.36" width="0.1524" layer="91"/>
-<junction x="12.7" y="467.36"/>
+<wire x1="27.94" y1="548.64" x2="40.64" y2="548.64" width="0.1524" layer="91"/>
+<junction x="27.94" y="548.64"/>
 </segment>
 </net>
 <net name="DEBUGOUT5" class="0">
@@ -30856,11 +30856,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="2"/>
-<wire x1="12.7" y1="464.82" x2="-7.62" y2="464.82" width="0.1524" layer="91"/>
-<label x="-7.62" y="464.82" size="1.778" layer="95"/>
+<wire x1="27.94" y1="546.1" x2="7.62" y2="546.1" width="0.1524" layer="91"/>
+<label x="7.62" y="546.1" size="1.778" layer="95"/>
 <pinref part="R36" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="464.82" x2="12.7" y2="464.82" width="0.1524" layer="91"/>
-<junction x="12.7" y="464.82"/>
+<wire x1="40.64" y1="546.1" x2="27.94" y2="546.1" width="0.1524" layer="91"/>
+<junction x="27.94" y="546.1"/>
 </segment>
 </net>
 <net name="DEBUGOUT6" class="0">
@@ -30871,11 +30871,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="3"/>
-<wire x1="12.7" y1="462.28" x2="-7.62" y2="462.28" width="0.1524" layer="91"/>
-<label x="-7.62" y="462.28" size="1.778" layer="95"/>
+<wire x1="27.94" y1="543.56" x2="7.62" y2="543.56" width="0.1524" layer="91"/>
+<label x="7.62" y="543.56" size="1.778" layer="95"/>
 <pinref part="R35" gate="G$1" pin="P$1"/>
-<wire x1="12.7" y1="462.28" x2="25.4" y2="462.28" width="0.1524" layer="91"/>
-<junction x="12.7" y="462.28"/>
+<wire x1="27.94" y1="543.56" x2="40.64" y2="543.56" width="0.1524" layer="91"/>
+<junction x="27.94" y="543.56"/>
 </segment>
 </net>
 <net name="DEBUGOUT7" class="0">
@@ -30886,11 +30886,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="4"/>
-<wire x1="12.7" y1="459.74" x2="-7.62" y2="459.74" width="0.1524" layer="91"/>
-<label x="-7.62" y="459.74" size="1.778" layer="95"/>
+<wire x1="27.94" y1="541.02" x2="7.62" y2="541.02" width="0.1524" layer="91"/>
+<label x="7.62" y="541.02" size="1.778" layer="95"/>
 <pinref part="R34" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="459.74" x2="12.7" y2="459.74" width="0.1524" layer="91"/>
-<junction x="12.7" y="459.74"/>
+<wire x1="40.64" y1="541.02" x2="27.94" y2="541.02" width="0.1524" layer="91"/>
+<junction x="27.94" y="541.02"/>
 </segment>
 </net>
 <net name="ORB1" class="0">
@@ -30942,8 +30942,8 @@ Read the voltage on CC1/2, if it is
 <label x="226.06" y="530.86" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="170.18" y1="337.82" x2="180.34" y2="337.82" width="0.1524" layer="91"/>
-<label x="175.26" y="337.82" size="1.778" layer="95"/>
+<wire x1="185.42" y1="419.1" x2="195.58" y2="419.1" width="0.1524" layer="91"/>
+<label x="190.5" y="419.1" size="1.778" layer="95"/>
 <pinref part="Y2" gate="G$1" pin="OUT"/>
 </segment>
 </net>
@@ -30962,11 +30962,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="5"/>
-<wire x1="12.7" y1="457.2" x2="-7.62" y2="457.2" width="0.1524" layer="91"/>
-<label x="-7.62" y="457.2" size="1.778" layer="95"/>
+<wire x1="27.94" y1="538.48" x2="7.62" y2="538.48" width="0.1524" layer="91"/>
+<label x="7.62" y="538.48" size="1.778" layer="95"/>
 <pinref part="R33" gate="G$1" pin="P$1"/>
-<wire x1="12.7" y1="457.2" x2="25.4" y2="457.2" width="0.1524" layer="91"/>
-<junction x="12.7" y="457.2"/>
+<wire x1="27.94" y1="538.48" x2="40.64" y2="538.48" width="0.1524" layer="91"/>
+<junction x="27.94" y="538.48"/>
 </segment>
 </net>
 <net name="DEBUGOUT9" class="0">
@@ -30977,11 +30977,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="6"/>
-<wire x1="12.7" y1="454.66" x2="-7.62" y2="454.66" width="0.1524" layer="91"/>
-<label x="-7.62" y="454.66" size="1.778" layer="95"/>
+<wire x1="27.94" y1="535.94" x2="7.62" y2="535.94" width="0.1524" layer="91"/>
+<label x="7.62" y="535.94" size="1.778" layer="95"/>
 <pinref part="R32" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="454.66" x2="12.7" y2="454.66" width="0.1524" layer="91"/>
-<junction x="12.7" y="454.66"/>
+<wire x1="40.64" y1="535.94" x2="27.94" y2="535.94" width="0.1524" layer="91"/>
+<junction x="27.94" y="535.94"/>
 </segment>
 </net>
 <net name="1KHZOUT50" class="0">
@@ -30992,8 +30992,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="R211" gate="G$1" pin="P$2"/>
-<wire x1="83.82" y1="406.4" x2="68.58" y2="406.4" width="0.1524" layer="91"/>
-<label x="68.58" y="406.4" size="1.778" layer="95"/>
+<wire x1="99.06" y1="487.68" x2="83.82" y2="487.68" width="0.1524" layer="91"/>
+<label x="83.82" y="487.68" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FAN_CONTROL" class="0">
@@ -31004,11 +31004,11 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="8"/>
-<wire x1="12.7" y1="449.58" x2="-7.62" y2="449.58" width="0.1524" layer="91"/>
-<label x="-7.62" y="449.58" size="1.778" layer="95"/>
+<wire x1="27.94" y1="530.86" x2="7.62" y2="530.86" width="0.1524" layer="91"/>
+<label x="7.62" y="530.86" size="1.778" layer="95"/>
 <pinref part="R30" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="449.58" x2="12.7" y2="449.58" width="0.1524" layer="91"/>
-<junction x="12.7" y="449.58"/>
+<wire x1="40.64" y1="530.86" x2="27.94" y2="530.86" width="0.1524" layer="91"/>
+<junction x="27.94" y="530.86"/>
 </segment>
 </net>
 <net name="BOARDOUT0" class="0">
@@ -31019,8 +31019,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="1"/>
-<wire x1="114.3" y1="467.36" x2="99.06" y2="467.36" width="0.1524" layer="91"/>
-<label x="99.06" y="467.36" size="1.778" layer="95"/>
+<wire x1="129.54" y1="548.64" x2="114.3" y2="548.64" width="0.1524" layer="91"/>
+<label x="114.3" y="548.64" size="1.778" layer="95"/>
 <pinref part="R12" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31032,8 +31032,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="2"/>
-<wire x1="114.3" y1="464.82" x2="99.06" y2="464.82" width="0.1524" layer="91"/>
-<label x="99.06" y="464.82" size="1.778" layer="95"/>
+<wire x1="129.54" y1="546.1" x2="114.3" y2="546.1" width="0.1524" layer="91"/>
+<label x="114.3" y="546.1" size="1.778" layer="95"/>
 <pinref part="R13" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31045,8 +31045,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="3"/>
-<wire x1="114.3" y1="462.28" x2="99.06" y2="462.28" width="0.1524" layer="91"/>
-<label x="99.06" y="462.28" size="1.778" layer="95"/>
+<wire x1="129.54" y1="543.56" x2="114.3" y2="543.56" width="0.1524" layer="91"/>
+<label x="114.3" y="543.56" size="1.778" layer="95"/>
 <pinref part="R22" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31058,8 +31058,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="4"/>
-<wire x1="114.3" y1="459.74" x2="99.06" y2="459.74" width="0.1524" layer="91"/>
-<label x="99.06" y="459.74" size="1.778" layer="95"/>
+<wire x1="129.54" y1="541.02" x2="114.3" y2="541.02" width="0.1524" layer="91"/>
+<label x="114.3" y="541.02" size="1.778" layer="95"/>
 <pinref part="R206" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31099,8 +31099,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="7"/>
-<wire x1="114.3" y1="452.12" x2="99.06" y2="452.12" width="0.1524" layer="91"/>
-<label x="99.06" y="452.12" size="1.778" layer="95"/>
+<wire x1="129.54" y1="533.4" x2="114.3" y2="533.4" width="0.1524" layer="91"/>
+<label x="114.3" y="533.4" size="1.778" layer="95"/>
 <pinref part="R10" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31112,8 +31112,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="8"/>
-<wire x1="114.3" y1="449.58" x2="99.06" y2="449.58" width="0.1524" layer="91"/>
-<label x="99.06" y="449.58" size="1.778" layer="95"/>
+<wire x1="129.54" y1="530.86" x2="114.3" y2="530.86" width="0.1524" layer="91"/>
+<label x="114.3" y="530.86" size="1.778" layer="95"/>
 <pinref part="R11" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31178,8 +31178,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="2"/>
-<wire x1="114.3" y1="495.3" x2="99.06" y2="495.3" width="0.1524" layer="91"/>
-<label x="99.06" y="495.3" size="1.778" layer="95"/>
+<wire x1="129.54" y1="576.58" x2="114.3" y2="576.58" width="0.1524" layer="91"/>
+<label x="114.3" y="576.58" size="1.778" layer="95"/>
 <pinref part="R243" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31191,8 +31191,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="3"/>
-<wire x1="114.3" y1="492.76" x2="99.06" y2="492.76" width="0.1524" layer="91"/>
-<label x="99.06" y="492.76" size="1.778" layer="95"/>
+<wire x1="129.54" y1="574.04" x2="114.3" y2="574.04" width="0.1524" layer="91"/>
+<label x="114.3" y="574.04" size="1.778" layer="95"/>
 <pinref part="R238" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31204,8 +31204,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="4"/>
-<wire x1="114.3" y1="490.22" x2="99.06" y2="490.22" width="0.1524" layer="91"/>
-<label x="99.06" y="490.22" size="1.778" layer="95"/>
+<wire x1="129.54" y1="571.5" x2="114.3" y2="571.5" width="0.1524" layer="91"/>
+<label x="114.3" y="571.5" size="1.778" layer="95"/>
 <pinref part="R236" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31259,8 +31259,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="CLKOUT2" gate="G1" pin="1"/>
-<wire x1="175.26" y1="370.84" x2="180.34" y2="370.84" width="0.1524" layer="91"/>
-<label x="175.26" y="370.84" size="1.778" layer="95"/>
+<wire x1="190.5" y1="452.12" x2="195.58" y2="452.12" width="0.1524" layer="91"/>
+<label x="190.5" y="452.12" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO70" class="0">
@@ -31292,8 +31292,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="7"/>
-<wire x1="114.3" y1="482.6" x2="99.06" y2="482.6" width="0.1524" layer="91"/>
-<label x="99.06" y="482.6" size="1.778" layer="95"/>
+<wire x1="129.54" y1="563.88" x2="114.3" y2="563.88" width="0.1524" layer="91"/>
+<label x="114.3" y="563.88" size="1.778" layer="95"/>
 <pinref part="R6" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31312,8 +31312,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="8"/>
-<wire x1="114.3" y1="480.06" x2="99.06" y2="480.06" width="0.1524" layer="91"/>
-<label x="99.06" y="480.06" size="1.778" layer="95"/>
+<wire x1="129.54" y1="561.34" x2="114.3" y2="561.34" width="0.1524" layer="91"/>
+<label x="114.3" y="561.34" size="1.778" layer="95"/>
 <pinref part="R16" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31325,8 +31325,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="6"/>
-<wire x1="114.3" y1="485.14" x2="99.06" y2="485.14" width="0.1524" layer="91"/>
-<label x="99.06" y="485.14" size="1.778" layer="95"/>
+<wire x1="129.54" y1="566.42" x2="114.3" y2="566.42" width="0.1524" layer="91"/>
+<label x="114.3" y="566.42" size="1.778" layer="95"/>
 <pinref part="R7" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31365,8 +31365,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="2"/>
-<wire x1="83.82" y1="337.82" x2="73.66" y2="337.82" width="0.1524" layer="91"/>
-<label x="76.2" y="337.82" size="1.778" layer="95"/>
+<wire x1="99.06" y1="419.1" x2="88.9" y2="419.1" width="0.1524" layer="91"/>
+<label x="91.44" y="419.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSIN_TRIG_P" class="2">
@@ -31382,8 +31382,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="1"/>
-<wire x1="83.82" y1="340.36" x2="73.66" y2="340.36" width="0.1524" layer="91"/>
-<label x="76.2" y="340.36" size="1.778" layer="95"/>
+<wire x1="99.06" y1="421.64" x2="88.9" y2="421.64" width="0.1524" layer="91"/>
+<label x="91.44" y="421.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCS3_ADC" class="0">
@@ -31422,8 +31422,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="5"/>
-<wire x1="114.3" y1="457.2" x2="99.06" y2="457.2" width="0.1524" layer="91"/>
-<label x="99.06" y="457.2" size="1.778" layer="95"/>
+<wire x1="129.54" y1="538.48" x2="114.3" y2="538.48" width="0.1524" layer="91"/>
+<label x="114.3" y="538.48" size="1.778" layer="95"/>
 <pinref part="R8" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31435,8 +31435,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="6"/>
-<wire x1="114.3" y1="454.66" x2="99.06" y2="454.66" width="0.1524" layer="91"/>
-<label x="99.06" y="454.66" size="1.778" layer="95"/>
+<wire x1="129.54" y1="535.94" x2="114.3" y2="535.94" width="0.1524" layer="91"/>
+<label x="114.3" y="535.94" size="1.778" layer="95"/>
 <pinref part="R9" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -31512,8 +31512,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="2"/>
-<wire x1="25.4" y1="337.82" x2="15.24" y2="337.82" width="0.1524" layer="91"/>
-<label x="17.78" y="337.82" size="1.778" layer="95"/>
+<wire x1="40.64" y1="419.1" x2="30.48" y2="419.1" width="0.1524" layer="91"/>
+<label x="33.02" y="419.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSOUT_TRIG_P" class="2">
@@ -31524,8 +31524,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="1"/>
-<wire x1="25.4" y1="340.36" x2="15.24" y2="340.36" width="0.1524" layer="91"/>
-<label x="17.78" y="340.36" size="1.778" layer="95"/>
+<wire x1="40.64" y1="421.64" x2="30.48" y2="421.64" width="0.1524" layer="91"/>
+<label x="33.02" y="421.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO99" class="0">
@@ -31753,8 +31753,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="6"/>
-<wire x1="83.82" y1="327.66" x2="73.66" y2="327.66" width="0.1524" layer="91"/>
-<label x="76.2" y="327.66" size="1.778" layer="95"/>
+<wire x1="99.06" y1="408.94" x2="88.9" y2="408.94" width="0.1524" layer="91"/>
+<label x="91.44" y="408.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSIN_SPARE0_P" class="2">
@@ -31770,8 +31770,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="3"/>
-<wire x1="83.82" y1="335.28" x2="73.66" y2="335.28" width="0.1524" layer="91"/>
-<label x="76.2" y="335.28" size="1.778" layer="95"/>
+<wire x1="99.06" y1="416.56" x2="88.9" y2="416.56" width="0.1524" layer="91"/>
+<label x="91.44" y="416.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO113" class="0">
@@ -31789,8 +31789,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="7"/>
-<wire x1="25.4" y1="325.12" x2="15.24" y2="325.12" width="0.1524" layer="91"/>
-<label x="17.78" y="325.12" size="1.778" layer="95"/>
+<wire x1="40.64" y1="406.4" x2="30.48" y2="406.4" width="0.1524" layer="91"/>
+<label x="33.02" y="406.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO115" class="0">
@@ -31907,8 +31907,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="5"/>
-<wire x1="83.82" y1="330.2" x2="73.66" y2="330.2" width="0.1524" layer="91"/>
-<label x="76.2" y="330.2" size="1.778" layer="95"/>
+<wire x1="99.06" y1="411.48" x2="88.9" y2="411.48" width="0.1524" layer="91"/>
+<label x="91.44" y="411.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSIN_SPARE1_P" class="2">
@@ -31924,8 +31924,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="4"/>
-<wire x1="83.82" y1="332.74" x2="73.66" y2="332.74" width="0.1524" layer="91"/>
-<label x="76.2" y="332.74" size="1.778" layer="95"/>
+<wire x1="99.06" y1="414.02" x2="88.9" y2="414.02" width="0.1524" layer="91"/>
+<label x="91.44" y="414.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO130" class="0">
@@ -31957,8 +31957,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="8"/>
-<wire x1="25.4" y1="322.58" x2="15.24" y2="322.58" width="0.1524" layer="91"/>
-<label x="17.78" y="322.58" size="1.778" layer="95"/>
+<wire x1="40.64" y1="403.86" x2="30.48" y2="403.86" width="0.1524" layer="91"/>
+<label x="33.02" y="403.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO134" class="0">
@@ -32817,8 +32817,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="8"/>
-<wire x1="83.82" y1="322.58" x2="73.66" y2="322.58" width="0.1524" layer="91"/>
-<label x="76.2" y="322.58" size="1.778" layer="95"/>
+<wire x1="99.06" y1="403.86" x2="88.9" y2="403.86" width="0.1524" layer="91"/>
+<label x="91.44" y="403.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSIN_CLK_P" class="2">
@@ -32834,8 +32834,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="7"/>
-<wire x1="83.82" y1="325.12" x2="73.66" y2="325.12" width="0.1524" layer="91"/>
-<label x="76.2" y="325.12" size="1.778" layer="95"/>
+<wire x1="99.06" y1="406.4" x2="88.9" y2="406.4" width="0.1524" layer="91"/>
+<label x="91.44" y="406.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO206" class="0">
@@ -34183,8 +34183,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="J8" gate="G$1" pin="1"/>
-<wire x1="114.3" y1="497.84" x2="99.06" y2="497.84" width="0.1524" layer="91"/>
-<label x="99.06" y="497.84" size="1.778" layer="95"/>
+<wire x1="129.54" y1="579.12" x2="114.3" y2="579.12" width="0.1524" layer="91"/>
+<label x="114.3" y="579.12" size="1.778" layer="95"/>
 <pinref part="R242" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -34218,8 +34218,8 @@ Read the voltage on CC1/2, if it is
 </net>
 <net name="CALSTAT" class="0">
 <segment>
-<wire x1="63.5" y1="480.06" x2="88.9" y2="480.06" width="0.1524" layer="91"/>
-<label x="63.5" y="480.06" size="1.778" layer="95"/>
+<wire x1="78.74" y1="561.34" x2="104.14" y2="561.34" width="0.1524" layer="91"/>
+<label x="78.74" y="561.34" size="1.778" layer="95"/>
 <pinref part="R16" gate="G$1" pin="P$1"/>
 </segment>
 </net>
@@ -34323,64 +34323,64 @@ Read the voltage on CC1/2, if it is
 <net name="MUXOUT" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="482.6" x2="63.5" y2="482.6" width="0.1524" layer="91"/>
-<label x="63.5" y="482.6" size="1.778" layer="95"/>
+<wire x1="104.14" y1="563.88" x2="78.74" y2="563.88" width="0.1524" layer="91"/>
+<label x="78.74" y="563.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LOCKDETECT" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="485.14" x2="63.5" y2="485.14" width="0.1524" layer="91"/>
-<label x="63.5" y="485.14" size="1.778" layer="95"/>
+<wire x1="104.14" y1="566.42" x2="78.74" y2="566.42" width="0.1524" layer="91"/>
+<label x="78.74" y="566.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="50_1M_CONTROL" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="457.2" x2="63.5" y2="457.2" width="0.1524" layer="91"/>
-<label x="63.5" y="457.2" size="1.778" layer="95"/>
+<wire x1="104.14" y1="538.48" x2="78.74" y2="538.48" width="0.1524" layer="91"/>
+<label x="78.74" y="538.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ACDC_CONTROL" class="0">
 <segment>
 <pinref part="R9" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="454.66" x2="63.5" y2="454.66" width="0.1524" layer="91"/>
-<label x="63.5" y="454.66" size="1.778" layer="95"/>
+<wire x1="104.14" y1="535.94" x2="78.74" y2="535.94" width="0.1524" layer="91"/>
+<label x="78.74" y="535.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ATT_CONTROL" class="0">
 <segment>
 <pinref part="R10" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="452.12" x2="63.5" y2="452.12" width="0.1524" layer="91"/>
-<label x="63.5" y="452.12" size="1.778" layer="95"/>
+<wire x1="104.14" y1="533.4" x2="78.74" y2="533.4" width="0.1524" layer="91"/>
+<label x="78.74" y="533.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SPLIT_CONTROL" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="449.58" x2="63.5" y2="449.58" width="0.1524" layer="91"/>
-<label x="63.5" y="449.58" size="1.778" layer="95"/>
+<wire x1="104.14" y1="530.86" x2="78.74" y2="530.86" width="0.1524" layer="91"/>
+<label x="78.74" y="530.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="50_1M_CONTROL2" class="0">
 <segment>
 <pinref part="R12" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="467.36" x2="63.5" y2="467.36" width="0.1524" layer="91"/>
-<label x="63.5" y="467.36" size="1.778" layer="95"/>
+<wire x1="104.14" y1="548.64" x2="78.74" y2="548.64" width="0.1524" layer="91"/>
+<label x="78.74" y="548.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ACDC_CONTROL2" class="0">
 <segment>
 <pinref part="R13" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="464.82" x2="63.5" y2="464.82" width="0.1524" layer="91"/>
-<label x="63.5" y="464.82" size="1.778" layer="95"/>
+<wire x1="104.14" y1="546.1" x2="78.74" y2="546.1" width="0.1524" layer="91"/>
+<label x="78.74" y="546.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ATT_CONTROL2" class="0">
 <segment>
 <pinref part="R22" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="462.28" x2="63.5" y2="462.28" width="0.1524" layer="91"/>
-<label x="63.5" y="462.28" size="1.778" layer="95"/>
+<wire x1="104.14" y1="543.56" x2="78.74" y2="543.56" width="0.1524" layer="91"/>
+<label x="78.74" y="543.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSOUT_SPARE1_P" class="2">
@@ -34391,8 +34391,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="4"/>
-<wire x1="25.4" y1="332.74" x2="15.24" y2="332.74" width="0.1524" layer="91"/>
-<label x="17.78" y="332.74" size="1.778" layer="95"/>
+<wire x1="40.64" y1="414.02" x2="30.48" y2="414.02" width="0.1524" layer="91"/>
+<label x="33.02" y="414.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSOUT_SPARE1_N" class="2">
@@ -34403,8 +34403,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="5"/>
-<wire x1="25.4" y1="330.2" x2="15.24" y2="330.2" width="0.1524" layer="91"/>
-<label x="17.78" y="330.2" size="1.778" layer="95"/>
+<wire x1="40.64" y1="411.48" x2="30.48" y2="411.48" width="0.1524" layer="91"/>
+<label x="33.02" y="411.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSOUT_SPARE0_P" class="2">
@@ -34415,8 +34415,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="3"/>
-<wire x1="25.4" y1="335.28" x2="15.24" y2="335.28" width="0.1524" layer="91"/>
-<label x="17.78" y="335.28" size="1.778" layer="95"/>
+<wire x1="40.64" y1="416.56" x2="30.48" y2="416.56" width="0.1524" layer="91"/>
+<label x="33.02" y="416.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LVDSOUT_SPARE0_N" class="2">
@@ -34427,8 +34427,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="6"/>
-<wire x1="25.4" y1="327.66" x2="15.24" y2="327.66" width="0.1524" layer="91"/>
-<label x="17.78" y="327.66" size="1.778" layer="95"/>
+<wire x1="40.64" y1="408.94" x2="30.48" y2="408.94" width="0.1524" layer="91"/>
+<label x="33.02" y="408.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CLK3" class="0">
@@ -34461,25 +34461,25 @@ Read the voltage on CC1/2, if it is
 </net>
 <net name="1KHZOUT" class="0">
 <segment>
-<wire x1="63.5" y1="459.74" x2="88.9" y2="459.74" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="541.02" x2="104.14" y2="541.02" width="0.1524" layer="91"/>
 <pinref part="R206" gate="G$1" pin="P$1"/>
-<label x="63.5" y="459.74" size="1.778" layer="95"/>
+<label x="78.74" y="541.02" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="157.48" y1="408.94" x2="144.78" y2="408.94" width="0.1524" layer="91"/>
-<label x="144.78" y="408.94" size="1.778" layer="95"/>
+<wire x1="172.72" y1="490.22" x2="160.02" y2="490.22" width="0.1524" layer="91"/>
+<label x="160.02" y="490.22" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="EXTTRIGIN" class="5">
 <segment>
 <pinref part="R31" gate="G$1" pin="P$2"/>
-<label x="22.86" y="406.4" size="1.778" layer="95"/>
+<label x="38.1" y="487.68" size="1.778" layer="95"/>
 <pinref part="R160" gate="G$1" pin="P$2"/>
-<wire x1="38.1" y1="406.4" x2="45.72" y2="406.4" width="0.1524" layer="91"/>
-<junction x="38.1" y="406.4"/>
+<wire x1="53.34" y1="487.68" x2="60.96" y2="487.68" width="0.1524" layer="91"/>
+<junction x="53.34" y="487.68"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="ANT"/>
-<wire x1="38.1" y1="406.4" x2="20.32" y2="406.4" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="487.68" x2="35.56" y2="487.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="238.76" y1="350.52" x2="226.06" y2="350.52" width="0.1524" layer="91"/>
@@ -34503,22 +34503,22 @@ Read the voltage on CC1/2, if it is
 <segment>
 <pinref part="1KHZOUT50" gate="G$1" pin="ANT"/>
 <pinref part="R211" gate="G$1" pin="P$1"/>
-<wire x1="99.06" y1="406.4" x2="93.98" y2="406.4" width="0.1524" layer="91"/>
-<label x="93.98" y="406.4" size="1.778" layer="95"/>
+<wire x1="114.3" y1="487.68" x2="109.22" y2="487.68" width="0.1524" layer="91"/>
+<label x="109.22" y="487.68" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PG12V" class="0">
 <segment>
 <pinref part="R236" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="490.22" x2="63.5" y2="490.22" width="0.1524" layer="91"/>
-<label x="63.5" y="490.22" size="1.778" layer="95"/>
+<wire x1="104.14" y1="571.5" x2="78.74" y2="571.5" width="0.1524" layer="91"/>
+<label x="78.74" y="571.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="12VCONNECTED" class="0">
 <segment>
 <pinref part="R238" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="492.76" x2="63.5" y2="492.76" width="0.1524" layer="91"/>
-<label x="63.5" y="492.76" size="1.778" layer="95"/>
+<wire x1="104.14" y1="574.04" x2="78.74" y2="574.04" width="0.1524" layer="91"/>
+<label x="78.74" y="574.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CC1COMPOUT" class="0">
@@ -34532,8 +34532,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="R242" gate="G$1" pin="P$1"/>
-<wire x1="63.5" y1="497.84" x2="88.9" y2="497.84" width="0.1524" layer="91"/>
-<label x="63.5" y="497.84" size="1.778" layer="95"/>
+<wire x1="78.74" y1="579.12" x2="104.14" y2="579.12" width="0.1524" layer="91"/>
+<label x="78.74" y="579.12" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CC2COMPOUT" class="0">
@@ -34547,8 +34547,8 @@ Read the voltage on CC1/2, if it is
 </segment>
 <segment>
 <pinref part="R243" gate="G$1" pin="P$1"/>
-<wire x1="88.9" y1="495.3" x2="63.5" y2="495.3" width="0.1524" layer="91"/>
-<label x="63.5" y="495.3" size="1.778" layer="95"/>
+<wire x1="104.14" y1="576.58" x2="78.74" y2="576.58" width="0.1524" layer="91"/>
+<label x="78.74" y="576.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CC1" class="0">
@@ -39144,14 +39144,14 @@ in a good range for the slow adc</text>
 <approved hash="104,2,58.42,-104.14,FL1,VS-,2V5-1,,,"/>
 <approved hash="104,4,22.86,86.36,FL4,VS+,2V5+,,,"/>
 <approved hash="104,4,22.86,81.28,FL4,VS-,2V5-2,,,"/>
-<approved hash="104,7,15.24,414.02,EXTTRIGIN,GND1,GND,,,"/>
-<approved hash="104,7,10.16,414.02,EXTTRIGIN,GND2,GND,,,"/>
-<approved hash="104,7,15.24,398.78,EXTTRIGIN,GND3,GND,,,"/>
-<approved hash="104,7,10.16,398.78,EXTTRIGIN,GND4,GND,,,"/>
-<approved hash="104,7,104.14,398.78,1KHZOUT50,GND1,GND,,,"/>
-<approved hash="104,7,109.22,398.78,1KHZOUT50,GND2,GND,,,"/>
-<approved hash="104,7,104.14,414.02,1KHZOUT50,GND3,GND,,,"/>
-<approved hash="104,7,109.22,414.02,1KHZOUT50,GND4,GND,,,"/>
+<approved hash="104,7,30.48,495.3,EXTTRIGIN,GND1,GND,,,"/>
+<approved hash="104,7,25.4,495.3,EXTTRIGIN,GND2,GND,,,"/>
+<approved hash="104,7,30.48,480.06,EXTTRIGIN,GND3,GND,,,"/>
+<approved hash="104,7,25.4,480.06,EXTTRIGIN,GND4,GND,,,"/>
+<approved hash="104,7,119.38,480.06,1KHZOUT50,GND1,GND,,,"/>
+<approved hash="104,7,124.46,480.06,1KHZOUT50,GND2,GND,,,"/>
+<approved hash="104,7,119.38,495.3,1KHZOUT50,GND3,GND,,,"/>
+<approved hash="104,7,124.46,495.3,1KHZOUT50,GND4,GND,,,"/>
 <approved hash="104,7,45.72,248.92,IC11P,V+,3V3,,,"/>
 <approved hash="104,7,45.72,233.68,IC11P,V-,GND,,,"/>
 <approved hash="106,6,60.96,220.98,BG,,,,,"/>
