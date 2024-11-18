@@ -35088,9 +35088,9 @@ If 12VConnected is low (0V), then switch is on</text>
 <wire x1="86.36" y1="121.92" x2="25.4" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="-33.02" y1="66.04" x2="-27.94" y2="66.04" width="0.1524" layer="91"/>
-<label x="-30.48" y="66.04" size="1.778" layer="95"/>
-<pinref part="Q2" gate="G$1" pin="S"/>
+<wire x1="-50.8" y1="66.04" x2="-43.18" y2="66.04" width="0.1524" layer="91"/>
+<label x="-50.8" y="66.04" size="1.778" layer="95"/>
+<pinref part="Q2" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="VCC1V8" class="0">
@@ -35338,9 +35338,9 @@ If 12VConnected is low (0V), then switch is on</text>
 <label x="-12.7" y="121.92" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="-60.96" y1="66.04" x2="-43.18" y2="66.04" width="0.1524" layer="91"/>
-<label x="-60.96" y="66.04" size="1.778" layer="95"/>
-<pinref part="Q2" gate="G$1" pin="D"/>
+<wire x1="-33.02" y1="66.04" x2="-17.78" y2="66.04" width="0.1524" layer="91"/>
+<label x="-33.02" y="66.04" size="1.778" layer="95"/>
+<pinref part="Q2" gate="G$1" pin="S"/>
 </segment>
 </net>
 <net name="12VCONNECTED" class="0">
