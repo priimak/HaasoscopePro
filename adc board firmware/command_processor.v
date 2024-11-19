@@ -52,9 +52,11 @@ module command_processor (
 	input wire clk50, // needed while doing pllreset,
 	input wire lvdsin_trig,
 	output reg lvdsout_trig=0,
+	input wire lvdsin_trig_b,
+	output reg lvdsout_trig_b=0,
 	output reg clkswitch=0,
-	input wire [1:0]	lvdsin_spare,
-	output reg [1:0]	lvdsout_spare=0,
+	input wire lvdsin_spare,
+	output reg lvdsout_spare=0,
 	input wire [69:0] lvdsEbits, lvdsLbits
 );
 
@@ -62,8 +64,8 @@ integer version = 19; // firmware version
 
 assign debugout[0] = clkswitch;
 assign debugout[1] = lvdsin_trig;
-assign debugout[2] = lvdsin_spare[0];
-assign debugout[3] = lvdsin_spare[1];
+assign debugout[2] = lvdsin_trig_b;
+assign debugout[3] = lvdsin_spare;
 assign debugout[4] = lockinfo[0]; //locked
 assign debugout[5] = lockinfo[1]; //activeclock
 assign debugout[6] = lockinfo[2]; //clkbad0
@@ -79,7 +81,7 @@ assign debugout[11] = fanon;
 wire exttrigin;
 assign exttrigin = boardin[4];
 
-assign lvdsout_spare[1] = exttrigin; // just temporary since we're not using them yet
+assign lvdsout_trig_b = exttrigin; // just temporary since we're not using them yet
 
 reg [15:0]	probecompcounter=0;
 
@@ -618,8 +620,8 @@ always @ (posedge clk or negedge rstn)
 			if (rx_data[1]==3) o_tdata <= eventcounter_sync;
 			if (rx_data[1]==4) o_tdata <= downsamplemergingcounter_triggered_sync;
 			if (rx_data[1]==5) begin
-				lvdsout_spare[0] <= rx_data[2][0]; // used for telling order of devices
-				o_tdata <= {8'd0, 6'd0,lvdsin_spare[1],lvdsin_spare[0], 4'd0,lockinfo, 7'd0,~clkswitch};
+				lvdsout_spare <= rx_data[2][0]; // used for telling order of devices
+				o_tdata <= {8'd0, 7'd0,lvdsin_spare, 4'd0,lockinfo, 7'd0,~clkswitch};
 			end
 			length <= 4;
 			o_tvalid <= 1'b1;

@@ -11487,7 +11487,7 @@ NS Package M08A</description>
 <element name="R23" library="PP_Passives" package="0201" value="100" x="116.5" y="69.5" smashed="yes" rot="MR270"/>
 <element name="R24" library="PP_Passives" package="0201" value="100" x="119.5" y="69.5" smashed="yes" rot="MR270"/>
 <element name="R25" library="PP_Passives" package="0201" value="100" x="118.5" y="69.5" smashed="yes" rot="MR270"/>
-<element name="R26" library="PP_Passives" package="0201" value="100" x="117.5" y="69.5" smashed="yes" rot="MR270"/>
+<element name="R26" library="PP_Passives" package="0201" value="100" x="115.5" y="89.5" smashed="yes" rot="MR90"/>
 <element name="FL1" library="OPA859IDSGR" package="SON50P200X200X80-9N" value="OPA859IDSGR" x="78.5" y="32.5" smashed="yes" rot="R90">
 <attribute name="DESCRIPTION" value="1.8 GHz Unity-Gain Bandwidth, 3.3 nV/Hz, FET Input Amplifier" x="78.5" y="29.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HEIGHT" value="0.8mm" x="78.5" y="29.5" size="1.778" layer="27" rot="R90" display="off"/>
@@ -18432,7 +18432,7 @@ NS Package M08A</description>
 <wire x1="106.6670125" y1="74.4532" x2="105.9532" y2="74.4532" width="0.1524" layer="12"/>
 <wire x1="105.9532" y1="74.4532" x2="105.5" y2="74" width="0.1524" layer="12"/>
 </signal>
-<signal name="LVDSOUT_SPARE1_P" class="2">
+<signal name="LVDSIN_TRIGB_P" class="2">
 <contactref element="U$3" pad="P$4"/>
 <contactref element="IC5" pad="H2"/>
 <via x="115.5" y="89" extent="1-16" drill="0.2"/>
@@ -18454,25 +18454,8 @@ NS Package M08A</description>
 <wire x1="126.5" y1="104.25145" x2="126.5" y2="105.25145" width="0.0889" layer="14"/>
 <wire x1="126.5" y1="105.25145" x2="147.92635" y2="126.6778" width="0.0889" layer="14"/>
 <wire x1="147.92635" y1="126.6778" x2="201.073653125" y2="126.6778" width="0.0889" layer="14"/>
-</signal>
-<signal name="LVDSOUT_SPARE1_N" class="2">
-<contactref element="U$3" pad="P$5"/>
-<contactref element="IC5" pad="H1"/>
-<via x="115.5" y="90" extent="1-16" drill="0.2"/>
-<wire x1="211.75" y1="127.7297375" x2="211.75" y2="127.835" width="0.0889" layer="14"/>
-<wire x1="209.31526875" y1="125.29500625" x2="211.75" y2="127.7297375" width="0.0889" layer="14"/>
-<wire x1="206.984865625" y1="125.29500625" x2="209.31526875" y2="125.29500625" width="0.0889" layer="14"/>
-<wire x1="205.779871875" y1="126.5" x2="206.984865625" y2="125.29500625" width="0.0889" layer="14"/>
-<wire x1="201.2424625" y1="126.5" x2="205.779871875" y2="126.5" width="0.0889" layer="14"/>
-<wire x1="201.22488125" y1="126.48241875" x2="201.2424625" y2="126.5" width="0.0889" layer="14"/>
-<wire x1="201.122178125" y1="126.48241875" x2="201.22488125" y2="126.48241875" width="0.0889" layer="14"/>
-<wire x1="201.075246875" y1="126.475559375" x2="201.122178125" y2="126.48241875" width="0.0889" layer="14"/>
-<wire x1="201" y1="126.5" x2="201.075246875" y2="126.475559375" width="0.0889" layer="14"/>
-<wire x1="115.5" y1="90" x2="115.5" y2="93" width="0.0889" layer="14"/>
-<wire x1="115.5" y1="93" x2="126.6778" y2="104.1778" width="0.0889" layer="14"/>
-<wire x1="126.6778" y1="104.1778" x2="126.6778" y2="105.1778" width="0.0889" layer="14"/>
-<wire x1="126.6778" y1="105.1778" x2="148" y2="126.5" width="0.0889" layer="14"/>
-<wire x1="148" y1="126.5" x2="201" y2="126.5" width="0.0889" layer="14"/>
+<contactref element="R26" pad="1"/>
+<wire x1="115.5" y1="89.175" x2="115.5" y2="89" width="0.1524" layer="16"/>
 </signal>
 <signal name="LVDSIN_TRIG_N" class="2">
 <contactref element="U$1" pad="P$2"/>
@@ -18892,7 +18875,7 @@ NS Package M08A</description>
 <signal name="IO125">
 <contactref element="IC5" pad="H20"/>
 </signal>
-<signal name="LVDSIN_SPARE1_N" class="2">
+<signal name="LVDSOUT_TRIGB_N" class="2">
 <contactref element="U$1" pad="P$5"/>
 <contactref element="IC5" pad="F22"/>
 <via x="117.5" y="69" extent="1-16" drill="0.2"/>
@@ -18911,10 +18894,8 @@ NS Package M08A</description>
 <wire x1="143.5" y1="38" x2="195.5" y2="38" width="0.0889" layer="3"/>
 <wire x1="195.5" y1="38" x2="196.67575" y2="39.17575" width="0.0889" layer="3"/>
 <wire x1="197.70503125" y1="39.6778" x2="212.573653125" y2="39.6778" width="0.0889" layer="3"/>
-<contactref element="R26" pad="2"/>
-<wire x1="117.5" y1="69" x2="117.5" y2="69.175" width="0.2032" layer="16"/>
 </signal>
-<signal name="LVDSIN_SPARE1_P" class="2">
+<signal name="LVDSOUT_TRIGB_P" class="2">
 <contactref element="U$1" pad="P$4"/>
 <contactref element="IC5" pad="F21"/>
 <via x="117.5" y="70" extent="1-16" drill="0.2"/>
@@ -18941,8 +18922,6 @@ NS Package M08A</description>
 <wire x1="117.3222" y1="63.92635" x2="143.42635" y2="37.8222" width="0.0889" layer="3"/>
 <wire x1="143.42635" y1="37.8222" x2="195.57365" y2="37.8222" width="0.0889" layer="3"/>
 <wire x1="195.57365" y1="37.8222" x2="196.85355" y2="39.1021" width="0.0889" layer="3"/>
-<contactref element="R26" pad="1"/>
-<wire x1="117.5" y1="70" x2="117.5" y2="69.825" width="0.2032" layer="16"/>
 </signal>
 <signal name="IO130">
 <contactref element="IC5" pad="J3"/>
@@ -23375,6 +23354,27 @@ NS Package M08A</description>
 <wire x1="189.1" y1="68.865" x2="187.635" y2="68.865" width="0.1524" layer="1"/>
 <wire x1="186.365" y1="70.135" x2="183.9" y2="70.135" width="0.1524" layer="1"/>
 <wire x1="187.635" y1="68.865" x2="186.365" y2="70.135" width="0.1524" layer="1"/>
+</signal>
+<signal name="LVDSIN_TRIGB_N" class="2">
+<contactref element="IC5" pad="H1"/>
+<contactref element="U$3" pad="P$5"/>
+<wire x1="211.75" y1="127.7297375" x2="211.75" y2="127.835" width="0.0889" layer="14"/>
+<wire x1="209.31526875" y1="125.29500625" x2="211.75" y2="127.7297375" width="0.0889" layer="14"/>
+<wire x1="206.984865625" y1="125.29500625" x2="209.31526875" y2="125.29500625" width="0.0889" layer="14"/>
+<wire x1="205.779871875" y1="126.5" x2="206.984865625" y2="125.29500625" width="0.0889" layer="14"/>
+<wire x1="201.2424625" y1="126.5" x2="205.779871875" y2="126.5" width="0.0889" layer="14"/>
+<wire x1="201.22488125" y1="126.48241875" x2="201.2424625" y2="126.5" width="0.0889" layer="14"/>
+<wire x1="201.122178125" y1="126.48241875" x2="201.22488125" y2="126.48241875" width="0.0889" layer="14"/>
+<wire x1="201.075246875" y1="126.475559375" x2="201.122178125" y2="126.48241875" width="0.0889" layer="14"/>
+<wire x1="201" y1="126.5" x2="201.075246875" y2="126.475559375" width="0.0889" layer="14"/>
+<wire x1="115.5" y1="90" x2="115.5" y2="93" width="0.0889" layer="14"/>
+<wire x1="115.5" y1="93" x2="126.6778" y2="104.1778" width="0.0889" layer="14"/>
+<wire x1="126.6778" y1="104.1778" x2="126.6778" y2="105.1778" width="0.0889" layer="14"/>
+<wire x1="126.6778" y1="105.1778" x2="148" y2="126.5" width="0.0889" layer="14"/>
+<wire x1="148" y1="126.5" x2="201" y2="126.5" width="0.0889" layer="14"/>
+<via x="115.5" y="90" extent="1-16" drill="0.2"/>
+<contactref element="R26" pad="2"/>
+<wire x1="115.5" y1="89.825" x2="115.5" y2="90" width="0.1524" layer="16"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
