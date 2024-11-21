@@ -42,5 +42,5 @@
 - [adc board firmware](adc%20board%20firmware/): Quartus lite project for the Altera Cyclone IV FPGA firmware
 - [case](case/): Front and back PCB panels for the aluminum case
 - [software](software/): Python files for the oscilloscope program
-- <code>(other directories)</code>: Design files and documentation for smaller test boards that were used during development 
+- [sub boards](sub%20boards/): Design files and documentation for smaller test boards that were used during development 
 
