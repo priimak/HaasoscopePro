@@ -22889,149 +22889,6 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 </deviceset>
 </devicesets>
 </library>
-<library name="linear" urn="urn:adsk.eagle:library:262">
-<description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
-Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="DIL08" urn="urn:adsk.eagle:footprint:16129/1" library_version="7">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
-<wire x1="5.08" y1="2.921" x2="-5.08" y2="2.921" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="-2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="2.921" x2="-5.08" y2="1.016" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="-2.921" x2="-5.08" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="1.016" x2="-5.08" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
-<pad name="1" x="-3.81" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="2" x="-1.27" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="7" x="-1.27" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="8" x="-3.81" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="3" x="1.27" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="4" x="3.81" y="-3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="6" x="1.27" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<pad name="5" x="3.81" y="3.81" drill="0.8128" diameter="1.27" rot="R90"/>
-<text x="-5.334" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="-3.556" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-</package>
-<package name="SO08" urn="urn:adsk.eagle:footprint:16130/1" library_version="7">
-<description>&lt;b&gt;Small Outline Package 8&lt;/b&gt;&lt;br&gt;
-NS Package M08A</description>
-<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="6" x="0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="5" x="1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<text x="-2.667" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="3.937" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
-<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
-<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
-<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
-<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
-<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="DIL08" urn="urn:adsk.eagle:package:16409/2" type="model" library_version="7">
-<description>Dual In Line Package</description>
-<packageinstances>
-<packageinstance name="DIL08"/>
-</packageinstances>
-</package3d>
-<package3d name="SO08" urn="urn:adsk.eagle:package:16404/2" type="model" library_version="7">
-<description>Small Outline Package 8
-NS Package M08A</description>
-<packageinstances>
-<packageinstance name="SO08"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="OPAMP" urn="urn:adsk.eagle:symbol:16134/1" library_version="7">
-<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="-5.08" y1="-5.08" x2="5.08" y2="0" width="0.4064" layer="94"/>
-<wire x1="5.08" y1="0" x2="-5.08" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="-3.81" y1="3.175" x2="-3.81" y2="1.905" width="0.1524" layer="94"/>
-<wire x1="-4.445" y1="2.54" x2="-3.175" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="-4.445" y1="-2.54" x2="-3.175" y2="-2.54" width="0.1524" layer="94"/>
-<text x="2.54" y="3.175" size="1.778" layer="95">&gt;NAME</text>
-<text x="2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="-IN" x="-7.62" y="-2.54" visible="pad" length="short" direction="in"/>
-<pin name="+IN" x="-7.62" y="2.54" visible="pad" length="short" direction="in"/>
-<pin name="OUT" x="7.62" y="0" visible="pad" length="short" direction="out" rot="R180"/>
-</symbol>
-<symbol name="PWR+-" urn="urn:adsk.eagle:symbol:16135/1" library_version="7">
-<text x="1.27" y="3.175" size="0.8128" layer="93" rot="R90">V+</text>
-<text x="1.27" y="-4.445" size="0.8128" layer="93" rot="R90">V-</text>
-<pin name="V+" x="0" y="7.62" visible="pad" length="middle" direction="pwr" rot="R270"/>
-<pin name="V-" x="0" y="-7.62" visible="pad" length="middle" direction="pwr" rot="R90"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="LM393" urn="urn:adsk.eagle:component:16611/4" prefix="IC" library_version="7">
-<description>&lt;b&gt;COMPARATOR&lt;/b&gt;</description>
-<gates>
-<gate name="A" symbol="OPAMP" x="5.08" y="0" swaplevel="1"/>
-<gate name="B" symbol="OPAMP" x="30.48" y="0" swaplevel="1"/>
-<gate name="P" symbol="PWR+-" x="5.08" y="0" addlevel="request"/>
-</gates>
-<devices>
-<device name="N" package="DIL08">
-<connects>
-<connect gate="A" pin="+IN" pad="3"/>
-<connect gate="A" pin="-IN" pad="2"/>
-<connect gate="A" pin="OUT" pad="1"/>
-<connect gate="B" pin="+IN" pad="5"/>
-<connect gate="B" pin="-IN" pad="6"/>
-<connect gate="B" pin="OUT" pad="7"/>
-<connect gate="P" pin="V+" pad="8"/>
-<connect gate="P" pin="V-" pad="4"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:16409/2"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="POPULARITY" value="2" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="D" package="SO08">
-<connects>
-<connect gate="A" pin="+IN" pad="3"/>
-<connect gate="A" pin="-IN" pad="2"/>
-<connect gate="A" pin="OUT" pad="1"/>
-<connect gate="B" pin="+IN" pad="5"/>
-<connect gate="B" pin="-IN" pad="6"/>
-<connect gate="B" pin="OUT" pad="7"/>
-<connect gate="P" pin="V+" pad="8"/>
-<connect gate="P" pin="V-" pad="4"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:16404/2"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="POPULARITY" value="0" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -23953,18 +23810,6 @@ NS Package M08A</description>
 <part name="R237" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="R238" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R239" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
-<part name="IC11" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="LM393" device="D" package3d_urn="urn:adsk.eagle:package:16404/2">
-<attribute name="LCSC" value="C7955"/>
-</part>
-<part name="C80" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
-<part name="GND63" library="supply1" deviceset="GND" device=""/>
-<part name="R240" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
-<part name="R241" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
-<part name="R242" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
-<part name="R243" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
-<part name="R244" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
-<part name="R245" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="39k"/>
-<part name="GND64" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -29855,12 +29700,6 @@ These go to LEDs for monitoring</text>
 <instance part="R238" gate="G$1" x="109.22" y="574.04" smashed="yes">
 <attribute name="VALUE" x="107.95" y="573.278" size="1.778" layer="96"/>
 </instance>
-<instance part="R242" gate="G$1" x="109.22" y="579.12" smashed="yes">
-<attribute name="VALUE" x="107.95" y="578.358" size="1.778" layer="96"/>
-</instance>
-<instance part="R243" gate="G$1" x="109.22" y="576.58" smashed="yes">
-<attribute name="VALUE" x="107.95" y="575.818" size="1.778" layer="96"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -31105,7 +30944,6 @@ These go to LEDs for monitoring</text>
 <pinref part="J8" gate="G$1" pin="2"/>
 <wire x1="129.54" y1="576.58" x2="114.3" y2="576.58" width="0.1524" layer="91"/>
 <label x="114.3" y="576.58" size="1.778" layer="95"/>
-<pinref part="R243" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="BOARDIN2" class="0">
@@ -34100,7 +33938,6 @@ These go to LEDs for monitoring</text>
 <pinref part="J8" gate="G$1" pin="1"/>
 <wire x1="129.54" y1="579.12" x2="114.3" y2="579.12" width="0.1524" layer="91"/>
 <label x="114.3" y="579.12" size="1.778" layer="95"/>
-<pinref part="R242" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="SCS3_IN1DAC" class="0">
@@ -34429,20 +34266,6 @@ These go to LEDs for monitoring</text>
 <label x="78.74" y="574.04" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CC1COMPOUT" class="0">
-<segment>
-<pinref part="R242" gate="G$1" pin="P$1"/>
-<wire x1="78.74" y1="579.12" x2="104.14" y2="579.12" width="0.1524" layer="91"/>
-<label x="78.74" y="579.12" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="CC2COMPOUT" class="0">
-<segment>
-<pinref part="R243" gate="G$1" pin="P$1"/>
-<wire x1="104.14" y1="576.58" x2="78.74" y2="576.58" width="0.1524" layer="91"/>
-<label x="78.74" y="576.58" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="LVDSIN_TRIGB_N" class="2">
 <segment>
 <wire x1="238.76" y1="220.98" x2="226.06" y2="220.98" width="0.1524" layer="91"/>
@@ -34479,16 +34302,6 @@ to USB2 interface</text>
 
 If 12VConnected is high (5V), then switch is off
 If 12VConnected is low (0V), then switch is on</text>
-<text x="-68.58" y="-12.7" size="1.778" layer="90">Comparitors for some analog signals, 
-whose outputs get fed to FPGA</text>
-<text x="-73.66" y="-71.12" size="1.778" layer="90">CC1 or 2 indicate USB C polarity
-
-Read the voltage on CC1/2, if it is 
-&gt;0.7V, you can draw 1.5A @5V 
-(USB Type-C Spec R2.0 - August 2019 page 241)
-
-&gt;1.31V, you can draw 3A @5V</text>
-<text x="-116.84" y="-45.72" size="1.778" layer="90">10/(10+39) * 3.3V = 0.67V</text>
 </plain>
 <instances>
 <instance part="IC8" gate="IC" x="137.16" y="71.12" smashed="yes">
@@ -34686,38 +34499,6 @@ Read the voltage on CC1/2, if it is
 <attribute name="NAME" x="-52.2986" y="46.99" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="-47.498" y="46.99" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="IC11" gate="A" x="-30.48" y="-25.4" smashed="yes">
-<attribute name="NAME" x="-27.94" y="-22.225" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-27.94" y="-30.48" size="1.778" layer="96"/>
-<attribute name="LCSC" x="-43.18" y="-17.78" size="1.778" layer="96" display="both"/>
-</instance>
-<instance part="IC11" gate="B" x="-30.48" y="-45.72" smashed="yes">
-<attribute name="NAME" x="-27.94" y="-42.545" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-27.94" y="-50.8" size="1.778" layer="96"/>
-</instance>
-<instance part="IC11" gate="P" x="-63.5" y="-33.02" smashed="yes"/>
-<instance part="C80" gate="C$1" x="-73.66" y="-30.48" smashed="yes" rot="R180">
-<attribute name="NAME" x="-75.184" y="-25.781" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-75.184" y="-28.321" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="GND63" gate="1" x="-63.5" y="-43.18" smashed="yes">
-<attribute name="VALUE" x="-66.04" y="-45.72" size="1.778" layer="96"/>
-</instance>
-<instance part="R240" gate="G$1" x="-17.78" y="-20.32" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-17.018" y="-21.59" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R241" gate="G$1" x="-17.78" y="-40.64" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-17.018" y="-41.91" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R244" gate="G$1" x="-104.14" y="-20.32" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-103.378" y="-21.59" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R245" gate="G$1" x="-104.14" y="-30.48" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-103.378" y="-31.75" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="GND64" gate="1" x="-104.14" y="-38.1" smashed="yes">
-<attribute name="VALUE" x="-106.68" y="-40.64" size="1.778" layer="96"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -34857,18 +34638,6 @@ Read the voltage on CC1/2, if it is
 <junction x="81.28" y="22.86"/>
 <wire x1="81.28" y1="22.86" x2="81.28" y2="27.94" width="0.1524" layer="91"/>
 </segment>
-<segment>
-<pinref part="IC11" gate="P" pin="V-"/>
-<pinref part="GND63" gate="1" pin="GND"/>
-<wire x1="-73.66" y1="-33.02" x2="-73.66" y2="-40.64" width="0.1524" layer="91"/>
-<wire x1="-73.66" y1="-40.64" x2="-63.5" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="-63.5" y="-40.64"/>
-<pinref part="C80" gate="C$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="R245" gate="G$1" pin="P$1"/>
-<pinref part="GND64" gate="1" pin="GND"/>
-</segment>
 </net>
 <net name="USB_D_N" class="3">
 <segment>
@@ -34943,11 +34712,6 @@ Read the voltage on CC1/2, if it is
 <wire x1="-58.42" y1="114.3" x2="-35.56" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="R183" gate="G$1" pin="P$2"/>
 </segment>
-<segment>
-<pinref part="IC11" gate="A" pin="+IN"/>
-<wire x1="-38.1" y1="-22.86" x2="-53.34" y2="-22.86" width="0.1524" layer="91"/>
-<label x="-53.34" y="-22.86" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="CC2" class="0">
 <segment>
@@ -34955,11 +34719,6 @@ Read the voltage on CC1/2, if it is
 <label x="-55.88" y="111.76" size="1.778" layer="95"/>
 <wire x1="-58.42" y1="111.76" x2="-43.18" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="R182" gate="G$1" pin="P$2"/>
-</segment>
-<segment>
-<pinref part="IC11" gate="B" pin="+IN"/>
-<wire x1="-38.1" y1="-43.18" x2="-53.34" y2="-43.18" width="0.1524" layer="91"/>
-<label x="-53.34" y="-43.18" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VCC3V3" class="0">
@@ -35071,27 +34830,6 @@ Read the voltage on CC1/2, if it is
 <pinref part="IC8" gate="IC" pin="ACBUS8"/>
 <wire x1="165.1" y1="66.04" x2="190.5" y2="66.04" width="0.1524" layer="91"/>
 <label x="170.18" y="66.04" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-73.66" y1="-25.4" x2="-63.5" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="IC11" gate="P" pin="V+"/>
-<pinref part="C80" gate="C$1" pin="2"/>
-<label x="-68.58" y="-25.4" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-22.86" y1="-15.24" x2="-17.78" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="R240" gate="G$1" pin="P$2"/>
-<label x="-22.86" y="-15.24" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-22.86" y1="-35.56" x2="-17.78" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="R241" gate="G$1" pin="P$2"/>
-<label x="-22.86" y="-35.56" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-109.22" y1="-15.24" x2="-104.14" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="R244" gate="G$1" pin="P$2"/>
-<label x="-109.22" y="-15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FTDI_DATA1" class="5">
@@ -35311,45 +35049,6 @@ Read the voltage on CC1/2, if it is
 <segment>
 <pinref part="Q2" gate="G$1" pin="G"/>
 <pinref part="R239" gate="G$1" pin="P$2"/>
-</segment>
-</net>
-<net name="CC1COMPOUT" class="0">
-<segment>
-<pinref part="IC11" gate="A" pin="OUT"/>
-<wire x1="-22.86" y1="-25.4" x2="-17.78" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="R240" gate="G$1" pin="P$1"/>
-<wire x1="-17.78" y1="-25.4" x2="2.54" y2="-25.4" width="0.1524" layer="91"/>
-<junction x="-17.78" y="-25.4"/>
-<label x="-15.24" y="-25.4" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="CC2COMPOUT" class="0">
-<segment>
-<wire x1="-22.86" y1="-45.72" x2="-17.78" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="R241" gate="G$1" pin="P$1"/>
-<wire x1="-17.78" y1="-45.72" x2="2.54" y2="-45.72" width="0.1524" layer="91"/>
-<junction x="-17.78" y="-45.72"/>
-<pinref part="IC11" gate="B" pin="OUT"/>
-<label x="-15.24" y="-45.72" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="0V7REF" class="0">
-<segment>
-<pinref part="IC11" gate="A" pin="-IN"/>
-<wire x1="-38.1" y1="-27.94" x2="-53.34" y2="-27.94" width="0.1524" layer="91"/>
-<label x="-53.34" y="-27.94" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC11" gate="B" pin="-IN"/>
-<wire x1="-38.1" y1="-48.26" x2="-53.34" y2="-48.26" width="0.1524" layer="91"/>
-<label x="-53.34" y="-48.26" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R244" gate="G$1" pin="P$1"/>
-<wire x1="-104.14" y1="-25.4" x2="-91.44" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="R245" gate="G$1" pin="P$2"/>
-<junction x="-104.14" y="-25.4"/>
-<label x="-101.6" y="-25.4" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -35798,7 +35497,7 @@ GNDBREAK is conencted to GND</text>
 </nets>
 </sheet>
 <sheet>
-<description>Power - Amps and 12V</description>
+<description>Power - Amps</description>
 <plain>
 <text x="93.98" y="198.12" size="1.778" layer="90">V- for input amp reg ~ -3.0V</text>
 <text x="276.86" y="231.14" size="1.778" layer="90">= 0.5 + grounded inputs</text>
@@ -39192,8 +38891,6 @@ in a good range for the slow adc</text>
 <approved hash="104,7,124.46,480.06,1KHZOUT50,GND2,GND,,,"/>
 <approved hash="104,7,119.38,495.3,1KHZOUT50,GND3,GND,,,"/>
 <approved hash="104,7,124.46,495.3,1KHZOUT50,GND4,GND,,,"/>
-<approved hash="104,8,-63.5,-25.4,IC11P,V+,3V3,,,"/>
-<approved hash="104,8,-63.5,-40.64,IC11P,V-,GND,,,"/>
 <approved hash="106,6,60.96,220.98,BG,,,,,"/>
 <approved hash="106,6,60.96,302.26,CALTRIG,,,,,"/>
 <approved hash="106,7,238.76,276.86,CLK1,,,,,"/>

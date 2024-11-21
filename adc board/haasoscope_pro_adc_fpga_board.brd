@@ -9195,51 +9195,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
-<library name="linear" urn="urn:adsk.eagle:library:262">
-<description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
-Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="SO08" urn="urn:adsk.eagle:footprint:16130/1" library_version="7">
-<description>&lt;b&gt;Small Outline Package 8&lt;/b&gt;&lt;br&gt;
-NS Package M08A</description>
-<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="6" x="0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="5" x="1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<text x="-2.667" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="3.937" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
-<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
-<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
-<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
-<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
-<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="SO08" urn="urn:adsk.eagle:package:16404/2" type="model" library_version="7">
-<description>Small Outline Package 8
-NS Package M08A</description>
-<packageinstances>
-<packageinstance name="SO08"/>
-</packageinstances>
-</package3d>
-</packages3d>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11783,18 +11738,6 @@ NS Package M08A</description>
 <element name="R237" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="199.48" y="85.51" smashed="yes"/>
 <element name="R238" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="199.46" y="88.19" smashed="yes"/>
 <element name="R239" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="199.5" y="86.83" smashed="yes"/>
-<element name="IC11" library="linear" library_urn="urn:adsk.eagle:library:262" package="SO08" package3d_urn="urn:adsk.eagle:package:16404/2" value="LM393D" x="186.5" y="69.5" smashed="yes" rot="R270">
-<attribute name="LCSC" value="C7955" x="186.5" y="69.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="POPULARITY" value="0" x="186.5" y="69.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="184.595" y="65.563" size="0.8128" layer="21"/>
-</element>
-<element name="C80" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="189.5" y="73.5" smashed="yes" rot="R180"/>
-<element name="R240" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="184.5" y="73.5" smashed="yes"/>
-<element name="R241" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="189.5" y="75" smashed="yes" rot="R180"/>
-<element name="R242" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="184.5" y="75" smashed="yes" rot="R180"/>
-<element name="R243" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="192" y="70" smashed="yes"/>
-<element name="R244" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="192" y="68.5" smashed="yes"/>
-<element name="R245" library="FlashPCB_Resistors" package="RES-0402" value="39k" x="192" y="67" smashed="yes" rot="R180"/>
 </elements>
 <signals>
 <signal name="DA3_P" class="2">
@@ -13649,9 +13592,6 @@ NS Package M08A</description>
 <contactref element="OUTSPLIT" pad="GND@3"/>
 <contactref element="OUTSPLIT" pad="GND@4"/>
 <contactref element="OUTSPLIT" pad="GND@2"/>
-<contactref element="IC11" pad="4"/>
-<contactref element="C80" pad="1"/>
-<contactref element="R245" pad="P$1"/>
 </signal>
 <signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>
@@ -13924,23 +13864,6 @@ NS Package M08A</description>
 <wire x1="159.78" y1="31.06" x2="160.22" y2="31.5" width="0.4064" layer="1"/>
 <wire x1="159.03" y1="31.24" x2="158.834946875" y2="31.24" width="0.4064" layer="1"/>
 <wire x1="158.834946875" y1="31.24" x2="158.824946875" y2="31.25" width="0.4064" layer="1"/>
-<contactref element="IC11" pad="8"/>
-<contactref element="C80" pad="2"/>
-<contactref element="R240" pad="P$2"/>
-<contactref element="R241" pad="P$2"/>
-<contactref element="R244" pad="P$2"/>
-<wire x1="189" y1="75" x2="189" y2="73.55" width="0.1524" layer="1"/>
-<wire x1="189" y1="73.55" x2="188.95" y2="73.5" width="0.1524" layer="1"/>
-<wire x1="189.1" y1="71.405" x2="189" y2="71.505" width="0.1524" layer="1"/>
-<wire x1="189" y1="71.505" x2="189" y2="72.5" width="0.4064" layer="1"/>
-<via x="189" y="72.5" extent="1-16" drill="0.35"/>
-<via x="193.5" y="68.5" extent="1-16" drill="0.35"/>
-<wire x1="189" y1="72.5" x2="189" y2="73.55" width="0.4064" layer="1"/>
-<wire x1="192.5" y1="68.5" x2="193.5" y2="68.5" width="0.4064" layer="1"/>
-<wire x1="185" y1="73.5" x2="185.05" y2="73.55" width="0.4064" layer="1"/>
-<wire x1="185.05" y1="73.55" x2="189" y2="73.55" width="0.4064" layer="1"/>
-<wire x1="188.95" y1="73.5" x2="188.95" y2="72.55" width="0.1524" layer="1"/>
-<wire x1="188.95" y1="72.55" x2="189" y2="72.5" width="0.1524" layer="1"/>
 </signal>
 <signal name="DC2_P" class="2">
 <contactref element="IC1" pad="C13"/>
@@ -20331,17 +20254,6 @@ NS Package M08A</description>
 <via x="120.875" y="27.5" extent="1-16" drill="0.2"/>
 <wire x1="119.1" y1="20.5" x2="119.1" y2="25.725" width="0.0889" layer="14"/>
 <wire x1="119.1" y1="25.725" x2="120.875" y2="27.5" width="0.0889" layer="14"/>
-<contactref element="R242" pad="P$2"/>
-<wire x1="166.4222" y1="57.4222" x2="147.5778" y2="57.4222" width="0.1016" layer="1"/>
-<wire x1="147.5778" y1="57.4222" x2="142.5" y2="62.5" width="0.1016" layer="1"/>
-<wire x1="142.5" y1="62.5" x2="129" y2="62.5" width="0.1016" layer="1"/>
-<via x="129" y="62.5" extent="1-16" drill="0.35"/>
-<wire x1="120.8722" y1="67.59350625" x2="120.8722" y2="67.90649375" width="0.1016" layer="3"/>
-<wire x1="120.8722" y1="67.90649375" x2="120.875" y2="67.90929375" width="0.1016" layer="3"/>
-<wire x1="120.875" y1="67.90929375" x2="120.875" y2="68.375" width="0.1016" layer="3"/>
-<wire x1="129" y1="62.5" x2="125.96570625" y2="62.5" width="0.1016" layer="3"/>
-<wire x1="125.96570625" y1="62.5" x2="120.8722" y2="67.59350625" width="0.1016" layer="3"/>
-<wire x1="184" y1="75" x2="166.4222" y2="57.4222" width="0.1016" layer="1"/>
 </signal>
 <signal name="BOARDIN1">
 <contactref element="J8" pad="2"/>
@@ -20360,17 +20272,6 @@ NS Package M08A</description>
 <wire x1="121.625" y1="20.5" x2="121.64" y2="20.5" width="0.0889" layer="3"/>
 <via x="117.875" y="67.875" extent="1-16" drill="0.2"/>
 <via x="118.375" y="27.375" extent="1-16" drill="0.2"/>
-<contactref element="R243" pad="P$2"/>
-<wire x1="192.5" y1="70" x2="193.5" y2="70" width="0.1524" layer="1"/>
-<wire x1="193.5" y1="70" x2="195" y2="68.5" width="0.1524" layer="1"/>
-<wire x1="195" y1="68.5" x2="195" y2="67.5" width="0.1524" layer="1"/>
-<wire x1="161" y1="49" x2="137" y2="49" width="0.1524" layer="1"/>
-<via x="137" y="49" extent="1-16" drill="0.35"/>
-<wire x1="195" y1="67.5" x2="193" y2="65.5" width="0.1524" layer="1"/>
-<wire x1="193" y1="65.5" x2="177.5" y2="65.5" width="0.1524" layer="1"/>
-<wire x1="177.5" y1="65.5" x2="161" y2="49" width="0.1524" layer="1"/>
-<wire x1="137" y1="49" x2="136.75" y2="49" width="0.1524" layer="3"/>
-<wire x1="136.75" y1="49" x2="117.875" y2="67.875" width="0.1524" layer="3"/>
 </signal>
 <signal name="BOARDIN2">
 <contactref element="J8" pad="3"/>
@@ -21436,14 +21337,6 @@ NS Package M08A</description>
 <wire x1="213.89925625" y1="74.6445" x2="213" y2="74.6445" width="0.16" layer="1"/>
 <wire x1="213" y1="74.6445" x2="211.9185" y2="74.6445" width="0.16" layer="1"/>
 <wire x1="215.71925625" y1="76.4645" x2="213.89925625" y2="74.6445" width="0.16" layer="1"/>
-<contactref element="IC11" pad="3"/>
-<wire x1="183.9" y1="68.865" x2="183.765" y2="69" width="0.1524" layer="1"/>
-<wire x1="183.765" y1="69" x2="182" y2="69" width="0.1524" layer="1"/>
-<via x="182" y="69" extent="1-16" drill="0.35"/>
-<wire x1="182" y1="69" x2="187.5" y2="74.5" width="0.1524" layer="3"/>
-<wire x1="212.8555" y1="74.5" x2="213" y2="74.6445" width="0.1524" layer="3"/>
-<via x="213" y="74.6445" extent="1-16" drill="0.35"/>
-<wire x1="187.5" y1="74.5" x2="212.8555" y2="74.5" width="0.1524" layer="3"/>
 </signal>
 <signal name="CC2">
 <contactref element="X1" pad="B5"/>
@@ -21453,14 +21346,6 @@ NS Package M08A</description>
 <wire x1="215.7002125" y1="79.764" x2="215.7103125" y2="79.7539" width="0.2032" layer="1"/>
 <wire x1="215.7103125" y1="79.7539" x2="216.2461" y2="79.7539" width="0.2032" layer="1"/>
 <wire x1="216.2461" y1="79.7539" x2="216.38" y2="79.62" width="0.2032" layer="1"/>
-<contactref element="IC11" pad="5"/>
-<wire x1="189.1" y1="67.595" x2="189.005" y2="67.5" width="0.1524" layer="1"/>
-<wire x1="189.005" y1="67.5" x2="187" y2="67.5" width="0.1524" layer="1"/>
-<via x="187" y="67.5" extent="1-16" drill="0.35"/>
-<wire x1="187" y1="67.5" x2="193" y2="73.5" width="0.1524" layer="16"/>
-<wire x1="206.566" y1="73.5" x2="212.83" y2="79.764" width="0.1524" layer="16"/>
-<via x="212.83" y="79.764" extent="1-16" drill="0.35"/>
-<wire x1="193" y1="73.5" x2="206.566" y2="73.5" width="0.1524" layer="16"/>
 </signal>
 <signal name="VCC3V3">
 <contactref element="IC8" pad="39"/>
@@ -23324,36 +23209,6 @@ NS Package M08A</description>
 <wire x1="201" y1="86.83" x2="203" y2="84.83" width="0.1524" layer="1"/>
 <wire x1="203" y1="84.127" x2="204.016" y2="83.111" width="0.1524" layer="1"/>
 <wire x1="203" y1="84.83" x2="203" y2="84.127" width="0.1524" layer="1"/>
-</signal>
-<signal name="CC1COMPOUT">
-<contactref element="IC11" pad="1"/>
-<contactref element="R240" pad="P$1"/>
-<contactref element="R242" pad="P$1"/>
-<wire x1="185" y1="75" x2="185" y2="74.5" width="0.1524" layer="1"/>
-<wire x1="185" y1="74.5" x2="184" y2="73.5" width="0.1524" layer="1"/>
-<wire x1="184" y1="73.5" x2="184" y2="71.505" width="0.1524" layer="1"/>
-<wire x1="184" y1="71.505" x2="183.9" y2="71.405" width="0.1524" layer="1"/>
-</signal>
-<signal name="CC2COMPOUT">
-<contactref element="R241" pad="P$1"/>
-<contactref element="IC11" pad="7"/>
-<contactref element="R243" pad="P$1"/>
-<wire x1="189.1" y1="70.135" x2="191.365" y2="70.135" width="0.1524" layer="1"/>
-<wire x1="191.365" y1="70.135" x2="191.5" y2="70" width="0.1524" layer="1"/>
-<wire x1="191.5" y1="70" x2="191.5" y2="73.5" width="0.1524" layer="1"/>
-<wire x1="191.5" y1="73.5" x2="190" y2="75" width="0.1524" layer="1"/>
-</signal>
-<signal name="0V7REF">
-<contactref element="IC11" pad="2"/>
-<contactref element="IC11" pad="6"/>
-<contactref element="R244" pad="P$1"/>
-<contactref element="R245" pad="P$2"/>
-<wire x1="191.5" y1="68.5" x2="191.5" y2="67" width="0.1524" layer="1"/>
-<wire x1="191.5" y1="68.5" x2="189.465" y2="68.5" width="0.1524" layer="1"/>
-<wire x1="189.465" y1="68.5" x2="189.1" y2="68.865" width="0.1524" layer="1"/>
-<wire x1="189.1" y1="68.865" x2="187.635" y2="68.865" width="0.1524" layer="1"/>
-<wire x1="186.365" y1="70.135" x2="183.9" y2="70.135" width="0.1524" layer="1"/>
-<wire x1="187.635" y1="68.865" x2="186.365" y2="70.135" width="0.1524" layer="1"/>
 </signal>
 <signal name="LVDSIN_TRIGB_N" class="2">
 <contactref element="IC5" pad="H1"/>
