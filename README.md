@@ -12,12 +12,13 @@
 
 ### Quick start (Windows/Mac/Linux)
 
-1) Plug Haasoscope Pro into your computer via USB C <br>
-(If not enough power is supplied also plug in the external 12V power adapter)
+1) Plug Haasoscope Pro into your computer via USB C
 2) Download code and unzip it: https://github.com/drandyhaas/HaasoscopePro/archive/refs/heads/main.zip
 3) Run **HaasoscopeProQt** in the <code>HaasoscopePro/software/dist/(OS)_HaasoscopeProQt</code> directory
 
 ### Tips
+- If not enough power is supplied, or issues happen later during readout, use a USB A to C cable
+- If still not enough power is supplied, plug in the external 12V power adapter
 - If board not found on Linux, try: <code>sudo rmmod usbserial ftdi_sio</code>
 
 ### Fuller way of running
