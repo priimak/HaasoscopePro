@@ -69,7 +69,7 @@ def orderusbs():
     for board in range(len(usbs)):
         usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99])) # get clock info
         usbs[board].recv(4)
-        usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99]))  # get clock info again, fixes a glitch on mac (?)
+        usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99]))  # get clock info again, fixes a glitch on Mac (?)
         res = usbs[board].recv(4)
         if len(res)<4:
             print("Couldn't get lvds info from board",board,"!")
