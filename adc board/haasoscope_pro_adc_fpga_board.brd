@@ -280,7 +280,7 @@ GND</text>
 <text x="208.228" y="43.211" size="0.8128" layer="21">LVDS IN</text>
 <text x="149.388" y="154.305" size="0.8128" layer="21" rot="R180">3.3V</text>
 <text x="148.888" y="106.305" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.21
+<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.22
 by DrAndyHaas
 November 2024</text>
 <wire x1="65" y1="50" x2="105" y2="50" width="0.1524" layer="21"/>
@@ -312,6 +312,10 @@ November 2024</text>
 <wire x1="196.5" y1="63.5" x2="196.5" y2="65" width="0.1524" layer="21"/>
 <wire x1="196.5" y1="65" x2="194" y2="65" width="0.1524" layer="21"/>
 <wire x1="194" y1="65" x2="194" y2="58.5" width="0.1524" layer="21"/>
+<hole x="7.61" y="153.22" drill="1.6002"/>
+<hole x="7.61" y="6.72" drill="1.6002"/>
+<hole x="212.61" y="6.72" drill="1.6002"/>
+<hole x="212.61" y="153.22" drill="1.6002"/>
 </plain>
 <libraries>
 <library name="con-coax" urn="urn:adsk.eagle:library:133">

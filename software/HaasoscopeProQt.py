@@ -91,7 +91,7 @@ def orderusbs():
         newusbs.append(nextboard)
     newusbcons=[]
     for u in range(len(newusbs)):
-        newusbcons.append(usbs[u])
+        newusbcons.append(usbs[newusbs[u]])
     return newusbcons
 
 connectdevices()
