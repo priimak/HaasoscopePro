@@ -17,6 +17,7 @@
 3) Run **HaasoscopeProQt** in the <code>HaasoscopePro/software/dist/(OS)_HaasoscopeProQt</code> directory
 
 ### Tips
+
 - If not enough power is supplied, or issues happen later during readout, use a USB A to C cable
 - If still not enough power is supplied, plug in the external 12V power adapter
 - If board not found on Linux, try: <code>sudo rmmod usbserial ftdi_sio</code>
@@ -38,10 +39,14 @@
 <br><code>python3 -m PyInstaller HaasoscopeProQt.py</code>
 <br><code>mv dist/HaasoscopeProQt dist/(OS)_HaasoscopeProQt</code>
 
-### Repository structure:
+### Repository structure
+
 - [adc board](adc%20board/): Design files and documentation for the main hardware board, based on Eagle (9.6.2)
 - [adc board firmware](adc%20board%20firmware/): Quartus lite project for the Altera Cyclone IV FPGA firmware
 - [case](case/): Front and back PCB panels for the aluminum case
 - [software](software/): Python files for the oscilloscope program
 - [sub boards](sub%20boards/): Design files and documentation for smaller test boards that were used during development 
 
+### 2 GHz Active Probe
+
+All designs for the accompanying active probe are in a separate [repository](https://github.com/drandyhaas/oshw-active-probe)
