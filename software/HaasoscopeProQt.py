@@ -473,27 +473,22 @@ class MainWindow(TemplateBaseClass):
 
     activexychannel = 0
     def selectchannel(self):
-        if self.activeboard==0: self.ui.exttrigCheck.setEnabled(False)
+        if self.activeboard%2==0: self.ui.exttrigCheck.setEnabled(False)
         else: self.ui.exttrigCheck.setEnabled(True)
         self.selectedchannel = self.ui.chanBox.value()
         self.activexychannel = self.activeboard*self.num_chan_per_board + self.selectedchannel
         p = self.ui.chanColor.palette()
         col = QColor("red")
-        if self.data_twochannel:
-            if self.selectedchannel == 1 and self.activeboard == 0: col = QColor("green")
-            if self.selectedchannel == 0 and self.activeboard == 1: col = QColor("blue")
-            if self.selectedchannel == 1 and self.activeboard == 1: col = QColor("magenta")
-        else:
-            if self.activeboard == 1: col = QColor("green")
-            if self.activeboard == 2: col = QColor("blue")
-            if self.activeboard == 3: col = QColor("magenta")
+        if self.activexychannel==1: col = QColor("green")
+        if self.activexychannel==2: col = QColor("blue")
+        if self.activexychannel==3: col = QColor("magenta")
+        if self.activexychannel>=4: print("Not ready for >2 boards yet!")
         p.setColor(QPalette.Base, col)  # Set background color of box
         self.ui.chanColor.setPalette(p)
-        if len(self.lines) > 0:
-            if self.lines[self.selectedchannel].isVisible():
-                self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
-            else:
-                self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
+        if self.lines[self.activexychannel].isVisible():
+            self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
+        else:
+            self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
 
     def changeoffset(self):
         dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value())
@@ -531,9 +526,9 @@ class MainWindow(TemplateBaseClass):
 
     def chanon(self):
         if self.ui.chanonCheck.checkState() == QtCore.Qt.Checked:
-            self.lines[self.selectedchannel].setVisible(True)
+            self.lines[self.activexychannel].setVisible(True)
         else:
-            self.lines[self.selectedchannel].setVisible(False)
+            self.lines[self.activexychannel].setVisible(False)
 
     def setacdc(self):
         setchanacdc(self.activeusb, self.selectedchannel,
@@ -612,10 +607,9 @@ class MainWindow(TemplateBaseClass):
         tres = usbs[board].recv(4)
         print("pllreset sent to board",board,"- got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasecs[board] = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]  # reset counters
-        # adjust other phases
-        n = 1  # amount to adjust (+ or -)
-        for i in range(abs(n)): self.dophase(board, 2, n > 0, pllnum=0,
-                                             quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
+        # adjust phases
+        n = 2  # amount to adjust (+ or -)
+        for i in range(abs(n)): self.dophase(board, 2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
         n = -1  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
         n = 0  # amount to adjust (+ or -)
@@ -1186,13 +1180,16 @@ class MainWindow(TemplateBaseClass):
         thestr += "\n" + "RMS " + str(np.std(self.xydata[self.activexychannel][1]).round(2))
 
         if not self.data_overlapped:
-            c = self.activexychannel
-            p0 = [max(self.xydata[c][1]), self.vline - 10, 20, min(self.xydata[c][1])]  # this is an initial guess
+            if not self.dointerleaved:
+                targety = self.xydata[self.activexychannel]
+            else:
+                targety = self.xydatainterleaved[int(self.activeboard/2)]
+            p0 = [max(targety[1]), self.vline - 10, 20, min(targety[1])]  # this is an initial guess
             fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
-            xc = self.xydata[c][0][(self.xydata[c][0] > self.vline - fitwidth) & (
-                        self.xydata[c][0] < self.vline + fitwidth)]  # only fit in range
-            yc = self.xydata[c][1][
-                (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
+            xc = targety[0][(targety[0] > self.vline - fitwidth) & (
+                        targety[0] < self.vline + fitwidth)]  # only fit in range
+            yc = targety[1][
+                (targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
                 popt, pcov = curve_fit(fit_rise, xc, yc, p0)
@@ -1205,7 +1202,7 @@ class MainWindow(TemplateBaseClass):
             if not self.data_twochannel and self.doexttrig[self.activeboard] and self.num_board>1:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1
                 else: c1 = self.activeboard+1
-                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(c)+": " + str(round(self.exttrigstdavg,2))
+                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(self.activeboard)+": " + str(round(self.exttrigstdavg,2))
 
         self.ui.textBrowser.setText(thestr)
 
@@ -1222,7 +1219,6 @@ class MainWindow(TemplateBaseClass):
 
     def init(self):
         self.tot()
-        self.selectchannel()
         for board in range(len(usbs)):
             self.pllreset(board)
             self.adfreset(board)
@@ -1234,7 +1230,7 @@ class MainWindow(TemplateBaseClass):
             c1 = self.activeboard - 1
         else:
             c1 = self.activeboard + 1
-        c = self.activexychannel
+        c = self.activeboard
         fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
         yc = self.xydata[c][1][
             (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
@@ -1310,6 +1306,7 @@ if __name__ == '__main__':
             for usbi in usbs: cleanup(usbi)
             sys.exit()
         win.launch()
+        win.selectchannel()
         win.timechanged()
         for usbi in usbs: win.sendtriggerinfo(usbi)
         win.dostartstop()
