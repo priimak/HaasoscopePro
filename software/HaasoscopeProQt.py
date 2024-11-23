@@ -391,6 +391,7 @@ class MainWindow(TemplateBaseClass):
         num_chan_per_board = 1
     else:
         num_chan_per_board = 2
+    dointerleaved = False
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
@@ -437,6 +438,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.acdcCheck.stateChanged.connect(self.setacdc)
         self.ui.ohmCheck.stateChanged.connect(self.setohm)
         self.ui.oversampCheck.stateChanged.connect(self.setoversamp)
+        self.ui.interleavedCheck.stateChanged.connect(self.interleave)
         self.ui.attCheck.stateChanged.connect(self.setatt)
         self.ui.tenxCheck.stateChanged.connect(self.settenx)
         self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
@@ -554,6 +556,10 @@ class MainWindow(TemplateBaseClass):
     def setoversamp(self):
         setsplit(self.activeusb,
                  self.ui.oversampCheck.checkState() == QtCore.Qt.Checked)  # will be True for oversampling, False otherwise
+
+    def interleave(self):
+        self.dointerleaved = self.ui.interleavedCheck.checkState() == QtCore.Qt.Checked
+        self.timechanged()
 
     phasecs = []
     for ph in range(len(usbs)): phasecs.append([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
@@ -848,19 +854,20 @@ class MainWindow(TemplateBaseClass):
             self.units = "s"
         self.ui.plot.setLabel('bottom', "Time (" + self.units + ")")
         if self.data_overlapped:
-            self.max_x = self.max_x / 4
             for c in range(4):
                 self.xydata[c][0] = np.array([range(0, 10 * self.expect_samples)]) * (
-                            self.downsamplefactor / self.nsunits / self.samplerate)
+                            4 * self.downsamplefactor / self.nsunits / self.samplerate)
         elif self.data_twochannel:
-            self.max_x = self.max_x / 2
             for c in range(self.num_chan_per_board * self.num_board):
                 self.xydata[c][0] = np.array([range(0, 2 * 10 * self.expect_samples)]) * (
-                            self.downsamplefactor / self.nsunits / self.samplerate)
+                            2 * self.downsamplefactor / self.nsunits / self.samplerate)
         else:
             for c in range(self.num_board):
                 self.xydata[c][0] = np.array([range(0, 4 * 10 * self.expect_samples)]) * (
-                            self.downsamplefactor / self.nsunits / self.samplerate)
+                            1 * self.downsamplefactor / self.nsunits / self.samplerate)
+                if self.num_board%2==0 and self.dointerleaved:
+                    self.xydatainterleaved[int(c/2)][0] = np.array([range(0, 2 * 4 * 10 * self.expect_samples)]) * (
+                            0.5 * self.downsamplefactor / self.nsunits / self.samplerate)
         self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
         self.drawtriggerlines()
@@ -955,6 +962,7 @@ class MainWindow(TemplateBaseClass):
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 2 * 10 * expect_samples], dtype=float)
     else:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 4 * 10 * expect_samples], dtype=float)
+        xydatainterleaved = np.empty([int(num_chan_per_board * num_board), 2, 2 * 4 * 10 * expect_samples], dtype=float)
 
     statuscounter = 0
     def updateplot(self):
@@ -972,7 +980,14 @@ class MainWindow(TemplateBaseClass):
             self.fps, self.nevents, self.lastrate, self.lastrate * self.lastsize / 1e6))
         if not self.dodrawing: return
         # self.ui.plot.setTitle("%0.2f fps, %d events, %0.2f Hz, %0.2f MB/s"%(self.fps,self.nevents,self.lastrate,self.lastrate*self.lastsize/1e6))
-        for li in range(self.nlines): self.lines[li].setData(self.xydata[li][0], self.xydata[li][1])
+        for li in range(self.nlines):
+            if not self.dointerleaved:
+                self.lines[li].setData(self.xydata[li][0], self.xydata[li][1])
+            else:
+                if li%2==0:
+                    self.xydatainterleaved[int(li/2)][1][0::2] = self.xydata[li][1]
+                    self.xydatainterleaved[int(li/2)][1][1::2] = self.xydata[li+1][1]
+                    self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
         app.processEvents()
 
     nevents = 0
@@ -1212,15 +1227,6 @@ class MainWindow(TemplateBaseClass):
             self.pllreset(board)
             self.adfreset(board)
             for c in range(2): setchanacdc(usbs[board],c,0)
-        if self.data_overlapped:
-            for c in range(self.num_board * 4):
-                self.xydata[c][0] = np.array([range(0, 10 * self.expect_samples)]) / self.nsunits / self.samplerate
-        elif self.data_twochannel:
-            for c in range(self.num_board * self.num_chan_per_board):
-                self.xydata[c][0] = np.array([range(0, 2 * 10 * self.expect_samples)]) / self.nsunits / self.samplerate
-        else:
-            for c in range(self.num_board * self.num_chan_per_board):
-                self.xydata[c][0] = np.array([range(0, 4 * 10 * self.expect_samples)]) / self.nsunits / self.samplerate
         return 1
 
     def calculatethings(self):
@@ -1304,6 +1310,7 @@ if __name__ == '__main__':
             for usbi in usbs: cleanup(usbi)
             sys.exit()
         win.launch()
+        win.timechanged()
         for usbi in usbs: win.sendtriggerinfo(usbi)
         win.dostartstop()
     except ftd2xx.DeviceError:

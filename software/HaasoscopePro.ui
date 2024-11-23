@@ -15,15 +15,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="PlotWidget" name="plot">
-      <property name="font">
-       <font>
-        <family>Arial</family>
-       </font>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="2">
      <widget class="QFrame" name="frame">
       <property name="minimumSize">
@@ -907,7 +898,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>330</y>
+          <y>300</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -931,7 +922,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>350</y>
+          <y>320</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -952,7 +943,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>300</y>
+          <y>280</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -973,7 +964,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>410</y>
+          <y>380</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1519,7 +1510,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>390</y>
+          <y>360</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1579,7 +1570,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>370</y>
+          <y>340</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1651,7 +1642,37 @@
          </font>
         </property>
        </widget>
+       <widget class="QCheckBox" name="interleavedCheck">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>400</y>
+          <width>121</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>Interleaved</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
       </widget>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="PlotWidget" name="plot">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
      </widget>
     </item>
    </layout>
