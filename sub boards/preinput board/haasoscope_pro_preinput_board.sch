@@ -10048,6 +10048,14 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="K2" library="G6K-2F-RF-T-TR03_DC5" deviceset="G6K-2F-RF-T-TR03_DC5" device=""/>
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY22" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="R4" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="357"/>
+<part name="R5" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="357"/>
+<part name="R14" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="12"/>
+<part name="C3" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="RF_1pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -10077,6 +10085,10 @@ for splitting</text>
 <text x="454.66" y="45.72" size="1.778" layer="90">Z~1.5 Ohm at 2 GHz
 for CL05A105KA5NQNC</text>
 <text x="142.24" y="-73.66" size="1.778" layer="90">Inputs and controls</text>
+<text x="68.58" y="76.2" size="1.778" layer="90">Pre-deemphasis pi attenuator
+-2.2dB low F, -1.2dB high F
+RC cutoff at ~350 MHz
+50 Ohm</text>
 </plain>
 <instances>
 <instance part="J4" gate="G$1" x="162.56" y="-88.9" smashed="yes" rot="R180"/>
@@ -10122,11 +10134,11 @@ for CL05A105KA5NQNC</text>
 <attribute name="NAME" x="308.61" y="74.7014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="308.61" y="79.502" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="BNCIN" gate="G$1" x="101.6" y="66.04" smashed="yes">
-<attribute name="MPN" x="109.22" y="66.04" size="1.778" layer="96" display="off"/>
-<attribute name="NAME" x="97.79" y="69.088" size="1.778" layer="95" ratio="12"/>
+<instance part="BNCIN" gate="G$1" x="5.08" y="60.96" smashed="yes">
+<attribute name="MPN" x="12.7" y="60.96" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="1.27" y="64.008" size="1.778" layer="95" ratio="12"/>
 </instance>
-<instance part="SUPPLY2" gate="GND" x="109.22" y="58.42" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY2" gate="GND" x="12.7" y="53.34" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY3" gate="GND" x="439.42" y="73.66" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY4" gate="GND" x="256.54" y="-7.62" smashed="yes"/>
 <instance part="Q1" gate="G$1" x="284.48" y="-27.94" smashed="yes">
@@ -10226,6 +10238,25 @@ for CL05A105KA5NQNC</text>
 <attribute name="VALUE" x="410.21" y="20.32" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="SUPPLY16" gate="GND" x="429.26" y="-7.62" smashed="yes"/>
+<instance part="SUPPLY21" gate="GND" x="66.04" y="48.26" smashed="yes"/>
+<instance part="SUPPLY22" gate="GND" x="86.36" y="48.26" smashed="yes"/>
+<instance part="R4" gate="G$1" x="66.04" y="55.88" smashed="yes" rot="R180">
+<attribute name="NAME" x="67.056" y="53.34" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
+<attribute name="VALUE" x="67.056" y="58.42" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
+<instance part="R5" gate="G$1" x="86.36" y="55.88" smashed="yes" rot="R180">
+<attribute name="NAME" x="87.376" y="53.34" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
+<attribute name="VALUE" x="87.376" y="58.42" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
+<instance part="R14" gate="G$1" x="76.2" y="60.96" smashed="yes" rot="R270">
+<attribute name="NAME" x="78.74" y="61.976" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="73.66" y="61.976" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="C3" gate="G$1" x="76.2" y="68.58" smashed="yes" rot="R90">
+<attribute name="NAME" x="74.676" y="71.12" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
+<attribute name="VALUE" x="77.724" y="71.12" size="1.016" layer="96" font="vector" rot="R90"/>
+<attribute name="LCSC" x="76.2" y="68.58" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10442,6 +10473,14 @@ for CL05A105KA5NQNC</text>
 <junction x="429.26" y="10.16"/>
 <pinref part="SUPPLY16" gate="GND" pin="GND"/>
 </segment>
+<segment>
+<pinref part="SUPPLY21" gate="GND" pin="GND"/>
+<pinref part="R4" gate="G$1" pin="P$1"/>
+</segment>
+<segment>
+<pinref part="SUPPLY22" gate="GND" pin="GND"/>
+<pinref part="R5" gate="G$1" pin="P$1"/>
+</segment>
 </net>
 <net name="VS+" class="0">
 <segment>
@@ -10515,14 +10554,21 @@ for CL05A105KA5NQNC</text>
 </net>
 <net name="INPATH" class="0">
 <segment>
-<pinref part="BNCIN" gate="G$1" pin="SIGNAL"/>
-<wire x1="109.22" y1="66.04" x2="129.54" y2="66.04" width="0.1524" layer="91"/>
-<label x="119.38" y="66.04" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="152.4" y1="2.54" x2="139.7" y2="2.54" width="0.1524" layer="91"/>
 <label x="142.24" y="2.54" size="1.778" layer="95"/>
 <pinref part="K1" gate="G$1" pin="COM_1"/>
+</segment>
+<segment>
+<label x="101.6" y="60.96" size="1.778" layer="95"/>
+<wire x1="81.28" y1="60.96" x2="86.36" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="60.96" x2="114.3" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="60.96" x2="81.28" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="P$2"/>
+<junction x="86.36" y="60.96"/>
+<pinref part="R14" gate="G$1" pin="P$1"/>
+<junction x="81.28" y="60.96"/>
+<pinref part="C3" gate="G$1" pin="P$2"/>
+<wire x1="81.28" y1="68.58" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="ACDC_CONTROL" class="0">
@@ -10880,6 +10926,25 @@ for CL05A105KA5NQNC</text>
 <segment>
 <wire x1="195.58" y1="53.34" x2="223.52" y2="53.34" width="0.1524" layer="91"/>
 <label x="200.66" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BNCIN1" class="0">
+<segment>
+<pinref part="BNCIN" gate="G$1" pin="SIGNAL"/>
+<wire x1="12.7" y1="60.96" x2="33.02" y2="60.96" width="0.1524" layer="91"/>
+<label x="22.86" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<label x="45.72" y="60.96" size="1.778" layer="95"/>
+<wire x1="71.12" y1="60.96" x2="66.04" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="60.96" x2="43.18" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="68.58" x2="71.12" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="P$2"/>
+<junction x="66.04" y="60.96"/>
+<pinref part="R14" gate="G$1" pin="P$2"/>
+<junction x="71.12" y="60.96"/>
+<pinref part="C3" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 </nets>
