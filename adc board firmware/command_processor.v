@@ -75,7 +75,7 @@ assign debugout[8] = 0;
 assign debugout[9] = 0;
 assign debugout[10] = boardout[3]; //1kHz out 50 Ohm
 
-reg fanon=1;
+reg fanon=0;
 assign debugout[11] = fanon;
 
 wire exttrigin;
@@ -622,6 +622,10 @@ always @ (posedge clk or negedge rstn)
 			if (rx_data[1]==5) begin
 				lvdsout_spare <= rx_data[2][0]; // used for telling order of devices
 				o_tdata <= {8'd0, 7'd0,lvdsin_spare, 4'd0,lockinfo, 7'd0,~clkswitch};
+			end
+			if (rx_data[1]==6) begin 
+				fanon <= rx_data[2][0];
+				o_tdata <= fanon;
 			end
 			length <= 4;
 			o_tvalid <= 1'b1;

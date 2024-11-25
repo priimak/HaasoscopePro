@@ -190,6 +190,8 @@ def spimode(usb, mode):  # set SPI mode (polarity of clk and data)
 
 dooverrange = False
 def board_setup(usb, dopattern, twochannel):
+    setfan(usb, True)
+
     spimode(usb, 0)
     spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x00, False)  # power up
     # spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x03, False) # power down
@@ -345,9 +347,15 @@ def boardinbits(usb):
     print("Board in bits", res[0], binprint(res[0]))
     return res[0]
 
+def setfan(usb,fanon):
+    usb.send(bytes([2, 6, fanon, 100, 100, 100, 100, 100]))  # set / get fan status
+    res = usb.recv(4)
+    print("Set fan", fanon, "and it was",res[0])
+
 def cleanup(usb):
     spimode(usb, 0)
     spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
+    setfan(usb,False)
     return 1
 
 def getoverrange(usb):
