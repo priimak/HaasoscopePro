@@ -10052,8 +10052,8 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY22" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R4" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="357"/>
 <part name="R5" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="357"/>
-<part name="R14" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="12"/>
-<part name="C3" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="RF_1pF">
+<part name="R14" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="15"/>
+<part name="C3" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="RF_27pF">
 <attribute name="LCSC" value="C52923"/>
 </part>
 </parts>
@@ -10253,8 +10253,8 @@ RC cutoff at ~350 MHz
 <attribute name="VALUE" x="73.66" y="61.976" size="1.016" layer="96" font="vector"/>
 </instance>
 <instance part="C3" gate="G$1" x="76.2" y="68.58" smashed="yes" rot="R90">
-<attribute name="NAME" x="74.676" y="71.12" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="77.724" y="71.12" size="1.016" layer="96" font="vector" rot="R90"/>
+<attribute name="NAME" x="78.74" y="70.104" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="73.66" y="64.516" size="1.016" layer="96" font="vector"/>
 <attribute name="LCSC" x="76.2" y="68.58" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 </instances>

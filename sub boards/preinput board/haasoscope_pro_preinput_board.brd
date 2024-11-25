@@ -177,7 +177,7 @@
 <wire x1="85" y1="50" x2="-9.2" y2="50" width="0.254" layer="20"/>
 <text x="60.7" y="42.3" size="0.8128" layer="21">Haasoscope Pro
 Pre-input board, v1.40
-Cutouts, demphasis filter
+Cutouts, de-emphasis filter
 by Dr. Andy Haas
 November 2024</text>
 <text x="33.3" y="45.4" size="0.8128" layer="21" rot="R270">GND</text>
@@ -2251,7 +2251,7 @@ design rules under a new name.
 <attribute name="VOLTAGE" value="" x="4.7" y="23.2" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="WATTAGE" value="" x="4.7" y="23.2" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="R14" library="MF_Passives" package="R0402" value="12" x="4" y="25.1" smashed="yes" rot="R180">
+<element name="R14" library="MF_Passives" package="R0402" value="15" x="4" y="25.1" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="4" y="25.1" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="4" y="25.1" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="5.4" y="24.8" size="0.8128" layer="21" font="vector"/>
@@ -2261,7 +2261,7 @@ design rules under a new name.
 <attribute name="VOLTAGE" value="" x="4" y="25.1" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="WATTAGE" value="" x="4" y="25.1" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C3" library="MF_Passives" package="C0402" value="RF_1pF" x="4" y="26.4" smashed="yes">
+<element name="C3" library="MF_Passives" package="C0402" value="RF_27pF" x="4" y="26.4" smashed="yes">
 <attribute name="DIELECTRIC" value="" x="4" y="26.4" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="4" y="26.4" size="1.778" layer="27" display="off"/>
 <attribute name="LCSC" value="C52923" x="4" y="26.4" size="1.778" layer="27" display="off"/>
