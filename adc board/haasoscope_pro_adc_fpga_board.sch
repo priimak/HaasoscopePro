@@ -23781,11 +23781,13 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="K6" library="TLP3475R_TP_F" deviceset="TLP3475R_TP,F" device="">
-<attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475R(TP,F"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475"/>
+<attribute name="MOUSER_PART_NUMBER" value="757-TLP3475"/>
 </part>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="K7" library="TLP3475R_TP_F" deviceset="TLP3475R_TP,F" device="">
-<attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475R(TP,F"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475"/>
+<attribute name="MOUSER_PART_NUMBER" value="757-TLP3475"/>
 </part>
 <part name="R31" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="47"/>
 <part name="R136" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="47"/>
@@ -23810,6 +23812,8 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="R237" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="R238" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R239" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
+<part name="R240" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="120"/>
+<part name="R241" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="120"/>
 </parts>
 <sheets>
 <sheet>
@@ -23867,6 +23871,9 @@ lowest input C</text>
 <wire x1="353.06" y1="223.52" x2="350.52" y2="220.98" width="0.1524" layer="90"/>
 <text x="337.82" y="213.36" size="1.778" layer="90">To input amps
 on next sheet</text>
+<text x="322.58" y="236.22" size="1.778" layer="90">I=10mA suggested
+2.5V - 1.3V forward voltage drop = 1.2V
+1.2V/120Ohm=10mA</text>
 </plain>
 <instances>
 <instance part="SUPPLY81" gate="GND" x="63.5" y="251.46" smashed="yes"/>
@@ -23994,6 +24001,10 @@ on next sheet</text>
 <attribute name="VALUE" x="306.07" y="238.76" size="1.778" layer="96" rot="R180" align="center-left"/>
 </instance>
 <instance part="SUPPLY6" gate="GND" x="20.32" y="243.84" smashed="yes"/>
+<instance part="R240" gate="G$1" x="325.12" y="246.38" smashed="yes" rot="R90">
+<attribute name="NAME" x="322.58" y="245.364" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="325.628" y="248.92" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -24246,13 +24257,6 @@ on next sheet</text>
 <wire x1="-15.24" y1="172.72" x2="-27.94" y2="172.72" width="0.1524" layer="91"/>
 <label x="-25.4" y="172.72" size="1.778" layer="95"/>
 <pinref part="K1" gate="G$1" pin="COM_1"/>
-</segment>
-</net>
-<net name="ACDC_CONTROL" class="0">
-<segment>
-<wire x1="340.36" y1="246.38" x2="320.04" y2="246.38" width="0.1524" layer="91"/>
-<label x="320.04" y="246.38" size="1.778" layer="95"/>
-<pinref part="K7" gate="G$1" pin="ANODE"/>
 </segment>
 </net>
 <net name="50_1M_CONTROL" class="0">
@@ -24568,6 +24572,19 @@ on next sheet</text>
 <wire x1="86.36" y1="172.72" x2="73.66" y2="172.72" width="0.1524" layer="91"/>
 <label x="76.2" y="172.72" size="1.778" layer="95"/>
 <pinref part="K2" gate="G$1" pin="COM_1"/>
+</segment>
+</net>
+<net name="N$64" class="0">
+<segment>
+<pinref part="K7" gate="G$1" pin="ANODE"/>
+<pinref part="R240" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="ACDC_CONTROL" class="0">
+<segment>
+<wire x1="350.52" y1="246.38" x2="330.2" y2="246.38" width="0.1524" layer="91"/>
+<label x="330.2" y="246.38" size="1.778" layer="95"/>
+<pinref part="R240" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 </nets>
@@ -25599,6 +25616,10 @@ See comments on sheet 1 for details</text>
 <attribute name="NAME" x="285.75" y="200.66" size="1.778" layer="95" rot="R180" align="center-left"/>
 <attribute name="VALUE" x="278.13" y="200.66" size="1.778" layer="96" rot="R180" align="center-left"/>
 </instance>
+<instance part="R241" gate="G$1" x="297.18" y="208.28" smashed="yes" rot="R90">
+<attribute name="NAME" x="294.64" y="207.264" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="299.72" y="207.264" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -25792,13 +25813,6 @@ See comments on sheet 1 for details</text>
 <wire x1="58.42" y1="132.08" x2="45.72" y2="132.08" width="0.1524" layer="91"/>
 <label x="48.26" y="132.08" size="1.778" layer="95"/>
 <pinref part="K4" gate="G$1" pin="COM_1"/>
-</segment>
-</net>
-<net name="ACDC_CONTROL2" class="0">
-<segment>
-<wire x1="312.42" y1="208.28" x2="292.1" y2="208.28" width="0.1524" layer="91"/>
-<label x="292.1" y="208.28" size="1.778" layer="95"/>
-<pinref part="K6" gate="G$1" pin="ANODE"/>
 </segment>
 </net>
 <net name="50_1M_CONTROL2" class="0">
@@ -26009,6 +26023,19 @@ See comments on sheet 1 for details</text>
 <pinref part="K6" gate="G$1" pin="DRAIN_2"/>
 <wire x1="292.1" y1="198.12" x2="292.1" y2="205.74" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="198.12" x2="292.1" y2="198.12" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$66" class="0">
+<segment>
+<pinref part="K6" gate="G$1" pin="ANODE"/>
+<pinref part="R241" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="ACDC_CONTROL2" class="0">
+<segment>
+<wire x1="322.58" y1="208.28" x2="302.26" y2="208.28" width="0.1524" layer="91"/>
+<label x="302.26" y="208.28" size="1.778" layer="95"/>
+<pinref part="R241" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 </nets>
