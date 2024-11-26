@@ -9866,7 +9866,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R131" library="MF_Passives" package="R0402" value="127" x="73" y="37.5" smashed="yes">
 <attribute name="HOUSEPART" value="" x="73" y="37.5" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="73" y="37.5" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="75.4" y="36.8" size="0.8128" layer="25" rot="R90"/>
+<attribute name="NAME" x="75.16" y="36.18" size="0.8128" layer="25" rot="R90"/>
 <attribute name="POPULATE" value="1" x="73" y="37.5" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="73" y="37.5" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="73" y="37.5" size="1.778" layer="27" display="off"/>
@@ -9876,7 +9876,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R132" library="MF_Passives" package="R0402" value="127" x="70.5" y="37.5" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="70.5" y="37.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="70.5" y="37.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="69" y="36.8" size="0.8128" layer="25" rot="R90"/>
+<attribute name="NAME" x="69" y="36.1" size="0.8128" layer="25" rot="R90"/>
 <attribute name="POPULATE" value="1" x="70.5" y="37.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="70.5" y="37.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="70.5" y="37.5" size="1.778" layer="27" rot="R180" display="off"/>
@@ -9886,7 +9886,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R133" library="MF_Passives" package="R0402" value="66.5" x="73" y="35.5" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="73" y="35.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="73" y="35.5" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="73.7" y="34.6" size="0.8128" layer="25" rot="R180"/>
+<attribute name="NAME" x="74.5" y="34.73" size="0.8128" layer="25" rot="R180"/>
 <attribute name="POPULATE" value="1" x="73" y="35.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="73" y="35.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="73" y="35.5" size="1.778" layer="27" rot="R180" display="off"/>
@@ -9896,7 +9896,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R134" library="MF_Passives" package="R0402" value="22.6" x="71.1" y="35.5" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="71.1" y="35.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="71.1" y="35.5" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="70.1" y="34.8" size="0.8128" layer="25" rot="R90"/>
+<attribute name="NAME" x="70.32" y="34.11" size="0.8128" layer="25" rot="R90"/>
 <attribute name="POPULATE" value="1" x="71.1" y="35.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="71.1" y="35.5" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="71.1" y="35.5" size="1.778" layer="27" rot="R90" display="off"/>
@@ -9906,6 +9906,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R135" library="MF_Passives" package="R0402" value="357" x="70.5" y="33.5" smashed="yes">
 <attribute name="HOUSEPART" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="69.17" y="31.98" size="0.8128" layer="21" font="vector"/>
 <attribute name="POPULATE" value="1" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="70.5" y="33.5" size="1.778" layer="27" display="off"/>
@@ -10018,7 +10019,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R142" library="MF_Passives" package="R0402" value="0" x="76.4" y="36.1" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="76.4" y="36.1" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="76.4" y="36.1" size="0.8128" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="75.7" y="35.3" size="0.8128" layer="25" rot="R90"/>
+<attribute name="NAME" x="77.91" y="34.71" size="0.8128" layer="25" rot="R90"/>
 <attribute name="POPULATE" value="1" x="76.4" y="36.1" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="76.4" y="36.1" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="76.4" y="36.1" size="0.8128" layer="27" rot="R270" display="off"/>
@@ -11138,7 +11139,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="74.5" y="115" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="74.5" y="115" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="74.5" y="115" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="76.7" y="114.4" size="0.8128" layer="25" rot="R90"/>
 <attribute name="POPULATE" value="1" x="74.5" y="115" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="74.5" y="115" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="74.5" y="115" size="1.778" layer="27" display="off"/>
@@ -11148,7 +11148,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="74.5" y="117" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="" x="74.5" y="117" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="74.5" y="117" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="76.7" y="116.4" size="0.8128" layer="25" rot="R90"/>
 <attribute name="POPULATE" value="1" x="74.5" y="117" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="74.5" y="117" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="74.5" y="117" size="1.778" layer="27" display="off"/>
@@ -11195,7 +11194,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R189" library="MF_Passives" package="R0402" value="127" x="69" y="119" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="69" y="119" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="69" y="119" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="66.6" y="119.7" size="0.8128" layer="25" rot="R270"/>
+<attribute name="NAME" x="67.54" y="119.62" size="0.8128" layer="25"/>
 <attribute name="POPULATE" value="1" x="69" y="119" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="69" y="119" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="69" y="119" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11205,7 +11204,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R190" library="MF_Passives" package="R0402" value="127" x="71.5" y="119" smashed="yes">
 <attribute name="HOUSEPART" value="" x="71.5" y="119" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="71.5" y="119" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="73" y="119.7" size="0.8128" layer="25" rot="R270"/>
+<attribute name="NAME" x="72.77" y="120.41" size="0.8128" layer="25" rot="R270"/>
 <attribute name="POPULATE" value="1" x="71.5" y="119" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="71.5" y="119" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="71.5" y="119" size="1.778" layer="27" display="off"/>
@@ -11215,7 +11214,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R191" library="MF_Passives" package="R0402" value="66.5" x="69" y="121" smashed="yes">
 <attribute name="HOUSEPART" value="" x="69" y="121" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="69" y="121" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="68.3" y="121.9" size="0.8128" layer="25"/>
+<attribute name="NAME" x="67.7" y="121.75" size="0.8128" layer="25"/>
 <attribute name="POPULATE" value="1" x="69" y="121" size="1.778" layer="27" display="off"/>
 <attribute name="TOLERANCE" value="" x="69" y="121" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="" x="69" y="121" size="1.778" layer="27" display="off"/>
@@ -11225,7 +11224,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R192" library="MF_Passives" package="R0402" value="22.6" x="70.9" y="121" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="70.9" y="121" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="70.9" y="121" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="71.9" y="121.7" size="0.8128" layer="25" rot="R270"/>
+<attribute name="NAME" x="71.69" y="122.32" size="0.8128" layer="25" rot="R270"/>
 <attribute name="POPULATE" value="1" x="70.9" y="121" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="70.9" y="121" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="70.9" y="121" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11235,7 +11234,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R193" library="MF_Passives" package="R0402" value="357" x="71.5" y="123" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="71.5" y="123" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="71.5" y="123" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="72.9" y="123.7" size="0.8128" layer="25" rot="R270"/>
+<attribute name="NAME" x="72.86" y="124.64" size="0.8128" layer="25" rot="R180"/>
 <attribute name="POPULATE" value="1" x="71.5" y="123" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="71.5" y="123" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="71.5" y="123" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11246,7 +11245,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="66.5" y="115" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="66.5" y="115" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="66.5" y="115" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="64.1" y="115.6" size="0.8128" layer="25" rot="R270"/>
 <attribute name="POPULATE" value="1" x="66.5" y="115" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="66.5" y="115" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="66.5" y="115" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11256,7 +11254,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIELECTRIC" value="" x="66.5" y="117" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="66.5" y="117" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="66.5" y="117" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="64.1" y="117.6" size="0.8128" layer="25" rot="R270"/>
 <attribute name="POPULATE" value="1" x="66.5" y="117" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="66.5" y="117" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="66.5" y="117" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11354,7 +11351,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R196" library="MF_Passives" package="R0402" value="0" x="64.6" y="120.4" smashed="yes" rot="R90">
 <attribute name="HOUSEPART" value="" x="64.6" y="120.4" size="0.8128" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="64.6" y="120.4" size="0.8128" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="65.3" y="121.2" size="0.8128" layer="25" rot="R270"/>
+<attribute name="NAME" x="65.28" y="121.56" size="0.8128" layer="25" rot="R270"/>
 <attribute name="POPULATE" value="1" x="64.6" y="120.4" size="0.8128" layer="27" rot="R90" display="off"/>
 <attribute name="TOLERANCE" value="" x="64.6" y="120.4" size="0.8128" layer="27" rot="R90" display="off"/>
 <attribute name="URL" value="" x="64.6" y="120.4" size="0.8128" layer="27" rot="R90" display="off"/>
@@ -13603,6 +13600,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="OUTSPLIT" pad="GND@3"/>
 <contactref element="OUTSPLIT" pad="GND@4"/>
 <contactref element="OUTSPLIT" pad="GND@2"/>
+<polygon width="0.1524" layer="1" pour="cutout" isolate="0.16">
+<vertex x="-0.5" y="17.5"/>
+<vertex x="4.5" y="17.5"/>
+<vertex x="4.5" y="13.5"/>
+<vertex x="-0.5" y="13.5"/>
+</polygon>
 </signal>
 <signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>

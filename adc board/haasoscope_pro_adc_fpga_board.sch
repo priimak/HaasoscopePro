@@ -23836,7 +23836,10 @@ for attenuator</text>
 <text x="-10.16" y="190.5" size="1.778" layer="90">RF relay for splitting</text>
 <text x="-22.86" y="147.32" size="1.778" layer="90">RF relay driver
 for splitting</text>
-<text x="289.56" y="215.9" size="1.778" layer="90">Z~1.5 Ohm at 2 GHz
+<text x="284.48" y="208.28" size="1.778" layer="90">RC freq for 50 Ohm * 1uF is ~3kHz,
+so frequencies less than that will be filtered
+
+Z~1.5 Ohm at 2 GHz
 for CL05A105KA5NQNC</text>
 <text x="271.78" y="170.18" size="1.778" layer="90">5V USB for front panel</text>
 <text x="-66.04" y="228.6" size="1.778" layer="90">BNC input</text>
@@ -23882,7 +23885,7 @@ on next sheet</text>
 </instance>
 <instance part="C79" gate="G$1" x="73.66" y="233.68" smashed="yes" rot="R180">
 <attribute name="NAME" x="70.739" y="232.664" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="78.359" y="230.124" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="78.359" y="232.664" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="SUPPLY84" gate="GND" x="68.58" y="226.06" smashed="yes" rot="MR0"/>
 <instance part="BNCIN2" gate="G$1" x="-60.96" y="220.98" smashed="yes">
@@ -23914,31 +23917,31 @@ on next sheet</text>
 <instance part="SUPPLY97" gate="GND" x="210.82" y="228.6" smashed="yes"/>
 <instance part="R165" gate="G$1" x="190.5" y="236.22" smashed="yes">
 <attribute name="NAME" x="189.484" y="238.76" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="189.484" y="233.68" size="1.016" layer="96" font="vector" rot="R90"/>
+<attribute name="VALUE" x="192.786" y="235.966" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
 <instance part="R166" gate="G$1" x="210.82" y="236.22" smashed="yes">
 <attribute name="NAME" x="209.804" y="238.76" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="209.804" y="233.68" size="1.016" layer="96" font="vector" rot="R90"/>
+<attribute name="VALUE" x="213.106" y="236.22" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
 <instance part="R167" gate="G$1" x="200.66" y="241.3" smashed="yes" rot="R90">
 <attribute name="NAME" x="198.12" y="240.284" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="203.2" y="240.284" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="201.168" y="243.84" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R168" gate="G$1" x="-5.08" y="228.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="-7.62" y="227.584" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="-2.54" y="227.584" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="-6.096" y="230.378" size="1.016" layer="96" font="vector"/>
 </instance>
 <instance part="R169" gate="G$1" x="-5.08" y="254" smashed="yes" rot="R90">
 <attribute name="NAME" x="-7.62" y="252.984" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="-2.54" y="252.984" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="-6.096" y="255.778" size="1.016" layer="96" font="vector"/>
 </instance>
 <instance part="R170" gate="G$1" x="0" y="241.3" smashed="yes" rot="R180">
 <attribute name="NAME" x="1.016" y="238.76" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="1.016" y="243.84" size="1.016" layer="96" font="vector" rot="R270"/>
+<attribute name="VALUE" x="-1.778" y="240.284" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
 <instance part="C82" gate="G$1" x="302.26" y="223.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="300.736" y="226.06" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="303.784" y="226.06" size="1.016" layer="96" font="vector" rot="R90"/>
+<attribute name="NAME" x="299.974" y="228.346" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="299.974" y="226.06" size="1.016" layer="96" font="vector"/>
 <attribute name="LCSC" x="302.26" y="223.52" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="Q9" gate="G$1" x="-2.54" y="137.16" smashed="yes">
@@ -23961,11 +23964,11 @@ on next sheet</text>
 </instance>
 <instance part="R159" gate="G$1" x="121.92" y="241.3" smashed="yes" rot="R90">
 <attribute name="NAME" x="119.38" y="240.284" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="124.46" y="240.284" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="120.904" y="243.84" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R158" gate="G$1" x="63.5" y="233.68" smashed="yes" rot="R180">
 <attribute name="NAME" x="64.516" y="231.14" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="64.516" y="236.22" size="1.016" layer="96" font="vector" rot="R270"/>
+<attribute name="VALUE" x="61.214" y="233.68" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
 <instance part="SUPPLY9" gate="GND" x="-30.48" y="162.56" smashed="yes"/>
 <instance part="K1" gate="G$1" x="-15.24" y="185.42" smashed="yes">
@@ -24651,31 +24654,31 @@ lowest input C</text>
 </instance>
 <instance part="R44" gate="G$1" x="144.78" y="-50.8" smashed="yes" rot="R90">
 <attribute name="NAME" x="142.24" y="-49.276" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="147.32" y="-49.276" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="144.78" y="-46.736" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R45" gate="G$1" x="144.78" y="-53.34" smashed="yes" rot="R90">
 <attribute name="NAME" x="142.24" y="-54.356" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="147.32" y="-54.356" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="144.78" y="-56.896" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R131" gate="G$1" x="76.2" y="-55.88" smashed="yes" rot="R90">
 <attribute name="NAME" x="73.66" y="-56.896" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="78.74" y="-56.896" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="76.2" y="-58.166" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R132" gate="G$1" x="76.2" y="-48.26" smashed="yes" rot="R90">
 <attribute name="NAME" x="73.66" y="-49.276" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="78.74" y="-49.276" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="76.2" y="-45.974" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R133" gate="G$1" x="66.04" y="-53.34" smashed="yes" rot="R90">
-<attribute name="NAME" x="63.5" y="-54.356" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="68.58" y="-54.356" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="63.5" y="-54.61" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="67.056" y="-55.88" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R134" gate="G$1" x="66.04" y="-50.8" smashed="yes" rot="R90">
-<attribute name="NAME" x="63.5" y="-49.276" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="68.58" y="-49.276" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="63.5" y="-48.514" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="67.056" y="-47.244" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R135" gate="G$1" x="60.96" y="-45.72" smashed="yes">
 <attribute name="NAME" x="59.944" y="-43.18" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="59.944" y="-48.26" size="1.016" layer="96" font="vector" rot="R90"/>
+<attribute name="VALUE" x="58.42" y="-45.466" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
 <instance part="SUPPLY31" gate="GND" x="66.04" y="-43.18" smashed="yes"/>
 <instance part="SUPPLY33" gate="GND" x="124.46" y="-27.94" smashed="yes"/>
@@ -24690,11 +24693,11 @@ lowest input C</text>
 </instance>
 <instance part="R138" gate="G$1" x="297.18" y="-48.26" smashed="yes" rot="R90">
 <attribute name="NAME" x="294.64" y="-46.736" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="299.72" y="-46.736" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="297.18" y="-44.196" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R139" gate="G$1" x="297.18" y="-50.8" smashed="yes" rot="R90">
 <attribute name="NAME" x="294.64" y="-51.816" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="299.72" y="-51.816" size="1.016" layer="96" font="vector" rot="R180"/>
+<attribute name="VALUE" x="297.18" y="-54.356" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="SUPPLY35" gate="GND" x="215.9" y="-25.4" smashed="yes"/>
 <instance part="SUPPLY36" gate="GND" x="205.74" y="-25.4" smashed="yes"/>
@@ -24732,7 +24735,7 @@ lowest input C</text>
 </instance>
 <instance part="R142" gate="G$1" x="53.34" y="-58.42" smashed="yes" rot="R180">
 <attribute name="NAME" x="54.356" y="-60.96" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
-<attribute name="VALUE" x="54.356" y="-55.88" size="1.016" layer="96" font="vector" rot="R270"/>
+<attribute name="VALUE" x="50.8" y="-58.42" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
 <instance part="SUPPLY44" gate="GND" x="96.52" y="-109.22" smashed="yes"/>
 <instance part="SUPPLY45" gate="GND" x="86.36" y="-109.22" smashed="yes"/>
@@ -25481,15 +25484,9 @@ for attenuator</text>
 50 Ohm</text>
 <text x="142.24" y="180.34" size="1.778" layer="90" rot="R90">RF relay</text>
 <text x="210.82" y="180.34" size="1.778" layer="90" rot="R90">RF relay</text>
-<text x="261.62" y="177.8" size="1.778" layer="90">Z~1.5 Ohm at 2 GHz
-for CL05A105KA5NQNC</text>
 <text x="266.7" y="213.36" size="1.778" layer="90">AC/DC coupling</text>
 <text x="248.92" y="137.16" size="1.778" layer="90">5V USB for front panel</text>
 <text x="-12.7" y="190.5" size="1.778" layer="90">BNC input</text>
-<text x="81.28" y="182.88" size="1.778" layer="90">FB and OUT
-are connected
-internally for
-lowest input C</text>
 <wire x1="-33.02" y1="182.88" x2="-17.78" y2="182.88" width="0.1524" layer="90"/>
 <wire x1="-20.32" y1="185.42" x2="-17.78" y2="182.88" width="0.1524" layer="90"/>
 <wire x1="-17.78" y1="182.88" x2="-20.32" y2="180.34" width="0.1524" layer="90"/>
@@ -25504,6 +25501,10 @@ lowest input C</text>
 <wire x1="327.66" y1="185.42" x2="325.12" y2="182.88" width="0.1524" layer="90"/>
 <text x="312.42" y="175.26" size="1.778" layer="90">To input amps
 on next sheet</text>
+<text x="-22.86" y="142.24" size="1.778" layer="90">Nearly identical to preinput for channel 1,
+except there's no split out
+
+See comments on sheet 1 for details</text>
 </plain>
 <instances>
 <instance part="SUPPLY26" gate="GND" x="35.56" y="210.82" smashed="yes"/>
@@ -26016,6 +26017,7 @@ on next sheet</text>
 <description>Input amps 2</description>
 <plain>
 <text x="88.9" y="78.74" size="1.778" layer="90">Nearly identical to input amps for channel 1
+
 See comments on sheet 2 for details</text>
 <text x="-43.18" y="127" size="1.778" layer="90">50 Ohm input
 from previous sheet</text>
