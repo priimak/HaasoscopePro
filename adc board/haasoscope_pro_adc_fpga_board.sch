@@ -22818,11 +22818,11 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 </deviceset>
 </devicesets>
 </library>
-<library name="TLP3475R_TP_F">
+<library name="TLP3475_TP_F">
 <description>&lt;Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
-<package name="TLP3475RTPF">
+<package name="TLP3475TPF">
 <description>&lt;b&gt;11-2D1A_2022&lt;/b&gt;&lt;br&gt;
 </description>
 <smd name="1" x="-0.4" y="-0.875" dx="1" dy="0.55" layer="1" rot="R90"/>
@@ -22846,7 +22846,7 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 </package>
 </packages>
 <symbols>
-<symbol name="TLP3475R_TP,F">
+<symbol name="TLP3475_TP,F">
 <wire x1="5.08" y1="2.54" x2="30.48" y2="2.54" width="0.254" layer="94"/>
 <wire x1="30.48" y1="-5.08" x2="30.48" y2="2.54" width="0.254" layer="94"/>
 <wire x1="30.48" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
@@ -22860,14 +22860,14 @@ Source: &lt;a href="http://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k_2f_rf
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TLP3475R_TP,F" prefix="K">
+<deviceset name="TLP3475_TP,F" prefix="K">
 <description>&lt;b&gt;Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=15250&amp;prodName=TLP3475R"&gt; Datasheet &lt;/a&gt;</description>
+Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=15250&amp;prodName=TLP3475"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="TLP3475R_TP,F" x="0" y="0"/>
+<gate name="G$1" symbol="TLP3475_TP,F" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TLP3475RTPF">
+<device name="" package="TLP3475TPF">
 <connects>
 <connect gate="G$1" pin="ANODE" pad="1"/>
 <connect gate="G$1" pin="CATHODE" pad="2"/>
@@ -22879,9 +22879,9 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <attribute name="DESCRIPTION" value="Solid State Relays - PCB Mount Photorelay Voff=40V Ion=0.12A Ron=14Ohm" constant="no"/>
 <attribute name="HEIGHT" value="1.4mm" constant="no"/>
 <attribute name="MANUFACTURER_NAME" value="Toshiba" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475R(TP,F" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="757-TLP3475RTPF" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Toshiba/TLP3475RTPF?qs=bYcAidFZG4jqnlmzhh150Q%3D%3D" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475(TP,F" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="757-TLP3475TPF" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Toshiba/TLP3475TPF?qs=bYcAidFZG4jqnlmzhh150Q%3D%3D" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -23780,12 +23780,12 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="K5" library="G6K-2F-RF-T-TR03_DC5" deviceset="G6K-2F-RF-T-TR03_DC5" device=""/>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="K6" library="TLP3475R_TP_F" deviceset="TLP3475R_TP,F" device="">
+<part name="K6" library="TLP3475_TP_F" deviceset="TLP3475_TP,F" device="">
 <attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475"/>
 <attribute name="MOUSER_PART_NUMBER" value="757-TLP3475"/>
 </part>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="K7" library="TLP3475R_TP_F" deviceset="TLP3475R_TP,F" device="">
+<part name="K7" library="TLP3475_TP_F" deviceset="TLP3475_TP,F" device="">
 <attribute name="MANUFACTURER_PART_NUMBER" value="TLP3475"/>
 <attribute name="MOUSER_PART_NUMBER" value="757-TLP3475"/>
 </part>
