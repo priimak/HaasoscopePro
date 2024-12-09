@@ -27411,6 +27411,8 @@ so ADC is turned on</text>
 <text x="182.88" y="355.6" size="1.778" layer="90">Low-speed IO connections to the main ADC</text>
 <text x="132.08" y="355.6" size="1.778" layer="90">Power for the main ADC</text>
 <text x="-12.7" y="353.06" size="1.778" layer="90">GND for the main ADC</text>
+<text x="223.52" y="330.2" size="1.778" layer="90">For ADC temperature
+measurement on page 15</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="60.96" y="345.44" smashed="yes">
@@ -27750,14 +27752,14 @@ so ADC is turned on</text>
 <net name="INB_N" class="6">
 <segment>
 <pinref part="IC1" gate="G$1" pin="INB-"/>
-<wire x1="60.96" y1="330.2" x2="55.88" y2="330.2" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="330.2" x2="48.26" y2="330.2" width="0.1524" layer="91"/>
 <label x="48.26" y="330.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="INB_P" class="6">
 <segment>
 <pinref part="IC1" gate="G$1" pin="INB+"/>
-<wire x1="60.96" y1="332.74" x2="55.88" y2="332.74" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="332.74" x2="48.26" y2="332.74" width="0.1524" layer="91"/>
 <label x="48.26" y="332.74" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -33034,7 +33036,8 @@ and USB2 data IO</text>
 <text x="-55.88" y="91.44" size="1.778" layer="90">Pull downs to request USB power</text>
 <text x="55.88" y="119.38" size="1.778" layer="90">FTDI FT232H does 8-bit data FIFO
 to USB2 interface</text>
-<text x="170.18" y="116.84" size="1.778" layer="90">8-bit data to/from FPGA</text>
+<text x="170.18" y="114.3" size="1.778" layer="90">8-bit data to/from 
+FT232H FIFO &lt;-&gt; FPGA</text>
 <text x="93.98" y="86.36" size="1.778" layer="90">To/from computer</text>
 <text x="40.64" y="66.04" size="1.778" layer="90">Flash for FT232H config</text>
 <text x="81.28" y="40.64" size="1.778" layer="90">12 MHz clock for USB</text>
@@ -33043,6 +33046,8 @@ to USB2 interface</text>
 
 If 12VConnected is high (5V), then switch is off
 If 12VConnected is low (0V), then switch is on</text>
+<text x="203.2" y="66.04" size="1.778" layer="90">60 MHz clock goes to FPGA
+and is used for data transmission</text>
 </plain>
 <instances>
 <instance part="IC8" gate="IC" x="137.16" y="71.12" smashed="yes">
@@ -37207,8 +37212,9 @@ for linear reg that follows</text>
 <description>Temp mon</description>
 <plain>
 <text x="22.86" y="15.24" size="1.778" layer="90">Slow adc for temp monitoring</text>
-<text x="154.94" y="76.2" size="1.778" layer="90">V across TDIODE, with 0.1mA
-is 0.681 when ADC running with clock, 0.731 when off</text>
+<text x="149.86" y="73.66" size="1.778" layer="90">V across TDIODE, with 0.1mA is about
+0.681 when ADC running with clock, 
+0.731 when off</text>
 <text x="73.66" y="96.52" size="1.778" layer="90">Gain=1+3/1=4</text>
 <text x="58.42" y="71.12" size="1.778" layer="90">Gain=1+1/10=1.1</text>
 <text x="134.62" y="17.78" size="1.778" layer="90">10kΩ 310uA 100mW ±1% 3380K ±1%
