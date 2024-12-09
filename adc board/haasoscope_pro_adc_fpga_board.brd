@@ -18183,10 +18183,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO22">
 <contactref element="IC5" pad="B6"/>
 </signal>
-<signal name="SDO3_CLK">
-<contactref element="IC5" pad="B10"/>
-<via x="121.5" y="81" extent="1-16" drill="0.2"/>
-</signal>
 <signal name="CLK11">
 <contactref element="IC5" pad="B11"/>
 <contactref element="Y2" pad="3"/>
@@ -18195,30 +18191,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="121.9968" y1="79.5032" x2="121.5" y2="80" width="0.1524" layer="1"/>
 <wire x1="123.20091875" y1="79.04" x2="122.73771875" y2="79.5032" width="0.1524" layer="1"/>
 <wire x1="122.73771875" y1="79.5032" x2="121.9968" y2="79.5032" width="0.1524" layer="1"/>
-</signal>
-<signal name="CLK9">
-<contactref element="IC5" pad="B12"/>
-</signal>
-<signal name="IO35">
-<contactref element="IC5" pad="B21"/>
-</signal>
-<signal name="IO36">
-<contactref element="IC5" pad="B22"/>
-</signal>
-<signal name="IO49">
-<contactref element="IC5" pad="C20"/>
-</signal>
-<signal name="IO50">
-<contactref element="IC5" pad="C21"/>
-</signal>
-<signal name="IO51">
-<contactref element="IC5" pad="C22"/>
-</signal>
-<signal name="IO53">
-<contactref element="IC5" pad="D2"/>
-</signal>
-<signal name="IO54">
-<contactref element="IC5" pad="D6"/>
 </signal>
 <signal name="RESET_IN">
 <contactref element="IC5" pad="D10"/>
@@ -18259,12 +18231,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="94.25" y1="144" x2="94.35" y2="144" width="0.0889" layer="1"/>
 <via x="77.125" y="89.375" extent="1-16" drill="0.2"/>
 </signal>
-<signal name="IO60">
-<contactref element="IC5" pad="D19"/>
-</signal>
-<signal name="IO61">
-<contactref element="IC5" pad="D20"/>
-</signal>
 <signal name="LVDSOUT_SPARE0_P" class="2">
 <contactref element="U$3" pad="P$3"/>
 <contactref element="IC5" pad="F2"/>
@@ -18303,15 +18269,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="121.80415" y1="95.6778" x2="151.1778" y2="95.6778" width="0.0889" layer="16"/>
 <wire x1="151.1778" y1="95.6778" x2="182.6778" y2="127.1778" width="0.0889" layer="16"/>
 </signal>
-<signal name="IO64">
-<contactref element="IC5" pad="E1"/>
-</signal>
-<signal name="IO66">
-<contactref element="IC5" pad="E3"/>
-</signal>
-<signal name="IO67">
-<contactref element="IC5" pad="E4"/>
-</signal>
 <signal name="CLKOUT" class="5">
 <contactref element="IC5" pad="E5"/>
 <via x="118.5" y="86" extent="1-16" drill="0.2"/>
@@ -18341,15 +18298,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="125" y1="97" x2="129.5" y2="97" width="0.127" layer="3"/>
 <wire x1="129.5" y1="97" x2="131" y2="98.5" width="0.127" layer="3"/>
 <wire x1="131" y1="98.5" x2="131" y2="102" width="0.127" layer="3"/>
-</signal>
-<signal name="IO70">
-<contactref element="IC5" pad="E7"/>
-</signal>
-<signal name="IO73">
-<contactref element="IC5" pad="E11"/>
-</signal>
-<signal name="IO75">
-<contactref element="IC5" pad="E13"/>
 </signal>
 <signal name="VCCPLL" class="1">
 <contactref element="IC5" pad="E17"/>
@@ -18474,18 +18422,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO85">
 <contactref element="IC5" pad="F9"/>
 </signal>
-<signal name="IO87">
-<contactref element="IC5" pad="F11"/>
-</signal>
-<signal name="IO90">
-<contactref element="IC5" pad="F15"/>
-</signal>
-<signal name="IO91">
-<contactref element="IC5" pad="F16"/>
-</signal>
-<signal name="IO92">
-<contactref element="IC5" pad="F17"/>
-</signal>
 <signal name="VCCA" class="1">
 <contactref element="IC5" pad="F18"/>
 <contactref element="IC5" pad="G6"/>
@@ -18526,15 +18462,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="110" y1="73.5" x2="107" y2="73.5" width="0.1524" layer="12"/>
 <wire x1="107" y1="73.5" x2="106.5" y2="73" width="0.1524" layer="12"/>
 </signal>
-<signal name="IO93">
-<contactref element="IC5" pad="F19"/>
-</signal>
-<signal name="IO94">
-<contactref element="IC5" pad="F20"/>
-</signal>
-<signal name="CLK1">
-<contactref element="IC5" pad="G1"/>
-</signal>
 <signal name="LVDSOUT_TRIG_N" class="2">
 <contactref element="IC5" pad="G3"/>
 <contactref element="U$3" pad="P$2"/>
@@ -18574,9 +18501,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="142" y1="107.3222" x2="142" y2="105.42635" width="0.0889" layer="14"/>
 <wire x1="132.89585" y1="96.3222" x2="124.3222" y2="96.3222" width="0.0889" layer="14"/>
 <wire x1="124.3222" y1="96.3222" x2="120.8222" y2="92.8222" width="0.0889" layer="14"/>
-</signal>
-<signal name="IO99">
-<contactref element="IC5" pad="G5"/>
 </signal>
 <signal name="SCS3_CLK">
 <contactref element="IC5" pad="G11"/>
@@ -18724,24 +18648,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="149" y1="91.5" x2="148.5" y2="91" width="0.508" layer="1"/>
 <wire x1="148.5" y1="91" x2="147.5" y2="91" width="0.508" layer="1"/>
 </signal>
-<signal name="IO105">
-<contactref element="IC5" pad="G13"/>
-</signal>
-<signal name="IO106">
-<contactref element="IC5" pad="G14"/>
-</signal>
-<signal name="IO107">
-<contactref element="IC5" pad="G15"/>
-</signal>
-<signal name="IO108">
-<contactref element="IC5" pad="G16"/>
-</signal>
-<signal name="IO109">
-<contactref element="IC5" pad="G17"/>
-</signal>
-<signal name="IO110">
-<contactref element="IC5" pad="G18"/>
-</signal>
 <signal name="LVDSIN_SPARE0_N" class="2">
 <contactref element="U$1" pad="P$6"/>
 <contactref element="IC5" pad="E22"/>
@@ -18779,9 +18685,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="R25" pad="1"/>
 <wire x1="118.5" y1="70" x2="118.5" y2="69.825" width="0.2032" layer="16"/>
 </signal>
-<signal name="IO113">
-<contactref element="IC5" pad="H5"/>
-</signal>
 <signal name="LVDSOUT_CLK_P" class="2">
 <contactref element="U$3" pad="P$7"/>
 <contactref element="IC5" pad="J2"/>
@@ -18800,39 +18703,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="210.08045" y1="132.00555625" x2="210.08045" y2="131.671" width="0.0889" layer="14"/>
 <wire x1="210.08045" y1="131.671" x2="211.37645" y2="130.375" width="0.0889" layer="14"/>
 <wire x1="204.57365" y1="137.1778" x2="209.236" y2="132.51545" width="0.0889" layer="14"/>
-</signal>
-<signal name="IO115">
-<contactref element="IC5" pad="H7"/>
-</signal>
-<signal name="IO116">
-<contactref element="IC5" pad="H8"/>
-</signal>
-<signal name="IO117">
-<contactref element="IC5" pad="H10"/>
-</signal>
-<signal name="IO118">
-<contactref element="IC5" pad="H11"/>
-</signal>
-<signal name="IO119">
-<contactref element="IC5" pad="H14"/>
-</signal>
-<signal name="IO120">
-<contactref element="IC5" pad="H15"/>
-</signal>
-<signal name="IO121">
-<contactref element="IC5" pad="H16"/>
-</signal>
-<signal name="IO122">
-<contactref element="IC5" pad="H17"/>
-</signal>
-<signal name="IO123">
-<contactref element="IC5" pad="H18"/>
-</signal>
-<signal name="IO124">
-<contactref element="IC5" pad="H19"/>
-</signal>
-<signal name="IO125">
-<contactref element="IC5" pad="H20"/>
 </signal>
 <signal name="LVDSOUT_TRIGB_N" class="2">
 <contactref element="U$1" pad="P$5"/>
@@ -18882,15 +18752,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="143.42635" y1="37.8222" x2="195.57365" y2="37.8222" width="0.0889" layer="3"/>
 <wire x1="195.57365" y1="37.8222" x2="196.85355" y2="39.1021" width="0.0889" layer="3"/>
 </signal>
-<signal name="IO130">
-<contactref element="IC5" pad="J3"/>
-</signal>
-<signal name="IO131">
-<contactref element="IC5" pad="J4"/>
-</signal>
-<signal name="IO132">
-<contactref element="IC5" pad="J5"/>
-</signal>
 <signal name="LVDSOUT_CLK_N" class="2">
 <contactref element="U$3" pad="P$8"/>
 <contactref element="IC5" pad="J1"/>
@@ -18900,18 +18761,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="114.5" y1="94.5" x2="157" y2="137" width="0.0889" layer="14"/>
 <wire x1="209.21" y1="132.29" x2="209.21" y2="131.645" width="0.0889" layer="14"/>
 <wire x1="204.5" y1="137" x2="209.21" y2="132.29" width="0.0889" layer="14"/>
-</signal>
-<signal name="IO134">
-<contactref element="IC5" pad="J7"/>
-</signal>
-<signal name="IO135">
-<contactref element="IC5" pad="J8"/>
-</signal>
-<signal name="IO136">
-<contactref element="IC5" pad="J17"/>
-</signal>
-<signal name="IO137">
-<contactref element="IC5" pad="J18"/>
 </signal>
 <signal name="DCLK">
 <contactref element="IC5" pad="K2"/>
@@ -18979,15 +18828,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="206.5" y1="60" x2="202" y2="64.5" width="0.0889" layer="1"/>
 <wire x1="179.5" y1="64.5" x2="162.75" y2="47.75" width="0.0889" layer="1"/>
 <wire x1="202" y1="64.5" x2="179.5" y2="64.5" width="0.0889" layer="1"/>
-</signal>
-<signal name="IO141">
-<contactref element="IC5" pad="K7"/>
-</signal>
-<signal name="IO142">
-<contactref element="IC5" pad="K8"/>
-</signal>
-<signal name="IO145">
-<contactref element="IC5" pad="K19"/>
 </signal>
 <signal name="MSEL3">
 <contactref element="IC5" pad="K20"/>
@@ -19105,12 +18945,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="148.5" y1="58" x2="207.5" y2="58" width="0.0889" layer="3"/>
 <via x="207.5" y="58" extent="1-16" drill="0.35"/>
 <wire x1="207.5" y1="58" x2="208" y2="58.5" width="0.0889" layer="1"/>
-</signal>
-<signal name="IO149">
-<contactref element="IC5" pad="L7"/>
-</signal>
-<signal name="IO150">
-<contactref element="IC5" pad="L8"/>
 </signal>
 <signal name="MSEL2">
 <contactref element="IC5" pad="L17"/>
@@ -19267,14 +19101,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO220">
 <contactref element="IC5" pad="T18"/>
 </signal>
-<signal name="CLK6">
-<contactref element="IC5" pad="T21"/>
-<via x="107.5" y="70" extent="1-16" drill="0.2"/>
-</signal>
-<signal name="CLK7">
-<contactref element="IC5" pad="T22"/>
-<via x="107.5" y="69" extent="1-16" drill="0.2"/>
-</signal>
 <signal name="IO225">
 <contactref element="IC5" pad="U9"/>
 </signal>
@@ -19353,13 +19179,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO284">
 <contactref element="IC5" pad="AA4"/>
 </signal>
-<signal name="CLK15">
-<contactref element="IC5" pad="AA11"/>
-<via x="102.5" y="80" extent="1-16" drill="0.2"/>
-</signal>
-<signal name="CLK13">
-<contactref element="IC5" pad="AA12"/>
-</signal>
 <signal name="IO295">
 <contactref element="IC5" pad="AA18"/>
 </signal>
@@ -19375,21 +19194,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="IO300">
 <contactref element="IC5" pad="AB4"/>
 </signal>
-<signal name="CLK14">
-<contactref element="IC5" pad="AB11"/>
-<via x="101.5" y="80" extent="1-16" drill="0.2"/>
-</signal>
-<signal name="CLK12">
-<contactref element="IC5" pad="AB12"/>
-</signal>
 <signal name="IO311">
 <contactref element="IC5" pad="AB18"/>
 </signal>
 <signal name="IO312">
 <contactref element="IC5" pad="AB19"/>
-</signal>
-<signal name="IO48">
-<contactref element="IC5" pad="C19"/>
 </signal>
 <signal name="NCSO">
 <contactref element="IC5" pad="E2"/>
@@ -22648,18 +22457,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="53.2162" y1="115.8968" x2="53.438" y2="115.675" width="0.1524" layer="1"/>
 <wire x1="45.05" y1="118" x2="50.51313125" y2="118" width="0.1524" layer="1"/>
 <wire x1="50.51313125" y1="118" x2="52.61633125" y2="115.8968" width="0.1524" layer="1"/>
-</signal>
-<signal name="CLK3">
-<contactref element="IC5" pad="T1"/>
-</signal>
-<signal name="CLK2">
-<contactref element="IC5" pad="T2"/>
-</signal>
-<signal name="IO133">
-<contactref element="IC5" pad="J6"/>
-</signal>
-<signal name="IO114">
-<contactref element="IC5" pad="H6"/>
 </signal>
 <signal name="N$2">
 <contactref element="FL1" pad="1"/>
