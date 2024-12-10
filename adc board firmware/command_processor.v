@@ -417,6 +417,7 @@ always @ (posedge clklvds or negedge rstn)
 	
 	// rising edge trigger (1)
 	1 : begin // ready for first part of trigger condition to be met
+	lvdsout_trig <= 0;
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
@@ -444,17 +445,18 @@ always @ (posedge clklvds or negedge rstn)
 				acqstate <= 8'd250;
 			end
 		end
-		else begin
-			tot_counter<=8'd0;
-			sample_triggered<=0;
-			acqstate <= 8'd1;
-		end
+//		else begin
+//			tot_counter<=8'd0;
+//			sample_triggered<=0;
+//			acqstate <= 8'd1;
+//		end
 	end
 	end
 	end
 	
 	//falling edge trigger (2)
 	3 : begin // ready for first part of trigger condition to be met
+	lvdsout_trig <= 0;
 	if (triggertype_sync!=2) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
@@ -482,11 +484,11 @@ always @ (posedge clklvds or negedge rstn)
 				acqstate <= 8'd250;
 			end
 		end
-		else begin
-			tot_counter<=8'd0;
-			sample_triggered<=0;
-			acqstate <= 8'd3;
-		end
+//		else begin
+//			tot_counter<=8'd0;
+//			sample_triggered<=0;
+//			acqstate <= 8'd3;
+//		end
 	end
 	end
 	end
@@ -518,10 +520,13 @@ always @ (posedge clklvds or negedge rstn)
 			acqstate <= 8'd251;
 		end
 	end
+	
 	251 : begin // ready to be read out, not writing into RAM
+		lvdsout_trig <= 0;
 		triggercounter<= -16'd1;
 		if (didreadout_sync) acqstate <= 8'd0;
 	end
+	
 	default : begin
 		acqstate <= 8'd0;
 	end

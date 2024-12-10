@@ -515,7 +515,7 @@ class MainWindow(TemplateBaseClass):
     tad = 0
     def setTAD(self):
         self.tad = self.ui.tadBox.value()
-        spicommand(self.activeusb, "TAD", 0x02, 0xB6, self.tad, False)
+        spicommand(self.activeusb, "TAD", 0x02, 0xB6, self.tad, False, quiet=True)
 
     toff = 0
     def setToff(self):
@@ -1015,12 +1015,16 @@ class MainWindow(TemplateBaseClass):
         triggercounter = usb.recv(4)  # get the 4 bytes
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
-            # print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
-            for s in range(10):
-                if getbit(triggercounter[int(s / 8) + 1], s % 8) == 0:
+            #print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
+            gotonebit = False
+            for s in range(21):
+                thebit = getbit(triggercounter[int(s / 8) + 1], s % 8)
+                if thebit == 1: gotonebit = True
+                if thebit == 0 and gotonebit:
                     self.sample_triggered[board] = s
                     break
-            # print("sample_triggered", self.sample_triggered[board], "for board", board)
+            if self.sample_triggered[board]<10: self.sample_triggered[board] += 41
+            #print("sample_triggered", self.sample_triggered[board], "for board", board)
             return 1
         else:
             return 0
@@ -1125,7 +1129,7 @@ class MainWindow(TemplateBaseClass):
                     val = val * self.yscale * self.tenx
                     if self.downsamplemerging == 1:
                         samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
-                        if s < (self.expect_samples - 1): samp = samp + self.sample_triggered[board]
+                        if s < (self.expect_samples - 8): samp = samp + self.sample_triggered[board]
                         if self.data_overlapped:
                             self.xydata[chan][1][samp] = val
                         elif self.data_twochannel:
@@ -1146,7 +1150,7 @@ class MainWindow(TemplateBaseClass):
                         if self.data_twochannel:
                             samp = s * 20 + chan * 10 + 9 - n
                             if n < 20: samp = samp + 10
-                            if s < (self.expect_samples - 1): samp = samp + int(2 * (self.sample_triggered[board] - (
+                            if s < (self.expect_samples - 8): samp = samp + int(2 * (self.sample_triggered[board] - (
                                         downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
@@ -1155,7 +1159,7 @@ class MainWindow(TemplateBaseClass):
                                     (samp + self.toff) % (20 * self.expect_samples)] = val
                         else:
                             samp = s * 40 + 39 - n
-                            if s < (self.expect_samples - 1): samp = samp + int(4 * (self.sample_triggered[board] - (
+                            if s < (self.expect_samples - 8): samp = samp + int(4 * (self.sample_triggered[board] - (
                                         downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
                                 self.xydata[board][1][samp] = val
@@ -1237,14 +1241,20 @@ class MainWindow(TemplateBaseClass):
         if self.activeboard % 2 == 1:
             c1 = self.activeboard - 1
         else:
-            c1 = self.activeboard + 1
-        c = self.activeboard
+            c1 = self.activeboard + 1 # other board we are merging with
+        c = self.activeboard # the exttrig board
         fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
         yc = self.xydata[c][1][
             (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
         yc1 = self.xydata[c1][1][
             (self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
         self.exttrigstd = self.exttrigstd + np.std(yc1 - yc)
+        extrigboardmean = np.mean(yc)
+        otherboardmean = np.mean(yc1)
+        self.xydata[c1][1] += extrigboardmean - otherboardmean
+        extrigboardstd = np.std(yc)
+        otherboardstd = np.std(yc1)
+        self.xydata[c1][1] *= extrigboardstd/otherboardstd
 
     lastrate = 0
     lastsize = 0
