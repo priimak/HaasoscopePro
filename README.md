@@ -43,11 +43,12 @@
 
 ### Repository structure
 
-- [adc board](adc%20board/): Design files and documentation for the main hardware board, based on Eagle (9.6.2)
+- [adc board](adc%20board/): Design files and documentation for the main board, based on Eagle 9.6.2
+- [adc board/Kicad](adc%20board/Kicad): An import of the main baord design files into KiCad 8
 - [adc board firmware](adc%20board%20firmware/): Quartus lite project for the Altera Cyclone IV FPGA firmware
 - [case](case/): Front and back PCB panels for the aluminum case
 - [software](software/): Python files for the oscilloscope program
-- [sub boards](sub%20boards/): Design files and documentation for smaller test boards that were used during development 
+- [sub boards](sub%20boards/): Eagle design files and documentation for smaller test boards that were used during development 
 
 ### 2 GHz Active Probe
 
