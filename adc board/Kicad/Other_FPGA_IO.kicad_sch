@@ -1,0 +1,10716 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "0f398657-fef8-40a5-b1ce-239d968bc32c")
+	(paper "User" 297.002 252.298)
+	(lib_symbols
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:BU-SMB-V"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "X"
+				(at -2.54 3.302 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" ""
+				(at -2.54 -5.08 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:BU-SMB-V"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "FEMALE SMB CONNECTOR\n\nRadiall\n\ndistributor RS 112-2993"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BU-SMB-V_1_0"
+				(arc
+					(start -2.54 -2.54)
+					(mid -0.9022 -1.9838)
+					(end 0 -0.508)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0.508) (xy -0.762 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 -0.508) (xy -2.54 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 0.508) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0) (xy -0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy -0.762 -1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0.508)
+					(mid -0.9022 1.9838)
+					(end -2.54 2.54)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -2.54 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -2.54 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -2.54 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -2.54 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" ""
+				(at 1.524 0.381 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at 1.524 -4.699 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic chip capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CAPACITOR_0402_N_1_0"
+				(rectangle
+					(start -2.032 -2.032)
+					(end 2.032 -1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -2.032 -1.016)
+					(end 2.032 -0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -2.032)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:CONN_08{dblquote}"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at -5.08 13.208 0)
+				(effects
+					(font
+						(size 1.778 1.778)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" ""
+				(at -5.08 -12.446 0)
+				(effects
+					(font
+						(size 1.778 1.778)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:1X08"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections\n\nOn any of the 0.1 inch spaced packages, you can populate with these:\n\n• https://www.sparkfun.com/products/116  Break Away Headers - Straight (PRT-00116)\n• https://www.sparkfun.com/products/553  Break Away Male Headers - Right Angle (PRT-00553)\n• https://www.sparkfun.com/products/115  Female Headers (PRT-00115)\n• https://www.sparkfun.com/products/117  Break Away Headers - Machine Pin (PRT-00117)\n• https://www.sparkfun.com/products/743  Break Away Female Headers - Swiss Machine Pin (PRT-00743)\n• https://www.sparkfun.com/products/9279  Arduino Stackable Header - 8 Pin (PRT-09279)\n\nFor SCREWTERMINALS and SPRING TERMINALS visit here:\n\n• https://www.sparkfun.com/search/results?term=Screw+Terminals  Screw Terimnals on SparkFun.com (5mm/3.5mm/2.54mm spacing)\n\nThis device is also useful as a general connection point to wire up your design to another part of your project. Our various solder wires solder well into these plated through hole pads.\n\n• https://www.sparkfun.com/products/11375  Hook-Up Wire - Assortment (Stranded, 22 AWG) (PRT-11375)\n• https://www.sparkfun.com/products/11367  Hook-Up Wire - Assortment (Solid Core, 22 AWG) (PRT-11367)\n• https://www.sparkfun.com/categories/141  View the entire wire category on our website here\n\nSpecial notes:\n\nMolex polarized connector foot print use with SKU : PRT-08231 with associated crimp pins and housings. 1MM SMD Version SKU: PRT-10208\n\nNOTES ON THE VARIANTS LOCK and LOCK_LONGPADS... This footprint was designed to help hold the alignment of a through-hole component (i.e.  6-pin header) while soldering it into place. You may notice that each hole has been shifted either up or down by 0.005 of an inch from it's more standard position (which is a perfectly straight line).  This slight alteration caused the pins (the squares in the middle) to touch the edges of the holes.  Because they are alternating, it causes a \"brace\" to hold the component in place.  0.005 has proven to be the perfect amount of \"off-center\" position when using our standard breakaway headers. Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,if you push a header all the way into place, it is covered up entirely on the bottom side."
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CONN_08{dblquote}_1_0"
+				(polyline
+					(pts
+						(xy -5.08 12.7) (xy -5.08 -10.16)
+					)
+					(stroke
+						(width 0.4064)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 12.7) (xy 1.27 12.7)
+					)
+					(stroke
+						(width 0.4064)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -7.62) (xy 0 -7.62)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 0 0)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy 0 2.54)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.08) (xy 0 5.08)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 7.62) (xy 0 7.62)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 10.16) (xy 0 10.16)
+					)
+					(stroke
+						(width 0.6096)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -10.16) (xy -5.08 -10.16)
+					)
+					(stroke
+						(width 0.4064)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -10.16) (xy 1.27 12.7)
+					)
+					(stroke
+						(width 0.4064)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 -7.62 180)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 5.08 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 7.62 180)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 10.16 180)
+					(length 5.08)
+					(name "8"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:DIP-BLACK-MALE-HEADER-VERT(2P-2.54)"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at -6.35 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at 1.27 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:H2-2.54"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "320020016"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "DIP-BLACK-MALE-HEADER-VERT(2P-2.54)_1_0"
+				(polyline
+					(pts
+						(xy -2.54 -5.08) (xy -2.54 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 5.08) (xy 2.54 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -5.08) (xy -2.54 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 5.08) (xy 2.54 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional inverted_clock
+					(at -7.62 2.54 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -7.62 -2.54 0)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(at 3.556 -4.572 90)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" ""
+				(at 5.715 -4.572 90)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "LED\n\nOSRAM:\n- CHIPLED\nLG R971, LG N971, LY N971, LG Q971, LY Q971, LO R971, LY R971 LH N974, LH R974\nLS Q976, LO Q976, LY Q976\nLO Q996\n- Hyper CHIPLED\nLW Q18S\nLB Q993, LB Q99A, LB R99A\n- SideLED\nLS A670, LO A670, LY A670, LG A670, LP A670\nLB A673, LV A673, LT A673, LW A673\nLH A674\nLY A675\nLS A676, LA A676, LO A676, LY A676, LW A676\nLS A679, LY A679, LG A679\n-  Hyper Micro SIDELED®\nLS Y876, LA Y876, LO Y876, LY Y876\nLT Y87S\n- SmartLED\nLW L88C, LW L88S\nLB L89C, LB L89S, LG L890\nLS L89K, LO L89K, LY L89K\nLS L896, LA L896, LO L896, LY L896\n- TOPLED\nLS T670, LO T670, LY T670, LG T670, LP T670\nLSG T670, LSP T670, LSY T670, LOP T670, LYG T670\nLG T671, LOG T671, LSG T671\nLB T673, LV T673, LT T673, LW T673\nLH T674\nLS T676, LA T676, LO T676, LY T676, LB T676, LH T676, LSB T676, LW T676\nLB T67C, LV T67C, LT T67C, LS T67K, LO T67K, LY T67K, LW E67C\nLS E67B, LA E67B, LO E67B, LY E67B, LB E67C, LV E67C, LT E67C\nLW T67C\nLS T679, LY T679, LG T679\nLS T770, LO T770, LY T770, LG T770, LP T770\nLB T773, LV T773, LT T773, LW T773\nLH T774\nLS E675, LA E675, LY E675, LS T675\nLS T776, LA T776, LO T776, LY T776, LB T776\nLHGB T686\nLT T68C, LB T68C\n- Hyper Mini TOPLED®\nLB M676\n- Mini TOPLED Santana®\nLG M470\nLS M47K, LO M47K, LY M47K\n\nSource: http://www.osram.convergy.de/"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LEDCHIP-LED0603_1_0"
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy -3.429 -2.159)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -1.905) (xy -3.302 -3.302)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy -1.27 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy -1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.429 -2.159) (xy -3.048 -1.27) (xy -2.54 -1.778)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.302 -3.302) (xy -2.921 -2.413) (xy -2.413 -2.921)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "A"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "C"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:OSCILLATORSMD-5X3"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Y"
+				(at -7.62 5.334 0)
+				(effects
+					(font
+						(size 1.778 1.778)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at -7.62 -5.334 0)
+				(effects
+					(font
+						(size 1.778 1.778)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:OSCILLATOR-SMD-5X3.2"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Oscillators (Generic)\n\nThese are active oscillators, which require a power source to generate their clock output. Most oscillators are configured to generate a set frequency (e.g. 16MHz).\n\nThey have four pins: power, ground, output, and an enable input."
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OSCILLATORSMD-5X3_1_0"
+				(polyline
+					(pts
+						(xy -7.62 -5.08) (xy -7.62 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.62 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -5.08) (xy -7.62 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at -3.175 1.27 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" ""
+				(at -3.175 -1.905 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "https://www.digikey.com/en/products/filter/chip-resistor-surface-mount/52?s=N4IgjCBcpgbFoDGUBmBDANgZwKYBoQB7KAbRAGYBOAJgBZ4BdAgBwBcoQBlVgJwEsAdgHMQAX1EFqpEDxxY%2BWVoR4gGooA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "RES-0402_1_0"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.905 0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -0.635) (xy 0.635 0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 1.905 -0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -0.635) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "P$1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "P$1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "P$2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "P$2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:RJ45-CONNECTOR-SHIELDED"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" ""
+				(at -3.8241 13.4953 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at -3.8172 10.775 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:RJ45_THT_RA_AMPH-FRJAE448"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "RJ45-CONNECTOR-SHIELDED_1_0"
+				(polyline
+					(pts
+						(xy -5.08 -12.7) (xy 7.62 -12.7)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 10.16) (xy -5.08 -12.7)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.794) (xy 0 0.254)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.254) (xy 1.2065 0.254)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.2065 -5.08) (xy 1.2065 -2.794)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.2065 -2.794) (xy 0 -2.794)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.2065 0.254) (xy 1.2065 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.2065 2.54) (xy 3.7465 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -5.08) (xy 1.2065 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -3.048) (xy 2.9845 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -3.048) (xy 3.7465 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -2.54) (xy 2.9845 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -2.54) (xy 3.7465 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -2.032) (xy 2.9845 -2.032)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -2.032) (xy 3.7465 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -1.524) (xy 2.9845 -1.524)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -1.524) (xy 3.7465 -2.032)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -1.016) (xy 2.9845 -1.016)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -1.016) (xy 3.7465 -1.524)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -0.508) (xy 2.9845 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 -0.508) (xy 3.7465 -1.016)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 0) (xy 2.9845 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 0) (xy 3.7465 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 0.508) (xy 2.9845 0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 0.508) (xy 3.7465 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.7465 2.54) (xy 3.7465 0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -12.7) (xy 7.62 10.16)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 10.16) (xy -5.08 10.16)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 12.7 7.62 180)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 5.08 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 2.54 180)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 0 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -2.54 180)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$5"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -5.08 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$6"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -7.62 180)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$7"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -10.16 180)
+					(length 5.08)
+					(name "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P$8"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -2.54 -17.78 90)
+					(length 5.08)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "S$1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -2.54 -17.78 90)
+					(length 5.08)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "S$2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -2.54 -17.78 90)
+					(length 5.08)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "S$3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -2.54 -17.78 90)
+					(length 5.08)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "S$4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:SMACONNECTOR_EDGE"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "X"
+				(at 7.62 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" ""
+				(at 7.62 0 0)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:SMA_EDGELAUNCH"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SMA Connector\n\n90° DIP SMA Connector, 50 Ohm (4UConnector: 07259)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SMACONNECTOR_EDGE_1_0"
+				(polyline
+					(pts
+						(xy -5.08 -5.08) (xy -5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 3.81) (xy 3.175 3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 3.175) (xy 2.54 3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 3.81) (xy 3.175 2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 3.81) (xy 3.81 3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 3.81) (xy 3.175 3.175)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -5.08) (xy -5.08 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 5.08) (xy 5.08 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.3592)
+					(stroke
+						(width 0.8128)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 2.54 -7.62 90)
+					(length 2.54)
+					(name "GND4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "GND@1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 2.54)
+					(name "GND3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "GND@2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 7.62 270)
+					(length 2.54)
+					(name "GND2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "GND@3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 2.54)
+					(name "GND1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "GND@4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "ANT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "P"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND"
+			(power)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#GND"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at -2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SUPPLY SYMBOL"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "supply1_GND_1_0"
+				(polyline
+					(pts
+						(xy -1.905 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND"
+			(power)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#SUPPLY"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at -1.905 -3.175 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SUPPLY SYMBOL"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "supply2_GND_1_0"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 60.96 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "056addb6-48b5-4f50-9c27-7d6ce7dcc52a")
+	)
+	(junction
+		(at 60.96 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "058fdfd2-8db2-49b9-89ec-e81d9d6e9116")
+	)
+	(junction
+		(at 91.44 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0ad56834-a058-4e7b-9b67-a403488417cb")
+	)
+	(junction
+		(at 60.96 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0d4c9db6-ee19-484c-9730-86903befadd5")
+	)
+	(junction
+		(at 60.96 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e1bb271-f9ce-43ab-a45c-2cfa1eafbaf1")
+	)
+	(junction
+		(at 60.96 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1591b03d-80cb-4cac-afa7-ddbed7ee0db4")
+	)
+	(junction
+		(at 63.5 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "17664d09-d1f7-42fa-ab9f-7ad181daa4a5")
+	)
+	(junction
+		(at 91.44 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "299995f7-db22-465e-b56d-753712cc1c42")
+	)
+	(junction
+		(at 63.5 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "404ed3ea-8867-44d6-98aa-a66979339cea")
+	)
+	(junction
+		(at 60.96 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4bc6be38-ec40-473b-a252-735a39a6aa49")
+	)
+	(junction
+		(at 60.96 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a9d5779-c5fd-4697-8ebf-61fd5cfe7606")
+	)
+	(junction
+		(at 60.96 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5bb9fd01-8b38-4d87-bb17-938892e31cfc")
+	)
+	(junction
+		(at 58.42 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d9d0328-2e02-4601-a392-615a18754956")
+	)
+	(junction
+		(at 91.44 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "63877f2a-08a7-4263-bb92-a02498977f7c")
+	)
+	(junction
+		(at 86.36 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7eec556b-da1c-4635-93ba-d7b81313bff8")
+	)
+	(junction
+		(at 93.98 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7f2fb64c-af6a-44f6-a285-58e62c4cb0b5")
+	)
+	(junction
+		(at 91.44 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "80bcdda1-4e59-4f9f-a425-0f5c00791d97")
+	)
+	(junction
+		(at 91.44 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "856472f6-d622-4d39-b7e9-4bf3563c56c3")
+	)
+	(junction
+		(at 60.96 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "857c5197-2075-4c99-919f-ed0d25846dec")
+	)
+	(junction
+		(at 91.44 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8c96303d-0f53-477e-a68d-8f0ed763ed71")
+	)
+	(junction
+		(at 91.44 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "906e704b-d338-4f80-b3ce-f2ff12acdc3e")
+	)
+	(junction
+		(at 91.44 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "91872d9f-548e-4d4e-a0c8-1b888f19c35f")
+	)
+	(junction
+		(at 152.4 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9a250cdf-5719-4a6b-b49e-6f6f911c432e")
+	)
+	(junction
+		(at 157.48 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9f254406-ea3d-4d05-bf71-ec2422f06744")
+	)
+	(junction
+		(at 203.2 195.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a4bb0ef5-4006-4848-88df-26667be83a71")
+	)
+	(junction
+		(at 91.44 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ad154921-cb7a-4b1a-9c5f-dc54d095b6b5")
+	)
+	(junction
+		(at 91.44 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b7e18a15-1d11-430b-be37-8ccfef7b3bbb")
+	)
+	(junction
+		(at 60.96 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c0f01298-1c2f-45fa-9bfc-213d58ed6f42")
+	)
+	(junction
+		(at 60.96 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c4bb15fd-4443-4333-b881-cd8026117723")
+	)
+	(junction
+		(at 91.44 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c9da827f-6693-4091-bb81-00095299ec1f")
+	)
+	(junction
+		(at 60.96 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d1698f08-48ba-49cd-9d9d-8b400af2bfc7")
+	)
+	(junction
+		(at 91.44 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2c36241-c551-466c-b3da-26d323fe610a")
+	)
+	(junction
+		(at 91.44 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e5f7ca68-1492-4af6-a6a0-d2884b040c5f")
+	)
+	(junction
+		(at 60.96 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e79e3604-b832-4818-8693-eb28323e363d")
+	)
+	(junction
+		(at 60.96 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb109498-f863-496d-a21f-7f945a3f665f")
+	)
+	(junction
+		(at 152.4 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ec396d29-6c2c-43d3-b9c7-839d5855e128")
+	)
+	(junction
+		(at 91.44 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f5331d91-74f3-4dff-80b8-c72392c772bb")
+	)
+	(junction
+		(at 60.96 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc78602d-1aed-41cd-ab16-b1b1d3cea37b")
+	)
+	(wire
+		(pts
+			(xy 60.96 66.04) (xy 40.64 66.04)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "04c4f1c1-6ba2-421b-9d47-b6466df6d567")
+	)
+	(wire
+		(pts
+			(xy 91.44 86.36) (xy 91.44 83.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "09676c02-54c3-488f-bcfc-ef02e68de2b2")
+	)
+	(wire
+		(pts
+			(xy 233.68 162.56) (xy 238.76 162.56)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "0d15e030-82a3-4b49-9d19-fa73a55e943f")
+	)
+	(wire
+		(pts
+			(xy 60.96 76.2) (xy 73.66 76.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "0e0090a4-779d-4662-95dd-2d8ca7a52af2")
+	)
+	(wire
+		(pts
+			(xy 137.16 76.2) (xy 111.76 76.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "10335400-1672-497f-bb9c-a78282e2524f")
+	)
+	(wire
+		(pts
+			(xy 73.66 210.82) (xy 63.5 210.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "12280458-78f4-4770-8afb-46be464e117e")
+	)
+	(wire
+		(pts
+			(xy 63.5 119.38) (xy 63.5 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "12408631-97b8-48d7-82c8-340efcc22192")
+	)
+	(wire
+		(pts
+			(xy 91.44 48.26) (xy 91.44 45.72)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "124816ef-4db3-4ff7-bd39-516910dea294")
+	)
+	(wire
+		(pts
+			(xy 132.08 193.04) (xy 121.92 193.04)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1252d1b8-28bb-4fe7-b350-557a941dd5e4")
+	)
+	(wire
+		(pts
+			(xy 162.56 76.2) (xy 147.32 76.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "12fde816-2dae-466c-893a-a8b66be8bdd2")
+	)
+	(wire
+		(pts
+			(xy 162.56 48.26) (xy 147.32 48.26)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "151bb876-510c-4115-b722-fba455d87041")
+	)
+	(wire
+		(pts
+			(xy 132.08 195.58) (xy 121.92 195.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "17cc522a-3612-4047-a149-fdb7fc21f4df")
+	)
+	(wire
+		(pts
+			(xy 91.44 38.1) (xy 91.44 35.56)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1c8d495d-486d-4f9e-92ab-f7ae6fe26cee")
+	)
+	(wire
+		(pts
+			(xy 91.44 71.12) (xy 91.44 68.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1cbb34b3-7be4-41fa-ae6b-7f12851302b5")
+	)
+	(wire
+		(pts
+			(xy 132.08 127) (xy 116.84 127)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1d5fe1cc-ccee-40c9-9a90-c7977fc014b0")
+	)
+	(wire
+		(pts
+			(xy 60.96 71.12) (xy 40.64 71.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1e649fa4-3b4f-440b-bd4e-fdc0d2d4427d")
+	)
+	(wire
+		(pts
+			(xy 137.16 78.74) (xy 111.76 78.74)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "226d1659-bd77-4adb-ba63-60d26a74a5cf")
+	)
+	(wire
+		(pts
+			(xy 73.66 83.82) (xy 60.96 83.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "25747a2d-8e51-4a83-9bf4-9dc017826f5d")
+	)
+	(wire
+		(pts
+			(xy 60.96 83.82) (xy 40.64 83.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "26276d0e-5f19-4655-a6ad-2de83bc807c7")
+	)
+	(wire
+		(pts
+			(xy 228.6 200.66) (xy 238.76 200.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "2c31a340-4bfd-41c7-9296-94a58fe709de")
+	)
+	(wire
+		(pts
+			(xy 162.56 40.64) (xy 147.32 40.64)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "328a7f40-55e2-420e-995a-bdb4b68459f9")
+	)
+	(wire
+		(pts
+			(xy 60.96 66.04) (xy 73.66 66.04)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "33b27ed3-c3e3-4b79-b530-b17ea5b91031")
+	)
+	(wire
+		(pts
+			(xy 60.96 45.72) (xy 40.64 45.72)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "36c6b29f-742b-4cc6-b21b-0d63a666d81b")
+	)
+	(wire
+		(pts
+			(xy 137.16 40.64) (xy 111.76 40.64)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "3a3be666-478e-4aa3-8e8b-6d7d1c9feb50")
+	)
+	(wire
+		(pts
+			(xy 137.16 66.04) (xy 111.76 66.04)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "3ad1d7c1-fc53-4ad4-a072-c0ac84a92a13")
+	)
+	(wire
+		(pts
+			(xy 132.08 200.66) (xy 121.92 200.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "402e629a-27b7-467c-925a-f09b51747c36")
+	)
+	(wire
+		(pts
+			(xy 63.5 134.62) (xy 58.42 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "40f6787d-11f7-49e2-99bc-57604038ba56")
+	)
+	(wire
+		(pts
+			(xy 162.56 83.82) (xy 147.32 83.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4229237a-9fed-435d-aac7-fa5cb206218d")
+	)
+	(wire
+		(pts
+			(xy 91.44 68.58) (xy 91.44 66.04)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "422aa986-bd9a-49c8-9e89-3908b0af58cb")
+	)
+	(wire
+		(pts
+			(xy 162.56 66.04) (xy 147.32 66.04)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "44ce676b-846f-4cfa-be84-d45f120652fc")
+	)
+	(wire
+		(pts
+			(xy 137.16 68.58) (xy 111.76 68.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "45034581-17e4-4671-aa2c-12a055ff5736")
+	)
+	(wire
+		(pts
+			(xy 152.4 119.38) (xy 157.48 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4540c72f-c57a-4479-8b0d-5d19648a85f5")
+	)
+	(wire
+		(pts
+			(xy 162.56 68.58) (xy 147.32 68.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4b0357e8-d74e-42a7-89f6-6d07288cdceb")
+	)
+	(wire
+		(pts
+			(xy 91.44 81.28) (xy 91.44 78.74)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4b4f4f11-842b-43e6-96e3-7615c0be6af4")
+	)
+	(wire
+		(pts
+			(xy 137.16 81.28) (xy 111.76 81.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4b7d1120-f3a8-4746-a3db-ee7a7fdf3eca")
+	)
+	(wire
+		(pts
+			(xy 200.66 162.56) (xy 195.58 162.56)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4cc69fa6-c8fa-4c70-9644-4412cfe764cc")
+	)
+	(wire
+		(pts
+			(xy 60.96 78.74) (xy 40.64 78.74)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4ccd33ec-487a-4ff5-8645-a04f54a55656")
+	)
+	(wire
+		(pts
+			(xy 60.96 45.72) (xy 73.66 45.72)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "509b69dc-b4d2-4d1e-90c1-f8b097e26d4c")
+	)
+	(wire
+		(pts
+			(xy 60.96 68.58) (xy 40.64 68.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "51ef488f-501f-4631-866c-1eee8c5b5c67")
+	)
+	(wire
+		(pts
+			(xy 91.44 40.64) (xy 91.44 38.1)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "537912fa-7d0d-42f3-b485-67987e1d09bc")
+	)
+	(wire
+		(pts
+			(xy 132.08 208.28) (xy 121.92 208.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "5420a248-9410-432b-8a54-303c35b02c31")
+	)
+	(wire
+		(pts
+			(xy 91.44 73.66) (xy 91.44 71.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "554c3293-1727-4688-b9f7-39482c28b297")
+	)
+	(wire
+		(pts
+			(xy 137.16 50.8) (xy 111.76 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "557b432a-3798-4d6e-97fe-93432b06e8ad")
+	)
+	(wire
+		(pts
+			(xy 73.66 203.2) (xy 63.5 203.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "5d518a5a-e541-4ed9-a7b1-72aba0f96a25")
+	)
+	(wire
+		(pts
+			(xy 162.56 38.1) (xy 147.32 38.1)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "5e5fe956-1158-4fab-84ad-9fd8ef7ea992")
+	)
+	(wire
+		(pts
+			(xy 132.08 198.12) (xy 121.92 198.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "616ba47c-e5f0-4f42-90ca-d44a76cdd6c1")
+	)
+	(wire
+		(pts
+			(xy 91.44 76.2) (xy 91.44 73.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "62c5be1a-9d9b-42b7-8194-b50f94e6854c")
+	)
+	(wire
+		(pts
+			(xy 162.56 50.8) (xy 147.32 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "638e67f0-72eb-46ff-8e99-31221315b175")
+	)
+	(wire
+		(pts
+			(xy 58.42 119.38) (xy 63.5 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "69e5d9de-5b72-4a00-9919-9ee9f89658ce")
+	)
+	(wire
+		(pts
+			(xy 132.08 210.82) (xy 121.92 210.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "6d4d0e69-b3f1-4dce-afc5-2807e01a7e2c")
+	)
+	(wire
+		(pts
+			(xy 137.16 48.26) (xy 111.76 48.26)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "6db4c20e-a429-477c-953c-e4040e469ae2")
+	)
+	(wire
+		(pts
+			(xy 60.96 38.1) (xy 40.64 38.1)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "6f0f6014-084c-4a35-ba0e-c35648deb61e")
+	)
+	(wire
+		(pts
+			(xy 73.66 53.34) (xy 60.96 53.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "7468b8dc-8976-4de5-a583-605e946c1653")
+	)
+	(wire
+		(pts
+			(xy 73.66 48.26) (xy 60.96 48.26)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "788948ca-cd6d-434d-882e-e7313f5f2aa7")
+	)
+	(wire
+		(pts
+			(xy 73.66 200.66) (xy 63.5 200.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "78bfbaa9-7c1b-4a3e-a291-2f23378f94e8")
+	)
+	(wire
+		(pts
+			(xy 228.6 195.58) (xy 248.92 195.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "7aea4f24-73d7-4ee1-8fff-e26f9ffd1626")
+	)
+	(wire
+		(pts
+			(xy 91.44 50.8) (xy 91.44 48.26)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "7bb6eaf5-bd0d-4304-9da2-84d74f3086c4")
+	)
+	(wire
+		(pts
+			(xy 60.96 50.8) (xy 40.64 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "846b8b5c-210d-43ac-b8e1-a71383b87bda")
+	)
+	(wire
+		(pts
+			(xy 60.96 76.2) (xy 40.64 76.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "894b54da-e062-4c5d-8ac5-a89edc052e12")
+	)
+	(wire
+		(pts
+			(xy 73.66 208.28) (xy 63.5 208.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8a9b0d2c-25eb-4e69-98e8-559bd8ec01e7")
+	)
+	(wire
+		(pts
+			(xy 86.36 127) (xy 68.58 127)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8aa73c88-9f3e-425a-81d1-55f349ec0e74")
+	)
+	(wire
+		(pts
+			(xy 91.44 45.72) (xy 91.44 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8bc45b4c-da11-46f2-b0be-53ba156b1ea0")
+	)
+	(wire
+		(pts
+			(xy 60.96 35.56) (xy 40.64 35.56)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8f5c10fe-3476-4d04-a91f-b352ad33da20")
+	)
+	(wire
+		(pts
+			(xy 73.66 198.12) (xy 63.5 198.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9353a53d-27ff-4d20-bf4e-0e05974b830a")
+	)
+	(wire
+		(pts
+			(xy 60.96 50.8) (xy 73.66 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "964bc950-d318-40cc-9bd5-38ff81df5c51")
+	)
+	(wire
+		(pts
+			(xy 93.98 147.32) (xy 86.36 147.32)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "96a77383-54fc-4b77-a644-d97ff25ccf03")
+	)
+	(wire
+		(pts
+			(xy 162.56 71.12) (xy 147.32 71.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "96f6f2d2-23b4-4bcb-a3cb-983e8aad3130")
+	)
+	(wire
+		(pts
+			(xy 157.48 134.62) (xy 152.4 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9b6342aa-b7a4-4ee7-86e0-61edf72317a1")
+	)
+	(wire
+		(pts
+			(xy 60.96 53.34) (xy 40.64 53.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9cfefd99-75cd-491d-9201-5172100c57e6")
+	)
+	(wire
+		(pts
+			(xy 162.56 45.72) (xy 111.76 45.72)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9d6caa01-9e31-4d62-8cb2-37071104036e")
+	)
+	(wire
+		(pts
+			(xy 162.56 35.56) (xy 147.32 35.56)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9dd4d690-bc1e-426e-be6f-a1024b2bb2c6")
+	)
+	(wire
+		(pts
+			(xy 91.44 43.18) (xy 91.44 40.64)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9ed42207-92b5-483d-82c8-a4deb6ee9d3f")
+	)
+	(wire
+		(pts
+			(xy 73.66 78.74) (xy 60.96 78.74)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9f6cf5ce-2de6-4397-8bfa-3baa0e8f8193")
+	)
+	(wire
+		(pts
+			(xy 132.08 203.2) (xy 121.92 203.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a6683af7-f966-4ed2-8f3d-db3c94915c07")
+	)
+	(wire
+		(pts
+			(xy 137.16 43.18) (xy 111.76 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a84da660-6e6e-41a7-9a29-5585019525ba")
+	)
+	(wire
+		(pts
+			(xy 60.96 73.66) (xy 40.64 73.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "ad51e1fb-08f9-4974-ae3c-51996803b9e1")
+	)
+	(wire
+		(pts
+			(xy 60.96 35.56) (xy 73.66 35.56)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "b47d3a15-19fa-46be-bee4-611ff080f180")
+	)
+	(wire
+		(pts
+			(xy 195.58 195.58) (xy 203.2 195.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "b9a219d8-3e7e-4b27-9858-1d567b126c0a")
+	)
+	(wire
+		(pts
+			(xy 111.76 73.66) (xy 137.16 73.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "ba7eea4e-9df5-4f37-b633-f9cf98da1614")
+	)
+	(wire
+		(pts
+			(xy 203.2 195.58) (xy 208.28 195.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "c4d59e8a-47f6-4320-985f-9375645c9873")
+	)
+	(wire
+		(pts
+			(xy 73.66 68.58) (xy 60.96 68.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "ce7d6b67-3f56-4877-b0ee-b97643b40254")
+	)
+	(wire
+		(pts
+			(xy 73.66 193.04) (xy 63.5 193.04)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "cea4a984-7514-4cc9-9f4c-906bc783a023")
+	)
+	(wire
+		(pts
+			(xy 162.56 53.34) (xy 147.32 53.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "cf2362eb-ff4c-4b50-a9d1-043b141d2ce7")
+	)
+	(wire
+		(pts
+			(xy 73.66 43.18) (xy 60.96 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "d108ecf3-4a50-4a91-8792-bb9562bc5439")
+	)
+	(wire
+		(pts
+			(xy 86.36 127) (xy 93.98 127)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "d5b8f73e-4af7-4624-be3e-12f86aa99717")
+	)
+	(wire
+		(pts
+			(xy 60.96 48.26) (xy 40.64 48.26)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "d910d95a-5447-4cb6-a62e-a2273d682dd7")
+	)
+	(wire
+		(pts
+			(xy 60.96 43.18) (xy 40.64 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "d96414f2-59d0-4e5d-a83f-7bf7b63b02fe")
+	)
+	(wire
+		(pts
+			(xy 162.56 78.74) (xy 147.32 78.74)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "dad13a19-a0a7-40a7-87df-f57e2075dd6f")
+	)
+	(wire
+		(pts
+			(xy 73.66 38.1) (xy 60.96 38.1)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "dd456046-b7dd-4598-8aa1-66276d540d40")
+	)
+	(wire
+		(pts
+			(xy 162.56 43.18) (xy 147.32 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "dda04bab-e1c2-4e56-9f5a-a61b824b03d6")
+	)
+	(wire
+		(pts
+			(xy 60.96 40.64) (xy 40.64 40.64)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "ded8b137-7852-4a24-b1fc-b6cfbc47da86")
+	)
+	(wire
+		(pts
+			(xy 73.66 73.66) (xy 60.96 73.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "df03697c-8ca0-4824-b72d-495117b656de")
+	)
+	(wire
+		(pts
+			(xy 91.44 78.74) (xy 91.44 76.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e0552160-c427-46d9-88b1-cb76ea984c07")
+	)
+	(wire
+		(pts
+			(xy 162.56 81.28) (xy 147.32 81.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e2ee4e8a-3027-4ff1-a5fb-9d826acf5fc5")
+	)
+	(wire
+		(pts
+			(xy 60.96 71.12) (xy 73.66 71.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e3299194-b8ef-4286-b555-24ce289c6e77")
+	)
+	(wire
+		(pts
+			(xy 132.08 205.74) (xy 121.92 205.74)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e47d2b64-92aa-4789-84ba-1e4c3a1acab6")
+	)
+	(wire
+		(pts
+			(xy 162.56 73.66) (xy 147.32 73.66)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e4afb0da-7732-4991-82b2-aca267830cb6")
+	)
+	(wire
+		(pts
+			(xy 215.9 124.46) (xy 203.2 124.46)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e4d3ee5f-1dac-4d69-b740-f418c557de77")
+	)
+	(wire
+		(pts
+			(xy 73.66 195.58) (xy 63.5 195.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e8243f5d-d845-4758-b166-cea46b2cc384")
+	)
+	(wire
+		(pts
+			(xy 73.66 205.74) (xy 63.5 205.74)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e980f445-5569-45e7-8dc6-e318d4ec2e81")
+	)
+	(wire
+		(pts
+			(xy 147.32 127) (xy 142.24 127)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e995bce5-796d-4df2-9dba-4755c63ab5eb")
+	)
+	(wire
+		(pts
+			(xy 60.96 40.64) (xy 73.66 40.64)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "eb45e2df-b5f2-4348-8cab-066eb1722584")
+	)
+	(wire
+		(pts
+			(xy 137.16 71.12) (xy 111.76 71.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "ebdc6992-2007-459b-ac94-ad5ebebb0334")
+	)
+	(wire
+		(pts
+			(xy 91.44 53.34) (xy 91.44 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "ebe8e6bc-23eb-438e-9a6c-969b53739af7")
+	)
+	(wire
+		(pts
+			(xy 137.16 83.82) (xy 111.76 83.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "f101f3be-9b38-49f7-b705-cd10dae2f54d")
+	)
+	(wire
+		(pts
+			(xy 111.76 53.34) (xy 137.16 53.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "f290683a-c266-4939-b4b0-a16a8f1eddee")
+	)
+	(wire
+		(pts
+			(xy 152.4 134.62) (xy 152.4 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "f66fc668-65a9-4503-971c-c0c704f82604")
+	)
+	(wire
+		(pts
+			(xy 91.44 55.88) (xy 91.44 53.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "f9c5d1b0-351b-4f49-b038-22ce94d8133c")
+	)
+	(wire
+		(pts
+			(xy 91.44 83.82) (xy 91.44 81.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "fc194021-4dee-4772-92e4-ee36a34555bb")
+	)
+	(wire
+		(pts
+			(xy 91.44 81.28) (xy 60.96 81.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "fda655ab-e273-4a9d-b9b2-07127ba06de5")
+	)
+	(text "50 Ohm 1kHz / Aux output"
+		(exclude_from_sim no)
+		(at 116.84 114.3 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "34469687-e6b6-4682-addc-dc68f0fcd656")
+	)
+	(text "2.5V inputs and outputs to/from\nthe FPGA for status monitoring\nand control of things, etc."
+		(exclude_from_sim no)
+		(at 111.76 27.94 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "4a9492c7-04e7-4913-8e7c-001e6e0fb423")
+	)
+	(text "2.5V outputs from\nthe FPGA for debugging, etc.\nThese go to LEDs for monitoring"
+		(exclude_from_sim no)
+		(at 40.64 25.4 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "6c92d51d-5d4a-4ca3-9a45-5007961e8d7c")
+	)
+	(text "50 Ohm external trigger input"
+		(exclude_from_sim no)
+		(at 43.18 114.3 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "7916c57b-d9e0-476a-8f2c-5b9fbe556bac")
+	)
+	(text "Extra clock input and output"
+		(exclude_from_sim no)
+		(at 203.2 152.4 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "82d4b83a-9705-42f4-9edb-d9649766e527")
+	)
+	(text "LVDS outputs and inputs for sync between boards"
+		(exclude_from_sim no)
+		(at 66.04 177.8 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "aae2d623-1630-4f9e-b8b4-7bd6824f5993")
+	)
+	(text "Debugout10 is now the 50 Ohm 1kHz/Aux output"
+		(exclude_from_sim no)
+		(at 40.64 81.28 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0688ee1-71f5-4c0a-a702-09a2e1b94d05")
+	)
+	(text "Cyclone IV E left and right I/O banks support\ntrue LVDS transmitters, so use them for LVDS outputs"
+		(exclude_from_sim no)
+		(at 45.72 231.14 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "cb3e2fbd-3aa4-48ae-b79a-f74f8e9c6b29")
+	)
+	(text "1kOhm 1kHz output for probe compensation"
+		(exclude_from_sim no)
+		(at 203.2 114.3 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "e42804a7-2355-409d-81ff-f0ae4da37120")
+	)
+	(text "50 MHz clock for FPGA"
+		(exclude_from_sim no)
+		(at 203.2 182.88 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "f2cd2d08-1b21-4283-9571-ab299350bd37")
+	)
+	(text "Boardin 4 is now the ext trig input"
+		(exclude_from_sim no)
+		(at 121.92 45.72 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "f997c12f-7a52-43c3-9dce-35d61c4120cc")
+	)
+	(label "N$52"
+		(at 142.24 127 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left bottom)
+		)
+		(uuid "544a5791-34e6-468b-84df-4baaeebbf7d1")
+	)
+	(label "1KHZOUT"
+		(at 203.2 124.46 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left bottom)
+		)
+		(uuid "55c9843d-8d97-40c2-9a96-909815c98919")
+	)
+	(label "1KHZOUT"
+		(at 111.76 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left bottom)
+		)
+		(uuid "d4f09e6f-2ff5-4f88-97e6-7d31c069b16d")
+	)
+	(global_label "PG12V"
+		(shape bidirectional)
+		(at 111.76 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "0319f7f7-16c9-4ba1-85fc-dbfaf83b3dd5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.7008 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_CLK_N"
+		(shape bidirectional)
+		(at 66.04 210.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "0411beb8-58e8-4093-87b5-9193aba76680")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 84.8117 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CALSTAT"
+		(shape bidirectional)
+		(at 111.76 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "04e3b5de-ce79-498a-90f1-92007d80bd47")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.2418 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LOCKDETECT"
+		(shape bidirectional)
+		(at 111.76 48.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "129232c5-027e-47c1-b217-64c84f5d1bd9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 127.2128 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_SPARE0_N"
+		(shape bidirectional)
+		(at 124.46 205.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "14bbcff5-7931-45cb-982a-d9ba26100439")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 145.1282 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_TRIG_N"
+		(shape bidirectional)
+		(at 124.46 195.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "160ca7c7-2edc-4596-9bf0-5fe24618b02d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 142.1057 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CLKOUT2"
+		(shape bidirectional)
+		(at 233.68 162.56 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "19f0e1d0-ffe4-4a38-af63-b9bf26ee222d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 245.9323 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDIN2"
+		(shape bidirectional)
+		(at 147.32 40.64 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "1ae361c0-6f1f-429b-9552-0d18dda3c397")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5206 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDIN0"
+		(shape bidirectional)
+		(at 147.32 35.56 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "1f6bb566-f0f1-4bb7-9d50-ae02766b21e4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5206 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "FAN_CONTROL"
+		(shape bidirectional)
+		(at 40.64 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "2790494b-fdf1-4429-9f15-d997c3353e30")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.3967 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "OSC_CLK_IN"
+		(shape bidirectional)
+		(at 233.68 195.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "2a24a872-a02f-4c51-a35d-eb1f36ec9da0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 248.7179 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDIN6"
+		(shape bidirectional)
+		(at 147.32 50.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "2f03ddce-9806-426e-9100-3bb01105cadb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5206 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "1KHZOUT50"
+		(shape bidirectional)
+		(at 116.84 127 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "2fcf7e5d-2f35-44e2-819a-e191ddfa0edd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 131.7 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ATT_CONTROL"
+		(shape bidirectional)
+		(at 111.76 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "314f6933-e282-456b-b370-fdefec83bd4c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.0426 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT0"
+		(shape bidirectional)
+		(at 40.64 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "4844c997-a2e0-4453-b72c-5da43ee88517")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 233.68 200.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "49eb69f9-223b-4d15-805e-be9e4a6ef138")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 241.4873 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_TRIGB_N"
+		(shape bidirectional)
+		(at 66.04 203.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "4d736ba6-6909-4841-ba21-04c421486824")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 84.9303 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT3"
+		(shape bidirectional)
+		(at 40.64 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "5203565e-8c6c-493c-b23c-4828c2ca2459")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDIN1"
+		(shape bidirectional)
+		(at 147.32 38.1 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "5754677a-6bd7-40e1-bec6-aa7f57c3aff5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5206 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT2"
+		(shape bidirectional)
+		(at 147.32 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "5bfd45a4-8dde-4811-970e-ce579424680d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_SPARE0_P"
+		(shape bidirectional)
+		(at 66.04 198.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "65ee5397-7479-46c3-af78-ace7e369cd40")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.3084 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT9"
+		(shape bidirectional)
+		(at 40.64 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "662576aa-563a-49bb-816d-6e07c072604d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT6"
+		(shape bidirectional)
+		(at 147.32 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "6af246ad-3676-4ec5-9626-4c51607fc2c2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT5"
+		(shape bidirectional)
+		(at 147.32 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "6b82faf2-50c3-464c-8fa5-7e8df289b85f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_TRIGB_P"
+		(shape bidirectional)
+		(at 124.46 200.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "6e6ad3f3-6b97-45e3-8763-6af058c9860c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.9505 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_SPARE0_P"
+		(shape bidirectional)
+		(at 124.46 198.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "6e957d6f-76ae-4524-87b1-0f149db10263")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 145.0689 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_TRIGB_P"
+		(shape bidirectional)
+		(at 66.04 200.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "7c5eb41d-1332-4606-bd7a-7f8bd70ab977")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 84.871 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_SPARE0_N"
+		(shape bidirectional)
+		(at 66.04 205.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "7d41f2b8-7940-43b0-b6f6-9b52b1ebf672")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.3677 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_TRIG_P"
+		(shape bidirectional)
+		(at 124.46 193.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "85580b3e-e893-4797-81dd-551df4920c28")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 142.0464 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDIN3"
+		(shape bidirectional)
+		(at 147.32 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "87cd4aeb-ef3a-40c1-bf39-10e233b6f91b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5206 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MUXOUT"
+		(shape bidirectional)
+		(at 111.76 50.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "882a846b-d560-4115-ae32-63457c233f30")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.2419 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT5"
+		(shape bidirectional)
+		(at 40.64 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "88aa0d70-f695-43a3-8828-0b2dee4e2d1f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "12VCONNECTED"
+		(shape bidirectional)
+		(at 111.76 40.64 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "904d64ea-57ed-423b-bc9c-e798e4d328a0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 130.0576 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT8"
+		(shape bidirectional)
+		(at 40.64 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "926b4c3a-53cf-476d-9ca6-cd0bc05d1c31")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 111.76 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "940eb33f-f09a-44d3-8c40-722245406011")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.5673 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDIN5"
+		(shape bidirectional)
+		(at 147.32 48.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "94903691-667b-44de-a3b7-17a89b79cf1b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5206 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ACDC_CONTROL2"
+		(shape bidirectional)
+		(at 111.76 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "9e69c5c8-8b9c-45ac-8863-2e4a7d61773c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 131.0651 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT4"
+		(shape bidirectional)
+		(at 40.64 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "a0475a8b-4e90-46a8-bdc2-11b8d613e8b8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_CLK_P"
+		(shape bidirectional)
+		(at 124.46 208.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "a13e5b31-4e9f-49fb-842d-a2e1a94ccfe3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 141.5129 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT3"
+		(shape bidirectional)
+		(at 147.32 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "a255644f-5cc8-4e35-ab50-f83993152242")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT1"
+		(shape bidirectional)
+		(at 147.32 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "a76ea20a-b24b-4b0b-8823-c2b2c17172b0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT0"
+		(shape bidirectional)
+		(at 147.32 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "a7ea778f-9c6d-4f6c-9fb5-eeffd73be186")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ATT_CONTROL2"
+		(shape bidirectional)
+		(at 111.76 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "aaf89dc4-0674-4dbc-8aac-cc4f736ba633")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 129.2279 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SPLIT_CONTROL"
+		(shape bidirectional)
+		(at 111.76 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "ac3d3710-c85f-46db-9c51-775be965aaaf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 130.0576 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ACDC_CONTROL"
+		(shape bidirectional)
+		(at 111.76 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "b153a147-623c-4300-b259-cf56f0cdac54")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 129.8798 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED0"
+		(shape bidirectional)
+		(at 40.64 35.56 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "bbd7454b-dd70-42db-aaae-3f5b428a03b5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 49.2177 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT1"
+		(shape bidirectional)
+		(at 40.64 48.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "c2ad4f88-6681-4c57-a420-a01896951232")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_TRIG_P"
+		(shape bidirectional)
+		(at 66.04 193.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "c3435eee-3734-4da3-b3ae-aeccd3139b5e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 85.2859 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "50_1M_CONTROL2"
+		(shape bidirectional)
+		(at 111.76 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "cc7c77e3-09ee-4da3-8d56-ce359577807f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 132.1911 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "EXTTRIGIN"
+		(shape bidirectional)
+		(at 71.12 127 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "cc94d706-1c5b-4a44-847d-911cbd1ed6d8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 84.3207 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_TRIG_N"
+		(shape bidirectional)
+		(at 66.04 195.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "d039fbd2-fbf6-47f6-b31c-ddefdd6f7f29")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 85.3452 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDIN7"
+		(shape bidirectional)
+		(at 147.32 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "d51db41d-28b6-427e-b14b-2df03ff3223f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5206 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "50_1M_CONTROL"
+		(shape bidirectional)
+		(at 111.76 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "d8593050-5e70-4fca-8e04-ec0774d41d43")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 131.0058 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED3"
+		(shape bidirectional)
+		(at 40.64 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "daac12b3-b6c4-4d5b-b793-4cd3d43cba45")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 49.2177 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape bidirectional)
+		(at 195.58 195.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "de15d596-ac3d-43da-8b46-35f9575c7b5d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.0316 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CLKEXT"
+		(shape bidirectional)
+		(at 200.66 162.56 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "de5090a5-c8b2-407d-82b1-9505fec4e670")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 211.4306 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT7"
+		(shape bidirectional)
+		(at 40.64 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "e0c1109f-0708-4311-b53e-c6f46d346264")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT2"
+		(shape bidirectional)
+		(at 40.64 50.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "e228b248-5f6b-49c6-8bfb-05335381109b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_TRIGB_N"
+		(shape bidirectional)
+		(at 124.46 203.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "eac4af59-0028-4bbc-95c1-194769f802fb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 145.0098 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED2"
+		(shape bidirectional)
+		(at 40.64 40.64 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "ec26a385-e669-4119-bfb1-9809d91fa953")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 49.2177 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DEBUGOUT6"
+		(shape bidirectional)
+		(at 40.64 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "ef219e62-3ac2-4a67-8759-aba6a9a6bbc0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 55.5594 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT7"
+		(shape bidirectional)
+		(at 147.32 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "f6a647c6-a96b-4b3e-8ccb-6fe3ce1bae4d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED1"
+		(shape bidirectional)
+		(at 40.64 38.1 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "f8a6c06d-3bf7-4e80-87ac-8013788007b9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 49.2177 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSOUT_CLK_P"
+		(shape bidirectional)
+		(at 66.04 208.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "f8af9104-ee14-4c38-bced-0af4450ef566")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 84.7524 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOARDOUT4"
+		(shape bidirectional)
+		(at 147.32 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "fc513c4d-f34d-4270-a5d9-abf23d8ccec4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.1801 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LVDSIN_CLK_N"
+		(shape bidirectional)
+		(at 124.46 210.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "ff2ab17e-503d-4aa4-b3e2-de25c67e300c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 141.5722 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:SMACONNECTOR_EDGE")
+		(at 60.96 127 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "06840217-d183-4cd7-9bd1-130fc1277922")
+		(property "Reference" "EXTTRIGIN0"
+			(at 53.34 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "50"
+			(at 53.34 127 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:SMA_EDGELAUNCH"
+			(at 60.96 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P"
+			(uuid "29e2ffba-1f19-4461-87a1-fc2ae7dc66bb")
+		)
+		(pin "GND@2"
+			(uuid "8d893dba-1e48-4d41-9806-4a6a200a10dc")
+		)
+		(pin "GND@3"
+			(uuid "a399c254-54f8-43bd-bdf8-10c885e27077")
+		)
+		(pin "GND@1"
+			(uuid "fee93140-5286-4a07-89b3-f5d8e147a3e9")
+		)
+		(pin "GND@4"
+			(uuid "d4d94c43-0c7f-497a-8f24-66ba4262f49e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "EXTTRIGIN0")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 203.2 205.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "143daedd-16c6-43d1-beb9-18be47257644")
+		(property "Reference" "#GND075"
+			(at 203.2 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 200.66 208.28 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.2 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "398dd621-c41b-47c8-b00a-8207fdcec347")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#GND075")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CONN_08{dblquote}")
+		(at 66.04 43.18 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "184ea37b-fbd8-4684-bcbf-c350352511d9")
+		(property "Reference" "J13"
+			(at 71.12 56.388 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "8pin"
+			(at 71.12 30.734 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:1X08"
+			(at 66.04 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce231d86-2824-40d5-8f06-b52e162372ee")
+		)
+		(pin "7"
+			(uuid "501989ea-761e-4d12-8c60-55c4aa95852a")
+		)
+		(pin "3"
+			(uuid "37619c1a-9be8-4248-af1a-d0c1f615c35b")
+		)
+		(pin "4"
+			(uuid "296a6cba-d03d-4afe-8674-21a023fb61cd")
+		)
+		(pin "5"
+			(uuid "28f3239a-8501-4064-8903-045ddfeba5eb")
+		)
+		(pin "6"
+			(uuid "d47d71a3-657a-4940-9e76-025b5fddb8c7")
+		)
+		(pin "2"
+			(uuid "45249397-d202-4f6e-9873-33fde28b5b9f")
+		)
+		(pin "8"
+			(uuid "f3a99d90-0bd5-4753-a745-b382b40e28c8")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:OSCILLATORSMD-5X3")
+		(at 218.44 198.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "298518d9-8de4-43c6-bf3d-37cf92892359")
+		(property "Reference" "Y2"
+			(at 210.82 190.246 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "OSCILLATORSMD-5X3"
+			(at 210.82 205.994 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left top)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:OSCILLATOR-SMD-5X3.2"
+			(at 218.44 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 218.44 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2901546"
+			(at 217.17 190.246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "18961825-d8e0-476a-955e-e06cbcff9b4e")
+		)
+		(pin "3"
+			(uuid "edadc5cd-9b7b-44d6-bcaa-145416daed20")
+		)
+		(pin "2"
+			(uuid "87aae0f8-6766-4356-a58e-87677b18149e")
+		)
+		(pin "4"
+			(uuid "8d7989f0-0617-4e94-b6ba-5721cb576a01")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "Y2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CONN_08{dblquote}")
+		(at 167.64 73.66 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2d1a8a47-b5cf-4aba-bdbf-8eccf4ac655c")
+		(property "Reference" "J10"
+			(at 172.72 86.868 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "8pin"
+			(at 172.72 61.214 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:1X08"
+			(at 167.64 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9aa07e6e-e6bc-4f22-8fd8-5a77979e83c0")
+		)
+		(pin "4"
+			(uuid "2065a10b-f3a0-4da0-8437-c9ebb9573d91")
+		)
+		(pin "5"
+			(uuid "f3684abb-ac37-44bf-abf4-eae049c371cc")
+		)
+		(pin "6"
+			(uuid "c74ca134-45b2-45cd-9e00-3e716c06819f")
+		)
+		(pin "8"
+			(uuid "be47e0ba-2a58-446d-8959-50100dd3f271")
+		)
+		(pin "7"
+			(uuid "7ffbc034-7782-424a-8c72-9b9e172e329c")
+		)
+		(pin "1"
+			(uuid "105964e0-76fe-4a84-b9a8-8b2c6f2300e6")
+		)
+		(pin "3"
+			(uuid "fee4efb4-68c6-41af-848b-5d108950f514")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 48.26 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2f7d8ff9-4d86-4a46-8eb4-8d5cfcf5f513")
+		(property "Reference" "LED46"
+			(at 90.932 44.704 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 42.545 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "5dc30436-2960-4b5e-b761-3028459fe541")
+		)
+		(pin "A"
+			(uuid "ad614612-3850-482c-b18d-6a9eeac94c6f")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 91.44 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2ffe8033-6fec-4ef4-bc5a-7831a3e524c9")
+		(property "Reference" "#GND056"
+			(at 91.44 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 60.96 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d91d541b-f732-4e48-8563-5c08c44cf4b4")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#GND056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 215.9 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "334996a9-717c-4ce9-a3e2-61b7d0b4c2bf")
+		(property "Reference" "#GND053"
+			(at 215.9 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 213.36 134.62 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.9 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.9 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 215.9 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0ba1e75e-8b4e-4add-b9a4-7d80c21cb5d2")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#GND053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RJ45-CONNECTOR-SHIELDED")
+		(at 109.22 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "34706f0e-3e7b-422f-be7f-27d2dc4597aa")
+		(property "Reference" "U$1"
+			(at 105.3958 184.6247 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "RJ45-CONNECTOR-SHIELDED"
+			(at 105.4028 187.345 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RJ45_THT_RA_AMPH-FRJAE448"
+			(at 109.22 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 109.22 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "d2f66e1d-77ac-4401-922b-f0269f7f4f0f")
+		)
+		(pin "P$6"
+			(uuid "5edec2af-410d-489e-b9f8-a448e0f697b3")
+		)
+		(pin "P$5"
+			(uuid "28502a6a-560e-4fb2-8c27-a7d620cfd2f9")
+		)
+		(pin "S$1"
+			(uuid "3fb516df-e708-4ff5-8b32-73076bdf2d45")
+		)
+		(pin "S$2"
+			(uuid "b833a06f-2273-4b31-822a-5f3f2935b4ee")
+		)
+		(pin "S$4"
+			(uuid "d1521c8d-6390-419c-b780-ff76ab804ca4")
+		)
+		(pin "P$2"
+			(uuid "d4653799-0e48-4f0f-ac5e-1cfcd5101954")
+		)
+		(pin "P$3"
+			(uuid "83741d79-b7ff-4825-b694-f93e7eec7c2f")
+		)
+		(pin "P$4"
+			(uuid "b5be8861-605b-42c4-90d7-d4024f09b17d")
+		)
+		(pin "P$8"
+			(uuid "531644af-6b2e-4cca-aa39-9bb698af530e")
+		)
+		(pin "P$7"
+			(uuid "56643104-236f-4df7-a025-561d54694454")
+		)
+		(pin "S$3"
+			(uuid "b3920b96-0a2a-42a2-96ce-20c01095d0b3")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "U$1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 73.66 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "38ab0cd3-100d-4aff-9010-10c1b1038de7")
+		(property "Reference" "LED28"
+			(at 90.932 70.104 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 67.945 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A"
+			(uuid "403c74ac-f418-4107-a1b6-24796658f771")
+		)
+		(pin "C"
+			(uuid "3aece2a6-a767-4b71-ba2e-51e0ac032b86")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3c4a36cf-dd8d-4f91-a85d-c5444e6444d9")
+		(property "Reference" "LED45"
+			(at 90.932 42.164 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 40.005 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A"
+			(uuid "bde47d4f-0a5b-4bf6-b386-1bede12e0ba9")
+		)
+		(pin "C"
+			(uuid "fce7476d-0158-4c5e-a181-80621749beac")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 137.16 127 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "50921cb1-7fab-4c2f-8219-86660ced17b6")
+		(property "Reference" "R211"
+			(at 138.43 128.4986 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "47"
+			(at 138.43 123.698 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 137.16 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 137.16 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "cc651c7a-253b-4e8d-9748-34c23f5cb1c0")
+		)
+		(pin "P$1"
+			(uuid "a3d54bb8-5d1f-46cf-b818-311339b7c081")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R211")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 83.82 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "537cc4f8-8e47-4175-b649-d29bd520a379")
+		(property "Reference" "LED32"
+			(at 90.932 80.264 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 78.105 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A"
+			(uuid "4b3a899b-cfd5-420c-904e-84acfd5fcef9")
+		)
+		(pin "C"
+			(uuid "28ae2aac-a8e3-49a0-a586-0b076bfb2efd")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 91.44 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "53be8921-b589-4d49-8604-a696d43a2b91")
+		(property "Reference" "#GND055"
+			(at 91.44 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 91.44 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a56fa09c-48ef-4e82-9a71-8a277932989c")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#GND055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 93.98 142.24 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5d7554ef-4b39-4969-a567-4ddef7f93f06")
+		(property "Reference" "R210"
+			(at 92.4814 143.51 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "47"
+			(at 97.282 143.51 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 93.98 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 93.98 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "35d13977-6f6a-4c92-a7d2-b8925c6e94d8")
+		)
+		(pin "P$2"
+			(uuid "e08c4b12-d888-424a-84b8-1cfae401c9cd")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R210")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 50.8 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60c80ff5-92a4-42a1-b638-0270046f50cc")
+		(property "Reference" "LED47"
+			(at 90.932 47.244 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 45.085 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "0c0bef60-8dd3-4997-8ef2-045c0f124a20")
+		)
+		(pin "A"
+			(uuid "3274193a-da77-4da3-ad12-3ed0942fdee0")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:SMACONNECTOR_EDGE")
+		(at 154.94 127 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "61c32640-aaee-4d9f-b960-89d2ba043e2c")
+		(property "Reference" "UNK1KHZOUT50"
+			(at 162.56 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "50"
+			(at 162.56 127 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:SMA_EDGELAUNCH"
+			(at 154.94 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "GND@3"
+			(uuid "f0572c9a-027c-41bf-8d6f-60ac42af4dfa")
+		)
+		(pin "GND@4"
+			(uuid "6e09b9d2-8550-430d-b5d8-9befa9e082d8")
+		)
+		(pin "GND@1"
+			(uuid "9777d912-a9de-4e46-b2a1-95eb34152778")
+		)
+		(pin "GND@2"
+			(uuid "63a7b2b4-641a-4ca6-986f-b27d2d2d24a4")
+		)
+		(pin "P"
+			(uuid "20162a7f-0d19-409c-bde3-bc63c7ccdd7e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "UNK1KHZOUT50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:BU-SMB-V")
+		(at 203.2 162.56 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6267387e-9286-4842-a164-e87d3b3ad0b2")
+		(property "Reference" "CLKEXT0"
+			(at 205.74 159.258 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "BU-SMB-V"
+			(at 205.74 167.64 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:BU-SMB-V"
+			(at 203.2 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.2 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "c15a22ef-1a96-431e-8d7c-790138497132")
+		)
+		(pin "4"
+			(uuid "7405a94c-ef17-4071-aa31-18a21159e19c")
+		)
+		(pin "5"
+			(uuid "09c51559-d643-418b-88d0-ce0b5d1dcd7f")
+		)
+		(pin "2"
+			(uuid "440972fa-7ad1-434b-aa8e-a5dd9125b49a")
+		)
+		(pin "1"
+			(uuid "4746ec36-09bc-4716-ad08-ac573e7a54f8")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "CLKEXT0")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "62efd94f-cda4-4d6f-95bd-91182cbea42f")
+		(property "Reference" "R13"
+			(at 139.065 67.31 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 69.342 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "58dd0a7d-325b-4523-97c2-a4817c5d2345")
+		)
+		(pin "P$2"
+			(uuid "afee4497-c138-4ef6-beb7-53d415df3a69")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND")
+		(at 93.98 149.86 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "666c3b58-b07e-43db-b448-c80d3253885f")
+		(property "Reference" "#SUPPLY042"
+			(at 93.98 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 95.885 153.035 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 93.98 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a46e0521-2a07-4ea5-850a-40c491f0cb3d")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#SUPPLY042")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:BU-SMB-V")
+		(at 231.14 162.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "670c39ec-9993-4084-9ef3-82c27c8d69ce")
+		(property "Reference" "CLKOUT2"
+			(at 228.6 159.258 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "BU-SMB-V"
+			(at 228.6 167.64 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:BU-SMB-V"
+			(at 231.14 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 231.14 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f47207be-2371-42a1-8e48-f6bbab2a4ad6")
+		)
+		(pin "2"
+			(uuid "4b0be229-b855-4a70-882b-84eee84a67d9")
+		)
+		(pin "4"
+			(uuid "fa70ada2-1bb6-409b-b6b1-ca96590ae452")
+		)
+		(pin "3"
+			(uuid "9da0e081-f933-4386-b855-d0f8b4da4a57")
+		)
+		(pin "5"
+			(uuid "8ca7dd33-f637-42c8-a5eb-f50088866722")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "CLKOUT2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "68c1c08b-7622-4deb-8595-467943e90f10")
+		(property "Reference" "R51"
+			(at 75.565 39.37 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 41.402 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "00c25c03-0af9-4395-8a65-79bc84cf9729")
+		)
+		(pin "P$1"
+			(uuid "f1e4345a-adc9-4a1f-a18a-1eaa10421b1a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 43.18 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6a834e69-e533-4ac7-bde5-19f57d76e9a5")
+		(property "Reference" "LED44"
+			(at 90.932 39.624 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 37.465 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A"
+			(uuid "05d19f5c-a067-464c-ad64-3e76a38257e9")
+		)
+		(pin "C"
+			(uuid "ec77dd86-e129-4cd1-8e69-1f471cd6eaf5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 35.56 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6e545eea-246a-459d-adf8-bdb38a867932")
+		(property "Reference" "LED41"
+			(at 90.932 32.004 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 29.845 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "9e573dd2-86b6-4def-81d0-50b812ddf2b0")
+		)
+		(pin "A"
+			(uuid "f82510ad-e5fa-4925-851f-27e0c6b91fbb")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7690eadf-63dd-442c-af49-f8e8c208a207")
+		(property "Reference" "R12"
+			(at 139.065 64.77 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 66.802 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "7e1f2f8a-106f-4df7-af6a-820b6160b30d")
+		)
+		(pin "P$2"
+			(uuid "a7562bce-2984-42ad-996e-341deb2eb59c")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77535a61-75f6-4596-baba-e24ba9d0e8a8")
+		(property "Reference" "R206"
+			(at 139.065 72.39 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 74.422 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "d0f8ca34-6faf-4417-9e70-b75d79ce8a69")
+		)
+		(pin "P$2"
+			(uuid "6c63f5f6-a379-4ecd-98bc-20c13389a296")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R206")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 203.2 200.66 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77796930-6029-4824-920b-99f0a2620d62")
+		(property "Reference" "C59"
+			(at 201.676 198.501 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 201.676 201.041 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 203.2 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.2 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "30a26c2b-a4c2-4f5a-9464-ee6070184694")
+		)
+		(pin "1"
+			(uuid "116947bb-6e99-4574-a638-d0c4dd45cbc8")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "C59")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "78c96645-e9d2-4e08-b440-190a7c63f66c")
+		(property "Reference" "R10"
+			(at 139.065 80.01 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 82.042 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "a0e56710-b6d5-4cac-a7b1-198eefe850b8")
+		)
+		(pin "P$1"
+			(uuid "c72c2c09-e572-43ea-875b-2ed671021d9c")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 86.36 132.08 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "80fe9df6-43d7-4836-ba2a-d7ba8cb85a41")
+		(property "Reference" "R31"
+			(at 84.8614 133.35 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "47"
+			(at 89.662 133.35 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 86.36 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "279c96db-7b33-4e3e-af04-c237dd229e0c")
+		)
+		(pin "P$1"
+			(uuid "d8dfcf37-c495-4c8a-8706-86e68f993522")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "82b8297d-e1c2-4e3a-849b-8b3854cb9c3c")
+		(property "Reference" "R48"
+			(at 75.565 46.99 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 49.022 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "c7ce0f25-c4a9-40a9-916b-f8680af01e99")
+		)
+		(pin "P$1"
+			(uuid "fb2a841b-2322-4c62-bc6f-5a5b4132f9c5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "830483bc-b7ca-454e-b0ec-46b7cfd0741a")
+		(property "Reference" "R22"
+			(at 139.065 69.85 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 71.882 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "71963f6e-688f-4eba-9e83-68e8df646953")
+		)
+		(pin "P$2"
+			(uuid "02b17a7c-7a6e-478d-9a33-1303ff7b2f14")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 53.34 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8929f11f-22a6-4751-a2f1-7e476e461344")
+		(property "Reference" "LED48"
+			(at 90.932 49.784 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 47.625 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "18400465-58bc-4208-9b5b-7beb0d99905b")
+		)
+		(pin "A"
+			(uuid "1b36af9a-8e9f-4b58-bd9c-13a869f4a232")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a5e373c-e7aa-4fb5-8c95-22d45bae89de")
+		(property "Reference" "R46"
+			(at 75.565 52.07 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 54.102 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "792afbe1-6352-4f49-bc8b-6e60f3323e2b")
+		)
+		(pin "P$1"
+			(uuid "14c0bc8d-0329-4d0f-a9d3-2b492c4e6087")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 93.98 132.08 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9111a29f-6d42-4d96-95ce-20b340a2c5f8")
+		(property "Reference" "R160"
+			(at 92.4814 133.35 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "47"
+			(at 97.282 133.35 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 93.98 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 93.98 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "e5ba26af-1e48-4a1d-96a1-5bf536e8e014")
+		)
+		(pin "P$1"
+			(uuid "0d7a647f-5551-48ac-8c8d-a7a5547928e5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R160")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "91289f59-77d9-4ee1-8879-79aac7fd5d18")
+		(property "Reference" "R47"
+			(at 75.565 49.53 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 51.562 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "a43e9b8e-5744-4d42-9848-fc37f840eb0b")
+		)
+		(pin "P$1"
+			(uuid "5694390d-d843-40cb-b70d-2cb496e21782")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "91487575-afb1-47d4-95a3-08096aee86e3")
+		(property "Reference" "R16"
+			(at 139.065 52.07 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 54.102 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "5df6bd4c-7b69-4afb-8074-daf899c4672b")
+		)
+		(pin "P$1"
+			(uuid "9fbc3fda-33d9-4c8d-baa2-922f7b43536a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "948534d7-9621-4a8a-87ba-163db435dbd1")
+		(property "Reference" "R7"
+			(at 139.065 46.99 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 49.022 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "ad7cec1d-ec68-4a9a-a410-bf04b18761e8")
+		)
+		(pin "P$1"
+			(uuid "346bb0a1-c036-40f1-bd02-9441b39d7eb9")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "95d38ea5-9b68-4028-b904-70de2106fd7d")
+		(property "Reference" "R50"
+			(at 75.565 41.91 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 43.942 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "d9902f1e-92fb-4ae1-b5f5-2472dee11236")
+		)
+		(pin "P$2"
+			(uuid "6fd11db9-bd60-4761-a9ba-5c406a20eadb")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 86.36 142.24 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "96082f57-32e6-4143-a38e-9c4345fa4d9f")
+		(property "Reference" "R136"
+			(at 84.8614 143.51 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "47"
+			(at 89.662 143.51 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 86.36 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "51f7e697-a0cc-47bc-bb8b-85732c90e3ab")
+		)
+		(pin "P$1"
+			(uuid "e80215cf-1ea2-49b4-bdbf-7afe36ff6e9e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND")
+		(at 200.66 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "96402889-53a8-4cf5-9f7e-2b82f175439c")
+		(property "Reference" "#SUPPLY043"
+			(at 200.66 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 198.755 170.815 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 200.66 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "73367255-c26e-4438-8ea0-8d584f53abf1")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#SUPPLY043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a425e131-d1dc-45bb-b76c-da09b4661e47")
+		(property "Reference" "R9"
+			(at 139.065 77.47 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 79.502 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "379bd0cc-1b06-4626-9046-e48164e7a7f6")
+		)
+		(pin "P$1"
+			(uuid "0ef33d2f-1a87-416f-97ea-b7048fb2059f")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND")
+		(at 233.68 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "aa26d03d-ab71-4a16-a4fe-7dc8ea479e69")
+		(property "Reference" "#SUPPLY050"
+			(at 233.68 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 231.775 170.815 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 233.68 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "03febf98-9954-48a9-a5c8-680805119ec0")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#SUPPLY050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "afc2304b-7f2b-4620-97fe-d1e7f8f519f9")
+		(property "Reference" "LED42"
+			(at 90.932 34.544 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 32.385 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "4e769bd6-b135-4f05-b4d6-f56dc02e6297")
+		)
+		(pin "A"
+			(uuid "9fe293d9-19e2-4b36-825d-724d8d96d015")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b2e6ab5b-1def-46cf-a683-1ff89bdf55f2")
+		(property "Reference" "R37"
+			(at 75.565 64.77 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 66.802 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "41f59e32-f4d7-4e39-9557-a249e942dc9c")
+		)
+		(pin "P$1"
+			(uuid "097b48cd-e4e3-43d7-8d17-9137e22af8d4")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bb599452-07b0-49b7-af43-7b7dad369964")
+		(property "Reference" "LED29"
+			(at 90.932 72.644 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 70.485 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A"
+			(uuid "72b5a3de-2642-4679-b21d-43ae8a29a3f8")
+		)
+		(pin "C"
+			(uuid "e7562f39-c13f-4c6c-95e3-328887a92892")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd8e7f8b-7154-4d8a-92f8-b87531ff85d8")
+		(property "Reference" "R52"
+			(at 75.565 36.83 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 38.862 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "21206f65-c034-4e4c-80fb-8b4bd393d3ec")
+		)
+		(pin "P$1"
+			(uuid "f29f32fd-7beb-4406-98c9-d1ca56cdae54")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c2e887fd-f947-409c-a532-a48b3fd726f6")
+		(property "Reference" "R11"
+			(at 139.065 82.55 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 84.582 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "546fe2e2-b47f-4b23-b9a0-1250aa32a93a")
+		)
+		(pin "P$2"
+			(uuid "75ef2486-ea69-4fb7-8029-704d6faadb14")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 40.64 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c3f526ab-3bf0-4630-a8ac-4fc675766ad2")
+		(property "Reference" "LED43"
+			(at 90.932 37.084 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 34.925 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A"
+			(uuid "78d42db9-6cea-4adf-a73a-cdba9f3a4be8")
+		)
+		(pin "C"
+			(uuid "ed664b49-a4c5-4a5a-8472-a7963aca3926")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RJ45-CONNECTOR-SHIELDED")
+		(at 50.8 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c4094a64-0332-44e4-bf3f-0e750db03bc5")
+		(property "Reference" "U$3"
+			(at 46.9758 184.6247 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "RJ45-CONNECTOR-SHIELDED"
+			(at 46.9828 187.345 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RJ45_THT_RA_AMPH-FRJAE448"
+			(at 50.8 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "S$1"
+			(uuid "04aef5ef-c9f6-425a-a958-e3d1cf33abcc")
+		)
+		(pin "S$2"
+			(uuid "7e0505b1-efe8-487c-9533-42a79e545fe1")
+		)
+		(pin "S$3"
+			(uuid "c8fd49af-5009-4f75-8c2f-f6ab6029701a")
+		)
+		(pin "P$3"
+			(uuid "ee9a0797-f699-426f-9fd6-606681079f33")
+		)
+		(pin "S$4"
+			(uuid "ddfe46f4-2bf3-4e62-9e07-17485066964a")
+		)
+		(pin "P$2"
+			(uuid "34641572-faa7-42a1-a723-c826a9d95426")
+		)
+		(pin "P$4"
+			(uuid "69e0136e-2d71-4d5a-9164-f00cc119c3e0")
+		)
+		(pin "P$1"
+			(uuid "3e70bb8c-2696-4e73-80ce-63a470d21b99")
+		)
+		(pin "P$5"
+			(uuid "4a29ea82-ecf1-4d7c-802a-6a76a22623ff")
+		)
+		(pin "P$6"
+			(uuid "2540fc3f-af2c-4d77-8a0b-478d7ac4fe4b")
+		)
+		(pin "P$7"
+			(uuid "fa3661a6-68cd-4809-9c31-bbd5421aa4ed")
+		)
+		(pin "P$8"
+			(uuid "e387d04c-4809-4f9e-83e4-1cd6bbd740ff")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "U$3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c746f821-ceb4-4f23-b3be-9ccc60fad736")
+		(property "Reference" "R53"
+			(at 75.565 34.29 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 36.322 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "c5eea36f-89a4-44bf-bafa-c2f9af78d00d")
+		)
+		(pin "P$2"
+			(uuid "74d0c397-a31e-4f29-b62f-93725fedf54a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ca5907e4-456e-4d34-a56a-a7e6e73a5c7c")
+		(property "Reference" "R8"
+			(at 139.065 74.93 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 76.962 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "cc1656bc-0b7e-45d9-8195-44b0b8b775ff")
+		)
+		(pin "P$2"
+			(uuid "0054bd3f-3e47-411d-974f-1e9b481dc530")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:DIP-BLACK-MALE-HEADER-VERT(2P-2.54)")
+		(at 223.52 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ce65b884-0e11-4baf-9403-1b3b12978d1b")
+		(property "Reference" "J1"
+			(at 222.25 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "2p-2.54"
+			(at 224.79 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:H2-2.54"
+			(at 223.52 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 223.52 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 223.52 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e5b32a0-ed42-4653-b444-d3d7eb544601")
+		)
+		(pin "2"
+			(uuid "d58c5be0-b68c-4ddf-8907-cb65aff61978")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CONN_08{dblquote}")
+		(at 66.04 73.66 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d1876f5d-4f10-470b-b7c9-8bd4a1743f82")
+		(property "Reference" "J11"
+			(at 71.12 86.868 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "8pin"
+			(at 71.12 61.214 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:1X08"
+			(at 66.04 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f2d6d15e-0f82-4de4-8bff-02bb02f33d00")
+		)
+		(pin "3"
+			(uuid "c114b2e8-f516-48b9-87f7-39a2e4194d7f")
+		)
+		(pin "4"
+			(uuid "3570d7d1-8ad8-4926-aecc-f9ffc6774104")
+		)
+		(pin "5"
+			(uuid "1f419e7c-91d2-4b89-ac4c-8fb62e145bc6")
+		)
+		(pin "6"
+			(uuid "caaac5f7-b4e7-48f8-859f-ba6aae460f2e")
+		)
+		(pin "7"
+			(uuid "b2dd3439-72e2-4b41-a32f-600b53dbcea3")
+		)
+		(pin "8"
+			(uuid "7ad01ffd-eb23-4dab-85b4-150af1b8b672")
+		)
+		(pin "1"
+			(uuid "4e317ef7-0859-4c7f-a60d-30acb8c187a8")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND")
+		(at 106.68 220.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d29a2a06-8dd0-43a9-a063-2ff9a9261123")
+		(property "Reference" "#SUPPLY05"
+			(at 106.68 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 104.775 224.155 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8e51f4d9-f716-4be4-9d17-cc875757ce1d")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#SUPPLY05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 68.58 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d2e72221-bfe7-44ed-bdb0-8af42dafae4c")
+		(property "Reference" "LED26"
+			(at 90.932 65.024 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 62.865 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "63351ea7-afa3-474e-b5d8-4cfe4bc7dbb1")
+		)
+		(pin "A"
+			(uuid "748d723c-a6bd-4be4-bb63-da097ed2182b")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d49f9630-f76c-4684-a2ab-4ec32ee83bb7")
+		(property "Reference" "R32"
+			(at 75.565 77.47 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 79.502 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "fb29765a-ded6-4424-9d82-5c583744589d")
+		)
+		(pin "P$1"
+			(uuid "f6bbecbf-f8d1-44c6-8f28-197dee576297")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d5fae7d6-0a89-4711-8eb8-4c512042d495")
+		(property "Reference" "R34"
+			(at 75.565 72.39 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 74.422 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "db7a2e20-c326-409c-a14b-1ddb56204305")
+		)
+		(pin "P$2"
+			(uuid "57fc5f44-9353-4b1e-8ffe-f0a220755738")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d679417c-9de7-4a96-94f0-a9272710c6e1")
+		(property "Reference" "R6"
+			(at 139.065 49.53 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 51.562 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "e1fa1913-41cf-4080-8d8b-13ec89907060")
+		)
+		(pin "P$1"
+			(uuid "52c48fdb-fd9b-4640-866f-883748cdcd16")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d67a6320-643e-450a-9d1d-39b4639c2fb0")
+		(property "Reference" "R30"
+			(at 75.565 82.55 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 84.582 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "bee8871a-1d06-4ffd-a83d-6dddc78a87b6")
+		)
+		(pin "P$2"
+			(uuid "d5f936b5-9782-4346-bba7-684457b984a2")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dae3213c-406e-46fa-88c8-b4dad9593e98")
+		(property "Reference" "R236"
+			(at 139.065 41.91 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 43.942 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "11fba2f3-516e-49b7-aed1-381c166e9a8e")
+		)
+		(pin "P$1"
+			(uuid "4e8260fe-fbd6-43c1-a2d2-7ea7d2fe903c")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R236")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND")
+		(at 58.42 137.16 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "df5d24a8-ace4-43b3-b49d-cac9d2d56cf9")
+		(property "Reference" "#SUPPLY021"
+			(at 58.42 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 60.325 140.335 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 58.42 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "463a7abd-182f-4856-a352-fa439c7933b2")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#SUPPLY021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e2a140b0-014d-4c74-9b7e-3a249c18f3e3")
+		(property "Reference" "LED30"
+			(at 90.932 75.184 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 73.025 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "dff6d447-e640-4289-871f-6297d0910324")
+		)
+		(pin "A"
+			(uuid "208169be-4b26-450f-a1fc-6d5daa3fb588")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e31d96d6-dd3f-4e45-9c55-50a3963241ee")
+		(property "Reference" "R33"
+			(at 75.565 74.93 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 76.962 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$2"
+			(uuid "e1aabcfb-9a06-41fe-a268-43f4be3461d2")
+		)
+		(pin "P$1"
+			(uuid "92e8e819-f143-4952-8570-8d8f6a74c53e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 66.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e3432485-bb02-4b10-9695-bfc14eb4ecd3")
+		(property "Reference" "LED25"
+			(at 90.932 62.484 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 60.325 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A"
+			(uuid "3f688e24-799c-42e7-9b97-0f8da81a66f2")
+		)
+		(pin "C"
+			(uuid "5223a546-93bf-4052-8bfd-20ddd0e459d5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND")
+		(at 157.48 137.16 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e34aab17-9374-4d8e-a46c-cf545916bc94")
+		(property "Reference" "#SUPPLY041"
+			(at 157.48 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 159.385 140.335 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 157.48 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2404a4d0-d22e-4260-b84c-7f33fb064177")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#SUPPLY041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e5e5b48c-d85f-4f56-9920-e79feb8ea710")
+		(property "Reference" "R49"
+			(at 75.565 44.45 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 46.482 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "47261cd6-632b-4e30-a7c2-488806fd8482")
+		)
+		(pin "P$2"
+			(uuid "a4464acd-5441-4fc2-bbb6-a53b1e37cdb8")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R49")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply2_GND")
+		(at 48.26 220.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e8a47015-3e0f-4d5e-97b4-c244d1cfdd20")
+		(property "Reference" "#SUPPLY0107"
+			(at 48.26 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 46.355 224.155 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "876e3b8d-4e1c-49cd-bdb4-757e69f5ae84")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "#SUPPLY0107")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CONN_08{dblquote}")
+		(at 167.64 43.18 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee136911-a1c6-4fff-8a86-fa16595e607f")
+		(property "Reference" "J8"
+			(at 172.72 56.388 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "8pin"
+			(at 172.72 30.734 0)
+			(effects
+				(font
+					(size 1.778 1.778)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:1X08"
+			(at 167.64 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "04df465a-5e17-4402-aae1-253af03b594a")
+		)
+		(pin "8"
+			(uuid "fd8dc878-9b20-4443-9ba8-90124e0664a5")
+		)
+		(pin "3"
+			(uuid "a7bb67fa-eb2d-4fb6-a43f-e5d81ff71db9")
+		)
+		(pin "1"
+			(uuid "f2c713b9-033d-4df0-8184-ad4761462432")
+		)
+		(pin "7"
+			(uuid "f21ec04d-47d4-429b-8e44-79400901010d")
+		)
+		(pin "2"
+			(uuid "71271a30-508a-4f77-898f-b8ebdef1ba3d")
+		)
+		(pin "6"
+			(uuid "2942735d-500c-4d61-af9f-2ead61036c2d")
+		)
+		(pin "5"
+			(uuid "2108f993-0d7a-4a71-866c-7fd7e2b9f2ea")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f02ef3f9-ff1f-451c-8f22-8972cd4abb7b")
+		(property "Reference" "R35"
+			(at 75.565 69.85 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 71.882 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "641bc382-fd73-41d3-bab8-5939e491ad68")
+		)
+		(pin "P$2"
+			(uuid "6cb9ae6d-83b6-40a2-922c-123d45fa0e76")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 78.74 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f2242abd-b4f1-41cb-89f3-59d88c8144f1")
+		(property "Reference" "R36"
+			(at 75.565 67.31 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 77.47 69.342 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 78.74 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "89bc904b-4028-4e0a-99e1-8675e5c89543")
+		)
+		(pin "P$2"
+			(uuid "37b25bcd-d9d9-44f5-8f21-d32d294e4e33")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:LEDCHIP-LED0603")
+		(at 86.36 71.12 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fcdfd480-db26-45da-9cd4-4c5701f69d36")
+		(property "Reference" "LED27"
+			(at 90.932 67.564 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "red"
+			(at 90.932 65.405 90)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:CHIP-LED0603"
+			(at 86.36 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "C"
+			(uuid "b54a7f25-15b8-4e40-8f24-1c914cb5a282")
+		)
+		(pin "A"
+			(uuid "f08c1e2a-66d9-46d9-ae23-a940c83a3d4b")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "LED27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 142.24 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fd3ff015-0804-4cd4-bbb9-1338c9244b61")
+		(property "Reference" "R238"
+			(at 139.065 39.37 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Value" "1k"
+			(at 140.97 41.402 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 142.24 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "4ea61399-f2f3-45fa-be83-fe76def60b53")
+		)
+		(pin "P$2"
+			(uuid "3a4ff088-7cfd-4165-a73a-53edddd4cc77")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/d2d3aadd-3b67-4089-8dc0-0ea8407c4d01"
+					(reference "R238")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

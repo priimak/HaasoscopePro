@@ -1,0 +1,9236 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "9c8fdd77-5b9a-4717-85ef-b78e1980cf94")
+	(paper "User" 362.864 269.443)
+	(lib_symbols
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" ""
+				(at 1.524 0.381 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at 1.524 -4.699 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic chip capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CAPACITOR_0402_N_1_0"
+				(rectangle
+					(start -2.032 -2.032)
+					(end 2.032 -1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -2.032 -1.016)
+					(end 2.032 -0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -2.032)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" ""
+				(at 1.524 0.381 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at 1.524 -4.699 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic chip capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CAPACITOR_0805_N_1_0"
+				(rectangle
+					(start -2.032 -2.032)
+					(end 2.032 -1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -2.032 -1.016)
+					(end 2.032 -0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -2.032)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:GND"
+			(power)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#GND"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at -2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SUPPLY SYMBOL"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_1_0"
+				(polyline
+					(pts
+						(xy -1.905 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:NFM31PC276B0J3L"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 21.59 17.78 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" ""
+				(at 21.59 15.24 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:NFM31HK103R1H3L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Murata NFM31PC Series, EMI Filter, 6.3 V dc, 6A 1206/3216 SMD, Flat Contact Termination, 3.2 x 1.6 x 1.3mm\n\nSource: https://psearch.en.murata.com/capacitor/product/NFM31PC276B0J3#.html  Datasheet "
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "NFM31PC276B0J3L_1_0"
+				(polyline
+					(pts
+						(xy 5.08 12.7) (xy 5.08 -12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 12.7) (xy 20.32 12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.32 -12.7) (xy 5.08 -12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.32 -12.7) (xy 20.32 12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at 0 0 0)
+					(length 5.08)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -17.78 90)
+					(length 5.08)
+					(name "GND_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 25.4 0 180)
+					(length 5.08)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 17.78 270)
+					(length 5.08)
+					(name "GND_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at -3.175 1.27 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" ""
+				(at -3.175 -1.905 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "https://www.digikey.com/en/products/filter/chip-resistor-surface-mount/52?s=N4IgjCBcpgbFoDGUBmBDANgZwKYBoQB7KAbRAGYBOAJgBZ4BdAgBwBcoQBlVgJwEsAdgHMQAX1EFqpEDxxY%2BWVoR4gGooA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "RES-0402_1_0"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.905 0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -0.635) (xy 0.635 0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 1.905 -0.635)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -0.635) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "P$1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "P$1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "P$2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "P$2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND"
+			(power)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#GND"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at -2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.778 1.5113)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SUPPLY SYMBOL"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "supply1_GND_1_0"
+				(polyline
+					(pts
+						(xy -1.905 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 307.34 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "00be72cb-8cc4-4793-a432-8bcd491336a2")
+	)
+	(junction
+		(at 76.2 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "082159f6-a4e2-4b92-9d96-e0f73cd843bd")
+	)
+	(junction
+		(at 86.36 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "098632c8-c509-4444-9959-4870299a51f0")
+	)
+	(junction
+		(at 45.72 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "09b21268-dd65-47b1-bf52-848733d9eba1")
+	)
+	(junction
+		(at 134.62 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0f1b8ede-a8cd-49ca-8eee-1a1f9f1587fa")
+	)
+	(junction
+		(at 256.54 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0f499f7d-1d04-47e9-bddc-34fa49d6251e")
+	)
+	(junction
+		(at 60.96 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "11e07f2d-68ea-424e-8cc0-f4455295fc80")
+	)
+	(junction
+		(at 60.96 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13f8ce3f-06c4-4edc-a343-384cd9477f5e")
+	)
+	(junction
+		(at 243.84 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13fe814d-98f2-42cd-b465-dfcada24f2c9")
+	)
+	(junction
+		(at 124.46 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "158a730e-54af-4e90-b2f7-10429f03972d")
+	)
+	(junction
+		(at 60.96 198.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1dc857db-db1c-4dff-bd5a-615af1518365")
+	)
+	(junction
+		(at 124.46 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "231571b3-52c9-4f96-9925-847db1cab735")
+	)
+	(junction
+		(at 86.36 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2319a5b6-eb96-49b5-ad7d-e86a6bb87898")
+	)
+	(junction
+		(at 35.56 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "27f2bb1f-9d05-4c12-8b4b-c55def05d485")
+	)
+	(junction
+		(at 76.2 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2ef080fd-55cf-4fa7-84c1-1b692e9617a6")
+	)
+	(junction
+		(at 35.56 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3263175e-318b-4e4a-bd2c-6c2b4bf50009")
+	)
+	(junction
+		(at 76.2 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "37ecec5d-29c6-41e0-a44d-7d578ff7bad7")
+	)
+	(junction
+		(at 76.2 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3d155666-36ed-4008-be28-676bc47fa5b7")
+	)
+	(junction
+		(at 307.34 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3db11428-4a93-4541-90dd-79f5e3575e7f")
+	)
+	(junction
+		(at 144.78 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f3cc856-bb30-47a9-988f-ca6f7c7040b5")
+	)
+	(junction
+		(at 76.2 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4030cbef-c76a-47e3-ac98-10d460564c3a")
+	)
+	(junction
+		(at 86.36 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "42c91003-b7b2-45e7-a975-8bd30925f734")
+	)
+	(junction
+		(at 76.2 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "49861185-dc4f-4eda-9609-c260034038c3")
+	)
+	(junction
+		(at 76.2 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4ccd7fa8-dc25-4e5e-94db-13f3a408cd93")
+	)
+	(junction
+		(at 134.62 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "538a9b9a-8a9a-4206-84a2-2a7a45d47741")
+	)
+	(junction
+		(at 45.72 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57f99647-66dd-4d19-919e-13c0eb452df8")
+	)
+	(junction
+		(at 134.62 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5ae11df6-600a-4fc6-affe-d6959d64fbf7")
+	)
+	(junction
+		(at 243.84 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d2b3011-d8b1-474a-a640-22c80e26afed")
+	)
+	(junction
+		(at 76.2 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "61a3042e-c7be-47d6-b8f3-84a0d028707f")
+	)
+	(junction
+		(at 281.94 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "65541c89-92e0-493e-9776-d057e3b2ca7d")
+	)
+	(junction
+		(at 35.56 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ffd42a8-415a-421f-a816-bc5e2bed3f92")
+	)
+	(junction
+		(at 35.56 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "771bd395-fe06-41c0-8fb6-0c8bf7d77bb4")
+	)
+	(junction
+		(at 35.56 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7ddb50ef-a059-4e97-bc60-f50df41bdaf3")
+	)
+	(junction
+		(at 243.84 203.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7f4739b9-7056-4abe-aee5-c4978ca8bc8f")
+	)
+	(junction
+		(at 35.56 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7f673b5d-3bab-4ac9-99a4-6232eb4be296")
+	)
+	(junction
+		(at 121.92 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8fdebc41-cacf-4c02-b121-8bcf7390b8e2")
+	)
+	(junction
+		(at 121.92 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "91b01fa0-da8e-4747-80e0-a6381144f21e")
+	)
+	(junction
+		(at 76.2 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "922730bb-e58a-4683-91fc-1e4dfafdf1db")
+	)
+	(junction
+		(at 60.96 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "93e61358-bfae-4290-85db-ec939212a1b5")
+	)
+	(junction
+		(at 269.24 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94291805-1313-4005-a186-89d42aad7088")
+	)
+	(junction
+		(at 154.94 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "973c9156-637d-410f-85a2-86944dbcb689")
+	)
+	(junction
+		(at 144.78 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "99a3ce96-57d2-4f2e-a424-bc7b1f1b6cba")
+	)
+	(junction
+		(at 134.62 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9aa0f6d6-3cb0-47bf-a009-3aeea8b8bf95")
+	)
+	(junction
+		(at 76.2 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "acfb946c-3425-45e9-a7ab-aba72326b1fd")
+	)
+	(junction
+		(at 124.46 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "af6c666a-6166-4d14-b00c-8c5418b9220d")
+	)
+	(junction
+		(at 45.72 226.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b23497dd-42ec-48ec-8152-854caf1a9162")
+	)
+	(junction
+		(at 243.84 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b8963449-bf81-4930-be9f-1232c7696a23")
+	)
+	(junction
+		(at 45.72 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb6a861a-70dd-441f-89b1-bfd3c3f0903b")
+	)
+	(junction
+		(at 134.62 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc45981e-33fa-40b1-8a67-49874fceeb92")
+	)
+	(junction
+		(at 134.62 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "beb533a9-e35a-44f6-9666-f82d56251531")
+	)
+	(junction
+		(at 35.56 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c413805b-7a09-4efe-824e-9659d6b91df8")
+	)
+	(junction
+		(at 134.62 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c4e593c0-2e27-4526-8e83-8fa965df11c3")
+	)
+	(junction
+		(at 45.72 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c58b4e6a-41be-418f-8b73-262cc4c93916")
+	)
+	(junction
+		(at 243.84 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c9c9492b-923b-484d-a9a0-6fe52b11abb5")
+	)
+	(junction
+		(at 243.84 210.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cbc5251c-2db0-45aa-8399-7623c5c200bc")
+	)
+	(junction
+		(at 256.54 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfd653bf-e1c5-457c-b1bc-a06aaecb6b33")
+	)
+	(junction
+		(at 243.84 228.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfe048a7-657b-4dce-8efa-1e74f822684b")
+	)
+	(junction
+		(at 35.56 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d754c1b8-f1f6-4a64-93df-f7c6e9498469")
+	)
+	(junction
+		(at 134.62 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8807e96-ed8d-46e2-8ff9-3ebfb9685a37")
+	)
+	(junction
+		(at 294.64 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "de7d24c5-0c38-4683-a898-4124c83b280d")
+	)
+	(junction
+		(at 124.46 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e1369dec-85c0-4a97-bcb4-f6ab84bf25d0")
+	)
+	(junction
+		(at 256.54 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e25f9f56-3d4c-470c-bbd6-840e4283de51")
+	)
+	(junction
+		(at 154.94 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e4feefbb-8812-4737-89a1-c5f6fbb33520")
+	)
+	(junction
+		(at 35.56 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e529ee70-86d1-460f-bec5-03c58ae0ade2")
+	)
+	(junction
+		(at 86.36 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e84546a1-9d32-4593-80b9-c6d9ea46a3fe")
+	)
+	(junction
+		(at 35.56 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ebb170e3-2213-472a-a59f-4658d642b5ea")
+	)
+	(junction
+		(at 86.36 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "efbabdac-47ad-4855-b257-1b8182b9ee91")
+	)
+	(junction
+		(at 243.84 236.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f21e5c48-226b-46f8-9e47-232f600a466d")
+	)
+	(junction
+		(at 124.46 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f823a5c4-9075-43b2-bd43-ad8c5580c14d")
+	)
+	(junction
+		(at 124.46 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8a849e3-4c81-4822-9c47-306d58d72805")
+	)
+	(junction
+		(at 60.96 243.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fd0d5935-feb6-48f8-9ca8-268e3f460e91")
+	)
+	(wire
+		(pts
+			(xy 269.24 147.32) (xy 256.54 147.32)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "09060707-fa65-4932-8162-f6528517ec22")
+	)
+	(wire
+		(pts
+			(xy 320.04 119.38) (xy 307.34 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "095abd04-0b11-430f-88b6-304225aae372")
+	)
+	(wire
+		(pts
+			(xy 45.72 142.24) (xy 35.56 142.24)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "0b065972-47ef-4067-bbc2-47ac4cd28e98")
+	)
+	(wire
+		(pts
+			(xy 35.56 88.9) (xy 17.78 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "0c2e6770-51d5-4803-9ea5-4ae8cc685b5f")
+	)
+	(wire
+		(pts
+			(xy 127 104.14) (xy 139.7 104.14)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "0ea162a0-c700-4215-ad67-61a1aa4a57ae")
+	)
+	(wire
+		(pts
+			(xy 154.94 180.34) (xy 165.1 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "112ff5b2-7706-4c47-a7b2-48127463588c")
+	)
+	(wire
+		(pts
+			(xy 243.84 210.82) (xy 256.54 210.82)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "129f7085-5135-47a6-b577-73a6e80693dd")
+	)
+	(wire
+		(pts
+			(xy 271.78 68.58) (xy 254 68.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "14819b1e-1bb3-4931-a16b-fc1d890edbb0")
+	)
+	(wire
+		(pts
+			(xy 134.62 226.06) (xy 121.92 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "15a22b75-0c95-4e8b-bb4d-36a9cb0d6d5d")
+	)
+	(wire
+		(pts
+			(xy 269.24 119.38) (xy 256.54 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "15c0cc1b-aea2-4caa-96c8-2be1ff7f8070")
+	)
+	(wire
+		(pts
+			(xy 86.36 88.9) (xy 96.52 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1758a8f7-04f0-4ca0-b0fc-483bb4cd562a")
+	)
+	(wire
+		(pts
+			(xy 76.2 43.18) (xy 86.36 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "19a9bffd-bc2a-4326-9436-d06dffb2a263")
+	)
+	(wire
+		(pts
+			(xy 134.62 187.96) (xy 144.78 187.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "19f9c8f7-a104-4b27-828c-4af357aff68f")
+	)
+	(wire
+		(pts
+			(xy 243.84 228.6) (xy 226.06 228.6)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1b3884be-3549-4662-badd-858cdc138e35")
+	)
+	(wire
+		(pts
+			(xy 243.84 203.2) (xy 226.06 203.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1d5668d7-010a-4b74-ba26-e4ab3e1e83b6")
+	)
+	(wire
+		(pts
+			(xy 60.96 162.56) (xy 60.96 198.12)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "1e8d652e-5344-4965-9170-c764d0ce7f00")
+	)
+	(wire
+		(pts
+			(xy 124.46 134.62) (xy 134.62 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "21daff9a-244c-427a-84e9-d2b8c0e9dc6c")
+	)
+	(wire
+		(pts
+			(xy 76.2 134.62) (xy 86.36 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "23f05b9a-5412-4b4e-a596-2249a66567a4")
+	)
+	(wire
+		(pts
+			(xy 45.72 187.96) (xy 35.56 187.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "2446e214-f52d-417c-b3f9-136a06034e08")
+	)
+	(wire
+		(pts
+			(xy 45.72 180.34) (xy 48.26 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "24729315-5351-4d88-9ad0-f7f84f4e37e7")
+	)
+	(wire
+		(pts
+			(xy 35.56 43.18) (xy 45.72 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "26a434f4-3558-4f0a-8663-cb73f11ddd01")
+	)
+	(wire
+		(pts
+			(xy 124.46 142.24) (xy 134.62 142.24)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "26e7be84-2a74-49e2-bb59-d075167da858")
+	)
+	(wire
+		(pts
+			(xy 154.94 187.96) (xy 165.1 187.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "28c3b3e1-7157-4da7-b3ee-2b1eb3184d68")
+	)
+	(wire
+		(pts
+			(xy 124.46 43.18) (xy 134.62 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "2b61a219-0866-418f-9298-1ecda30d4e31")
+	)
+	(wire
+		(pts
+			(xy 134.62 43.18) (xy 144.78 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "3315b2e2-aef4-4b05-91a2-0b009b3c04d3")
+	)
+	(wire
+		(pts
+			(xy 307.34 127) (xy 320.04 127)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "35ce72c6-63fc-40e9-96bb-f56878b36098")
+	)
+	(wire
+		(pts
+			(xy 45.72 50.8) (xy 35.56 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "39b3684c-72e5-4c8b-9fb4-199a68e674fa")
+	)
+	(wire
+		(pts
+			(xy 134.62 142.24) (xy 144.78 142.24)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "3a6e774c-1021-458c-bf1b-29800422b077")
+	)
+	(wire
+		(pts
+			(xy 243.84 68.58) (xy 226.06 68.58)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "46d392b1-1840-4af9-958b-af5ae3dfb2e1")
+	)
+	(wire
+		(pts
+			(xy 76.2 96.52) (xy 86.36 96.52)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "46eac323-0422-4d54-a4de-dc163cd0a190")
+	)
+	(wire
+		(pts
+			(xy 294.64 119.38) (xy 281.94 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4943ad97-a77f-4da0-b3d6-ebe10cbe5d39")
+	)
+	(wire
+		(pts
+			(xy 35.56 226.06) (xy 17.78 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "494762a0-59c7-4f9b-9720-d92f11b52f7b")
+	)
+	(wire
+		(pts
+			(xy 76.2 226.06) (xy 86.36 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "49c630dc-ca3b-4908-b36a-4ef396ba9f58")
+	)
+	(wire
+		(pts
+			(xy 226.06 147.32) (xy 243.84 147.32)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4ad9d628-6b44-41ef-940a-4c5dbf4da02d")
+	)
+	(wire
+		(pts
+			(xy 124.46 180.34) (xy 109.22 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "4b1db851-0c83-496a-b925-689a9d180a9f")
+	)
+	(wire
+		(pts
+			(xy 76.2 43.18) (xy 73.66 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "51b64464-9c7f-4955-87e0-3d93536a8e72")
+	)
+	(wire
+		(pts
+			(xy 307.34 119.38) (xy 294.64 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "51eaf42d-2b7d-4e46-8a81-b06b38ebf5c9")
+	)
+	(wire
+		(pts
+			(xy 121.92 226.06) (xy 109.22 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "5206fbfa-c106-4d12-b6c6-70b2e9ad7130")
+	)
+	(wire
+		(pts
+			(xy 144.78 187.96) (xy 154.94 187.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "54012588-a61d-4427-94e8-22c4391b4be7")
+	)
+	(wire
+		(pts
+			(xy 134.62 226.06) (xy 144.78 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "56c4e596-42f2-4544-a2f7-1f8ebab88ae0")
+	)
+	(wire
+		(pts
+			(xy 76.2 187.96) (xy 86.36 187.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "570d17ce-3ea8-4774-beae-14f104db80b6")
+	)
+	(wire
+		(pts
+			(xy 76.2 180.34) (xy 86.36 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "5a393903-874c-4662-a49a-951d70d92d8d")
+	)
+	(wire
+		(pts
+			(xy 256.54 236.22) (xy 243.84 236.22)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "5e873ecb-50fa-4ce0-94ea-87d866474715")
+	)
+	(wire
+		(pts
+			(xy 76.2 134.62) (xy 73.66 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "5e893c72-833b-465c-bacd-50933cb83732")
+	)
+	(wire
+		(pts
+			(xy 134.62 50.8) (xy 144.78 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "62f78a0f-aed1-4301-9f04-2e416f64cc80")
+	)
+	(wire
+		(pts
+			(xy 60.96 71.12) (xy 60.96 106.68)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "63175a12-2258-4c06-9312-dab0056095ea")
+	)
+	(wire
+		(pts
+			(xy 243.84 81.28) (xy 226.06 81.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "67d33f9d-af2a-4656-9d22-047fff259842")
+	)
+	(wire
+		(pts
+			(xy 256.54 228.6) (xy 243.84 228.6)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "68f4de02-6fae-410a-b4e9-22bc743ee5e7")
+	)
+	(wire
+		(pts
+			(xy 281.94 119.38) (xy 269.24 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "69bd118e-ac63-4fc8-8dfd-69aed30adc91")
+	)
+	(wire
+		(pts
+			(xy 76.2 233.68) (xy 86.36 233.68)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "6a9630fe-23d8-420a-8b76-68495a603463")
+	)
+	(wire
+		(pts
+			(xy 35.56 226.06) (xy 45.72 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "6fc9e1b5-fc59-4c55-9e88-c60a127dfd11")
+	)
+	(wire
+		(pts
+			(xy 76.2 142.24) (xy 86.36 142.24)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "73696950-5e82-410c-8855-2dc7fc1696b0")
+	)
+	(wire
+		(pts
+			(xy 134.62 233.68) (xy 144.78 233.68)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "76a0ec72-f3da-4fcf-b5f6-66a58d89c27d")
+	)
+	(wire
+		(pts
+			(xy 45.72 88.9) (xy 48.26 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "76c52892-8804-4523-9f99-f11b4bef18d3")
+	)
+	(wire
+		(pts
+			(xy 124.46 180.34) (xy 134.62 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "77f53784-bf4c-4fa6-8c29-f041f10a991a")
+	)
+	(wire
+		(pts
+			(xy 76.2 88.9) (xy 73.66 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "78160c0c-8386-4f17-bcd1-3dd2ca31d7a2")
+	)
+	(wire
+		(pts
+			(xy 60.96 116.84) (xy 60.96 152.4)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "78451345-be06-4b98-bed2-c5218cca7b12")
+	)
+	(wire
+		(pts
+			(xy 116.84 104.14) (xy 109.22 104.14)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "793ea746-3990-4f91-8b92-b368859cdd2e")
+	)
+	(wire
+		(pts
+			(xy 35.56 88.9) (xy 45.72 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "7a2627e0-967c-4512-93b6-54c1e2719a1f")
+	)
+	(wire
+		(pts
+			(xy 144.78 180.34) (xy 154.94 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "7d13b99c-7ef3-436d-9b8f-baf72f0696e5")
+	)
+	(wire
+		(pts
+			(xy 76.2 180.34) (xy 73.66 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "7f96a2b3-a21f-4f28-80fc-10e09c9dccb3")
+	)
+	(wire
+		(pts
+			(xy 35.56 134.62) (xy 45.72 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8838143c-d336-40d7-be23-d3f41ac33dbf")
+	)
+	(wire
+		(pts
+			(xy 45.72 233.68) (xy 35.56 233.68)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8901dd69-2de9-44ce-aa24-98502b40eacf")
+	)
+	(wire
+		(pts
+			(xy 243.84 60.96) (xy 226.06 60.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8bb5a9a5-5a21-4a84-97ab-57516034e4b4")
+	)
+	(wire
+		(pts
+			(xy 243.84 88.9) (xy 226.06 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8e6c1ccd-8471-4dd2-ac1a-b84626ee3a2f")
+	)
+	(wire
+		(pts
+			(xy 35.56 43.18) (xy 17.78 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "8ebbfcc3-5228-463e-8f43-3de7bdc9071e")
+	)
+	(wire
+		(pts
+			(xy 35.56 180.34) (xy 45.72 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "97380f4f-50c5-4d60-8944-31228b0fd394")
+	)
+	(wire
+		(pts
+			(xy 256.54 154.94) (xy 269.24 154.94)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9a888086-1f4c-4779-b065-118a14fdf95c")
+	)
+	(wire
+		(pts
+			(xy 76.2 88.9) (xy 86.36 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9a92f7bd-2e62-4c86-9c15-2e8fcff373dc")
+	)
+	(wire
+		(pts
+			(xy 124.46 50.8) (xy 134.62 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9e3962c3-4d90-4cb5-a1a2-affa5a0a2cc2")
+	)
+	(wire
+		(pts
+			(xy 271.78 60.96) (xy 254 60.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "9ee8e67d-bc60-4492-a4bf-8f6b501270d6")
+	)
+	(wire
+		(pts
+			(xy 256.54 119.38) (xy 243.84 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a0603550-e0cf-4b20-8526-f9d45d8a6fbd")
+	)
+	(wire
+		(pts
+			(xy 271.78 88.9) (xy 254 88.9)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a1143e6e-3f93-4f05-965c-b0612eab2963")
+	)
+	(wire
+		(pts
+			(xy 243.84 119.38) (xy 226.06 119.38)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a3988df2-d217-42f0-b8a6-d52703c99fc7")
+	)
+	(polyline
+		(pts
+			(xy 198.12 35.56) (xy 198.12 243.84)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a4040d77-cbff-4e64-9e08-763a83d59375")
+	)
+	(wire
+		(pts
+			(xy 243.84 203.2) (xy 256.54 203.2)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a77f157e-38b6-4ba5-8a51-b07b5db0e666")
+	)
+	(wire
+		(pts
+			(xy 86.36 43.18) (xy 96.52 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a7b29245-9928-495c-b07a-fda599bc7e93")
+	)
+	(wire
+		(pts
+			(xy 254 182.88) (xy 243.84 182.88)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a8e4a5ff-e05c-4639-a979-55a8c4ae0954")
+	)
+	(wire
+		(pts
+			(xy 134.62 233.68) (xy 121.92 233.68)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "a989e621-29d5-4e7c-b246-e426934521bc")
+	)
+	(wire
+		(pts
+			(xy 256.54 147.32) (xy 243.84 147.32)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "aa6645c9-2669-4b92-a617-39359161c113")
+	)
+	(wire
+		(pts
+			(xy 76.2 50.8) (xy 86.36 50.8)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "b3800b2c-bf55-48cd-bf24-3aef03454d39")
+	)
+	(wire
+		(pts
+			(xy 124.46 134.62) (xy 109.22 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "b4001ee6-32e7-438b-849a-467939ee08f4")
+	)
+	(wire
+		(pts
+			(xy 243.84 53.34) (xy 226.06 53.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "b59e5113-dc75-434c-972b-a0829f5977d0")
+	)
+	(wire
+		(pts
+			(xy 134.62 180.34) (xy 144.78 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "b846f4f3-e8cd-4b70-ad66-1f0fda82c7bb")
+	)
+	(wire
+		(pts
+			(xy 243.84 175.26) (xy 226.06 175.26)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "b8fef818-448b-4433-a322-9986603e59c2")
+	)
+	(wire
+		(pts
+			(xy 124.46 187.96) (xy 134.62 187.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "c9ed27f1-3683-4ca5-82fa-f0776e07b6cb")
+	)
+	(wire
+		(pts
+			(xy 86.36 226.06) (xy 96.52 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "cdbb42c4-122b-4ee5-8f9f-a735b8e87821")
+	)
+	(wire
+		(pts
+			(xy 124.46 43.18) (xy 109.22 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "cfb66c2b-c7fe-4aff-aa3e-cd2fdadf583a")
+	)
+	(wire
+		(pts
+			(xy 86.36 134.62) (xy 96.52 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "d30c06ab-cb35-42f1-af9d-a36ec4708846")
+	)
+	(wire
+		(pts
+			(xy 134.62 134.62) (xy 144.78 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "d369dd13-d312-43b7-997d-b4d3e7346e75")
+	)
+	(wire
+		(pts
+			(xy 76.2 226.06) (xy 73.66 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "d7d7e140-cc67-4176-8a98-d3dfae3883ee")
+	)
+	(wire
+		(pts
+			(xy 86.36 180.34) (xy 96.52 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "def86f50-ee90-4ae7-bfa7-e951575db3d3")
+	)
+	(wire
+		(pts
+			(xy 60.96 208.28) (xy 60.96 243.84)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e3a18714-d1a6-419f-a209-06e6b9dc411f")
+	)
+	(wire
+		(pts
+			(xy 45.72 134.62) (xy 48.26 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e64e2cfb-d728-4d01-9822-57ef8a5336d1")
+	)
+	(wire
+		(pts
+			(xy 60.96 25.4) (xy 60.96 60.96)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "e7033f41-314a-4b26-9a0c-4363be9052fb")
+	)
+	(wire
+		(pts
+			(xy 45.72 226.06) (xy 48.26 226.06)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "eac69b26-317e-4564-85b9-e784ec8e36f8")
+	)
+	(wire
+		(pts
+			(xy 254 175.26) (xy 243.84 175.26)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "ebddfb72-ba46-4c9d-9981-27b184290334")
+	)
+	(wire
+		(pts
+			(xy 35.56 134.62) (xy 17.78 134.62)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "edfb8339-3726-4c0e-9775-10ad81439dcf")
+	)
+	(wire
+		(pts
+			(xy 45.72 43.18) (xy 48.26 43.18)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "f27157e0-2f85-4040-bcba-c471bfe86f75")
+	)
+	(wire
+		(pts
+			(xy 271.78 81.28) (xy 254 81.28)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "f3ef14e2-f923-4465-b887-7830d1c5de71")
+	)
+	(wire
+		(pts
+			(xy 35.56 180.34) (xy 17.78 180.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "fa8c119e-1a57-4c9a-a454-c47601ed8d70")
+	)
+	(wire
+		(pts
+			(xy 271.78 53.34) (xy 254 53.34)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "fdb4a47f-ddf0-4a0d-862e-b95f15ca65e5")
+	)
+	(wire
+		(pts
+			(xy 45.72 96.52) (xy 35.56 96.52)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(uuid "fdcd4fa7-c36b-42bd-82c6-6d682f7d613e")
+	)
+	(text "ADC power decoupling"
+		(exclude_from_sim no)
+		(at 109.22 33.02 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "2c2bcd71-898b-4627-b0aa-80c3ef7e4170")
+	)
+	(text "FPGA power decoupling"
+		(exclude_from_sim no)
+		(at 226.06 109.22 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "320240ea-800a-471c-8c40-1c78eb34488c")
+	)
+	(text "These transfer power to actual FPGA voltage inputs"
+		(exclude_from_sim no)
+		(at 226.06 43.18 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "86a792f8-563c-4a58-abb2-c8733e97f8e7")
+	)
+	(text "FPGA banks 1-7, for LVDS, and some other IO"
+		(exclude_from_sim no)
+		(at 276.86 81.28 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "c763a9c3-10e6-440b-be42-d8b9f6f3c4f5")
+	)
+	(text "ADC power filters, as recommended in datasheet"
+		(exclude_from_sim no)
+		(at 33.02 20.32 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "e7797c4a-2502-49e8-94f6-cbd0812c42cb")
+	)
+	(text "FPGA bank 8, for talking to FH232H, and some other IO"
+		(exclude_from_sim no)
+		(at 276.86 88.9 0)
+		(effects
+			(font
+				(size 1.778 1.5113)
+			)
+			(justify left bottom)
+		)
+		(uuid "eb2721aa-ee22-4d97-9ea6-a4d696ff8b79")
+	)
+	(global_label "VA19"
+		(shape bidirectional)
+		(at 109.22 134.62 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "07f640a4-6ef6-4172-a54b-0710e1f1d602")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 117.7384 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VD11"
+		(shape bidirectional)
+		(at 88.9 226.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "0a2f4e7c-ebd4-4db9-9eaf-ac545043a14e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.5962 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCPLL"
+		(shape bidirectional)
+		(at 226.06 175.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "0c96805d-a511-43d6-bfc9-15091cbec5e4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 236.8898 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCIO3V3"
+		(shape bidirectional)
+		(at 259.08 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "11c16689-3394-463e-becd-ddf6c021fb74")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.9842 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCINT"
+		(shape bidirectional)
+		(at 226.06 203.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "28e24c0d-fdd0-4a5d-97c5-03cd33e4c54a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 236.4751 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VLVDS_IN"
+		(shape bidirectional)
+		(at 17.78 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "2c1e3315-a377-4a5f-9301-5338d66a08a0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 30.2101 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCA"
+		(shape bidirectional)
+		(at 226.06 228.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "2c6dfb20-a9ca-41f4-8887-264034b16648")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.697 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VA11"
+		(shape bidirectional)
+		(at 109.22 180.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "30d49352-31b1-468a-a107-16e0bd186fd2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 117.7384 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "V19_IN"
+		(shape bidirectional)
+		(at 17.78 134.62 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "33ac9d31-0269-4aca-8709-1f8dc495b8cf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.0765 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCA"
+		(shape bidirectional)
+		(at 261.62 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "34804f07-2b9f-414e-b1fb-b6280ca3e434")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 270.257 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "1V2"
+		(shape bidirectional)
+		(at 226.06 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "34d369f3-50c6-40e1-9755-5eae0a10876f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.5116 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCIO3V3"
+		(shape bidirectional)
+		(at 226.06 147.32 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "3d142e89-de7b-40ab-9df4-e188a3c3dade")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 238.9642 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VLVDS"
+		(shape bidirectional)
+		(at 88.9 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "49d43d17-0362-48e1-a90a-3c632546874d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 98.4852 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VLVDS"
+		(shape bidirectional)
+		(at 109.22 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "4df8d942-fcf5-4c13-990e-27349af02c94")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.8052 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "1V2"
+		(shape bidirectional)
+		(at 226.06 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "4e281882-930b-44cb-b0ac-f3e8e507caaf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.5116 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDDL19"
+		(shape bidirectional)
+		(at 88.9 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "5c49dfa2-0a47-4720-a794-660eb125f095")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 99.8483 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "2V5D"
+		(shape bidirectional)
+		(at 226.06 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "5cb15dd4-c268-4f69-96fa-1523876d750d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.7562 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "V11_IN"
+		(shape bidirectional)
+		(at 17.78 226.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "6b6379c1-e6e0-480d-bb08-ee3183c7e67b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.0765 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape bidirectional)
+		(at 109.22 104.14 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "870a72ff-4851-42dc-ad47-c060036bf346")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 116.6716 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape bidirectional)
+		(at 226.06 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "88deaaf5-6152-412a-a815-65e454b533dd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.5116 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "2V5D"
+		(shape bidirectional)
+		(at 226.06 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "b3e22720-289c-4e87-bca8-cf5caf8d0d4f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.7562 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDDD33"
+		(shape bidirectional)
+		(at 129.54 104.14 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "b3f789dc-9497-40e0-b8e9-a34ec37ffb72")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 140.7254 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VD11"
+		(shape bidirectional)
+		(at 109.22 226.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "b945b103-389f-4be5-b0bd-c94848d32069")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 117.9162 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VA19"
+		(shape bidirectional)
+		(at 88.9 134.62 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "bd523bff-640b-4618-bd53-9f366fcc6997")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.4184 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VA11"
+		(shape bidirectional)
+		(at 88.9 180.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "bebdcb5f-92e2-40ce-b2c4-c170dd6ae896")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.4184 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "V11_IN"
+		(shape bidirectional)
+		(at 17.78 180.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "c74223c2-3170-45bb-9471-2a211994fb5d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.0765 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCINT"
+		(shape bidirectional)
+		(at 261.62 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "d29a4510-a4a0-410f-bd96-3a820d466c87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 272.0351 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCIO2V5"
+		(shape bidirectional)
+		(at 259.08 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "d2f39779-9a3d-4447-b519-2574fc71dd23")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.9842 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCPLL"
+		(shape bidirectional)
+		(at 261.62 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "d34af08c-3f5b-4ac1-97ef-f4658b9b9200")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 272.4498 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "V19_IN"
+		(shape bidirectional)
+		(at 17.78 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "d9caa24f-b05a-4a92-888a-1e5a62aee337")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.0765 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VCCIO2V5"
+		(shape bidirectional)
+		(at 226.06 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.2446 1.2446)
+			)
+			(justify left)
+		)
+		(uuid "e1cfb21a-08ae-4fb2-ac17-c13f117397fb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 238.9642 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 86.36 48.26 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0267bbad-1a29-4de0-b8a1-bdd67ee03a70")
+		(property "Reference" "C9"
+			(at 84.836 51.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 84.836 46.101 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 86.36 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "25ef462d-e357-44ff-9d26-f5904f8c884f")
+		)
+		(pin "2"
+			(uuid "222c778c-f83f-4fbf-a323-4852e3bf51ea")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 35.56 48.26 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "068706fa-7114-4dcf-acf7-d069430a17d4")
+		(property "Reference" "C6"
+			(at 34.036 51.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 34.036 46.101 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 35.56 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b60bc10b-5ddc-43cf-824b-010e59dd5e96")
+		)
+		(pin "2"
+			(uuid "ff908081-e4d3-47a1-a324-df737d277729")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 35.56 231.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "079b30c9-0039-4a68-8113-61c20789ffee")
+		(property "Reference" "C46"
+			(at 34.036 234.061 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 34.036 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 35.56 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31692e3a-a134-4173-978b-f4314d5ff253")
+		)
+		(pin "2"
+			(uuid "c72c820f-daf2-4a29-9e7a-32b584545506")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 86.36 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0b486152-a79a-4112-bb59-7360320286e4")
+		(property "Reference" "C19"
+			(at 84.836 96.901 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 84.836 91.821 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 86.36 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "20ef518d-0cfe-4947-8683-c674cba6bf0f")
+		)
+		(pin "1"
+			(uuid "1f723b16-f88a-47f4-b2ae-d127ffcf9ac7")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 269.24 152.4 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0be70502-c800-4b34-b24e-94793768b369")
+		(property "Reference" "C34"
+			(at 267.716 155.321 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 267.716 150.241 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 269.24 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b1ebb4ec-ce9d-4646-8bfb-bd471491a7b4")
+		)
+		(pin "1"
+			(uuid "228e9d3a-eb9a-42da-8d9e-9309c77355b7")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 256.54 152.4 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0c95ab32-66b0-40af-9947-021c8804b82b")
+		(property "Reference" "C63"
+			(at 255.016 147.701 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 255.016 150.241 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 256.54 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f48f83f-36c2-4961-9356-a24bad43154d")
+		)
+		(pin "2"
+			(uuid "e024bbe8-cde7-4e36-aea0-d4e8b9e5a117")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C63")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 134.62 231.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0d7c5abd-51f9-45f6-b5d8-48cf383ce4e0")
+		(property "Reference" "C30"
+			(at 133.096 234.061 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "1uF"
+			(at 133.096 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 134.62 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eda0b470-e8a0-4bcf-b575-9f2c3b71ec8c")
+		)
+		(pin "2"
+			(uuid "978644e2-3556-4007-8e82-7f7ca28b705b")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 134.62 48.26 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0fcec258-cdce-4610-9052-dd9faea99ba5")
+		(property "Reference" "C11"
+			(at 133.096 51.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "1uF"
+			(at 133.096 46.101 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 134.62 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1fb7991a-0a29-4e69-bfcb-45fb31b1eacf")
+		)
+		(pin "2"
+			(uuid "0f42f940-e82d-4791-81c1-6b280f65e995")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 76.2 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "10f6dbb0-1907-42b0-b261-ccccb513f480")
+		(property "Reference" "C38"
+			(at 74.676 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 74.676 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 76.2 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3eb89428-5628-4220-8fb1-081fcdf82f94")
+		)
+		(pin "1"
+			(uuid "f7beec05-ea49-4f8f-a598-6996660c3e7a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 248.92 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "135e2665-354b-4fbd-931b-4af4c853e0dd")
+		(property "Reference" "R90"
+			(at 245.11 51.8414 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0"
+			(at 245.11 56.642 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 248.92 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "e680e1d6-59ab-4a43-93c7-7e63128b9fde")
+		)
+		(pin "P$2"
+			(uuid "fde82325-36fa-4feb-b819-f4d58b737a2f")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "R90")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 124.46 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1b79a7f0-8f09-4b47-a4f6-fb4d7d229e46")
+		(property "Reference" "#GND050"
+			(at 124.46 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 193.04 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d8963080-e1c7-490a-8ce7-58b7be03f197")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 320.04 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1fe718d3-d416-4fcc-aff7-e6fc66fd139c")
+		(property "Reference" "C40"
+			(at 318.516 127.381 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 318.516 122.301 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 320.04 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 320.04 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 320.04 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5dad12e0-7662-48ae-b604-4843a43d1d99")
+		)
+		(pin "2"
+			(uuid "dc060886-2e64-4ee7-a3f1-e34c1c227f8e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 35.56 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "225a4560-ebba-4c62-91ca-6aa56d2e30d8")
+		(property "Reference" "#GND09"
+			(at 35.56 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.02 101.6 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cef3239b-3d58-4340-89fd-1bad86dbed3d")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 243.84 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2a1e82bb-e01b-488d-bf25-9aa02267189d")
+		(property "Reference" "#GND084"
+			(at 243.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 132.08 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 243.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b438e6a2-660f-4765-839f-7a49a9570cb9")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND084")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 243.84 152.4 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "314c023f-2191-4c01-865a-f99ee99af5df")
+		(property "Reference" "C64"
+			(at 242.316 147.701 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 242.316 150.241 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 243.84 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e180f658-f958-49b3-aedf-4839595a8d09")
+		)
+		(pin "2"
+			(uuid "b27d0ad9-18af-4958-99a7-efa71340d305")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C64")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 76.2 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3303a626-41eb-48db-9412-9f35032a394e")
+		(property "Reference" "#GND011"
+			(at 76.2 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 101.6 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dc279a83-f587-442b-8ca2-a89f75032c94")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 144.78 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "33100d92-44f5-46c5-bbd4-1e82022d8199")
+		(property "Reference" "C23"
+			(at 143.256 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 143.256 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 144.78 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0a4a44bb-7f8c-4a36-9fbc-0da607734111")
+		)
+		(pin "1"
+			(uuid "22de315c-d6bf-4097-a6a1-1567055c3a81")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 60.96 246.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "340e36f4-d056-4176-9543-f124bbebf0b5")
+		(property "Reference" "#GND028"
+			(at 60.96 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 248.92 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3ba0df6-4a8a-4676-9908-2347a8804720")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 256.54 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3566173b-0983-4cf4-a503-916db9ccfba4")
+		(property "Reference" "#GND085"
+			(at 256.54 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 254 132.08 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 256.54 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "965a22c7-4fa5-4146-96bd-e5e07d60f909")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND085")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 243.84 213.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "385724b5-fb8d-4349-8b98-ed2513e61c01")
+		(property "Reference" "#GND086"
+			(at 243.84 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 215.9 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 243.84 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d738fc7f-c47d-4028-b407-9f93ca93aad5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND086")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 269.24 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "388418f9-3d36-4144-ad2f-01a028e50f62")
+		(property "Reference" "#GND078"
+			(at 269.24 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 266.7 132.08 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3adc0d80-66f6-4a2b-8cb6-ae06db8b6fc3")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND078")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 243.84 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b7a857e-8b0f-4bc3-9954-6cd495837293")
+		(property "Reference" "#GND087"
+			(at 243.84 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 187.96 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 243.84 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3ca6d8c-6e66-4f4a-abfb-c0de27632e23")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND087")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 60.96 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d2eb8bf-11e9-4c8c-b713-05a17cc170ec")
+		(property "Reference" "#GND04"
+			(at 60.96 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 66.04 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "75d4114c-d7dc-4032-be18-ccb8a639608a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:NFM31PC276B0J3L")
+		(at 48.26 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4664ac56-5f0c-4a9a-9ea0-28be626fc3fa")
+		(property "Reference" "C5"
+			(at 54.61 25.4 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NFM31PC276B0J3L"
+			(at 54.61 27.94 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:NFM31HK103R1H3L"
+			(at 48.26 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8356962c-d093-4f18-820f-673332f5e981")
+		)
+		(pin "1"
+			(uuid "da83c40f-27c3-4316-b43b-ef4773b309dd")
+		)
+		(pin "2"
+			(uuid "0bc095ab-953b-4d84-9d31-0f621b4824bd")
+		)
+		(pin "3"
+			(uuid "22df42f4-105c-4617-9e69-14e6da798b79")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 86.36 231.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "47bc17c1-655b-451e-9e41-69c5443551db")
+		(property "Reference" "C49"
+			(at 84.836 234.061 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 84.836 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 86.36 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "19ac723b-a535-4b0f-bcd9-3ff7117f5b98")
+		)
+		(pin "2"
+			(uuid "d9c7ca1e-f7a0-4b68-b8ad-08b2dac0cae3")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C49")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 248.92 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "494abbb8-b963-4af9-a51f-d7a6180520ef")
+		(property "Reference" "R89"
+			(at 245.11 59.4614 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0"
+			(at 245.11 64.262 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 248.92 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "09caf790-bba4-4a5b-bf45-44adb2680604")
+		)
+		(pin "P$2"
+			(uuid "401e6d40-c78b-4ce8-b221-6bb981c52938")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "R89")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 281.94 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4ab19a77-6b57-4118-bdd2-7b1b482caad8")
+		(property "Reference" "#GND079"
+			(at 281.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 279.4 132.08 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 281.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 281.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 281.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "156b4e0b-0dd1-4e2b-967f-622aa9ef02d9")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND079")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 35.56 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4c300d94-6b44-40f3-9766-9a3aa3f1aef0")
+		(property "Reference" "#GND021"
+			(at 35.56 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.02 193.04 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fe7ba5de-fc3b-4063-9261-1c361828953f")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 45.72 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4d412d0b-42fe-40b6-b217-d598ce8c524d")
+		(property "Reference" "C17"
+			(at 44.196 96.901 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 44.196 91.821 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 45.72 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ff93f96a-a93c-4bc8-8b3d-7ad84075d56f")
+		)
+		(pin "1"
+			(uuid "c7f06148-628a-4b0a-a5c0-df19196d3d00")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 243.84 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4f6394b7-7913-4347-b5c6-7a253a9ebb32")
+		(property "Reference" "C67"
+			(at 242.316 119.761 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 242.316 122.301 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 243.84 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4933036a-23ab-496b-83e2-f89e4f938c42")
+		)
+		(pin "1"
+			(uuid "b68add31-c304-43ab-b2e3-12fd1f65b099")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C67")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 243.84 233.68 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5013408b-5ba5-4fae-96e1-24e67e0c2ec8")
+		(property "Reference" "C71"
+			(at 242.316 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 242.316 231.521 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 243.84 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "963f8773-8df4-4ea9-a093-120013dd1137")
+		)
+		(pin "1"
+			(uuid "110ddbbb-84c2-4723-aa44-ea30c8fc77ca")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C71")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 45.72 48.26 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "510b5078-003d-44b3-84b1-5868607a658b")
+		(property "Reference" "C7"
+			(at 44.196 51.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 44.196 46.101 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 45.72 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5f6e49c9-320c-48ba-a28a-83d8bba3bbd7")
+		)
+		(pin "2"
+			(uuid "117980d8-8e0e-4fa0-b0b9-36e3ef47651e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 124.46 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5352cdf3-f59e-476c-98c5-b70ba8cd3468")
+		(property "Reference" "#GND049"
+			(at 124.46 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 147.32 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "22b185d7-9cf3-407b-b239-c89ade2b10c9")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 35.56 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "559c2172-a3b3-4e40-be6f-cdf45c3603e3")
+		(property "Reference" "#GND027"
+			(at 35.56 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.02 238.76 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bb0c2f75-f01c-4713-b640-66db9bf4bb3a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 76.2 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "569e696e-8163-480b-9184-c2dcbcaea127")
+		(property "Reference" "C28"
+			(at 74.676 142.621 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 74.676 137.541 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 76.2 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "53bbb7b7-6e7b-4c06-a0bf-a16c7437ef54")
+		)
+		(pin "2"
+			(uuid "e24a21e2-a9b6-4285-b53d-8df771401b1d")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 76.2 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "57265014-58b6-404c-bd20-aabb612e28dc")
+		(property "Reference" "#GND029"
+			(at 76.2 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 238.76 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8cb9f457-6f82-4baf-a750-9eb360dfb3f4")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 124.46 48.26 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "57bfc88b-ff6b-44ab-b4e3-31ec36667865")
+		(property "Reference" "C10"
+			(at 122.936 51.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 122.936 46.101 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 124.46 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1764826c-3cfd-4ac2-a180-5bdcb5dfa094")
+		)
+		(pin "1"
+			(uuid "1f186754-a999-4927-ac80-1233dd7560f4")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 307.34 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "58206973-f023-46e9-8b06-c105b2ec117f")
+		(property "Reference" "#GND083"
+			(at 307.34 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 304.8 132.08 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 307.34 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 307.34 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 307.34 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "11871d82-134b-4f4e-89e0-a67f6fd1e23d")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND083")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 76.2 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5eadddb5-5b8f-4653-9100-ca70ff21e3a1")
+		(property "Reference" "C18"
+			(at 74.676 96.901 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 74.676 91.821 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 76.2 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6cad05a5-f046-4ee5-98a8-593bee8295aa")
+		)
+		(pin "2"
+			(uuid "a978b73b-5add-4f02-98ad-3e3c984cd49c")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 256.54 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5efc250c-6f0d-4316-922e-39adb5863b46")
+		(property "Reference" "#GND080"
+			(at 256.54 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 254 160.02 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 256.54 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f42faaee-c69b-4133-bd4d-9a29cd3bb2a9")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND080")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 35.56 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "688ff0e5-4197-49ce-88f1-c8e8204fbef5")
+		(property "Reference" "#GND03"
+			(at 35.56 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.02 55.88 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b705ffc4-5c28-439f-948e-025aa171e88f")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 294.64 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6adc3fd3-6fe5-4d1e-9594-9df78f988d86")
+		(property "Reference" "#GND082"
+			(at 294.64 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 292.1 132.08 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 294.64 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 294.64 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 294.64 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "752e0691-a2ea-4519-be05-b38f9b0a7c26")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND082")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 35.56 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6c847be2-0810-4ecd-beed-663c861140cb")
+		(property "Reference" "C36"
+			(at 34.036 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 34.036 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 35.56 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7a62a36b-62e0-4574-ac3c-47093637e214")
+		)
+		(pin "1"
+			(uuid "fe15505a-8ffe-4702-93b9-2863804120fb")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 121.92 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "75ae1a3d-84aa-4199-93fc-5f248e1ef2cf")
+		(property "Reference" "R15"
+			(at 118.11 102.6414 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0"
+			(at 118.11 107.442 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 121.92 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "4f36a896-7e99-4029-a4f8-d200e04cff4c")
+		)
+		(pin "P$2"
+			(uuid "b3bdb060-7d7b-4b35-8263-c3085c13c9bd")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 134.62 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7817451f-7c5e-4478-a0ab-18a53d5087b3")
+		(property "Reference" "C14"
+			(at 133.096 142.621 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "1uF"
+			(at 133.096 137.541 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 134.62 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6a312abf-445b-4919-923e-81ba3520b910")
+		)
+		(pin "1"
+			(uuid "a9c802ea-f3be-4293-a490-3d604f99ff89")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 256.54 208.28 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "79b685c8-04de-4d76-8fb3-d43ac043af5c")
+		(property "Reference" "C43"
+			(at 255.016 211.201 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 255.016 206.121 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 256.54 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1b24775c-b95a-4ea1-9bad-eba53c3bebfd")
+		)
+		(pin "2"
+			(uuid "86143c41-de74-4c6a-9c31-bdb6b240f3bd")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 124.46 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "813afcae-5319-49ef-b213-b4775b9992a2")
+		(property "Reference" "C21"
+			(at 122.936 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 122.936 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 124.46 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "445a06bf-911f-4f04-909f-b0cc39080ca6")
+		)
+		(pin "2"
+			(uuid "b3edfe9b-e873-4a71-8b86-05b48e3a5e10")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 121.92 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "816a34cd-5420-4bc4-9770-b701a25bc60b")
+		(property "Reference" "#GND051"
+			(at 121.92 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 119.38 238.76 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c3b5fdbb-87a7-492a-b575-a159732b96bc")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 248.92 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "82187c23-aea9-4f29-ae69-302863c57f45")
+		(property "Reference" "R88"
+			(at 245.11 67.0814 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0"
+			(at 245.11 71.882 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 248.92 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "8dc5d63a-c953-4b3c-95b2-40db524144ea")
+		)
+		(pin "P$2"
+			(uuid "637f4342-472a-44ab-996c-ef2f1d92a94e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "R88")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 269.24 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "83c1e77b-8f2a-42ca-94e8-b9b652363634")
+		(property "Reference" "C61"
+			(at 267.716 119.761 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 267.716 122.301 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 269.24 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3c7662f6-ee7c-4fc2-ae5b-a2870dc17c53")
+		)
+		(pin "1"
+			(uuid "f8a03567-afac-4d7b-b00f-de8740c1d031")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C61")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 45.72 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "841ff7ae-cfb5-4ec1-8e01-824df31e446e")
+		(property "Reference" "C37"
+			(at 44.196 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 44.196 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 45.72 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6f066c5c-a2e6-4cfa-995c-82346aaadc03")
+		)
+		(pin "2"
+			(uuid "3f694e3d-2bb3-4767-a03f-542a0a9b8142")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 86.36 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8721400d-69e1-451f-b56d-818f7a8b257d")
+		(property "Reference" "C39"
+			(at 84.836 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 84.836 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 86.36 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ec25b0ae-d369-4a1e-b17f-61f13f00584d")
+		)
+		(pin "2"
+			(uuid "29ab6a70-0528-4dd7-ae78-c5523200bac9")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:NFM31PC276B0J3L")
+		(at 48.26 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "882a11ae-ba09-46fc-ae1e-04cbead4cedf")
+		(property "Reference" "C15"
+			(at 54.61 71.12 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NFM31PC276B0J3L"
+			(at 54.61 73.66 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:NFM31HK103R1H3L"
+			(at 48.26 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "08f27320-9eb9-4f4e-b683-9992f82a2ae2")
+		)
+		(pin "2"
+			(uuid "7c6522dc-e415-4a23-a87c-b2d49c79822f")
+		)
+		(pin "3"
+			(uuid "8d4c316f-8ed9-495c-9c84-0e0ee60423b8")
+		)
+		(pin "1"
+			(uuid "b0b3de02-3c29-4eb7-8435-901ee5a839a1")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 60.96 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a6b69f8-247f-4292-b441-f338cd8b4ee9")
+		(property "Reference" "#GND022"
+			(at 60.96 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 203.2 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aa86f3eb-418d-44a8-9e04-c0ba9c6d23b5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 76.2 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a6efd99-b0db-42b9-b7ac-b7ac4881b082")
+		(property "Reference" "#GND05"
+			(at 76.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 55.88 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "52626bd4-a6da-4d8c-b532-b32eed068549")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 248.92 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8f381b21-fcb9-45f9-988d-6646406bf1f2")
+		(property "Reference" "R18"
+			(at 245.11 87.4014 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0"
+			(at 245.11 92.202 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 248.92 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "22adad9b-6233-4c73-a94c-a6ff90cdc52d")
+		)
+		(pin "P$2"
+			(uuid "f085a3bb-a0a8-4a95-a23b-e1266119eca5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 121.92 231.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "908c43f3-f79c-4bd7-a934-406337e54e83")
+		(property "Reference" "C24"
+			(at 120.396 234.061 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 120.396 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 121.92 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "16f63c1c-f88a-4a80-ba13-6b6f130cee5a")
+		)
+		(pin "1"
+			(uuid "d591c7e0-b6df-42bf-81f1-1816a36a700c")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 243.84 180.34 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "90f06387-a5c9-4db9-8ffa-d3c0a34c480e")
+		(property "Reference" "C70"
+			(at 242.316 175.641 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 242.316 178.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 243.84 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d8a817a-e314-49bd-be72-8d7304691a54")
+		)
+		(pin "2"
+			(uuid "8fbfd716-c097-436a-b314-24513d74131c")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C70")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 154.94 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "95ff687c-a776-4eee-a26f-c17b9efde712")
+		(property "Reference" "C32"
+			(at 153.416 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "1uF"
+			(at 153.416 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 154.94 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fc5d4e36-3803-4bd3-a809-bd47730e75d4")
+		)
+		(pin "1"
+			(uuid "fdb6f862-8ab2-4606-8a47-08717a2f00d7")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 76.2 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "96c90231-d3b0-48ca-bb9d-ea4bfa1c7602")
+		(property "Reference" "#GND017"
+			(at 76.2 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 147.32 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d70b4886-ddd3-4275-b516-fb579af269ff")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 76.2 48.26 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9d30df07-f57e-41b0-9405-15895ad3abc2")
+		(property "Reference" "C8"
+			(at 74.676 51.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 74.676 46.101 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 76.2 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3d72797-e9f8-4875-9692-254f025d53ae")
+		)
+		(pin "2"
+			(uuid "864f472e-0b3b-4720-aa25-9d363b1e19ee")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 35.56 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e8523c5-3986-4b57-b82d-2a22a9b0e12e")
+		(property "Reference" "C26"
+			(at 34.036 142.621 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 34.036 137.541 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 35.56 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "56c89919-94d1-48cf-97a2-03ae9f5b76d7")
+		)
+		(pin "1"
+			(uuid "64b89399-9246-4125-bce9-11fd2da23594")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:NFM31PC276B0J3L")
+		(at 48.26 226.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a31e6769-b9e4-499f-826b-65fb4fa479ac")
+		(property "Reference" "C45"
+			(at 54.61 208.28 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NFM31PC276B0J3L"
+			(at 54.61 210.82 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:NFM31HK103R1H3L"
+			(at 48.26 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "9c1744b5-8609-421a-a2af-64df154968b8")
+		)
+		(pin "1"
+			(uuid "87a72260-83b7-412f-8bf1-e906edbcf02f")
+		)
+		(pin "4"
+			(uuid "c33e3bbe-9ff3-41e0-ba66-96877e0ad7e0")
+		)
+		(pin "2"
+			(uuid "ce5133d0-086e-4680-aa24-5cd9fbf49d1a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 144.78 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a3e458f8-6a7b-49a5-b42f-23fb598bd1d0")
+		(property "Reference" "C20"
+			(at 143.256 142.621 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 143.256 137.541 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 144.78 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "42c2536b-991d-4d50-ac8f-f1c8b3b7cc36")
+		)
+		(pin "2"
+			(uuid "44b91bfb-4f7f-4dd9-804e-1692e324fcf1")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:NFM31PC276B0J3L")
+		(at 48.26 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad3d5683-2bda-42ea-82c7-b95833fd4133")
+		(property "Reference" "C25"
+			(at 54.61 116.84 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NFM31PC276B0J3L"
+			(at 54.61 119.38 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:NFM31HK103R1H3L"
+			(at 48.26 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "5d8fd158-6af8-4a7d-9b07-ddbf97de87e1")
+		)
+		(pin "3"
+			(uuid "5d0c8b32-f883-4a70-862e-bae5e3a4be34")
+		)
+		(pin "1"
+			(uuid "24f3a963-654e-4dd8-a899-61e674f44347")
+		)
+		(pin "2"
+			(uuid "9948a53d-912c-472f-aaca-038c1998f99a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 45.72 231.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b3346642-2db6-465b-be87-bf3408fa9275")
+		(property "Reference" "C47"
+			(at 44.196 234.061 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 44.196 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 45.72 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cae3e8b8-4973-4ea9-9deb-5b9433853fe2")
+		)
+		(pin "2"
+			(uuid "fd2a2cdb-20e7-464c-b519-5a30f9379460")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 124.46 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b56f1e26-4aa6-4ed7-8aff-71985d897fa7")
+		(property "Reference" "C13"
+			(at 122.936 142.621 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 122.936 137.541 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 124.46 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "596945e4-bd50-4c28-827f-6fc590641a62")
+		)
+		(pin "1"
+			(uuid "98bf4604-9690-41ee-9777-379bce72aabc")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 60.96 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b7d79812-4708-4738-9f6e-f134c02af214")
+		(property "Reference" "#GND016"
+			(at 60.96 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 157.48 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99ee06e8-07c8-47e0-aa07-53cc737a52d8")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 76.2 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bafff9a5-11a5-45a6-9b2f-4b5a220d6aed")
+		(property "Reference" "#GND023"
+			(at 76.2 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 193.04 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e83b3a23-37c3-4230-857b-fa879fb1df59")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 60.96 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bb8b23dd-d054-46ed-988e-c95643c280ea")
+		(property "Reference" "#GND010"
+			(at 60.96 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 111.76 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7f22fce5-62e7-455e-85ee-02502eb977d5")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 256.54 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c075c73d-fe7d-4e49-a247-f5520be33f6e")
+		(property "Reference" "C68"
+			(at 255.016 119.761 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 255.016 122.301 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 256.54 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "41535fbe-841c-42e3-a386-b732a4300877")
+		)
+		(pin "1"
+			(uuid "cb5efe28-60c5-40e1-a2af-18a47e8561c6")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C68")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 124.46 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c31fc9ca-e2c4-48a7-8590-ce8595b12133")
+		(property "Reference" "#GND048"
+			(at 124.46 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 55.88 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "64c8baa5-8316-41a2-a52c-748e1f33caaf")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 144.78 48.26 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c604c91d-5039-4014-ae91-6bef9a097fb9")
+		(property "Reference" "C12"
+			(at 143.256 51.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 143.256 46.101 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 144.78 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dff57c93-b116-4db9-ab73-7535eb2235e7")
+		)
+		(pin "2"
+			(uuid "eb740c2f-22e5-4603-9269-87a31ee694ec")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 307.34 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c80fed28-8dfd-4220-85ea-a873c670313d")
+		(property "Reference" "C66"
+			(at 305.816 119.761 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 305.816 122.301 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 307.34 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 307.34 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 307.34 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "26d29064-033b-4c5b-b20d-2662ee0f07af")
+		)
+		(pin "1"
+			(uuid "58056eb9-3935-497f-a215-5d1de94df7a6")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 45.72 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d40762b7-28ef-43c9-ab76-c91f835bb7a7")
+		(property "Reference" "C27"
+			(at 44.196 142.621 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 44.196 137.541 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 45.72 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c1cea6b7-d6fb-422b-a3f7-fadf882f9c41")
+		)
+		(pin "2"
+			(uuid "0a7e79b4-b42a-4a35-9111-03e5bd8e3315")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 165.1 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "db13908f-0d47-4cc3-a85a-e08c459848ec")
+		(property "Reference" "C33"
+			(at 163.576 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 163.576 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 165.1 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 165.1 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a2cca79b-ff8f-43f9-b7f2-85302af8b19b")
+		)
+		(pin "2"
+			(uuid "9ddb1a1d-3d24-44ff-acec-ec631cabcd70")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 254 180.34 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "df0a86b6-6d72-40eb-8b99-9e05f7300abe")
+		(property "Reference" "C42"
+			(at 252.476 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 252.476 178.181 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 254 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 254 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e4334954-b4d0-4b83-96ec-c0b0ea531f84")
+		)
+		(pin "1"
+			(uuid "f44c25a5-b58f-451d-9631-fbaa6f1a66be")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 294.64 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e3f8dfff-3f09-4586-9592-da81324a63f3")
+		(property "Reference" "C65"
+			(at 293.116 119.761 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 293.116 122.301 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 294.64 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 294.64 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 294.64 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3b28a055-a4a1-4e8e-a627-7bfc541774c3")
+		)
+		(pin "1"
+			(uuid "29a45b4a-b992-4646-a838-e91cec033a2e")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C65")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 281.94 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e62f01df-916a-4ae5-813b-ed0fbadf136e")
+		(property "Reference" "C62"
+			(at 280.416 119.761 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 280.416 122.301 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 281.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 281.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 281.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "694664b3-98bf-4b92-92b1-3f52d0ba7d82")
+		)
+		(pin "2"
+			(uuid "0f6187c8-5157-4294-a08d-099e1908ece7")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C62")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:RES-0402")
+		(at 248.92 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e6658d84-da8f-4d58-8418-1e6edfa14126")
+		(property "Reference" "R87"
+			(at 245.11 79.7814 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0"
+			(at 245.11 84.582 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RES-0402"
+			(at 248.92 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "P$1"
+			(uuid "aae5627f-bc6d-4b04-be8f-5b124f4e0e05")
+		)
+		(pin "P$2"
+			(uuid "88368c69-8424-4dd5-92dc-3a22e88a1a59")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "R87")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 243.84 208.28 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e89fb957-5f7a-4514-bf35-4c844f72f54b")
+		(property "Reference" "C69"
+			(at 242.316 203.581 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 242.316 206.121 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 243.84 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7140e14a-c3ed-4cfc-b110-6934b1ebc311")
+		)
+		(pin "2"
+			(uuid "73e1098b-7948-4a19-97e6-e124cd944687")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C69")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 256.54 233.68 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9d6187b-9830-4d47-bb78-601f9590df65")
+		(property "Reference" "C41"
+			(at 255.016 236.601 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 255.016 231.521 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 256.54 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "318128fa-00cc-42ed-8be4-8cf4be1d0059")
+		)
+		(pin "2"
+			(uuid "9cc47c7c-09d8-4bca-9cb0-5f5807fbae51")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:GND")
+		(at 35.56 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9f8beae-2d48-4253-b79f-9b0c28e0ce3b")
+		(property "Reference" "#GND015"
+			(at 35.56 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.02 147.32 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dc07d179-adff-44d0-8ea6-4401a2ab3433")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 134.62 185.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ebe9a915-b92f-42d4-939a-72236979cb64")
+		(property "Reference" "C22"
+			(at 133.096 188.341 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "1uF"
+			(at 133.096 183.261 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 134.62 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0cb5f8a8-b614-4553-a8e1-67c8fa3c1bfd")
+		)
+		(pin "1"
+			(uuid "f92a0c51-9ae4-4b3a-84e8-38b9d16cc1cc")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 243.84 238.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ecd046f1-795e-4ecb-857b-31145bec33c0")
+		(property "Reference" "#GND088"
+			(at 243.84 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 241.3 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 243.84 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff01cdad-4c61-45c7-a3c2-2aa95c16f98b")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND088")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:supply1_GND")
+		(at 243.84 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ed2b78b9-4166-4c4c-9569-ec8972a29adf")
+		(property "Reference" "#GND081"
+			(at 243.84 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 160.02 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 243.84 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c385f7a6-33d4-4882-8e96-65301af9ca4a")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "#GND081")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 35.56 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f3a3d41a-6941-4660-ac6a-541e065168e8")
+		(property "Reference" "C16"
+			(at 34.036 96.901 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 34.036 91.821 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 35.56 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "265c6318-e929-47ee-9bbf-7d9c3ce0883c")
+		)
+		(pin "2"
+			(uuid "38e1f006-ac20-486d-bf94-475700011ef9")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 144.78 231.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f8f60263-a754-4a9d-b56c-03bd25a846f2")
+		(property "Reference" "C31"
+			(at 143.256 234.061 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 143.256 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 144.78 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "20c917d0-e9a8-46ae-9f63-53446d09a18e")
+		)
+		(pin "2"
+			(uuid "cf304046-7942-4426-b8dc-a561654519fc")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0805_N")
+		(at 76.2 231.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f9b92b32-c2d3-49ac-b881-fec0d36ebeda")
+		(property "Reference" "C48"
+			(at 74.676 234.061 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "10uF"
+			(at 74.676 228.981 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0805_N"
+			(at 76.2 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "85e84022-26e7-45e6-8236-634851e1feb0")
+		)
+		(pin "2"
+			(uuid "cbb10ed9-5824-43fb-97b9-1f9366271644")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:CAPACITOR_0402_N")
+		(at 86.36 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fc0154b6-7dad-4c2a-874f-36df1bd9ec18")
+		(property "Reference" "C29"
+			(at 84.836 142.621 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 84.836 137.541 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:RESC0402_N"
+			(at 86.36 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e48d504b-b864-4739-bb02-cf40c55083aa")
+		)
+		(pin "1"
+			(uuid "83f4ef8e-a187-4d51-ae42-ecf2c7dd2195")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "haasoscope_pro_adc_fpga_board-eagle-import:NFM31PC276B0J3L")
+		(at 48.26 180.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fe9c2e79-fd11-4fb3-a5a6-8d9687a7b8f5")
+		(property "Reference" "C35"
+			(at 54.61 162.56 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NFM31PC276B0J3L"
+			(at 54.61 165.1 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "haasoscope_pro_adc_fpga_board:NFM31HK103R1H3L"
+			(at 48.26 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9d8717de-a74a-4fe3-8f55-270e9bc8e0b1")
+		)
+		(pin "4"
+			(uuid "e9cd84f0-30ae-4860-bad0-6b96be7f86d2")
+		)
+		(pin "2"
+			(uuid "e1193d1c-b657-4cdf-89d4-72c31894a78d")
+		)
+		(pin "3"
+			(uuid "a0c2899c-728c-4625-812e-ecf712767cbd")
+		)
+		(instances
+			(project ""
+				(path "/d5d23e42-4179-45a8-9635-7771b4ee37cf/3472a011-ea06-4f5e-89c9-6099406060da"
+					(reference "C35")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

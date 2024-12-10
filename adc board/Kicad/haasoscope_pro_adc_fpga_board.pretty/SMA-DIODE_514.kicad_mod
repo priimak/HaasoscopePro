@@ -1,0 +1,155 @@
+(footprint "SMA-DIODE_514"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Diode\n\nBasic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140\n\nSMA is the smallest package in the DO-214 standard (DO-214AC)")
+	(property "Reference" "REF**"
+		(at 0 -1.651 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "45b0d5bf-b2bd-495c-bd94-c139a30d707b")
+		(effects
+			(font
+				(size 0.48768 0.48768)
+				(thickness 0.12192)
+			)
+			(justify bottom)
+		)
+	)
+	(property "Value" "SMA-DIODE_514"
+		(at 0 1.651 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "74ed337e-94fd-4991-a40e-186ed1077834")
+		(effects
+			(font
+				(size 0.48768 0.48768)
+				(thickness 0.12192)
+			)
+			(justify top)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a70d7ae6-f71d-4358-bdba-48ec9d7a5474")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6922499a-d3da-4c42-8686-cfefeab24b4f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "486da2a9-4a62-4ac1-a025-190bd89abd61")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -2.3 -1.45)
+		(end 2.3 -1.45)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8fe9e9d9-544f-49bf-abd7-2ee33f4c2971")
+	)
+	(fp_line
+		(start -2.3 -1)
+		(end -2.3 -1.45)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "54628b04-5c91-473b-ab2c-9e3c45c71416")
+	)
+	(fp_line
+		(start -2.3 1.45)
+		(end -2.3 1)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fc9d4325-2310-4232-a7a1-187e88c4a423")
+	)
+	(fp_line
+		(start 2.3 -1.45)
+		(end 2.3 -1)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9c09cf8e-0583-4b41-b788-1a7d91cf9c9e")
+	)
+	(fp_line
+		(start 2.3 1)
+		(end 2.3 1.45)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "47876904-a37e-4258-b5b6-890279f45474")
+	)
+	(fp_line
+		(start 2.3 1.45)
+		(end -2.3 1.45)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "77478ae7-d4e7-4cc6-ba3f-d18f574f8bab")
+	)
+	(fp_line
+		(start 3.175 -1)
+		(end 3.175 1)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "62bd2328-cc8d-4be0-9aca-a527de87e837")
+	)
+	(pad "A" smd rect
+		(at -2.15 0 180)
+		(size 1.27 1.47)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 0)
+		(uuid "6cffac4a-0514-44d5-8725-f42b5900774b")
+	)
+	(pad "C" smd rect
+		(at 2.15 0)
+		(size 1.27 1.47)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 0)
+		(uuid "705d1195-de3b-4c54-83f7-436550967a2d")
+	)
+)

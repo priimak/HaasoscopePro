@@ -1,0 +1,68 @@
+(version 1)
+(rule "class 3:0"
+  (condition "A.NetClass == 'loosediffpair' && B.NetClass == 'Default'")
+  (constraint clearance (min 0.127mm)))
+
+(rule "class 3:1"
+  (condition "A.NetClass == 'loosediffpair' && B.NetClass == 'power'")
+  (constraint clearance (min 0.127mm)))
+
+(rule "class 3:2"
+  (condition "A.NetClass == 'loosediffpair' && B.NetClass == 'diffpair'")
+  (constraint clearance (min 0.127mm)))
+
+(rule "class 3:3"
+  (condition "A.NetClass == 'loosediffpair' && B.NetClass == 'loosediffpair'")
+  (constraint clearance (min 0.127mm)))
+
+(rule "class 5:0"
+  (condition "A.NetClass == 'critical' && B.NetClass == 'Default'")
+  (constraint clearance (min 0.15mm)))
+
+(rule "class 5:1"
+  (condition "A.NetClass == 'critical' && B.NetClass == 'power'")
+  (constraint clearance (min 0.15mm)))
+
+(rule "class 5:2"
+  (condition "A.NetClass == 'critical' && B.NetClass == 'diffpair'")
+  (constraint clearance (min 0.15mm)))
+
+(rule "class 5:3"
+  (condition "A.NetClass == 'critical' && B.NetClass == 'loosediffpair'")
+  (constraint clearance (min 0.15mm)))
+
+(rule "class 5:4"
+  (condition "A.NetClass == 'critical' && B.NetClass == 'gnd'")
+  (constraint clearance (min 0.15mm)))
+
+(rule "class 5:5"
+  (condition "A.NetClass == 'critical' && B.NetClass == 'critical'")
+  (constraint clearance (min 0.15mm)))
+
+(rule "class 6:0"
+  (condition "A.NetClass == 'looserdiffpair' && B.NetClass == 'Default'")
+  (constraint clearance (min 0.3048mm)))
+
+(rule "class 6:1"
+  (condition "A.NetClass == 'looserdiffpair' && B.NetClass == 'power'")
+  (constraint clearance (min 0.3048mm)))
+
+(rule "class 6:2"
+  (condition "A.NetClass == 'looserdiffpair' && B.NetClass == 'diffpair'")
+  (constraint clearance (min 0.3048mm)))
+
+(rule "class 6:3"
+  (condition "A.NetClass == 'looserdiffpair' && B.NetClass == 'loosediffpair'")
+  (constraint clearance (min 0.3048mm)))
+
+(rule "class 6:4"
+  (condition "A.NetClass == 'looserdiffpair' && B.NetClass == 'gnd'")
+  (constraint clearance (min 0.3048mm)))
+
+(rule "class 6:5"
+  (condition "A.NetClass == 'looserdiffpair' && B.NetClass == 'critical'")
+  (constraint clearance (min 0.3048mm)))
+
+(rule "class 6:6"
+  (condition "A.NetClass == 'looserdiffpair' && B.NetClass == 'looserdiffpair'")
+  (constraint clearance (min 0.3048mm)))
