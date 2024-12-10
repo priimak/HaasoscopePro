@@ -3305,31 +3305,12 @@ Source: &lt;a href="https://psearch.en.murata.com/capacitor/product/NFM31PC276B0
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 </symbol>
-<symbol name="+3V3">
-<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="+3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GND" prefix="GND">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="+3V3" prefix="+3V3">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="+3V3" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -22917,6 +22898,37 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 </deviceset>
 </devicesets>
 </library>
+<library name="Power_Symbols" urn="urn:adsk.eagle:library:16502351">
+<description>&lt;B&gt;Supply &amp; Ground symbols</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="3V3" urn="urn:adsk.eagle:symbol:18498245/2" library_version="21">
+<description>3.3 Volt (3V3) Bar</description>
+<wire x1="1.905" y1="2.54" x2="-1.905" y2="2.54" width="0.254" layer="94"/>
+<text x="-0.127" y="3.048" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
+<pin name="3V3" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="3V3" urn="urn:adsk.eagle:component:16502400/7" prefix="SUPPLY" uservalue="yes" library_version="21">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;  3.3 Volt (3V3) Bar</description>
+<gates>
+<gate name="G$1" symbol="3V3" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="CATEGORY" value="Supply" constant="no"/>
+<attribute name="VALUE" value="3V3" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -23351,17 +23363,9 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="GND159" library="supply1" deviceset="GND" device=""/>
 <part name="GND160" library="supply1" deviceset="GND" device=""/>
 <part name="GND161" library="supply1" deviceset="GND" device=""/>
-<part name="+3V21" library="supply1" deviceset="+3V3" device=""/>
-<part name="+3V22" library="supply1" deviceset="+3V3" device=""/>
-<part name="+3V23" library="supply1" deviceset="+3V3" device=""/>
-<part name="+3V24" library="supply1" deviceset="+3V3" device=""/>
-<part name="+3V25" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND163" library="supply1" deviceset="GND" device=""/>
 <part name="GND164" library="supply1" deviceset="GND" device=""/>
 <part name="GND165" library="supply1" deviceset="GND" device=""/>
-<part name="+3V26" library="supply1" deviceset="+3V3" device=""/>
-<part name="+3V27" library="supply1" deviceset="+3V3" device=""/>
-<part name="+3V29" library="supply1" deviceset="+3V3" device=""/>
 <part name="R154" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="R155" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="C143" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
@@ -23816,6 +23820,14 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="GND64" library="supply1" deviceset="GND" device=""/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="SUPPLY51" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="SUPPLY53" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="SUPPLY56" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="SUPPLY57" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="SUPPLY58" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="SUPPLY72" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="SUPPLY73" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="SUPPLY74" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
 </parts>
 <sheets>
 <sheet>
@@ -26792,6 +26804,9 @@ also the 2.5V ref voltage</text>
 from FPGA</text>
 <text x="287.02" y="60.96" size="1.778" layer="90">1.6 GHz differential
 output clock to ADC</text>
+<text x="213.36" y="101.6" size="1.778" layer="90">Unused
+output B</text>
+<text x="294.64" y="172.72" size="1.778" layer="90">GND pads for ADF4350</text>
 </plain>
 <instances>
 <instance part="C142" gate="G$1" x="185.42" y="195.58" smashed="yes" rot="R90">
@@ -26809,8 +26824,8 @@ output clock to ADC</text>
 <instance part="GND146" gate="1" x="147.32" y="127" smashed="yes">
 <attribute name="VALUE" x="144.78" y="124.46" size="1.778" layer="96"/>
 </instance>
-<instance part="GND147" gate="1" x="185.42" y="91.44" smashed="yes" rot="R270">
-<attribute name="VALUE" x="182.88" y="93.98" size="1.778" layer="96" rot="R270"/>
+<instance part="GND147" gate="1" x="195.58" y="81.28" smashed="yes">
+<attribute name="VALUE" x="193.04" y="78.74" size="1.778" layer="96"/>
 </instance>
 <instance part="GND148" gate="1" x="190.5" y="104.14" smashed="yes">
 <attribute name="VALUE" x="187.96" y="101.6" size="1.778" layer="96"/>
@@ -26839,8 +26854,8 @@ output clock to ADC</text>
 <instance part="GND156" gate="1" x="220.98" y="195.58" smashed="yes" rot="R90">
 <attribute name="VALUE" x="223.52" y="193.04" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND157" gate="1" x="246.38" y="96.52" smashed="yes">
-<attribute name="VALUE" x="243.84" y="93.98" size="1.778" layer="96"/>
+<instance part="GND157" gate="1" x="259.08" y="119.38" smashed="yes">
+<attribute name="VALUE" x="256.54" y="116.84" size="1.778" layer="96"/>
 </instance>
 <instance part="GND158" gate="1" x="271.78" y="127" smashed="yes">
 <attribute name="VALUE" x="269.24" y="124.46" size="1.778" layer="96"/>
@@ -26848,26 +26863,11 @@ output clock to ADC</text>
 <instance part="GND159" gate="1" x="271.78" y="147.32" smashed="yes">
 <attribute name="VALUE" x="269.24" y="144.78" size="1.778" layer="96"/>
 </instance>
-<instance part="GND160" gate="1" x="271.78" y="172.72" smashed="yes" rot="R180">
-<attribute name="VALUE" x="274.32" y="175.26" size="1.778" layer="96" rot="R180"/>
+<instance part="GND160" gate="1" x="279.4" y="154.94" smashed="yes">
+<attribute name="VALUE" x="276.86" y="152.4" size="1.778" layer="96"/>
 </instance>
 <instance part="GND161" gate="1" x="259.08" y="152.4" smashed="yes" rot="R90">
 <attribute name="VALUE" x="261.62" y="149.86" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="+3V21" gate="G$1" x="190.5" y="205.74" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="193.04" y="200.66" size="1.778" layer="96" rot="MR90"/>
-</instance>
-<instance part="+3V22" gate="G$1" x="210.82" y="205.74" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="213.36" y="200.66" size="1.778" layer="96" rot="MR90"/>
-</instance>
-<instance part="+3V23" gate="G$1" x="195.58" y="81.28" smashed="yes" rot="MR180">
-<attribute name="VALUE" x="193.04" y="86.36" size="1.778" layer="96" rot="MR270"/>
-</instance>
-<instance part="+3V24" gate="G$1" x="137.16" y="137.16" smashed="yes" rot="MR270">
-<attribute name="VALUE" x="142.24" y="139.7" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="+3V25" gate="G$1" x="254" y="106.68" smashed="yes" rot="R270">
-<attribute name="VALUE" x="248.92" y="109.22" size="1.778" layer="96"/>
 </instance>
 <instance part="GND163" gate="1" x="124.46" y="129.54" smashed="yes">
 <attribute name="VALUE" x="121.92" y="127" size="1.778" layer="96"/>
@@ -26877,15 +26877,6 @@ output clock to ADC</text>
 </instance>
 <instance part="GND165" gate="1" x="109.22" y="129.54" smashed="yes">
 <attribute name="VALUE" x="106.68" y="127" size="1.778" layer="96"/>
-</instance>
-<instance part="+3V26" gate="G$1" x="160.02" y="180.34" smashed="yes">
-<attribute name="VALUE" x="162.56" y="175.26" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="+3V27" gate="G$1" x="220.98" y="187.96" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="223.52" y="182.88" size="1.778" layer="96" rot="MR90"/>
-</instance>
-<instance part="+3V29" gate="G$1" x="269.24" y="88.9" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="271.78" y="83.82" size="1.778" layer="96" rot="MR90"/>
 </instance>
 <instance part="R154" gate="G$1" x="228.6" y="73.66" smashed="yes" rot="R180">
 <attribute name="NAME" x="229.616" y="71.12" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
@@ -26899,9 +26890,9 @@ output clock to ADC</text>
 <attribute name="NAME" x="214.376" y="198.12" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="217.424" y="198.12" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
-<instance part="C144" gate="G$1" x="271.78" y="167.64" smashed="yes" rot="R180">
-<attribute name="NAME" x="269.24" y="166.116" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="269.24" y="169.164" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="C144" gate="G$1" x="279.4" y="160.02" smashed="yes">
+<attribute name="NAME" x="281.94" y="161.544" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="281.94" y="158.496" size="1.016" layer="96" font="vector"/>
 </instance>
 <instance part="C145" gate="G$1" x="271.78" y="152.4" smashed="yes" rot="R180">
 <attribute name="NAME" x="269.24" y="150.876" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
@@ -26911,9 +26902,9 @@ output clock to ADC</text>
 <attribute name="NAME" x="269.24" y="130.556" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="269.24" y="133.604" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="C147" gate="G$1" x="246.38" y="101.6" smashed="yes" rot="R180">
-<attribute name="NAME" x="243.84" y="100.076" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="243.84" y="103.124" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="C147" gate="G$1" x="259.08" y="124.46" smashed="yes" rot="R180">
+<attribute name="NAME" x="256.54" y="122.936" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="256.54" y="125.984" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="C148" gate="G$1" x="147.32" y="132.08" smashed="yes" rot="R180">
 <attribute name="NAME" x="144.78" y="130.556" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
@@ -26935,9 +26926,9 @@ output clock to ADC</text>
 <attribute name="NAME" x="161.036" y="170.18" size="1.016" layer="95" font="vector" rot="R90" align="top-left"/>
 <attribute name="VALUE" x="161.036" y="175.26" size="1.016" layer="96" font="vector" rot="R270"/>
 </instance>
-<instance part="C149" gate="G$1" x="190.5" y="91.44" smashed="yes" rot="R270">
-<attribute name="NAME" x="192.024" y="88.9" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="188.976" y="88.9" size="1.016" layer="96" font="vector" rot="R270"/>
+<instance part="C149" gate="G$1" x="195.58" y="86.36" smashed="yes">
+<attribute name="NAME" x="198.12" y="87.884" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="198.12" y="84.836" size="1.016" layer="96" font="vector"/>
 </instance>
 <instance part="C150" gate="G$1" x="248.92" y="81.28" smashed="yes">
 <attribute name="NAME" x="251.46" y="82.804" size="1.016" layer="95" font="vector" align="top-left"/>
@@ -27001,6 +26992,39 @@ output clock to ADC</text>
 <instance part="C51" gate="G$1" x="152.4" y="213.36" smashed="yes" rot="R270">
 <attribute name="NAME" x="153.924" y="210.82" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
 <attribute name="VALUE" x="150.876" y="210.82" size="1.016" layer="96" font="vector" rot="R270"/>
+</instance>
+<instance part="U2" gate="G$2" x="307.34" y="167.64" smashed="yes"/>
+<instance part="U2" gate="G$3" x="307.34" y="165.1" smashed="yes"/>
+<instance part="U2" gate="G$4" x="307.34" y="162.56" smashed="yes"/>
+<instance part="U2" gate="G$5" x="307.34" y="160.02" smashed="yes"/>
+<instance part="U2" gate="G$6" x="307.34" y="157.48" smashed="yes"/>
+<instance part="U2" gate="G$7" x="307.34" y="154.94" smashed="yes"/>
+<instance part="U2" gate="G$8" x="307.34" y="152.4" smashed="yes"/>
+<instance part="U2" gate="G$9" x="307.34" y="149.86" smashed="yes"/>
+<instance part="U2" gate="G$10" x="307.34" y="147.32" smashed="yes"/>
+<instance part="SUPPLY51" gate="G$1" x="259.08" y="127" smashed="yes">
+<attribute name="VALUE" x="258.953" y="130.048" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="SUPPLY53" gate="G$1" x="264.16" y="86.36" smashed="yes">
+<attribute name="VALUE" x="264.033" y="89.408" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="SUPPLY56" gate="G$1" x="190.5" y="91.44" smashed="yes">
+<attribute name="VALUE" x="190.373" y="94.488" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="SUPPLY57" gate="G$1" x="220.98" y="180.34" smashed="yes">
+<attribute name="VALUE" x="220.853" y="183.388" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="SUPPLY58" gate="G$1" x="190.5" y="200.66" smashed="yes">
+<attribute name="VALUE" x="190.373" y="203.708" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="SUPPLY72" gate="G$1" x="210.82" y="200.66" smashed="yes">
+<attribute name="VALUE" x="210.693" y="203.708" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="SUPPLY73" gate="G$1" x="160.02" y="177.8" smashed="yes">
+<attribute name="VALUE" x="159.893" y="180.848" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="SUPPLY74" gate="G$1" x="147.32" y="137.16" smashed="yes">
+<attribute name="VALUE" x="147.193" y="140.208" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 </instances>
 <busses>
@@ -27114,68 +27138,63 @@ output clock to ADC</text>
 <net name="3V3" class="1">
 <segment>
 <wire x1="195.58" y1="109.22" x2="195.58" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="195.58" y1="83.82" x2="195.58" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="195.58" y1="91.44" x2="193.04" y2="91.44" width="0.1524" layer="91"/>
-<junction x="195.58" y="91.44"/>
 <pinref part="U2" gate="G$1" pin="AVDD"/>
-<pinref part="+3V23" gate="G$1" pin="+3V3"/>
+<wire x1="195.58" y1="91.44" x2="190.5" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="SUPPLY56" gate="G$1" pin="3V3"/>
 <pinref part="C149" gate="G$1" pin="P$1"/>
+<wire x1="195.58" y1="91.44" x2="195.58" y2="88.9" width="0.1524" layer="91"/>
+<junction x="195.58" y="91.44"/>
 </segment>
 <segment>
 <wire x1="172.72" y1="137.16" x2="147.32" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="134.62" x2="147.32" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="137.16" x2="139.7" y2="137.16" width="0.1524" layer="91"/>
 <junction x="147.32" y="137.16"/>
 <pinref part="U2" gate="G$1" pin="VP"/>
-<pinref part="+3V24" gate="G$1" pin="+3V3"/>
 <pinref part="C148" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY74" gate="G$1" pin="3V3"/>
 </segment>
 <segment>
-<wire x1="226.06" y1="109.22" x2="226.06" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="226.06" y1="106.68" x2="246.38" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="106.68" x2="246.38" y2="127" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="109.22" x2="246.38" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="109.22" x2="246.38" y2="127" width="0.1524" layer="91"/>
 <wire x1="246.38" y1="127" x2="243.84" y2="127" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="106.68" x2="246.38" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="106.68" x2="251.46" y2="106.68" width="0.1524" layer="91"/>
-<junction x="246.38" y="106.68"/>
 <pinref part="U2" gate="G$1" pin="VVCO@16"/>
 <pinref part="U2" gate="G$1" pin="VVCO@17"/>
-<pinref part="+3V25" gate="G$1" pin="+3V3"/>
-<label x="246.38" y="111.76" size="1.778" layer="95" rot="R90"/>
 <pinref part="C147" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY51" gate="G$1" pin="3V3"/>
+<wire x1="246.38" y1="127" x2="259.08" y2="127" width="0.1524" layer="91"/>
+<junction x="246.38" y="127"/>
+<junction x="259.08" y="127"/>
 </segment>
 <segment>
 <wire x1="187.96" y1="195.58" x2="190.5" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="190.5" y1="195.58" x2="190.5" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="195.58" x2="190.5" y2="200.66" width="0.1524" layer="91"/>
 <wire x1="190.5" y1="195.58" x2="190.5" y2="180.34" width="0.1524" layer="91"/>
 <junction x="190.5" y="195.58"/>
 <pinref part="U2" gate="G$1" pin="SDVDD"/>
-<pinref part="+3V21" gate="G$1" pin="+3V3"/>
 <pinref part="C142" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY58" gate="G$1" pin="3V3"/>
 </segment>
 <segment>
 <wire x1="210.82" y1="180.34" x2="210.82" y2="195.58" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="195.58" x2="210.82" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="195.58" x2="210.82" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="195.58" x2="210.82" y2="200.66" width="0.1524" layer="91"/>
 <junction x="210.82" y="195.58"/>
 <pinref part="U2" gate="G$1" pin="DVDD"/>
-<pinref part="+3V22" gate="G$1" pin="+3V3"/>
 <pinref part="C143" gate="G$1" pin="P$1"/>
+<pinref part="SUPPLY72" gate="G$1" pin="3V3"/>
 </segment>
 <segment>
-<wire x1="220.98" y1="180.34" x2="220.98" y2="185.42" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="PDBRF"/>
-<pinref part="+3V27" gate="G$1" pin="+3V3"/>
+<pinref part="SUPPLY57" gate="G$1" pin="3V3"/>
 </segment>
 <segment>
-<pinref part="+3V29" gate="G$1" pin="+3V3"/>
-<wire x1="269.24" y1="86.36" x2="269.24" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="269.24" y1="83.82" x2="264.16" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="264.16" y1="86.36" x2="264.16" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R155" gate="G$1" pin="P$1"/>
+<pinref part="SUPPLY53" gate="G$1" pin="3V3"/>
 </segment>
 <segment>
-<pinref part="+3V26" gate="G$1" pin="+3V3"/>
 <pinref part="R175" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY73" gate="G$1" pin="3V3"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -27196,8 +27215,7 @@ output clock to ADC</text>
 </net>
 <net name="VREF2" class="0">
 <segment>
-<wire x1="243.84" y1="162.56" x2="271.78" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="271.78" y1="162.56" x2="271.78" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="162.56" x2="279.4" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="VREF"/>
 <pinref part="C144" gate="G$1" pin="P$1"/>
 </segment>
@@ -33234,8 +33252,8 @@ and is used for data transmission</text>
 <attribute name="NAME" x="54.61" y="29.4386" size="1.778" layer="95"/>
 <attribute name="VALUE" x="54.61" y="24.638" size="1.778" layer="96"/>
 </instance>
-<instance part="GND62" gate="1" x="81.28" y="20.32" smashed="yes">
-<attribute name="VALUE" x="78.74" y="17.78" size="1.778" layer="96"/>
+<instance part="GND62" gate="1" x="81.28" y="25.4" smashed="yes">
+<attribute name="VALUE" x="78.74" y="22.86" size="1.778" layer="96"/>
 </instance>
 <instance part="Q2" gate="G$1" x="-50.8" y="58.42" smashed="yes" rot="R90">
 <attribute name="NAME" x="-57.15" y="60.96" size="1.778" layer="95" ratio="10"/>
@@ -33379,10 +33397,9 @@ and is used for data transmission</text>
 <segment>
 <pinref part="C127" gate="C$1" pin="2"/>
 <pinref part="C128" gate="C$1" pin="2"/>
-<wire x1="81.28" y1="38.1" x2="81.28" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="38.1" x2="81.28" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="GND62" gate="1" pin="GND"/>
-<junction x="81.28" y="22.86"/>
-<wire x1="81.28" y1="22.86" x2="81.28" y2="27.94" width="0.1524" layer="91"/>
+<junction x="81.28" y="27.94"/>
 </segment>
 </net>
 <net name="USB_D_N" class="3">
@@ -37573,14 +37590,6 @@ in a good range for the slow ADC</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="102,5,190.5,203.2,+3V3,3V3,,,,"/>
-<approved hash="102,5,210.82,203.2,+3V3,3V3,,,,"/>
-<approved hash="102,5,195.58,83.82,+3V3,3V3,,,,"/>
-<approved hash="102,5,139.7,137.16,+3V3,3V3,,,,"/>
-<approved hash="102,5,251.46,106.68,+3V3,3V3,,,,"/>
-<approved hash="102,5,160.02,177.8,+3V3,3V3,,,,"/>
-<approved hash="102,5,220.98,185.42,+3V3,3V3,,,,"/>
-<approved hash="102,5,269.24,86.36,+3V3,3V3,,,,"/>
 <approved hash="102,9,104.14,101.6,VCCCORE,VCC1V8,,,,"/>
 <approved hash="102,9,104.14,99.06,VCCA,VCCA_FTDI,,,,"/>
 <approved hash="104,1,119.38,228.6,FL3,VS+,2V5+,,,"/>
