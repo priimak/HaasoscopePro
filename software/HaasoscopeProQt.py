@@ -734,7 +734,7 @@ class MainWindow(TemplateBaseClass):
         self.otherlines[1].setData([self.min_x, self.max_x],
                                    [self.hline, self.hline])  # horizontal line showing trigger threshold
         point = self.triggerpos + 0.0
-        if self.downsample>0: point = point + 1.0/pow(2,self.downsamplefactor-1)
+        if 0 < self.downsample < 10: point = point + 1.0 / pow(2, self.downsamplefactor - 1)
         self.vline = 2 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
         if not self.data_twochannel: self.vline = self.vline * 2
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),
@@ -1016,14 +1016,14 @@ class MainWindow(TemplateBaseClass):
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
             #print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
-            gotonebit = False
+            gotzerobit = False
             for s in range(21):
                 thebit = getbit(triggercounter[int(s / 8) + 1], s % 8)
-                if thebit == 1: gotonebit = True
-                if thebit == 0 and gotonebit:
+                if thebit == 0: gotzerobit = True
+                if thebit == 1 and gotzerobit:
                     self.sample_triggered[board] = s
                     break
-            if self.sample_triggered[board]<10: self.sample_triggered[board] += 41
+            #if self.sample_triggered[board]<10: self.sample_triggered[board] += 0
             #print("sample_triggered", self.sample_triggered[board], "for board", board)
             return 1
         else:
@@ -1127,9 +1127,10 @@ class MainWindow(TemplateBaseClass):
                 if n < 40:
                     # val = -val # if we're swapping inputs
                     val = val * self.yscale * self.tenx
+                    shiftmax = 4
                     if self.downsamplemerging == 1:
                         samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
-                        if s < (self.expect_samples - 8): samp = samp + self.sample_triggered[board]
+                        if s < (self.expect_samples - shiftmax): samp = samp - self.sample_triggered[board]
                         if self.data_overlapped:
                             self.xydata[chan][1][samp] = val
                         elif self.data_twochannel:
@@ -1150,7 +1151,7 @@ class MainWindow(TemplateBaseClass):
                         if self.data_twochannel:
                             samp = s * 20 + chan * 10 + 9 - n
                             if n < 20: samp = samp + 10
-                            if s < (self.expect_samples - 8): samp = samp + int(2 * (self.sample_triggered[board] - (
+                            if s < (self.expect_samples - shiftmax): samp = samp - int(2 * (self.sample_triggered[board] - (
                                         downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
@@ -1159,7 +1160,7 @@ class MainWindow(TemplateBaseClass):
                                     (samp + self.toff) % (20 * self.expect_samples)] = val
                         else:
                             samp = s * 40 + 39 - n
-                            if s < (self.expect_samples - 8): samp = samp + int(4 * (self.sample_triggered[board] - (
+                            if s < (self.expect_samples - shiftmax): samp = samp - int(4 * (self.sample_triggered[board] - (
                                         downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
                                 self.xydata[board][1][samp] = val

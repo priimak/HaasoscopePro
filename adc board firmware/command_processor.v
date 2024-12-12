@@ -423,9 +423,10 @@ always @ (posedge clklvds or negedge rstn)
 	for (i=0;i<10;i=i+1) begin
 		if (	(triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) acqstate <= 8'd2;
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
-			sample_triggered[i] <= 1'b1; // remember the samples that caused the trigger
+			sample_triggered[9-i] <= 1'b1; // remember the samples that caused the trigger
 			downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
-		end			
+		end
+		else sample_triggered[9-i] <= 1'b0;
 	end
 	end
 	end
@@ -435,7 +436,7 @@ always @ (posedge clklvds or negedge rstn)
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
 			if (tot_counter==0) begin
-				sample_triggered[10+i] <= 1'b1; // remember the samples that caused the trigger
+				sample_triggered[10+9-i] <= 1'b1; // remember the samples that caused the trigger
 				downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
 			end
 			tot_counter <= tot_counter+8'd1;
@@ -462,9 +463,10 @@ always @ (posedge clklvds or negedge rstn)
 	for (i=0;i<10;i=i+1) begin
 		if (	(triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) acqstate <= 8'd4;
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
-			sample_triggered[i] <= 1'b1; // remember the samples that caused the trigger
+			sample_triggered[9-i] <= 1'b1; // remember the samples that caused the trigger
 			downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
 		end
+		else sample_triggered[9-i] <= 1'b0;
 	end
 	end
 	end
@@ -474,7 +476,7 @@ always @ (posedge clklvds or negedge rstn)
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
 			if (tot_counter==0) begin
-				sample_triggered[10+i] <= 1'b1; // remember the samples that caused the trigger
+				sample_triggered[10+9-i] <= 1'b1; // remember the samples that caused the trigger
 				downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
 			end
 			tot_counter <= tot_counter+8'd1;
