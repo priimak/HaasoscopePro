@@ -23828,6 +23828,10 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY72" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
 <part name="SUPPLY73" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
 <part name="SUPPLY74" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
+<part name="C80" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="27pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="R242" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="27"/>
 </parts>
 <sheets>
 <sheet>
@@ -23838,8 +23842,7 @@ for 1 MOhm -&gt; 50 Ohm</text>
 <text x="91.44" y="190.5" size="1.778" layer="90">RF relay for input Z</text>
 <text x="93.98" y="147.32" size="1.778" layer="90">RF relay driver
 for input Z</text>
-<text x="-12.7" y="228.6" size="1.778" layer="90">50 Ohm resistive 
-splitter/combiner
+<text x="-15.24" y="246.38" size="1.778" layer="90">50 Ohm resistive splitter/combiner
 Output -6dB</text>
 <text x="195.58" y="190.5" size="1.778" layer="90">RF relay for attenuator</text>
 <text x="200.66" y="147.32" size="1.778" layer="90">RF relay driver
@@ -23882,6 +23885,9 @@ on next sheet</text>
 <text x="327.66" y="185.42" size="1.778" layer="90">I=10mA suggested
 2.5V - 1.3V forward voltage drop = 1.2V
 1.2V/120Ohm=10mA</text>
+<text x="-30.48" y="236.22" size="1.778" layer="90">Outsplit has extra impedance in parallel (27 Ohm + 27 pF)
+to boost higher frequency components to outsplit
+to account for losses in connectors and extra PCB traces</text>
 </plain>
 <instances>
 <instance part="SUPPLY81" gate="GND" x="76.2" y="236.22" smashed="yes"/>
@@ -24012,6 +24018,15 @@ on next sheet</text>
 <instance part="R240" gate="G$1" x="330.2" y="195.58" smashed="yes" rot="R90">
 <attribute name="NAME" x="327.66" y="194.564" size="1.016" layer="95" font="vector" align="top-left"/>
 <attribute name="VALUE" x="330.708" y="198.12" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="C80" gate="G$1" x="-2.54" y="231.14" smashed="yes" rot="R90">
+<attribute name="NAME" x="-3.556" y="228.6" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="-3.81" y="233.426" size="1.016" layer="96" font="vector"/>
+<attribute name="LCSC" x="-2.54" y="231.14" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="R242" gate="G$1" x="-10.16" y="231.14" smashed="yes" rot="R90">
+<attribute name="NAME" x="-11.938" y="229.616" size="1.016" layer="95" font="vector" align="top-left"/>
+<attribute name="VALUE" x="-10.668" y="232.918" size="1.016" layer="96" font="vector"/>
 </instance>
 </instances>
 <busses>
@@ -24371,12 +24386,16 @@ on next sheet</text>
 </net>
 <net name="SPLIT" class="0">
 <segment>
-<wire x1="-10.16" y1="223.52" x2="-10.16" y2="208.28" width="0.1524" layer="91"/>
-<pinref part="R168" gate="G$1" pin="P$1"/>
 <pinref part="R169" gate="G$1" pin="P$1"/>
-<wire x1="-10.16" y1="223.52" x2="-33.02" y2="223.52" width="0.1524" layer="91"/>
-<junction x="-10.16" y="223.52"/>
+<wire x1="-10.16" y1="223.52" x2="-15.24" y2="223.52" width="0.1524" layer="91"/>
 <label x="-30.48" y="223.52" size="1.778" layer="95"/>
+<pinref part="R242" gate="G$1" pin="P$1"/>
+<wire x1="-15.24" y1="223.52" x2="-33.02" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="231.14" x2="-15.24" y2="223.52" width="0.1524" layer="91"/>
+<junction x="-15.24" y="223.52"/>
+<pinref part="R168" gate="G$1" pin="P$1"/>
+<wire x1="-10.16" y1="208.28" x2="-10.16" y2="223.52" width="0.1524" layer="91"/>
+<junction x="-10.16" y="223.52"/>
 </segment>
 <segment>
 <wire x1="-20.32" y1="167.64" x2="-33.02" y2="167.64" width="0.1524" layer="91"/>
@@ -24494,6 +24513,8 @@ on next sheet</text>
 <wire x1="20.32" y1="223.52" x2="0" y2="223.52" width="0.1524" layer="91"/>
 <label x="7.62" y="223.52" size="1.778" layer="95"/>
 <pinref part="OUTSPLIT" gate="G$1" pin="ANT"/>
+<pinref part="C80" gate="G$1" pin="P$2"/>
+<wire x1="0" y1="231.14" x2="0" y2="223.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="OUTPATHMAIN" class="0">
@@ -24570,6 +24591,12 @@ on next sheet</text>
 <wire x1="355.6" y1="195.58" x2="335.28" y2="195.58" width="0.1524" layer="91"/>
 <label x="335.28" y="195.58" size="1.778" layer="95"/>
 <pinref part="R240" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="N$67" class="0">
+<segment>
+<pinref part="C80" gate="G$1" pin="P$1"/>
+<pinref part="R242" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 </nets>

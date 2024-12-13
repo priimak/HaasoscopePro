@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.01" altunitdist="mm" altunit="mm"/>
@@ -10225,27 +10225,27 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R168" library="MF_Passives" package="R0402" value="47" x="23.1" y="26.8" smashed="yes" rot="R270">
 <attribute name="HOUSEPART" value="" x="23.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="23.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="24" y="27.7" size="0.8128" layer="25" rot="R270"/>
+<attribute name="NAME" x="23.84" y="28.09" size="0.8128" layer="25" rot="R270"/>
 <attribute name="POPULATE" value="1" x="23.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="23.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="URL" value="" x="23.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VOLTAGE" value="" x="23.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="WATTAGE" value="" x="23.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="R169" library="MF_Passives" package="R0402" value="47" x="21.3" y="26.8" smashed="yes" rot="R270">
-<attribute name="HOUSEPART" value="" x="21.3" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="" x="21.3" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="19.4" y="27.7" size="0.8128" layer="25" rot="R270"/>
-<attribute name="POPULATE" value="1" x="21.3" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="TOLERANCE" value="" x="21.3" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="URL" value="" x="21.3" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VOLTAGE" value="" x="21.3" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="WATTAGE" value="" x="21.3" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="R169" library="MF_Passives" package="R0402" value="47" x="21.51" y="26.8" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="21.51" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="21.51" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="20.89" y="28.12" size="0.8128" layer="25"/>
+<attribute name="POPULATE" value="1" x="21.51" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="21.51" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="21.51" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="21.51" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="21.51" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R170" library="MF_Passives" package="R0402" value="47" x="22.1" y="24.4" smashed="yes" rot="R180">
 <attribute name="HOUSEPART" value="" x="22.1" y="24.4" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="22.1" y="24.4" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="23.4" y="23.5" size="0.8128" layer="25" rot="R180"/>
+<attribute name="NAME" x="23.44" y="23.66" size="0.8128" layer="25" rot="R180"/>
 <attribute name="POPULATE" value="1" x="22.1" y="24.4" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TOLERANCE" value="" x="22.1" y="24.4" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="" x="22.1" y="24.4" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11767,6 +11767,27 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="URL" value="" x="56.5" y="138" size="1.778" layer="27" display="off"/>
 <attribute name="VOLTAGE" value="" x="56.5" y="138" size="1.778" layer="27" display="off"/>
 <attribute name="WATTAGE" value="" x="56.5" y="138" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C80" library="MF_Passives" package="C0402" value="27pF" x="20" y="25.5" smashed="yes" rot="R270">
+<attribute name="DIELECTRIC" value="" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HOUSEPART" value="" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="LCSC" value="C52923" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="18.38" y="26.32" size="0.8128" layer="21" rot="R270"/>
+<attribute name="POPULATE" value="1" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="20" y="25.5" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="R242" library="MF_Passives" package="R0402" value="27" x="20" y="28" smashed="yes" rot="R270">
+<attribute name="HOUSEPART" value="" x="20" y="28" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="20" y="28" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="18.4" y="29.34" size="0.8128" layer="21" rot="R270"/>
+<attribute name="POPULATE" value="1" x="20" y="28" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="TOLERANCE" value="" x="20" y="28" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="URL" value="" x="20" y="28" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VOLTAGE" value="" x="20" y="28" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="WATTAGE" value="" x="20" y="28" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 </elements>
 <signals>
@@ -13498,7 +13519,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="16" y="33.5" extent="1-16" drill="0.35"/>
 <via x="15.5" y="30.5" extent="1-16" drill="0.35"/>
 <via x="17" y="27" extent="1-16" drill="0.35"/>
-<via x="20" y="26" extent="1-16" drill="0.35"/>
+<via x="18.5" y="26" extent="1-16" drill="0.35"/>
 <via x="22.5" y="29" extent="1-16" drill="0.35"/>
 <via x="25" y="25.5" extent="1-16" drill="0.35"/>
 <via x="22.5" y="23" extent="1-16" drill="0.35"/>
@@ -20759,15 +20780,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="38.361" y1="46.689" x2="38.2" y2="46.85" width="0.1524" layer="1"/>
 </signal>
 <signal name="SPLIT">
-<contactref element="R168" pad="P$1"/>
 <contactref element="R169" pad="P$1"/>
-<wire x1="21.3" y1="27.35" x2="23.1" y2="27.35" width="0.1524" layer="1"/>
 <contactref element="K1" pad="4"/>
-<wire x1="21.3" y1="27.35" x2="18.15" y2="27.35" width="0.16" layer="1"/>
-<wire x1="18.15" y1="27.35" x2="16.5" y2="29" width="0.16" layer="1"/>
-<wire x1="16.5" y1="29" x2="16.5" y2="32" width="0.16" layer="1"/>
+<wire x1="16.5" y1="32" x2="16.5" y2="29" width="0.16" layer="1"/>
 <wire x1="16.5" y1="32" x2="16.8" y2="32.3" width="0.16" layer="1"/>
 <wire x1="16.8" y1="32.3" x2="19.5" y2="32.3" width="0.16" layer="1"/>
+<contactref element="R242" pad="P$1"/>
+<contactref element="R168" pad="P$1"/>
+<wire x1="16.5" y1="29" x2="16.95" y2="28.55" width="0.16" layer="1"/>
+<wire x1="16.95" y1="28.55" x2="20" y2="28.55" width="0.16" layer="1"/>
+<wire x1="20" y1="28.55" x2="20.05" y2="28.5" width="0.16" layer="1"/>
+<wire x1="20.05" y1="28.5" x2="20.5" y2="28.5" width="0.16" layer="1"/>
+<wire x1="20.5" y1="28.5" x2="21.51" y2="27.49" width="0.16" layer="1"/>
+<wire x1="21.51" y1="27.49" x2="21.51" y2="27.35" width="0.16" layer="1"/>
+<wire x1="21.51" y1="27.35" x2="23.1" y2="27.35" width="0.16" layer="1"/>
 </signal>
 <signal name="SPLITOUT">
 <contactref element="R168" pad="P$2"/>
@@ -20839,10 +20865,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="R169" pad="P$2"/>
 <contactref element="R170" pad="P$2"/>
 <contactref element="OUTSPLIT" pad="P"/>
-<wire x1="21.55" y1="24.4" x2="21.55" y2="26" width="0.1524" layer="1"/>
-<wire x1="21.55" y1="26" x2="21.3" y2="26.25" width="0.1524" layer="1"/>
+<wire x1="21.55" y1="24.4" x2="21.55" y2="26.21" width="0.1524" layer="1"/>
+<wire x1="21.55" y1="26.21" x2="21.51" y2="26.25" width="0.1524" layer="1"/>
 <wire x1="21.55" y1="24.4" x2="12.67" y2="15.52" width="0.16" layer="1"/>
 <wire x1="12.67" y1="15.52" x2="2.252" y2="15.52" width="0.16" layer="1"/>
+<contactref element="C80" pad="P$2"/>
+<wire x1="20" y1="24.95" x2="21" y2="24.95" width="0.16" layer="1"/>
+<wire x1="21" y1="24.95" x2="21.55" y2="24.4" width="0.16" layer="1"/>
 </signal>
 <signal name="OUTPATHMAIN">
 <contactref element="R134" pad="P$1"/>
@@ -22860,6 +22889,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="R241" pad="P$1"/>
 <wire x1="55.95" y1="138" x2="58.61" y2="135.34" width="0.1524" layer="1"/>
 <wire x1="58.61" y1="135.34" x2="58.61" y2="134.825" width="0.1524" layer="1"/>
+</signal>
+<signal name="N$67">
+<contactref element="C80" pad="P$1"/>
+<contactref element="R242" pad="P$2"/>
+<wire x1="20" y1="27.45" x2="20" y2="26.05" width="0.16" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
