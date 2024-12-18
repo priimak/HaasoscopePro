@@ -49,7 +49,7 @@ class MainWindow(TemplateBaseClass):
     phasecs = []
     for ph in range(len(usbs)): phasecs.append([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
     doexttrig = [0] * num_board
-    paused = False
+    paused = True # will unpause with dostartstop at startup
     downsample = 0
     downsamplefactor = 1
     highresval = 1
@@ -862,9 +862,7 @@ class MainWindow(TemplateBaseClass):
 
     def setup_connections(self, board):
         print("Setting up board",board)
-        usbs[board].send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
-        res = usbs[board].recv(4)
-        print("Firmware version", res[3], res[2], res[1], res[0])
+        #version(usbs[board])
         self.adfreset(board)
         self.pllreset(board)
         board_setup(usbs[board], self.dopattern, self.data_twochannel, self.dooverrange)

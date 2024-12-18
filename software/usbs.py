@@ -4,6 +4,11 @@ import ftd2xx, sys
 from USB_FT232H import UsbFt232hSync245mode
 from utils import *
 
+def version(usb):
+    usb.send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
+    res = usb.recv(4)
+    print("Firmware version", res[3], res[2], res[1], res[0])
+
 def connectdevices():
     usbs = []
     ftds = ftd2xx.listDevices()
@@ -26,11 +31,12 @@ def connectdevices():
 def findnextboard(currentboard,firstboard,usbs):
     for board in range(len(usbs)):
         if board == currentboard: print("setting lvds spare out high for board",board)
-        usbs[board].send(bytes([2, 5, board == currentboard, 0, 99, 99, 99, 99])) # get lvdsin_spare info, and set spare lvds output 0 high for only the current board
+        else: print("setting lvds spare out low for board", board)
+        usbs[board].send(bytes([2, 5, board == currentboard, 0, 99, 99, 99, 99])) # get lvdsin_spare info, and set spare lvds output high for only the current board
         usbs[board].recv(4) # have to read it out, even though we don't care
     nextboard=-1
     for board in range(len(usbs)): # see which board now has seen a signal from the current board
-        if board==firstboard: continue # that one has no lvds input, so is unreliable, plus we already know it's not the next board
+        if board == firstboard: continue # that one has no lvds input, so is unreliable, plus we already know it's not the next board
         usbs[board].send(bytes([2, 5, board == currentboard, 0, 99, 99, 99, 99]))
         res = usbs[board].recv(4)
         spare = getbit(res[2],0)
@@ -49,7 +55,10 @@ def findnextboard(currentboard,firstboard,usbs):
 def orderusbs(usbs):
     newusbs=[]
     for board in range(len(usbs)):
-        usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99])) # get clock info
+        print("Checking board",board)
+        oldbytes(usbs[board])
+        version(usbs[board])
+        usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99]))  # get clock info
         usbs[board].recv(4)
         usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99]))  # get clock info again, fixes a glitch on Mac (?)
         res = usbs[board].recv(4)
