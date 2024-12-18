@@ -17,18 +17,17 @@
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 #
 
-from math import ceil, floor, log
+# https://github.com/drandyhaas/pyadf435x
 
+from math import ceil, floor, log
 
 class DeviceType:
     ADF4350 = 0,
     ADF4351 = 1
 
-
 class LowNoiseSpurMode:
     LowNoiseMode = 0
     LowSpurMode = 1
-
 
 class MuxOut:
     ThreeState = 0
@@ -39,38 +38,31 @@ class MuxOut:
     AnalogLockDetect = 5
     DigitalLockDetect = 6
 
-
 class PDPolarity:
     Negative = 0
     Positive = 1
 
-
 class BandSelectClockMode:
     Low = 0
     High = 1
-
 
 class ClkDivMode:
     ClockDividerOff = 0
     FastLockEnable = 1
     ResyncEnable = 2
 
-
 class FeedbackSelect:
     Divider = 0
     Fundamental = 1
-
 
 class AuxOutputSelect:
     DividedOutput = 0
     Fundamental = 1
 
-
 class LDPinMode:
     Low = 0
     DigitalLockDetect = 1
     High = 3
-
 
 def calculate_regs(
         device_type=DeviceType.ADF4351,
@@ -153,7 +145,6 @@ def calculate_regs(
                              'to 125kHz or less.')
 
     return int(INT), int(MOD), int(FRAC), output_divider, band_select_clock_divider
-
 
 def make_regs(
         device_type=DeviceType.ADF4351,

@@ -1,386 +1,21 @@
 import numpy as np
-import sys, time
+import sys, time, warnings
 import pyqtgraph as pg
-# noinspection PyUnresolvedReferences
 import PyQt5
-import ftd2xx
-# noinspection PyUnresolvedReferences
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 from PyQt5.QtGui import QPalette, QColor
-import warnings
 from scipy.optimize import curve_fit
-from USB_FT232H import UsbFt232hSync245mode
-#https://github.com/drandyhaas/pyadf435x
-from adf435x_core import calculate_regs, make_regs, DeviceType, MuxOut, ClkDivMode, BandSelectClockMode, FeedbackSelect, PDPolarity
+from usbs import *
+from board import *
 
-def binprint(x):
-    return bin(x)[2:].zfill(8)
-
-# get bit n from byte i
-def getbit(i, n):
-    return (i >> n) & 1
-
-def bytestoint(thebytes):
-    return thebytes[0] + pow(2, 8) * thebytes[1] + pow(2, 16) * thebytes[2] + pow(2, 24) * thebytes[3]
-
-usbs = []
-def connectdevices():
-    ftds = ftd2xx.listDevices()
-    if ftds is not None:
-        print("Found devices:", ftds)
-        for ftdserial in ftds:
-            # print("FTD serial:",ftdserial)
-            usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
-            # print(usbdevice)
-            if usbdevice.good:
-                # if usbdevice.serial != b"FT9M1UIT": continue
-                # if usbdevice.serial != b"FT9LYZXP": continue
-                usbs.append(usbdevice)
-                print("Connected USB device", usbdevice.serial)
-        print("Connected", len(usbs), "devices")
-    else:
-        print("Found no devices")
-    return usbs
-
-def findnextboard(currentboard,firstboard):
-    for board in range(len(usbs)):
-        usbs[board].send(bytes([2, 5, board==currentboard, 0, 99, 99, 99, 99])) # get lvdsin_spare info, and set spare lvds output 0 high for only the current board
-        usbs[board].recv(4) # have to read it out, even though we don't care
-    nextboard=-1
-    for board in range(len(usbs)): # see which board now has seen a signal from the current board
-        if board==firstboard: continue # that one has no lvds input, so is unreliable, plus we already know it's not the next board
-        usbs[board].send(bytes([2, 5, board==currentboard, 0, 99, 99, 99, 99]))
-        res = usbs[board].recv(4)
-        spare = getbit(res[2],0)
-        print("lvds spare 0 for board",board,"is",spare)
-        if spare==1:
-            if nextboard==-1:
-                nextboard=board
-            else:
-                print("We already found the next board to be",nextboard,"for board",currentboard,"but it is also",board,"?!")
-                sys.exit(0)
-    if nextboard==-1:
-        print("Didn't find a next board for board",currentboard,"!")
-        sys.exit(0)
-    return nextboard
-
-def orderusbs():
-    newusbs=[]
-    for board in range(len(usbs)):
-        usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99])) # get clock info
-        usbs[board].recv(4)
-        usbs[board].send(bytes([2, 5, 0, 0, 99, 99, 99, 99]))  # get clock info again, fixes a glitch on Mac (?)
-        res = usbs[board].recv(4)
-        if len(res)<4:
-            print("Couldn't get lvds info from board",board,"!")
-            sys.exit(0)
-        if getbit(res[1],3):
-            print("Board",board,"has no ext clock")
-            if len(newusbs)>0:
-                print("Found a second device with no external clock in! Make sure there's a sync cable between all devices, from in to out.")
-                sys.exit(0)
-            else:
-                print("Board",board,"is the first board")
-                newusbs.append(board)
-    if len(newusbs)==0:
-        print("Didn't find a first board with no external clock!")
-        sys.exit(0)
-    while len(newusbs)<len(usbs):
-        nextboard = findnextboard(newusbs[-1],newusbs[0])
-        print("Found next board to be board",nextboard)
-        newusbs.append(nextboard)
-    newusbcons=[]
-    for u in range(len(newusbs)):
-        newusbcons.append(usbs[newusbs[u]])
-    return newusbcons
-
-connectdevices()
+usbs = connectdevices()
 if len(usbs)==0: sys.exit(0)
-usbs = orderusbs()
-
-def oldbytes():
-    for usb in usbs:
-        olddata = usb.recv(10000000)
-        print("Got", len(olddata), "old bytes")
-        if len(olddata) == 0: break
-        print("Old byte0:", olddata[0])
-
-def inttobytes(theint):  # convert length number to a 4-byte byte array (with type of 'bytes')
-    return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
-
-def spicommand(usb, name, first, second, third, read, fourth=100, show_bin=False, cs=0, nbyte=3, quiet=False):
-    # first byte to send, start of address
-    # second byte to send, rest of address
-    # third byte to send, value to write, ignored during read
-    # cs is which chip to select, adc 0 by default
-    # nbyte is 2 or 3, second byte is ignored in case of 2 bytes
-    if read: first = first + 0x80  # set the highest bit for read, i.e. add 0x80
-    usb.send(bytes([3, cs, first, second, third, fourth, 100, nbyte]))  # get SPI result from command
-    spires = usb.recv(4)
-    if read:
-        if not quiet:
-            if show_bin:
-                print("SPI read:\t" + name, "(", hex(first), hex(second), ")", binprint(spires[1]), binprint(spires[0]))
-            else:
-                print("SPI read:\t" + name, "(", hex(first), hex(second), ")", hex(spires[1]), hex(spires[0]))
-        return spires
-    else:
-        if not quiet:
-            if nbyte == 4:
-                print("SPI write:\t" + name, "(", hex(first), hex(second), ")", hex(third), hex(fourth))
-            else:
-                print("SPI write:\t" + name, "(", hex(first), hex(second), ")", hex(third))
-
-def spicommand2(usb, name, first, second, third, fourth, read, cs=0, nbyte=3):
-    # first byte to send, start of address
-    # second byte to send, rest of address
-    # third byte to send, value to write, ignored during read, to address +1 (the higher 8 bits)
-    # fourth byte to send, value to write, ignored during read
-    # cs is which chip to select, adc 0 by default
-    # nbyte is 2 or 3, second byte is ignored in case of 2 bytes
-    if read: first = first + 0x80  # set the highest bit for read, i.e. add 0x80
-    usb.send(bytes([3, cs, first, second, fourth, 100, 100, nbyte]))  # get SPI result from command
-    spires = usb.recv(4)
-    usb.send(bytes([3, cs, first, second + 0x01, third, 100, 100, nbyte]))  # get SPI result from command for next byte
-    spires2 = usb.recv(4)
-    if read:
-        print("SPI read:\t" + name, "(", hex(first), hex(second), ")", hex(spires2[0]), hex(spires[0]))
-    else:
-        print("SPI write:\t" + name, "(", hex(first), hex(second), ")", hex(fourth), hex(third))
-
-def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True, themuxout=False):
-    print('ADF4350 being set to %0.2f MHz' % freq)
-    if not themuxout:
-        print("muxout GND 0")
-    else:
-        print("muxout VCC 1")
-    INT, MOD, FRAC, output_divider, band_select_clock_divider = (calculate_regs(
-        device_type=DeviceType.ADF4350, freq=freq, ref_freq=50.0,
-        band_select_clock_mode=BandSelectClockMode.Low,
-        feedback_select=divided,
-        r_counter=r_counter,  # needed when using FeedbackSelect.Divider (needed for phase resync?!)
-        ref_doubler=ref_doubler, ref_div2=ref_div2, enable_gcd=True))
-    print("INT", INT, "MOD", MOD, "FRAC", FRAC, "outdiv", output_divider, "bandselclkdiv", band_select_clock_divider)
-    regs = make_regs(
-        INT=INT, MOD=MOD, FRAC=FRAC, output_divider=output_divider,
-        band_select_clock_divider=band_select_clock_divider, r_counter=r_counter, ref_doubler=ref_doubler,
-        ref_div_2=ref_div2,
-        device_type=DeviceType.ADF4350, phase_value=phase, mux_out=themuxout, charge_pump_current=2.50,
-        feedback_select=divided, pd_polarity=PDPolarity.Positive, prescaler='4/5',
-        band_select_clock_mode=BandSelectClockMode.Low,
-        clk_div_mode=ClkDivMode.ResyncEnable, clock_divider_value=1000, csr=False,
-        aux_output_enable=False, aux_output_power=-4.0, output_enable=True, output_power=-4.0)  # (-4,-1,2,5)
-    # values can also be computed using free Analog Devices ADF435x Software:
-    # https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adf4351.html#eb-relatedsoftware
-    spimode(usb, 0)
-    for r in reversed(range(len(regs))):
-        # regs[2]=0x5004E42 #to override from ADF435x software
-        print("adf4350 reg", r, binprint(regs[r]), hex(regs[r]))
-        fourbytes = inttobytes(regs[r])
-        # for i in range(4): print(binprint(fourbytes[i]))
-        spicommand(usb, "ADF4350 Reg " + str(r), fourbytes[3], fourbytes[2], fourbytes[1], False, fourth=fourbytes[0],
-                   cs=3, nbyte=4)  # was cs=2 on alpha board v1.11
-    spimode(usb, 0)
-
-debugspi = False
-def spimode(usb, mode):  # set SPI mode (polarity of clk and data)
-    usb.send(bytes([4, mode, 0, 0, 0, 0, 0, 0]))
-    spires = usb.recv(4)
-    if debugspi: print("SPI mode now", spires[0])
-
-dooverrange = False
-def board_setup(usb, dopattern, twochannel):
-    setfan(usb, True)
-
-    spimode(usb, 0)
-    spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x00, False)  # power up
-    # spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x03, False) # power down
-    spicommand2(usb, "VENDOR", 0x00, 0x0c, 0x00, 0x00, True)
-    spicommand(usb, "LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
-    spicommand(usb, "CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
-
-    if twochannel:
-        spicommand(usb, "LMODE", 0x02, 0x01, 0x03, False)  # LVDS mode: aligned, demux, dual channel, 12-bit
-        # spicommand("LMODE", 0x02, 0x01, 0x01, False)  # LVDS mode: staggered, demux, dual channel, 12-bit
-    else:
-        spicommand(usb, "LMODE", 0x02, 0x01, 0x07, False)  # LVDS mode: aligned, demux, single channel, 12-bit
-        # spicommand(usb, "LMODE", 0x02, 0x01, 0x37, False)  # LVDS mode: aligned, demux, single channel, 8-bit
-        # spicommand(usb, "LMODE", 0x02, 0x01, 0x05, False)  # LVDS mode: staggered, demux, single channel, 12-bit
-
-    spicommand(usb, "LVDS_SWING", 0x00, 0x48, 0x00, False)  # high swing mode
-    # spicommand(usb, "LVDS_SWING", 0x00, 0x48, 0x01, False)  #low swing mode
-
-    spicommand(usb, "LCTRL", 0x02, 0x04, 0x0a, False)  # use LSYNC_N (software), 2's complement
-    # spicommand(usb, "LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
-
-    spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
-    # spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
-
-    # spicommand(usb, "TAD", 0x02, 0xB7, 0x01, False)  # invert clk
-    spicommand(usb, "TAD", 0x02, 0xB7, 0x00, False)  # don't invert clk
-
-    tad=0
-    spicommand(usb, "TAD", 0x02, 0xB6, tad, False)  # adjust TAD (time of ADC relative to clk)
-
-    if dooverrange:
-        spicommand(usb, "OVR_CFG", 0x02, 0x13, 0x0f, False)  # overrange on
-        spicommand(usb, "OVR_T0", 0x02, 0x11, 0xf2, False)  # overrange threshold 0
-        spicommand(usb, "OVR_T1", 0x02, 0x12, 0xab, False)  # overrange threshold 1
-    else:
-        spicommand(usb, "OVR_CFG", 0x02, 0x13, 0x07, False)  # overrange off
-
-    if dopattern:
-        spicommand(usb, "PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
-        usrval = 0x00
-        usrval3 = 0x0f
-        usrval2 = 0xff
-        spicommand2(usb, "UPAT0", 0x01, 0x80, usrval3, usrval2, False)  # set pattern sample 0
-        spicommand2(usb, "UPAT1", 0x01, 0x82, usrval, usrval, False)  # set pattern sample 1
-        spicommand2(usb, "UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
-        spicommand2(usb, "UPAT3", 0x01, 0x86, usrval, usrval, False)  # set pattern sample 3
-        spicommand2(usb, "UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
-        spicommand2(usb, "UPAT5", 0x01, 0x8a, usrval, usrval, False)  # set pattern sample 5
-        spicommand2(usb, "UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
-        spicommand2(usb, "UPAT7", 0x01, 0x8e, usrval, usrval, False)  # set pattern sample 7
-        # spicommand(usb, "UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user, invert a bit of B C D
-        spicommand(usb, "UPAT_CTRL", 0x01, 0x90, 0x00, False)  # set lane pattern to user
-    else:
-        spicommand(usb, "PAT_SEL", 0x02, 0x05, 0x02, False)  # normal ADC data
-        spicommand(usb, "UPAT_CTRL", 0x01, 0x90, 0x1e, False)  # set lane pattern to default
-
-    spicommand(usb, "CAL_EN", 0x00, 0x61, 0x01, False)  # enable calibration
-    spicommand(usb, "LVDS_EN", 0x02, 0x00, 0x01, False)  # enable LVDS interface
-    spicommand(usb, "LSYNC_N", 0x02, 0x03, 0x00, False)  # assert ~sync signal
-    spicommand(usb, "LSYNC_N", 0x02, 0x03, 0x01, False)  # deassert ~sync signal
-    # spicommand(usb, "CAL_SOFT_TRIG", 0x00, 0x6c, 0x00, False)
-    # spicommand(usb, "CAL_SOFT_TRIG", 0x00, 0x6c, 0x01, False)
-
-    spimode(usb, 0)
-    spicommand(usb, "Amp Rev ID", 0x00, 0x00, 0x00, True, cs=1, nbyte=2)
-    spicommand(usb, "Amp Prod ID", 0x01, 0x00, 0x00, True, cs=1, nbyte=2)
-    spicommand(usb, "Amp Rev ID", 0x00, 0x00, 0x00, True, cs=2, nbyte=2)
-    spicommand(usb, "Amp Prod ID", 0x01, 0x00, 0x00, True, cs=2, nbyte=2)
-
-    spimode(usb, 1)
-    spicommand(usb, "DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
-    spicommand(usb, "DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
-    spimode(usb, 0)
-    dooffset(usb, 0, 0)
-    dooffset(usb, 1, 0)
-    setgain(usb, 0, 0)
-    setgain(usb, 1, 0)
-
-def setgain(usb, chan, value):
-    spimode(usb, 0)
-    # 00 to 20 is 26 to -6 dB, 0x1a is no gain
-    if chan == 1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2)
-    if chan == 0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2)
-
-def dooffset(usb, chan, val):  # val goes from -100% to 100%
-    spimode(usb, 1)
-    dacval = int((pow(2, 16) - 1) * (val / 2 + 50) / 100)
-    # print("dacval is", dacval)
-    if chan == 0: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    if chan == 1: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    spimode(usb, 0)
-
-def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
-    val = bot + (x - left) * (top - bot) / leftplus
-    inbottom = (x <= left)
-    val[inbottom] = bot
-    intop = (x >= (left + leftplus))
-    val[intop] = top
-    return val
-
-def clockswitch(usb, board, quiet):
-    usb.send(bytes([7, 0, 0, 0, 99, 99, 99, 99]))
-    clockinfo = usb.recv(4)
-    if quiet: return
-    print("Clockinfo for board", board, binprint(clockinfo[1]), binprint(clockinfo[0]))
-    if getbit(clockinfo[1], 1) and not getbit(clockinfo[1], 3):
-        print("Board", board, "locked to ext board")
-    else:
-        print("Board", board, "locked to internal clock")
-
-def setchanimpedance(usb, chan, onemeg):
-    if chan == 1:
-        controlbit = 0
-    elif chan == 0:
-        controlbit = 4
-    else:
-        return
-    usb.send(bytes([10, controlbit, onemeg, 0, 0, 0, 0, 0]))
-    usb.recv(4)
-    print("1M for chan", chan, onemeg)
-
-def setchanacdc(usb, chan, ac):
-    if chan == 1:
-        controlbit = 1
-    elif chan == 0:
-        controlbit = 5
-    else:
-        return
-    usb.send(bytes([10, controlbit, not ac, 0, 0, 0, 0, 0]))
-    usb.recv(4)
-    print("AC for chan", chan, ac)
-
-def setchanatt(usb, chan, att):
-    if chan == 1:
-        controlbit = 2
-    elif chan == 0:
-        controlbit = 6
-    else:
-        return
-    usb.send(bytes([10, controlbit, att, 0, 0, 0, 0, 0]))
-    usb.recv(4)
-    print("Att for chan", chan, att)
-
-def setsplit(usb, split):
-    controlbit = 7
-    usb.send(bytes([10, controlbit, split, 0, 0, 0, 0, 0]))
-    usb.recv(4)
-    print("Split", split)
-
-def boardinbits(usb):
-    usb.send(bytes([2, 1, 0, 100, 100, 100, 100, 100]))  # get board in
-    res = usb.recv(4)
-    print("Board in bits", res[0], binprint(res[0]))
-    return res[0]
-
-def setfan(usb,fanon):
-    usb.send(bytes([2, 6, fanon, 100, 100, 100, 100, 100]))  # set / get fan status
-    res = usb.recv(4)
-    print("Set fan", fanon, "and it was",res[0])
-
-def cleanup(usb):
-    spimode(usb, 0)
-    spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
-    setfan(usb,False)
-    return 1
-
-def getoverrange(usb):
-    if dooverrange:
-        usb.send(bytes([2, 2, 0, 100, 100, 100, 100, 100]))  # get overrange 0
-        res = usb.recv(4)
-        print("Overrange0", res[3], res[2], res[1], res[0])
-
-def gettemps(usb):
-    spimode(usb, 0)
-    spicommand(usb, "SlowDAC1", 0x00, 0x00, 0x00, True, cs=6, nbyte=2,
-               quiet=True)  # first conversion may be for old input
-    slowdac1 = spicommand(usb, "SlowDAC1", 0x00, 0x00, 0x00, True, cs=6, nbyte=2, quiet=True)
-    slowdac1amp = 4.0
-    slowdac1V = (256 * slowdac1[1] + slowdac1[0]) * 3300 / pow(2, 12) / slowdac1amp
-    spicommand(usb, "SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2,
-               quiet=True)  # first conversion may be for old input
-    slowdac2 = spicommand(usb, "SlowDAC2", 0x08, 0x00, 0x00, True, cs=6, nbyte=2, quiet=True)
-    slowdac2amp = 2.0  # 1.1 in new board
-    slowdac2V = (256 * slowdac2[1] + slowdac2[0]) * 3300 / pow(2, 12) / slowdac2amp
-    return "Temp voltages (ADC Board): " + str(round(slowdac1V, 2)) + " " + str(round(slowdac2V, 2))
+usbs = orderusbs(usbs)
 
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 class MainWindow(TemplateBaseClass):
+
     expect_samples = 100
     samplerate = 3.2  # freq in GHz
     nsunits = 1
@@ -395,17 +30,77 @@ class MainWindow(TemplateBaseClass):
     dofast = False
     data_overlapped = False
     data_twochannel = False
-    if not data_twochannel:
-        num_chan_per_board = 1
-    else:
-        num_chan_per_board = 2
+    if not data_twochannel: num_chan_per_board = 1
+    else: num_chan_per_board = 2
     dointerleaved = False
+    dooverrange = False
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
     if dopattern: triggertype = 0
     selectedchannel = 0
     activeusb = usbs[0]
+    activeboard = 0
+    activexychannel = 0
+    tad = 0
+    toff = 0
+    themuxoutV = True
+    phasecs = []
+    for ph in range(len(usbs)): phasecs.append([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
+    doexttrig = [0] * num_board
+    paused = False
+    downsample = 0
+    downsamplefactor = 1
+    highresval = 1
+    xscale = 1
+    xscaling = 1
+    yscale = 530 / 1400  # mV/count on 50 Ohm
+    min_y = -pow(2, 11) * yscale
+    max_y = pow(2, 11) * yscale
+    min_x = 0
+    max_x = 4 * 10 * expect_samples * downsamplefactor / nsunits / samplerate
+    triggerlevel = 127
+    triggerdelta = 1
+    triggerpos = int(expect_samples * 128 / 256)
+    triggertimethresh = 0
+    triggerchan = 0
+    hline = 0
+    vline = 0
+    oldtriggertype = 0
+    getone = False
+    downsamplemerging = 1
+    units = "ns"
+    dodrawing = True
+    chtext = ""
+    linepens = []
+    nlines = 0
+    statuscounter = 0
+    nevents = 0
+    oldnevents = 0
+    tinterval = 100.
+    oldtime = time.time()
+    nbadclkA = 0
+    nbadclkB = 0
+    nbadclkC = 0
+    nbadclkD = 0
+    nbadstr = 0
+    eventcounter = [0] * num_board
+    nsubsamples = 10 * 4 + 8 + 2  # extra 4 for clk+str, and 2 dead beef
+    sample_triggered = [0] * num_board
+    downsamplemergingcounter = 0
+    doeventcounter = False
+    if data_overlapped:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 10 * expect_samples], dtype=float)
+    elif data_twochannel:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 2 * 10 * expect_samples], dtype=float)
+    else:
+        xydata = np.empty([int(num_chan_per_board * num_board), 2, 4 * 10 * expect_samples], dtype=float)
+        xydatainterleaved = np.empty([int(num_chan_per_board * num_board), 2, 2 * 4 * 10 * expect_samples], dtype=float)
+    fitwidthfraction = 0.2
+    exttrigstd = 0
+    exttrigstdavg = 0
+    lastrate = 0
+    lastsize = 0
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
@@ -422,7 +117,6 @@ class MainWindow(TemplateBaseClass):
         self.ui.risingedgeCheck.stateChanged.connect(self.risingfalling)
         self.ui.exttrigCheck.stateChanged.connect(self.exttrig)
         self.ui.totBox.valueChanged.connect(self.tot)
-        self.ui.egainBox.valueChanged.connect(self.egain)
         self.ui.boardBox.valueChanged.connect(self.boardchanged)
         self.ui.triggerChanBox.valueChanged.connect(self.triggerchanchanged)
         self.ui.gridCheck.stateChanged.connect(self.grid)
@@ -473,13 +167,11 @@ class MainWindow(TemplateBaseClass):
         self.ui.plot.setBackground('w')
         self.show()
 
-    activeboard = 0
     def boardchanged(self):
         self.activeusb = usbs[self.ui.boardBox.value()]
         self.activeboard = self.ui.boardBox.value()
         self.selectchannel()
 
-    activexychannel = 0
     def selectchannel(self):
         if self.activeboard%2==0: self.ui.exttrigCheck.setEnabled(False)
         else: self.ui.exttrigCheck.setEnabled(True)
@@ -508,20 +200,13 @@ class MainWindow(TemplateBaseClass):
         self.fitwidthfraction = self.ui.fwfBox.value() / 100.
         print("fwf now", self.fitwidthfraction)
 
-    exttriggainscaling = 1.0
-    def egain(self):
-        self.exttriggainscaling = 1.0 + self.ui.egainBox.value()/1000.
-
-    tad = 0
     def setTAD(self):
         self.tad = self.ui.tadBox.value()
         spicommand(self.activeusb, "TAD", 0x02, 0xB6, self.tad, False, quiet=True)
 
-    toff = 0
     def setToff(self):
         self.toff = self.ui.ToffBox.value()
 
-    themuxoutV = True
     def adfreset(self, board):
         if not board: board=self.activeboard # if called by pressing button
         usb = usbs[board]
@@ -564,12 +249,9 @@ class MainWindow(TemplateBaseClass):
         self.dointerleaved = self.ui.interleavedCheck.checkState() == QtCore.Qt.Checked
         self.timechanged()
 
-    phasecs = []
-    for ph in range(len(usbs)): phasecs.append([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
-
-    # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
-    # for 4th byte, 1 is up, 0 is down
     def dophase(self, board, plloutnum, updown, pllnum=None, quiet=False):
+        # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
+        # for 4th byte, 1 is up, 0 is down
         if pllnum is None: pllnum = int(self.ui.pllBox.value())
         usbs[board].send(bytes([6, pllnum, int(plloutnum + 2), updown, 100, 100, 100, 100]))
         if updown:
@@ -649,7 +331,6 @@ class MainWindow(TemplateBaseClass):
             clockswitch(usb, board, True)
             clockswitch(usb, board, False)
 
-    doexttrig = [0]*num_board
     def exttrig(self, value):
         board = self.ui.boardBox.value()
         self.doexttrig[board] = value
@@ -673,7 +354,6 @@ class MainWindow(TemplateBaseClass):
             for li in range(self.nlines):
                 self.lines[li].setSymbol(None)
 
-    paused = False
     def dostartstop(self):
         if self.paused:
             self.timer.start(0)
@@ -685,22 +365,6 @@ class MainWindow(TemplateBaseClass):
             self.timer2.stop()
             self.paused = True
             self.ui.runButton.setChecked(False)
-
-    downsample = 0
-    downsamplefactor = 1
-    highresval = 1
-    xscale = 1
-    xscaling = 1
-    yscale = 530 / 1400  # mV/count on 50 Ohm
-    min_y = -pow(2, 11) * yscale
-    max_y = pow(2, 11) * yscale
-    min_x = 0
-    max_x = 4 * 10 * expect_samples * downsamplefactor / nsunits / samplerate
-    triggerlevel = 127
-    triggerdelta = 1
-    triggerpos = int(expect_samples * 128 / 256)
-    triggertimethresh = 0
-    triggerchan = 0
 
     def triggerlevelchanged(self, value):
         if value + self.triggerdelta < 256 and value - self.triggerdelta > 0:
@@ -727,8 +391,6 @@ class MainWindow(TemplateBaseClass):
                         self.triggertimethresh, self.triggerchan, 100]))
         usb.recv(4)
 
-    hline = 0
-    vline = 0
     def drawtriggerlines(self):
         self.hline = (self.triggerlevel - 127) * self.yscale * 16
         self.otherlines[1].setData([self.min_x, self.max_x],
@@ -745,7 +407,6 @@ class MainWindow(TemplateBaseClass):
         self.triggertimethresh = self.ui.totBox.value()
         for usb in usbs: self.sendtriggerinfo(usb)
 
-    oldtriggertype=0
     def rolling(self):
         if self.triggertype > 0:
             self.oldtriggertype = self.triggertype
@@ -760,12 +421,10 @@ class MainWindow(TemplateBaseClass):
         else:
             self.ui.rollingButton.setText("Auto")
 
-    getone = False
     def single(self):
         self.getone = not self.getone
         self.ui.singleButton.setChecked(self.getone)
 
-    downsamplemerging = 1
     def highres(self, value):
         self.highresval = value > 0
         # print("highres",self.highresval)
@@ -834,7 +493,6 @@ class MainWindow(TemplateBaseClass):
         for usb in usbs: self.telldownsample(usb, self.downsample)
         self.timechanged()
 
-    units = "ns"
     def timechanged(self):
         self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
         baremaxx = 4 * 10 * self.expect_samples * self.downsamplefactor / self.samplerate
@@ -882,7 +540,6 @@ class MainWindow(TemplateBaseClass):
         if self.triggertype == 2:
             if not fallingedge: self.triggertype = 1
 
-    dodrawing = True
     def drawing(self):
         if self.ui.drawingCheck.checkState() == QtCore.Qt.Checked:
             self.dodrawing = True
@@ -891,82 +548,13 @@ class MainWindow(TemplateBaseClass):
             self.dodrawing = False
             # print("drawing now",self.dodrawing)
 
-    def fastadclineclick(self, curve):
-        for li in range(self.nlines):
-            if curve is self.lines[li].curve:
-                # print "selected curve", li
-                self.ui.chanBox.setValue(li % self.num_chan_per_board)
-                self.ui.boardBox.setValue(int(li / self.num_chan_per_board))
-                modifiers = app.keyboardModifiers()
-                if modifiers == QtCore.Qt.ShiftModifier:
-                    self.ui.trigchanonCheck.toggle()
-                elif modifiers == QtCore.Qt.ControlModifier:
-                    self.ui.chanonCheck.toggle()
+    def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD):
+        if ((
+                nbadclkA>self.expect_samples or nbadclkB>self.expect_samples or nbadclkC>self.expect_samples or nbadclkD>self.expect_samples)
+                and self.phasecs[board][0][2] < 12):  # adjust phase by 90 deg
+            n = 6  # amount to adjust clkout (positive)
+            for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
-    chtext = ""
-    linepens = []
-    nlines = 0
-    def launch(self):
-        self.nlines = self.num_chan_per_board * self.num_board
-        if self.db: print("nlines=", self.nlines)
-        for li in np.arange(self.nlines):
-            c = (0, 0, 0)
-            chan = li % 4
-            board = int(li / 4)
-            if self.db: print("chan =", chan, "and board =", board)
-            if self.num_board > 2:
-                if board % 4 == 0: c = (255 - 0.2 * 255 * chan, 0, 0)
-                if board % 4 == 1: c = (0, 255 - 0.2 * 255 * chan, 0)
-                if board % 4 == 2: c = (0, 0, 255 - 0.2 * 255 * chan)
-                if board % 4 == 3: c = (255 - 0.2 * 255 * chan, 0, 255 - 0.2 * 255 * chan)
-            else:
-                if chan == 0: c = QColor("red")
-                if chan == 1: c = QColor("green")
-                if chan == 2: c = QColor("blue")
-                if chan == 3: c = QColor("magenta")
-            pen = pg.mkPen(color=c)  # add linewidth=1.0, alpha=.9
-            line = self.ui.plot.plot(pen=pen, name=self.chtext + str(li))
-            line.curve.setClickable(True)
-            line.curve.sigClicked.connect(self.fastadclineclick)
-            self.lines.append(line)
-            self.linepens.append(pen)
-        self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
-        self.ui.boardBox.setMaximum(self.num_board - 1)
-
-        # trigger lines
-        self.vline = 0.0
-        pen = pg.mkPen(color="k", width=1.0, style=QtCore.Qt.DashLine)
-        line = self.ui.plot.plot([self.vline, self.vline], [-2.0, 2.0], pen=pen, name="trigger time vert")
-        self.otherlines.append(line)
-
-        self.hline = 0.0
-        pen = pg.mkPen(color="k", width=1.0, style=QtCore.Qt.DashLine)
-        line = self.ui.plot.plot([-2.0, 2.0], [self.hline, self.hline], pen=pen, name="trigger thresh horiz")
-        self.otherlines.append(line)
-
-        # other stuff
-        self.ui.plot.setLabel('bottom', "Time (ns)")
-        self.ui.plot.setLabel('left', "Voltage (mV)")
-        self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
-        for usb in usbs: self.telldownsample(usb, 0)
-        self.timechanged()
-        self.ui.plot.showGrid(x=True, y=True)
-
-    def closeEvent(self, event):
-        print("Handling closeEvent", event)
-        self.timer.stop()
-        self.timer2.stop()
-        for usb in usbs: cleanup(usb)
-
-    if data_overlapped:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, 10 * expect_samples], dtype=float)
-    elif data_twochannel:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, 2 * 10 * expect_samples], dtype=float)
-    else:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, 4 * 10 * expect_samples], dtype=float)
-        xydatainterleaved = np.empty([int(num_chan_per_board * num_board), 2, 2 * 4 * 10 * expect_samples], dtype=float)
-
-    statuscounter = 0
     def updateplot(self):
         self.mainloop()
         self.statuscounter = self.statuscounter + 1
@@ -991,21 +579,6 @@ class MainWindow(TemplateBaseClass):
                     self.xydatainterleaved[int(li/2)][1][1::2] = self.xydata[li+1][1]
                     self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
         app.processEvents()
-
-    nevents = 0
-    oldnevents = 0
-    tinterval = 100.
-    oldtime = time.time()
-    nbadclkA = 0
-    nbadclkB = 0
-    nbadclkC = 0
-    nbadclkD = 0
-    nbadstr = 0
-    eventcounter = [0]*num_board
-    nsubsamples = 10 * 4 + 8 + 2  # extra 4 for clk+str, and 2 dead beef
-    sample_triggered = [0]*num_board
-    downsamplemergingcounter = 0
-    doeventcounter = False
 
     def getchannels(self, usb, board):
         tt = self.triggertype
@@ -1173,16 +746,6 @@ class MainWindow(TemplateBaseClass):
             self.nbadclkC = nbadclkC
             self.nbadclkD = nbadclkD
 
-    def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD):
-        if ((
-                nbadclkA>self.expect_samples or nbadclkB>self.expect_samples or nbadclkC>self.expect_samples or nbadclkD>self.expect_samples)
-                and self.phasecs[board][0][2] < 12):  # adjust phase by 90 deg
-            n = 6  # amount to adjust clkout (positive)
-            for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
-
-    fitwidthfraction = 0.2
-    exttrigstd = 0
-    exttrigstdavg = 0
     def drawtext(self):  # happens once per second
         thestr = "Nbadclks A B C D " + str(self.nbadclkA) + " " + str(self.nbadclkB) + " " + str(
             self.nbadclkC) + " " + str(self.nbadclkD)
@@ -1219,25 +782,6 @@ class MainWindow(TemplateBaseClass):
 
         self.ui.textBrowser.setText(thestr)
 
-    def setup_connections(self, board):
-        print("Setting up board",board)
-        oldbytes()
-
-        usbs[board].send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
-        res = usbs[board].recv(4)
-        print("Firmware version", res[3], res[2], res[1], res[0])
-
-        board_setup(usbs[board], self.dopattern, self.data_twochannel)
-        return 1
-
-    def init(self):
-        self.tot()
-        for board in range(len(usbs)):
-            self.pllreset(board)
-            self.adfreset(board)
-            for c in range(2): setchanacdc(usbs[board],c,0)
-        return 1
-
     def calculatethings(self):
         if self.activeboard % 2 == 1:
             c1 = self.activeboard - 1
@@ -1257,8 +801,83 @@ class MainWindow(TemplateBaseClass):
         otherboardstd = np.std(yc1)
         self.xydata[c1][1] *= extrigboardstd/otherboardstd
 
-    lastrate = 0
-    lastsize = 0
+    def fastadclineclick(self, curve):
+        for li in range(self.nlines):
+            if curve is self.lines[li].curve:
+                # print "selected curve", li
+                self.ui.chanBox.setValue(li % self.num_chan_per_board)
+                self.ui.boardBox.setValue(int(li / self.num_chan_per_board))
+                modifiers = app.keyboardModifiers()
+                if modifiers == QtCore.Qt.ShiftModifier:
+                    self.ui.trigchanonCheck.toggle()
+                elif modifiers == QtCore.Qt.ControlModifier:
+                    self.ui.chanonCheck.toggle()
+
+    def launch(self):
+        self.nlines = self.num_chan_per_board * self.num_board
+        if self.db: print("nlines=", self.nlines)
+        for li in np.arange(self.nlines):
+            c = (0, 0, 0)
+            chan = li % 4
+            board = int(li / 4)
+            if self.db: print("chan =", chan, "and board =", board)
+            if self.num_board > 2:
+                if board % 4 == 0: c = (255 - 0.2 * 255 * chan, 0, 0)
+                if board % 4 == 1: c = (0, 255 - 0.2 * 255 * chan, 0)
+                if board % 4 == 2: c = (0, 0, 255 - 0.2 * 255 * chan)
+                if board % 4 == 3: c = (255 - 0.2 * 255 * chan, 0, 255 - 0.2 * 255 * chan)
+            else:
+                if chan == 0: c = QColor("red")
+                if chan == 1: c = QColor("green")
+                if chan == 2: c = QColor("blue")
+                if chan == 3: c = QColor("magenta")
+            pen = pg.mkPen(color=c)  # add linewidth=1.0, alpha=.9
+            line = self.ui.plot.plot(pen=pen, name=self.chtext + str(li))
+            line.curve.setClickable(True)
+            line.curve.sigClicked.connect(self.fastadclineclick)
+            self.lines.append(line)
+            self.linepens.append(pen)
+        self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
+        self.ui.boardBox.setMaximum(self.num_board - 1)
+
+        # trigger lines
+        self.vline = 0.0
+        pen = pg.mkPen(color="k", width=1.0, style=QtCore.Qt.DashLine)
+        line = self.ui.plot.plot([self.vline, self.vline], [-2.0, 2.0], pen=pen, name="trigger time vert")
+        self.otherlines.append(line)
+
+        self.hline = 0.0
+        pen = pg.mkPen(color="k", width=1.0, style=QtCore.Qt.DashLine)
+        line = self.ui.plot.plot([-2.0, 2.0], [self.hline, self.hline], pen=pen, name="trigger thresh horiz")
+        self.otherlines.append(line)
+
+        # other stuff
+        self.ui.plot.setLabel('bottom', "Time (ns)")
+        self.ui.plot.setLabel('left', "Voltage (mV)")
+        self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
+        for usb in usbs: self.telldownsample(usb, 0)
+        self.timechanged()
+        self.ui.plot.showGrid(x=True, y=True)
+
+    def setup_connections(self, board):
+        print("Setting up board",board)
+        oldbytes(usbs)
+
+        usbs[board].send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
+        res = usbs[board].recv(4)
+        print("Firmware version", res[3], res[2], res[1], res[0])
+
+        board_setup(usbs[board], self.dopattern, self.data_twochannel, self.dooverrange)
+        return 1
+
+    def init(self):
+        self.tot()
+        for board in range(len(usbs)):
+            self.pllreset(board)
+            self.adfreset(board)
+            for c in range(2): setchanacdc(usbs[board],c,0)
+        return 1
+
     def mainloop(self):
         if self.paused:
             time.sleep(.1)
@@ -1298,6 +917,11 @@ class MainWindow(TemplateBaseClass):
                                              round(self.lastrate * self.lastsize / 1e6, 3), "MB/s")
                 self.oldnevents = self.nevents
 
+    def closeEvent(self, event):
+        print("Handling closeEvent", event)
+        self.timer.stop()
+        self.timer2.stop()
+        for usb in usbs: cleanup(usb)
 
 if __name__ == '__main__':
     print('Argument List:', str(sys.argv))
