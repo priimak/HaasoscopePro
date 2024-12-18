@@ -69,6 +69,7 @@ class MainWindow(TemplateBaseClass):
     vline = 0
     oldtriggertype = 0
     getone = False
+    exttriggainscaling = 1.0
     downsamplemerging = 1
     units = "ns"
     dodrawing = True
