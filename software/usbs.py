@@ -1,4 +1,6 @@
-import ftd2xx
+import time
+
+import ftd2xx, sys
 from USB_FT232H import UsbFt232hSync245mode
 from utils import *
 
@@ -23,15 +25,16 @@ def connectdevices():
 
 def findnextboard(currentboard,firstboard,usbs):
     for board in range(len(usbs)):
-        usbs[board].send(bytes([2, 5, board==currentboard, 0, 99, 99, 99, 99])) # get lvdsin_spare info, and set spare lvds output 0 high for only the current board
+        if board == currentboard: print("setting lvds spare out high for board",board)
+        usbs[board].send(bytes([2, 5, board == currentboard, 0, 99, 99, 99, 99])) # get lvdsin_spare info, and set spare lvds output 0 high for only the current board
         usbs[board].recv(4) # have to read it out, even though we don't care
     nextboard=-1
     for board in range(len(usbs)): # see which board now has seen a signal from the current board
         if board==firstboard: continue # that one has no lvds input, so is unreliable, plus we already know it's not the next board
-        usbs[board].send(bytes([2, 5, board==currentboard, 0, 99, 99, 99, 99]))
+        usbs[board].send(bytes([2, 5, board == currentboard, 0, 99, 99, 99, 99]))
         res = usbs[board].recv(4)
         spare = getbit(res[2],0)
-        print("lvds spare 0 for board",board,"is",spare)
+        print("lvds spare in for board",board,"is",spare)
         if spare==1:
             if nextboard==-1:
                 nextboard=board

@@ -1,3 +1,4 @@
+import time
 from spi import *
 from utils import *
 from adf435x_core import *

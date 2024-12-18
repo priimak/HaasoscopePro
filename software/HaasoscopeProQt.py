@@ -14,6 +14,7 @@ usbs = orderusbs(usbs)
 
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
+
 class MainWindow(TemplateBaseClass):
 
     expect_samples = 100
@@ -861,21 +862,22 @@ class MainWindow(TemplateBaseClass):
 
     def setup_connections(self, board):
         print("Setting up board",board)
-        oldbytes(usbs)
-
         usbs[board].send(bytes([2, 0, 100, 100, 100, 100, 100, 100]))  # get version
         res = usbs[board].recv(4)
         print("Firmware version", res[3], res[2], res[1], res[0])
-
+        self.adfreset(board)
+        self.pllreset(board)
         board_setup(usbs[board], self.dopattern, self.data_twochannel, self.dooverrange)
+        for c in range(2): setchanacdc(usbs[board], c, 0)
+        self.sendtriggerinfo(usbs[board])
         return 1
 
     def init(self):
         self.tot()
-        for board in range(len(usbs)):
-            self.pllreset(board)
-            self.adfreset(board)
-            for c in range(2): setchanacdc(usbs[board],c,0)
+        self.launch()
+        self.selectchannel()
+        self.timechanged()
+        self.dostartstop()
         return 1
 
     def mainloop(self):
@@ -947,12 +949,7 @@ if __name__ == '__main__':
         if not win.init():
             print("Exiting now - failed init!")
             for usbi in usbs: cleanup(usbi)
-            sys.exit()
-        win.launch()
-        win.selectchannel()
-        win.timechanged()
-        for usbi in usbs: win.sendtriggerinfo(usbi)
-        win.dostartstop()
+            sys.exit(2)
     except ftd2xx.DeviceError:
         print("Device com failed!")
     if standalone:
