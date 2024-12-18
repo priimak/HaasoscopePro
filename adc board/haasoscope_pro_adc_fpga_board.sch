@@ -23220,7 +23220,7 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="R132" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="127"/>
 <part name="R133" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="66.5"/>
 <part name="R134" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="22.6"/>
-<part name="R135" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="357"/>
+<part name="R135" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="220"/>
 <part name="SUPPLY31" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY33" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY34" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -23652,7 +23652,7 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="R190" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="127"/>
 <part name="R191" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="66.5"/>
 <part name="R192" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="22.6"/>
-<part name="R193" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="357"/>
+<part name="R193" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="220"/>
 <part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY59" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -23828,10 +23828,10 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY72" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
 <part name="SUPPLY73" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
 <part name="SUPPLY74" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
-<part name="C80" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="27pF">
+<part name="C80" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="16pF">
 <attribute name="LCSC" value="C52923"/>
 </part>
-<part name="R242" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="27"/>
+<part name="R242" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 </parts>
 <sheets>
 <sheet>
@@ -23885,7 +23885,7 @@ on next sheet</text>
 <text x="327.66" y="185.42" size="1.778" layer="90">I=10mA suggested
 2.5V - 1.3V forward voltage drop = 1.2V
 1.2V/120Ohm=10mA</text>
-<text x="-30.48" y="236.22" size="1.778" layer="90">Outsplit has extra impedance in parallel (27 Ohm + 27 pF)
+<text x="-30.48" y="236.22" size="1.778" layer="90">Outsplit has extra impedance in parallel
 to boost higher frequency components to outsplit
 to account for losses in connectors and extra PCB traces</text>
 </plain>
@@ -24661,6 +24661,8 @@ lowest input C</text>
 <wire x1="332.74" y1="-45.72" x2="335.28" y2="-48.26" width="0.1524" layer="90"/>
 <wire x1="335.28" y1="-48.26" x2="332.74" y2="-50.8" width="0.1524" layer="90"/>
 <text x="223.52" y="-91.44" size="1.778" layer="90">SPI</text>
+<text x="48.26" y="-38.1" size="1.778" layer="90">Termination was 357 in datasheet
+but 220 found to be better</text>
 </plain>
 <instances>
 <instance part="SUPPLY27" gate="GND" x="101.6" y="-27.94" smashed="yes"/>
