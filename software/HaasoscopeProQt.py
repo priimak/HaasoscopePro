@@ -582,12 +582,12 @@ class MainWindow(TemplateBaseClass):
                     self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
         app.processEvents()
 
-    def getchannels(self, usb, board):
+    def getchannels(self, board):
         tt = self.triggertype
         if self.doexttrig[board] > 0: tt = 3
-        usb.send(bytes([1, tt, self.data_twochannel, 99] + inttobytes(
+        usbs[board].send(bytes([1, tt, self.data_twochannel, 99] + inttobytes(
             self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
-        triggercounter = usb.recv(4)  # get the 4 bytes
+        triggercounter = usbs[board].recv(4)  # get the 4 bytes
         acqstate = triggercounter[0]
         if acqstate == 251:  # an event is ready to be read out
             #print("board",board,"sample triggered", binprint(triggercounter[3]), binprint(triggercounter[2]), binprint(triggercounter[1]))
@@ -597,25 +597,25 @@ class MainWindow(TemplateBaseClass):
                 if thebit == 0: gotzerobit = True
                 if thebit == 1 and gotzerobit:
                     self.sample_triggered[board] = s
-                    break
+                    gotzerobit = False
             #if self.sample_triggered[board]<10: self.sample_triggered[board] += 0
             #print("sample_triggered", self.sample_triggered[board], "for board", board)
             return 1
         else:
             return 0
 
-    def getpredata(self, usb, board):
+    def getpredata(self, board):
         if self.doeventcounter:
-            usb.send(bytes([2, 3, 100, 100, 100, 100, 100, 100]))  # get eventcounter
-            res = usb.recv(4)
+            usbs[board].send(bytes([2, 3, 100, 100, 100, 100, 100, 100]))  # get eventcounter
+            res = usbs[board].recv(4)
             eventcountertemp = res[0] + 256 * res[1] + 256 * 256 * res[2] + 256 * 256 * 256 * res[3]
             if eventcountertemp != self.eventcounter[board] + 1 and eventcountertemp != 0:  # check event count, but account for rollover
                 print("Event counter not incremented by 1?", eventcountertemp, self.eventcounter[board], " for board", board)
             self.eventcounter[board] = eventcountertemp
         downsamplemergingcounter = 0
         if self.downsamplemerging > 1:
-            usb.send(bytes([2, 4, 100, 100, 100, 100, 100, 100]))  # get downsamplemergingcounter
-            res = usb.recv(4)
+            usbs[board].send(bytes([2, 4, 100, 100, 100, 100, 100, 100]))  # get downsamplemergingcounter
+            res = usbs[board].recv(4)
             downsamplemergingcounter = res[0]
             if downsamplemergingcounter == self.downsamplemerging:
                 if not self.doexttrig[board]:
@@ -702,7 +702,7 @@ class MainWindow(TemplateBaseClass):
                 if n < 40:
                     # val = -val # if we're swapping inputs
                     val = val * self.yscale * self.tenx
-                    shiftmax = 4
+                    shiftmax = 1
                     if self.downsamplemerging == 1:
                         samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
                         if s < (self.expect_samples - shiftmax): samp = samp - self.sample_triggered[board]
@@ -726,17 +726,14 @@ class MainWindow(TemplateBaseClass):
                         if self.data_twochannel:
                             samp = s * 20 + chan * 10 + 9 - n
                             if n < 20: samp = samp + 10
-                            if s < (self.expect_samples - shiftmax): samp = samp - int(2 * (self.sample_triggered[board] - (
-                                        downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
+                            if s < (self.expect_samples - shiftmax): samp = samp - int(2 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                             else:
-                                self.xydata[board * self.num_chan_per_board + chan % 2][1][
-                                    (samp + self.toff) % (20 * self.expect_samples)] = val
+                                self.xydata[board * self.num_chan_per_board + chan % 2][1][(samp + self.toff) % (20 * self.expect_samples)] = val
                         else:
                             samp = s * 40 + 39 - n
-                            if s < (self.expect_samples - shiftmax): samp = samp - int(4 * (self.sample_triggered[board] - (
-                                        downsamplemergingcounter - 1) * 10) / self.downsamplemerging)
+                            if s < (self.expect_samples - shiftmax): samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
                                 self.xydata[board][1][samp] = val
                             else:
@@ -887,10 +884,10 @@ class MainWindow(TemplateBaseClass):
             try:
                 readyevent = [0]*self.num_board
                 for board in reversed(range(self.num_board)): # go backwards through the boards to get the triggerinfo for the right events
-                    readyevent[board] = self.getchannels(usbs[board], board)
+                    readyevent[board] = self.getchannels(board)
                 for board in range(self.num_board):
                     if not readyevent[board]: continue
-                    downsamplemergingcounter = self.getpredata(usbs[board], board)
+                    downsamplemergingcounter = self.getpredata(board)
                     data = self.getdata(usbs[board])
                     rx_len = rx_len + len(data)
                     self.drawchannels(data, board, downsamplemergingcounter)
