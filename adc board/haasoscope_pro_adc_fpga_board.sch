@@ -23831,6 +23831,7 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="R244" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="SUPPLY75" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY76" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY77" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -27429,7 +27430,7 @@ output B</text>
 <pinref part="C157" gate="G$1" pin="P$1"/>
 </segment>
 </net>
-<net name="N$11" class="5">
+<net name="CLKOUTAC" class="5">
 <segment>
 <pinref part="C154" gate="G$1" pin="P$2"/>
 <pinref part="R177" gate="G$1" pin="P$2"/>
@@ -32300,10 +32301,6 @@ These go to LEDs for monitoring</text>
 <instance part="R238" gate="G$1" x="114.3" y="200.66" smashed="yes">
 <attribute name="VALUE" x="113.03" y="199.898" size="1.778" layer="96"/>
 </instance>
-<instance part="R30" gate="G$1" x="50.8" y="185.42" smashed="yes">
-<attribute name="VALUE" x="49.53" y="184.658" size="1.778" layer="96"/>
-</instance>
-<instance part="LED32" gate="G$1" x="58.42" y="185.42" smashed="yes" rot="R90"/>
 <instance part="R243" gate="G$1" x="50.8" y="160.02" smashed="yes" rot="R180">
 <attribute name="VALUE" x="52.07" y="160.782" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -32421,9 +32418,6 @@ These go to LEDs for monitoring</text>
 <junction x="63.5" y="193.04"/>
 <pinref part="LED47" gate="G$1" pin="C"/>
 <junction x="63.5" y="190.5"/>
-<pinref part="LED32" gate="G$1" pin="C"/>
-<wire x1="63.5" y1="187.96" x2="63.5" y2="185.42" width="0.1524" layer="91"/>
-<junction x="63.5" y="187.96"/>
 <pinref part="SUPPLY75" gate="GND" pin="GND"/>
 <wire x1="63.5" y1="205.74" x2="68.58" y2="205.74" width="0.1524" layer="91"/>
 <junction x="63.5" y="205.74"/>
@@ -33009,19 +33003,6 @@ These go to LEDs for monitoring</text>
 <pinref part="U$3" gate="G$1" pin="5"/>
 <wire x1="45.72" y1="38.1" x2="35.56" y2="38.1" width="0.1524" layer="91"/>
 <label x="38.1" y="38.1" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="FAN_CONTROL" class="0">
-<segment>
-<wire x1="45.72" y1="185.42" x2="12.7" y2="185.42" width="0.1524" layer="91"/>
-<label x="12.7" y="185.42" size="1.778" layer="95"/>
-<pinref part="R30" gate="G$1" pin="P$1"/>
-</segment>
-</net>
-<net name="N$32" class="0">
-<segment>
-<pinref part="R30" gate="G$1" pin="P$2"/>
-<pinref part="LED32" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$68" class="0">
@@ -37316,6 +37297,11 @@ in a good range for the slow ADC</text>
 <instance part="JST_FAN" gate="G$1" x="172.72" y="-20.32" smashed="yes" rot="R180">
 <attribute name="VALUE" x="175.26" y="-15.24" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="R30" gate="G$1" x="147.32" y="-43.18" smashed="yes" rot="R270">
+<attribute name="VALUE" x="146.558" y="-41.91" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="LED32" gate="G$1" x="147.32" y="-50.8" smashed="yes"/>
+<instance part="SUPPLY77" gate="GND" x="147.32" y="-58.42" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -37358,6 +37344,10 @@ in a good range for the slow ADC</text>
 <segment>
 <pinref part="Q1" gate="G$1" pin="E"/>
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="LED32" gate="G$1" pin="C"/>
+<pinref part="SUPPLY77" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -37557,6 +37547,8 @@ in a good range for the slow ADC</text>
 <pinref part="R208" gate="G$1" pin="P$2"/>
 <wire x1="147.32" y1="-38.1" x2="127" y2="-38.1" width="0.1524" layer="91"/>
 <label x="127" y="-38.1" size="1.778" layer="95"/>
+<pinref part="R30" gate="G$1" pin="P$1"/>
+<junction x="147.32" y="-38.1"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -37579,6 +37571,12 @@ in a good range for the slow ADC</text>
 <pinref part="JST_FAN" gate="G$1" pin="1"/>
 <wire x1="165.1" y1="-20.32" x2="154.94" y2="-20.32" width="0.1524" layer="91"/>
 <label x="154.94" y="-20.32" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="R30" gate="G$1" pin="P$2"/>
+<pinref part="LED32" gate="G$1" pin="A"/>
 </segment>
 </net>
 </nets>
