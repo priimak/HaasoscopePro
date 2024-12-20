@@ -23037,10 +23037,7 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="C31" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
 <part name="C32" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="1uF"/>
 <part name="C33" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
-<part name="J8" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
-<part name="J10" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="J11" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
-<part name="R30" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R32" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R33" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R34" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
@@ -23053,9 +23050,6 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="LED28" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="LED29" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="LED30" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
-<part name="LED32" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
-<part name="GND55" library="supply1" deviceset="GND" device=""/>
-<part name="J13" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="R46" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R47" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R48" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
@@ -23072,7 +23066,6 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="LED46" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="LED47" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
 <part name="LED48" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
-<part name="GND56" library="supply1" deviceset="GND" device=""/>
 <part name="C24" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF"/>
 <part name="IC5" library="EP4CE30F23C6N" deviceset="EP4CE30F23C6N" device=""/>
 <part name="IC6" library="EPCQ16ASI8N" deviceset="EPCQ16ASI8N" device=""/>
@@ -23832,6 +23825,12 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <attribute name="LCSC" value="C52923"/>
 </part>
 <part name="R242" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
+<part name="R30" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
+<part name="LED32" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
+<part name="R243" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
+<part name="R244" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
+<part name="SUPPLY75" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY76" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -32123,8 +32122,10 @@ the vias under the FPGA for each LVDS input pair</text>
 true LVDS transmitters, so use them for LVDS outputs</text>
 <text x="38.1" y="63.5" size="1.778" layer="90">LVDS outputs and inputs for sync between boards</text>
 <text x="175.26" y="58.42" size="1.778" layer="90">50 MHz clock for FPGA</text>
-<text x="15.24" y="127" size="1.778" layer="90">50 Ohm external trigger input</text>
-<text x="88.9" y="127" size="1.778" layer="90">50 Ohm 1kHz / Aux output</text>
+<text x="15.24" y="127" size="1.778" layer="90">50 Ohm external trigger input
+(was BOARDIN4)</text>
+<text x="88.9" y="127" size="1.778" layer="90">50 Ohm 1kHz / Aux output
+(was DEBUGOUT10)</text>
 <text x="175.26" y="127" size="1.778" layer="90">1kOhm 1kHz output for probe compensation</text>
 <text x="175.26" y="88.9" size="1.778" layer="90">Extra clock input and output</text>
 <text x="83.82" y="213.36" size="1.778" layer="90">2.5V inputs and outputs to/from
@@ -32134,8 +32135,6 @@ and control of things, etc.</text>
 the FPGA for debugging, etc.
 
 These go to LEDs for monitoring</text>
-<text x="93.98" y="195.58" size="1.778" layer="90">Boardin 4 is now the ext trig input</text>
-<text x="12.7" y="160.02" size="1.778" layer="90">Debugout10 is now the 50 Ohm 1kHz/Aux output</text>
 </plain>
 <instances>
 <instance part="C59" gate="C$1" x="175.26" y="40.64" smashed="yes" rot="R180">
@@ -32156,12 +32155,7 @@ These go to LEDs for monitoring</text>
 <instance part="CLKOUT2" gate="G1" x="203.2" y="78.74" smashed="yes">
 <attribute name="NAME" x="200.66" y="82.042" size="1.778" layer="95"/>
 </instance>
-<instance part="J8" gate="G$1" x="139.7" y="198.12" smashed="yes" rot="R180"/>
-<instance part="J10" gate="G$1" x="139.7" y="167.64" smashed="yes" rot="R180"/>
 <instance part="J11" gate="G$1" x="38.1" y="167.64" smashed="yes" rot="R180"/>
-<instance part="R30" gate="G$1" x="50.8" y="157.48" smashed="yes">
-<attribute name="VALUE" x="49.53" y="156.718" size="1.778" layer="96"/>
-</instance>
 <instance part="R32" gate="G$1" x="50.8" y="162.56" smashed="yes">
 <attribute name="VALUE" x="49.53" y="161.798" size="1.778" layer="96"/>
 </instance>
@@ -32186,11 +32180,6 @@ These go to LEDs for monitoring</text>
 <instance part="LED28" gate="G$1" x="58.42" y="167.64" smashed="yes" rot="R90"/>
 <instance part="LED29" gate="G$1" x="58.42" y="165.1" smashed="yes" rot="R90"/>
 <instance part="LED30" gate="G$1" x="58.42" y="162.56" smashed="yes" rot="R90"/>
-<instance part="LED32" gate="G$1" x="58.42" y="157.48" smashed="yes" rot="R90"/>
-<instance part="GND55" gate="1" x="63.5" y="152.4" smashed="yes">
-<attribute name="VALUE" x="60.96" y="149.86" size="1.778" layer="96"/>
-</instance>
-<instance part="J13" gate="G$1" x="38.1" y="198.12" smashed="yes" rot="R180"/>
 <instance part="R46" gate="G$1" x="50.8" y="187.96" smashed="yes">
 <attribute name="VALUE" x="49.53" y="187.198" size="1.778" layer="96"/>
 </instance>
@@ -32223,9 +32212,6 @@ These go to LEDs for monitoring</text>
 <instance part="LED46" gate="G$1" x="58.42" y="193.04" smashed="yes" rot="R90"/>
 <instance part="LED47" gate="G$1" x="58.42" y="190.5" smashed="yes" rot="R90"/>
 <instance part="LED48" gate="G$1" x="58.42" y="187.96" smashed="yes" rot="R90"/>
-<instance part="GND56" gate="1" x="63.5" y="182.88" smashed="yes">
-<attribute name="VALUE" x="60.96" y="180.34" size="1.778" layer="96"/>
-</instance>
 <instance part="R16" gate="G$1" x="114.3" y="187.96" smashed="yes">
 <attribute name="VALUE" x="113.03" y="187.198" size="1.778" layer="96"/>
 </instance>
@@ -32314,6 +32300,18 @@ These go to LEDs for monitoring</text>
 <instance part="R238" gate="G$1" x="114.3" y="200.66" smashed="yes">
 <attribute name="VALUE" x="113.03" y="199.898" size="1.778" layer="96"/>
 </instance>
+<instance part="R30" gate="G$1" x="50.8" y="185.42" smashed="yes">
+<attribute name="VALUE" x="49.53" y="184.658" size="1.778" layer="96"/>
+</instance>
+<instance part="LED32" gate="G$1" x="58.42" y="185.42" smashed="yes" rot="R90"/>
+<instance part="R243" gate="G$1" x="50.8" y="160.02" smashed="yes" rot="R180">
+<attribute name="VALUE" x="52.07" y="160.782" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R244" gate="G$1" x="50.8" y="157.48" smashed="yes" rot="R180">
+<attribute name="VALUE" x="52.07" y="158.242" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SUPPLY75" gate="GND" x="68.58" y="203.2" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY76" gate="GND" x="68.58" y="172.72" smashed="yes" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -32327,59 +32325,6 @@ These go to LEDs for monitoring</text>
 <segment>
 <pinref part="C59" gate="C$1" pin="1"/>
 <pinref part="GND75" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED32" gate="G$1" pin="C"/>
-<wire x1="63.5" y1="154.94" x2="63.5" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="LED25" gate="G$1" pin="C"/>
-<junction x="63.5" y="157.48"/>
-<pinref part="LED26" gate="G$1" pin="C"/>
-<wire x1="63.5" y1="157.48" x2="63.5" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="160.02" x2="63.5" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="162.56" x2="63.5" y2="165.1" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="165.1" x2="63.5" y2="167.64" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="167.64" x2="63.5" y2="170.18" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="170.18" x2="63.5" y2="172.72" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="172.72" x2="63.5" y2="175.26" width="0.1524" layer="91"/>
-<junction x="63.5" y="172.72"/>
-<pinref part="LED27" gate="G$1" pin="C"/>
-<junction x="63.5" y="170.18"/>
-<pinref part="LED28" gate="G$1" pin="C"/>
-<junction x="63.5" y="167.64"/>
-<pinref part="LED29" gate="G$1" pin="C"/>
-<junction x="63.5" y="165.1"/>
-<pinref part="LED30" gate="G$1" pin="C"/>
-<junction x="63.5" y="162.56"/>
-<pinref part="GND55" gate="1" pin="GND"/>
-<pinref part="J11" gate="G$1" pin="7"/>
-<wire x1="63.5" y1="160.02" x2="33.02" y2="160.02" width="0.1524" layer="91"/>
-<junction x="63.5" y="160.02"/>
-</segment>
-<segment>
-<pinref part="LED48" gate="G$1" pin="C"/>
-<wire x1="63.5" y1="185.42" x2="63.5" y2="187.96" width="0.1524" layer="91"/>
-<pinref part="LED41" gate="G$1" pin="C"/>
-<wire x1="63.5" y1="187.96" x2="63.5" y2="190.5" width="0.1524" layer="91"/>
-<junction x="63.5" y="187.96"/>
-<pinref part="LED42" gate="G$1" pin="C"/>
-<wire x1="63.5" y1="190.5" x2="63.5" y2="193.04" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="193.04" x2="63.5" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="195.58" x2="63.5" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="198.12" x2="63.5" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="200.66" x2="63.5" y2="203.2" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="203.2" x2="63.5" y2="205.74" width="0.1524" layer="91"/>
-<junction x="63.5" y="203.2"/>
-<pinref part="LED43" gate="G$1" pin="C"/>
-<junction x="63.5" y="200.66"/>
-<pinref part="LED44" gate="G$1" pin="C"/>
-<junction x="63.5" y="198.12"/>
-<pinref part="LED45" gate="G$1" pin="C"/>
-<junction x="63.5" y="195.58"/>
-<pinref part="LED46" gate="G$1" pin="C"/>
-<junction x="63.5" y="193.04"/>
-<pinref part="LED47" gate="G$1" pin="C"/>
-<junction x="63.5" y="190.5"/>
-<pinref part="GND56" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="SHIELD"/>
@@ -32414,11 +32359,6 @@ These go to LEDs for monitoring</text>
 <junction x="30.48" y="106.68"/>
 </segment>
 <segment>
-<pinref part="J8" gate="G$1" pin="5"/>
-<wire x1="134.62" y1="195.58" x2="83.82" y2="195.58" width="0.1524" layer="91"/>
-<label x="83.82" y="195.58" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND4"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND2"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND1"/>
@@ -32439,6 +32379,55 @@ These go to LEDs for monitoring</text>
 <pinref part="CLKOUT2" gate="G1" pin="2"/>
 <pinref part="SUPPLY50" gate="GND" pin="GND"/>
 </segment>
+<segment>
+<pinref part="LED25" gate="G$1" pin="C"/>
+<pinref part="LED26" gate="G$1" pin="C"/>
+<wire x1="63.5" y1="165.1" x2="63.5" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="167.64" x2="63.5" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="170.18" x2="63.5" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="172.72" x2="63.5" y2="175.26" width="0.1524" layer="91"/>
+<junction x="63.5" y="172.72"/>
+<pinref part="LED27" gate="G$1" pin="C"/>
+<junction x="63.5" y="170.18"/>
+<pinref part="LED28" gate="G$1" pin="C"/>
+<junction x="63.5" y="167.64"/>
+<pinref part="LED29" gate="G$1" pin="C"/>
+<pinref part="LED30" gate="G$1" pin="C"/>
+<wire x1="63.5" y1="165.1" x2="63.5" y2="162.56" width="0.1524" layer="91"/>
+<junction x="63.5" y="165.1"/>
+<pinref part="SUPPLY76" gate="GND" pin="GND"/>
+<wire x1="63.5" y1="175.26" x2="68.58" y2="175.26" width="0.1524" layer="91"/>
+<junction x="63.5" y="175.26"/>
+</segment>
+<segment>
+<pinref part="LED48" gate="G$1" pin="C"/>
+<pinref part="LED41" gate="G$1" pin="C"/>
+<wire x1="63.5" y1="187.96" x2="63.5" y2="190.5" width="0.1524" layer="91"/>
+<pinref part="LED42" gate="G$1" pin="C"/>
+<wire x1="63.5" y1="190.5" x2="63.5" y2="193.04" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="193.04" x2="63.5" y2="195.58" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="195.58" x2="63.5" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="198.12" x2="63.5" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="200.66" x2="63.5" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="203.2" x2="63.5" y2="205.74" width="0.1524" layer="91"/>
+<junction x="63.5" y="203.2"/>
+<pinref part="LED43" gate="G$1" pin="C"/>
+<junction x="63.5" y="200.66"/>
+<pinref part="LED44" gate="G$1" pin="C"/>
+<junction x="63.5" y="198.12"/>
+<pinref part="LED45" gate="G$1" pin="C"/>
+<junction x="63.5" y="195.58"/>
+<pinref part="LED46" gate="G$1" pin="C"/>
+<junction x="63.5" y="193.04"/>
+<pinref part="LED47" gate="G$1" pin="C"/>
+<junction x="63.5" y="190.5"/>
+<pinref part="LED32" gate="G$1" pin="C"/>
+<wire x1="63.5" y1="187.96" x2="63.5" y2="185.42" width="0.1524" layer="91"/>
+<junction x="63.5" y="187.96"/>
+<pinref part="SUPPLY75" gate="GND" pin="GND"/>
+<wire x1="63.5" y1="205.74" x2="68.58" y2="205.74" width="0.1524" layer="91"/>
+<junction x="63.5" y="205.74"/>
+</segment>
 </net>
 <net name="3V3" class="1">
 <segment>
@@ -32452,52 +32441,37 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="DEBUGOUT0" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="5"/>
-<wire x1="33.02" y1="195.58" x2="12.7" y2="195.58" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="195.58" x2="12.7" y2="195.58" width="0.1524" layer="91"/>
 <label x="12.7" y="195.58" size="1.778" layer="95"/>
 <pinref part="R49" gate="G$1" pin="P$1"/>
-<wire x1="33.02" y1="195.58" x2="45.72" y2="195.58" width="0.1524" layer="91"/>
-<junction x="33.02" y="195.58"/>
 </segment>
 </net>
 <net name="LED0" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="1"/>
-<wire x1="33.02" y1="205.74" x2="12.7" y2="205.74" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="205.74" x2="12.7" y2="205.74" width="0.1524" layer="91"/>
 <label x="12.7" y="205.74" size="1.778" layer="95"/>
 <pinref part="R53" gate="G$1" pin="P$1"/>
-<wire x1="33.02" y1="205.74" x2="45.72" y2="205.74" width="0.1524" layer="91"/>
-<junction x="33.02" y="205.74"/>
 </segment>
 </net>
 <net name="LED1" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="2"/>
-<wire x1="33.02" y1="203.2" x2="12.7" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="203.2" x2="12.7" y2="203.2" width="0.1524" layer="91"/>
 <label x="12.7" y="203.2" size="1.778" layer="95"/>
 <pinref part="R52" gate="G$1" pin="P$1"/>
-<wire x1="45.72" y1="203.2" x2="33.02" y2="203.2" width="0.1524" layer="91"/>
-<junction x="33.02" y="203.2"/>
 </segment>
 </net>
 <net name="LED2" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="3"/>
-<wire x1="33.02" y1="200.66" x2="12.7" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="200.66" x2="12.7" y2="200.66" width="0.1524" layer="91"/>
 <label x="12.7" y="200.66" size="1.778" layer="95"/>
 <pinref part="R51" gate="G$1" pin="P$1"/>
-<wire x1="33.02" y1="200.66" x2="45.72" y2="200.66" width="0.1524" layer="91"/>
-<junction x="33.02" y="200.66"/>
 </segment>
 </net>
 <net name="LED3" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="4"/>
-<wire x1="33.02" y1="198.12" x2="12.7" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="198.12" x2="12.7" y2="198.12" width="0.1524" layer="91"/>
 <label x="12.7" y="198.12" size="1.778" layer="95"/>
 <pinref part="R50" gate="G$1" pin="P$1"/>
-<wire x1="45.72" y1="198.12" x2="33.02" y2="198.12" width="0.1524" layer="91"/>
-<junction x="33.02" y="198.12"/>
 </segment>
 </net>
 <net name="CLKEXT" class="5">
@@ -32509,32 +32483,23 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="DEBUGOUT1" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="6"/>
-<wire x1="33.02" y1="193.04" x2="12.7" y2="193.04" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="193.04" x2="12.7" y2="193.04" width="0.1524" layer="91"/>
 <label x="12.7" y="193.04" size="1.778" layer="95"/>
 <pinref part="R48" gate="G$1" pin="P$1"/>
-<wire x1="45.72" y1="193.04" x2="33.02" y2="193.04" width="0.1524" layer="91"/>
-<junction x="33.02" y="193.04"/>
 </segment>
 </net>
 <net name="DEBUGOUT2" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="7"/>
-<wire x1="33.02" y1="190.5" x2="12.7" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="190.5" x2="12.7" y2="190.5" width="0.1524" layer="91"/>
 <label x="12.7" y="190.5" size="1.778" layer="95"/>
 <pinref part="R47" gate="G$1" pin="P$1"/>
-<wire x1="33.02" y1="190.5" x2="45.72" y2="190.5" width="0.1524" layer="91"/>
-<junction x="33.02" y="190.5"/>
 </segment>
 </net>
 <net name="DEBUGOUT3" class="0">
 <segment>
-<pinref part="J13" gate="G$1" pin="8"/>
-<wire x1="33.02" y1="187.96" x2="12.7" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="187.96" x2="12.7" y2="187.96" width="0.1524" layer="91"/>
 <label x="12.7" y="187.96" size="1.778" layer="95"/>
 <pinref part="R46" gate="G$1" pin="P$1"/>
-<wire x1="45.72" y1="187.96" x2="33.02" y2="187.96" width="0.1524" layer="91"/>
-<junction x="33.02" y="187.96"/>
 </segment>
 </net>
 <net name="DEBUGOUT4" class="0">
@@ -32611,19 +32576,8 @@ These go to LEDs for monitoring</text>
 <label x="88.9" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="FAN_CONTROL" class="0">
-<segment>
-<pinref part="J11" gate="G$1" pin="8"/>
-<wire x1="33.02" y1="157.48" x2="12.7" y2="157.48" width="0.1524" layer="91"/>
-<label x="12.7" y="157.48" size="1.778" layer="95"/>
-<pinref part="R30" gate="G$1" pin="P$1"/>
-<wire x1="45.72" y1="157.48" x2="33.02" y2="157.48" width="0.1524" layer="91"/>
-<junction x="33.02" y="157.48"/>
-</segment>
-</net>
 <net name="BOARDOUT0" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="1"/>
 <wire x1="134.62" y1="175.26" x2="119.38" y2="175.26" width="0.1524" layer="91"/>
 <label x="119.38" y="175.26" size="1.778" layer="95"/>
 <pinref part="R12" gate="G$1" pin="P$2"/>
@@ -32631,7 +32585,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDOUT1" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="2"/>
 <wire x1="134.62" y1="172.72" x2="119.38" y2="172.72" width="0.1524" layer="91"/>
 <label x="119.38" y="172.72" size="1.778" layer="95"/>
 <pinref part="R13" gate="G$1" pin="P$2"/>
@@ -32639,7 +32592,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDOUT2" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="3"/>
 <wire x1="134.62" y1="170.18" x2="119.38" y2="170.18" width="0.1524" layer="91"/>
 <label x="119.38" y="170.18" size="1.778" layer="95"/>
 <pinref part="R22" gate="G$1" pin="P$2"/>
@@ -32647,7 +32599,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDOUT3" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="4"/>
 <wire x1="134.62" y1="167.64" x2="119.38" y2="167.64" width="0.1524" layer="91"/>
 <label x="119.38" y="167.64" size="1.778" layer="95"/>
 <pinref part="R206" gate="G$1" pin="P$2"/>
@@ -32655,7 +32606,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDOUT6" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="7"/>
 <wire x1="134.62" y1="160.02" x2="119.38" y2="160.02" width="0.1524" layer="91"/>
 <label x="119.38" y="160.02" size="1.778" layer="95"/>
 <pinref part="R10" gate="G$1" pin="P$2"/>
@@ -32663,7 +32613,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDOUT7" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="8"/>
 <wire x1="134.62" y1="157.48" x2="119.38" y2="157.48" width="0.1524" layer="91"/>
 <label x="119.38" y="157.48" size="1.778" layer="95"/>
 <pinref part="R11" gate="G$1" pin="P$2"/>
@@ -32671,14 +32620,13 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDIN1" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="2"/>
-<wire x1="134.62" y1="203.2" x2="119.38" y2="203.2" width="0.1524" layer="91"/>
-<label x="119.38" y="203.2" size="1.778" layer="95"/>
+<wire x1="55.88" y1="157.48" x2="76.2" y2="157.48" width="0.1524" layer="91"/>
+<label x="63.5" y="157.48" size="1.778" layer="95"/>
+<pinref part="R244" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="BOARDIN2" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="3"/>
 <wire x1="134.62" y1="200.66" x2="119.38" y2="200.66" width="0.1524" layer="91"/>
 <label x="119.38" y="200.66" size="1.778" layer="95"/>
 <pinref part="R238" gate="G$1" pin="P$2"/>
@@ -32686,7 +32634,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDIN3" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="4"/>
 <wire x1="134.62" y1="198.12" x2="119.38" y2="198.12" width="0.1524" layer="91"/>
 <label x="119.38" y="198.12" size="1.778" layer="95"/>
 <pinref part="R236" gate="G$1" pin="P$2"/>
@@ -32701,7 +32648,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDIN6" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="7"/>
 <wire x1="134.62" y1="190.5" x2="119.38" y2="190.5" width="0.1524" layer="91"/>
 <label x="119.38" y="190.5" size="1.778" layer="95"/>
 <pinref part="R6" gate="G$1" pin="P$2"/>
@@ -32709,7 +32655,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDIN7" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="8"/>
 <wire x1="134.62" y1="187.96" x2="119.38" y2="187.96" width="0.1524" layer="91"/>
 <label x="119.38" y="187.96" size="1.778" layer="95"/>
 <pinref part="R16" gate="G$1" pin="P$2"/>
@@ -32717,7 +32662,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDIN5" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="6"/>
 <wire x1="134.62" y1="193.04" x2="119.38" y2="193.04" width="0.1524" layer="91"/>
 <label x="119.38" y="193.04" size="1.778" layer="95"/>
 <pinref part="R7" gate="G$1" pin="P$2"/>
@@ -32739,7 +32683,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDOUT4" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="5"/>
 <wire x1="134.62" y1="165.1" x2="119.38" y2="165.1" width="0.1524" layer="91"/>
 <label x="119.38" y="165.1" size="1.778" layer="95"/>
 <pinref part="R8" gate="G$1" pin="P$2"/>
@@ -32747,7 +32690,6 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDOUT5" class="0">
 <segment>
-<pinref part="J10" gate="G$1" pin="6"/>
 <wire x1="134.62" y1="162.56" x2="119.38" y2="162.56" width="0.1524" layer="91"/>
 <label x="119.38" y="162.56" size="1.778" layer="95"/>
 <pinref part="R9" gate="G$1" pin="P$2"/>
@@ -32825,9 +32767,9 @@ These go to LEDs for monitoring</text>
 </net>
 <net name="BOARDIN0" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="1"/>
-<wire x1="134.62" y1="205.74" x2="119.38" y2="205.74" width="0.1524" layer="91"/>
-<label x="119.38" y="205.74" size="1.778" layer="95"/>
+<wire x1="55.88" y1="160.02" x2="76.2" y2="160.02" width="0.1524" layer="91"/>
+<label x="63.5" y="160.02" size="1.778" layer="95"/>
+<pinref part="R243" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="CALSTAT" class="0">
@@ -32871,12 +32813,6 @@ These go to LEDs for monitoring</text>
 <segment>
 <pinref part="R32" gate="G$1" pin="P$2"/>
 <pinref part="LED30" gate="G$1" pin="A"/>
-</segment>
-</net>
-<net name="N$32" class="0">
-<segment>
-<pinref part="R30" gate="G$1" pin="P$2"/>
-<pinref part="LED32" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$41" class="0">
@@ -33073,6 +33009,33 @@ These go to LEDs for monitoring</text>
 <pinref part="U$3" gate="G$1" pin="5"/>
 <wire x1="45.72" y1="38.1" x2="35.56" y2="38.1" width="0.1524" layer="91"/>
 <label x="38.1" y="38.1" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="FAN_CONTROL" class="0">
+<segment>
+<wire x1="45.72" y1="185.42" x2="12.7" y2="185.42" width="0.1524" layer="91"/>
+<label x="12.7" y="185.42" size="1.778" layer="95"/>
+<pinref part="R30" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="R30" gate="G$1" pin="P$2"/>
+<pinref part="LED32" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$68" class="0">
+<segment>
+<pinref part="J11" gate="G$1" pin="7"/>
+<pinref part="R243" gate="G$1" pin="P$2"/>
+<wire x1="45.72" y1="160.02" x2="33.02" y2="160.02" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$69" class="0">
+<segment>
+<pinref part="J11" gate="G$1" pin="8"/>
+<pinref part="R244" gate="G$1" pin="P$2"/>
+<wire x1="45.72" y1="157.48" x2="33.02" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -37272,7 +37235,8 @@ in a good range for the slow ADC</text>
 <text x="22.86" y="50.8" size="1.778" layer="90">Buffer inputs before feeding to slow adc</text>
 <text x="139.7" y="114.3" size="1.778" layer="90">Monitor the temp of the main ADC</text>
 <text x="124.46" y="40.64" size="1.778" layer="90">Monitor the temp of the PCB near FPGA</text>
-<text x="127" y="-30.48" size="1.778" layer="90">PWM signal from FPGA</text>
+<text x="127" y="-30.48" size="1.778" layer="90">PWM signal from FPGA
+(was DEBUGOUT11)</text>
 <text x="154.94" y="-12.7" size="1.778" layer="90">PWM 5V power to fan</text>
 </plain>
 <instances>
