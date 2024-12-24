@@ -23438,11 +23438,6 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 </part>
 <part name="SUPPLY94" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R164" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="1k"/>
-<part name="SUPPLY96" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY97" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R165" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="75"/>
-<part name="R166" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="75"/>
-<part name="R167" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="120"/>
 <part name="R168" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="R169" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="R170" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
@@ -24021,6 +24016,44 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 </part>
 <part name="SUPPLY95" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R245" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
+<part name="C105" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="L4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
+<part name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
+<part name="C106" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="C136" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="C137" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="R247" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
+<part name="SUPPLY78" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY79" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY80" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="C138" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="L8" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
+<part name="L15" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
+<part name="C139" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="C140" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="C141" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="R166" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
+<part name="SUPPLY86" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY87" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY96" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY97" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24036,9 +24069,6 @@ Output -6dB</text>
 <text x="195.58" y="190.5" size="1.778" layer="90">RF relay for attenuator</text>
 <text x="200.66" y="147.32" size="1.778" layer="90">RF relay driver
 for attenuator</text>
-<text x="203.2" y="233.68" size="1.778" layer="90">Pi attenuator
-1/5, -14dB
-50 Ohm</text>
 <text x="-15.24" y="190.5" size="1.778" layer="90">RF relay for splitting</text>
 <text x="-12.7" y="147.32" size="1.778" layer="90">RF relay driver
 for splitting</text>
@@ -24077,6 +24107,16 @@ on next sheet</text>
 <text x="-30.48" y="236.22" size="1.778" layer="90">Outsplit has extra impedance in parallel
 to boost higher frequency components to outsplit
 to account for losses in connectors and extra PCB traces</text>
+<text x="-76.2" y="233.68" size="1.778" layer="90">Chebyshev Lowpass Filter
+2.8 GHz
+5th-7th order
+50 Ohm
+0.5dB ripple</text>
+<text x="190.5" y="233.68" size="1.778" layer="90">Chebyshev Lowpass Filter
+0.8 (0.65) GHz
+5th-7th order
+50 Ohm
+0.5dB ripple</text>
 </plain>
 <instances>
 <instance part="SUPPLY81" gate="GND" x="76.2" y="236.22" smashed="yes"/>
@@ -24122,20 +24162,6 @@ to account for losses in connectors and extra PCB traces</text>
 <instance part="R164" gate="G$1" x="210.82" y="137.16" smashed="yes" rot="R270">
 <attribute name="NAME" x="213.36" y="138.176" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="208.28" y="138.176" size="1.016" layer="96" font="vector"/>
-</instance>
-<instance part="SUPPLY96" gate="GND" x="198.12" y="213.36" smashed="yes"/>
-<instance part="SUPPLY97" gate="GND" x="218.44" y="213.36" smashed="yes"/>
-<instance part="R165" gate="G$1" x="198.12" y="220.98" smashed="yes">
-<attribute name="NAME" x="197.104" y="223.52" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="200.406" y="220.726" size="1.016" layer="96" font="vector" rot="R90"/>
-</instance>
-<instance part="R166" gate="G$1" x="218.44" y="220.98" smashed="yes">
-<attribute name="NAME" x="217.424" y="223.52" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="220.726" y="220.98" size="1.016" layer="96" font="vector" rot="R90"/>
-</instance>
-<instance part="R167" gate="G$1" x="208.28" y="226.06" smashed="yes" rot="R90">
-<attribute name="NAME" x="205.74" y="225.044" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="208.788" y="228.6" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="R168" gate="G$1" x="-5.08" y="208.28" smashed="yes" rot="R90">
 <attribute name="NAME" x="-7.62" y="207.264" size="1.016" layer="95" font="vector" align="top-left"/>
@@ -24217,6 +24243,78 @@ to account for losses in connectors and extra PCB traces</text>
 <attribute name="NAME" x="-11.938" y="229.616" size="1.016" layer="95" font="vector" align="top-left"/>
 <attribute name="VALUE" x="-10.668" y="232.918" size="1.016" layer="96" font="vector"/>
 </instance>
+<instance part="C105" gate="G$1" x="-78.74" y="215.9" smashed="yes">
+<attribute name="NAME" x="-74.676" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="-82.804" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="-78.74" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="L4" gate="L$1" x="-71.12" y="223.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="-68.58" y="222.25" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-68.58" y="227.33" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="L7" gate="L$1" x="-55.88" y="223.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="-53.34" y="222.25" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-53.34" y="227.33" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C106" gate="G$1" x="-63.5" y="215.9" smashed="yes">
+<attribute name="NAME" x="-59.436" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="-67.564" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="-63.5" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C136" gate="G$1" x="-48.26" y="215.9" smashed="yes">
+<attribute name="NAME" x="-44.196" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="-52.324" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="-48.26" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C137" gate="G$1" x="-33.02" y="215.9" smashed="yes">
+<attribute name="NAME" x="-28.956" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="-37.084" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="-33.02" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R247" gate="G$1" x="-40.64" y="223.52" smashed="yes" rot="R270">
+<attribute name="NAME" x="-38.1" y="224.536" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="-43.18" y="224.536" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="SUPPLY78" gate="GND" x="-78.74" y="210.82" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY79" gate="GND" x="-63.5" y="210.82" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY80" gate="GND" x="-48.26" y="210.82" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY83" gate="GND" x="-33.02" y="210.82" smashed="yes" rot="MR0"/>
+<instance part="C138" gate="G$1" x="187.96" y="215.9" smashed="yes">
+<attribute name="NAME" x="192.024" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="183.896" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="187.96" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="L8" gate="L$1" x="195.58" y="223.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="198.12" y="222.25" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="198.12" y="227.33" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="L15" gate="L$1" x="210.82" y="223.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="213.36" y="222.25" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="213.36" y="227.33" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C139" gate="G$1" x="203.2" y="215.9" smashed="yes">
+<attribute name="NAME" x="207.264" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="199.136" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="203.2" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C140" gate="G$1" x="218.44" y="215.9" smashed="yes">
+<attribute name="NAME" x="222.504" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="214.376" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="218.44" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C141" gate="G$1" x="233.68" y="215.9" smashed="yes">
+<attribute name="NAME" x="237.744" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="229.616" y="218.44" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="233.68" y="215.9" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R166" gate="G$1" x="226.06" y="223.52" smashed="yes" rot="R270">
+<attribute name="NAME" x="228.6" y="224.536" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="223.52" y="224.536" size="1.016" layer="96" font="vector"/>
+</instance>
+<instance part="SUPPLY86" gate="GND" x="187.96" y="210.82" smashed="yes"/>
+<instance part="SUPPLY87" gate="GND" x="203.2" y="210.82" smashed="yes"/>
+<instance part="SUPPLY96" gate="GND" x="218.44" y="210.82" smashed="yes"/>
+<instance part="SUPPLY97" gate="GND" x="233.68" y="210.82" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -24250,14 +24348,6 @@ to account for losses in connectors and extra PCB traces</text>
 <segment>
 <pinref part="Q8" gate="G$1" pin="E"/>
 <pinref part="SUPPLY94" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="SUPPLY96" gate="GND" pin="GND"/>
-<pinref part="R165" gate="G$1" pin="P$2"/>
-</segment>
-<segment>
-<pinref part="SUPPLY97" gate="GND" pin="GND"/>
-<pinref part="R166" gate="G$1" pin="P$2"/>
 </segment>
 <segment>
 <pinref part="Q9" gate="G$1" pin="E"/>
@@ -24410,6 +24500,38 @@ to account for losses in connectors and extra PCB traces</text>
 <junction x="25.4" y="231.14"/>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
 <junction x="30.48" y="215.9"/>
+</segment>
+<segment>
+<pinref part="C105" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY78" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C106" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY79" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C136" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY80" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C137" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY83" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C138" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY86" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C139" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY87" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C140" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY96" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C141" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY97" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="2V5+" class="1">
@@ -24575,21 +24697,17 @@ to account for losses in connectors and extra PCB traces</text>
 </net>
 <net name="SPLIT" class="0">
 <segment>
-<pinref part="R169" gate="G$1" pin="P$1"/>
-<wire x1="-10.16" y1="223.52" x2="-15.24" y2="223.52" width="0.1524" layer="91"/>
-<label x="-30.48" y="223.52" size="1.778" layer="95"/>
-<pinref part="R242" gate="G$1" pin="P$1"/>
-<wire x1="-15.24" y1="223.52" x2="-33.02" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="231.14" x2="-15.24" y2="223.52" width="0.1524" layer="91"/>
-<junction x="-15.24" y="223.52"/>
-<pinref part="R168" gate="G$1" pin="P$1"/>
-<wire x1="-10.16" y1="208.28" x2="-10.16" y2="223.52" width="0.1524" layer="91"/>
-<junction x="-10.16" y="223.52"/>
-</segment>
-<segment>
 <wire x1="-20.32" y1="167.64" x2="-33.02" y2="167.64" width="0.1524" layer="91"/>
 <label x="-30.48" y="167.64" size="1.778" layer="95"/>
 <pinref part="K1" gate="G$1" pin="NO_1"/>
+</segment>
+<segment>
+<wire x1="-78.74" y1="223.52" x2="-88.9" y2="223.52" width="0.1524" layer="91"/>
+<label x="-88.9" y="223.52" size="1.778" layer="95"/>
+<pinref part="C105" gate="G$1" pin="P$1"/>
+<wire x1="-78.74" y1="223.52" x2="-78.74" y2="218.44" width="0.1524" layer="91"/>
+<pinref part="L4" gate="L$1" pin="1"/>
+<junction x="-78.74" y="223.52"/>
 </segment>
 </net>
 <net name="SPLITOUT" class="0">
@@ -24653,12 +24771,12 @@ to account for losses in connectors and extra PCB traces</text>
 </net>
 <net name="FILTIN" class="0">
 <segment>
-<wire x1="203.2" y1="226.06" x2="198.12" y2="226.06" width="0.1524" layer="91"/>
-<label x="185.42" y="226.06" size="1.778" layer="95"/>
-<pinref part="R165" gate="G$1" pin="P$1"/>
-<wire x1="198.12" y1="226.06" x2="185.42" y2="226.06" width="0.1524" layer="91"/>
-<junction x="198.12" y="226.06"/>
-<pinref part="R167" gate="G$1" pin="P$1"/>
+<label x="180.34" y="223.52" size="1.778" layer="95"/>
+<wire x1="187.96" y1="223.52" x2="180.34" y2="223.52" width="0.1524" layer="91"/>
+<pinref part="L8" gate="L$1" pin="1"/>
+<pinref part="C138" gate="G$1" pin="P$1"/>
+<wire x1="187.96" y1="223.52" x2="187.96" y2="218.44" width="0.1524" layer="91"/>
+<junction x="187.96" y="223.52"/>
 </segment>
 <segment>
 <wire x1="193.04" y1="167.64" x2="180.34" y2="167.64" width="0.1524" layer="91"/>
@@ -24668,12 +24786,13 @@ to account for losses in connectors and extra PCB traces</text>
 </net>
 <net name="FILTOUT" class="0">
 <segment>
-<wire x1="213.36" y1="226.06" x2="218.44" y2="226.06" width="0.1524" layer="91"/>
-<label x="223.52" y="226.06" size="1.778" layer="95"/>
+<label x="233.68" y="223.52" size="1.778" layer="95"/>
+<wire x1="231.14" y1="223.52" x2="233.68" y2="223.52" width="0.1524" layer="91"/>
 <pinref part="R166" gate="G$1" pin="P$1"/>
-<wire x1="218.44" y1="226.06" x2="231.14" y2="226.06" width="0.1524" layer="91"/>
-<junction x="218.44" y="226.06"/>
-<pinref part="R167" gate="G$1" pin="P$2"/>
+<pinref part="C141" gate="G$1" pin="P$1"/>
+<wire x1="233.68" y1="223.52" x2="243.84" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="223.52" x2="233.68" y2="218.44" width="0.1524" layer="91"/>
+<junction x="233.68" y="223.52"/>
 </segment>
 <segment>
 <wire x1="226.06" y1="167.64" x2="238.76" y2="167.64" width="0.1524" layer="91"/>
@@ -24786,6 +24905,63 @@ to account for losses in connectors and extra PCB traces</text>
 <segment>
 <pinref part="C80" gate="G$1" pin="P$1"/>
 <pinref part="R242" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="SPLITFILT" class="0">
+<segment>
+<pinref part="R169" gate="G$1" pin="P$1"/>
+<wire x1="-10.16" y1="223.52" x2="-15.24" y2="223.52" width="0.1524" layer="91"/>
+<label x="-30.48" y="223.52" size="1.778" layer="95"/>
+<pinref part="R242" gate="G$1" pin="P$1"/>
+<wire x1="-15.24" y1="223.52" x2="-33.02" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="223.52" x2="-35.56" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="231.14" x2="-15.24" y2="223.52" width="0.1524" layer="91"/>
+<junction x="-15.24" y="223.52"/>
+<pinref part="R168" gate="G$1" pin="P$1"/>
+<wire x1="-10.16" y1="208.28" x2="-10.16" y2="223.52" width="0.1524" layer="91"/>
+<junction x="-10.16" y="223.52"/>
+<pinref part="C137" gate="G$1" pin="P$1"/>
+<wire x1="-33.02" y1="218.44" x2="-33.02" y2="223.52" width="0.1524" layer="91"/>
+<junction x="-33.02" y="223.52"/>
+<pinref part="R247" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="N$81" class="0">
+<segment>
+<pinref part="R247" gate="G$1" pin="P$2"/>
+<pinref part="L7" gate="L$1" pin="2"/>
+<wire x1="-45.72" y1="223.52" x2="-48.26" y2="223.52" width="0.1524" layer="91"/>
+<pinref part="C136" gate="G$1" pin="P$1"/>
+<wire x1="-48.26" y1="223.52" x2="-48.26" y2="218.44" width="0.1524" layer="91"/>
+<junction x="-48.26" y="223.52"/>
+</segment>
+</net>
+<net name="N$82" class="0">
+<segment>
+<pinref part="L4" gate="L$1" pin="2"/>
+<pinref part="C106" gate="G$1" pin="P$1"/>
+<wire x1="-63.5" y1="223.52" x2="-63.5" y2="218.44" width="0.1524" layer="91"/>
+<pinref part="L7" gate="L$1" pin="1"/>
+<junction x="-63.5" y="223.52"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="L15" gate="L$1" pin="1"/>
+<pinref part="L8" gate="L$1" pin="2"/>
+<pinref part="C139" gate="G$1" pin="P$1"/>
+<wire x1="203.2" y1="223.52" x2="203.2" y2="218.44" width="0.1524" layer="91"/>
+<junction x="203.2" y="223.52"/>
+</segment>
+</net>
+<net name="N$70" class="0">
+<segment>
+<pinref part="C140" gate="G$1" pin="P$1"/>
+<pinref part="L15" gate="L$1" pin="2"/>
+<wire x1="218.44" y1="218.44" x2="218.44" y2="223.52" width="0.1524" layer="91"/>
+<pinref part="R166" gate="G$1" pin="P$2"/>
+<wire x1="218.44" y1="223.52" x2="220.98" y2="223.52" width="0.1524" layer="91"/>
+<junction x="218.44" y="223.52"/>
 </segment>
 </net>
 </nets>
@@ -37775,7 +37951,7 @@ in a good range for the slow ADC</text>
 <plain>
 <text x="63.5" y="45.72" size="1.778" layer="90">Chebyshev Lowpass Filter
 2.8 GHz
-7th order
+5th-7th order
 50 Ohm
 0.5dB ripple</text>
 <text x="0" y="78.74" size="1.778" layer="90">Some extra things to put on
