@@ -24006,21 +24006,21 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <attribute name="LCSC" value="C52923"/>
 </part>
 <part name="L5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="L6" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.6nH"/>
+<part name="L6" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
 <part name="C102" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
 <attribute name="LCSC" value="C52923"/>
 </part>
-<part name="C103" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
+<part name="C103" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
 <attribute name="LCSC" value="C52923"/>
 </part>
 <part name="SUPPLY91" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY92" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY93" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="C104" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
+<part name="C104" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
 <attribute name="LCSC" value="C52923"/>
 </part>
 <part name="SUPPLY95" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="R245" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 </parts>
 <sheets>
 <sheet>
@@ -37818,16 +37818,16 @@ Not connected to the rest of the system!</text>
 <instance part="SUPPLY91" gate="GND" x="48.26" y="20.32" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY92" gate="GND" x="63.5" y="20.32" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY93" gate="GND" x="78.74" y="20.32" smashed="yes" rot="MR0"/>
-<instance part="L7" gate="L$1" x="86.36" y="35.56" smashed="yes" rot="R90">
-<attribute name="NAME" x="88.9" y="34.29" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="88.9" y="39.37" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="C104" gate="G$1" x="93.98" y="27.94" smashed="yes">
 <attribute name="NAME" x="98.044" y="30.48" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
 <attribute name="VALUE" x="89.916" y="30.48" size="1.778" layer="96" font="vector" rot="R270"/>
 <attribute name="LCSC" x="93.98" y="27.94" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="SUPPLY95" gate="GND" x="93.98" y="20.32" smashed="yes" rot="MR0"/>
+<instance part="R245" gate="G$1" x="86.36" y="35.56" smashed="yes" rot="R270">
+<attribute name="NAME" x="88.9" y="36.576" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="83.82" y="36.576" size="1.016" layer="96" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -37896,9 +37896,10 @@ Not connected to the rest of the system!</text>
 <pinref part="OUTSMA1" gate="G$1" pin="ANT"/>
 <label x="99.06" y="35.56" size="1.778" layer="95"/>
 <wire x1="93.98" y1="35.56" x2="114.3" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="L7" gate="L$1" pin="2"/>
 <pinref part="C104" gate="G$1" pin="P$1"/>
 <wire x1="93.98" y1="35.56" x2="93.98" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="R245" gate="G$1" pin="P$1"/>
+<wire x1="91.44" y1="35.56" x2="93.98" y2="35.56" width="0.1524" layer="91"/>
 <junction x="93.98" y="35.56"/>
 </segment>
 </net>
@@ -37916,8 +37917,9 @@ Not connected to the rest of the system!</text>
 <pinref part="L6" gate="L$1" pin="2"/>
 <pinref part="C103" gate="G$1" pin="P$1"/>
 <wire x1="78.74" y1="30.48" x2="78.74" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="R245" gate="G$1" pin="P$2"/>
+<wire x1="78.74" y1="35.56" x2="81.28" y2="35.56" width="0.1524" layer="91"/>
 <junction x="78.74" y="35.56"/>
-<pinref part="L7" gate="L$1" pin="1"/>
 </segment>
 </net>
 </nets>
