@@ -769,7 +769,7 @@ class MainWindow(TemplateBaseClass):
                 warnings.simplefilter("ignore")
                 popt, pcov = curve_fit(fit_rise, xc, yc, p0)
                 perr = np.sqrt(np.diag(pcov))
-            risetime = 0.8 * popt[2]
+            risetime = 0.8 * 0.7 * popt[2] # calibrated
             risetimeerr = perr[2]
             # print(popt)
             thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
