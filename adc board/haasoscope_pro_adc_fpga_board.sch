@@ -5744,6 +5744,20 @@ IPC Nominal Density</description>
 <pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
 <pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 </symbol>
+<symbol name="L-US" urn="urn:adsk.eagle:symbol:2593693/1" library_version="8">
+<wire x1="0" y1="5.08" x2="1.27" y2="3.81" width="0.254" layer="94" curve="-90"/>
+<wire x1="0" y1="2.54" x2="1.27" y2="3.81" width="0.254" layer="94" curve="90"/>
+<wire x1="0" y1="2.54" x2="1.27" y2="1.27" width="0.254" layer="94" curve="-90"/>
+<wire x1="0" y1="0" x2="1.27" y2="1.27" width="0.254" layer="94" curve="90"/>
+<wire x1="0" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94" curve="-90"/>
+<wire x1="0" y1="-2.54" x2="1.27" y2="-1.27" width="0.254" layer="94" curve="90"/>
+<wire x1="0" y1="-2.54" x2="1.27" y2="-3.81" width="0.254" layer="94" curve="-90"/>
+<wire x1="0" y1="-5.08" x2="1.27" y2="-3.81" width="0.254" layer="94" curve="90"/>
+<text x="-1.27" y="-5.08" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="3.81" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="2" x="0" y="-7.62" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+<pin name="1" x="0" y="7.62" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="CAPACITOR" urn="urn:adsk.eagle:component:2593743/1" uservalue="yes" library_version="8">
@@ -5888,6 +5902,158 @@ IPC Nominal Density</description>
 <connects>
 <connect gate="C$1" pin="1" pad="1"/>
 <connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593736/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="INDUCTOR" urn="urn:adsk.eagle:component:2593748/1" uservalue="yes" library_version="8">
+<description>&lt;b&gt;Generic chip inductor&lt;/b&gt;</description>
+<gates>
+<gate name="L$1" symbol="L-US" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_0402_L" package="RESC0402_L">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593728/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0201_L" package="RESC0201_L">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593725/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0201_M" package="RESC0201_M">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593731/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0201_N" package="RESC0201_N">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593730/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0402_M" package="RESC0402_M">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593733/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0402_N" package="RESC0402_N">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593732/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0603_L" package="RESC0603_L">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593727/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0603_M" package="RESC0603_M">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593735/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0603_N" package="RESC0603_N">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593734/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0805_L" package="RESC0805_L">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593726/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0805_M" package="RESC0805_M">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593737/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0805_N" package="RESC0805_N">
+<connects>
+<connect gate="L$1" pin="1" pad="1"/>
+<connect gate="L$1" pin="2" pad="2"/>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:2593736/1"/>
@@ -23832,6 +23998,29 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY75" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY76" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY77" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="OUTSMA1" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
+<part name="SUPPLY88" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="INSMA1" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
+<part name="SUPPLY90" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="C101" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="L5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
+<part name="L6" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.6nH"/>
+<part name="C102" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="C103" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="SUPPLY91" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY92" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY93" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
+<part name="C104" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
+<attribute name="LCSC" value="C52923"/>
+</part>
+<part name="SUPPLY95" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -37581,6 +37770,158 @@ in a good range for the slow ADC</text>
 </net>
 </nets>
 </sheet>
+<sheet>
+<description>Testing</description>
+<plain>
+<text x="63.5" y="45.72" size="1.778" layer="90">Chebyshev Lowpass Filter
+2.8 GHz
+7th order
+50 Ohm
+0.5dB ripple</text>
+<text x="0" y="78.74" size="1.778" layer="90">Some extra things to put on
+the board for testing only
+
+Not connected to the rest of the system!</text>
+</plain>
+<instances>
+<instance part="OUTSMA1" gate="G$1" x="121.92" y="35.56" smashed="yes">
+<attribute name="NAME" x="129.54" y="38.1" size="1.778" layer="95"/>
+</instance>
+<instance part="SUPPLY88" gate="GND" x="124.46" y="25.4" smashed="yes"/>
+<instance part="INSMA1" gate="G$1" x="20.32" y="35.56" smashed="yes" rot="MR0">
+<attribute name="NAME" x="12.7" y="38.1" size="1.778" layer="95" rot="MR0"/>
+</instance>
+<instance part="SUPPLY90" gate="GND" x="17.78" y="25.4" smashed="yes" rot="MR0"/>
+<instance part="C101" gate="G$1" x="48.26" y="27.94" smashed="yes">
+<attribute name="NAME" x="52.324" y="30.48" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="44.196" y="30.48" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="48.26" y="27.94" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="L5" gate="L$1" x="55.88" y="35.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="58.42" y="34.29" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="58.42" y="39.37" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="L6" gate="L$1" x="71.12" y="35.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="73.66" y="34.29" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="73.66" y="39.37" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C102" gate="G$1" x="63.5" y="27.94" smashed="yes">
+<attribute name="NAME" x="67.564" y="30.48" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="59.436" y="30.48" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="63.5" y="27.94" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C103" gate="G$1" x="78.74" y="27.94" smashed="yes">
+<attribute name="NAME" x="82.804" y="30.48" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="74.676" y="30.48" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="78.74" y="27.94" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SUPPLY91" gate="GND" x="48.26" y="20.32" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY92" gate="GND" x="63.5" y="20.32" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY93" gate="GND" x="78.74" y="20.32" smashed="yes" rot="MR0"/>
+<instance part="L7" gate="L$1" x="86.36" y="35.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="88.9" y="34.29" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="88.9" y="39.37" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C104" gate="G$1" x="93.98" y="27.94" smashed="yes">
+<attribute name="NAME" x="98.044" y="30.48" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
+<attribute name="VALUE" x="89.916" y="30.48" size="1.778" layer="96" font="vector" rot="R270"/>
+<attribute name="LCSC" x="93.98" y="27.94" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SUPPLY95" gate="GND" x="93.98" y="20.32" smashed="yes" rot="MR0"/>
+</instances>
+<busses>
+</busses>
+<nets>
+<net name="GND" class="0">
+<segment>
+<pinref part="OUTSMA1" gate="G$1" pin="GND4"/>
+<pinref part="SUPPLY88" gate="GND" pin="GND"/>
+<pinref part="OUTSMA1" gate="G$1" pin="GND2"/>
+<pinref part="OUTSMA1" gate="G$1" pin="GND1"/>
+<wire x1="124.46" y1="43.18" x2="119.38" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="OUTSMA1" gate="G$1" pin="GND3"/>
+<wire x1="119.38" y1="43.18" x2="119.38" y2="27.94" width="0.1524" layer="91"/>
+<junction x="119.38" y="43.18"/>
+<wire x1="119.38" y1="27.94" x2="124.46" y2="27.94" width="0.1524" layer="91"/>
+<junction x="119.38" y="27.94"/>
+<junction x="124.46" y="27.94"/>
+</segment>
+<segment>
+<pinref part="INSMA1" gate="G$1" pin="GND4"/>
+<pinref part="SUPPLY90" gate="GND" pin="GND"/>
+<pinref part="INSMA1" gate="G$1" pin="GND2"/>
+<pinref part="INSMA1" gate="G$1" pin="GND1"/>
+<wire x1="17.78" y1="43.18" x2="22.86" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="INSMA1" gate="G$1" pin="GND3"/>
+<wire x1="22.86" y1="43.18" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
+<junction x="22.86" y="43.18"/>
+<wire x1="22.86" y1="27.94" x2="17.78" y2="27.94" width="0.1524" layer="91"/>
+<junction x="22.86" y="27.94"/>
+<junction x="17.78" y="27.94"/>
+</segment>
+<segment>
+<pinref part="SUPPLY92" gate="GND" pin="GND"/>
+<pinref part="C102" gate="G$1" pin="P$2"/>
+<wire x1="63.5" y1="22.86" x2="63.5" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY93" gate="GND" pin="GND"/>
+<pinref part="C103" gate="G$1" pin="P$2"/>
+<wire x1="78.74" y1="22.86" x2="78.74" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY95" gate="GND" pin="GND"/>
+<pinref part="C104" gate="G$1" pin="P$2"/>
+<wire x1="93.98" y1="22.86" x2="93.98" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C101" gate="G$1" pin="P$2"/>
+<pinref part="SUPPLY91" gate="GND" pin="GND"/>
+<wire x1="48.26" y1="22.86" x2="48.26" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="SMAIN2" class="0">
+<segment>
+<label x="33.02" y="35.56" size="1.778" layer="95"/>
+<wire x1="48.26" y1="35.56" x2="27.94" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="INSMA1" gate="G$1" pin="ANT"/>
+<pinref part="C101" gate="G$1" pin="P$1"/>
+<wire x1="48.26" y1="35.56" x2="48.26" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="L5" gate="L$1" pin="1"/>
+<junction x="48.26" y="35.56"/>
+</segment>
+</net>
+<net name="SMAOUT2" class="0">
+<segment>
+<pinref part="OUTSMA1" gate="G$1" pin="ANT"/>
+<label x="99.06" y="35.56" size="1.778" layer="95"/>
+<wire x1="93.98" y1="35.56" x2="114.3" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="L7" gate="L$1" pin="2"/>
+<pinref part="C104" gate="G$1" pin="P$1"/>
+<wire x1="93.98" y1="35.56" x2="93.98" y2="30.48" width="0.1524" layer="91"/>
+<junction x="93.98" y="35.56"/>
+</segment>
+</net>
+<net name="N$71" class="0">
+<segment>
+<pinref part="L5" gate="L$1" pin="2"/>
+<pinref part="L6" gate="L$1" pin="1"/>
+<pinref part="C102" gate="G$1" pin="P$1"/>
+<wire x1="63.5" y1="30.48" x2="63.5" y2="35.56" width="0.1524" layer="91"/>
+<junction x="63.5" y="35.56"/>
+</segment>
+</net>
+<net name="N$72" class="0">
+<segment>
+<pinref part="L6" gate="L$1" pin="2"/>
+<pinref part="C103" gate="G$1" pin="P$1"/>
+<wire x1="78.74" y1="30.48" x2="78.74" y2="35.56" width="0.1524" layer="91"/>
+<junction x="78.74" y="35.56"/>
+<pinref part="L7" gate="L$1" pin="1"/>
+</segment>
+</net>
+</nets>
+</sheet>
 </sheets>
 <errors>
 <approved hash="102,9,104.14,101.6,VCCCORE,VCC1V8,,,,"/>
@@ -37634,6 +37975,14 @@ in a good range for the slow ADC</text>
 <approved hash="104,8,129.54,106.68,1KHZOUT50,GND2,GND,,,"/>
 <approved hash="104,8,124.46,121.92,1KHZOUT50,GND3,GND,,,"/>
 <approved hash="104,8,129.54,121.92,1KHZOUT50,GND4,GND,,,"/>
+<approved hash="104,16,119.38,43.18,OUTSMA1,GND1,GND,,,"/>
+<approved hash="104,16,124.46,43.18,OUTSMA1,GND2,GND,,,"/>
+<approved hash="104,16,119.38,27.94,OUTSMA1,GND3,GND,,,"/>
+<approved hash="104,16,124.46,27.94,OUTSMA1,GND4,GND,,,"/>
+<approved hash="104,16,22.86,43.18,INSMA1,GND1,GND,,,"/>
+<approved hash="104,16,17.78,43.18,INSMA1,GND2,GND,,,"/>
+<approved hash="104,16,22.86,27.94,INSMA1,GND3,GND,,,"/>
+<approved hash="104,16,17.78,27.94,INSMA1,GND4,GND,,,"/>
 <approved hash="209,4,-2.54,88.9,N$1,,,,,"/>
 <approved hash="209,4,-2.54,83.82,N$1,,,,,"/>
 <approved hash="209,2,33.02,-96.52,N$2,,,,,"/>
