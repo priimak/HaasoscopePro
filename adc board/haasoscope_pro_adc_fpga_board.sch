@@ -23977,9 +23977,7 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY72" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
 <part name="SUPPLY73" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
 <part name="SUPPLY74" library="Power_Symbols" library_urn="urn:adsk.eagle:library:16502351" deviceset="3V3" device="" value="3V3"/>
-<part name="C80" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="16pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C80" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="16pF"/>
 <part name="R242" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="47"/>
 <part name="R30" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="LED32" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
@@ -23992,96 +23990,56 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY88" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="INSMA1" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
 <part name="SUPPLY90" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C101" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C101" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
 <part name="L5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
 <part name="L6" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="C102" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C103" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C102" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF"/>
+<part name="C103" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
 <part name="SUPPLY91" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY92" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY93" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C104" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C104" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="SUPPLY95" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R245" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
-<part name="C105" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C105" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
 <part name="L4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
 <part name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="C106" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C136" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C137" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C106" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF"/>
+<part name="C136" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
+<part name="C137" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R247" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY78" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY79" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY80" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C138" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C138" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
 <part name="L8" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
 <part name="L15" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
-<part name="C139" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C140" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C141" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C139" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF"/>
+<part name="C140" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
+<part name="C141" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R166" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY86" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY87" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY96" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY97" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C153" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.0pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C153" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.0pF"/>
 <part name="L16" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH"/>
 <part name="L17" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH"/>
-<part name="C158" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="4.3pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C159" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.0pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C160" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C158" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="4.3pF"/>
+<part name="C159" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.0pF"/>
+<part name="C160" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R149" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY54" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY55" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY98" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY100" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C161" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C161" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
 <part name="L18" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
 <part name="L19" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
-<part name="C162" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C163" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF">
-<attribute name="LCSC" value="C52923"/>
-</part>
-<part name="C164" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0pF?">
-<attribute name="LCSC" value="C52923"/>
-</part>
+<part name="C162" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF"/>
+<part name="C163" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
+<part name="C164" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R150" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY101" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY102" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
