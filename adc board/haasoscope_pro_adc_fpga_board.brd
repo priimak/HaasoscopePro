@@ -11671,10 +11671,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="LED32" library="adafruit" package="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red" x="189" y="54.5" smashed="yes"/>
 <element name="R243" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="98" y="19" smashed="yes" rot="R270"/>
 <element name="R244" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="95.5" y="19" smashed="yes" rot="R270"/>
-<element name="OUTSMA1" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="95" y="159.7" smashed="yes" rot="R270">
+<element name="OUTSMA1" library="adafruit" package="SMA_EDGELAUNCH" value="50" x="95" y="159.7" smashed="yes" rot="R270">
 <attribute name="NAME" x="101.315" y="159.28" size="1.016" layer="25" rot="R270"/>
 </element>
-<element name="INSMA1" library="adafruit" package="SMA_EDGELAUNCH" value="out50" x="80.2" y="159.6" smashed="yes" rot="R270">
+<element name="INSMA1" library="adafruit" package="SMA_EDGELAUNCH" value="50" x="80.2" y="159.6" smashed="yes" rot="R270">
 <attribute name="NAME" x="73.115" y="159.08" size="1.016" layer="25" rot="R270"/>
 </element>
 <element name="C101" library="MF_Passives" package="C0402" value="1.0pF" x="82.1" y="148.3" smashed="yes" rot="R270">

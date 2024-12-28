@@ -26988,9 +26988,9 @@ Source: &lt;a href="https://toshiba.semicon-storage.com/info/docget.jsp?did=1525
 <part name="SUPPLY75" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY76" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY77" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="OUTSMA1" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
+<part name="OUTSMA1" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="50"/>
 <part name="SUPPLY88" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="INSMA1" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="out50"/>
+<part name="INSMA1" library="adafruit" deviceset="SMACONNECTOR" device="_EDGE" value="50"/>
 <part name="SUPPLY90" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C101" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
 <part name="L5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
