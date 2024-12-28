@@ -9598,6 +9598,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="IC5" library="EP4CE30F23C6N" package="BGA484C100P22X22_2300X2300X240" value="EP4CE30F23C6N" x="112" y="79.5" smashed="yes" rot="R270">
 <attribute name="DESCRIPTION" value="FPGA - Field Programmable Gate Array FPGA - Cyclone IV E 1803 LABs 328 IOs" x="112" y="79.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HEIGHT" value="2.4mm" x="112" y="79.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="112" y="79.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Intel" x="112" y="79.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="EP4CE30F23C6N" x="112" y="79.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="989-EP4CE30F23C6N" x="112" y="79.5" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11475,6 +11476,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VALUE" x="109.605" y="100.435" size="0.8128" layer="21" rot="R180"/>
 </element>
 <element name="Q1" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="S8050" x="198.5" y="54" smashed="yes" rot="R270">
+<attribute name="JLC_ROTATION" value="270" x="198.5" y="54" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C7420370" x="205.5" y="59" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="S8050" x="205.5" y="59" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="197.595" y="51.405" size="0.889" layer="25"/>
@@ -11618,6 +11620,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R212" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="202" y="100" smashed="yes" rot="R180"/>
 <element name="R236" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="202" y="101" smashed="yes"/>
 <element name="Q2" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" package="SOT-23" package3d_urn="urn:adsk.eagle:package:33015/1" value="FDN340P" x="203" y="84" smashed="yes" rot="R90">
+<attribute name="JLC_ROTATION" value="90" x="203" y="84" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C15127" x="204.5" y="80" size="0.8128" layer="21" rot="R180" display="both"/>
 <attribute name="MPN" value="P-MOS AO3401A" x="204.5" y="81" size="0.8128" layer="21" rot="R180"/>
 </element>
