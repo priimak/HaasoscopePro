@@ -11,7 +11,7 @@
 module fpga_top_ft232h_tx_mass (
 	 input  wire         rstn,
     input  wire         clk,            // main clock, connect to on-board crystal oscillator
-    output wire  [ 3:0] LED,
+    output wire  [ 1:0] LED,
     
     // USB2.0 HS (FT232H chip) ------------------------------------------------------------
     output wire         ftdi_resetn,    // to FT232H's pin34 (RESET#) , !!!!!! UnComment this line if this signal is connected to FPGA !!!!!!
@@ -79,7 +79,7 @@ clock_beat # (
     .BEAT_FREQ             ( 5                  )
 ) u_ftdi_clk_beat (
     .clk                   ( ftdi_clk           ),
-    .beat                  ( LED[3]             )
+    .beat                  ( LED[1]             )
 );
 
 //if clk continuous run, then beat will blink. The function of this module is to observe whether clk is running
@@ -88,11 +88,7 @@ clock_beat # (
     .BEAT_FREQ             ( 5                  )
 ) u_clk_beat (
     .clk                   ( clk           ),
-    .beat                  ( LED[2]             )
+    .beat                  ( LED[0]             )
 );
-
-assign LED[0] = rstn;
-assign LED[1] = tx_tready;
-
 
 endmodule

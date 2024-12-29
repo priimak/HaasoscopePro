@@ -57,7 +57,8 @@ module command_processor (
 	output reg clkswitch=0,
 	input wire lvdsin_spare,
 	output reg lvdsout_spare=0,
-	input wire [69:0] lvdsEbits, lvdsLbits
+	input wire [69:0] lvdsEbits, lvdsLbits,
+	output reg [1:0] leds // controls LED 3..2
 );
 
 integer version = 19; // firmware version
@@ -82,8 +83,8 @@ wire exttrigin;
 assign exttrigin = boardin[4];
 
 assign lvdsout_trig_b = exttrigin; // just temporary since we're not using them yet
-
-reg [15:0]	probecompcounter=0;
+assign leds[0] = 1; // LED2
+assign leds[1] = 1; // LED3
 
 //variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter=1;
@@ -549,6 +550,7 @@ reg [7:0] pllclock_counter=0;//for clock phase
 reg [7:0] scanclk_cycles=0;
 reg [9:0] ram_preoffset=0;
 integer overrange_counter[4];
+reg [15:0]	probecompcounter=0;
 
 always @ (posedge clk) begin
 	acqstate_sync <= acqstate;

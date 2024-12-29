@@ -21,9 +21,9 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 280 480)
+	(rect 16 16 280 512)
 	(text "command_processor" (rect 5 0 91 12)(font "Arial" ))
-	(text "inst" (rect 8 448 20 460)(font "Arial" ))
+	(text "inst" (rect 8 480 20 492)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -367,7 +367,14 @@ https://fpgasoftware.intel.com/eula.
 		(text "lvdsout_spare" (rect 187 427 243 439)(font "Arial" ))
 		(line (pt 264 432)(pt 248 432)(line_width 1))
 	)
+	(port
+		(pt 264 448)
+		(output)
+		(text "leds[1..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "leds[1..0]" (rect 209 443 243 455)(font "Arial" ))
+		(line (pt 264 448)(pt 248 448)(line_width 3))
+	)
 	(drawing
-		(rectangle (rect 16 16 248 448)(line_width 1))
+		(rectangle (rect 16 16 248 480)(line_width 1))
 	)
 )
