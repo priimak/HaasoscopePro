@@ -61,7 +61,7 @@ module command_processor (
 	output reg [1:0] leds // controls LED 3..2
 );
 
-integer version = 19; // firmware version
+integer version = 20; // firmware version
 
 assign debugout[0] = clkswitch;
 assign debugout[1] = lvdsin_trig;
@@ -84,7 +84,6 @@ assign exttrigin = boardin[4];
 
 assign lvdsout_trig_b = exttrigin; // just temporary since we're not using them yet
 assign leds[0] = 1; // LED2
-assign leds[1] = 1; // LED3
 
 //variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter=1;
@@ -589,6 +588,8 @@ always @ (posedge clk or negedge rstn)
 		channel <= 6'd0;
 		triggerlive <= 1'b0;
 		didreadout <= 1'b0;
+		neo_color[0] <= 24'h0f0000;
+		neo_color[1] <= 24'h00000f;
 		if (bootup) state <= RX;
 		else state <= BOOTUP;
 	end
@@ -783,6 +784,15 @@ always @ (posedge clk or negedge rstn)
 			state <= TX_DATA_CONST;
 		end
 		
+		11 : begin // LED controls
+			neo_color[0] <= {rx_data[4],rx_data[3],rx_data[2]};
+			neo_color[1] <= {rx_data[7],rx_data[6],rx_data[5]};
+			o_tdata <= 123;
+			length <= 4;
+			o_tvalid <= 1'b1;
+			state <= TX_DATA_CONST;
+		end
+		
 		default: // some command we didn't know
 			state <= RX;
 			
@@ -895,6 +905,97 @@ always @ (posedge clk or negedge rstn)
 		state <= INIT;
 	
   endcase
+ end
+
+// Neopixel LED state control
+// Adapted from https://vivonomicon.com/2018/12/24/learning-how-to-fpga-with-neopixel-leds/
+reg [2:0] neostate;
+reg [1:0] npxc;
+reg [12:0] lpxc;
+reg [7:0] neobits;
+reg [7:0] neo_led_num;
+parameter neo_led_num_max = 2;
+reg [24:0] neo_color[neo_led_num_max];
+reg clk_over_4 = 0;
+reg clk_over_4_counter = 0;
+always@(posedge clk50) // Make 12.5 MHz clock
+ begin
+	if (clk_over_4_counter) clk_over_4 <= ~clk_over_4;
+	clk_over_4_counter <= clk_over_4_counter + 1'b1;
+ end
+always@(posedge clk_over_4) // Process the state machine at each 12.5 MHz clock edge
+ begin
+	// Process the state machine; states 0-3 are the four WS2812B 'ticks',
+	// each consisting of 80 * 4 = 320 nanoseconds. Four of those
+	// periods are then 1280 nanoseconds long, and we can get close to
+	// the ideal 1250ns period (and the minimum is 1200ns).
+	// A '1' is 3 high periods followed by 1 low period (960/320 ns)
+	// A '0' is 1 high period followed by 3 low periods (320/960 ns)
+	if (neostate == 0 || neostate == 1 || neostate == 2 || neostate == 3)
+	  begin
+		 npxc = npxc + 2'b1;
+		 if (npxc == 0)
+			begin
+			  neostate = neostate + 3'b1;
+			end
+	  end
+	if (neostate == 4)
+	  begin
+		 neobits = neobits + 8'b1;
+		 if (neobits == 24)
+			begin
+			  neobits = 0;
+			  neostate = neostate + 3'b1;
+			end
+		 else
+			begin
+			  neostate = 0;
+			end
+	  end
+	if (neostate == 5)
+	  begin
+		 neo_led_num = neo_led_num + 8'b1;
+		 if (neo_led_num == neo_led_num_max)
+			begin
+			  neo_led_num = 0;
+			  neostate = neostate + 3'b1;
+			end
+		 else
+			begin
+			  neostate = 0;
+			end
+	  end
+	if (neostate == 6)
+	  begin
+		 lpxc = lpxc + 13'b1;
+		 if (lpxc == 0)
+			begin
+			  neostate = 0;
+			end
+	  end
+	
+	if (neo_color[neo_led_num] & (1 << neobits)) // Set the correct pin state
+	  begin
+	  if (neostate == 0 || neostate == 1 || neostate == 2)
+		 begin
+			leds[1] <= 1;
+		 end
+	  else if (neostate == 3 || neostate == 6)
+		 begin
+			leds[1] <= 0;
+		 end
+	  end
+	else
+	  begin
+	  if (neostate == 0)
+		 begin
+			leds[1] <= 1;
+		 end
+	  else if (neostate == 1 || neostate == 2 || neostate == 3 || neostate == 6)
+		 begin
+			leds[1] <= 0;
+		 end
+	end
  end
 
 // for pll reset, need to run the logic on the crystal directly, not the pll output

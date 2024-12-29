@@ -374,7 +374,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "leds[1..0]" (rect 209 443 243 455)(font "Arial" ))
 		(line (pt 264 448)(pt 248 448)(line_width 3))
 	)
+	(parameter
+		"neo_led_num_max"
+		"2"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 248 480)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 280 -64 380 16))
 )
