@@ -277,9 +277,10 @@
 <wire x1="47" y1="10.754" x2="47.254" y2="10.5" width="0.1524" layer="20" curve="90"/>
 <wire x1="47.254" y1="10.5" x2="52.746" y2="10.5" width="0.1524" layer="20"/>
 <wire x1="52.746" y1="10.5" x2="53" y2="10.754" width="0.1524" layer="20" curve="90"/>
-<text x="38.5" y="16.5" size="1.778" layer="21" font="vector">2.5V 1kHz | GND</text>
+<text x="43.4" y="16.1" size="1.778" layer="21" font="vector">1kHz | GND</text>
 <circle x="132.4" y="18.4" radius="0.14141875" width="0.4064" layer="22"/>
 <circle x="39.4" y="18.4" radius="0.14141875" width="0.4064" layer="22"/>
+<text x="47.4" y="7" size="1.778" layer="21" font="vector">2.5V</text>
 </plain>
 <libraries>
 <library name="Nordic_nRF" urn="urn:adsk.eagle:library:169009">
