@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="no" altdistance="0.01" altunitdist="mm" altunit="mm"/>
@@ -304,6 +304,7 @@ December 2024</text>
 <text x="96" y="119" size="0.8128" layer="21" rot="R90">GND</text>
 <text x="91" y="119" size="0.8128" layer="21" rot="R90">5V</text>
 <text x="88.5" y="119" size="0.8128" layer="21" rot="R90">GND</text>
+<circle x="156" y="74.83" radius="0.2" width="0.508" layer="21"/>
 </plain>
 <libraries>
 <library name="con-coax" urn="urn:adsk.eagle:library:133">
@@ -13716,7 +13717,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="185.2" y="76.1" extent="1-16" drill="0.35"/>
 <via x="205.7" y="75.6" extent="1-16" drill="0.35"/>
 <via x="205.7" y="79.6" extent="1-16" drill="0.35"/>
-<via x="155.7" y="74.6" extent="1-16" drill="0.35"/>
+<via x="154.19" y="75.72" extent="1-16" drill="0.35"/>
 <wire x1="152.5645" y1="76.1615" x2="153.5" y2="76.1615" width="0.127" layer="1"/>
 <contactref element="R136" pad="P$1"/>
 <contactref element="R210" pad="P$1"/>
@@ -13796,8 +13797,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="CLKOUT2" pad="2"/>
 <contactref element="C127" pad="2"/>
 <contactref element="C128" pad="2"/>
-<wire x1="153.5" y1="76.1615" x2="155.0615" y2="74.6" width="0.127" layer="1"/>
-<wire x1="155.0615" y1="74.6" x2="155.7" y2="74.6" width="0.127" layer="1"/>
+<wire x1="153.5" y1="76.1615" x2="153.9415" y2="75.72" width="0.127" layer="1"/>
+<wire x1="153.9415" y1="75.72" x2="154.19" y2="75.72" width="0.127" layer="1"/>
 <contactref element="OUTSPLIT" pad="GND@1"/>
 <contactref element="OUTSPLIT" pad="GND@3"/>
 <contactref element="OUTSPLIT" pad="GND@4"/>
