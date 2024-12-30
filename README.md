@@ -6,7 +6,7 @@
 
 ### [Hackaday.io Page](https://hackaday.io/project/200773-haasoscope-pro)
 
-<img alt="haasoscope_pro_adc_fpga_board_smt.png" src="adc%20board%2Fhaasoscope_pro_adc_fpga_board_smt.png" width="800"/>
+![haasoscope_pro_adc_fpga_board.png](adc%20board%2Fhaasoscope_pro_adc_fpga_board.png)
 
 #### Schematics in PDF: [haasoscope_pro_adc_fpga_board_schematics.pdf](adc%20board%2Fhaasoscope_pro_adc_fpga_board_schematics.pdf)
 
