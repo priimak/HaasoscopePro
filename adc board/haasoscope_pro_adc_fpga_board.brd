@@ -264,9 +264,9 @@ GND</text>
 <text x="208.228" y="43.211" size="0.8128" layer="21">LVDS IN</text>
 <text x="149.388" y="154.305" size="0.8128" layer="21" rot="R180">3.3V</text>
 <text x="148.888" y="106.305" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.24
+<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.25
 by DrAndyHaas
-December 2024</text>
+January 2025</text>
 <wire x1="65" y1="50" x2="105" y2="50" width="0.1524" layer="21"/>
 <wire x1="105" y1="50" x2="105" y2="10" width="0.1524" layer="21"/>
 <wire x1="105" y1="10" x2="65" y2="10" width="0.1524" layer="21"/>
