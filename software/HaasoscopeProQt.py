@@ -12,9 +12,26 @@ usbs = connectdevices()
 if len(usbs)==0: sys.exit(0)
 usbs = orderusbs(usbs)
 
+# Define fft window class from template
+FFTWindowTemplate, FFTTemplateBaseClass = loadUiType("HaasoscopeProFFT.ui")
+class FFTWindow(FFTTemplateBaseClass):
+    def __init__(self):
+        FFTTemplateBaseClass.__init__(self)
+        self.ui = FFTWindowTemplate()
+        self.ui.setupUi(self)
+        self.ui.plot.setLabel('bottom', 'Frequency (MHz)')
+        self.ui.plot.setLabel('left', 'Amplitude')
+        self.ui.plot.showGrid(x=True, y=True, alpha=1.0)
+        #self.ui.plot.setRange(xRange=(0.0, 1600.0))
+        self.ui.plot.setBackground('w')
+        c = (10, 10, 10)
+        self.fftpen = pg.mkPen(color=c)  # add linewidth=0.5, alpha=.5
+        self.fftline = self.ui.plot.plot(pen=self.fftpen, name="fft_plot")
+        self.fftlastTime = time.time() - 10
+        self.fftyrange = 1
+
 # Define main window class from template
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
-
 class MainWindow(TemplateBaseClass):
 
     expect_samples = 100
@@ -151,6 +168,8 @@ class MainWindow(TemplateBaseClass):
         self.ui.fwfBox.valueChanged.connect(self.fwf)
         self.ui.tadBox.valueChanged.connect(self.setTAD)
         self.ui.ToffBox.valueChanged.connect(self.setToff)
+        self.ui.fftCheck.clicked.connect(self.fft)
+        self.dofft = False
         self.db = False
         self.lastTime = time.time()
         self.fps = None
@@ -191,6 +210,16 @@ class MainWindow(TemplateBaseClass):
             self.ui.chanonCheck.setCheckState(QtCore.Qt.Checked)
         else:
             self.ui.chanonCheck.setCheckState(QtCore.Qt.Unchecked)
+
+    def fft(self):
+        if self.ui.fftCheck.checkState() == QtCore.Qt.Checked:
+            self.fftui = FFTWindow()
+            self.fftui.setWindowTitle('Haasoscope Pro FFT of board '+str(self.activeboard)+' channel ' + str(self.selectedchannel))
+            self.fftui.show()
+            self.dofft = True
+        else:
+            self.fftui.close()
+            self.dofft = False
 
     def changeoffset(self):
         dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value())
@@ -580,6 +609,21 @@ class MainWindow(TemplateBaseClass):
                     self.xydatainterleaved[int(li/2)][1][0::2] = self.xydata[li][1]
                     self.xydatainterleaved[int(li/2)][1][1::2] = self.xydata[li+1][1]
                     self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
+        if self.dofft and hasattr(self,"fftfreqplot_xdata"):
+            self.fftui.fftline.setPen(self.linepens[self.activeboard * self.num_chan_per_board + self.selectedchannel])
+            self.fftui.fftline.setData(self.fftfreqplot_xdata,self.fftfreqplot_ydata)
+            self.fftui.ui.plot.setTitle('Haasoscope Pro FFT of board '+str(self.activeboard)+' channel ' + str(self.selectedchannel))
+            self.fftui.ui.plot.setLabel('bottom', self.fftax_xlabel)
+            self.fftui.ui.plot.setRange(xRange=(0.0, self.fftax_xlim))
+            now = time.time()
+            dt = now - self.fftui.fftlastTime
+            if dt>3.0 or self.fftyrange<self.fftfreqplot_ydatamax*1.1:
+                self.fftui.fftlastTime = now
+                self.fftui.ui.plot.setRange(yRange=(0.0, self.fftfreqplot_ydatamax*1.1))
+                self.fftyrange = self.fftfreqplot_ydatamax * 1.1
+            if not self.fftui.isVisible(): # closed the fft window
+                self.dofft = False
+                self.ui.fftCheck.setCheckState(QtCore.Qt.Unchecked)
         app.processEvents()
 
     def getchannels(self, board):
@@ -800,6 +844,30 @@ class MainWindow(TemplateBaseClass):
         otherboardstd = np.std(yc1)
         self.xydata[c1][1] *= extrigboardstd/otherboardstd
 
+    def plot_fft(self):
+        y = self.xydata[self.activeboard * self.num_chan_per_board + self.selectedchannel][1]  # channel signal to take fft of
+        n = len(y)  # length of the signal
+        k = np.arange(n)
+        uspersample = self.downsamplefactor / self.samplerate / 1000.
+        # t = np.arange(0,1,1.0/n) * (n*uspersample) # time vector in us
+        frq = (k / uspersample)[list(range(int(n / 2)))] / n  # one side frequency range up to Nyquist
+        Y = np.fft.fft(y)[list(range(int(n / 2)))] / n  # fft computing and normalization
+        Y[0] = 0  # to suppress DC
+        if np.max(frq) < .001:
+            self.fftfreqplot_xdata = frq * 1000000.0
+            self.fftax_xlabel = 'Frequency (Hz)'
+            self.fftax_xlim = 1000000.0 * frq[int(n / 2) - 1]
+        elif np.max(frq) < 1.0:
+            self.fftfreqplot_xdata = frq * 1000.0
+            self.fftax_xlabel = 'Frequency (kHz)'
+            self.fftax_xlim = 1000.0 * frq[int(n / 2) - 1]
+        else:
+            self.fftfreqplot_xdata = frq
+            self.fftax_xlabel = 'Frequency (MHz)'
+            self.fftax_xlim = frq[int(n / 2) - 1]
+        self.fftfreqplot_ydata = abs(Y)
+        self.fftfreqplot_ydatamax = np.max(abs(Y))
+
     def fastadclineclick(self, curve):
         for li in range(self.nlines):
             if curve is self.lines[li].curve:
@@ -890,6 +958,7 @@ class MainWindow(TemplateBaseClass):
                     downsamplemergingcounter = self.getpredata(board)
                     data = self.getdata(usbs[board])
                     rx_len = rx_len + len(data)
+                    if self.dofft and board==self.activeboard: self.plot_fft()
                     self.drawchannels(data, board, downsamplemergingcounter)
                 if not self.data_twochannel and self.doexttrig[self.activeboard] and self.num_board>1:
                     self.calculatethings()
@@ -919,6 +988,7 @@ class MainWindow(TemplateBaseClass):
         print("Handling closeEvent", event)
         self.timer.stop()
         self.timer2.stop()
+        if hasattr(self,"fftui"): self.fftui.close()
         for usb in usbs: cleanup(usb)
 
 if __name__ == '__main__':
