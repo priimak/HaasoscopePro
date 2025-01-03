@@ -18,3 +18,10 @@ def oldbytes(usb):
 def inttobytes(theint):  # convert length number to a 4-byte byte array (with type of 'bytes')
     return [theint & 0xff, (theint >> 8) & 0xff, (theint >> 16) & 0xff, (theint >> 24) & 0xff]
 
+def send_leds(usb, r1,g1,b1, r2,g2,b2):
+    usb.send(bytes([11, 1, g1, r1, b1, g2, r2, b2]))  # send
+    res = usb.recv(4)
+    #print("got back", res[0])
+    usb.send(bytes([11, 0, g1, r1, b1, g2, r2, b2]))  # stop sending
+    res = usb.recv(4)
+    #print("got back", res[0])

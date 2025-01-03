@@ -795,12 +795,12 @@
        <property name="title">
         <string/>
        </property>
-       <widget class="QCheckBox" name="decodeCheck">
+       <widget class="QCheckBox" name="twochanCheck">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>440</y>
-          <width>91</width>
+          <y>420</y>
+          <width>111</width>
           <height>17</height>
          </rect>
         </property>
@@ -810,7 +810,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Serial decode</string>
+         <string>Two channels</string>
         </property>
        </widget>
        <widget class="QSpinBox" name="chanBox">
@@ -1139,7 +1139,7 @@
         <widget class="QSpinBox" name="pllBox">
          <property name="geometry">
           <rect>
-           <x>70</x>
+           <x>60</x>
            <y>120</y>
            <width>51</width>
            <height>22</height>
@@ -1175,7 +1175,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Pll:</string>
+          <string>PLL:</string>
          </property>
         </widget>
         <widget class="QToolButton" name="upposButton2">
@@ -1346,7 +1346,7 @@
          <rect>
           <x>10</x>
           <y>460</y>
-          <width>91</width>
+          <width>111</width>
           <height>17</height>
          </rect>
         </property>
@@ -1364,7 +1364,7 @@
          <rect>
           <x>10</x>
           <y>480</y>
-          <width>91</width>
+          <width>111</width>
           <height>17</height>
          </rect>
         </property>

@@ -46,10 +46,10 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     debugstrobe = False
     dofast = False
-    data_overlapped = False
-    data_twochannel = False
-    if not data_twochannel: num_chan_per_board = 1
-    else: num_chan_per_board = 2
+    dooverlapped = False
+    dotwochannel = False
+    if dotwochannel: num_chan_per_board = 2
+    else: num_chan_per_board = 1
     dointerleaved = False
     dooverrange = False
     total_rx_len = 0
@@ -108,9 +108,9 @@ class MainWindow(TemplateBaseClass):
     sample_triggered = [0] * num_board
     downsamplemergingcounter = 0
     doeventcounter = False
-    if data_overlapped:
+    if dooverlapped:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 10 * expect_samples], dtype=float)
-    elif data_twochannel:
+    elif dotwochannel:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 2 * 10 * expect_samples], dtype=float)
     else:
         xydata = np.empty([int(num_chan_per_board * num_board), 2, 4 * 10 * expect_samples], dtype=float)
@@ -167,6 +167,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.drawingCheck.clicked.connect(self.drawing)
         self.ui.fwfBox.valueChanged.connect(self.fwf)
         self.ui.tadBox.valueChanged.connect(self.setTAD)
+        self.ui.twochanCheck.clicked.connect(self.twochan)
         self.ui.ToffBox.valueChanged.connect(self.setToff)
         self.ui.fftCheck.clicked.connect(self.fft)
         self.dofft = False
@@ -220,6 +221,11 @@ class MainWindow(TemplateBaseClass):
         else:
             self.fftui.close()
             self.dofft = False
+
+    def twochan(self):
+        self.dotwochannel = self.ui.twochanCheck.checkState() == QtCore.Qt.Checked
+        if dotwochannel[self.activeboard]: self.num_chan_per_board = 2
+        else: self.num_chan_per_board = 1
 
     def changeoffset(self):
         dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value())
@@ -429,7 +435,7 @@ class MainWindow(TemplateBaseClass):
         point = self.triggerpos + 0.0
         if 0 < self.downsample < 10: point = point + 1.0 / pow(2, self.downsamplefactor - 1)
         self.vline = 2 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
-        if not self.data_twochannel: self.vline = self.vline * 2
+        if not self.dotwochannel: self.vline = self.vline * 2
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),
                                                               min(self.hline + self.max_y / 2,
                                                                   self.max_y)])  # vertical line showing trigger time
@@ -474,14 +480,14 @@ class MainWindow(TemplateBaseClass):
             self.downsamplemerging = 4
         if ds == 3:
             ds = 0
-            if not self.data_twochannel:
+            if not self.dotwochannel:
                 self.downsamplemerging = 8
             else:
                 self.downsamplemerging = 10
         if ds == 4:
             ds = 0
             self.downsamplemerging = 20
-        if not self.data_twochannel:
+        if not self.dotwochannel:
             if ds == 5:
                 ds = 0
                 self.downsamplemerging = 40
@@ -510,7 +516,7 @@ class MainWindow(TemplateBaseClass):
         self.timechanged()
 
     def timeslow(self):
-        if self.data_overlapped:
+        if self.dooverlapped:
             print("downsampling not supported in overlap mode")
             return
         amount = 1
@@ -544,11 +550,11 @@ class MainWindow(TemplateBaseClass):
             self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
             self.units = "s"
         self.ui.plot.setLabel('bottom', "Time (" + self.units + ")")
-        if self.data_overlapped:
+        if self.dooverlapped:
             for c in range(4):
                 self.xydata[c][0] = np.array([range(0, 10 * self.expect_samples)]) * (
                             4 * self.downsamplefactor / self.nsunits / self.samplerate)
-        elif self.data_twochannel:
+        elif self.dotwochannel:
             for c in range(self.num_chan_per_board * self.num_board):
                 self.xydata[c][0] = np.array([range(0, 2 * 10 * self.expect_samples)]) * (
                             2 * self.downsamplefactor / self.nsunits / self.samplerate)
@@ -629,7 +635,7 @@ class MainWindow(TemplateBaseClass):
     def getchannels(self, board):
         tt = self.triggertype
         if self.doexttrig[board] > 0: tt = 3
-        usbs[board].send(bytes([1, tt, self.data_twochannel, 99] + inttobytes(
+        usbs[board].send(bytes([1, tt, self.dotwochannel, 99] + inttobytes(
             self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usbs[board].recv(4)  # get the 4 bytes
         acqstate = triggercounter[0]
@@ -750,9 +756,9 @@ class MainWindow(TemplateBaseClass):
                     if self.downsamplemerging == 1:
                         samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
                         if s < (self.expect_samples - shiftmax): samp = samp - self.sample_triggered[board]
-                        if self.data_overlapped:
+                        if self.dooverlapped:
                             self.xydata[chan][1][samp] = val
-                        elif self.data_twochannel:
+                        elif self.dotwochannel:
                             if chan % 2 == 0:
                                 chani = int(chan / 2)
                             else:
@@ -767,7 +773,7 @@ class MainWindow(TemplateBaseClass):
                             else:
                                 self.xydata[board][1][(chan + 4 * samp + self.toff) % (40 * self.expect_samples)] = val * self.exttriggainscaling
                     else:
-                        if self.data_twochannel:
+                        if self.dotwochannel:
                             samp = s * 20 + chan * 10 + 9 - n
                             if n < 20: samp = samp + 10
                             if s < (self.expect_samples - shiftmax): samp = samp - int(2 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
@@ -798,7 +804,7 @@ class MainWindow(TemplateBaseClass):
         thestr += "\n" + "Mean " + str(np.mean(self.xydata[self.activexychannel][1]).round(2))
         thestr += "\n" + "RMS " + str(np.std(self.xydata[self.activexychannel][1]).round(2))
 
-        if not self.data_overlapped:
+        if not self.dooverlapped:
             if not self.dointerleaved:
                 targety = self.xydata[self.activexychannel]
             else:
@@ -818,7 +824,7 @@ class MainWindow(TemplateBaseClass):
             # print(popt)
             thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
 
-            if not self.data_twochannel and self.doexttrig[self.activeboard] and self.num_board>1:
+            if not self.dotwochannel and self.doexttrig[self.activeboard] and self.num_board>1:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1
                 else: c1 = self.activeboard+1
                 thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(self.activeboard)+": " + str(round(self.exttrigstdavg,2))
@@ -882,28 +888,31 @@ class MainWindow(TemplateBaseClass):
 
     def launch(self):
         self.nlines = self.num_chan_per_board * self.num_board
-        if self.db: print("nlines=", self.nlines)
-        for li in np.arange(self.nlines):
-            c = (0, 0, 0)
-            chan = li % 4
-            board = int(li / 4)
-            if self.db: print("chan =", chan, "and board =", board)
-            if self.num_board > 2:
-                if board % 4 == 0: c = (255 - 0.2 * 255 * chan, 0, 0)
-                if board % 4 == 1: c = (0, 255 - 0.2 * 255 * chan, 0)
-                if board % 4 == 2: c = (0, 0, 255 - 0.2 * 255 * chan)
-                if board % 4 == 3: c = (255 - 0.2 * 255 * chan, 0, 255 - 0.2 * 255 * chan)
-            else:
+        chan=0
+        for board in range(self.num_board):
+            for boardchan in range(self.num_chan_per_board):
+                print("chan=",chan, " board=",board, "boardchan=",boardchan)
+                c = (0, 0, 0)
                 if chan == 0: c = QColor("red")
                 if chan == 1: c = QColor("green")
                 if chan == 2: c = QColor("blue")
                 if chan == 3: c = QColor("magenta")
-            pen = pg.mkPen(color=c)  # add linewidth=1.0, alpha=.9
-            line = self.ui.plot.plot(pen=pen, name=self.chtext + str(li))
-            line.curve.setClickable(True)
-            line.curve.sigClicked.connect(self.fastadclineclick)
-            self.lines.append(line)
-            self.linepens.append(pen)
+                pen = pg.mkPen(color=c)  # add linewidth=1.0, alpha=.9
+                line = self.ui.plot.plot(pen=pen, name=self.chtext + str(chan))
+                line.curve.setClickable(True)
+                line.curve.sigClicked.connect(self.fastadclineclick)
+                self.lines.append(line)
+                self.linepens.append(pen)
+                chan += 1
+
+            r1 = 0
+            g1 = 2
+            b1 = 0
+            r2 = 1
+            g2 = 0
+            b2 = 1
+            send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
+
         self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
         self.ui.boardBox.setMaximum(self.num_board - 1)
 
@@ -931,7 +940,7 @@ class MainWindow(TemplateBaseClass):
         #version(usbs[board])
         self.adfreset(board)
         self.pllreset(board)
-        board_setup(usbs[board], self.dopattern, self.data_twochannel, self.dooverrange)
+        board_setup(usbs[board], self.dopattern, self.dotwochannel, self.dooverrange)
         for c in range(2): setchanacdc(usbs[board], c, 0)
         self.sendtriggerinfo(usbs[board])
         return 1
@@ -960,7 +969,7 @@ class MainWindow(TemplateBaseClass):
                     rx_len = rx_len + len(data)
                     if self.dofft and board==self.activeboard: self.plot_fft()
                     self.drawchannels(data, board, downsamplemergingcounter)
-                if not self.data_twochannel and self.doexttrig[self.activeboard] and self.num_board>1:
+                if not self.dotwochannel and self.doexttrig[self.activeboard] and self.num_board>1:
                     self.calculatethings()
                 if self.getone and rx_len > 0:
                     self.dostartstop()
