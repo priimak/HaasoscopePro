@@ -550,6 +550,7 @@ reg [7:0] scanclk_cycles=0;
 reg [9:0] ram_preoffset=0;
 integer overrange_counter[4];
 reg [15:0]	probecompcounter=0;
+reg send_color=1;
 
 always @ (posedge clk) begin
 	acqstate_sync <= acqstate;
@@ -588,8 +589,6 @@ always @ (posedge clk or negedge rstn)
 		channel <= 6'd0;
 		triggerlive <= 1'b0;
 		didreadout <= 1'b0;
-		neo_color[0] <= 24'h0f0000;
-		neo_color[1] <= 24'h00000f;
 		if (bootup) state <= RX;
 		else state <= BOOTUP;
 	end
@@ -787,6 +786,7 @@ always @ (posedge clk or negedge rstn)
 		11 : begin // LED controls
 			neo_color[0] <= {rx_data[4],rx_data[3],rx_data[2]};
 			neo_color[1] <= {rx_data[7],rx_data[6],rx_data[5]};
+			send_color <= rx_data[1][0];
 			o_tdata <= 123;
 			length <= 4;
 			o_tvalid <= 1'b1;
@@ -893,6 +893,11 @@ always @ (posedge clk or negedge rstn)
 	
 	BOOTUP : begin // runs once at startup
 		bootup <= 1'b1;
+		
+		neo_color[0] <= 24'h000009; // B R G
+		neo_color[1] <= 24'h000900;
+		send_color <= 1'b1;
+		
 		rx_data[0]<=8'd3;//SPI command
 		rx_data[1]<=8'd0;//talk to ADC
 		rx_data[2]<=8'h00;//ADC address 1
@@ -913,9 +918,9 @@ reg [2:0] neostate;
 reg [1:0] npxc;
 reg [12:0] lpxc;
 reg [7:0] neobits;
-reg [7:0] neo_led_num;
+reg [1:0] neo_led_num;
 parameter neo_led_num_max = 2;
-reg [24:0] neo_color[neo_led_num_max];
+reg [23:0] neo_color[neo_led_num_max];
 reg clk_over_4 = 0;
 reg clk_over_4_counter = 0;
 always@(posedge clk50) // Make 12.5 MHz clock
@@ -954,7 +959,7 @@ always@(posedge clk_over_4) // Process the state machine at each 12.5 MHz clock 
 	  end
 	if (neostate == 5)
 	  begin
-		 neo_led_num = neo_led_num + 8'b1;
+		 neo_led_num = neo_led_num + 2'b1;
 		 if (neo_led_num == neo_led_num_max)
 			begin
 			  neo_led_num = 0;
@@ -968,7 +973,7 @@ always@(posedge clk_over_4) // Process the state machine at each 12.5 MHz clock 
 	if (neostate == 6)
 	  begin
 		 lpxc = lpxc + 13'b1;
-		 if (lpxc == 0)
+		 if (lpxc == 0 && send_color)
 			begin
 			  neostate = 0;
 			end
