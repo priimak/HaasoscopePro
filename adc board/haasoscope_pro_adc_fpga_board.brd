@@ -12045,11 +12045,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PROD_ID" value="CONN-09696" x="95.5" y="117" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="L2" library="SparkFun-Passives" package="CDRH125" value="100uH" x="181.5" y="86.5" smashed="yes" rot="R270">
+<attribute name="JLC_ROTATION" value="270" x="181.5" y="86.5" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C22463847" x="181.5" y="86.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="182.77" y="89.04" size="0.8128" layer="21" rot="R270"/>
 <attribute name="VALUE" x="180.23" y="89.04" size="0.8128" layer="21" rot="R270"/>
 </element>
 <element name="L3" library="SparkFun-Passives" package="CDRH125" value="100uH" x="166.5" y="86.5" smashed="yes" rot="R270">
+<attribute name="JLC_ROTATION" value="270" x="166.5" y="86.5" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="LCSC" value="C22463847" x="166.5" y="86.5" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="167.77" y="89.04" size="0.8128" layer="21" rot="R270"/>
 <attribute name="VALUE" x="165.23" y="89.04" size="0.8128" layer="21" rot="R270"/>
