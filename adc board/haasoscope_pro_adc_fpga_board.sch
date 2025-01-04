@@ -29183,7 +29183,7 @@ amp with gain 4x</text>
 <wire x1="5.08" y1="-162.56" x2="7.62" y2="-165.1" width="0.1524" layer="90"/>
 <text x="210.82" y="-73.66" size="1.778" layer="90">Variable gain amp
 gain 0.5x to 20x</text>
-<text x="302.26" y="-43.18" size="1.778" layer="90">To ADC input B</text>
+<text x="304.8" y="-40.64" size="1.778" layer="90">To ADC input B</text>
 <text x="99.06" y="-175.26" size="1.778" layer="90">2.5V ref voltage
 from DAC, also
 used on sheet 4
@@ -29855,14 +29855,14 @@ but 220 found to be better</text>
 <net name="INB_N" class="6">
 <segment>
 <pinref part="R138" gate="G$1" pin="P$2"/>
-<wire x1="302.26" y1="-45.72" x2="312.42" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="-45.72" x2="304.8" y2="-45.72" width="0.1524" layer="91"/>
 <label x="304.8" y="-45.72" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="INB_P" class="6">
 <segment>
 <pinref part="R139" gate="G$1" pin="P$2"/>
-<wire x1="302.26" y1="-50.8" x2="312.42" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="-50.8" x2="304.8" y2="-50.8" width="0.1524" layer="91"/>
 <label x="304.8" y="-50.8" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
