@@ -37741,6 +37741,8 @@ FT232H FIFO &lt;-&gt; FPGA</text>
 <text x="81.28" y="40.64" size="1.778" layer="90">12 MHz clock for USB</text>
 <text x="203.2" y="66.04" size="1.778" layer="90">60 MHz clock goes to FPGA
 and is used for data transmission</text>
+<text x="-7.62" y="114.3" size="1.778" layer="90">5V USB power
+- see next sheet</text>
 </plain>
 <instances>
 <instance part="IC8" gate="IC" x="137.16" y="71.12" smashed="yes">
@@ -38453,9 +38455,9 @@ and is used for data transmission</text>
 <segment>
 <pinref part="FB2" gate="G$1" pin="2"/>
 <pinref part="C126" gate="C$1" pin="2"/>
-<wire x1="-15.24" y1="121.92" x2="2.54" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="121.92" x2="-7.62" y2="121.92" width="0.1524" layer="91"/>
 <junction x="-15.24" y="121.92"/>
-<label x="-12.7" y="121.92" size="1.778" layer="95"/>
+<label x="-7.62" y="121.92" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>

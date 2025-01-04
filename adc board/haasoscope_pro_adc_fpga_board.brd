@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
@@ -306,7 +306,7 @@ January 2025</text>
 <text x="88.5" y="119" size="0.8128" layer="21" rot="R90">GND</text>
 <circle x="156" y="74.83" radius="0.2" width="0.508" layer="21"/>
 <text x="207" y="107" size="1.778" layer="21">+</text>
-<text x="200" y="94" size="1.778" layer="21">+</text>
+<text x="207" y="89" size="1.778" layer="21">+</text>
 <text x="172" y="71" size="1.778" layer="21">+</text>
 <text x="160" y="96" size="1.778" layer="21">+</text>
 </plain>
@@ -11699,8 +11699,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MPN" value="P-MOS AO3401A" x="204.5" y="81" size="0.8128" layer="21" rot="R180"/>
 </element>
 <element name="R237" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="199.48" y="85.51" smashed="yes"/>
-<element name="R238" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="199.46" y="88.19" smashed="yes"/>
-<element name="R239" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="199.5" y="86.83" smashed="yes"/>
+<element name="R238" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="195.51" y="91.13" smashed="yes"/>
+<element name="R239" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="195.5" y="89.83" smashed="yes"/>
 <element name="R240" library="MF_Passives" package="R0402" value="120" x="63.5" y="43.5" smashed="yes">
 <attribute name="HOUSEPART" value="" x="63.5" y="43.5" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="63.5" y="43.5" size="1.778" layer="27" display="off"/>
@@ -12046,9 +12046,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </element>
 <element name="L2" library="SparkFun-Passives" package="CDRH125" value="100uH" x="181.5" y="86.5" smashed="yes" rot="R270">
 <attribute name="LCSC" value="C22463847" x="181.5" y="86.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="182.77" y="89.04" size="0.8128" layer="21" rot="R270"/>
+<attribute name="VALUE" x="180.23" y="89.04" size="0.8128" layer="21" rot="R270"/>
 </element>
 <element name="L3" library="SparkFun-Passives" package="CDRH125" value="100uH" x="166.5" y="86.5" smashed="yes" rot="R270">
 <attribute name="LCSC" value="C22463847" x="166.5" y="86.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="167.77" y="89.04" size="0.8128" layer="21" rot="R270"/>
+<attribute name="VALUE" x="165.23" y="89.04" size="0.8128" layer="21" rot="R270"/>
 </element>
 <element name="C81" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="22uF" x="157" y="94.5" smashed="yes" rot="R180">
 <attribute name="VALUE" x="158.5" y="93.05" size="0.8128" layer="21" rot="R180"/>
@@ -12064,8 +12068,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="EEE-FT1E102UP" x="162.67" y="100.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="667-EEE-FT1E102UP" x="162.67" y="100.7" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FT1E102UP?qs=pfd5qewlna5y21QYCh3%2FAQ%3D%3D" x="162.67" y="100.7" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="162.67" y="100.375" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="VALUE" x="162.67" y="100.375" size="1.27" layer="27" rot="R90" align="center"/>
+<attribute name="NAME" x="162.67" y="100.375" size="0.8128" layer="25" rot="R90" align="center"/>
+<attribute name="VALUE" x="164.67" y="100.375" size="0.8128" layer="21" rot="R90" align="center"/>
 </element>
 <element name="C172" library="EEE-FT1E102UP" package="EEE0JA152UAP" value="1000uF" x="171" y="68" smashed="yes" rot="R270">
 <attribute name="DESCRIPTION" value="Aluminium Electroyltic Capacitor, Radial" x="171" y="68" size="1.778" layer="27" rot="R270" display="off"/>
@@ -12075,8 +12079,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="EEE-FT1E102UP" x="171" y="68" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="667-EEE-FT1E102UP" x="171" y="68" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FT1E102UP?qs=pfd5qewlna5y21QYCh3%2FAQ%3D%3D" x="171" y="68" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="171" y="68.325" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="VALUE" x="171" y="68.325" size="1.27" layer="27" rot="R270" align="center"/>
+<attribute name="NAME" x="171" y="68.325" size="0.8128" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="173" y="68.325" size="0.8128" layer="21" rot="R270" align="center"/>
 </element>
 <element name="C83" library="EEE-FT1E102UP" package="EEE0JA152UAP" value="1000uF" x="204" y="110" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="Aluminium Electroyltic Capacitor, Radial" x="204" y="110" size="1.778" layer="27" rot="R180" display="off"/>
@@ -12086,19 +12090,19 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="EEE-FT1E102UP" x="204" y="110" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="667-EEE-FT1E102UP" x="204" y="110" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FT1E102UP?qs=pfd5qewlna5y21QYCh3%2FAQ%3D%3D" x="204" y="110" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="204.325" y="110" size="1.27" layer="25" rot="R180" align="center"/>
-<attribute name="VALUE" x="204.325" y="110" size="1.27" layer="27" rot="R180" align="center"/>
+<attribute name="NAME" x="204.325" y="110" size="0.8128" layer="25" rot="R180" align="center"/>
+<attribute name="VALUE" x="204.325" y="112" size="0.8128" layer="21" rot="R180" align="center"/>
 </element>
-<element name="C99" library="EEE-FT1E102UP" package="EEE0JA152UAP" value="1000uF" x="205" y="93" smashed="yes">
-<attribute name="DESCRIPTION" value="Aluminium Electroyltic Capacitor, Radial" x="205" y="93" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="12mm" x="205" y="93" size="1.778" layer="27" display="off"/>
-<attribute name="LCSC" value="C401766" x="205" y="93" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Panasonic" x="205" y="93" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="EEE-FT1E102UP" x="205" y="93" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="667-EEE-FT1E102UP" x="205" y="93" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FT1E102UP?qs=pfd5qewlna5y21QYCh3%2FAQ%3D%3D" x="205" y="93" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="204.675" y="93" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="204.675" y="93" size="1.27" layer="27" align="center"/>
+<element name="C99" library="EEE-FT1E102UP" package="EEE0JA152UAP" value="1000uF" x="204" y="92" smashed="yes" rot="R180">
+<attribute name="DESCRIPTION" value="Aluminium Electroyltic Capacitor, Radial" x="204" y="92" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="12mm" x="204" y="92" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C401766" x="204" y="92" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Panasonic" x="204" y="92" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="EEE-FT1E102UP" x="204" y="92" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="667-EEE-FT1E102UP" x="204" y="92" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FT1E102UP?qs=pfd5qewlna5y21QYCh3%2FAQ%3D%3D" x="204" y="92" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="204.325" y="92" size="0.8128" layer="25" rot="R180" align="center"/>
+<attribute name="VALUE" x="204.325" y="94" size="0.8128" layer="21" rot="R180" align="center"/>
 </element>
 </elements>
 <signals>
@@ -20384,12 +20388,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="121.5" y1="66.375" x2="119.125" y2="68.75" width="0.0889" layer="3"/>
 <via x="121.5" y="66.375" extent="1-16" drill="0.2"/>
 <contactref element="R238" pad="P$2"/>
-<via x="200.86" y="88.21" extent="1-16" drill="0.35"/>
-<wire x1="200.86" y1="88.21" x2="200.86" y2="86.36" width="0.1524" layer="16"/>
-<wire x1="200.86" y1="86.36" x2="180.875" y2="66.375" width="0.1524" layer="16"/>
-<wire x1="180.875" y1="66.375" x2="121.5" y2="66.375" width="0.1524" layer="16"/>
-<wire x1="199.96" y1="88.19" x2="199.98" y2="88.21" width="0.1524" layer="1"/>
-<wire x1="200.86" y1="88.21" x2="199.98" y2="88.21" width="0.1524" layer="1"/>
+<wire x1="121.5" y1="66.375" x2="180.875" y2="66.375" width="0.1524" layer="16"/>
+<wire x1="180.875" y1="66.375" x2="199" y2="84.5" width="0.1524" layer="16"/>
+<wire x1="199" y1="84.5" x2="199" y2="90" width="0.1524" layer="16"/>
+<via x="199" y="90" extent="1-16" drill="0.35"/>
+<wire x1="199" y1="90" x2="198" y2="90" width="0.1524" layer="1"/>
+<wire x1="196.87" y1="91.13" x2="196.01" y2="91.13" width="0.1524" layer="1"/>
+<wire x1="198" y1="90" x2="196.87" y2="91.13" width="0.1524" layer="1"/>
 </signal>
 <signal name="BOARDIN3">
 <contactref element="IC5" pad="D17"/>
@@ -23165,7 +23170,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="206.2085" y1="84.964" x2="204.091" y2="84.964" width="1.27" layer="1"/>
 <wire x1="204.091" y1="84.964" x2="204.016" y2="84.889" width="1.27" layer="1"/>
 <contactref element="C99" pad="1"/>
-<wire x1="200.65" y1="93" x2="204.091" y2="89.559" width="1.016" layer="1"/>
+<wire x1="208.35" y1="92" x2="204.091" y2="89.559" width="1.016" layer="1"/>
 <wire x1="204.091" y1="89.559" x2="204.091" y2="84.964" width="1.016" layer="1"/>
 </signal>
 <signal name="12VCONNECTED">
@@ -23173,26 +23178,28 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="R239" pad="P$1"/>
 <contactref element="CN2" pad="GNDBREAK"/>
 <contactref element="R237" pad="P$1"/>
-<via x="202" y="87.5" extent="1-16" drill="0.35"/>
 <wire x1="216.05" y1="106" x2="212" y2="106" width="0.1524" layer="16"/>
-<wire x1="212" y1="106" x2="202" y2="96" width="0.1524" layer="16"/>
-<wire x1="202" y1="96" x2="202" y2="87.5" width="0.1524" layer="16"/>
-<wire x1="198.96" y1="88.19" x2="199" y2="88.15" width="0.1524" layer="1"/>
-<wire x1="199" y1="88.15" x2="199" y2="86.83" width="0.1524" layer="1"/>
-<wire x1="199" y1="86.83" x2="199" y2="85.53" width="0.1524" layer="1"/>
-<wire x1="199" y1="85.53" x2="198.98" y2="85.51" width="0.1524" layer="1"/>
-<wire x1="199.16263125" y1="88.15" x2="199" y2="88.15" width="0.1524" layer="1"/>
-<wire x1="202" y1="87.5" x2="201.9582" y2="87.5418" width="0.1524" layer="1"/>
-<wire x1="201.9582" y1="87.5418" x2="199.77083125" y2="87.5418" width="0.1524" layer="1"/>
-<wire x1="199.77083125" y1="87.5418" x2="199.16263125" y2="88.15" width="0.1524" layer="1"/>
+<wire x1="198.98" y1="85.51" x2="198" y2="86.49" width="0.1524" layer="1"/>
+<wire x1="198" y1="86.49" x2="198" y2="87" width="0.1524" layer="1"/>
+<wire x1="198" y1="87" x2="195.6732" y2="89.3268" width="0.1524" layer="1"/>
+<wire x1="195.6732" y1="89.3268" x2="195.66583125" y2="89.3268" width="0.1524" layer="1"/>
+<wire x1="195.16263125" y1="89.83" x2="195" y2="89.83" width="0.1524" layer="1"/>
+<wire x1="195.66583125" y1="89.3268" x2="195.16263125" y2="89.83" width="0.1524" layer="1"/>
+<wire x1="195" y1="89.83" x2="195" y2="91" width="0.1524" layer="1"/>
+<wire x1="195" y1="91" x2="195" y2="91.12" width="0.1524" layer="1"/>
+<wire x1="195" y1="91.12" x2="195.01" y2="91.13" width="0.1524" layer="1"/>
+<wire x1="199" y1="93" x2="195" y2="93" width="0.1524" layer="16"/>
+<via x="195" y="93" extent="1-16" drill="0.35"/>
+<wire x1="195" y1="93" x2="195" y2="91.12" width="0.1524" layer="1"/>
+<wire x1="212" y1="106" x2="199" y2="93" width="0.1524" layer="16"/>
 </signal>
 <signal name="N$65">
 <contactref element="Q2" pad="1"/>
 <contactref element="R239" pad="P$2"/>
-<wire x1="200" y1="86.83" x2="201" y2="86.83" width="0.1524" layer="1"/>
-<wire x1="201" y1="86.83" x2="203" y2="84.83" width="0.1524" layer="1"/>
-<wire x1="203" y1="84.127" x2="204.016" y2="83.111" width="0.1524" layer="1"/>
-<wire x1="203" y1="84.83" x2="203" y2="84.127" width="0.1524" layer="1"/>
+<wire x1="202.7587" y1="84.59216875" x2="202.7587" y2="84.3683" width="0.1524" layer="1"/>
+<wire x1="202.7587" y1="84.3683" x2="204.016" y2="83.111" width="0.1524" layer="1"/>
+<wire x1="196" y1="89.83" x2="197.52086875" y2="89.83" width="0.1524" layer="1"/>
+<wire x1="197.52086875" y1="89.83" x2="202.7587" y2="84.59216875" width="0.1524" layer="1"/>
 </signal>
 <signal name="LVDSIN_TRIGB_N" class="2">
 <contactref element="IC5" pad="H1"/>
