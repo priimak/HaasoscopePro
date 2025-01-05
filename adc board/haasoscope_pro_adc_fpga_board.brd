@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
@@ -1700,10 +1700,10 @@ IPC Nominal Density</description>
 <smd name="AB22" x="10.5" y="-10.5" dx="0.5" dy="0.5" layer="1" roundness="100"/>
 <text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
 <text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-13.5" y1="13.5" x2="13.5" y2="13.5" width="0.05" layer="51"/>
-<wire x1="13.5" y1="13.5" x2="13.5" y2="-13.5" width="0.05" layer="51"/>
-<wire x1="13.5" y1="-13.5" x2="-13.5" y2="-13.5" width="0.05" layer="51"/>
-<wire x1="-13.5" y1="-13.5" x2="-13.5" y2="13.5" width="0.05" layer="51"/>
+<wire x1="-13.5" y1="13.5" x2="13.5" y2="13.5" width="0.05" layer="21"/>
+<wire x1="13.5" y1="13.5" x2="13.5" y2="-13.5" width="0.05" layer="21"/>
+<wire x1="13.5" y1="-13.5" x2="-13.5" y2="-13.5" width="0.05" layer="21"/>
+<wire x1="-13.5" y1="-13.5" x2="-13.5" y2="13.5" width="0.05" layer="21"/>
 <wire x1="-11.5" y1="11.5" x2="11.5" y2="11.5" width="0.1" layer="51"/>
 <wire x1="11.5" y1="11.5" x2="11.5" y2="-11.5" width="0.1" layer="51"/>
 <wire x1="11.5" y1="-11.5" x2="-11.5" y2="-11.5" width="0.1" layer="51"/>

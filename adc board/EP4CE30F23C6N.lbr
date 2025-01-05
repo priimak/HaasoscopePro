@@ -570,8 +570,8 @@
 <symbol name="EP4CE30F23C6N">
 <text x="36.83" y="2.54" size="1.778" layer="95" align="center-left">&gt;NAME</text>
 <text x="36.83" y="0" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="GND_1" x="-182.88" y="-101.6" length="middle"/>
-<pin name="VCCIO8_1" x="-76.2" y="-215.9" length="middle" rot="R180"/>
+<pin name="GND_1" x="-210.82" y="-17.78" length="middle"/>
+<pin name="VCCIO8_1" x="-104.14" y="-132.08" length="middle" rot="R180"/>
 <pin name="IO_1" x="0" y="-5.08" length="middle"/>
 <pin name="IO_2" x="0" y="-7.62" length="middle"/>
 <pin name="IO_3" x="0" y="-10.16" length="middle"/>
@@ -580,8 +580,8 @@
 <pin name="IO_6" x="0" y="-17.78" length="middle"/>
 <pin name="IO_7" x="0" y="-20.32" length="middle"/>
 <pin name="IO_8" x="0" y="-22.86" length="middle"/>
-<pin name="CLK10" x="-116.84" y="-307.34" length="middle"/>
-<pin name="CLK8" x="-116.84" y="-302.26" length="middle"/>
+<pin name="CLK10" x="-58.42" y="-71.12" length="middle"/>
+<pin name="CLK8" x="-58.42" y="-66.04" length="middle"/>
 <pin name="IO_9" x="0" y="-25.4" length="middle"/>
 <pin name="IO_10" x="0" y="-27.94" length="middle"/>
 <pin name="IO_11" x="0" y="-30.48" length="middle"/>
@@ -590,8 +590,8 @@
 <pin name="IO_14" x="0" y="-38.1" length="middle"/>
 <pin name="IO_15" x="0" y="-40.64" length="middle"/>
 <pin name="IO_16" x="0" y="-43.18" length="middle"/>
-<pin name="VCCIO7_1" x="-76.2" y="-200.66" length="middle" rot="R180"/>
-<pin name="GND_2" x="-182.88" y="-104.14" length="middle"/>
+<pin name="VCCIO7_1" x="-104.14" y="-116.84" length="middle" rot="R180"/>
+<pin name="GND_2" x="-210.82" y="-20.32" length="middle"/>
 <pin name="IO_17" x="0" y="-45.72" length="middle"/>
 <pin name="IO_18" x="0" y="-48.26" length="middle"/>
 <pin name="IO_19" x="0" y="-50.8" length="middle"/>
@@ -602,8 +602,8 @@
 <pin name="IO_24" x="0" y="-63.5" length="middle"/>
 <pin name="IO_25" x="0" y="-66.04" length="middle"/>
 <pin name="IO_26" x="0" y="-68.58" length="middle"/>
-<pin name="CLK11" x="-116.84" y="-309.88" length="middle"/>
-<pin name="CLK9" x="-116.84" y="-304.8" length="middle"/>
+<pin name="CLK11" x="-58.42" y="-73.66" length="middle"/>
+<pin name="CLK9" x="-58.42" y="-68.58" length="middle"/>
 <pin name="IO_27" x="0" y="-71.12" length="middle"/>
 <pin name="IO_28" x="0" y="-73.66" length="middle"/>
 <pin name="IO_29" x="0" y="-76.2" length="middle"/>
@@ -618,42 +618,42 @@
 <pin name="IO_38" x="0" y="-99.06" length="middle"/>
 <pin name="IO_39" x="0" y="-101.6" length="middle"/>
 <pin name="IO_40" x="0" y="-104.14" length="middle"/>
-<pin name="GND_3" x="-182.88" y="-106.68" length="middle"/>
+<pin name="GND_3" x="-210.82" y="-22.86" length="middle"/>
 <pin name="IO_41" x="0" y="-106.68" length="middle"/>
 <pin name="IO_42" x="0" y="-109.22" length="middle"/>
 <pin name="IO_43" x="0" y="-111.76" length="middle"/>
-<pin name="GND_4" x="-182.88" y="-109.22" length="middle"/>
+<pin name="GND_4" x="-210.82" y="-25.4" length="middle"/>
 <pin name="IO_44" x="0" y="-114.3" length="middle"/>
-<pin name="GND_5" x="-182.88" y="-111.76" length="middle"/>
-<pin name="GND_6" x="-182.88" y="-114.3" length="middle"/>
+<pin name="GND_5" x="-210.82" y="-27.94" length="middle"/>
+<pin name="GND_6" x="-210.82" y="-30.48" length="middle"/>
 <pin name="IO_45" x="0" y="-116.84" length="middle"/>
-<pin name="GND_7" x="-182.88" y="-116.84" length="middle"/>
+<pin name="GND_7" x="-210.82" y="-33.02" length="middle"/>
 <pin name="IO_46" x="0" y="-119.38" length="middle"/>
-<pin name="GND_8" x="-182.88" y="-119.38" length="middle"/>
+<pin name="GND_8" x="-210.82" y="-35.56" length="middle"/>
 <pin name="IO_47" x="0" y="-121.92" length="middle"/>
-<pin name="GND_9" x="-182.88" y="-121.92" length="middle"/>
+<pin name="GND_9" x="-210.82" y="-38.1" length="middle"/>
 <pin name="IO_48" x="0" y="-124.46" length="middle"/>
 <pin name="IO_49" x="0" y="-127" length="middle"/>
 <pin name="IO_50" x="0" y="-129.54" length="middle"/>
 <pin name="IO_51" x="0" y="-132.08" length="middle"/>
 <pin name="IO_52" x="0" y="-134.62" length="middle"/>
 <pin name="IO_53" x="0" y="-137.16" length="middle"/>
-<pin name="GND_10" x="-182.88" y="-124.46" length="middle"/>
-<pin name="VCCIO1_1" x="-116.84" y="-175.26" length="middle"/>
-<pin name="VCCIO8_2" x="-76.2" y="-218.44" length="middle" rot="R180"/>
+<pin name="GND_10" x="-210.82" y="-40.64" length="middle"/>
+<pin name="VCCIO1_1" x="-144.78" y="-91.44" length="middle"/>
+<pin name="VCCIO8_2" x="-104.14" y="-134.62" length="middle" rot="R180"/>
 <pin name="IO_54" x="0" y="-139.7" length="middle"/>
 <pin name="IO_55" x="0" y="-142.24" length="middle"/>
-<pin name="GND_11" x="-182.88" y="-127" length="middle"/>
-<pin name="VCCIO8_3" x="-76.2" y="-220.98" length="middle" rot="R180"/>
+<pin name="GND_11" x="-210.82" y="-43.18" length="middle"/>
+<pin name="VCCIO8_3" x="-104.14" y="-137.16" length="middle" rot="R180"/>
 <pin name="IO_56" x="0" y="-144.78" length="middle"/>
-<pin name="VCCIO8_4" x="-76.2" y="-223.52" length="middle" rot="R180"/>
-<pin name="VCCIO7_2" x="-76.2" y="-203.2" length="middle" rot="R180"/>
+<pin name="VCCIO8_4" x="-104.14" y="-139.7" length="middle" rot="R180"/>
+<pin name="VCCIO7_2" x="-104.14" y="-119.38" length="middle" rot="R180"/>
 <pin name="IO_57" x="0" y="-147.32" length="middle"/>
-<pin name="VCCIO7_3" x="-76.2" y="-205.74" length="middle" rot="R180"/>
+<pin name="VCCIO7_3" x="-104.14" y="-121.92" length="middle" rot="R180"/>
 <pin name="IO_58" x="0" y="-149.86" length="middle"/>
-<pin name="VCCIO7_4" x="-76.2" y="-208.28" length="middle" rot="R180"/>
+<pin name="VCCIO7_4" x="-104.14" y="-124.46" length="middle" rot="R180"/>
 <pin name="IO_59" x="0" y="-152.4" length="middle"/>
-<pin name="VCCIO7_5" x="-76.2" y="-210.82" length="middle" rot="R180"/>
+<pin name="VCCIO7_5" x="-104.14" y="-127" length="middle" rot="R180"/>
 <pin name="IO_60" x="0" y="-154.94" length="middle"/>
 <pin name="IO_61" x="0" y="-157.48" length="middle"/>
 <pin name="IO_62" x="0" y="-160.02" length="middle"/>
@@ -665,153 +665,153 @@
 <pin name="IO_68" x="0" y="-175.26" length="middle"/>
 <pin name="IO_69" x="0" y="-177.8" length="middle"/>
 <pin name="IO_70" x="0" y="-180.34" length="middle"/>
-<pin name="VCCIO8_5" x="-76.2" y="-226.06" length="middle" rot="R180"/>
+<pin name="VCCIO8_5" x="-104.14" y="-142.24" length="middle" rot="R180"/>
 <pin name="IO_71" x="0" y="-182.88" length="middle"/>
 <pin name="IO_72" x="0" y="-185.42" length="middle"/>
 <pin name="IO_73" x="0" y="-187.96" length="middle"/>
 <pin name="IO_74" x="0" y="-190.5" length="middle"/>
 <pin name="IO_75" x="0" y="-193.04" length="middle"/>
-<pin name="IO_76" x="0" y="-195.58" length="middle"/>
-<pin name="IO_77" x="0" y="-198.12" length="middle"/>
-<pin name="IO_78" x="0" y="-200.66" length="middle"/>
-<pin name="VCCD_PLL2" x="-76.2" y="-91.44" length="middle" rot="R180"/>
-<pin name="GNDA2" x="-182.88" y="-91.44" length="middle"/>
-<pin name="VCCIO6_1" x="-76.2" y="-187.96" length="middle" rot="R180"/>
-<pin name="GND_12" x="-182.88" y="-129.54" length="middle"/>
-<pin name="IO_79" x="0" y="-203.2" length="middle"/>
-<pin name="IO_80" x="0" y="-205.74" length="middle"/>
-<pin name="IO_81" x="0" y="-208.28" length="middle"/>
-<pin name="IO_82" x="0" y="-210.82" length="middle"/>
-<pin name="GND_13" x="-182.88" y="-132.08" length="middle"/>
-<pin name="VCCIO1_2" x="-116.84" y="-177.8" length="middle"/>
-<pin name="GNDA3" x="-182.88" y="-93.98" length="middle"/>
-<pin name="VCCD_PLL3" x="-76.2" y="-93.98" length="middle" rot="R180"/>
-<pin name="IO_83" x="0" y="-213.36" length="middle"/>
-<pin name="IO_84" x="0" y="-215.9" length="middle"/>
-<pin name="IO_85" x="0" y="-218.44" length="middle"/>
-<pin name="IO_86" x="0" y="-220.98" length="middle"/>
-<pin name="IO_87" x="0" y="-223.52" length="middle"/>
-<pin name="GND_14" x="-182.88" y="-134.62" length="middle"/>
-<pin name="IO_88" x="0" y="-226.06" length="middle"/>
-<pin name="IO_89" x="0" y="-228.6" length="middle"/>
-<pin name="IO_90" x="0" y="-231.14" length="middle"/>
-<pin name="IO_91" x="0" y="-233.68" length="middle"/>
-<pin name="IO_92" x="0" y="-236.22" length="middle"/>
-<pin name="VCCA2" x="-116.84" y="-91.44" length="middle"/>
-<pin name="IO_93" x="0" y="-238.76" length="middle"/>
-<pin name="IO_94" x="0" y="-241.3" length="middle"/>
-<pin name="IO_95" x="0" y="-243.84" length="middle"/>
-<pin name="IO_96" x="0" y="-246.38" length="middle"/>
-<pin name="CLK1" x="-116.84" y="-284.48" length="middle"/>
-<pin name="GND_15" x="-182.88" y="-137.16" length="middle"/>
-<pin name="IO_97" x="0" y="-248.92" length="middle"/>
-<pin name="IO_98" x="0" y="-251.46" length="middle"/>
-<pin name="IO_99" x="0" y="-254" length="middle"/>
-<pin name="VCCA3" x="-116.84" y="-93.98" length="middle"/>
-<pin name="IO_100" x="0" y="-256.54" length="middle"/>
-<pin name="IO_101" x="0" y="-259.08" length="middle"/>
-<pin name="IO_102" x="0" y="-261.62" length="middle"/>
-<pin name="IO_103" x="0" y="-264.16" length="middle"/>
-<pin name="IO_104" x="0" y="-266.7" length="middle"/>
-<pin name="VCCINT_1" x="-116.84" y="-101.6" length="middle"/>
-<pin name="IO_105" x="0" y="-269.24" length="middle"/>
-<pin name="IO_106" x="0" y="-271.78" length="middle"/>
-<pin name="IO_107" x="0" y="-274.32" length="middle"/>
-<pin name="IO_108" x="0" y="-276.86" length="middle"/>
-<pin name="IO_109" x="0" y="-279.4" length="middle"/>
-<pin name="IO_110" x="0" y="-281.94" length="middle"/>
-<pin name="VCCIO6_2" x="-76.2" y="-190.5" length="middle" rot="R180"/>
-<pin name="GND_16" x="-182.88" y="-139.7" length="middle"/>
-<pin name="CLK4" x="-116.84" y="-292.1" length="middle"/>
-<pin name="CLK5" x="-116.84" y="-294.64" length="middle"/>
-<pin name="IO_111" x="0" y="-284.48" length="middle"/>
-<pin name="IO_112" x="0" y="-287.02" length="middle"/>
-<pin name="GND_17" x="-182.88" y="-142.24" length="middle"/>
-<pin name="VCCIO1_3" x="-116.84" y="-180.34" length="middle"/>
-<pin name="IO_113" x="0" y="-289.56" length="middle"/>
-<pin name="IO_114" x="0" y="-292.1" length="middle"/>
-<pin name="IO_115" x="0" y="-294.64" length="middle"/>
-<pin name="IO_116" x="0" y="-297.18" length="middle"/>
-<pin name="VCCINT_2" x="-116.84" y="-104.14" length="middle"/>
-<pin name="IO_117" x="0" y="-299.72" length="middle"/>
-<pin name="IO_118" x="0" y="-302.26" length="middle"/>
-<pin name="GND_18" x="-182.88" y="-144.78" length="middle"/>
-<pin name="GND_19" x="-182.88" y="-147.32" length="middle"/>
-<pin name="IO_119" x="0" y="-304.8" length="middle"/>
-<pin name="IO_120" x="0" y="-307.34" length="middle"/>
-<pin name="IO_121" x="0" y="-309.88" length="middle"/>
-<pin name="IO_122" x="0" y="-312.42" length="middle"/>
-<pin name="IO_123" x="0" y="-314.96" length="middle"/>
-<pin name="IO_124" x="0" y="-317.5" length="middle"/>
-<pin name="IO_125" x="0" y="-320.04" length="middle"/>
-<pin name="IO_126" x="0" y="-322.58" length="middle"/>
-<pin name="IO_127" x="0" y="-325.12" length="middle"/>
-<pin name="IO_128" x="0" y="-327.66" length="middle"/>
-<pin name="IO_129" x="0" y="-330.2" length="middle"/>
-<pin name="IO_130" x="0" y="-332.74" length="middle"/>
-<pin name="IO_131" x="0" y="-335.28" length="middle"/>
-<pin name="IO_132" x="0" y="-337.82" length="middle"/>
-<pin name="IO_133" x="0" y="-340.36" length="middle"/>
-<pin name="IO_134" x="0" y="-342.9" length="middle"/>
-<pin name="IO_135" x="0" y="-345.44" length="middle"/>
-<pin name="GND_20" x="-182.88" y="-149.86" length="middle"/>
-<pin name="VCCINT_3" x="-116.84" y="-106.68" length="middle"/>
-<pin name="VCCINT_4" x="-116.84" y="-109.22" length="middle"/>
-<pin name="VCCINT_5" x="-116.84" y="-111.76" length="middle"/>
-<pin name="VCCINT_6" x="-116.84" y="-114.3" length="middle"/>
-<pin name="VCCINT_7" x="-116.84" y="-116.84" length="middle"/>
-<pin name="GND_21" x="-182.88" y="-152.4" length="middle"/>
-<pin name="VCCINT_8" x="-116.84" y="-119.38" length="middle"/>
-<pin name="IO_136" x="0" y="-347.98" length="middle"/>
-<pin name="IO_137" x="0" y="-350.52" length="middle"/>
-<pin name="GND_22" x="-182.88" y="-154.94" length="middle"/>
-<pin name="VCCIO6_3" x="-76.2" y="-193.04" length="middle" rot="R180"/>
-<pin name="IO_138" x="0" y="-353.06" length="middle"/>
-<pin name="IO_139" x="0" y="-355.6" length="middle"/>
-<pin name="IO_140" x="0" y="-358.14" length="middle"/>
-<pin name="DCLK" x="-116.84" y="-264.16" length="middle"/>
-<pin name="GND_23" x="-182.88" y="-157.48" length="middle"/>
-<pin name="VCCIO1_4" x="-116.84" y="-182.88" length="middle"/>
-<pin name="NCONFIG" x="-116.84" y="-259.08" length="middle"/>
-<pin name="NSTATUS" x="-116.84" y="-261.62" length="middle"/>
-<pin name="IO_141" x="0" y="-360.68" length="middle"/>
-<pin name="IO_142" x="0" y="-363.22" length="middle"/>
-<pin name="VCCINT_9" x="-116.84" y="-121.92" length="middle"/>
-<pin name="GND_24" x="-182.88" y="-160.02" length="middle"/>
-<pin name="GND_25" x="-182.88" y="-162.56" length="middle"/>
-<pin name="GND_26" x="-182.88" y="-165.1" length="middle"/>
-<pin name="GND_27" x="-182.88" y="-167.64" length="middle"/>
-<pin name="VCCINT_10" x="-116.84" y="-124.46" length="middle"/>
-<pin name="VCCINT_11" x="-116.84" y="-127" length="middle"/>
-<pin name="GND_28" x="-182.88" y="-170.18" length="middle"/>
-<pin name="IO_143" x="0" y="-365.76" length="middle"/>
-<pin name="IO_144" x="0" y="-368.3" length="middle"/>
-<pin name="IO_145" x="0" y="-370.84" length="middle"/>
-<pin name="MSEL3" x="-116.84" y="-276.86" length="middle"/>
-<pin name="IO_146" x="0" y="-373.38" length="middle"/>
-<pin name="IO_147" x="0" y="-375.92" length="middle"/>
-<pin name="TMS" x="-116.84" y="-241.3" length="middle"/>
-<pin name="TCK" x="-116.84" y="-243.84" length="middle"/>
-<pin name="NCE" x="-116.84" y="-246.38" length="middle"/>
-<pin name="TDO" x="-116.84" y="-248.92" length="middle"/>
-<pin name="TDI" x="-116.84" y="-251.46" length="middle"/>
-<pin name="IO_148" x="0" y="-378.46" length="middle"/>
-<pin name="IO_149" x="0" y="-381" length="middle"/>
-<pin name="IO_150" x="0" y="-383.54" length="middle"/>
-<pin name="VCCINT_12" x="-116.84" y="-129.54" length="middle"/>
-<pin name="GND_29" x="-182.88" y="-172.72" length="middle"/>
-<pin name="GND_30" x="-182.88" y="-175.26" length="middle"/>
-<pin name="GND_31" x="-182.88" y="-177.8" length="middle"/>
-<pin name="GND_32" x="-182.88" y="-180.34" length="middle"/>
-<pin name="VCCINT_13" x="-116.84" y="-132.08" length="middle"/>
-<pin name="GND_33" x="-182.88" y="-182.88" length="middle"/>
-<pin name="VCCINT_14" x="-116.84" y="-134.62" length="middle"/>
-<pin name="MSEL2" x="-116.84" y="-274.32" length="middle"/>
-<pin name="MSEL1" x="-116.84" y="-271.78" length="middle"/>
-<pin name="VCCIO6_4" x="-76.2" y="-195.58" length="middle" rot="R180"/>
-<pin name="GND_34" x="-182.88" y="-185.42" length="middle"/>
-<pin name="IO_151" x="0" y="-386.08" length="middle"/>
-<pin name="IO_152" x="0" y="-388.62" length="middle"/>
+<pin name="IO_76" x="104.14" y="-5.08" length="middle"/>
+<pin name="IO_77" x="104.14" y="-7.62" length="middle"/>
+<pin name="IO_78" x="104.14" y="-10.16" length="middle"/>
+<pin name="VCCD_PLL2" x="-104.14" y="-7.62" length="middle" rot="R180"/>
+<pin name="GNDA2" x="-210.82" y="-7.62" length="middle"/>
+<pin name="VCCIO6_1" x="-104.14" y="-104.14" length="middle" rot="R180"/>
+<pin name="GND_12" x="-210.82" y="-45.72" length="middle"/>
+<pin name="IO_79" x="104.14" y="-12.7" length="middle"/>
+<pin name="IO_80" x="104.14" y="-15.24" length="middle"/>
+<pin name="IO_81" x="104.14" y="-17.78" length="middle"/>
+<pin name="IO_82" x="104.14" y="-20.32" length="middle"/>
+<pin name="GND_13" x="-210.82" y="-48.26" length="middle"/>
+<pin name="VCCIO1_2" x="-144.78" y="-93.98" length="middle"/>
+<pin name="GNDA3" x="-210.82" y="-10.16" length="middle"/>
+<pin name="VCCD_PLL3" x="-104.14" y="-10.16" length="middle" rot="R180"/>
+<pin name="IO_83" x="104.14" y="-22.86" length="middle"/>
+<pin name="IO_84" x="104.14" y="-25.4" length="middle"/>
+<pin name="IO_85" x="104.14" y="-27.94" length="middle"/>
+<pin name="IO_86" x="104.14" y="-30.48" length="middle"/>
+<pin name="IO_87" x="104.14" y="-33.02" length="middle"/>
+<pin name="GND_14" x="-210.82" y="-50.8" length="middle"/>
+<pin name="IO_88" x="104.14" y="-35.56" length="middle"/>
+<pin name="IO_89" x="104.14" y="-38.1" length="middle"/>
+<pin name="IO_90" x="104.14" y="-40.64" length="middle"/>
+<pin name="IO_91" x="104.14" y="-43.18" length="middle"/>
+<pin name="IO_92" x="104.14" y="-45.72" length="middle"/>
+<pin name="VCCA2" x="-144.78" y="-7.62" length="middle"/>
+<pin name="IO_93" x="104.14" y="-48.26" length="middle"/>
+<pin name="IO_94" x="104.14" y="-50.8" length="middle"/>
+<pin name="IO_95" x="104.14" y="-53.34" length="middle"/>
+<pin name="IO_96" x="104.14" y="-55.88" length="middle"/>
+<pin name="CLK1" x="-58.42" y="-48.26" length="middle"/>
+<pin name="GND_15" x="-210.82" y="-53.34" length="middle"/>
+<pin name="IO_97" x="104.14" y="-58.42" length="middle"/>
+<pin name="IO_98" x="104.14" y="-60.96" length="middle"/>
+<pin name="IO_99" x="104.14" y="-63.5" length="middle"/>
+<pin name="VCCA3" x="-144.78" y="-10.16" length="middle"/>
+<pin name="IO_100" x="104.14" y="-66.04" length="middle"/>
+<pin name="IO_101" x="104.14" y="-68.58" length="middle"/>
+<pin name="IO_102" x="104.14" y="-71.12" length="middle"/>
+<pin name="IO_103" x="104.14" y="-73.66" length="middle"/>
+<pin name="IO_104" x="104.14" y="-76.2" length="middle"/>
+<pin name="VCCINT_1" x="-144.78" y="-17.78" length="middle"/>
+<pin name="IO_105" x="104.14" y="-78.74" length="middle"/>
+<pin name="IO_106" x="104.14" y="-81.28" length="middle"/>
+<pin name="IO_107" x="104.14" y="-83.82" length="middle"/>
+<pin name="IO_108" x="104.14" y="-86.36" length="middle"/>
+<pin name="IO_109" x="104.14" y="-88.9" length="middle"/>
+<pin name="IO_110" x="104.14" y="-91.44" length="middle"/>
+<pin name="VCCIO6_2" x="-104.14" y="-106.68" length="middle" rot="R180"/>
+<pin name="GND_16" x="-210.82" y="-55.88" length="middle"/>
+<pin name="CLK4" x="-58.42" y="-55.88" length="middle"/>
+<pin name="CLK5" x="-58.42" y="-58.42" length="middle"/>
+<pin name="IO_111" x="104.14" y="-93.98" length="middle"/>
+<pin name="IO_112" x="104.14" y="-96.52" length="middle"/>
+<pin name="GND_17" x="-210.82" y="-58.42" length="middle"/>
+<pin name="VCCIO1_3" x="-144.78" y="-96.52" length="middle"/>
+<pin name="IO_113" x="104.14" y="-99.06" length="middle"/>
+<pin name="IO_114" x="104.14" y="-101.6" length="middle"/>
+<pin name="IO_115" x="104.14" y="-104.14" length="middle"/>
+<pin name="IO_116" x="104.14" y="-106.68" length="middle"/>
+<pin name="VCCINT_2" x="-144.78" y="-20.32" length="middle"/>
+<pin name="IO_117" x="104.14" y="-109.22" length="middle"/>
+<pin name="IO_118" x="104.14" y="-111.76" length="middle"/>
+<pin name="GND_18" x="-210.82" y="-60.96" length="middle"/>
+<pin name="GND_19" x="-210.82" y="-63.5" length="middle"/>
+<pin name="IO_119" x="104.14" y="-114.3" length="middle"/>
+<pin name="IO_120" x="104.14" y="-116.84" length="middle"/>
+<pin name="IO_121" x="104.14" y="-119.38" length="middle"/>
+<pin name="IO_122" x="104.14" y="-121.92" length="middle"/>
+<pin name="IO_123" x="104.14" y="-124.46" length="middle"/>
+<pin name="IO_124" x="104.14" y="-127" length="middle"/>
+<pin name="IO_125" x="104.14" y="-129.54" length="middle"/>
+<pin name="IO_126" x="104.14" y="-132.08" length="middle"/>
+<pin name="IO_127" x="104.14" y="-134.62" length="middle"/>
+<pin name="IO_128" x="104.14" y="-137.16" length="middle"/>
+<pin name="IO_129" x="104.14" y="-139.7" length="middle"/>
+<pin name="IO_130" x="104.14" y="-142.24" length="middle"/>
+<pin name="IO_131" x="104.14" y="-144.78" length="middle"/>
+<pin name="IO_132" x="104.14" y="-147.32" length="middle"/>
+<pin name="IO_133" x="104.14" y="-149.86" length="middle"/>
+<pin name="IO_134" x="104.14" y="-152.4" length="middle"/>
+<pin name="IO_135" x="104.14" y="-154.94" length="middle"/>
+<pin name="GND_20" x="-210.82" y="-66.04" length="middle"/>
+<pin name="VCCINT_3" x="-144.78" y="-22.86" length="middle"/>
+<pin name="VCCINT_4" x="-144.78" y="-25.4" length="middle"/>
+<pin name="VCCINT_5" x="-144.78" y="-27.94" length="middle"/>
+<pin name="VCCINT_6" x="-144.78" y="-30.48" length="middle"/>
+<pin name="VCCINT_7" x="-144.78" y="-33.02" length="middle"/>
+<pin name="GND_21" x="-210.82" y="-68.58" length="middle"/>
+<pin name="VCCINT_8" x="-144.78" y="-35.56" length="middle"/>
+<pin name="IO_136" x="104.14" y="-157.48" length="middle"/>
+<pin name="IO_137" x="104.14" y="-160.02" length="middle"/>
+<pin name="GND_22" x="-210.82" y="-71.12" length="middle"/>
+<pin name="VCCIO6_3" x="-104.14" y="-109.22" length="middle" rot="R180"/>
+<pin name="IO_138" x="104.14" y="-162.56" length="middle"/>
+<pin name="IO_139" x="104.14" y="-165.1" length="middle"/>
+<pin name="IO_140" x="104.14" y="-167.64" length="middle"/>
+<pin name="DCLK" x="-58.42" y="-27.94" length="middle"/>
+<pin name="GND_23" x="-210.82" y="-73.66" length="middle"/>
+<pin name="VCCIO1_4" x="-144.78" y="-99.06" length="middle"/>
+<pin name="NCONFIG" x="-58.42" y="-22.86" length="middle"/>
+<pin name="NSTATUS" x="-58.42" y="-25.4" length="middle"/>
+<pin name="IO_141" x="104.14" y="-170.18" length="middle"/>
+<pin name="IO_142" x="104.14" y="-172.72" length="middle"/>
+<pin name="VCCINT_9" x="-144.78" y="-38.1" length="middle"/>
+<pin name="GND_24" x="-210.82" y="-76.2" length="middle"/>
+<pin name="GND_25" x="-210.82" y="-78.74" length="middle"/>
+<pin name="GND_26" x="-210.82" y="-81.28" length="middle"/>
+<pin name="GND_27" x="-210.82" y="-83.82" length="middle"/>
+<pin name="VCCINT_10" x="-144.78" y="-40.64" length="middle"/>
+<pin name="VCCINT_11" x="-144.78" y="-43.18" length="middle"/>
+<pin name="GND_28" x="-210.82" y="-86.36" length="middle"/>
+<pin name="IO_143" x="104.14" y="-175.26" length="middle"/>
+<pin name="IO_144" x="104.14" y="-177.8" length="middle"/>
+<pin name="IO_145" x="104.14" y="-180.34" length="middle"/>
+<pin name="MSEL3" x="-58.42" y="-40.64" length="middle"/>
+<pin name="IO_146" x="104.14" y="-182.88" length="middle"/>
+<pin name="IO_147" x="104.14" y="-185.42" length="middle"/>
+<pin name="TMS" x="-58.42" y="-5.08" length="middle"/>
+<pin name="TCK" x="-58.42" y="-7.62" length="middle"/>
+<pin name="NCE" x="-58.42" y="-10.16" length="middle"/>
+<pin name="TDO" x="-58.42" y="-12.7" length="middle"/>
+<pin name="TDI" x="-58.42" y="-15.24" length="middle"/>
+<pin name="IO_148" x="104.14" y="-187.96" length="middle"/>
+<pin name="IO_149" x="104.14" y="-190.5" length="middle"/>
+<pin name="IO_150" x="104.14" y="-193.04" length="middle"/>
+<pin name="VCCINT_12" x="-144.78" y="-45.72" length="middle"/>
+<pin name="GND_29" x="-210.82" y="-88.9" length="middle"/>
+<pin name="GND_30" x="-210.82" y="-91.44" length="middle"/>
+<pin name="GND_31" x="-210.82" y="-93.98" length="middle"/>
+<pin name="GND_32" x="-210.82" y="-96.52" length="middle"/>
+<pin name="VCCINT_13" x="-144.78" y="-48.26" length="middle"/>
+<pin name="GND_33" x="-210.82" y="-99.06" length="middle"/>
+<pin name="VCCINT_14" x="-144.78" y="-50.8" length="middle"/>
+<pin name="MSEL2" x="-58.42" y="-38.1" length="middle"/>
+<pin name="MSEL1" x="-58.42" y="-35.56" length="middle"/>
+<pin name="VCCIO6_4" x="-104.14" y="-111.76" length="middle" rot="R180"/>
+<pin name="GND_34" x="-210.82" y="-101.6" length="middle"/>
+<pin name="IO_151" x="104.14" y="-195.58" length="middle"/>
+<pin name="IO_152" x="104.14" y="-198.12" length="middle"/>
 <pin name="IO_153" x="40.64" y="-5.08" length="middle" rot="R180"/>
 <pin name="IO_154" x="40.64" y="-7.62" length="middle" rot="R180"/>
 <pin name="IO_155" x="40.64" y="-10.16" length="middle" rot="R180"/>
@@ -820,35 +820,35 @@
 <pin name="IO_158" x="40.64" y="-17.78" length="middle" rot="R180"/>
 <pin name="IO_159" x="40.64" y="-20.32" length="middle" rot="R180"/>
 <pin name="IO_160" x="40.64" y="-22.86" length="middle" rot="R180"/>
-<pin name="VCCINT_15" x="-116.84" y="-137.16" length="middle"/>
-<pin name="GND_35" x="-182.88" y="-187.96" length="middle"/>
-<pin name="GND_36" x="-182.88" y="-190.5" length="middle"/>
-<pin name="GND_37" x="-182.88" y="-193.04" length="middle"/>
-<pin name="GND_38" x="-182.88" y="-195.58" length="middle"/>
-<pin name="VCCINT_16" x="-116.84" y="-139.7" length="middle"/>
-<pin name="VCCINT_17" x="-116.84" y="-142.24" length="middle"/>
+<pin name="VCCINT_15" x="-144.78" y="-53.34" length="middle"/>
+<pin name="GND_35" x="-210.82" y="-104.14" length="middle"/>
+<pin name="GND_36" x="-210.82" y="-106.68" length="middle"/>
+<pin name="GND_37" x="-210.82" y="-109.22" length="middle"/>
+<pin name="GND_38" x="-210.82" y="-111.76" length="middle"/>
+<pin name="VCCINT_16" x="-144.78" y="-55.88" length="middle"/>
+<pin name="VCCINT_17" x="-144.78" y="-58.42" length="middle"/>
 <pin name="IO_161" x="40.64" y="-25.4" length="middle" rot="R180"/>
-<pin name="MSEL0" x="-116.84" y="-269.24" length="middle"/>
-<pin name="CONF_DONE" x="-116.84" y="-256.54" length="middle"/>
+<pin name="MSEL0" x="-58.42" y="-33.02" length="middle"/>
+<pin name="CONF_DONE" x="-58.42" y="-20.32" length="middle"/>
 <pin name="IO_162" x="40.64" y="-27.94" length="middle" rot="R180"/>
 <pin name="IO_163" x="40.64" y="-30.48" length="middle" rot="R180"/>
 <pin name="IO_164" x="40.64" y="-33.02" length="middle" rot="R180"/>
 <pin name="IO_165" x="40.64" y="-35.56" length="middle" rot="R180"/>
 <pin name="IO_166" x="40.64" y="-38.1" length="middle" rot="R180"/>
 <pin name="IO_167" x="40.64" y="-40.64" length="middle" rot="R180"/>
-<pin name="GND_39" x="-182.88" y="-198.12" length="middle"/>
-<pin name="VCCIO2_1" x="-116.84" y="-187.96" length="middle"/>
+<pin name="GND_39" x="-210.82" y="-114.3" length="middle"/>
+<pin name="VCCIO2_1" x="-144.78" y="-104.14" length="middle"/>
 <pin name="IO_168" x="40.64" y="-43.18" length="middle" rot="R180"/>
 <pin name="IO_169" x="40.64" y="-45.72" length="middle" rot="R180"/>
 <pin name="IO_170" x="40.64" y="-48.26" length="middle" rot="R180"/>
 <pin name="IO_171" x="40.64" y="-50.8" length="middle" rot="R180"/>
-<pin name="VCCINT_18" x="-116.84" y="-144.78" length="middle"/>
-<pin name="GND_40" x="-182.88" y="-200.66" length="middle"/>
-<pin name="GND_41" x="-182.88" y="-203.2" length="middle"/>
-<pin name="GND_42" x="-182.88" y="-205.74" length="middle"/>
-<pin name="GND_43" x="-182.88" y="-208.28" length="middle"/>
-<pin name="VCCINT_19" x="-116.84" y="-147.32" length="middle"/>
-<pin name="GND_44" x="-182.88" y="-210.82" length="middle"/>
+<pin name="VCCINT_18" x="-144.78" y="-60.96" length="middle"/>
+<pin name="GND_40" x="-210.82" y="-116.84" length="middle"/>
+<pin name="GND_41" x="-210.82" y="-119.38" length="middle"/>
+<pin name="GND_42" x="-210.82" y="-121.92" length="middle"/>
+<pin name="GND_43" x="-210.82" y="-124.46" length="middle"/>
+<pin name="VCCINT_19" x="-144.78" y="-63.5" length="middle"/>
+<pin name="GND_44" x="-210.82" y="-127" length="middle"/>
 <pin name="IO_172" x="40.64" y="-53.34" length="middle" rot="R180"/>
 <pin name="IO_173" x="40.64" y="-55.88" length="middle" rot="R180"/>
 <pin name="IO_174" x="40.64" y="-58.42" length="middle" rot="R180"/>
@@ -863,34 +863,34 @@
 <pin name="IO_183" x="40.64" y="-81.28" length="middle" rot="R180"/>
 <pin name="IO_184" x="40.64" y="-83.82" length="middle" rot="R180"/>
 <pin name="IO_185" x="40.64" y="-86.36" length="middle" rot="R180"/>
-<pin name="GND_45" x="-182.88" y="-213.36" length="middle"/>
-<pin name="VCCINT_20" x="-116.84" y="-149.86" length="middle"/>
-<pin name="VCCINT_21" x="-116.84" y="-152.4" length="middle"/>
-<pin name="VCCINT_22" x="-116.84" y="-154.94" length="middle"/>
-<pin name="VCCINT_23" x="-116.84" y="-157.48" length="middle"/>
-<pin name="VCCINT_24" x="-116.84" y="-160.02" length="middle"/>
-<pin name="VCCINT_25" x="-116.84" y="-162.56" length="middle"/>
+<pin name="GND_45" x="-210.82" y="-129.54" length="middle"/>
+<pin name="VCCINT_20" x="-144.78" y="-66.04" length="middle"/>
+<pin name="VCCINT_21" x="-144.78" y="-68.58" length="middle"/>
+<pin name="VCCINT_22" x="-144.78" y="-71.12" length="middle"/>
+<pin name="VCCINT_23" x="-144.78" y="-73.66" length="middle"/>
+<pin name="VCCINT_24" x="-144.78" y="-76.2" length="middle"/>
+<pin name="VCCINT_25" x="-144.78" y="-78.74" length="middle"/>
 <pin name="IO_186" x="40.64" y="-88.9" length="middle" rot="R180"/>
 <pin name="IO_187" x="40.64" y="-91.44" length="middle" rot="R180"/>
 <pin name="IO_188" x="40.64" y="-93.98" length="middle" rot="R180"/>
-<pin name="VCCIO5_1" x="-76.2" y="-175.26" length="middle" rot="R180"/>
-<pin name="GND_46" x="-182.88" y="-215.9" length="middle"/>
+<pin name="VCCIO5_1" x="-104.14" y="-91.44" length="middle" rot="R180"/>
+<pin name="GND_46" x="-210.82" y="-132.08" length="middle"/>
 <pin name="IO_189" x="40.64" y="-96.52" length="middle" rot="R180"/>
 <pin name="IO_190" x="40.64" y="-99.06" length="middle" rot="R180"/>
 <pin name="IO_191" x="40.64" y="-101.6" length="middle" rot="R180"/>
 <pin name="IO_192" x="40.64" y="-104.14" length="middle" rot="R180"/>
 <pin name="IO_193" x="40.64" y="-106.68" length="middle" rot="R180"/>
-<pin name="GND_47" x="-182.88" y="-218.44" length="middle"/>
-<pin name="VCCIO2_2" x="-116.84" y="-190.5" length="middle"/>
+<pin name="GND_47" x="-210.82" y="-134.62" length="middle"/>
+<pin name="VCCIO2_2" x="-144.78" y="-106.68" length="middle"/>
 <pin name="IO_194" x="40.64" y="-109.22" length="middle" rot="R180"/>
 <pin name="IO_195" x="40.64" y="-111.76" length="middle" rot="R180"/>
 <pin name="IO_196" x="40.64" y="-114.3" length="middle" rot="R180"/>
-<pin name="VCCINT_26" x="-116.84" y="-165.1" length="middle"/>
-<pin name="GND_48" x="-182.88" y="-220.98" length="middle"/>
-<pin name="VCCINT_27" x="-116.84" y="-167.64" length="middle"/>
-<pin name="GND_49" x="-182.88" y="-223.52" length="middle"/>
-<pin name="VCCINT_28" x="-116.84" y="-170.18" length="middle"/>
-<pin name="GND_50" x="-182.88" y="-226.06" length="middle"/>
+<pin name="VCCINT_26" x="-144.78" y="-81.28" length="middle"/>
+<pin name="GND_48" x="-210.82" y="-137.16" length="middle"/>
+<pin name="VCCINT_27" x="-144.78" y="-83.82" length="middle"/>
+<pin name="GND_49" x="-210.82" y="-139.7" length="middle"/>
+<pin name="VCCINT_28" x="-144.78" y="-86.36" length="middle"/>
+<pin name="GND_50" x="-210.82" y="-142.24" length="middle"/>
 <pin name="IO_197" x="40.64" y="-116.84" length="middle" rot="R180"/>
 <pin name="IO_198" x="40.64" y="-119.38" length="middle" rot="R180"/>
 <pin name="IO_199" x="40.64" y="-121.92" length="middle" rot="R180"/>
@@ -900,12 +900,12 @@
 <pin name="IO_203" x="40.64" y="-132.08" length="middle" rot="R180"/>
 <pin name="IO_204" x="40.64" y="-134.62" length="middle" rot="R180"/>
 <pin name="IO_205" x="40.64" y="-137.16" length="middle" rot="R180"/>
-<pin name="CLK3" x="-116.84" y="-289.56" length="middle"/>
-<pin name="CLK2" x="-116.84" y="-287.02" length="middle"/>
+<pin name="CLK3" x="-58.42" y="-53.34" length="middle"/>
+<pin name="CLK2" x="-58.42" y="-50.8" length="middle"/>
 <pin name="IO_206" x="40.64" y="-139.7" length="middle" rot="R180"/>
 <pin name="IO_207" x="40.64" y="-142.24" length="middle" rot="R180"/>
 <pin name="IO_208" x="40.64" y="-144.78" length="middle" rot="R180"/>
-<pin name="VCCA1" x="-116.84" y="-88.9" length="middle"/>
+<pin name="VCCA1" x="-144.78" y="-5.08" length="middle"/>
 <pin name="IO_209" x="40.64" y="-147.32" length="middle" rot="R180"/>
 <pin name="IO_210" x="40.64" y="-149.86" length="middle" rot="R180"/>
 <pin name="IO_211" x="40.64" y="-152.4" length="middle" rot="R180"/>
@@ -918,158 +918,162 @@
 <pin name="IO_218" x="40.64" y="-170.18" length="middle" rot="R180"/>
 <pin name="IO_219" x="40.64" y="-172.72" length="middle" rot="R180"/>
 <pin name="IO_220" x="40.64" y="-175.26" length="middle" rot="R180"/>
-<pin name="VCCIO5_2" x="-76.2" y="-177.8" length="middle" rot="R180"/>
-<pin name="GND_51" x="-182.88" y="-228.6" length="middle"/>
-<pin name="CLK6" x="-116.84" y="-297.18" length="middle"/>
-<pin name="CLK7" x="-116.84" y="-299.72" length="middle"/>
+<pin name="VCCIO5_2" x="-104.14" y="-93.98" length="middle" rot="R180"/>
+<pin name="GND_51" x="-210.82" y="-144.78" length="middle"/>
+<pin name="CLK6" x="-58.42" y="-60.96" length="middle"/>
+<pin name="CLK7" x="-58.42" y="-63.5" length="middle"/>
 <pin name="IO_221" x="40.64" y="-177.8" length="middle" rot="R180"/>
 <pin name="IO_222" x="40.64" y="-180.34" length="middle" rot="R180"/>
-<pin name="GND_52" x="-182.88" y="-231.14" length="middle"/>
-<pin name="VCCIO2_3" x="-116.84" y="-193.04" length="middle"/>
-<pin name="GNDA1" x="-182.88" y="-88.9" length="middle"/>
-<pin name="VCCD_PLL1" x="-76.2" y="-88.9" length="middle" rot="R180"/>
+<pin name="GND_52" x="-210.82" y="-147.32" length="middle"/>
+<pin name="VCCIO2_3" x="-144.78" y="-109.22" length="middle"/>
+<pin name="GNDA1" x="-210.82" y="-5.08" length="middle"/>
+<pin name="VCCD_PLL1" x="-104.14" y="-5.08" length="middle" rot="R180"/>
 <pin name="IO_223" x="40.64" y="-182.88" length="middle" rot="R180"/>
 <pin name="IO_224" x="40.64" y="-185.42" length="middle" rot="R180"/>
 <pin name="IO_225" x="40.64" y="-187.96" length="middle" rot="R180"/>
 <pin name="IO_226" x="40.64" y="-190.5" length="middle" rot="R180"/>
 <pin name="IO_227" x="40.64" y="-193.04" length="middle" rot="R180"/>
-<pin name="IO_228" x="40.64" y="-195.58" length="middle" rot="R180"/>
-<pin name="IO_229" x="40.64" y="-198.12" length="middle" rot="R180"/>
-<pin name="IO_230" x="40.64" y="-200.66" length="middle" rot="R180"/>
-<pin name="IO_231" x="40.64" y="-203.2" length="middle" rot="R180"/>
-<pin name="IO_232" x="40.64" y="-205.74" length="middle" rot="R180"/>
-<pin name="IO_233" x="40.64" y="-208.28" length="middle" rot="R180"/>
-<pin name="VCCA4" x="-116.84" y="-96.52" length="middle"/>
-<pin name="IO_234" x="40.64" y="-210.82" length="middle" rot="R180"/>
-<pin name="IO_235" x="40.64" y="-213.36" length="middle" rot="R180"/>
-<pin name="IO_236" x="40.64" y="-215.9" length="middle" rot="R180"/>
-<pin name="IO_237" x="40.64" y="-218.44" length="middle" rot="R180"/>
-<pin name="IO_238" x="40.64" y="-220.98" length="middle" rot="R180"/>
-<pin name="IO_239" x="40.64" y="-223.52" length="middle" rot="R180"/>
-<pin name="IO_240" x="40.64" y="-226.06" length="middle" rot="R180"/>
-<pin name="IO_241" x="40.64" y="-228.6" length="middle" rot="R180"/>
-<pin name="IO_242" x="40.64" y="-231.14" length="middle" rot="R180"/>
-<pin name="IO_243" x="40.64" y="-233.68" length="middle" rot="R180"/>
-<pin name="IO_244" x="40.64" y="-236.22" length="middle" rot="R180"/>
-<pin name="IO_245" x="40.64" y="-238.76" length="middle" rot="R180"/>
-<pin name="IO_246" x="40.64" y="-241.3" length="middle" rot="R180"/>
-<pin name="IO_247" x="40.64" y="-243.84" length="middle" rot="R180"/>
-<pin name="IO_248" x="40.64" y="-246.38" length="middle" rot="R180"/>
-<pin name="IO_249" x="40.64" y="-248.92" length="middle" rot="R180"/>
-<pin name="IO_250" x="40.64" y="-251.46" length="middle" rot="R180"/>
-<pin name="IO_251" x="40.64" y="-254" length="middle" rot="R180"/>
-<pin name="IO_252" x="40.64" y="-256.54" length="middle" rot="R180"/>
-<pin name="IO_253" x="40.64" y="-259.08" length="middle" rot="R180"/>
-<pin name="VCCD_PLL4" x="-76.2" y="-96.52" length="middle" rot="R180"/>
-<pin name="GNDA4" x="-182.88" y="-96.52" length="middle"/>
-<pin name="VCCIO5_3" x="-76.2" y="-180.34" length="middle" rot="R180"/>
-<pin name="GND_53" x="-182.88" y="-233.68" length="middle"/>
-<pin name="IO_254" x="40.64" y="-261.62" length="middle" rot="R180"/>
-<pin name="IO_255" x="40.64" y="-264.16" length="middle" rot="R180"/>
-<pin name="IO_256" x="40.64" y="-266.7" length="middle" rot="R180"/>
-<pin name="IO_257" x="40.64" y="-269.24" length="middle" rot="R180"/>
-<pin name="GND_54" x="-182.88" y="-236.22" length="middle"/>
-<pin name="VCCIO2_4" x="-116.84" y="-195.58" length="middle"/>
-<pin name="VCCIO3_1" x="-116.84" y="-200.66" length="middle"/>
-<pin name="IO_258" x="40.64" y="-271.78" length="middle" rot="R180"/>
-<pin name="IO_259" x="40.64" y="-274.32" length="middle" rot="R180"/>
-<pin name="IO_260" x="40.64" y="-276.86" length="middle" rot="R180"/>
-<pin name="VCCIO3_2" x="-116.84" y="-203.2" length="middle"/>
-<pin name="IO_261" x="40.64" y="-279.4" length="middle" rot="R180"/>
-<pin name="VCCIO3_3" x="-116.84" y="-205.74" length="middle"/>
-<pin name="VCCIO4_1" x="-116.84" y="-215.9" length="middle"/>
-<pin name="IO_262" x="40.64" y="-281.94" length="middle" rot="R180"/>
-<pin name="IO_263" x="40.64" y="-284.48" length="middle" rot="R180"/>
-<pin name="IO_264" x="40.64" y="-287.02" length="middle" rot="R180"/>
-<pin name="VCCIO4_2" x="-116.84" y="-218.44" length="middle"/>
-<pin name="IO_265" x="40.64" y="-289.56" length="middle" rot="R180"/>
-<pin name="VCCIO4_3" x="-116.84" y="-220.98" length="middle"/>
-<pin name="IO_266" x="40.64" y="-292.1" length="middle" rot="R180"/>
-<pin name="IO_267" x="40.64" y="-294.64" length="middle" rot="R180"/>
-<pin name="IO_268" x="40.64" y="-297.18" length="middle" rot="R180"/>
-<pin name="IO_269" x="40.64" y="-299.72" length="middle" rot="R180"/>
-<pin name="IO_270" x="40.64" y="-302.26" length="middle" rot="R180"/>
-<pin name="IO_271" x="40.64" y="-304.8" length="middle" rot="R180"/>
-<pin name="IO_272" x="40.64" y="-307.34" length="middle" rot="R180"/>
-<pin name="IO_273" x="40.64" y="-309.88" length="middle" rot="R180"/>
-<pin name="GND_55" x="-182.88" y="-238.76" length="middle"/>
-<pin name="IO_274" x="40.64" y="-312.42" length="middle" rot="R180"/>
-<pin name="IO_275" x="40.64" y="-314.96" length="middle" rot="R180"/>
-<pin name="IO_276" x="40.64" y="-317.5" length="middle" rot="R180"/>
-<pin name="GND_56" x="-182.88" y="-241.3" length="middle"/>
-<pin name="IO_277" x="40.64" y="-320.04" length="middle" rot="R180"/>
-<pin name="GND_57" x="-182.88" y="-243.84" length="middle"/>
-<pin name="GND_58" x="-182.88" y="-246.38" length="middle"/>
-<pin name="IO_278" x="40.64" y="-322.58" length="middle" rot="R180"/>
-<pin name="VCCIO4_4" x="-116.84" y="-223.52" length="middle"/>
-<pin name="GND_59" x="-182.88" y="-248.92" length="middle"/>
-<pin name="GND_60" x="-182.88" y="-251.46" length="middle"/>
-<pin name="IO_279" x="40.64" y="-325.12" length="middle" rot="R180"/>
-<pin name="GND_61" x="-182.88" y="-254" length="middle"/>
-<pin name="VCCIO5_4" x="-76.2" y="-182.88" length="middle" rot="R180"/>
-<pin name="GND_62" x="-182.88" y="-256.54" length="middle"/>
-<pin name="IO_280" x="40.64" y="-327.66" length="middle" rot="R180"/>
-<pin name="IO_281" x="40.64" y="-330.2" length="middle" rot="R180"/>
-<pin name="IO_282" x="40.64" y="-332.74" length="middle" rot="R180"/>
-<pin name="GND_63" x="-182.88" y="-259.08" length="middle"/>
-<pin name="IO_283" x="40.64" y="-335.28" length="middle" rot="R180"/>
-<pin name="IO_284" x="40.64" y="-337.82" length="middle" rot="R180"/>
-<pin name="IO_285" x="40.64" y="-340.36" length="middle" rot="R180"/>
-<pin name="VCCIO3_4" x="-116.84" y="-208.28" length="middle"/>
-<pin name="IO_286" x="40.64" y="-342.9" length="middle" rot="R180"/>
-<pin name="IO_287" x="40.64" y="-345.44" length="middle" rot="R180"/>
-<pin name="IO_288" x="40.64" y="-347.98" length="middle" rot="R180"/>
-<pin name="IO_289" x="40.64" y="-350.52" length="middle" rot="R180"/>
-<pin name="CLK15" x="-116.84" y="-320.04" length="middle"/>
-<pin name="CLK13" x="-116.84" y="-314.96" length="middle"/>
-<pin name="IO_290" x="40.64" y="-353.06" length="middle" rot="R180"/>
-<pin name="IO_291" x="40.64" y="-355.6" length="middle" rot="R180"/>
-<pin name="IO_292" x="40.64" y="-358.14" length="middle" rot="R180"/>
-<pin name="IO_293" x="40.64" y="-360.68" length="middle" rot="R180"/>
-<pin name="IO_294" x="40.64" y="-363.22" length="middle" rot="R180"/>
-<pin name="IO_295" x="40.64" y="-365.76" length="middle" rot="R180"/>
-<pin name="IO_296" x="40.64" y="-368.3" length="middle" rot="R180"/>
-<pin name="IO_297" x="40.64" y="-370.84" length="middle" rot="R180"/>
-<pin name="IO_298" x="40.64" y="-373.38" length="middle" rot="R180"/>
-<pin name="GND_64" x="-182.88" y="-261.62" length="middle"/>
-<pin name="GND_65" x="-182.88" y="-264.16" length="middle"/>
-<pin name="VCCIO3_5" x="-116.84" y="-210.82" length="middle"/>
-<pin name="IO_299" x="40.64" y="-375.92" length="middle" rot="R180"/>
-<pin name="IO_300" x="40.64" y="-378.46" length="middle" rot="R180"/>
-<pin name="IO_301" x="40.64" y="-381" length="middle" rot="R180"/>
-<pin name="GND_66" x="-182.88" y="-266.7" length="middle"/>
-<pin name="IO_302" x="40.64" y="-383.54" length="middle" rot="R180"/>
-<pin name="IO_303" x="40.64" y="-386.08" length="middle" rot="R180"/>
-<pin name="IO_304" x="40.64" y="-388.62" length="middle" rot="R180"/>
-<pin name="IO_305" x="40.64" y="-391.16" length="middle" rot="R180"/>
-<pin name="CLK14" x="-116.84" y="-317.5" length="middle"/>
-<pin name="CLK12" x="-116.84" y="-312.42" length="middle"/>
-<pin name="IO_306" x="40.64" y="-393.7" length="middle" rot="R180"/>
-<pin name="IO_307" x="40.64" y="-396.24" length="middle" rot="R180"/>
-<pin name="IO_308" x="40.64" y="-398.78" length="middle" rot="R180"/>
-<pin name="IO_309" x="40.64" y="-401.32" length="middle" rot="R180"/>
-<pin name="IO_310" x="40.64" y="-403.86" length="middle" rot="R180"/>
-<pin name="IO_311" x="40.64" y="-406.4" length="middle" rot="R180"/>
-<pin name="IO_312" x="40.64" y="-408.94" length="middle" rot="R180"/>
-<pin name="IO_313" x="40.64" y="-411.48" length="middle" rot="R180"/>
-<pin name="VCCIO4_5" x="-116.84" y="-226.06" length="middle"/>
-<pin name="GND_67" x="-182.88" y="-269.24" length="middle"/>
-<wire x1="-111.76" y1="-86.36" x2="-81.28" y2="-86.36" width="0.1524" layer="94"/>
-<wire x1="-81.28" y1="-86.36" x2="-81.28" y2="-228.6" width="0.1524" layer="94"/>
-<wire x1="-81.28" y1="-228.6" x2="-111.76" y2="-228.6" width="0.1524" layer="94"/>
-<wire x1="-111.76" y1="-228.6" x2="-111.76" y2="-86.36" width="0.1524" layer="94"/>
-<wire x1="-177.8" y1="-86.36" x2="-177.8" y2="-274.32" width="0.1524" layer="94"/>
-<wire x1="-177.8" y1="-274.32" x2="-162.56" y2="-274.32" width="0.1524" layer="94"/>
-<wire x1="-162.56" y1="-274.32" x2="-162.56" y2="-86.36" width="0.1524" layer="94"/>
-<wire x1="-162.56" y1="-86.36" x2="-177.8" y2="-86.36" width="0.1524" layer="94"/>
-<wire x1="-111.76" y1="-238.76" x2="-111.76" y2="-325.12" width="0.1524" layer="94"/>
-<wire x1="-111.76" y1="-325.12" x2="-93.98" y2="-325.12" width="0.1524" layer="94"/>
-<wire x1="-93.98" y1="-325.12" x2="-93.98" y2="-238.76" width="0.1524" layer="94"/>
-<wire x1="-93.98" y1="-238.76" x2="-111.76" y2="-238.76" width="0.1524" layer="94"/>
-<wire x1="35.56" y1="-2.54" x2="35.56" y2="-414.02" width="0.1524" layer="94"/>
-<wire x1="35.56" y1="-414.02" x2="5.08" y2="-414.02" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="-414.02" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
+<pin name="IO_228" x="144.78" y="-5.08" length="middle" rot="R180"/>
+<pin name="IO_229" x="144.78" y="-7.62" length="middle" rot="R180"/>
+<pin name="IO_230" x="144.78" y="-10.16" length="middle" rot="R180"/>
+<pin name="IO_231" x="144.78" y="-12.7" length="middle" rot="R180"/>
+<pin name="IO_232" x="144.78" y="-15.24" length="middle" rot="R180"/>
+<pin name="IO_233" x="144.78" y="-17.78" length="middle" rot="R180"/>
+<pin name="VCCA4" x="-144.78" y="-12.7" length="middle"/>
+<pin name="IO_234" x="144.78" y="-20.32" length="middle" rot="R180"/>
+<pin name="IO_235" x="144.78" y="-22.86" length="middle" rot="R180"/>
+<pin name="IO_236" x="144.78" y="-25.4" length="middle" rot="R180"/>
+<pin name="IO_237" x="144.78" y="-27.94" length="middle" rot="R180"/>
+<pin name="IO_238" x="144.78" y="-30.48" length="middle" rot="R180"/>
+<pin name="IO_239" x="144.78" y="-33.02" length="middle" rot="R180"/>
+<pin name="IO_240" x="144.78" y="-35.56" length="middle" rot="R180"/>
+<pin name="IO_241" x="144.78" y="-38.1" length="middle" rot="R180"/>
+<pin name="IO_242" x="144.78" y="-40.64" length="middle" rot="R180"/>
+<pin name="IO_243" x="144.78" y="-43.18" length="middle" rot="R180"/>
+<pin name="IO_244" x="144.78" y="-45.72" length="middle" rot="R180"/>
+<pin name="IO_245" x="144.78" y="-48.26" length="middle" rot="R180"/>
+<pin name="IO_246" x="144.78" y="-50.8" length="middle" rot="R180"/>
+<pin name="IO_247" x="144.78" y="-53.34" length="middle" rot="R180"/>
+<pin name="IO_248" x="144.78" y="-55.88" length="middle" rot="R180"/>
+<pin name="IO_249" x="144.78" y="-58.42" length="middle" rot="R180"/>
+<pin name="IO_250" x="144.78" y="-60.96" length="middle" rot="R180"/>
+<pin name="IO_251" x="144.78" y="-63.5" length="middle" rot="R180"/>
+<pin name="IO_252" x="144.78" y="-66.04" length="middle" rot="R180"/>
+<pin name="IO_253" x="144.78" y="-68.58" length="middle" rot="R180"/>
+<pin name="VCCD_PLL4" x="-104.14" y="-12.7" length="middle" rot="R180"/>
+<pin name="GNDA4" x="-210.82" y="-12.7" length="middle"/>
+<pin name="VCCIO5_3" x="-104.14" y="-96.52" length="middle" rot="R180"/>
+<pin name="GND_53" x="-210.82" y="-149.86" length="middle"/>
+<pin name="IO_254" x="144.78" y="-71.12" length="middle" rot="R180"/>
+<pin name="IO_255" x="144.78" y="-73.66" length="middle" rot="R180"/>
+<pin name="IO_256" x="144.78" y="-76.2" length="middle" rot="R180"/>
+<pin name="IO_257" x="144.78" y="-78.74" length="middle" rot="R180"/>
+<pin name="GND_54" x="-210.82" y="-152.4" length="middle"/>
+<pin name="VCCIO2_4" x="-144.78" y="-111.76" length="middle"/>
+<pin name="VCCIO3_1" x="-144.78" y="-116.84" length="middle"/>
+<pin name="IO_258" x="144.78" y="-81.28" length="middle" rot="R180"/>
+<pin name="IO_259" x="144.78" y="-83.82" length="middle" rot="R180"/>
+<pin name="IO_260" x="144.78" y="-86.36" length="middle" rot="R180"/>
+<pin name="VCCIO3_2" x="-144.78" y="-119.38" length="middle"/>
+<pin name="IO_261" x="144.78" y="-88.9" length="middle" rot="R180"/>
+<pin name="VCCIO3_3" x="-144.78" y="-121.92" length="middle"/>
+<pin name="VCCIO4_1" x="-144.78" y="-132.08" length="middle"/>
+<pin name="IO_262" x="144.78" y="-91.44" length="middle" rot="R180"/>
+<pin name="IO_263" x="144.78" y="-93.98" length="middle" rot="R180"/>
+<pin name="IO_264" x="144.78" y="-96.52" length="middle" rot="R180"/>
+<pin name="VCCIO4_2" x="-144.78" y="-134.62" length="middle"/>
+<pin name="IO_265" x="144.78" y="-99.06" length="middle" rot="R180"/>
+<pin name="VCCIO4_3" x="-144.78" y="-137.16" length="middle"/>
+<pin name="IO_266" x="144.78" y="-101.6" length="middle" rot="R180"/>
+<pin name="IO_267" x="144.78" y="-104.14" length="middle" rot="R180"/>
+<pin name="IO_268" x="144.78" y="-106.68" length="middle" rot="R180"/>
+<pin name="IO_269" x="144.78" y="-109.22" length="middle" rot="R180"/>
+<pin name="IO_270" x="144.78" y="-111.76" length="middle" rot="R180"/>
+<pin name="IO_271" x="144.78" y="-114.3" length="middle" rot="R180"/>
+<pin name="IO_272" x="144.78" y="-116.84" length="middle" rot="R180"/>
+<pin name="IO_273" x="144.78" y="-119.38" length="middle" rot="R180"/>
+<pin name="GND_55" x="-210.82" y="-154.94" length="middle"/>
+<pin name="IO_274" x="144.78" y="-121.92" length="middle" rot="R180"/>
+<pin name="IO_275" x="144.78" y="-124.46" length="middle" rot="R180"/>
+<pin name="IO_276" x="144.78" y="-127" length="middle" rot="R180"/>
+<pin name="GND_56" x="-210.82" y="-157.48" length="middle"/>
+<pin name="IO_277" x="144.78" y="-129.54" length="middle" rot="R180"/>
+<pin name="GND_57" x="-210.82" y="-160.02" length="middle"/>
+<pin name="GND_58" x="-210.82" y="-162.56" length="middle"/>
+<pin name="IO_278" x="144.78" y="-132.08" length="middle" rot="R180"/>
+<pin name="VCCIO4_4" x="-144.78" y="-139.7" length="middle"/>
+<pin name="GND_59" x="-210.82" y="-165.1" length="middle"/>
+<pin name="GND_60" x="-210.82" y="-167.64" length="middle"/>
+<pin name="IO_279" x="144.78" y="-134.62" length="middle" rot="R180"/>
+<pin name="GND_61" x="-210.82" y="-170.18" length="middle"/>
+<pin name="VCCIO5_4" x="-104.14" y="-99.06" length="middle" rot="R180"/>
+<pin name="GND_62" x="-210.82" y="-172.72" length="middle"/>
+<pin name="IO_280" x="144.78" y="-137.16" length="middle" rot="R180"/>
+<pin name="IO_281" x="144.78" y="-139.7" length="middle" rot="R180"/>
+<pin name="IO_282" x="144.78" y="-142.24" length="middle" rot="R180"/>
+<pin name="GND_63" x="-210.82" y="-175.26" length="middle"/>
+<pin name="IO_283" x="144.78" y="-144.78" length="middle" rot="R180"/>
+<pin name="IO_284" x="144.78" y="-147.32" length="middle" rot="R180"/>
+<pin name="IO_285" x="144.78" y="-149.86" length="middle" rot="R180"/>
+<pin name="VCCIO3_4" x="-144.78" y="-124.46" length="middle"/>
+<pin name="IO_286" x="144.78" y="-152.4" length="middle" rot="R180"/>
+<pin name="IO_287" x="144.78" y="-154.94" length="middle" rot="R180"/>
+<pin name="IO_288" x="144.78" y="-157.48" length="middle" rot="R180"/>
+<pin name="IO_289" x="144.78" y="-160.02" length="middle" rot="R180"/>
+<pin name="CLK15" x="-58.42" y="-83.82" length="middle"/>
+<pin name="CLK13" x="-58.42" y="-78.74" length="middle"/>
+<pin name="IO_290" x="144.78" y="-162.56" length="middle" rot="R180"/>
+<pin name="IO_291" x="144.78" y="-165.1" length="middle" rot="R180"/>
+<pin name="IO_292" x="144.78" y="-167.64" length="middle" rot="R180"/>
+<pin name="IO_293" x="144.78" y="-170.18" length="middle" rot="R180"/>
+<pin name="IO_294" x="144.78" y="-172.72" length="middle" rot="R180"/>
+<pin name="IO_295" x="144.78" y="-175.26" length="middle" rot="R180"/>
+<pin name="IO_296" x="144.78" y="-177.8" length="middle" rot="R180"/>
+<pin name="IO_297" x="144.78" y="-180.34" length="middle" rot="R180"/>
+<pin name="IO_298" x="144.78" y="-182.88" length="middle" rot="R180"/>
+<pin name="GND_64" x="-210.82" y="-177.8" length="middle"/>
+<pin name="GND_65" x="-210.82" y="-180.34" length="middle"/>
+<pin name="VCCIO3_5" x="-144.78" y="-127" length="middle"/>
+<pin name="IO_299" x="144.78" y="-185.42" length="middle" rot="R180"/>
+<pin name="IO_300" x="144.78" y="-187.96" length="middle" rot="R180"/>
+<pin name="IO_301" x="144.78" y="-190.5" length="middle" rot="R180"/>
+<pin name="GND_66" x="-210.82" y="-182.88" length="middle"/>
+<pin name="IO_302" x="144.78" y="-193.04" length="middle" rot="R180"/>
+<pin name="IO_303" x="144.78" y="-195.58" length="middle" rot="R180"/>
+<pin name="IO_304" x="144.78" y="-198.12" length="middle" rot="R180"/>
+<pin name="IO_305" x="144.78" y="-200.66" length="middle" rot="R180"/>
+<pin name="CLK14" x="-58.42" y="-81.28" length="middle"/>
+<pin name="CLK12" x="-58.42" y="-76.2" length="middle"/>
+<pin name="IO_306" x="144.78" y="-203.2" length="middle" rot="R180"/>
+<pin name="IO_307" x="144.78" y="-205.74" length="middle" rot="R180"/>
+<pin name="IO_308" x="144.78" y="-208.28" length="middle" rot="R180"/>
+<pin name="IO_309" x="144.78" y="-210.82" length="middle" rot="R180"/>
+<pin name="IO_310" x="144.78" y="-213.36" length="middle" rot="R180"/>
+<pin name="IO_311" x="144.78" y="-215.9" length="middle" rot="R180"/>
+<pin name="IO_312" x="144.78" y="-218.44" length="middle" rot="R180"/>
+<pin name="IO_313" x="144.78" y="-220.98" length="middle" rot="R180"/>
+<pin name="VCCIO4_5" x="-144.78" y="-142.24" length="middle"/>
+<pin name="GND_67" x="-210.82" y="-185.42" length="middle"/>
+<wire x1="-139.7" y1="-2.54" x2="-109.22" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-109.22" y1="-2.54" x2="-109.22" y2="-144.78" width="0.1524" layer="94"/>
+<wire x1="-109.22" y1="-144.78" x2="-139.7" y2="-144.78" width="0.1524" layer="94"/>
+<wire x1="-139.7" y1="-144.78" x2="-139.7" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-205.74" y1="-2.54" x2="-205.74" y2="-190.5" width="0.1524" layer="94"/>
+<wire x1="-205.74" y1="-190.5" x2="-190.5" y2="-190.5" width="0.1524" layer="94"/>
+<wire x1="-190.5" y1="-190.5" x2="-190.5" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-190.5" y1="-2.54" x2="-205.74" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-53.34" y1="-2.54" x2="-53.34" y2="-88.9" width="0.1524" layer="94"/>
+<wire x1="-53.34" y1="-88.9" x2="-35.56" y2="-88.9" width="0.1524" layer="94"/>
+<wire x1="-35.56" y1="-88.9" x2="-35.56" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-35.56" y1="-2.54" x2="-53.34" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="35.56" y1="-2.54" x2="35.56" y2="-198.12" width="0.1524" layer="94"/>
+<wire x1="35.56" y1="-198.12" x2="5.08" y2="-198.12" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="-198.12" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="5.08" y1="-2.54" x2="35.56" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="109.22" y1="-226.06" x2="109.22" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="139.7" y1="-226.06" x2="109.22" y2="-226.06" width="0.1524" layer="94"/>
+<wire x1="139.7" y1="-2.54" x2="139.7" y2="-226.06" width="0.1524" layer="94"/>
+<wire x1="139.7" y1="-2.54" x2="109.22" y2="-2.54" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
