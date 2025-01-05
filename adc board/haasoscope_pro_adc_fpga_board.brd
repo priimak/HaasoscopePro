@@ -10265,6 +10265,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </element>
 <element name="IC9" library="microchip" package="SOT23-6" value="93LC56B" x="149.089053125" y="67.43989375" smashed="yes" rot="R180">
 <attribute name="JLC_ROTATION" value="270" x="0" y="0" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="LCSC" value="C190271" x="149.089053125" y="67.43989375" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="MICROCHIP" x="149.089053125" y="67.43989375" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="93LC76AT-I/OT" x="149.089053125" y="67.43989375" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_FARNELL" value="1556170" x="149.089053125" y="67.43989375" size="1.778" layer="27" rot="R180" display="off"/>
@@ -13507,7 +13508,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="147" y="76" extent="1-16" drill="0.2"/>
 <via x="147" y="83" extent="1-16" drill="0.2"/>
 <via x="144" y="69.5" extent="1-16" drill="0.2"/>
-<via x="147.31" y="69.85" extent="1-16" drill="0.2"/>
+<via x="146.34" y="68.76" extent="1-16" drill="0.2"/>
 <wire x1="147.9145" y1="73.5115" x2="147.9145" y2="75.2895" width="0.1524" layer="1"/>
 <wire x1="147.9145" y1="75.2895" x2="148.625" y2="76" width="0.1524" layer="1"/>
 <wire x1="150.9145" y1="73.5115" x2="150.9145" y2="75.5855" width="0.1524" layer="1"/>
