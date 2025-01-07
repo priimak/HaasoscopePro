@@ -39908,7 +39908,7 @@ and each of these negative regulators can only make 200mA</text>
 <wire x1="266.7" y1="264.16" x2="266.7" y2="257.81" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="257.81" x2="228.6" y2="257.81" width="0.1524" layer="91"/>
 <junction x="266.7" y="264.16"/>
-<label x="228.6" y="257.81" size="2.54" layer="95" rot="R180" xref="yes"/>
+<label x="228.6" y="257.81" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="IC26" gate="G$1" pin="EN"/>
 <wire x1="279.4" y1="246.38" x2="281.94" y2="246.38" width="0.1524" layer="91"/>
 <label x="281.94" y="246.38" size="1.778" layer="95"/>
