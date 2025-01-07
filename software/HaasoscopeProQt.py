@@ -72,9 +72,9 @@ class MainWindow(TemplateBaseClass):
     highresval = 1
     xscale = 1
     xscaling = 1
-    yscale = 530 / 1400  # mV/count on 50 Ohm
-    min_y = -pow(2, 11) * yscale
-    max_y = pow(2, 11) * yscale
+    yscale = 3.3/2.0 * 10. / pow(2,12) # 1 V / division, with 10 divisions
+    min_y = -5.1 # -pow(2, 11) * yscale
+    max_y = 5.1 # pow(2, 11) * yscale
     min_x = 0
     max_x = 4 * 10 * expect_samples * downsamplefactor / nsunits / samplerate
     triggerlevel = 127
@@ -120,6 +120,7 @@ class MainWindow(TemplateBaseClass):
     exttrigstdavg = 0
     lastrate = 0
     lastsize = 0
+    VperD = [1.0]*(num_board*num_chan_per_board)
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
@@ -232,6 +233,11 @@ class MainWindow(TemplateBaseClass):
 
     def changegain(self):
         setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value())
+        db = self.ui.gainBox.value()
+        v2 = 1./pow(10, db / 20.)
+        self.VperD[self.activeboard*2+self.selectedchannel] = v2
+        v2 = round(v2,2)
+        self.ui.VperD.setText(str(v2)+" V/div")
 
     def fwf(self):
         self.fitwidthfraction = self.ui.fwfBox.value() / 100.
@@ -801,8 +807,8 @@ class MainWindow(TemplateBaseClass):
         thestr += "\n" + "Nbadstrobes " + str(self.nbadstr)
         thestr += "\n" + gettemps(self.activeusb)
         thestr += "\n" + "Trigger threshold " + str(round(self.hline, 3))
-        thestr += "\n" + "Mean " + str(np.mean(self.xydata[self.activexychannel][1]).round(2))
-        thestr += "\n" + "RMS " + str(np.std(self.xydata[self.activexychannel][1]).round(2))
+        thestr += "\n" + "Mean " + str( round( self.VperD[self.activeboard*2+self.selectedchannel] * np.mean(self.xydata[self.activexychannel][1]), 3) )
+        thestr += "\n" + "RMS " + str( round( self.VperD[self.activeboard*2+self.selectedchannel] * np.std(self.xydata[self.activexychannel][1]), 3) )
 
         if not self.dooverlapped:
             if not self.dointerleaved:
@@ -929,7 +935,7 @@ class MainWindow(TemplateBaseClass):
 
         # other stuff
         self.ui.plot.setLabel('bottom', "Time (ns)")
-        self.ui.plot.setLabel('left', "Voltage (mV)")
+        self.ui.plot.setLabel('left', "Voltage (divisions)")
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
         for usb in usbs: self.telldownsample(usb, 0)
         self.timechanged()

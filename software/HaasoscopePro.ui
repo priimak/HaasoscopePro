@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1324</width>
+    <width>1445</width>
     <height>843</height>
    </rect>
   </property>
@@ -15,11 +15,20 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="2">
+    <item row="0" column="0">
+     <widget class="PlotWidget" name="plot">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="2">
      <widget class="QFrame" name="frame">
       <property name="minimumSize">
        <size>
-        <width>400</width>
+        <width>500</width>
         <height>300</height>
        </size>
       </property>
@@ -39,7 +48,7 @@
         <rect>
          <x>0</x>
          <y>520</y>
-         <width>401</width>
+         <width>501</width>
          <height>271</height>
         </rect>
        </property>
@@ -52,7 +61,7 @@
       <widget class="QFrame" name="frame_2">
        <property name="geometry">
         <rect>
-         <x>170</x>
+         <x>270</x>
          <y>0</y>
          <width>231</width>
          <height>371</height>
@@ -523,7 +532,7 @@
       <widget class="QGroupBox" name="channelgroupBox">
        <property name="geometry">
         <rect>
-         <x>170</x>
+         <x>270</x>
          <y>380</y>
          <width>111</width>
          <height>131</height>
@@ -652,7 +661,7 @@
       <widget class="QGroupBox" name="channelgroupBox_2">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>390</x>
          <y>380</y>
          <width>111</width>
          <height>131</height>
@@ -783,7 +792,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>161</width>
+         <width>261</width>
          <height>511</height>
         </rect>
        </property>
@@ -941,7 +950,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>161</width>
+          <width>171</width>
           <height>181</height>
          </rect>
         </property>
@@ -1618,16 +1627,27 @@
          <bool>false</bool>
         </property>
        </widget>
+       <widget class="QLabel" name="VperD">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>260</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>1 V/div</string>
+        </property>
+       </widget>
       </widget>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="PlotWidget" name="plot">
-      <property name="font">
-       <font>
-        <family>Arial</family>
-       </font>
-      </property>
      </widget>
     </item>
    </layout>
@@ -1637,7 +1657,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1324</width>
+     <width>1445</width>
      <height>21</height>
     </rect>
    </property>
