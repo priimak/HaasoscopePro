@@ -35,6 +35,7 @@ WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 class MainWindow(TemplateBaseClass):
 
     expect_samples = 100
+    expect_samples_extra = 5 # enough to cover downsample shifting and toff shifting
     samplerate = 3.2  # freq in GHz
     nsunits = 1
     num_board = len(usbs)
@@ -680,7 +681,7 @@ class MainWindow(TemplateBaseClass):
         return downsamplemergingcounter
 
     def getdata(self, usb):
-        expect_len = self.expect_samples * 2 * self.nsubsamples  # length to request: each adc bit is stored as 10 bits in 2 bytes
+        expect_len = (self.expect_samples+ self.expect_samples_extra) * 2 * self.nsubsamples # length to request: each adc bit is stored as 10 bits in 2 bytes, a couple extra for shifting later
         usb.send(bytes([0, 99, 99, 99] + inttobytes(expect_len)))  # send the 4 bytes to usb
         data = usb.recv(expect_len)  # recv from usb
         rx_len = len(data)
@@ -703,7 +704,7 @@ class MainWindow(TemplateBaseClass):
         nbadclkC = 0
         nbadclkD = 0
         self.nbadstr = 0
-        for s in range(0, self.expect_samples):
+        for s in range(0, self.expect_samples+self.expect_samples_extra):
             chan = -1
             for n in range(self.nsubsamples):  # the subsample to get
                 pbyte = self.nsubsamples * 2 * s + 2 * n
@@ -758,11 +759,11 @@ class MainWindow(TemplateBaseClass):
                 if n < 40:
                     # val = -val # if we're swapping inputs
                     val = val * self.yscale * self.tenx
-                    shiftmax = 1
                     if self.downsamplemerging == 1:
                         samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
-                        if s < (self.expect_samples - shiftmax): samp = samp - self.sample_triggered[board]
+                        samp = samp - self.sample_triggered[board]
                         if self.dooverlapped:
+                            if samp >= self.xydata[chan][1].size: continue
                             self.xydata[chan][1][samp] = val
                         elif self.dotwochannel:
                             if chan % 2 == 0:
@@ -770,30 +771,39 @@ class MainWindow(TemplateBaseClass):
                             else:
                                 chani = int((chan - 1) / 2)
                             if not self.doexttrig[board]:
+                                if chani+ 2*samp >= self.xydata[board*self.num_chan_per_board + chan%2][1].size: continue
                                 self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
                             else:
-                                self.xydata[board*self.num_chan_per_board + chan%2][1][ (chani+ 2*samp+ self.toff) % (20*self.expect_samples) ] = val
+                                if chani+ 2*samp+ self.toff >= self.xydata[board*self.num_chan_per_board + chan%2][1].size: continue
+                                self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp+ self.toff] = val
                         else:
                             if not self.doexttrig[board]:
+                                if chan + 4 * samp >= self.xydata[board][1].size: continue
                                 self.xydata[board][1][chan + 4 * samp] = val
                             else:
-                                self.xydata[board][1][(chan + 4 * samp + self.toff) % (40 * self.expect_samples)] = val * self.exttriggainscaling
+                                if chan + 4 * samp + self.toff >= self.xydata[board][1].size: continue
+                                self.xydata[board][1][chan + 4 * samp + self.toff] = val * self.exttriggainscaling
                     else:
                         if self.dotwochannel:
                             samp = s * 20 + chan * 10 + 9 - n
                             if n < 20: samp = samp + 10
-                            if s < (self.expect_samples - shiftmax): samp = samp - int(2 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
+                            samp = samp - int(2 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
+                                if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                             else:
-                                self.xydata[board * self.num_chan_per_board + chan % 2][1][(samp + self.toff) % (20 * self.expect_samples)] = val
+                                if sampe + self.toff >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
+                                self.xydata[board * self.num_chan_per_board + chan % 2][1][samp + self.toff] = val
                         else:
                             samp = s * 40 + 39 - n
-                            if s < (self.expect_samples - shiftmax): samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
+                            samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
+                                if samp >= self.xydata[board][1].size: continue
                                 self.xydata[board][1][samp] = val
                             else:
-                                self.xydata[board][1][(samp + self.toff) % (40 * self.expect_samples)] = val
+                                if samp + self.toff >= self.xydata[board][1].size: continue
+                                self.xydata[board][1][(samp + self.toff)] = val
+
         self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD)
         if board == self.activeboard:
             self.nbadclkA = nbadclkA
