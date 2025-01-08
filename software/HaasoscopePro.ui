@@ -1644,7 +1644,7 @@
          </font>
         </property>
         <property name="text">
-         <string>1 V/div</string>
+         <string>50 mV/div</string>
         </property>
        </widget>
       </widget>
