@@ -42,7 +42,7 @@ class MainWindow(TemplateBaseClass):
     num_logic_inputs = 0
     tenx = 1
     debug = False
-    dopattern = False
+    dopattern = 0
     debugprint = True
     showbinarydata = True
     debugstrobe = False
@@ -55,8 +55,8 @@ class MainWindow(TemplateBaseClass):
     dooverrange = False
     total_rx_len = 0
     time_start = time.time()
-    triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
     if dopattern: triggertype = 0
+    else: triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
     selectedchannel = 0
     activeusb = usbs[0]
     activeboard = 0

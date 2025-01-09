@@ -80,16 +80,42 @@ def board_setup(usb, dopattern, twochannel, dooverrange):
     if dopattern:
         spicommand(usb, "PAT_SEL", 0x02, 0x05, 0x11, False)  # test pattern
         usrval = 0x00
-        usrval3 = 0x0f
-        usrval2 = 0xff
-        spicommand2(usb, "UPAT0", 0x01, 0x80, usrval3, usrval2, False)  # set pattern sample 0
-        spicommand2(usb, "UPAT1", 0x01, 0x82, usrval, usrval, False)  # set pattern sample 1
-        spicommand2(usb, "UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
-        spicommand2(usb, "UPAT3", 0x01, 0x86, usrval, usrval, False)  # set pattern sample 3
-        spicommand2(usb, "UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
-        spicommand2(usb, "UPAT5", 0x01, 0x8a, usrval, usrval, False)  # set pattern sample 5
-        spicommand2(usb, "UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
-        spicommand2(usb, "UPAT7", 0x01, 0x8e, usrval, usrval, False)  # set pattern sample 7
+        if dopattern==1:
+            spicommand2(usb, "UPAT0", 0x01, 0x80, usrval, usrval, False)  # set pattern sample 0
+            spicommand2(usb, "UPAT1", 0x01, 0x82, usrval, usrval+1, False)  # set pattern sample 1
+            spicommand2(usb, "UPAT2", 0x01, 0x84, usrval, usrval+2, False)  # set pattern sample 2
+            spicommand2(usb, "UPAT3", 0x01, 0x86, usrval, usrval+4, False)  # set pattern sample 3
+            spicommand2(usb, "UPAT4", 0x01, 0x88, usrval, usrval+8, False)  # set pattern sample 4
+            spicommand2(usb, "UPAT5", 0x01, 0x8a, usrval, usrval+16, False)  # set pattern sample 5
+            spicommand2(usb, "UPAT6", 0x01, 0x8c, usrval, usrval+32, False)  # set pattern sample 6
+            spicommand2(usb, "UPAT7", 0x01, 0x8e, usrval, usrval+64, False)  # set pattern sample 7
+        if dopattern==2:
+            spicommand2(usb, "UPAT0", 0x01, 0x80, usrval, usrval, False)  # set pattern sample 0
+            spicommand2(usb, "UPAT1", 0x01, 0x82, usrval+1, usrval, False)  # set pattern sample 1
+            spicommand2(usb, "UPAT2", 0x01, 0x84, usrval, usrval, False)  # set pattern sample 2
+            spicommand2(usb, "UPAT3", 0x01, 0x86, usrval+2, usrval, False)  # set pattern sample 3
+            spicommand2(usb, "UPAT4", 0x01, 0x88, usrval, usrval, False)  # set pattern sample 4
+            spicommand2(usb, "UPAT5", 0x01, 0x8a, usrval+3, usrval, False)  # set pattern sample 5
+            spicommand2(usb, "UPAT6", 0x01, 0x8c, usrval, usrval, False)  # set pattern sample 6
+            spicommand2(usb, "UPAT7", 0x01, 0x8e, usrval+4, usrval, False)  # set pattern sample 7
+        if dopattern==3:
+            spicommand2(usb, "UPAT0", 0x01, 0x80, usrval, usrval, False)  # set pattern sample 0
+            spicommand2(usb, "UPAT1", 0x01, 0x82, usrval+0x01, usrval+0x01, False)  # set pattern sample 1
+            spicommand2(usb, "UPAT2", 0x01, 0x84, usrval+0x01, usrval+0x03, False)  # set pattern sample 2
+            spicommand2(usb, "UPAT3", 0x01, 0x86, usrval+0x03, usrval+0x07, False)  # set pattern sample 3
+            spicommand2(usb, "UPAT4", 0x01, 0x88, usrval+0x03, usrval+0x0f, False)  # set pattern sample 4
+            spicommand2(usb, "UPAT5", 0x01, 0x8a, usrval+0x07, usrval+0x7f, False)  # set pattern sample 5
+            spicommand2(usb, "UPAT6", 0x01, 0x8c, usrval+0x07, usrval+0xff, False)  # set pattern sample 6
+            spicommand2(usb, "UPAT7", 0x01, 0x8e, usrval+0x08, usrval, False)  # set pattern sample 7
+        if dopattern==4:
+            spicommand2(usb, "UPAT0", 0x01, 0x80, usrval, usrval, False)  # set pattern sample 0
+            spicommand2(usb, "UPAT1", 0x01, 0x82, usrval+0x07, usrval+0xff, False)  # set pattern sample 1
+            spicommand2(usb, "UPAT2", 0x01, 0x84, usrval+0x00, usrval+0x00, False)  # set pattern sample 2
+            spicommand2(usb, "UPAT3", 0x01, 0x86, usrval+0x07, usrval+0xff, False)  # set pattern sample 3
+            spicommand2(usb, "UPAT4", 0x01, 0x88, usrval+0x00, usrval+0x00, False)  # set pattern sample 4
+            spicommand2(usb, "UPAT5", 0x01, 0x8a, usrval+0x07, usrval+0xff, False)  # set pattern sample 5
+            spicommand2(usb, "UPAT6", 0x01, 0x8c, usrval+0x00, usrval+0x00, False)  # set pattern sample 6
+            spicommand2(usb, "UPAT7", 0x01, 0x8e, usrval+0x07, usrval+0xff, False)  # set pattern sample 7
         # spicommand(usb, "UPAT_CTRL", 0x01, 0x90, 0x0e, False)  # set lane pattern to user, invert a bit of B C D
         spicommand(usb, "UPAT_CTRL", 0x01, 0x90, 0x00, False)  # set lane pattern to user
     else:
