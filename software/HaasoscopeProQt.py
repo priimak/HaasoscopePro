@@ -39,6 +39,7 @@ class MainWindow(TemplateBaseClass):
     samplerate = 3.2  # freq in GHz
     nsunits = 1
     num_board = len(usbs)
+    num_chan_per_board = 2
     num_logic_inputs = 0
     tenx = 1
     debug = False
@@ -49,8 +50,6 @@ class MainWindow(TemplateBaseClass):
     dofast = False
     dooverlapped = False
     dotwochannel = False
-    if dotwochannel: num_chan_per_board = 2
-    else: num_chan_per_board = 1
     dointerleaved = False
     dooverrange = False
     total_rx_len = 0
@@ -109,19 +108,12 @@ class MainWindow(TemplateBaseClass):
     sample_triggered = [0] * num_board
     downsamplemergingcounter = 0
     doeventcounter = False
-    if dooverlapped:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, 10 * expect_samples], dtype=float)
-    elif dotwochannel:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, 2 * 10 * expect_samples], dtype=float)
-    else:
-        xydata = np.empty([int(num_chan_per_board * num_board), 2, 4 * 10 * expect_samples], dtype=float)
-        xydatainterleaved = np.empty([int(num_chan_per_board * num_board), 2, 2 * 4 * 10 * expect_samples], dtype=float)
     fitwidthfraction = 0.2
     exttrigstd = 0
     exttrigstdavg = 0
     lastrate = 0
     lastsize = 0
-    VperD = [0.05]*(num_board*num_chan_per_board)
+    VperD = [0.05]*(num_board*2)
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
@@ -226,8 +218,16 @@ class MainWindow(TemplateBaseClass):
 
     def twochan(self):
         self.dotwochannel = self.ui.twochanCheck.checkState() == QtCore.Qt.Checked
-        if dotwochannel[self.activeboard]: self.num_chan_per_board = 2
-        else: self.num_chan_per_board = 1
+        self.setupchannels()
+        for usb in usbs: setupboard(usb,self.dopattern,self.dotwochannel,self.dooverrange)
+        for usb in usbs: self.telldownsample(usb, self.downsample)
+        self.timechanged()
+        if self.dotwochannel: self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
+        else: self.ui.chanBox.setMaximum(0)
+        for c in range(self.num_board*self.num_chan_per_board):
+            if c%2==1:
+                if self.dotwochannel: self.lines[c].setVisible(True)
+                else: self.lines[c].setVisible(False)
 
     def changeoffset(self):
         dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value())
@@ -600,7 +600,7 @@ class MainWindow(TemplateBaseClass):
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
     def updateplot(self):
-        self.mainloop()
+        self.getevent()
         self.statuscounter = self.statuscounter + 1
         now = time.time()
         dt = now - self.lastTime + 0.00001
@@ -638,6 +638,46 @@ class MainWindow(TemplateBaseClass):
                 self.dofft = False
                 self.ui.fftCheck.setCheckState(QtCore.Qt.Unchecked)
         app.processEvents()
+
+    def getevent(self):
+        if self.paused:
+            time.sleep(.1)
+        else:
+            rx_len = 0
+            try:
+                readyevent = [0]*self.num_board
+                for board in reversed(range(self.num_board)): # go backwards through the boards to get the triggerinfo for the right events
+                    readyevent[board] = self.getchannels(board)
+                for board in range(self.num_board):
+                    if not readyevent[board]: continue
+                    downsamplemergingcounter = self.getpredata(board)
+                    data = self.getdata(usbs[board])
+                    rx_len = rx_len + len(data)
+                    if self.dofft and board==self.activeboard: self.plot_fft()
+                    self.drawchannels(data, board, downsamplemergingcounter)
+                if not self.dotwochannel and self.doexttrig[self.activeboard] and self.num_board>1:
+                    self.calculatethings()
+                if self.getone and rx_len > 0:
+                    self.dostartstop()
+                    self.drawtext()
+            except ftd2xx.DeviceError:
+                print("Device error")
+                sys.exit(1)
+            if self.db: print(time.time() - self.oldtime, "done with evt", self.nevents)
+            if rx_len > 0: self.nevents += 1
+            if self.nevents - self.oldnevents >= self.tinterval:
+
+                self.exttrigstdavg = self.exttrigstd / self.tinterval
+                self.exttrigstd =0
+
+                now = time.time()
+                elapsedtime = now - self.oldtime
+                self.oldtime = now
+                self.lastrate = round(self.tinterval / elapsedtime, 2)
+                self.lastsize = rx_len
+                if not self.dodrawing: print(self.nevents, "events,", self.lastrate, "Hz",
+                                             round(self.lastrate * self.lastsize / 1e6, 3), "MB/s")
+                self.oldnevents = self.nevents
 
     def getchannels(self, board):
         tt = self.triggertype
@@ -817,8 +857,8 @@ class MainWindow(TemplateBaseClass):
         thestr += "\n" + "Nbadstrobes " + str(self.nbadstr)
         thestr += "\n" + gettemps(self.activeusb)
         thestr += "\n" + "Trigger threshold " + str(round(self.hline, 3))
-        thestr += "\n" + "Mean " + str( round( self.VperD[self.activeboard*2+self.selectedchannel] * np.mean(self.xydata[self.activexychannel][1]), 5) )
-        thestr += "\n" + "RMS " + str( round( self.VperD[self.activeboard*2+self.selectedchannel] * np.std(self.xydata[self.activexychannel][1]), 5) )
+        thestr += "\n" + "Mean " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.mean(self.xydata[self.activexychannel][1]), 5) ) + " mV"
+        thestr += "\n" + "RMS " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.std(self.xydata[self.activexychannel][1]), 5) ) + " mV"
 
         if not self.dooverlapped:
             if not self.dointerleaved:
@@ -902,17 +942,38 @@ class MainWindow(TemplateBaseClass):
                 elif modifiers == QtCore.Qt.ControlModifier:
                     self.ui.chanonCheck.toggle()
 
+    def init(self):
+        self.tot()
+        self.setupchannels()
+        self.launch()
+        self.selectchannel()
+        self.timechanged()
+        self.dostartstop()
+        return 1
+
+    def setupchannels(self):
+        if self.dooverlapped:
+            self.xydata = np.empty([int(self.num_chan_per_board * self.num_board), 2, 10 * self.expect_samples], dtype=float)
+        elif self.dotwochannel:
+            self.xydata = np.empty([int(self.num_chan_per_board * self.num_board), 2, 2 * 10 * self.expect_samples], dtype=float)
+        else:
+            self.xydata = np.empty([int(self.num_chan_per_board * self.num_board), 2, 4 * 10 * self.expect_samples], dtype=float)
+            self.xydatainterleaved = np.empty([int(self.num_chan_per_board * self.num_board), 2, 2 * 4 * 10 * self.expect_samples], dtype=float)
+
     def launch(self):
         self.nlines = self.num_chan_per_board * self.num_board
         chan=0
         for board in range(self.num_board):
-            for boardchan in range(self.num_chan_per_board):
+            for boardchan in range( self.num_chan_per_board ):
                 print("chan=",chan, " board=",board, "boardchan=",boardchan)
                 c = (0, 0, 0)
                 if chan == 0: c = QColor("red")
                 if chan == 1: c = QColor("green")
                 if chan == 2: c = QColor("blue")
                 if chan == 3: c = QColor("magenta")
+                if chan>3:
+                    print("Not ready for more channels yet!")
+                    sys.exit(3)
                 pen = pg.mkPen(color=c)  # add linewidth=1.0, alpha=.9
                 line = self.ui.plot.plot(pen=pen, name=self.chtext + str(chan))
                 line.curve.setClickable(True)
@@ -929,7 +990,13 @@ class MainWindow(TemplateBaseClass):
             b2 = 1
             send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
 
-        self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
+        for c in range(self.num_board*self.num_chan_per_board):
+            if c%2==1:
+                if self.dotwochannel: self.lines[c].setVisible(True)
+                else: self.lines[c].setVisible(False)
+
+        if self.dotwochannel: self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
+        else: self.ui.chanBox.setMaximum(0)
         self.ui.boardBox.setMaximum(self.num_board - 1)
 
         # trigger lines
@@ -948,75 +1015,25 @@ class MainWindow(TemplateBaseClass):
         self.ui.plot.setLabel('left', "Voltage (divisions)")
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
         for usb in usbs: self.telldownsample(usb, 0)
-        self.timechanged()
         self.ui.plot.showGrid(x=True, y=True)
 
-    def setup_connections(self, board):
+    def setup_connection(self, board):
         print("Setting up board",board)
         #version(usbs[board])
         self.adfreset(board)
         self.pllreset(board)
-        board_setup(usbs[board], self.dopattern, self.dotwochannel, self.dooverrange)
+        setupboard(usbs[board], self.dopattern, self.dotwochannel, self.dooverrange)
         for c in range(2): setchanacdc(usbs[board], c, 0)
-        self.sendtriggerinfo(usbs[board])
         return 1
 
-    def init(self):
-        self.tot()
-        self.launch()
-        self.selectchannel()
-        self.timechanged()
-        self.dostartstop()
-        return 1
-
-    def mainloop(self):
-        if self.paused:
-            time.sleep(.1)
-        else:
-            rx_len = 0
-            try:
-                readyevent = [0]*self.num_board
-                for board in reversed(range(self.num_board)): # go backwards through the boards to get the triggerinfo for the right events
-                    readyevent[board] = self.getchannels(board)
-                for board in range(self.num_board):
-                    if not readyevent[board]: continue
-                    downsamplemergingcounter = self.getpredata(board)
-                    data = self.getdata(usbs[board])
-                    rx_len = rx_len + len(data)
-                    if self.dofft and board==self.activeboard: self.plot_fft()
-                    self.drawchannels(data, board, downsamplemergingcounter)
-                if not self.dotwochannel and self.doexttrig[self.activeboard] and self.num_board>1:
-                    self.calculatethings()
-                if self.getone and rx_len > 0:
-                    self.dostartstop()
-                    self.drawtext()
-            except ftd2xx.DeviceError:
-                print("Device error")
-                sys.exit(1)
-            if self.db: print(time.time() - self.oldtime, "done with evt", self.nevents)
-            if rx_len > 0: self.nevents += 1
-            if self.nevents - self.oldnevents >= self.tinterval:
-
-                self.exttrigstdavg = self.exttrigstd / self.tinterval
-                self.exttrigstd =0
-
-                now = time.time()
-                elapsedtime = now - self.oldtime
-                self.oldtime = now
-                self.lastrate = round(self.tinterval / elapsedtime, 2)
-                self.lastsize = rx_len
-                if not self.dodrawing: print(self.nevents, "events,", self.lastrate, "Hz",
-                                             round(self.lastrate * self.lastsize / 1e6, 3), "MB/s")
-                self.oldnevents = self.nevents
-
-    def closeEvent(self, event):
+    def onclose(self, event):
         print("Handling closeEvent", event)
         self.timer.stop()
         self.timer2.stop()
         if hasattr(self,"fftui"): self.fftui.close()
         for usb in usbs: cleanup(usb)
 
-if __name__ == '__main__':
+if __name__ == '__main__': # calls setup_connection for each board, then init
     print('Argument List:', str(sys.argv))
     for a in sys.argv:
         if a[0] == "-":
@@ -1033,7 +1050,7 @@ if __name__ == '__main__':
         win = MainWindow()
         win.setWindowTitle('Haasoscope Pro Qt')
         for usbi in range(len(usbs)):
-            if not win.setup_connections(usbi):
+            if not win.setup_connection(usbi):
                 print("Exiting now - failed setup_connections!")
                 cleanup(usbs[usbi])
                 sys.exit(1)

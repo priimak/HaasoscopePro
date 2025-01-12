@@ -37,7 +37,7 @@ def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_d
                    cs=3, nbyte=4)  # was cs=2 on alpha board v1.11
     spimode(usb, 0)
 
-def board_setup(usb, dopattern, twochannel, dooverrange):
+def setupboard(usb, dopattern, twochannel, dooverrange):
     setfan(usb, True)
 
     spimode(usb, 0)
