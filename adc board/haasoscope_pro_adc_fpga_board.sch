@@ -28355,6 +28355,12 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 <part name="L2" library="SparkFun-Passives" deviceset="INDUCTOR" device="PWR" value="10uH">
 <attribute name="LCSC" value="C339970"/>
 </part>
+<part name="R165" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="5.1k"/>
+<part name="LED4" library="adafruit" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red"/>
+<part name="GND31" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="R167" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
+<part name="R246" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
+<part name="SUPPLY106" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -35820,6 +35826,7 @@ the vias under the FPGA for each LVDS input pair</text>
 <text x="231.14" y="43.18" size="1.778" layer="90">JTAG interface for FPGA programming</text>
 <text x="231.14" y="76.2" size="1.778" layer="90">Flash for FPGA programming</text>
 <text x="208.28" y="-5.08" size="2.54" layer="90">Other FPGA IO</text>
+<text x="-96.52" y="83.82" size="1.778" layer="90">5V signal, divide to 2.5V out for FPGA</text>
 </plain>
 <instances>
 <instance part="C59" gate="C$1" x="-91.44" y="-10.16" smashed="yes" rot="R180">
@@ -35981,8 +35988,8 @@ the vias under the FPGA for each LVDS input pair</text>
 <instance part="R236" gate="G$1" x="73.66" y="213.36" smashed="yes">
 <attribute name="VALUE" x="72.39" y="212.598" size="1.778" layer="96"/>
 </instance>
-<instance part="R238" gate="G$1" x="73.66" y="215.9" smashed="yes">
-<attribute name="VALUE" x="72.39" y="215.138" size="1.778" layer="96"/>
+<instance part="R238" gate="G$1" x="-66.04" y="66.04" smashed="yes">
+<attribute name="VALUE" x="-67.056" y="62.992" size="1.778" layer="96"/>
 </instance>
 <instance part="R243" gate="G$1" x="5.08" y="180.34" smashed="yes" rot="R180">
 <attribute name="VALUE" x="6.35" y="181.102" size="1.778" layer="96" rot="R180"/>
@@ -36318,6 +36325,13 @@ the vias under the FPGA for each LVDS input pair</text>
 <attribute name="NAME" x="160.02" y="127" size="1.016" layer="95" font="vector" rot="MR180"/>
 <attribute name="VALUE" x="160.02" y="124.46" size="1.016" layer="96" font="vector"/>
 </instance>
+<instance part="R167" gate="G$1" x="-71.12" y="71.12" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-72.39" y="69.85" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R246" gate="G$1" x="-71.12" y="60.96" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-72.39" y="59.69" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SUPPLY106" gate="GND" x="-71.12" y="53.34" smashed="yes" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -36495,6 +36509,10 @@ the vias under the FPGA for each LVDS input pair</text>
 <pinref part="R86" gate="G$1" pin="P$2"/>
 <wire x1="152.4" y1="20.32" x2="144.78" y2="20.32" width="0.1524" layer="91"/>
 <label x="144.78" y="20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R246" gate="G$1" pin="P$1"/>
+<pinref part="SUPPLY106" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -36749,8 +36767,8 @@ the vias under the FPGA for each LVDS input pair</text>
 </net>
 <net name="BOARDIN2" class="0">
 <segment>
-<wire x1="93.98" y1="215.9" x2="78.74" y2="215.9" width="0.1524" layer="91"/>
-<label x="78.74" y="215.9" size="1.778" layer="95" xref="yes"/>
+<wire x1="-55.88" y1="66.04" x2="-60.96" y2="66.04" width="0.1524" layer="91"/>
+<label x="-55.88" y="66.04" size="1.778" layer="95" xref="yes"/>
 <pinref part="R238" gate="G$1" pin="P$2"/>
 </segment>
 </net>
@@ -37157,9 +37175,9 @@ the vias under the FPGA for each LVDS input pair</text>
 </net>
 <net name="12VCONNECTED" class="0">
 <segment>
-<pinref part="R238" gate="G$1" pin="P$1"/>
-<wire x1="68.58" y1="215.9" x2="63.5" y2="215.9" width="0.1524" layer="91"/>
-<label x="63.5" y="215.9" size="1.778" layer="95" rot="MR0" xref="yes"/>
+<label x="-76.2" y="76.2" size="1.778" layer="95" rot="MR0" xref="yes"/>
+<pinref part="R167" gate="G$1" pin="P$2"/>
+<wire x1="-71.12" y1="76.2" x2="-76.2" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LVDSIN_TRIGB_N" class="2">
@@ -38121,6 +38139,14 @@ the vias under the FPGA for each LVDS input pair</text>
 <label x="132.08" y="205.74" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="N$84" class="0">
+<segment>
+<pinref part="R167" gate="G$1" pin="P$1"/>
+<pinref part="R246" gate="G$1" pin="P$2"/>
+<pinref part="R238" gate="G$1" pin="P$1"/>
+<junction x="-71.12" y="66.04"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -38881,7 +38907,7 @@ GNDBREAK is conencted to GND</text>
 
 If 12VConnected is high (5V), then switch is off
 If 12VConnected is low (0V), then switch is on</text>
-<text x="195.58" y="180.34" size="1.778" layer="90">From USB-C</text>
+<text x="193.04" y="180.34" size="1.778" layer="90">From USB-C</text>
 <text x="327.66" y="76.2" size="1.778" layer="90">Filter the incoming 5V</text>
 <text x="353.06" y="-40.64" size="2.54" layer="90">Power - 12V</text>
 <text x="386.08" y="48.26" size="1.778" layer="90">Bleed caps</text>
@@ -39029,9 +39055,9 @@ If 12VConnected is low (0V), then switch is on</text>
 <attribute name="NAME" x="122.9614" y="156.21" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="127.762" y="156.21" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="Q2" gate="G$1" x="228.6" y="175.26" smashed="yes" rot="MR90">
-<attribute name="NAME" x="227.33" y="180.34" size="1.778" layer="95" ratio="10"/>
-<attribute name="MPN" x="227.33" y="182.88" size="1.778" layer="96"/>
+<instance part="Q2" gate="G$1" x="228.6" y="175.26" smashed="yes" rot="R90">
+<attribute name="NAME" x="227.33" y="180.34" size="1.778" layer="95" ratio="10" rot="MR180"/>
+<attribute name="MPN" x="219.71" y="182.88" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="R239" gate="G$1" x="228.6" y="160.02" smashed="yes" rot="R90">
 <attribute name="NAME" x="227.1014" y="158.75" size="1.778" layer="95" rot="R90"/>
@@ -39084,6 +39110,17 @@ If 12VConnected is low (0V), then switch is on</text>
 <attribute name="NAME" x="342.9" y="73.66" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="342.9" y="71.12" size="1.778" layer="96" rot="R180"/>
 <attribute name="LCSC" x="337.82" y="66.04" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="R165" gate="G$1" x="208.28" y="167.64" smashed="yes">
+<attribute name="NAME" x="205.994" y="168.8846" size="1.778" layer="95"/>
+<attribute name="VALUE" x="206.756" y="164.592" size="1.778" layer="96"/>
+</instance>
+<instance part="LED4" gate="G$1" x="213.36" y="172.72" smashed="yes">
+<attribute name="NAME" x="216.916" y="168.148" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="219.075" y="168.148" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND31" gate="1" x="203.2" y="165.1" smashed="yes">
+<attribute name="VALUE" x="203.2" y="164.846" size="1.778" layer="96" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -39186,6 +39223,10 @@ If 12VConnected is low (0V), then switch is on</text>
 <pinref part="R148" gate="G$1" pin="P$1"/>
 <pinref part="GND14" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="R165" gate="G$1" pin="P$1"/>
+<pinref part="GND31" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="N$101" class="0">
 <segment>
@@ -39241,8 +39282,6 @@ If 12VConnected is low (0V), then switch is on</text>
 <wire x1="238.76" y1="12.7" x2="271.78" y2="12.7" width="0.1524" layer="91"/>
 <junction x="238.76" y="12.7"/>
 <label x="248.92" y="177.8" size="1.778" layer="95" rot="MR180"/>
-<pinref part="Q2" gate="G$1" pin="D"/>
-<wire x1="233.68" y1="175.26" x2="271.78" y2="175.26" width="0.1524" layer="91"/>
 <wire x1="271.78" y1="175.26" x2="271.78" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="271.78" y1="86.36" x2="271.78" y2="66.04" width="0.1524" layer="91"/>
 <junction x="271.78" y="86.36"/>
@@ -39250,6 +39289,8 @@ If 12VConnected is low (0V), then switch is on</text>
 <wire x1="309.88" y1="66.04" x2="271.78" y2="66.04" width="0.1524" layer="91"/>
 <junction x="271.78" y="66.04"/>
 <pinref part="L2" gate="G$1" pin="1"/>
+<pinref part="Q2" gate="G$1" pin="S"/>
+<wire x1="271.78" y1="175.26" x2="233.68" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="12V" class="0">
@@ -39401,8 +39442,11 @@ If 12VConnected is low (0V), then switch is on</text>
 <net name="VBUSOUT" class="1">
 <segment>
 <label x="208.28" y="175.26" size="1.778" layer="95" rot="MR0" xref="yes"/>
-<pinref part="Q2" gate="G$1" pin="S"/>
-<wire x1="223.52" y1="175.26" x2="208.28" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="175.26" x2="213.36" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="Q2" gate="G$1" pin="D"/>
+<pinref part="LED4" gate="G$1" pin="A"/>
+<wire x1="213.36" y1="175.26" x2="208.28" y2="175.26" width="0.1524" layer="91"/>
+<junction x="213.36" y="175.26"/>
 </segment>
 </net>
 <net name="N$65" class="0">
@@ -39429,6 +39473,12 @@ If 12VConnected is low (0V), then switch is on</text>
 <wire x1="391.16" y1="66.04" x2="396.24" y2="66.04" width="0.1524" layer="91"/>
 <junction x="391.16" y="66.04"/>
 <pinref part="L2" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$79" class="0">
+<segment>
+<pinref part="R165" gate="G$1" pin="P$2"/>
+<pinref part="LED4" gate="G$1" pin="C"/>
 </segment>
 </net>
 </nets>
