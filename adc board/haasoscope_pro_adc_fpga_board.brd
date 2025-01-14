@@ -11775,7 +11775,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="87.3" y="147.1" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="86.4" y="149.8" size="0.8128" layer="21"/>
 </element>
-<element name="C102" library="MF_Passives" package="C0402" value="1.5pF" x="86.1" y="148.3" smashed="yes" rot="R270">
+<element name="C102" library="MF_Passives" package="C0402" value="0.75pF" x="86.1" y="148.3" smashed="yes" rot="R270">
 <attribute name="DIELECTRIC" value="" x="86.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="86.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="86.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11785,7 +11785,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="URL" value="" x="86.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VOLTAGE" value="" x="86.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C103" library="MF_Passives" package="C0402" value="1.0pF" x="90.1" y="148.3" smashed="yes" rot="R270">
+<element name="C103" library="MF_Passives" package="C0402" value="0.5pF" x="90.1" y="148.3" smashed="yes" rot="R270">
 <attribute name="DIELECTRIC" value="" x="90.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="90.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="90.1" y="148.3" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11833,7 +11833,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="13.1" y="28.7" size="0.8128" layer="21" rot="R270"/>
 <attribute name="VALUE" x="15.8" y="29.6" size="0.8128" layer="21" rot="R270"/>
 </element>
-<element name="C106" library="MF_Passives" package="C0402" value="1.5pF" x="14.3" y="29.9" smashed="yes" rot="R180">
+<element name="C106" library="MF_Passives" package="C0402" value="0.75pF" x="14.3" y="29.9" smashed="yes" rot="R180">
 <attribute name="DIELECTRIC" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11843,7 +11843,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="URL" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VOLTAGE" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C136" library="MF_Passives" package="C0402" value="1.0pF" x="14.3" y="25.9" smashed="yes" rot="R180">
+<element name="C136" library="MF_Passives" package="C0402" value="0.5pF" x="14.3" y="25.9" smashed="yes" rot="R180">
 <attribute name="DIELECTRIC" value="" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11901,7 +11901,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="URL" value="" x="52.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VOLTAGE" value="" x="52.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C140" library="MF_Passives" package="C0402" value="7.5pF" x="56.1" y="26.8" smashed="yes" rot="R270">
+<element name="C140" library="MF_Passives" package="C0402" value="6.8pF" x="56.1" y="26.8" smashed="yes" rot="R270">
 <attribute name="DIELECTRIC" value="" x="56.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="56.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="56.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11949,7 +11949,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="43.8" y="143.6" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="43.08" y="146.34" size="0.8128" layer="21"/>
 </element>
-<element name="C158" library="MF_Passives" package="C0402" value="4.3pF" x="42.6" y="144.8" smashed="yes" rot="R270">
+<element name="C158" library="MF_Passives" package="C0402" value="3.9pF" x="42.6" y="144.8" smashed="yes" rot="R270">
 <attribute name="DIELECTRIC" value="" x="42.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="42.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="42.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
@@ -11959,7 +11959,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="URL" value="" x="42.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VOLTAGE" value="" x="42.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C159" library="MF_Passives" package="C0402" value="3.0pF" x="46.6" y="144.8" smashed="yes" rot="R270">
+<element name="C159" library="MF_Passives" package="C0402" value="2.4pF" x="46.6" y="144.8" smashed="yes" rot="R270">
 <attribute name="DIELECTRIC" value="" x="46.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="46.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="46.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
@@ -12017,7 +12017,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="URL" value="" x="42.6" y="124.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VOLTAGE" value="" x="42.6" y="124.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C163" library="MF_Passives" package="C0402" value="7.5pF" x="46.6" y="124.8" smashed="yes" rot="R270">
+<element name="C163" library="MF_Passives" package="C0402" value="6.8pF" x="46.6" y="124.8" smashed="yes" rot="R270">
 <attribute name="DIELECTRIC" value="" x="46.6" y="124.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="46.6" y="124.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="46.6" y="124.8" size="1.778" layer="27" rot="R270" display="off"/>

@@ -28239,8 +28239,8 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 <part name="C101" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
 <part name="L5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
 <part name="L6" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="C102" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF"/>
-<part name="C103" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
+<part name="C102" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.75pF"/>
+<part name="C103" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.5pF"/>
 <part name="SUPPLY91" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY92" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY93" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -28250,8 +28250,8 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 <part name="C105" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
 <part name="L4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
 <part name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="C106" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.5pF"/>
-<part name="C136" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
+<part name="C106" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.75pF"/>
+<part name="C136" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.5pF"/>
 <part name="C137" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R247" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY78" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -28262,7 +28262,7 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 <part name="L8" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
 <part name="L15" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
 <part name="C139" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF"/>
-<part name="C140" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
+<part name="C140" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="6.8pF"/>
 <part name="C141" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R166" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY86" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -28272,8 +28272,8 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 <part name="C153" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.0pF"/>
 <part name="L16" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH"/>
 <part name="L17" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH"/>
-<part name="C158" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="4.3pF"/>
-<part name="C159" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.0pF"/>
+<part name="C158" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.9pF"/>
+<part name="C159" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="2.4pF"/>
 <part name="C160" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R149" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY54" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -28284,7 +28284,7 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 <part name="L18" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
 <part name="L19" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
 <part name="C162" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF"/>
-<part name="C163" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
+<part name="C163" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="6.8pF"/>
 <part name="C164" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R150" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY101" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
