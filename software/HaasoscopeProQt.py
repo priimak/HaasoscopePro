@@ -983,11 +983,11 @@ class MainWindow(TemplateBaseClass):
                 chan += 1
 
             r1 = 0
-            g1 = 2
+            g1 = 0x80
             b1 = 0
-            r2 = 1
+            r2 = 0x80
             g2 = 0
-            b2 = 1
+            b2 = 0
             send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
 
         for c in range(self.num_board*self.num_chan_per_board):
