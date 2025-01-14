@@ -245,14 +245,14 @@ GND</text>
 <text x="197.343" y="89.053" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="190.153" y="58.423" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="188.628" y="64.811" size="0.8128" layer="21">5V</text>
-<wire x1="146.62" y1="10.72" x2="144.08" y2="10.72" width="0.1524" layer="21"/>
-<wire x1="144.08" y1="10.72" x2="145.35" y2="11.99" width="0.1524" layer="21"/>
-<wire x1="145.35" y1="11.99" x2="146.62" y2="10.72" width="0.1524" layer="21"/>
-<wire x1="146.62" y1="11.99" x2="142.81" y2="11.99" width="0.1524" layer="21"/>
-<wire x1="144.08" y1="10.72" x2="141.54" y2="10.72" width="0.1524" layer="21"/>
-<wire x1="142.81" y1="11.99" x2="141.54" y2="11.99" width="0.1524" layer="21"/>
-<wire x1="141.54" y1="10.72" x2="142.81" y2="11.99" width="0.1524" layer="21"/>
-<wire x1="142.81" y1="11.99" x2="144.08" y2="10.72" width="0.1524" layer="21"/>
+<wire x1="158.97" y1="10.82" x2="156.43" y2="10.82" width="0.1524" layer="21"/>
+<wire x1="156.43" y1="10.82" x2="157.7" y2="12.09" width="0.1524" layer="21"/>
+<wire x1="157.7" y1="12.09" x2="158.97" y2="10.82" width="0.1524" layer="21"/>
+<wire x1="158.97" y1="12.09" x2="155.16" y2="12.09" width="0.1524" layer="21"/>
+<wire x1="156.43" y1="10.82" x2="153.89" y2="10.82" width="0.1524" layer="21"/>
+<wire x1="155.16" y1="12.09" x2="153.89" y2="12.09" width="0.1524" layer="21"/>
+<wire x1="153.89" y1="10.82" x2="155.16" y2="12.09" width="0.1524" layer="21"/>
+<wire x1="155.16" y1="12.09" x2="156.43" y2="10.82" width="0.1524" layer="21"/>
 <text x="200.852" y="89.069" size="0.8128" layer="21" rot="R180">5V D</text>
 <text x="218.228" y="113.211" size="0.8128" layer="21">12V</text>
 <text x="122" y="152" size="0.8128" layer="21" rot="R180">Reload</text>
@@ -305,7 +305,7 @@ January 2025</text>
 <circle x="156" y="74.83" radius="0.2" width="0.508" layer="21"/>
 <text x="182" y="90" size="1.778" layer="21">+</text>
 <text x="173" y="70" size="1.778" layer="21">+</text>
-<text x="152.73" y="12.21" size="1.778" layer="21" rot="R90">+</text>
+<text x="206.96" y="14.53" size="1.778" layer="21" rot="R270">+</text>
 <text x="156.57" y="35.44" size="1.778" layer="21" rot="R270">+</text>
 <text x="162.57" y="51.44" size="1.778" layer="21" rot="R270">+</text>
 <text x="164.56" y="103.57" size="1.778" layer="21">+</text>
@@ -10958,11 +10958,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="C288" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="190.3" y="7.7" smashed="yes" rot="R180">
 <attribute name="VALUE" x="195.5" y="7.89" size="0.8128" layer="21" rot="R180"/>
 </element>
-<element name="D10" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" package="SMA-DIODE" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A" x="145.52" y="11.27" smashed="yes" rot="R90">
-<attribute name="JLC_ROTATION" value="180" x="145.52" y="11.27" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="LCSC" value="C64982" x="145.52" y="11.27" size="0.8128" layer="27" rot="R90" display="off"/>
-<attribute name="PROD_ID" value="DIO-09886" x="145.52" y="11.27" size="0.8128" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="147.171" y="11.27" size="0.8128" layer="21" rot="R90" align="top-center"/>
+<element name="D10" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" package="SMA-DIODE" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A" x="157.87" y="11.37" smashed="yes" rot="R90">
+<attribute name="JLC_ROTATION" value="180" x="157.87" y="11.37" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="LCSC" value="C64982" x="157.87" y="11.37" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="PROD_ID" value="DIO-09886" x="157.87" y="11.37" size="0.8128" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="159.521" y="11.37" size="0.8128" layer="21" rot="R90" align="top-center"/>
 </element>
 <element name="C289" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="10uF" x="191.7" y="80.8" smashed="yes" rot="R180">
 <attribute name="VALUE" x="193.2" y="79.3" size="0.8128" layer="27" rot="R180"/>
@@ -12081,16 +12081,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="R148" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="157" y="94.31" smashed="yes">
 <attribute name="VALUE" x="153.96" y="93.84" size="0.8128" layer="21" font="vector"/>
 </element>
-<element name="C83" library="EEE-FT1E102UP" package="EEE0JA152UAP" value="1000uF" x="155.73" y="10.52" smashed="yes">
-<attribute name="DESCRIPTION" value="Aluminium Electroyltic Capacitor, Radial" x="155.73" y="10.52" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="12mm" x="155.73" y="10.52" size="1.778" layer="27" display="off"/>
-<attribute name="LCSC" value="C401766" x="155.73" y="10.52" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Panasonic" x="155.73" y="10.52" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="EEE-FT1E102UP" x="155.73" y="10.52" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="667-EEE-FT1E102UP" x="155.73" y="10.52" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FT1E102UP?qs=pfd5qewlna5y21QYCh3%2FAQ%3D%3D" x="155.73" y="10.52" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="155.405" y="12.52" size="0.8128" layer="25" align="center"/>
-<attribute name="VALUE" x="155.405" y="8.52" size="0.8128" layer="21" align="center"/>
+<element name="C83" library="EEE-FT1E102UP" package="EEE0JA152UAP" value="1000uF" x="204.15" y="16.21" smashed="yes" rot="R180">
+<attribute name="DESCRIPTION" value="Aluminium Electroyltic Capacitor, Radial" x="204.15" y="16.21" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="12mm" x="204.15" y="16.21" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C401766" x="204.15" y="16.21" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Panasonic" x="204.15" y="16.21" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="EEE-FT1E102UP" x="204.15" y="16.21" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="667-EEE-FT1E102UP" x="204.15" y="16.21" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FT1E102UP?qs=pfd5qewlna5y21QYCh3%2FAQ%3D%3D" x="204.15" y="16.21" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="204.475" y="14.21" size="0.8128" layer="25" rot="R180" align="center"/>
+<attribute name="VALUE" x="204.475" y="18.21" size="0.8128" layer="21" rot="R180" align="center"/>
 </element>
 <element name="C99" library="EEE-FT1E102UP" package="EEE0JA152UAP" value="1000uF" x="154.15" y="37.25" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="Aluminium Electroyltic Capacitor, Radial" x="154.15" y="37.25" size="1.778" layer="27" rot="R180" display="off"/>
@@ -13621,7 +13621,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="133.78" y1="148.45" x2="134" y2="148.45" width="0.6096" layer="1"/>
 <via x="136.5" y="149" extent="1-16" drill="0.35"/>
 <via x="154" y="18.97" extent="1-16" drill="0.35"/>
-<via x="147.72" y="13.54" extent="1-16" drill="0.35"/>
+<via x="160.07" y="13.64" extent="1-16" drill="0.35"/>
 <polygon width="0.1524" layer="16" isolate="0.16">
 <vertex x="-0.5" y="21.5"/>
 <vertex x="9.5" y="21.5"/>
@@ -14240,14 +14240,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="150.32" y="35.81" extent="1-16" drill="0.35"/>
 <via x="151.2" y="39.1" extent="1-16" drill="0.35"/>
 <via x="149.2" y="39.1" extent="1-16" drill="0.35"/>
-<via x="153.2" y="12.1" extent="1-16" drill="0.35"/>
-<via x="151.05" y="9.02" extent="1-16" drill="0.35"/>
-<via x="150.2" y="12.1" extent="1-16" drill="0.35"/>
+<via x="206.49" y="14.64" extent="1-16" drill="0.35"/>
+<via x="208.64" y="17.72" extent="1-16" drill="0.35"/>
+<via x="209.49" y="14.64" extent="1-16" drill="0.35"/>
 <via x="180.2" y="86.1" extent="1-16" drill="0.35"/>
 <wire x1="150.73" y1="16.115" x2="147.285" y2="16.115" width="2.54" layer="1"/>
 <wire x1="147.285" y1="16.115" x2="146.92" y2="16.48" width="2.54" layer="1"/>
-<wire x1="147.72" y1="13.54" x2="145.64" y2="13.54" width="2.54" layer="1"/>
-<wire x1="145.64" y1="13.54" x2="145.52" y2="13.42" width="2.54" layer="1"/>
 <wire x1="189.2" y1="99.2" x2="189.2" y2="98.971775" width="1.27" layer="1"/>
 <wire x1="188.5911" y1="98.362875" x2="189.2" y2="98.971775" width="1.27" layer="1"/>
 <wire x1="188.7" y1="95.8" x2="188.7" y2="97.128225" width="1.27" layer="1"/>
@@ -21789,12 +21787,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="195.81" y1="15.71" x2="195.81" y2="14.71" width="0.1524" layer="1"/>
 <wire x1="195.81" y1="14.71" x2="195.8" y2="14.7" width="0.1524" layer="1"/>
 <contactref element="C83" pad="2"/>
-<wire x1="145.52" y1="9.12" x2="147.75434375" y2="9.12" width="2.54" layer="1"/>
-<wire x1="147.75434375" y1="9.12" x2="149.52634375" y2="7.348" width="2.54" layer="1"/>
-<wire x1="149.52634375" y1="7.348" x2="156.908" y2="7.348" width="2.54" layer="1"/>
-<wire x1="156.908" y1="7.348" x2="160.08" y2="10.52" width="2.54" layer="1"/>
-<wire x1="160.08" y1="10.52" x2="162" y2="10.52" width="2.54" layer="1"/>
-<wire x1="162" y1="10.52" x2="164.21" y2="10.52" width="2.54" layer="1"/>
+<wire x1="164.21" y1="10.52" x2="162" y2="10.52" width="2.54" layer="1"/>
 <wire x1="164.21" y1="10.52" x2="164.3" y2="10.43" width="2.54" layer="1"/>
 <wire x1="164.3" y1="10.43" x2="167.03" y2="7.7" width="2.54" layer="1"/>
 <wire x1="168.3" y1="19.7" x2="168.3" y2="16.7" width="1.27" layer="1"/>
@@ -21831,6 +21824,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="171.31563125" y1="9.263" x2="173.05263125" y2="11" width="1.27" layer="1"/>
 <wire x1="188.3" y1="11" x2="191" y2="13.7" width="1.27" layer="1"/>
 <wire x1="173.05263125" y1="11" x2="188.3" y2="11" width="1.27" layer="1"/>
+<wire x1="162" y1="10.52" x2="159.17" y2="10.52" width="2.54" layer="1"/>
+<wire x1="159.17" y1="10.52" x2="157.87" y2="9.22" width="2.54" layer="1"/>
+<wire x1="197.7756" y1="17.8656" x2="198.1444" y2="17.8656" width="1.27" layer="1"/>
+<wire x1="198.1444" y1="17.8656" x2="199.8" y2="16.21" width="1.27" layer="1"/>
 </signal>
 <signal name="N$101">
 <contactref element="C242" pad="2"/>
@@ -23321,7 +23318,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="118" y1="68.3581125" x2="118.305" y2="68.0531125" width="0.16" layer="16"/>
 <wire x1="118.305" y1="49.695" x2="145.5" y2="22.5" width="0.16" layer="16"/>
 <wire x1="118.305" y1="68.0531125" x2="118.305" y2="49.695" width="0.16" layer="16"/>
-<wire x1="206" y1="22.5" x2="215" y2="13.5" width="0.16" layer="16"/>
+<wire x1="206" y1="22.5" x2="207.25" y2="21.25" width="0.16" layer="16"/>
+<wire x1="207.25" y1="21.25" x2="215" y2="13.5" width="0.16" layer="16"/>
 <wire x1="118" y1="74.5" x2="118" y2="68.3581125" width="0.16" layer="16"/>
 <wire x1="145.5" y1="22.5" x2="206" y2="22.5" width="0.16" layer="16"/>
 <via x="215" y="13.5" extent="1-16" drill="0.2"/>
