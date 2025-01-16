@@ -27341,6 +27341,80 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 </deviceset>
 </devicesets>
 </library>
+<library name="SLP3-150-100-F">
+<description>&lt;LED Light Pipes Light Pipe Rigid 3mm Right Angle&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="SLP3150100F">
+<description>&lt;b&gt;SLP3-150-100-F-2&lt;/b&gt;&lt;br&gt;
+</description>
+<pad name="1" x="0" y="0" drill="1.27" diameter="1.905" shape="square"/>
+<pad name="2" x="2.5" y="0" drill="1.27" diameter="1.905"/>
+<text x="1.25" y="-3.32" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="1.25" y="-3.32" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-1" y1="1.1" x2="3.5" y2="1.1" width="0.1" layer="51"/>
+<wire x1="3.5" y1="1.1" x2="3.5" y2="-5.2" width="0.1" layer="51"/>
+<wire x1="3.5" y1="-5.2" x2="-1" y2="-5.2" width="0.1" layer="51"/>
+<wire x1="-1" y1="-5.2" x2="-1" y2="1.1" width="0.1" layer="51"/>
+<wire x1="-2" y1="2.1" x2="4.5" y2="2.1" width="0.1" layer="51"/>
+<wire x1="4.5" y1="2.1" x2="4.5" y2="-8.74" width="0.1" layer="51"/>
+<wire x1="4.5" y1="-8.74" x2="-2" y2="-8.74" width="0.1" layer="51"/>
+<wire x1="-2" y1="-8.74" x2="-2" y2="2.1" width="0.1" layer="51"/>
+<wire x1="-0.25" y1="-5.2" x2="-0.25" y2="-7.74" width="0.1" layer="51"/>
+<wire x1="-0.25" y1="-7.74" x2="2.75" y2="-7.74" width="0.1" layer="51"/>
+<wire x1="2.75" y1="-7.74" x2="2.75" y2="-5.2" width="0.1" layer="51"/>
+<wire x1="-0.25" y1="-5.2" x2="-0.25" y2="-7.74" width="0.2" layer="21"/>
+<wire x1="-0.25" y1="-7.74" x2="2.75" y2="-7.74" width="0.2" layer="21"/>
+<wire x1="2.75" y1="-7.74" x2="2.75" y2="-5.2" width="0.2" layer="21"/>
+<wire x1="-1" y1="-1.4" x2="-1" y2="-5.2" width="0.2" layer="21"/>
+<wire x1="-1" y1="-5.2" x2="3.5" y2="-5.2" width="0.2" layer="21"/>
+<wire x1="3.5" y1="-5.2" x2="3.5" y2="-1.2" width="0.2" layer="21"/>
+<wire x1="-1.6" y1="0" x2="-1.6" y2="0" width="0.1" layer="21"/>
+<wire x1="-1.6" y1="0" x2="-1.5" y2="0" width="0.1" layer="21" curve="180"/>
+<wire x1="-1.5" y1="0" x2="-1.5" y2="0" width="0.1" layer="21"/>
+<wire x1="-1.5" y1="0" x2="-1.6" y2="0" width="0.1" layer="21" curve="180"/>
+</package>
+</packages>
+<symbols>
+<symbol name="SLP3-150-100-F">
+<wire x1="5.08" y1="2.54" x2="15.24" y2="2.54" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="15.24" y2="2.54" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<text x="16.51" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="16.51" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="1" x="0" y="0" length="middle"/>
+<pin name="2" x="0" y="-2.54" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SLP3-150-100-F" prefix="H">
+<description>&lt;b&gt;LED Light Pipes Light Pipe Rigid 3mm Right Angle&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.bivar.com/parts_content/Datasheets/SLP3-150-XXX-X.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="SLP3-150-100-F" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SLP3150100F">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="LED Light Pipes Light Pipe Rigid 3mm Right Angle" constant="no"/>
+<attribute name="HEIGHT" value="5.4mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Bivar" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SLP3-150-100-F" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="749-SLP3-150-100-F" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Bivar/SLP3-150-100-F?qs=6qR8IwHvvod8lAECqeEkXA%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -28361,6 +28435,10 @@ Source: &lt;a href="http://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/AB
 <part name="R167" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="R246" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="SUPPLY106" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="H1" library="SLP3-150-100-F" deviceset="SLP3-150-100-F" device=""/>
+<part name="H2" library="SLP3-150-100-F" deviceset="SLP3-150-100-F" device=""/>
+<part name="SUPPLY110" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY111" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -35797,9 +35875,9 @@ measurement on page 15</text>
 true LVDS transmitters, so use them for LVDS outputs</text>
 <text x="7.62" y="76.2" size="1.778" layer="90">LVDS outputs and inputs for sync between boards</text>
 <text x="-91.44" y="7.62" size="1.778" layer="90">50 MHz clock for FPGA</text>
-<text x="-96.52" y="137.16" size="1.778" layer="90">50 Ohm external trigger input
+<text x="-5.08" y="127" size="1.778" layer="90">50 Ohm external trigger input
 (was BOARDIN4)</text>
-<text x="0" y="139.7" size="1.778" layer="90">50 Ohm 1kHz / Aux output
+<text x="-5.08" y="154.94" size="1.778" layer="90">50 Ohm 1kHz / Aux output
 (was DEBUGOUT10)</text>
 <text x="73.66" y="134.62" size="1.778" layer="90">1kOhm 1kHz output for probe compensation</text>
 <text x="-91.44" y="38.1" size="1.778" layer="90">Extra clock input and output</text>
@@ -35827,6 +35905,7 @@ the vias under the FPGA for each LVDS input pair</text>
 <text x="231.14" y="76.2" size="1.778" layer="90">Flash for FPGA programming</text>
 <text x="208.28" y="-5.08" size="2.54" layer="90">Other FPGA IO</text>
 <text x="-96.52" y="83.82" size="1.778" layer="90">5V signal, divide to 2.5V out for FPGA</text>
+<text x="-104.14" y="172.72" size="1.778" layer="90">Light pipes</text>
 </plain>
 <instances>
 <instance part="C59" gate="C$1" x="-91.44" y="-10.16" smashed="yes" rot="R180">
@@ -35952,37 +36031,37 @@ the vias under the FPGA for each LVDS input pair</text>
 <instance part="GND53" gate="1" x="88.9" y="119.38" smashed="yes">
 <attribute name="VALUE" x="86.36" y="116.84" size="1.778" layer="96"/>
 </instance>
-<instance part="R31" gate="G$1" x="-63.5" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="-64.9986" y="118.11" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-60.198" y="118.11" size="1.778" layer="96" rot="R90"/>
+<instance part="R31" gate="G$1" x="27.94" y="109.22" smashed="yes" rot="R90">
+<attribute name="NAME" x="26.4414" y="107.95" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="31.242" y="107.95" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R136" gate="G$1" x="-63.5" y="109.22" smashed="yes" rot="R90">
-<attribute name="NAME" x="-64.9986" y="107.95" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-60.198" y="107.95" size="1.778" layer="96" rot="R90"/>
+<instance part="R136" gate="G$1" x="27.94" y="99.06" smashed="yes" rot="R90">
+<attribute name="NAME" x="26.4414" y="97.79" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="31.242" y="97.79" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R160" gate="G$1" x="-55.88" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="-57.3786" y="118.11" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-52.578" y="118.11" size="1.778" layer="96" rot="R90"/>
+<instance part="R160" gate="G$1" x="35.56" y="109.22" smashed="yes" rot="R90">
+<attribute name="NAME" x="34.0614" y="107.95" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="38.862" y="107.95" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R210" gate="G$1" x="-55.88" y="109.22" smashed="yes" rot="R90">
-<attribute name="NAME" x="-57.3786" y="107.95" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-52.578" y="107.95" size="1.778" layer="96" rot="R90"/>
+<instance part="R210" gate="G$1" x="35.56" y="99.06" smashed="yes" rot="R90">
+<attribute name="NAME" x="34.0614" y="97.79" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="38.862" y="97.79" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="EXTTRIGIN" gate="G$1" x="-78.74" y="124.46" smashed="yes" rot="MR0">
-<attribute name="NAME" x="-86.36" y="127" size="1.27" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="-86.36" y="124.46" size="1.27" layer="95" rot="MR0"/>
+<instance part="EXTTRIGIN" gate="G$1" x="12.7" y="114.3" smashed="yes" rot="MR0">
+<attribute name="NAME" x="5.08" y="116.84" size="1.27" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="5.08" y="114.3" size="1.27" layer="95" rot="MR0"/>
 </instance>
-<instance part="SUPPLY21" gate="GND" x="-81.28" y="114.3" smashed="yes" rot="MR0"/>
-<instance part="1KHZOUT50" gate="G$1" x="38.1" y="127" smashed="yes" rot="MR180">
-<attribute name="NAME" x="45.72" y="124.46" size="1.27" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="45.72" y="127" size="1.27" layer="95" rot="MR180"/>
+<instance part="SUPPLY21" gate="GND" x="10.16" y="104.14" smashed="yes" rot="MR0"/>
+<instance part="1KHZOUT50" gate="G$1" x="33.02" y="147.32" smashed="yes" rot="MR180">
+<attribute name="NAME" x="40.64" y="144.78" size="1.27" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="40.64" y="147.32" size="1.27" layer="95" rot="MR180"/>
 </instance>
-<instance part="R211" gate="G$1" x="20.32" y="127" smashed="yes" rot="R180">
-<attribute name="NAME" x="21.59" y="125.5014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="21.59" y="130.302" size="1.778" layer="96" rot="R180"/>
+<instance part="R211" gate="G$1" x="15.24" y="147.32" smashed="yes" rot="R180">
+<attribute name="NAME" x="16.51" y="145.8214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="16.51" y="150.622" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY42" gate="GND" x="-55.88" y="101.6" smashed="yes" rot="MR0"/>
-<instance part="SUPPLY41" gate="GND" x="40.64" y="116.84" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY42" gate="GND" x="35.56" y="91.44" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY41" gate="GND" x="35.56" y="137.16" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY43" gate="GND" x="-88.9" y="22.86" smashed="yes"/>
 <instance part="SUPPLY50" gate="GND" x="-60.96" y="22.86" smashed="yes"/>
 <instance part="R236" gate="G$1" x="73.66" y="213.36" smashed="yes">
@@ -36332,6 +36411,16 @@ the vias under the FPGA for each LVDS input pair</text>
 <attribute name="VALUE" x="-72.39" y="59.69" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="SUPPLY106" gate="GND" x="-71.12" y="53.34" smashed="yes" rot="MR0"/>
+<instance part="H1" gate="G$1" x="-104.14" y="167.64" smashed="yes">
+<attribute name="NAME" x="-87.63" y="167.64" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="-87.63" y="165.1" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="H2" gate="G$1" x="-104.14" y="157.48" smashed="yes">
+<attribute name="NAME" x="-87.63" y="157.48" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="-87.63" y="154.94" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="SUPPLY110" gate="GND" x="-104.14" y="162.56" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY111" gate="GND" x="-104.14" y="152.4" smashed="yes" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -36361,35 +36450,35 @@ the vias under the FPGA for each LVDS input pair</text>
 <segment>
 <pinref part="R136" gate="G$1" pin="P$1"/>
 <pinref part="R210" gate="G$1" pin="P$1"/>
-<wire x1="-55.88" y1="104.14" x2="-63.5" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="93.98" x2="27.94" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="SUPPLY42" gate="GND" pin="GND"/>
-<junction x="-55.88" y="104.14"/>
+<junction x="35.56" y="93.98"/>
 </segment>
 <segment>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND4"/>
 <pinref part="SUPPLY21" gate="GND" pin="GND"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND2"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND1"/>
-<wire x1="-81.28" y1="132.08" x2="-76.2" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="121.92" x2="15.24" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="GND3"/>
-<wire x1="-76.2" y1="132.08" x2="-76.2" y2="116.84" width="0.1524" layer="91"/>
-<junction x="-76.2" y="132.08"/>
-<wire x1="-76.2" y1="116.84" x2="-81.28" y2="116.84" width="0.1524" layer="91"/>
-<junction x="-76.2" y="116.84"/>
-<junction x="-81.28" y="116.84"/>
+<wire x1="15.24" y1="121.92" x2="15.24" y2="106.68" width="0.1524" layer="91"/>
+<junction x="15.24" y="121.92"/>
+<wire x1="15.24" y1="106.68" x2="10.16" y2="106.68" width="0.1524" layer="91"/>
+<junction x="15.24" y="106.68"/>
+<junction x="10.16" y="106.68"/>
 </segment>
 <segment>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND4"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND2"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND1"/>
-<wire x1="40.64" y1="119.38" x2="35.56" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="139.7" x2="30.48" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="1KHZOUT50" gate="G$1" pin="GND3"/>
-<wire x1="35.56" y1="119.38" x2="35.56" y2="134.62" width="0.1524" layer="91"/>
-<junction x="35.56" y="119.38"/>
-<wire x1="35.56" y1="134.62" x2="40.64" y2="134.62" width="0.1524" layer="91"/>
-<junction x="35.56" y="134.62"/>
+<wire x1="30.48" y1="139.7" x2="30.48" y2="154.94" width="0.1524" layer="91"/>
+<junction x="30.48" y="139.7"/>
+<wire x1="30.48" y1="154.94" x2="35.56" y2="154.94" width="0.1524" layer="91"/>
+<junction x="30.48" y="154.94"/>
 <pinref part="SUPPLY41" gate="GND" pin="GND"/>
-<junction x="40.64" y="119.38"/>
+<junction x="35.56" y="139.7"/>
 </segment>
 <segment>
 <pinref part="CLKEXT" gate="G1" pin="2"/>
@@ -36513,6 +36602,20 @@ the vias under the FPGA for each LVDS input pair</text>
 <segment>
 <pinref part="R246" gate="G$1" pin="P$1"/>
 <pinref part="SUPPLY106" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="H1" gate="G$1" pin="2"/>
+<pinref part="SUPPLY110" gate="GND" pin="GND"/>
+<pinref part="H1" gate="G$1" pin="1"/>
+<wire x1="-104.14" y1="165.1" x2="-104.14" y2="167.64" width="0.1524" layer="91"/>
+<junction x="-104.14" y="165.1"/>
+</segment>
+<segment>
+<pinref part="H2" gate="G$1" pin="2"/>
+<pinref part="SUPPLY111" gate="GND" pin="GND"/>
+<pinref part="H2" gate="G$1" pin="1"/>
+<wire x1="-104.14" y1="154.94" x2="-104.14" y2="157.48" width="0.1524" layer="91"/>
+<junction x="-104.14" y="154.94"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -36712,8 +36815,8 @@ the vias under the FPGA for each LVDS input pair</text>
 <net name="1KHZOUT50" class="0">
 <segment>
 <pinref part="R211" gate="G$1" pin="P$2"/>
-<wire x1="15.24" y1="127" x2="12.7" y2="127" width="0.1524" layer="91"/>
-<label x="12.7" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="10.16" y1="147.32" x2="7.62" y2="147.32" width="0.1524" layer="91"/>
+<label x="7.62" y="147.32" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="BOARDOUT0" class="0">
@@ -37136,14 +37239,14 @@ the vias under the FPGA for each LVDS input pair</text>
 <net name="EXTTRIGIN" class="5">
 <segment>
 <pinref part="R31" gate="G$1" pin="P$2"/>
-<label x="-50.8" y="124.46" size="1.778" layer="95" xref="yes"/>
+<label x="40.64" y="114.3" size="1.778" layer="95" xref="yes"/>
 <pinref part="R160" gate="G$1" pin="P$2"/>
-<wire x1="-63.5" y1="124.46" x2="-55.88" y2="124.46" width="0.1524" layer="91"/>
-<junction x="-63.5" y="124.46"/>
+<wire x1="27.94" y1="114.3" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
+<junction x="27.94" y="114.3"/>
 <pinref part="EXTTRIGIN" gate="G$1" pin="ANT"/>
-<wire x1="-63.5" y1="124.46" x2="-71.12" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="-55.88" y1="124.46" x2="-50.8" y2="124.46" width="0.1524" layer="91"/>
-<junction x="-55.88" y="124.46"/>
+<wire x1="27.94" y1="114.3" x2="20.32" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="114.3" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
+<junction x="35.56" y="114.3"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -37162,8 +37265,8 @@ the vias under the FPGA for each LVDS input pair</text>
 <segment>
 <pinref part="1KHZOUT50" gate="G$1" pin="ANT"/>
 <pinref part="R211" gate="G$1" pin="P$1"/>
-<wire x1="30.48" y1="127" x2="25.4" y2="127" width="0.1524" layer="91"/>
-<label x="25.4" y="127" size="1.778" layer="95"/>
+<wire x1="25.4" y1="147.32" x2="20.32" y2="147.32" width="0.1524" layer="91"/>
+<label x="20.32" y="147.32" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PG12V" class="0">
@@ -43262,14 +43365,14 @@ Not connected to the rest of the system!</text>
 <approved hash="104,2,58.42,-104.14,FL1,VS-,2V5-1,,,"/>
 <approved hash="104,4,22.86,86.36,FL4,VS+,2V5+,,,"/>
 <approved hash="104,4,22.86,81.28,FL4,VS-,2V5-2,,,"/>
-<approved hash="104,8,-76.2,132.08,EXTTRIGIN,GND1,GND,,,"/>
-<approved hash="104,8,-81.28,132.08,EXTTRIGIN,GND2,GND,,,"/>
-<approved hash="104,8,-76.2,116.84,EXTTRIGIN,GND3,GND,,,"/>
-<approved hash="104,8,-81.28,116.84,EXTTRIGIN,GND4,GND,,,"/>
-<approved hash="104,8,35.56,119.38,1KHZOUT50,GND1,GND,,,"/>
-<approved hash="104,8,40.64,119.38,1KHZOUT50,GND2,GND,,,"/>
-<approved hash="104,8,35.56,134.62,1KHZOUT50,GND3,GND,,,"/>
-<approved hash="104,8,40.64,134.62,1KHZOUT50,GND4,GND,,,"/>
+<approved hash="104,8,15.24,121.92,EXTTRIGIN,GND1,GND,,,"/>
+<approved hash="104,8,10.16,121.92,EXTTRIGIN,GND2,GND,,,"/>
+<approved hash="104,8,15.24,106.68,EXTTRIGIN,GND3,GND,,,"/>
+<approved hash="104,8,10.16,106.68,EXTTRIGIN,GND4,GND,,,"/>
+<approved hash="104,8,30.48,139.7,1KHZOUT50,GND1,GND,,,"/>
+<approved hash="104,8,35.56,139.7,1KHZOUT50,GND2,GND,,,"/>
+<approved hash="104,8,30.48,154.94,1KHZOUT50,GND3,GND,,,"/>
+<approved hash="104,8,35.56,154.94,1KHZOUT50,GND4,GND,,,"/>
 <approved hash="104,16,119.38,43.18,OUTSMA1,GND1,GND,,,"/>
 <approved hash="104,16,124.46,43.18,OUTSMA1,GND2,GND,,,"/>
 <approved hash="104,16,119.38,27.94,OUTSMA1,GND3,GND,,,"/>

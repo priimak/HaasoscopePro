@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="mm" altunit="mm"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="top" color="12" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="topgnd" color="12" fill="5" visible="no" active="yes"/>
@@ -9275,6 +9275,41 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="SLP3-150-100-F">
+<description>&lt;LED Light Pipes Light Pipe Rigid 3mm Right Angle&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="SLP3150100F">
+<description>&lt;b&gt;SLP3-150-100-F-2&lt;/b&gt;&lt;br&gt;
+</description>
+<pad name="1" x="0" y="0" drill="1.27" diameter="1.905" shape="square"/>
+<pad name="2" x="2.5" y="0" drill="1.27" diameter="1.905"/>
+<text x="1.25" y="-3.32" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="1.25" y="-3.32" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-1" y1="1.1" x2="3.5" y2="1.1" width="0.1" layer="51"/>
+<wire x1="3.5" y1="1.1" x2="3.5" y2="-5.2" width="0.1" layer="51"/>
+<wire x1="3.5" y1="-5.2" x2="-1" y2="-5.2" width="0.1" layer="51"/>
+<wire x1="-1" y1="-5.2" x2="-1" y2="1.1" width="0.1" layer="51"/>
+<wire x1="-2" y1="2.1" x2="4.5" y2="2.1" width="0.1" layer="51"/>
+<wire x1="4.5" y1="2.1" x2="4.5" y2="-8.74" width="0.1" layer="51"/>
+<wire x1="4.5" y1="-8.74" x2="-2" y2="-8.74" width="0.1" layer="51"/>
+<wire x1="-2" y1="-8.74" x2="-2" y2="2.1" width="0.1" layer="51"/>
+<wire x1="-0.25" y1="-5.2" x2="-0.25" y2="-7.74" width="0.1" layer="51"/>
+<wire x1="-0.25" y1="-7.74" x2="2.75" y2="-7.74" width="0.1" layer="51"/>
+<wire x1="2.75" y1="-7.74" x2="2.75" y2="-5.2" width="0.1" layer="51"/>
+<wire x1="-0.25" y1="-5.2" x2="-0.25" y2="-7.74" width="0.2" layer="21"/>
+<wire x1="-0.25" y1="-7.74" x2="2.75" y2="-7.74" width="0.2" layer="21"/>
+<wire x1="2.75" y1="-7.74" x2="2.75" y2="-5.2" width="0.2" layer="21"/>
+<wire x1="-1" y1="-1.4" x2="-1" y2="-5.2" width="0.2" layer="21"/>
+<wire x1="-1" y1="-5.2" x2="3.5" y2="-5.2" width="0.2" layer="21"/>
+<wire x1="3.5" y1="-5.2" x2="3.5" y2="-1.2" width="0.2" layer="21"/>
+<wire x1="-1.6" y1="0" x2="-1.6" y2="0" width="0.1" layer="21"/>
+<wire x1="-1.6" y1="0" x2="-1.5" y2="0" width="0.1" layer="21" curve="180"/>
+<wire x1="-1.5" y1="0" x2="-1.5" y2="0" width="0.1" layer="21"/>
+<wire x1="-1.5" y1="0" x2="-1.6" y2="0" width="0.1" layer="21" curve="180"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12171,6 +12206,24 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="LED4" library="adafruit" package="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:6240556/1" value="red" x="208" y="90" smashed="yes" rot="R270"/>
 <element name="R167" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="203" y="94" smashed="yes"/>
 <element name="R246" library="FlashPCB_Resistors" package="RES-0402" value="10k" x="203.01" y="95.41" smashed="yes"/>
+<element name="H1" library="SLP3-150-100-F" package="SLP3150100F" value="SLP3-150-100-F" x="6.3" y="53.4" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="LED Light Pipes Light Pipe Rigid 3mm Right Angle" x="6.3" y="53.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.4mm" x="6.3" y="53.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Bivar" x="6.3" y="53.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SLP3-150-100-F" x="6.3" y="53.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="749-SLP3-150-100-F" x="6.3" y="53.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Bivar/SLP3-150-100-F?qs=6qR8IwHvvod8lAECqeEkXA%3D%3D" x="6.3" y="53.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="2.98" y="52.15" size="1.27" layer="25" rot="R270" align="center"/>
+</element>
+<element name="H2" library="SLP3-150-100-F" package="SLP3150100F" value="SLP3-150-100-F" x="6.3" y="146.4" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="LED Light Pipes Light Pipe Rigid 3mm Right Angle" x="6.3" y="146.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.4mm" x="6.3" y="146.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Bivar" x="6.3" y="146.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SLP3-150-100-F" x="6.3" y="146.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="749-SLP3-150-100-F" x="6.3" y="146.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Bivar/SLP3-150-100-F?qs=6qR8IwHvvod8lAECqeEkXA%3D%3D" x="6.3" y="146.4" size="0.8128" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="2.98" y="145.15" size="1.27" layer="25" rot="R270" align="center"/>
+</element>
 </elements>
 <signals>
 <signal name="DA3_P" class="2">
@@ -14351,6 +14404,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="R246" pad="P$1"/>
 <via x="199.99" y="92" extent="1-16" drill="0.35"/>
 <wire x1="199.99" y1="90.96" x2="199.99" y2="92" width="0.254" layer="1"/>
+<contactref element="H1" pad="2"/>
+<contactref element="H2" pad="2"/>
+<contactref element="H1" pad="1"/>
+<contactref element="H2" pad="1"/>
 </signal>
 <signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>
