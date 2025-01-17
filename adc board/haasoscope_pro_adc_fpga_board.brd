@@ -308,6 +308,8 @@ January 2025</text>
 <text x="158.56" y="124.57" size="1.778" layer="21">+</text>
 <text x="157.56" y="139.57" size="1.778" layer="21">+</text>
 <text x="209.912" y="89.229" size="0.8128" layer="21" rot="R180">5V USB</text>
+<text x="3" y="115" size="0.8128" layer="21">1kHz out</text>
+<text x="3" y="110" size="0.8128" layer="21">GND</text>
 </plain>
 <libraries>
 <library name="con-coax" urn="urn:adsk.eagle:library:133">
@@ -9298,6 +9300,33 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="725996-2">
+<description>&lt;Contact Features: Terminal Plating Material Tin | Mating Tab Width .11 INCH | Terminal Size 2.8 | Mating Tab Width 2.79 MM | Mating Tab Thickness .02 INCH | Terminal Orientation Right Angle | PCB Terminal Type Tab | Mating Tab Thickness .51 MM | Contact Underplating Material Brass | Dimensions: Profile Height from PCB .199 INCH | PCB Thickness (Recommended) 1.57  2.36 MM | Terminal Material Thickness .51 MM | Extension Below Board 3 MM | Profile Height from PCB 5 MM | PCB Thickness (Recommended) .062 &lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="7259962">
+<description>&lt;b&gt;725996-2&lt;/b&gt;&lt;br&gt;
+</description>
+<pad name="1" x="-5.893" y="0" drill="1.3" diameter="1.95"/>
+<pad name="2" x="-0.893" y="0" drill="1.3" diameter="1.95"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-6.543" y1="0.255" x2="6.867" y2="0.255" width="0.2" layer="51"/>
+<wire x1="6.867" y1="0.255" x2="6.867" y2="-0.255" width="0.2" layer="51"/>
+<wire x1="6.867" y1="-0.255" x2="-6.543" y2="-0.255" width="0.2" layer="51"/>
+<wire x1="-6.543" y1="-0.255" x2="-6.543" y2="0.255" width="0.2" layer="51"/>
+<wire x1="-7.867" y1="1.975" x2="7.867" y2="1.975" width="0.1" layer="51"/>
+<wire x1="7.867" y1="1.975" x2="7.867" y2="-1.975" width="0.1" layer="51"/>
+<wire x1="7.867" y1="-1.975" x2="-7.867" y2="-1.975" width="0.1" layer="51"/>
+<wire x1="-7.867" y1="-1.975" x2="-7.867" y2="1.975" width="0.1" layer="51"/>
+<wire x1="0.457" y1="0.255" x2="6.867" y2="0.255" width="0.1" layer="21"/>
+<wire x1="6.867" y1="0.255" x2="6.867" y2="-0.255" width="0.1" layer="21"/>
+<wire x1="6.867" y1="-0.255" x2="0.457" y2="-0.255" width="0.1" layer="21"/>
+<wire x1="-4.543" y1="0.255" x2="-2.243" y2="0.255" width="0.1" layer="21"/>
+<wire x1="-4.543" y1="-0.255" x2="-2.243" y2="-0.255" width="0.1" layer="21"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11566,11 +11595,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TLV9102IPWR?qs=9r4v7xj2LnnLM2E8pIcWlQ%3D%3D" x="105.5" y="102.5" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="107.5" y="106" size="0.8128" layer="21" align="center"/>
 </element>
-<element name="R206" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="4.6" y="111.22" smashed="yes">
-<attribute name="VALUE" x="3.33" y="111.72" size="0.8128" layer="27"/>
-</element>
-<element name="J1" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" package="H2-2.54" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54" x="1.17" y="110.02" smashed="yes">
-<attribute name="MPN" value="P125-1102A0BS116A1" x="1.17" y="110.02" size="1.778" layer="27" display="off"/>
+<element name="R206" library="FlashPCB_Resistors" package="RES-0402" value="1k" x="12.6" y="113.22" smashed="yes">
+<attribute name="VALUE" x="12.33" y="113.72" size="0.8128" layer="27"/>
 </element>
 <element name="R207" library="Seeed-Resistor" library_urn="urn:adsk.eagle:library:474" package="R0603" package3d_urn="urn:adsk.eagle:package:32791/1" value="NCP18WF104F03RC" x="109.5" y="98.5" smashed="yes" rot="R90">
 <attribute name="JLC_ROTATION" value="90" x="10.5" y="0" size="1.778" layer="27" rot="R90" display="off"/>
@@ -12232,6 +12258,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" value="None" x="3.3" y="52.2" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="SNAPEDA_LINK" value="https://www.snapeda.com/parts/WS2812-2020/Worldsemi/view-part/?ref=snap" x="3.3" y="52.2" size="0.8128" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="1.635" y="49.55336875" size="0.8128" layer="27" align="top-left"/>
+</element>
+<element name="U4" library="725996-2" package="7259962" value="725996-2" x="9" y="113" smashed="yes">
+<attribute name="DESCRIPTION" value="Contact Features: Terminal Plating Material Tin | Mating Tab Width .11 INCH | Terminal Size 2.8 | Mating Tab Width 2.79 MM | Mating Tab Thickness .02 INCH | Terminal Orientation Right Angle | PCB Terminal Type Tab | Mating Tab Thickness .51 MM | Contact Underplating Material Brass | Dimensions: Profile Height from PCB .199 INCH | PCB Thickness (Recommended) 1.57  2.36 MM | Terminal Material Thickness .51 MM | Extension Below Board 3 MM | Profile Height from PCB 5 MM | PCB Thickness (Recommended) .062 " x="9" y="113" size="0.8128" layer="27" display="off"/>
+<attribute name="HEIGHT" value="8mm" x="9" y="113" size="0.8128" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="TE Connectivity" x="9" y="113" size="0.8128" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="725996-2" x="9" y="113" size="0.8128" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="571-725996-2" x="9" y="113" size="0.8128" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/TE-Connectivity-AMP/725996-2?qs=qCxwlXJ4fnwSyI%252Bf7tGybA%3D%3D" x="9" y="113" size="0.8128" layer="27" display="off"/>
+<attribute name="NAME" x="17" y="113" size="0.8128" layer="25" align="center"/>
+<attribute name="VALUE" x="9" y="111" size="0.8128" layer="27" align="center"/>
+</element>
+<element name="U5" library="725996-2" package="7259962" value="725996-2" x="9" y="108" smashed="yes">
+<attribute name="DESCRIPTION" value="Contact Features: Terminal Plating Material Tin | Mating Tab Width .11 INCH | Terminal Size 2.8 | Mating Tab Width 2.79 MM | Mating Tab Thickness .02 INCH | Terminal Orientation Right Angle | PCB Terminal Type Tab | Mating Tab Thickness .51 MM | Contact Underplating Material Brass | Dimensions: Profile Height from PCB .199 INCH | PCB Thickness (Recommended) 1.57  2.36 MM | Terminal Material Thickness .51 MM | Extension Below Board 3 MM | Profile Height from PCB 5 MM | PCB Thickness (Recommended) .062 " x="9" y="108" size="0.8128" layer="27" display="off"/>
+<attribute name="HEIGHT" value="8mm" x="9" y="108" size="0.8128" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="TE Connectivity" x="9" y="108" size="0.8128" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="725996-2" x="9" y="108" size="0.8128" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="571-725996-2" x="9" y="108" size="0.8128" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/TE-Connectivity-AMP/725996-2?qs=qCxwlXJ4fnwSyI%252Bf7tGybA%3D%3D" x="9" y="108" size="0.8128" layer="27" display="off"/>
+<attribute name="NAME" x="17" y="108" size="0.8128" layer="25" align="center"/>
+<attribute name="VALUE" x="9" y="106" size="0.8128" layer="27" align="center"/>
 </element>
 </elements>
 <signals>
@@ -13641,7 +13687,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="112.45" y="95.55" extent="1-16" drill="0.2"/>
 <via x="24.5" y="73.5" extent="1-16" drill="0.35"/>
 <via x="41" y="61" extent="1-16" drill="0.35"/>
-<contactref element="J1" pad="2"/>
 <contactref element="R207" pad="1"/>
 <via x="97.25" y="98.55" extent="1-16" drill="0.35"/>
 <contactref element="Q1" pad="2"/>
@@ -14417,6 +14462,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="H2" pad="1"/>
 <contactref element="U1" pad="2"/>
 <contactref element="U3" pad="2"/>
+<contactref element="U5" pad="2"/>
+<contactref element="U5" pad="1"/>
 </signal>
 <signal name="3V3" class="1">
 <contactref element="IC6" pad="3"/>
@@ -20406,8 +20453,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="BOARDOUT3">
 <contactref element="IC5" pad="B20"/>
 <contactref element="R206" pad="P$2"/>
-<wire x1="5.1" y1="111.22" x2="38.28" y2="111.22" width="0.1524" layer="1"/>
-<wire x1="38.28" y1="111.22" x2="38.5" y2="111" width="0.1524" layer="1"/>
+<wire x1="13.1" y1="113.22" x2="36.28" y2="113.22" width="0.1524" layer="1"/>
+<wire x1="36.28" y1="113.22" x2="38.5" y2="111" width="0.1524" layer="1"/>
 <via x="38.5" y="111" extent="1-16" drill="0.35"/>
 <wire x1="38.5" y1="111" x2="97" y2="111" width="0.1524" layer="3"/>
 <via x="121.5" y="71" extent="1-16" drill="0.2"/>
@@ -23023,9 +23070,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </signal>
 <signal name="1KHZOUT">
 <contactref element="R206" pad="P$1"/>
-<contactref element="J1" pad="1"/>
-<wire x1="1.17" y1="111.29" x2="4.03" y2="111.29" width="0.1524" layer="1"/>
-<wire x1="4.03" y1="111.29" x2="4.1" y2="111.22" width="0.1524" layer="1"/>
+<contactref element="U4" pad="1"/>
+<contactref element="U4" pad="2"/>
+<wire x1="12.1" y1="113.22" x2="8.327" y2="113.22" width="0.1524" layer="1"/>
+<wire x1="8.327" y1="113.22" x2="8.107" y2="113" width="0.1524" layer="1"/>
+<wire x1="8.107" y1="113" x2="3.107" y2="113" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$10">
 <contactref element="Q1" pad="1"/>

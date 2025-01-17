@@ -26384,6 +26384,72 @@ Source: &lt;a href="https://www.bivar.com/parts_content/Datasheets/SLP3-150-XXX-
 </deviceset>
 </devicesets>
 </library>
+<library name="725996-2">
+<description>&lt;Contact Features: Terminal Plating Material Tin | Mating Tab Width .11 INCH | Terminal Size 2.8 | Mating Tab Width 2.79 MM | Mating Tab Thickness .02 INCH | Terminal Orientation Right Angle | PCB Terminal Type Tab | Mating Tab Thickness .51 MM | Contact Underplating Material Brass | Dimensions: Profile Height from PCB .199 INCH | PCB Thickness (Recommended) 1.57  2.36 MM | Terminal Material Thickness .51 MM | Extension Below Board 3 MM | Profile Height from PCB 5 MM | PCB Thickness (Recommended) .062 &lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="7259962">
+<description>&lt;b&gt;725996-2&lt;/b&gt;&lt;br&gt;
+</description>
+<pad name="1" x="-5.893" y="0" drill="1.3" diameter="1.95"/>
+<pad name="2" x="-0.893" y="0" drill="1.3" diameter="1.95"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-6.543" y1="0.255" x2="6.867" y2="0.255" width="0.2" layer="51"/>
+<wire x1="6.867" y1="0.255" x2="6.867" y2="-0.255" width="0.2" layer="51"/>
+<wire x1="6.867" y1="-0.255" x2="-6.543" y2="-0.255" width="0.2" layer="51"/>
+<wire x1="-6.543" y1="-0.255" x2="-6.543" y2="0.255" width="0.2" layer="51"/>
+<wire x1="-7.867" y1="1.975" x2="7.867" y2="1.975" width="0.1" layer="51"/>
+<wire x1="7.867" y1="1.975" x2="7.867" y2="-1.975" width="0.1" layer="51"/>
+<wire x1="7.867" y1="-1.975" x2="-7.867" y2="-1.975" width="0.1" layer="51"/>
+<wire x1="-7.867" y1="-1.975" x2="-7.867" y2="1.975" width="0.1" layer="51"/>
+<wire x1="0.457" y1="0.255" x2="6.867" y2="0.255" width="0.1" layer="21"/>
+<wire x1="6.867" y1="0.255" x2="6.867" y2="-0.255" width="0.1" layer="21"/>
+<wire x1="6.867" y1="-0.255" x2="0.457" y2="-0.255" width="0.1" layer="21"/>
+<wire x1="-4.543" y1="0.255" x2="-2.243" y2="0.255" width="0.1" layer="21"/>
+<wire x1="-4.543" y1="-0.255" x2="-2.243" y2="-0.255" width="0.1" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="725996-2">
+<wire x1="5.08" y1="2.54" x2="15.24" y2="2.54" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="15.24" y2="2.54" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<text x="16.51" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="16.51" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="1" x="0" y="0" length="middle"/>
+<pin name="2" x="0" y="-2.54" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="725996-2" prefix="U">
+<description>&lt;b&gt;Contact Features: Terminal Plating Material Tin | Mating Tab Width .11 INCH | Terminal Size 2.8 | Mating Tab Width 2.79 MM | Mating Tab Thickness .02 INCH | Terminal Orientation Right Angle | PCB Terminal Type Tab | Mating Tab Thickness .51 MM | Contact Underplating Material Brass | Dimensions: Profile Height from PCB .199 INCH | PCB Thickness (Recommended) 1.57  2.36 MM | Terminal Material Thickness .51 MM | Extension Below Board 3 MM | Profile Height from PCB 5 MM | PCB Thickness (Recommended) .062 &lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=82159_PCB_TERMINALS_AND_DISCONNECTS&amp;DocType=Catalog Section&amp;DocLang=English&amp;PartCntxt=725996-2&amp;DocFormat=pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="725996-2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="7259962">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="Contact Features: Terminal Plating Material Tin | Mating Tab Width .11 INCH | Terminal Size 2.8 | Mating Tab Width 2.79 MM | Mating Tab Thickness .02 INCH | Terminal Orientation Right Angle | PCB Terminal Type Tab | Mating Tab Thickness .51 MM | Contact Underplating Material Brass | Dimensions: Profile Height from PCB .199 INCH | PCB Thickness (Recommended) 1.57  2.36 MM | Terminal Material Thickness .51 MM | Extension Below Board 3 MM | Profile Height from PCB 5 MM | PCB Thickness (Recommended) .062 " constant="no"/>
+<attribute name="HEIGHT" value="8mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="TE Connectivity" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="725996-2" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="571-725996-2" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/TE-Connectivity-AMP/725996-2?qs=qCxwlXJ4fnwSyI%252Bf7tGybA%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -27171,7 +27237,6 @@ Source: &lt;a href="https://www.bivar.com/parts_content/Datasheets/SLP3-150-XXX-
 <part name="IC4" library="TLV9102IPWR" deviceset="TLV9102IPWR" device=""/>
 <part name="GND1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="R206" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
-<part name="J1" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="GND53" library="supply1" deviceset="GND" device=""/>
 <part name="R207" library="Seeed-Resistor" library_urn="urn:adsk.eagle:library:474" deviceset="THERMISTOR-RES-NTC-100K(0603)" device="" package3d_urn="urn:adsk.eagle:package:32791/1" value="NCP18WF104F03RC">
 <attribute name="LCSC" value="C13564"/>
@@ -27411,6 +27476,8 @@ Source: &lt;a href="https://www.bivar.com/parts_content/Datasheets/SLP3-150-XXX-
 <part name="U3" library="WS2812-2020" deviceset="WS2812-2020" device=""/>
 <part name="SUPPLY109" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY112" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="U4" library="725996-2" deviceset="725996-2" device=""/>
+<part name="U5" library="725996-2" deviceset="725996-2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -34851,7 +34918,8 @@ true LVDS transmitters, so use them for LVDS outputs</text>
 (was BOARDIN4)</text>
 <text x="-5.08" y="154.94" size="1.778" layer="90">50 Ohm 1kHz / Aux output
 (was DEBUGOUT10)</text>
-<text x="73.66" y="134.62" size="1.778" layer="90">1kOhm 1kHz output for probe compensation</text>
+<text x="86.36" y="162.56" size="1.778" layer="90">1kOhm 1kHz output for 
+probe compensation</text>
 <text x="-91.44" y="38.1" size="1.778" layer="90">Extra clock input and output</text>
 <text x="43.18" y="223.52" size="1.778" layer="90">2.5V inputs and outputs to/from
 the FPGA for status monitoring
@@ -34997,11 +35065,8 @@ the vias under the FPGA for each LVDS input pair</text>
 <instance part="R206" gate="G$1" x="68.58" y="187.96" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="69.85" y="187.198" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="J1" gate="G$1" x="96.52" y="124.46" smashed="yes">
-<attribute name="NAME" x="95.25" y="130.81" size="1.27" layer="95" ratio="10"/>
-</instance>
-<instance part="GND53" gate="1" x="88.9" y="119.38" smashed="yes">
-<attribute name="VALUE" x="86.36" y="116.84" size="1.778" layer="96"/>
+<instance part="GND53" gate="1" x="83.82" y="139.7" smashed="yes">
+<attribute name="VALUE" x="81.28" y="137.16" size="1.778" layer="96"/>
 </instance>
 <instance part="R31" gate="G$1" x="27.94" y="109.22" smashed="yes" rot="R90">
 <attribute name="NAME" x="26.4414" y="107.95" size="1.778" layer="95" rot="R90"/>
@@ -35402,6 +35467,14 @@ the vias under the FPGA for each LVDS input pair</text>
 </instance>
 <instance part="SUPPLY109" gate="GND" x="-60.96" y="119.38" smashed="yes" rot="MR0"/>
 <instance part="SUPPLY112" gate="GND" x="-25.4" y="119.38" smashed="yes" rot="MR0"/>
+<instance part="U4" gate="G$1" x="83.82" y="154.94" smashed="yes">
+<attribute name="NAME" x="100.33" y="154.94" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="100.33" y="152.4" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="U5" gate="G$1" x="83.82" y="144.78" smashed="yes">
+<attribute name="NAME" x="100.33" y="144.78" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="100.33" y="142.24" size="1.778" layer="96" align="center-left"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -35423,10 +35496,6 @@ the vias under the FPGA for each LVDS input pair</text>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SHIELD"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="2"/>
-<pinref part="GND53" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="R136" gate="G$1" pin="P$1"/>
@@ -35595,6 +35664,13 @@ the vias under the FPGA for each LVDS input pair</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY112" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U5" gate="G$1" pin="2"/>
+<pinref part="GND53" gate="1" pin="GND"/>
+<pinref part="U5" gate="G$1" pin="1"/>
+<wire x1="83.82" y1="144.78" x2="83.82" y2="142.24" width="0.1524" layer="91"/>
+<junction x="83.82" y="142.24"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -36200,19 +36276,18 @@ the vias under the FPGA for each LVDS input pair</text>
 </net>
 <net name="1KHZOUT" class="0">
 <segment>
-<wire x1="119.38" y1="187.96" x2="106.68" y2="187.96" width="0.1524" layer="91"/>
 <pinref part="R206" gate="G$1" pin="P$1"/>
 <label x="109.22" y="187.96" size="1.778" layer="95"/>
-<wire x1="106.68" y1="187.96" x2="73.66" y2="187.96" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="187.96" x2="106.68" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="147.32" x2="71.12" y2="147.32" width="0.1524" layer="91"/>
-<junction x="106.68" y="187.96"/>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="88.9" y1="127" x2="71.12" y2="127" width="0.1524" layer="91"/>
-<label x="73.66" y="127" size="1.778" layer="95"/>
-<wire x1="71.12" y1="147.32" x2="71.12" y2="127" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="127" x2="73.66" y2="127" width="0.1524" layer="91"/>
-<junction x="71.12" y="127"/>
+<wire x1="119.38" y1="187.96" x2="109.22" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="187.96" x2="73.66" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="187.96" x2="109.22" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="170.18" x2="83.82" y2="170.18" width="0.1524" layer="91"/>
+<junction x="109.22" y="187.96"/>
+<pinref part="U4" gate="G$1" pin="1"/>
+<wire x1="83.82" y1="170.18" x2="83.82" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="2"/>
+<wire x1="83.82" y1="154.94" x2="83.82" y2="152.4" width="0.1524" layer="91"/>
+<junction x="83.82" y="154.94"/>
 </segment>
 </net>
 <net name="EXTTRIGIN" class="5">
