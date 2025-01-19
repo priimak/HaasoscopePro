@@ -101,6 +101,7 @@ reg signed [11:0]  lowerthresh=0, lowerthresh_sync=0;
 reg signed [11:0]  upperthresh=0, upperthresh_sync=0;
 integer		eventcounter=0, eventcounter_sync=0;
 reg [15:0]	lengthtotake=0, lengthtotake_sync=0;
+reg [15:0]	prelengthtotake=1000, prelengthtotake_sync=1000;
 reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
@@ -118,6 +119,7 @@ integer i, j;
 always @ (posedge clklvds) begin	
 	triggerlive_sync <= triggerlive;
 	lengthtotake_sync <= lengthtotake;
+	prelengthtotake_sync <= prelengthtotake;
 	triggertype_sync <= triggertype;
 	channeltype_sync <= channeltype;
 	didreadout_sync <= didreadout;
@@ -417,7 +419,7 @@ always @ (posedge clklvds or negedge rstn)
 		lvdsout_trig <= 0;
 		
 		//wait for pre-aquisition
-		if (triggercounter<2400) begin // TODO: make this <(expectedsamples-lengthtottake)
+		if (triggercounter<prelengthtotake_sync) begin
 			if (downsamplecounter[downsample_sync]) begin
 				if (downsamplemergingcounter==downsamplemerging_sync) begin
 					triggercounter<=triggercounter+16'd1;
@@ -425,12 +427,12 @@ always @ (posedge clklvds or negedge rstn)
 			end
 		end
 		else begin
-		
 			if (triggerlive_sync) begin
 				if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger rising edge
 				else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger falling edge
 				else if (triggertype_sync==8'd3) acqstate <= 8'd5; // external trigger
 				else begin
+					triggercounter <= 0;
 					ram_address_triggered <= ram_wr_address; // remember where the trigger happened
 					//lvdsout_trig <= 1'b1; // tell the others
 					acqstate <= 8'd250; // go straight to taking more data, no trigger, triggertype==0
@@ -660,6 +662,10 @@ always @ (posedge clk or negedge rstn)
 			if (rx_data[1]==6) begin 
 				fanon <= rx_data[2][0];
 				o_tdata <= fanon;
+			end
+			if (rx_data[1]==7) begin 
+				prelengthtotake <= {rx_data[3],rx_data[2]};
+				o_tdata <= 99;
 			end
 			length <= 4;
 			o_tvalid <= 1'b1;

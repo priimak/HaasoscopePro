@@ -54,8 +54,7 @@ class MainWindow(TemplateBaseClass):
     dooverrange = False
     total_rx_len = 0
     time_start = time.time()
-    if dopattern: triggertype = 0
-    else: triggertype = 1  # 0 no trigger, 1 threshold trigger rising, 2 threshold trigger falling, ...
+    triggertype = 1
     selectedchannel = 0
     activeusb = usbs[0]
     activeboard = 0
@@ -433,6 +432,11 @@ class MainWindow(TemplateBaseClass):
     def sendtriggerinfo(self, usb):
         usb.send(bytes([8, self.triggerlevel + 1, self.triggerdelta, int(self.triggerpos / 256), self.triggerpos % 256,
                         self.triggertimethresh, self.triggerchan, 100]))
+        usb.recv(4)
+        # length to take after trigger is self.expect_samples - self.triggerpos + 1
+        # so we want self.expected_samples - that, which is about self.triggerpos, and then pad a little
+        prelengthtotake = self.triggerpos + 4
+        usb.send(bytes([2, 7]+inttobytes(prelengthtotake)+[0,0]))
         usb.recv(4)
 
     def drawtriggerlines(self):
@@ -946,6 +950,7 @@ class MainWindow(TemplateBaseClass):
         self.tot()
         self.setupchannels()
         self.launch()
+        self.rolling()
         self.selectchannel()
         self.timechanged()
         self.dostartstop()
@@ -1026,7 +1031,7 @@ class MainWindow(TemplateBaseClass):
         for c in range(2): setchanacdc(usbs[board], c, 0)
         return 1
 
-    def onclose(self, event):
+    def closeEvent(self, event):
         print("Handling closeEvent", event)
         self.timer.stop()
         self.timer2.stop()

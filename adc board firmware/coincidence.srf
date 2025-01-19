@@ -23,3 +23,10 @@
 { "" "" "" "Assignment set_output_delay is accepted but has some problems at coincidence.sdc(33): Positional argument <targets> with value \[get_ports \{ftdi_*\}\]: Port ftdi_rxf_n is not an output port." {  } {  } 0 332054 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "Assignment set_output_delay is accepted but has some problems at coincidence.sdc(33): Positional argument <targets> with value \[get_ports \{ftdi_*\}\]: Port ftdi_txe_n is not an output port." {  } {  } 0 332054 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "Assignment set_output_delay is accepted but has some problems at coincidence.sdc(33): Positional argument <targets> with value \[get_ports \{ftdi_*\}\]: Port ftdi_clk is not an output port." {  } {  } 0 332054 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "No exact pin location assignment(s) for 18 pins of 150 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report." {  } {  } 0 169085 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Verilog HDL information at command_processor.v(962): always construct contains both blocking and non-blocking assignments" {  } {  } 0 10268 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "*" {  } {  } 0 10268 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "*" {  } {  } 0 15706 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "*" {  } {  } 0 15705 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "*" {  } {  } 0 13024 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "*" {  } {  } 0 176674 "" 0 0 "Design Software" 0 -1 0 ""}
