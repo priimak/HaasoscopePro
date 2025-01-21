@@ -448,7 +448,7 @@ always @ (posedge clklvds or negedge rstn)
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
-		if (	(triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) acqstate <= 8'd2;
+		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) acqstate <= 8'd2;
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
 			sample_triggered[9-i] <= 1'b1; // remember the samples that caused the trigger
 			downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
@@ -473,11 +473,11 @@ always @ (posedge clklvds or negedge rstn)
 				acqstate <= 8'd250;
 			end
 		end
-//		else begin
-//			tot_counter<=8'd0;
-//			sample_triggered<=0;
-//			acqstate <= 8'd1;
-//		end
+		else begin
+			tot_counter<=8'd0;
+			sample_triggered<=0;
+			acqstate <= 8'd1;
+		end
 	end
 	end
 	end
@@ -488,7 +488,7 @@ always @ (posedge clklvds or negedge rstn)
 	if (triggertype_sync!=2) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
-		if (	(triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) acqstate <= 8'd4;
+		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) acqstate <= 8'd4;
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
 			sample_triggered[9-i] <= 1'b1; // remember the samples that caused the trigger
 			downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
@@ -513,11 +513,11 @@ always @ (posedge clklvds or negedge rstn)
 				acqstate <= 8'd250;
 			end
 		end
-//		else begin
-//			tot_counter<=8'd0;
-//			sample_triggered<=0;
-//			acqstate <= 8'd3;
-//		end
+		else begin
+			tot_counter<=8'd0;
+			sample_triggered<=0;
+			acqstate <= 8'd3;
+		end
 	end
 	end
 	end

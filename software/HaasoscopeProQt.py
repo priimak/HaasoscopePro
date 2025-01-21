@@ -434,7 +434,7 @@ class MainWindow(TemplateBaseClass):
                         self.triggertimethresh, self.triggerchan, 100]))
         usb.recv(4)
         # length to take after trigger is self.expect_samples - self.triggerpos + 1
-        # so we want self.expected_samples - that, which is about self.triggerpos, and then pad a little
+        # we want self.expected_samples - that, which is about self.triggerpos, and then pad a little
         prelengthtotake = self.triggerpos + 4
         usb.send(bytes([2, 7]+inttobytes(prelengthtotake)+[0,0]))
         usb.recv(4)
@@ -443,9 +443,10 @@ class MainWindow(TemplateBaseClass):
         self.hline = (self.triggerlevel - 127) * self.yscale * 16
         self.otherlines[1].setData([self.min_x, self.max_x],
                                    [self.hline, self.hline])  # horizontal line showing trigger threshold
-        point = self.triggerpos + 0.0
-        if 0 < self.downsample < 10: point = point + 1.0 / pow(2, self.downsamplefactor - 1)
-        self.vline = 2 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
+        point = self.triggerpos
+        #if 0 < self.downsample < 10: point = point + 1.0 / pow(2, self.downsamplefactor - 1)
+        pointoffset = -2
+        self.vline = (2 * 10 * point + pointoffset ) * (self.downsamplefactor / self.nsunits / self.samplerate)
         if not self.dotwochannel: self.vline = self.vline * 2
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),
                                                               min(self.hline + self.max_y / 2,
