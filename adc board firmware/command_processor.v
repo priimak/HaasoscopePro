@@ -468,7 +468,7 @@ always @ (posedge clklvds or negedge rstn)
 			end
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
-				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 				lvdsout_trig <= 1'b1; // tell the others
 				acqstate <= 8'd250;
 			end
@@ -508,7 +508,7 @@ always @ (posedge clklvds or negedge rstn)
 			end
 			tot_counter <= tot_counter+8'd1;
 			if (tot_counter>=triggerToT_sync) begin
-				ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 				lvdsout_trig <= 1'b1; // tell the others
 				acqstate <= 8'd250;
 			end
