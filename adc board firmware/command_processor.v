@@ -88,6 +88,7 @@ assign leds[0] = 1; // LED2
 //variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter=1;
 reg signed [5+11:0] highressamplevalue[20];
+reg signed [11:0] samplevalue2[40];
 reg signed [11:0] samplevalue[40], samplevaluereg[40];
 reg [1:0] 	sampleclkstr[40];
 reg [7:0]	tot_counter=0;
@@ -178,11 +179,12 @@ always @ (posedge clklvds) begin
 		lvdsbitsout[14*i+12 +:2] <= sampleclkstr[i]; // always use the same clk and str bits
 	end
 	
-	if (downsamplemerging_sync==1) begin
+	if (downsamplemerging_sync==1) begin // this is highest rate, works the same in single and two channel mode
 	for (i=0;i<40;i=i+1) begin
-		lvdsbitsout[14*i +:12] <= samplevalue[i]; // this is normal
+		samplevalue2[i] <= samplevalue[i]; // pipeline just so the delay is the same for this and higher downsample rates - also helps with timing closure
+		lvdsbitsout[14*i +:12] <= samplevalue2[i]; // no downsampling, so no dividing
 	end
-//	for (i=0;i<10;i=i+1) begin // could straighten them out, but makes showing separate lvds channels more complicated on the python side
+//	for (i=0;i<10;i=i+1) begin // could straighten the samples out, but makes showing separate lvds channels more complicated on the python side
 //		lvdsbitsout[14*(i*4+0) +:12] <= samplevalue[30+1*i]; // every bit from chan 3 into bit 0,4...16
 //		lvdsbitsout[14*(i*4+1) +:12] <= samplevalue[20+1*i]; // every bit from chan 2 into bit 1,5...17
 //		lvdsbitsout[14*(i*4+2) +:12] <= samplevalue[10+1*i]; // every bit from chan 1 into bit 2,6...18
