@@ -94,7 +94,8 @@ reg [1:0] 	sampleclkstr[40];
 reg [7:0]	tot_counter=0;
 reg [7:0]	downsamplemergingcounter=1;
 reg [15:0]	triggercounter=0;
-reg [47:0]	highressamplevalueavg=0, highressamplevalueavgtemp=0;
+reg [47:0]	highressamplevalueavg0=0, highressamplevalueavgtemp0=0;
+reg [47:0]	highressamplevalueavg1=0, highressamplevalueavgtemp1=0;
 
 //variables synced between domains
 reg [ 7:0]	acqstate=0, acqstate_sync=0;
@@ -266,12 +267,12 @@ always @ (posedge clklvds) begin
 											samplevalue[20] + samplevalue[21] + samplevalue[23] + samplevalue[24] + samplevalue[25] + samplevalue[26] + samplevalue[28] + samplevalue[29] +
 											samplevalue[30] + samplevalue[31] + samplevalue[33] + samplevalue[34] + samplevalue[35] + samplevalue[36] + samplevalue[38] + samplevalue[39]; // every bit of chan 0, and add in the other bits
 			if (downsamplecounter[downsample_sync]) begin
-				highressamplevalueavgtemp = highressamplevalueavg+highressamplevalue[0];
-				lvdsbitsout[0 +:12] <= highressamplevalueavgtemp[(5+downsample_sync)+:12]; // would like to have divided by 40, but instead skip every 5th bit, and divide by 32 * 2^downsample
-				highressamplevalueavg <= 0;
+				highressamplevalueavgtemp0 = highressamplevalueavg0+highressamplevalue[0];
+				lvdsbitsout[0 +:12] <= highressamplevalueavgtemp0[(5+downsample_sync)+:12]; // would like to have divided by 40, but instead skip every 5th bit, and divide by 32 * 2^downsample
+				highressamplevalueavg0 <= 0;
 			end
 			else begin
-				highressamplevalueavg <= highressamplevalueavg+highressamplevalue[0];
+				highressamplevalueavg0 <= highressamplevalueavg0+highressamplevalue[0];
 			end
 		end
 		else begin
@@ -361,27 +362,39 @@ always @ (posedge clklvds) begin
 	end
 	end
 	
-	if (downsamplemerging_sync==20 && downsamplecounter[downsample_sync]) begin
+	if (downsamplemerging_sync==20) begin
 		if (highres_sync) begin
 			highressamplevalue[0] <= samplevalue[0] +  samplevalue[1] +  samplevalue[3] +  samplevalue[4] +  samplevalue[5] +  samplevalue[6] +  samplevalue[8] +  samplevalue[9] +
 											samplevalue[20] + samplevalue[21] + samplevalue[23] + samplevalue[24] + samplevalue[25] + samplevalue[26] + samplevalue[28] + samplevalue[29]; // 10 bits of chan 0 and 2, into bit 0 (but skip every 5th bit)
-			lvdsbitsout[14*0  +:12] <= highressamplevalue[0][4+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
 			highressamplevalue[1] <= samplevalue[10] + samplevalue[11] + samplevalue[13] + samplevalue[14] + samplevalue[15] + samplevalue[16] + samplevalue[18] + samplevalue[19] +
 											samplevalue[30] + samplevalue[31] + samplevalue[33] + samplevalue[34] + samplevalue[35] + samplevalue[36] + samplevalue[38] + samplevalue[39]; // 10 bits of chan 1 and 3, into bit 10 (but skip every 5th bit)
-			lvdsbitsout[14*10 +:12] <= highressamplevalue[1][4+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
+			if (downsamplecounter[downsample_sync]) begin
+				highressamplevalueavgtemp0 = highressamplevalueavg0+highressamplevalue[0];
+				highressamplevalueavgtemp1 = highressamplevalueavg1+highressamplevalue[1];
+				lvdsbitsout[14*0  +:12] <= highressamplevalueavgtemp0[(4+downsample_sync)+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
+				lvdsbitsout[14*10 +:12] <= highressamplevalueavgtemp1[(4+downsample_sync)+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
+				highressamplevalueavg0 <= 0;
+				highressamplevalueavg1 <= 0;
+			end
+			else begin
+				highressamplevalueavg0 <= highressamplevalueavg0+highressamplevalue[0];
+				highressamplevalueavg1 <= highressamplevalueavg1+highressamplevalue[1];
+			end
 		end
 		else begin
 			lvdsbitsout[14*0  +:12] <= samplevalue[ 0]; // every first bit of chan 0
 			lvdsbitsout[14*10 +:12] <= samplevalue[10]; // every first bit of chan 1		
 		end
-		for (j=0;j<9;j=j+1) begin
-			lvdsbitsout[14*(1+ j) +:12] <= lvdsbitsout[14*(0+ j) +:12]; // move what was in first 1 into second 1
-			lvdsbitsout[14*(11+j) +:12] <= lvdsbitsout[14*(10+j) +:12];
-			lvdsbitsout[14*(21+j) +:12] <= lvdsbitsout[14*(20+j) +:12];
-			lvdsbitsout[14*(31+j) +:12] <= lvdsbitsout[14*(30+j) +:12];
-		end
+		if (downsamplecounter[downsample_sync]) begin
+			for (j=0;j<9;j=j+1) begin
+				lvdsbitsout[14*(1+ j) +:12] <= lvdsbitsout[14*(0+ j) +:12]; // move what was in first 1 into second 1
+				lvdsbitsout[14*(11+j) +:12] <= lvdsbitsout[14*(10+j) +:12];
+				lvdsbitsout[14*(21+j) +:12] <= lvdsbitsout[14*(20+j) +:12];
+				lvdsbitsout[14*(31+j) +:12] <= lvdsbitsout[14*(30+j) +:12];
+			end
 			lvdsbitsout[14*(20) +:12] <= lvdsbitsout[14*(9) +:12];
 			lvdsbitsout[14*(30) +:12] <= lvdsbitsout[14*(19) +:12];
+		end
 	end
 	
 	end

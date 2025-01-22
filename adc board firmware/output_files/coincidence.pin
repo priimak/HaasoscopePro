@@ -233,7 +233,7 @@ spimosi                      : F7        : output : 3.3-V LVTTL       :         
 spics[0]                     : F8        : output : 3.3-V LVTTL       :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8         :                
 spimisos[0]                  : F10       : input  : 3.3-V LVTTL       :         : 8         : Y              
-spimisos[4]                  : F11       : input  : 3.3-V LVTTL       :         : 7         : N              
+spimisos[7]                  : F11       : input  : 3.3-V LVTTL       :         : 7         : N              
 GND                          : F12       : gnd    :                   :         :           :                
 boardout[4]                  : F13       : output : 2.5 V             :         : 7         : Y              
 boardout[5]                  : F14       : output : 2.5 V             :         : 7         : Y              
@@ -276,8 +276,8 @@ lvdsLin[1]                   : H6        : input  : LVDS              :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
 lvdsLin[2]                   : H8        : input  : LVDS              :         : 1         : N              
 VCCINT                       : H9        : power  :                   : 1.2V    :           :                
-spimisos[7]                  : H10       : input  : 3.3-V LVTTL       :         : 8         : N              
-spimisos[5]                  : H11       : input  : 3.3-V LVTTL       :         : 8         : N              
+spimisos[5]                  : H10       : input  : 3.3-V LVTTL       :         : 8         : N              
+spimisos[4]                  : H11       : input  : 3.3-V LVTTL       :         : 8         : N              
 GND                          : H12       : gnd    :                   :         :           :                
 GND                          : H13       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
