@@ -477,14 +477,22 @@ always @ (posedge clklvds or negedge rstn)
 	2 : begin // ready for second part of trigger condition to be met
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
-	triggersamplecounter<=triggersamplecounter+8'd1;
+	if (downsamplecounter[downsample_sync]) begin
+		if (downsamplemergingcounter==downsamplemerging_sync) begin
+			triggersamplecounter<=triggersamplecounter+8'd1;
+		end
+	end
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
 			if (tot_counter==0) begin
 				sample_triggered[10+9-i] <= 1'b1; // remember the samples that caused the trigger
 				downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
 			end
-			tot_counter <= tot_counter+8'd1;
+			if (downsamplecounter[downsample_sync]) begin
+				if (downsamplemergingcounter==downsamplemerging_sync) begin
+					tot_counter <= tot_counter+8'd1;
+				end
+			end
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 				lvdsout_trig <= 1'b1; // tell the others
@@ -521,13 +529,22 @@ always @ (posedge clklvds or negedge rstn)
 	4 : begin // ready for second part of trigger condition to be met
 	if (triggertype_sync!=2) acqstate<=0;
 	else begin
+	if (downsamplecounter[downsample_sync]) begin
+		if (downsamplemergingcounter==downsamplemerging_sync) begin
+			triggersamplecounter<=triggersamplecounter+8'd1;
+		end
+	end
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
 			if (tot_counter==0) begin
 				sample_triggered[10+9-i] <= 1'b1; // remember the samples that caused the trigger
 				downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
 			end
-			tot_counter <= tot_counter+8'd1;
+			if (downsamplecounter[downsample_sync]) begin
+				if (downsamplemergingcounter==downsamplemerging_sync) begin
+					tot_counter <= tot_counter+8'd1;
+				end
+			end
 			if (tot_counter>=triggerToT_sync) begin
 				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 				lvdsout_trig <= 1'b1; // tell the others
@@ -535,9 +552,12 @@ always @ (posedge clklvds or negedge rstn)
 			end
 		end
 		else begin
-			tot_counter<=8'd0;
-			sample_triggered<=0;
-			acqstate <= 8'd3;
+			if (triggersamplecounter>200) begin // reset trigger if we've been waiting too long to stay over threshold
+				tot_counter<=8'd0;
+				triggersamplecounter<=0;
+				sample_triggered<=0;
+				acqstate <= 8'd3;
+			end
 		end
 	end
 	end
