@@ -77,6 +77,7 @@ class MainWindow(TemplateBaseClass):
     max_y = 5 # pow(2, 11) * yscale
     min_x = 0
     max_x = 4 * 10 * expect_samples * downsamplefactor / nsunits / samplerate
+    downsamplezoom = 1
     triggerlevel = 127
     triggerdelta = 1
     triggerpos = int(expect_samples * 128 / 256)
@@ -244,7 +245,6 @@ class MainWindow(TemplateBaseClass):
 
     def fwf(self):
         self.fitwidthfraction = self.ui.fwfBox.value() / 100.
-        print("fwf now", self.fitwidthfraction)
 
     def setTAD(self):
         self.tad = self.ui.tadBox.value()
@@ -434,7 +434,7 @@ class MainWindow(TemplateBaseClass):
             for usb in usbs: self.sendtriggerinfo(usb)
 
     def triggerposchanged(self, value):
-        self.triggerpos = int(self.expect_samples * value / 256)
+        self.triggerpos = int(self.expect_samples * value / 100)
         for usb in usbs: self.sendtriggerinfo(usb)
         self.drawtriggerlines()
 
@@ -524,29 +524,32 @@ class MainWindow(TemplateBaseClass):
 
     def timefast(self):
         amount = 1
-        modifiers = app.keyboardModifiers()
-        if modifiers == QtCore.Qt.ShiftModifier:
-            amount *= 5
-        if (self.downsample - amount) < 0:
+        if self.downsample - amount < -10:
             print("downsample too small!")
             return
         self.downsample = self.downsample - amount
-        for usb in usbs: self.telldownsample(usb, self.downsample)
+        if self.downsample<0:
+            self.downsamplezoom = pow(2, -self.downsample)
+            self.ui.thresholdPos.setEnabled(False)
+        else:
+            self.downsamplezoom = 1
+            self.ui.thresholdPos.setEnabled(True)
+            for usb in usbs: self.telldownsample(usb, self.downsample)
         self.timechanged()
 
     def timeslow(self):
-        if self.dooverlapped:
-            print("downsampling not supported in overlap mode")
-            return
         amount = 1
-        modifiers = app.keyboardModifiers()
-        if modifiers == QtCore.Qt.ShiftModifier:
-            amount *= 5
         if (self.downsample + amount - 5) > 31:
             print("downsample too large!")
             return
         self.downsample = self.downsample + amount
-        for usb in usbs: self.telldownsample(usb, self.downsample)
+        if self.downsample<0:
+            self.downsamplezoom = pow(2, -self.downsample)
+            self.ui.thresholdPos.setEnabled(False)
+        else:
+            self.downsamplezoom = 1
+            self.ui.thresholdPos.setEnabled(True)
+            for usb in usbs: self.telldownsample(usb, self.downsample)
         self.timechanged()
 
     def timechanged(self):
@@ -569,6 +572,13 @@ class MainWindow(TemplateBaseClass):
             self.max_x = 4 * 10 * self.expect_samples * (self.downsamplefactor / self.nsunits / self.samplerate)
             self.units = "s"
         self.ui.plot.setLabel('bottom', "Time (" + self.units + ")")
+        if self.downsamplezoom>1:
+            tp = self.vline
+            tpfrac = self.vline/self.max_x
+            self.min_x = tp - tpfrac * self.max_x/self.downsamplezoom
+            self.max_x = tp + (1-tpfrac) * self.max_x/self.downsamplezoom
+        else:
+            self.min_x = 0
         if self.dooverlapped:
             for c in range(4):
                 self.xydata[c][0] = np.array([range(0, 10 * self.expect_samples)]) * (
@@ -587,7 +597,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
         self.drawtriggerlines()
-        self.ui.timebaseBox.setText("downsample " + str(self.downsample))
+        self.ui.timebaseBox.setText("2^"+str(self.downsample))
 
     def risingfalling(self):
         fallingedge = not self.ui.risingedgeCheck.checkState()
@@ -873,18 +883,20 @@ class MainWindow(TemplateBaseClass):
                 targety = self.xydatainterleaved[int(self.activeboard/2)]
             p0 = [max(targety[1]), self.vline - 10, 20, min(targety[1])]  # this is an initial guess
             fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
-            xc = targety[0][(targety[0] > self.vline - fitwidth) & (
-                        targety[0] < self.vline + fitwidth)]  # only fit in range
-            yc = targety[1][
-                (targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]
-            with warnings.catch_warnings():
-                warnings.simplefilter("ignore")
-                popt, pcov = curve_fit(fit_rise, xc, yc, p0)
-                perr = np.sqrt(np.diag(pcov))
-            risetime = 0.8 * 0.7 * popt[2] # calibrated
-            risetimeerr = perr[2]
-            # print(popt)
-            thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
+            xc = targety[0][(targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]  # only fit in range
+            yc = targety[1][(targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]
+            if xc.size > 10: # require at least something to fit, otherwise we'll through an area
+                with warnings.catch_warnings():
+                    try:
+                        warnings.simplefilter("ignore")
+                        popt, pcov = curve_fit(fit_rise, xc, yc, p0)
+                        perr = np.sqrt(np.diag(pcov))
+                        risetime = 0.8 * 0.7 * popt[2] # calibrated
+                        risetimeerr = perr[2]
+                        # print(popt)
+                        thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
+                    except RuntimeError:
+                        pass
 
             if not self.dotwochannel and self.doexttrig[self.activeboard] and self.num_board>1:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1

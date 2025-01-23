@@ -150,13 +150,13 @@
          <number>0</number>
         </property>
         <property name="maximum">
-         <number>256</number>
+         <number>100</number>
         </property>
         <property name="pageStep">
-         <number>10</number>
+         <number>1</number>
         </property>
         <property name="value">
-         <number>128</number>
+         <number>50</number>
         </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -535,9 +535,9 @@
       <widget class="QGroupBox" name="channelgroupBox">
        <property name="geometry">
         <rect>
-         <x>180</x>
+         <x>190</x>
          <y>380</y>
-         <width>111</width>
+         <width>101</width>
          <height>131</height>
         </rect>
        </property>
@@ -664,9 +664,9 @@
       <widget class="QGroupBox" name="channelgroupBox_2">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>300</x>
          <y>380</y>
-         <width>111</width>
+         <width>101</width>
          <height>131</height>
         </rect>
        </property>
@@ -795,7 +795,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>191</width>
+         <width>181</width>
          <height>511</height>
         </rect>
        </property>
@@ -1641,7 +1641,7 @@
          <rect>
           <x>117</x>
           <y>257</y>
-          <width>71</width>
+          <width>61</width>
           <height>20</height>
          </rect>
         </property>

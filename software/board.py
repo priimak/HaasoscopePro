@@ -5,10 +5,6 @@ from adf435x_core import *
 
 def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_doubler=False, ref_div2=True, themuxout=False):
     print('ADF4350 being set to %0.2f MHz' % freq)
-    if not themuxout:
-        print("muxout GND 0")
-    else:
-        print("muxout VCC 1")
     INT, MOD, FRAC, output_divider, band_select_clock_divider = (calculate_regs(
         device_type=DeviceType.ADF4350, freq=freq, ref_freq=50.0,
         band_select_clock_mode=BandSelectClockMode.Low,
@@ -38,7 +34,7 @@ def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_d
     spimode(usb, 0)
 
 def setupboard(usb, dopattern, twochannel, dooverrange):
-    setfan(usb, True)
+    setfan(usb, 1)
 
     spimode(usb, 0)
     spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x00, False)  # power up
@@ -185,7 +181,7 @@ def setchanimpedance(usb, chan, onemeg):
         return
     usb.send(bytes([10, controlbit, onemeg, 0, 0, 0, 0, 0]))
     usb.recv(4)
-    print("1M for chan", chan, onemeg)
+    #print("1M for chan", chan, onemeg)
 
 def setchanacdc(usb, chan, ac):
     if chan == 1:
@@ -196,7 +192,7 @@ def setchanacdc(usb, chan, ac):
         return
     usb.send(bytes([10, controlbit, not ac, 0, 0, 0, 0, 0]))
     usb.recv(4)
-    print("AC for chan", chan, ac)
+    #print("AC for chan", chan, ac)
 
 def setchanatt(usb, chan, att):
     if chan == 1:
@@ -229,7 +225,7 @@ def setfan(usb,fanon):
 def cleanup(usb):
     spimode(usb, 0)
     spicommand(usb, "DEVICE_CONFIG", 0x00, 0x02, 0x03, False)  # power down
-    setfan(usb,False)
+    setfan(usb,0)
     return 1
 
 def getoverrange(usb):

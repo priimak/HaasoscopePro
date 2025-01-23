@@ -13,11 +13,11 @@ def connectdevices():
     usbs = []
     ftds = ftd2xx.listDevices()
     if ftds is not None:
-        print("Found devices:", ftds)
+        print("Found",len(ftds),"devices:", ftds)
         for ftdserial in ftds:
-            # print("FTD serial:",ftdserial)
+            #print("FTD serial:",ftdserial)
+            if not ftdserial.startswith(b'FT'): continue
             usbdevice = UsbFt232hSync245mode('FTX232H', 'HaasoscopePro USB2', ftdserial)
-            # print(usbdevice)
             if usbdevice.good:
                 # if usbdevice.serial != b"FT9M1UIT": continue
                 # if usbdevice.serial != b"FT9LYZXP": continue
