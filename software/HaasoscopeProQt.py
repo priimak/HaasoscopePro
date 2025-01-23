@@ -55,6 +55,7 @@ class MainWindow(TemplateBaseClass):
     total_rx_len = 0
     time_start = time.time()
     triggertype = 1
+    isrolling = 0
     selectedchannel = 0
     activeusb = usbs[0]
     activeboard = 0
@@ -83,7 +84,6 @@ class MainWindow(TemplateBaseClass):
     triggerchan = 0
     hline = 0
     vline = 0
-    oldtriggertype = 0
     getone = False
     exttriggainscaling = 1.0
     downsamplemerging = 1
@@ -113,6 +113,7 @@ class MainWindow(TemplateBaseClass):
     lastrate = 0
     lastsize = 0
     VperD = [0.05]*(num_board*2)
+    plljustreset = False
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
@@ -340,13 +341,23 @@ class MainWindow(TemplateBaseClass):
         tres = usbs[board].recv(4)
         print("pllreset sent to board",board,"- got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasecs[board] = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]  # reset counters
-        # adjust phases
-        n = 2  # amount to adjust (+ or -)
+        # adjust phases (intentionally put to a place where the clockstr may be bad, it'll get adjusted by 90 deg later, and then dropped to a good range)
+        n = 4  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
         n = -1  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
         n = 0  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
+        self.plljustreset = True
+
+    def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD):
+        if (nbadclkA+nbadclkB+nbadclkC+nbadclkD>4) and self.phasecs[board][0][2] < 12:  # adjust phase by 90 deg
+            n = 6  # amount to adjust clkout (positive)
+            for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
+        if self.plljustreset: # adjust back down to a good range after detecting that it needs to be shifted by 90 deg or not
+            self.plljustreset = False
+            n = 2  # amount to adjust clkout (negative)
+            for i in range(n): self.dophase(board, 2, 0, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
     def wheelEvent(self, event):  # QWheelEvent
         if hasattr(event, "delta"):
@@ -454,15 +465,12 @@ class MainWindow(TemplateBaseClass):
         for usb in usbs: self.sendtriggerinfo(usb)
 
     def rolling(self):
-        if self.triggertype > 0:
-            self.oldtriggertype = self.triggertype
-            self.triggertype = 0
-            self.ui.risingedgeCheck.setEnabled(False)
-        else:
-            self.triggertype = self.oldtriggertype
-        if self.triggertype == 1 or self.triggertype == 2: self.ui.risingedgeCheck.setEnabled(True)
-        self.ui.rollingButton.setChecked(self.triggertype > 0)
-        if self.triggertype > 0:
+        self.isrolling = not self.isrolling
+        self.ui.rollingButton.setChecked(self.isrolling)
+        for usb in usbs:
+            usb.send(bytes([2, 8, self.isrolling, 0, 100, 100, 100, 100]))
+            usb.recv(4)
+        if not self.isrolling:
             self.ui.rollingButton.setText("Normal")
         else:
             self.ui.rollingButton.setText("Auto")
@@ -593,13 +601,6 @@ class MainWindow(TemplateBaseClass):
         else:
             self.dodrawing = False
             # print("drawing now",self.dodrawing)
-
-    def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD):
-        if ((
-                nbadclkA>self.expect_samples or nbadclkB>self.expect_samples or nbadclkC>self.expect_samples or nbadclkD>self.expect_samples)
-                and self.phasecs[board][0][2] < 12):  # adjust phase by 90 deg
-            n = 6  # amount to adjust clkout (positive)
-            for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
     def updateplot(self):
         self.getevent()
