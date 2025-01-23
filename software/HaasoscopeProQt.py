@@ -72,9 +72,9 @@ class MainWindow(TemplateBaseClass):
     highresval = 1
     xscale = 1
     xscaling = 1
-    yscale = 3.3/2.03 * 10. / pow(2,12) # 1 V / division, with 10 divisions
-    min_y = -8.3 # -pow(2, 11) * yscale
-    max_y = 8.3 # pow(2, 11) * yscale
+    yscale = 3.3/2.03 * 10*5/8 / pow(2,12)
+    min_y = -5 # -pow(2, 11) * yscale
+    max_y = 5 # pow(2, 11) * yscale
     min_x = 0
     max_x = 4 * 10 * expect_samples * downsamplefactor / nsunits / samplerate
     triggerlevel = 127
@@ -112,7 +112,7 @@ class MainWindow(TemplateBaseClass):
     exttrigstdavg = 0
     lastrate = 0
     lastsize = 0
-    VperD = [0.05]*(num_board*2)
+    VperD = [0.08]*(num_board*2)
     plljustreset = False
 
     def __init__(self):
@@ -235,10 +235,12 @@ class MainWindow(TemplateBaseClass):
     def changegain(self):
         setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value())
         db = self.ui.gainBox.value()
-        v2 = 0.05/pow(10, db / 20.)
+        v2 = 0.08/pow(10, db / 20.)
         self.VperD[self.activeboard*2+self.selectedchannel] = v2
-        v2 = round(1000*v2,1)
-        self.ui.VperD.setText(str(v2)+" mV/div")
+        v2 = round(1000*v2,0)
+        self.ui.VperD.setText(str(int(v2))+" mV/div")
+        if self.ui.gainBox.value()>24: self.ui.gainBox.setSingleStep(2)
+        else: self.ui.gainBox.setSingleStep(6)
 
     def fwf(self):
         self.fitwidthfraction = self.ui.fwfBox.value() / 100.
@@ -350,8 +352,8 @@ class MainWindow(TemplateBaseClass):
         for i in range(abs(n)): self.dophase(board, 4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
         self.plljustreset = True
 
-    def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD):
-        if (nbadclkA+nbadclkB+nbadclkC+nbadclkD>4) and self.phasecs[board][0][2] < 12:  # adjust phase by 90 deg
+    def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr):
+        if (nbadclkA+nbadclkB+nbadclkC+nbadclkD+nbadstr>4) and self.phasecs[board][0][2] < 12:  # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
         if self.plljustreset: # adjust back down to a good range after detecting that it needs to be shifted by 90 deg or not
@@ -746,7 +748,7 @@ class MainWindow(TemplateBaseClass):
         nbadclkB = 0
         nbadclkC = 0
         nbadclkD = 0
-        self.nbadstr = 0
+        nbadstr = 0
         for s in range(0, self.expect_samples+self.expect_samples_extra):
             chan = -1
             for n in range(self.nsubsamples):  # the subsample to get
@@ -785,7 +787,7 @@ class MainWindow(TemplateBaseClass):
                         if strobe != 8 and strobe != 128 and strobe != 2048 and strobe != 32768:
                             if strobe * 4 != 8 and strobe * 4 != 128 and strobe * 4 != 2048 and strobe * 4 != 32768:
                                 if self.debugstrobe: print("s=", s, "n=", n, "str", binprint(strobe), strobe)
-                                self.nbadstr = self.nbadstr + 1
+                                nbadstr = nbadstr + 1
 
                 if self.debug and self.debugprint:
                     goodval = -1
@@ -847,12 +849,13 @@ class MainWindow(TemplateBaseClass):
                                 if samp + self.toff >= self.xydata[board][1].size: continue
                                 self.xydata[board][1][(samp + self.toff)] = val
 
-        self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD)
+        self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr)
         if board == self.activeboard:
             self.nbadclkA = nbadclkA
             self.nbadclkB = nbadclkB
             self.nbadclkC = nbadclkC
             self.nbadclkD = nbadclkD
+            self.nbadstr = nbadstr
 
     def drawtext(self):  # happens once per second
         thestr = "Nbadclks A B C D " + str(self.nbadclkA) + " " + str(self.nbadclkB) + " " + str(
@@ -860,8 +863,8 @@ class MainWindow(TemplateBaseClass):
         thestr += "\n" + "Nbadstrobes " + str(self.nbadstr)
         thestr += "\n" + gettemps(self.activeusb)
         thestr += "\n" + "Trigger threshold " + str(round(self.hline, 3))
-        thestr += "\n" + "Mean " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.mean(self.xydata[self.activexychannel][1]), 5) ) + " mV"
-        thestr += "\n" + "RMS " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.std(self.xydata[self.activexychannel][1]), 5) ) + " mV"
+        thestr += "\n" + "Mean " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.mean(self.xydata[self.activexychannel][1]), 3) ) + " mV"
+        thestr += "\n" + "RMS " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.std(self.xydata[self.activexychannel][1]), 3) ) + " mV"
 
         if not self.dooverlapped:
             if not self.dointerleaved:
@@ -1015,11 +1018,13 @@ class MainWindow(TemplateBaseClass):
         self.otherlines.append(line)
 
         # other stuff
+        # https://pyqtgraph.readthedocs.io/en/latest/api_reference/graphicsItems/plotitem.html
         self.ui.plot.setLabel('bottom', "Time (ns)")
         self.ui.plot.setLabel('left', "Voltage (divisions)")
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
-        for usb in usbs: self.telldownsample(usb, 0)
+        self.ui.plot.getAxis("left").setTickSpacing(1,.1)
         self.ui.plot.showGrid(x=True, y=True)
+        for usb in usbs: self.telldownsample(usb, 0)
 
     def setup_connection(self, board):
         print("Setting up board",board)

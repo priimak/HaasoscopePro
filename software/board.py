@@ -147,8 +147,8 @@ def setupboard(usb, dopattern, twochannel, dooverrange):
 def setgain(usb, chan, value):
     spimode(usb, 0)
     # 00 to 20 is 26 to -6 dB, 0x1a is no gain
-    if chan == 1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2)
-    if chan == 0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2)
+    if chan == 1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2, quiet=True)
+    if chan == 0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2, quiet=True)
 
 def dooffset(usb, chan, val):  # val goes from -100% to 100%
     spimode(usb, 1)
