@@ -443,11 +443,8 @@ class MainWindow(TemplateBaseClass):
         self.hline = (self.triggerlevel - 127) * self.yscale * 16
         self.otherlines[1].setData([self.min_x, self.max_x],
                                    [self.hline, self.hline])  # horizontal line showing trigger threshold
-        point = self.triggerpos
-        #if 0 < self.downsample < 10: point = point + 1.0 / pow(2, self.downsamplefactor - 1)
-        pointoffset = -2
-        self.vline = (2 * 10 * point + pointoffset ) * (self.downsamplefactor / self.nsunits / self.samplerate)
-        if not self.dotwochannel: self.vline = self.vline * 2
+        point = self.triggerpos + 1.0
+        self.vline = 4 * 10 * point * (self.downsamplefactor / self.nsunits / self.samplerate)
         self.otherlines[0].setData([self.vline, self.vline], [max(self.hline + self.min_y / 2, self.min_y),
                                                               min(self.hline + self.max_y / 2,
                                                                   self.max_y)])  # vertical line showing trigger time
