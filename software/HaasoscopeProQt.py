@@ -34,7 +34,7 @@ class FFTWindow(FFTTemplateBaseClass):
 WindowTemplate, TemplateBaseClass = loadUiType("HaasoscopePro.ui")
 class MainWindow(TemplateBaseClass):
 
-    expect_samples = 800
+    expect_samples = 100
     expect_samples_extra = 5 # enough to cover downsample shifting and toff shifting
     samplerate = 3.2  # freq in GHz
     nsunits = 1
