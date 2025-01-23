@@ -90,12 +90,12 @@ integer		downsamplecounter=1;
 reg signed [5+11:0] highressamplevalue[20];
 reg signed [11:0] samplevalue2[40];
 reg signed [11:0] samplevalue[40], samplevaluereg[40];
+reg signed [47:0]	highressamplevalueavg0=0, highressamplevalueavgtemp0=0;
+reg signed [47:0]	highressamplevalueavg1=0, highressamplevalueavgtemp1=0;
 reg [1:0] 	sampleclkstr[40];
-reg [7:0]	tot_counter=0;
+reg [7:0]	tot_counter=0, triggersamplecounter=0;
 reg [7:0]	downsamplemergingcounter=1;
 reg [15:0]	triggercounter=0;
-reg [47:0]	highressamplevalueavg0=0, highressamplevalueavgtemp0=0;
-reg [47:0]	highressamplevalueavg1=0, highressamplevalueavgtemp1=0;
 
 //variables synced between domains
 reg [ 7:0]	acqstate=0, acqstate_sync=0;
@@ -401,26 +401,27 @@ always @ (posedge clklvds) begin
 	
 end
 
+// this drives the trigger
 always @ (posedge clklvds or negedge rstn)
  if (~rstn) begin
 	acqstate <= 8'd0;
  end else begin
 
-	if (acqstate<251) begin
+	if (acqstate<251) begin // always writing while waiting for a trigger, to see what happened before
 		ram_wr <= 1'b0;
 		if (downsamplecounter[downsample_sync]) begin
 			downsamplecounter<=1;
 			if (downsamplemergingcounter==downsamplemerging_sync) begin
 				downsamplemergingcounter <= 8'd1;
 				ram_wr_address <= ram_wr_address + 10'd1;
-				ram_wr <= 1'b1;//always writing while waiting for a trigger, to see what happened before
+				ram_wr <= 1'b1;
 			end
 			else downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
 		end
 		else downsamplecounter <= downsamplecounter+1;
 	end
-	else begin
-		ram_wr <= 1'b0;//not writing
+	else begin // not writing, while waiting to be read out
+		ram_wr <= 1'b0;
 		downsamplecounter<=1;
 		downsamplemergingcounter<=1;
 	end
@@ -429,6 +430,7 @@ always @ (posedge clklvds or negedge rstn)
 	0 : begin // ready
 		//triggercounter<=0;
 		tot_counter<=0;
+		triggersamplecounter<=0;
 		sample_triggered<=0;
 		downsamplemergingcounter_triggered<=0;
 		lvdsout_trig <= 0;
@@ -443,11 +445,11 @@ always @ (posedge clklvds or negedge rstn)
 		end
 		else begin
 			if (triggerlive_sync) begin
+				triggercounter <= 0; // will also use this to keep recording enough samples after the trigger, so reset
 				if (triggertype_sync==8'd1) acqstate <= 8'd1; // threshold trigger rising edge
 				else if (triggertype_sync==8'd2) acqstate <= 8'd3; // threshold trigger falling edge
 				else if (triggertype_sync==8'd3) acqstate <= 8'd5; // external trigger
 				else begin
-					triggercounter <= 0;
 					ram_address_triggered <= ram_wr_address; // remember where the trigger happened
 					//lvdsout_trig <= 1'b1; // tell the others
 					acqstate <= 8'd250; // go straight to taking more data, no trigger, triggertype==0
@@ -475,6 +477,7 @@ always @ (posedge clklvds or negedge rstn)
 	2 : begin // ready for second part of trigger condition to be met
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
+	triggersamplecounter<=triggersamplecounter+8'd1;
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
 			if (tot_counter==0) begin
@@ -489,9 +492,12 @@ always @ (posedge clklvds or negedge rstn)
 			end
 		end
 		else begin
-			tot_counter<=8'd0;
-			sample_triggered<=0;
-			acqstate <= 8'd1;
+			if (triggersamplecounter>200) begin // reset trigger if we've been waiting too long to stay over threshold
+				tot_counter<=8'd0;
+				triggersamplecounter<=0;
+				sample_triggered<=0;
+				acqstate <= 8'd1;
+			end
 		end
 	end
 	end
