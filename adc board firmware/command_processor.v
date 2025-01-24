@@ -1020,70 +1020,38 @@ always@(posedge clk_over_4) // Process the state machine at each 12.5 MHz clock 
 	// the ideal 1250ns period (and the minimum is 1200ns).
 	// A '1' is 3 high periods followed by 1 low period (960/320 ns)
 	// A '0' is 1 high period followed by 3 low periods (320/960 ns)
-	if (neostate == 0 || neostate == 1 || neostate == 2 || neostate == 3)
-	  begin
+	if (neostate == 0 || neostate == 1 || neostate == 2 || neostate == 3) begin
 		 npxc = npxc + 2'b1;
-		 if (npxc == 0)
-			begin
-			  neostate = neostate + 3'b1;
-			end
-	  end
-	if (neostate == 4)
-	  begin
+		 if (npxc == 0) neostate = neostate + 3'b1;
+	end
+	if (neostate == 4) begin
 		 neobits = neobits + 8'b1;
-		 if (neobits == 24)
-			begin
+		 if (neobits == 24) begin
 			  neobits = 0;
 			  neostate = neostate + 3'b1;
-			end
-		 else
-			begin
-			  neostate = 0;
-			end
-	  end
-	if (neostate == 5)
-	  begin
+		 end
+		 else neostate = 0;
+	end
+	if (neostate == 5) begin
 		 neo_led_num = neo_led_num + 2'b1;
-		 if (neo_led_num == neo_led_num_max)
-			begin
+		 if (neo_led_num == neo_led_num_max) begin
 			  neo_led_num = 0;
 			  neostate = neostate + 3'b1;
-			end
-		 else
-			begin
-			  neostate = 0;
-			end
-	  end
-	if (neostate == 6)
-	  begin
+		 end
+		 else neostate = 0;
+	end
+	if (neostate == 6) begin
 		 lpxc = lpxc + 13'b1;
-		 if (lpxc == 0 && send_color)
-			begin
-			  neostate = 0;
-			end
-	  end
+		 if (lpxc == 0 && send_color) neostate = 0;
+	end
 	
-	if (neo_color[neo_led_num] & (1 << neobits)) // Set the correct pin state
-	  begin
-	  if (neostate == 0 || neostate == 1 || neostate == 2)
-		 begin
-			leds[1] <= 1;
-		 end
-	  else if (neostate == 3 || neostate == 6)
-		 begin
-			leds[1] <= 0;
-		 end
-	  end
-	else
-	  begin
-	  if (neostate == 0)
-		 begin
-			leds[1] <= 1;
-		 end
-	  else if (neostate == 1 || neostate == 2 || neostate == 3 || neostate == 6)
-		 begin
-			leds[1] <= 0;
-		 end
+	if (neo_color[neo_led_num] & (1 << neobits)) begin // Set the correct pin state
+	  if (neostate == 0 || neostate == 1 || neostate == 2) leds[1] <= 1;
+	  else if (neostate == 3 || neostate == 6) leds[1] <= 0;
+	end
+	else begin
+	  if (neostate == 0) leds[1] <= 1;
+	  else if (neostate == 1 || neostate == 2 || neostate == 3 || neostate == 6) leds[1] <= 0;
 	end
  end
 
