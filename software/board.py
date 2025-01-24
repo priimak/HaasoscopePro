@@ -135,8 +135,8 @@ def setupboard(usb, dopattern, twochannel, dooverrange):
     spicommand(usb, "DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
     spicommand(usb, "DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
     spimode(usb, 0)
-    dooffset(usb, 0, 0)
-    dooffset(usb, 1, 0)
+    dooffset(usb, 0, 0, 1)
+    dooffset(usb, 1, 0, 1)
     setgain(usb, 0, 0)
     setgain(usb, 1, 0)
 
@@ -146,9 +146,9 @@ def setgain(usb, chan, value):
     if chan == 1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2, quiet=True)
     if chan == 0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2, quiet=True)
 
-def dooffset(usb, chan, val):  # val goes from -100% to 100%
+def dooffset(usb, chan, val, scaling):  # val goes from -100% to 100%
     spimode(usb, 1)
-    dacval = int((pow(2, 16) - 1) * (val / 2 + 50) / 100)
+    dacval = int((pow(2, 16) - 1) * (val *scaling/ 2 + 500) / 1000)
     # print("dacval is", dacval)
     if chan == 0: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     if chan == 1: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)

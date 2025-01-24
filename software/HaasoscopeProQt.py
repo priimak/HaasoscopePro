@@ -72,7 +72,7 @@ class MainWindow(TemplateBaseClass):
     highresval = 1
     xscale = 1
     xscaling = 1
-    yscale = 3.3/2.03 * 10*5/8 / pow(2,12)
+    yscale = 3.3/2.03 * 10*5/8 / pow(2,12) # this is the size of 1 bit, so that 2^12 bits fill the 10.x divisions on the screen
     min_y = -5 # -pow(2, 11) * yscale
     max_y = 5 # pow(2, 11) * yscale
     min_x = 0
@@ -231,13 +231,18 @@ class MainWindow(TemplateBaseClass):
                 else: self.lines[c].setVisible(False)
 
     def changeoffset(self):
-        dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value())
+        scaling = 1000*self.VperD[self.activeboard*2+self.selectedchannel]/80
+        dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling)
+        v2 = scaling*750.0/1000*self.ui.offsetBox.value()
+        self.ui.Voff.setText(str(int(v2))+" mV")
 
     def changegain(self):
         setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value())
         db = self.ui.gainBox.value()
         v2 = 0.08/pow(10, db / 20.)
+        oldvperd = self.VperD[self.activeboard*2+self.selectedchannel]
         self.VperD[self.activeboard*2+self.selectedchannel] = v2
+        self.ui.offsetBox.setValue(int(self.ui.offsetBox.value()*oldvperd/v2))
         v2 = round(1000*v2,0)
         self.ui.VperD.setText(str(int(v2))+" mV/div")
         if self.ui.gainBox.value()>24: self.ui.gainBox.setSingleStep(2)
