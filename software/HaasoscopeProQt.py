@@ -231,15 +231,15 @@ class MainWindow(TemplateBaseClass):
                 else: self.lines[c].setVisible(False)
 
     def changeoffset(self):
-        scaling = 1000*self.VperD[self.activeboard*2+self.selectedchannel]/80
-        dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling)
+        scaling = 1000*self.VperD[self.activeboard*2+self.selectedchannel]/160 # compare to 0 dB gain
+        dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx)
         v2 = scaling*750.0/1000*self.ui.offsetBox.value()
         self.ui.Voff.setText(str(int(v2))+" mV")
 
     def changegain(self):
         setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value())
         db = self.ui.gainBox.value()
-        v2 = 0.08/pow(10, db / 20.)
+        v2 = 0.1605*self.tenx/pow(10, db / 20.) # 0.16 V at 0 dB gain
         oldvperd = self.VperD[self.activeboard*2+self.selectedchannel]
         self.VperD[self.activeboard*2+self.selectedchannel] = v2
         self.ui.offsetBox.setValue(int(self.ui.offsetBox.value()*oldvperd/v2))
@@ -291,6 +291,7 @@ class MainWindow(TemplateBaseClass):
             self.tenx = 10
         else:
             self.tenx = 1
+        self.changegain()
 
     def setoversamp(self):
         setsplit(self.activeusb,
@@ -818,7 +819,7 @@ class MainWindow(TemplateBaseClass):
                                   hex(data[pbyte + 0]))
                 if n < 40:
                     # val = -val # if we're swapping inputs
-                    val = val * self.yscale * self.tenx
+                    val = val * self.yscale
                     if self.downsamplemerging == 1:
                         samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
                         samp = samp - self.sample_triggered[board]

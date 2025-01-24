@@ -1247,7 +1247,7 @@
          <string/>
         </property>
         <property name="text">
-         <string notr="true">80 mV/div</string>
+         <string notr="true">160 mV/div</string>
         </property>
         <property name="maxLength">
          <number>50</number>
@@ -1256,7 +1256,7 @@
          <bool>false</bool>
         </property>
         <property name="cursorPosition">
-         <number>0</number>
+         <number>10</number>
         </property>
         <property name="readOnly">
          <bool>true</bool>
