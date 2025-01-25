@@ -10,6 +10,10 @@ from board import *
 
 usbs = connectdevices()
 if len(usbs)==0: sys.exit(0)
+for board in range(len(usbs)):
+    version(usbs[board])
+    version(usbs[board])
+    version(usbs[board])
 usbs = orderusbs(usbs)
 
 # Define fft window class from template
