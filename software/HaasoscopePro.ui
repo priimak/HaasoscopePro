@@ -291,9 +291,9 @@
        <widget class="QPushButton" name="timeslowButton">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>70</x>
           <y>330</y>
-          <width>51</width>
+          <width>61</width>
           <height>21</height>
          </rect>
         </property>
@@ -309,9 +309,9 @@
        <widget class="QPushButton" name="timefastButton">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>140</x>
           <y>330</y>
-          <width>51</width>
+          <width>61</width>
           <height>21</height>
          </rect>
         </property>
@@ -515,7 +515,7 @@
          <rect>
           <x>10</x>
           <y>330</y>
-          <width>71</width>
+          <width>51</width>
           <height>20</height>
          </rect>
         </property>
