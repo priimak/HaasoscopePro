@@ -10,10 +10,10 @@ from board import *
 
 usbs = connectdevices()
 if len(usbs)==0: sys.exit(0)
-for board in range(len(usbs)):
-    version(usbs[board])
-    version(usbs[board])
-    version(usbs[board])
+for b in range(len(usbs)):
+    version(usbs[b])
+    version(usbs[b])
+    version(usbs[b])
 usbs = orderusbs(usbs)
 
 # Define fft window class from template
@@ -598,11 +598,11 @@ class MainWindow(TemplateBaseClass):
                 self.xydata[c][0] = np.array([range(0, 2 * 10 * self.expect_samples)]) * (
                             2 * self.downsamplefactor / self.nsunits / self.samplerate)
         else:
-            for c in range(self.num_board):
+            for c in range(self.num_chan_per_board * self.num_board):
                 self.xydata[c][0] = np.array([range(0, 4 * 10 * self.expect_samples)]) * (
                             1 * self.downsamplefactor / self.nsunits / self.samplerate)
                 if self.num_board%2==0 and self.dointerleaved:
-                    self.xydatainterleaved[int(c/2)][0] = np.array([range(0, 2 * 4 * 10 * self.expect_samples)]) * (
+                    self.xydatainterleaved[c][0] = np.array([range(0, 2 * 4 * 10 * self.expect_samples)]) * (
                             0.5 * self.downsamplefactor / self.nsunits / self.samplerate)
         self.ui.plot.setRange(xRange=(self.min_x, self.max_x), padding=0.00)
         self.ui.plot.setRange(yRange=(self.min_y, self.max_y), padding=0.01)
@@ -643,9 +643,9 @@ class MainWindow(TemplateBaseClass):
             if not self.dointerleaved:
                 self.lines[li].setData(self.xydata[li][0], self.xydata[li][1])
             else:
-                if li%2==0:
+                if li==0:
                     self.xydatainterleaved[int(li/2)][1][0::2] = self.xydata[li][1]
-                    self.xydatainterleaved[int(li/2)][1][1::2] = self.xydata[li+1][1]
+                    self.xydatainterleaved[int(li/2)][1][1::2] = self.xydata[li+self.num_chan_per_board][1]
                     self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
         if self.dofft and hasattr(self,"fftfreqplot_xdata"):
             self.fftui.fftline.setPen(self.linepens[self.activeboard * self.num_chan_per_board + self.selectedchannel])
@@ -844,10 +844,10 @@ class MainWindow(TemplateBaseClass):
                         else:
                             if not self.doexttrig[board]:
                                 if chan + 4 * samp >= self.xydata[board][1].size: continue
-                                self.xydata[board][1][chan + 4 * samp] = val
+                                self.xydata[board*self.num_chan_per_board][1][chan + 4 * samp] = val
                             else:
                                 if chan + 4 * samp + self.toff >= self.xydata[board][1].size: continue
-                                self.xydata[board][1][chan + 4 * samp + self.toff] = val * self.exttriggainscaling
+                                self.xydata[board*self.num_chan_per_board][1][chan + 4 * samp + self.toff] = val * self.exttriggainscaling
                     else:
                         if self.dotwochannel:
                             samp = s * 20 + chan * 10 + 9 - n
@@ -864,10 +864,10 @@ class MainWindow(TemplateBaseClass):
                             samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
                             if not self.doexttrig[board]:
                                 if samp >= self.xydata[board][1].size: continue
-                                self.xydata[board][1][samp] = val
+                                self.xydata[board*self.num_chan_per_board][1][samp] = val
                             else:
                                 if samp + self.toff >= self.xydata[board][1].size: continue
-                                self.xydata[board][1][(samp + self.toff)] = val
+                                self.xydata[board*self.num_chan_per_board][1][(samp + self.toff)] = val
 
         self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr)
         if board == self.activeboard:
@@ -920,7 +920,7 @@ class MainWindow(TemplateBaseClass):
             c1 = self.activeboard - 1
         else:
             c1 = self.activeboard + 1 # other board we are merging with
-        c = self.activeboard # the exttrig board
+        c = self.activeboard * self.num_chan_per_board # the exttrig board data
         fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
         yc = self.xydata[c][1][
             (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
