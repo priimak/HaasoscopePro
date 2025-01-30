@@ -104,7 +104,7 @@ reg [15:0]	prelengthtotake=1000, prelengthtotake_sync=1000;
 reg 			triggerlive=0, triggerlive_sync=0;
 reg			didreadout=0, didreadout_sync=0;
 reg [ 7:0]	triggertype=0, triggertype_sync=0;
-reg 			channeltype=0, channeltype_sync=0;
+reg [ 7:0]	channeltype=0, channeltype_sync=0;
 reg [ 9:0]	ram_address_triggered=0, ram_address_triggered_sync=0;
 reg [ 7:0] 	triggerToT=0, triggerToT_sync=0;
 reg [4:0] 	downsample=0, downsample_sync=0;
@@ -414,9 +414,9 @@ always @ (posedge clk or negedge rstn)
 			state <= TX_DATA1;
 		end
 		
-		1 : begin // sets length of data to take, activates trigger for new event if we don't alrady have one
+		1 : begin // sets length of data to take, activates trigger for new event if we don't already have one
 			triggertype <= rx_data[1]; // while we're at it, set the trigger type
-			channeltype <= rx_data[2][0]; // and the channel type (single or dual)
+			channeltype <= rx_data[2]; // and the channel type (bit0: single or dual, bit1: oversampling (swapped inputs))
 			lengthtotake <= {rx_data[5],rx_data[4]};
 			if (acqstate_sync == 0) triggerlive <= 1'b1; // gets reset in INIT state
 			o_tdata <= {4'd0,sample_triggered_sync,acqstate_sync}; // return acqstate, so we can see if we have an event ready to be read out, and which samples triggered (to prevent jitter)
@@ -752,16 +752,27 @@ always @ (posedge clklvds) begin
 		samplevaluereg[10+i]  <= {lvds2bits[110+i],lvds2bits[100+i],lvds2bits[90+i],lvds2bits[80+i],lvds2bits[70+i],lvds2bits[60+i],lvds2bits[50+i],lvds2bits[40+i],lvds2bits[30+i],lvds2bits[20+i],lvds2bits[10+i],lvds2bits[0+i]};
 		samplevaluereg[20+i]  <= {lvdsEbits[  0+i],lvdsEbits[ 10+i],lvds3bits[90+i],lvds3bits[80+i],lvds3bits[70+i],lvds3bits[60+i],lvds3bits[50+i],lvds3bits[40+i],lvds3bits[30+i],lvds3bits[20+i],lvds3bits[10+i],lvds3bits[0+i]};
 		samplevaluereg[30+i]  <= {lvdsEbits[ 20+i],lvdsLbits[  0+i],lvds4bits[90+i],lvds4bits[80+i],lvds4bits[70+i],lvds4bits[60+i],lvds4bits[50+i],lvds4bits[40+i],lvds4bits[30+i],lvds4bits[20+i],lvds4bits[10+i],lvds4bits[0+i]};
-
-		samplevalue[0 +i] <= (samplevaluereg[0 +i]== -12'd2048) ? 12'd2047: -samplevaluereg[0 +i]; // careful when inverting - there is no inverse of -2^12!
-		samplevalue[20+i] <= (samplevaluereg[20+i]== -12'd2048) ? 12'd2047: -samplevaluereg[20+i];
-		if (channeltype_sync == 0) begin // single
+		
+		if (channeltype_sync[1] == 1'b0) begin // normal, not swapped
+			// don't invert input 0
+			samplevalue[0 +i] <= samplevaluereg[0 +i];
+			samplevalue[20+i] <= samplevaluereg[20+i];
+			if (channeltype_sync[0] == 1'b0) begin // single, also don't invert these on input 0
+				samplevalue[10+i] <= samplevaluereg[10+i];
+				samplevalue[30+i] <= samplevaluereg[30+i];
+			end
+			else begin // dual, inverted on input 1
+				samplevalue[10+i] <= (samplevaluereg[10+i]== -12'd2048) ? 12'd2047: -samplevaluereg[10+i]; // careful when inverting - there is no inverse of -2^12!
+				samplevalue[30+i] <= (samplevaluereg[30+i]== -12'd2048) ? 12'd2047: -samplevaluereg[30+i];
+			end
+		end
+		else begin // doing oversampling, swapped
+			// invert input 1
+			samplevalue[0 +i] <= (samplevaluereg[0 +i]== -12'd2048) ? 12'd2047: -samplevaluereg[0 +i];
+			samplevalue[20+i] <= (samplevaluereg[20+i]== -12'd2048) ? 12'd2047: -samplevaluereg[20+i];
+			// always in single mode while oversampling, also invert these on input 1
 			samplevalue[10+i] <= (samplevaluereg[10+i]== -12'd2048) ? 12'd2047: -samplevaluereg[10+i];
 			samplevalue[30+i] <= (samplevaluereg[30+i]== -12'd2048) ? 12'd2047: -samplevaluereg[30+i];
-		end
-		else begin // dual, not inverted on input B
-			samplevalue[10+i] <= samplevaluereg[10+i];
-			samplevalue[30+i] <= samplevaluereg[30+i];
 		end
 		
 		sampleclkstr[i]    <= {lvds1bits[130+i],lvds1bits[120+i]};
@@ -787,7 +798,7 @@ always @ (posedge clklvds) begin
 //	end
 	end
 	
-	if (channeltype_sync==0) begin // single channel mode
+	if (channeltype_sync[0]==1'b0) begin // single channel mode
 	
 	if (downsamplemerging_sync==2) begin
 	for (i=0;i<10;i=i+1) begin
@@ -1046,12 +1057,12 @@ always@(posedge clk_over_4) // Process the state machine at each 12.5 MHz clock 
 	end
 	
 	if (neo_color[neo_led_num] & (1 << neobits)) begin // Set the correct pin state
-	  if (neostate == 0 || neostate == 1 || neostate == 2) leds[1] <= 1;
-	  else if (neostate == 3 || neostate == 6) leds[1] <= 0;
+	  if (neostate == 0 || neostate == 1 || neostate == 2) leds[1] = 1;
+	  else if (neostate == 3 || neostate == 6) leds[1] = 0;
 	end
 	else begin
-	  if (neostate == 0) leds[1] <= 1;
-	  else if (neostate == 1 || neostate == 2 || neostate == 3 || neostate == 6) leds[1] <= 0;
+	  if (neostate == 0) leds[1] = 1;
+	  else if (neostate == 1 || neostate == 2 || neostate == 3 || neostate == 6) leds[1] = 0;
 	end
  end
 

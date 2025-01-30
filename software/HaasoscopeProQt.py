@@ -235,8 +235,12 @@ class MainWindow(TemplateBaseClass):
         for usb in usbs: setupboard(usb,self.dopattern,self.dotwochannel,self.dooverrange)
         for usb in usbs: self.telldownsample(usb, self.downsample)
         self.timechanged()
-        if self.dotwochannel: self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
-        else: self.ui.chanBox.setMaximum(0)
+        if self.dotwochannel:
+            self.ui.chanBox.setMaximum(self.num_chan_per_board - 1)
+            self.ui.oversampCheck.setEnabled(False)
+        else:
+            self.ui.chanBox.setMaximum(0)
+            self.ui.oversampCheck.setEnabled(True)
         for c in range(self.num_board*self.num_chan_per_board):
             if c%2==1:
                 if self.dotwochannel: self.lines[c].setVisible(True)
@@ -731,7 +735,7 @@ class MainWindow(TemplateBaseClass):
     def getchannels(self, board):
         tt = self.triggertype
         if self.doexttrig[board] > 0: tt = 3
-        usbs[board].send(bytes([1, tt, self.dotwochannel, 99] + inttobytes(
+        usbs[board].send(bytes([1, tt, self.dotwochannel+2*self.dooversample, 99] + inttobytes(
             self.expect_samples - self.triggerpos + 1)))  # length to take after trigger (last 4 bytes)
         triggercounter = usbs[board].recv(4)  # get the 4 bytes
         acqstate = triggercounter[0]
@@ -881,7 +885,7 @@ class MainWindow(TemplateBaseClass):
                                 if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                             else:
-                                if sampe + self.toff >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
+                                if samp + self.toff >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp + self.toff] = val
                         else:
                             samp = s * 40 + 39 - n
