@@ -119,6 +119,7 @@ class MainWindow(TemplateBaseClass):
     lastsize = 0
     VperD = [0.08]*(num_board*2)
     plljustreset = False
+    dooversample = False
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
@@ -236,12 +237,12 @@ class MainWindow(TemplateBaseClass):
 
     def changeoffset(self):
         scaling = 1000*self.VperD[self.activeboard*2+self.selectedchannel]/160 # compare to 0 dB gain
-        dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx)
+        dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
         v2 = scaling*750.0/1000*self.ui.offsetBox.value()
         self.ui.Voff.setText(str(int(v2))+" mV")
 
     def changegain(self):
-        setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value())
+        setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value(),self.dooversample)
         db = self.ui.gainBox.value()
         v2 = 0.1605*self.tenx/pow(10, db / 20.) # 0.16 V at 0 dB gain
         oldvperd = self.VperD[self.activeboard*2+self.selectedchannel]
@@ -280,15 +281,15 @@ class MainWindow(TemplateBaseClass):
 
     def setacdc(self):
         setchanacdc(self.activeusb, self.selectedchannel,
-                    self.ui.acdcCheck.checkState() == QtCore.Qt.Checked)  # will be True for AC, False for DC
+                    self.ui.acdcCheck.checkState() == QtCore.Qt.Checked, self.dooversample)  # will be True for AC, False for DC
 
     def setohm(self):
         setchanimpedance(self.activeusb, self.selectedchannel,
-                         self.ui.ohmCheck.checkState() == QtCore.Qt.Checked)  # will be True for 1M ohm, False for 50 ohm
+                         self.ui.ohmCheck.checkState() == QtCore.Qt.Checked, self.dooversample)  # will be True for 1M ohm, False for 50 ohm
 
     def setatt(self):
         setchanatt(self.activeusb, self.selectedchannel,
-                   self.ui.attCheck.checkState() == QtCore.Qt.Checked)  # will be True for attenuation on
+                   self.ui.attCheck.checkState() == QtCore.Qt.Checked, self.dooversample)  # will be True for attenuation on
 
     def settenx(self):
         if self.ui.tenxCheck.checkState() == QtCore.Qt.Checked:
@@ -298,8 +299,9 @@ class MainWindow(TemplateBaseClass):
         self.changegain()
 
     def setoversamp(self):
-        setsplit(self.activeusb,
-                 self.ui.oversampCheck.checkState() == QtCore.Qt.Checked)  # will be True for oversampling, False otherwise
+        self.dooversample = self.ui.oversampCheck.checkState() == QtCore.Qt.Checked # will be True for oversampling, False otherwise
+        setsplit(self.activeusb,self.dooversample)
+        for usb in usbs: swapinputs(usb,self.dooversample)
 
     def interleave(self):
         self.dointerleaved = self.ui.interleavedCheck.checkState() == QtCore.Qt.Checked
@@ -1054,7 +1056,7 @@ class MainWindow(TemplateBaseClass):
         self.adfreset(board)
         self.pllreset(board)
         setupboard(usbs[board], self.dopattern, self.dotwochannel, self.dooverrange)
-        for c in range(2): setchanacdc(usbs[board], c, 0)
+        for c in range(2): setchanacdc(usbs[board], c, 0, self.dooversample)
         return 1
 
     def closeEvent(self, event):

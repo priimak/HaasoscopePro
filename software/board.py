@@ -33,6 +33,16 @@ def adf4350(usb, freq, phase, r_counter=1, divided=FeedbackSelect.Divider, ref_d
                    cs=3, nbyte=4)  # was cs=2 on alpha board v1.11
     spimode(usb, 0)
 
+def swapinputs(usb,doswap,insetup=False):
+    if not insetup:
+        spicommand(usb, "LVDS_EN", 0x02, 0x00, 0x00, False)  # disable LVDS interface
+        spicommand(usb, "CAL_EN", 0x00, 0x61, 0x00, False)  # disable calibration
+    if doswap: spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
+    else: spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+    if not insetup:
+        spicommand(usb, "CAL_EN", 0x00, 0x61, 0x01, False)  # enable calibration
+        spicommand(usb, "LVDS_EN", 0x02, 0x00, 0x01, False)  # enable LVDS interface
+
 def setupboard(usb, dopattern, twochannel, dooverrange):
     setfan(usb, 1)
 
@@ -57,8 +67,7 @@ def setupboard(usb, dopattern, twochannel, dooverrange):
     spicommand(usb, "LCTRL", 0x02, 0x04, 0x0a, False)  # use LSYNC_N (software), 2's complement
     # spicommand(usb, "LCTRL", 0x02, 0x04, 0x08, False)  # use LSYNC_N (software), offset binary
 
-    spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x12, False)  # swap inputs
-    # spicommand(usb, "INPUT_MUX", 0x00, 0x60, 0x01, False)  # unswap inputs
+    swapinputs(usb,False, True)
 
     # spicommand(usb, "TAD", 0x02, 0xB7, 0x01, False)  # invert clk
     spicommand(usb, "TAD", 0x02, 0xB7, 0x00, False)  # don't invert clk
@@ -135,23 +144,26 @@ def setupboard(usb, dopattern, twochannel, dooverrange):
     spicommand(usb, "DAC ref on", 0x38, 0xff, 0xff, False, cs=4)
     spicommand(usb, "DAC gain 1", 0x02, 0xff, 0xff, False, cs=4)
     spimode(usb, 0)
-    dooffset(usb, 0, 0, 1)
-    dooffset(usb, 1, 0, 1)
-    setgain(usb, 0, 0)
-    setgain(usb, 1, 0)
+    dooffset(usb, 0, 0, 1,False)
+    dooffset(usb, 1, 0, 1, False)
+    setgain(usb, 0, 0, False)
+    setgain(usb, 1, 0, False)
 
-def setgain(usb, chan, value):
+def setgain(usb, chan, value, doswap):
     spimode(usb, 0)
     # 00 to 20 is 26 to -6 dB, 0x1a is no gain
-    if chan == 1: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2, quiet=True)
-    if chan == 0: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2, quiet=True)
+    if doswap: chan = (chan+1) %2
+    if chan == 0: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2, quiet=True)
+    if chan == 1: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2, quiet=True)
 
-def dooffset(usb, chan, val, scaling):  # val goes from -100% to 100%
+def dooffset(usb, chan, val, scaling, doswap):  # val goes from -100% to 100%
     spimode(usb, 1)
-    dacval = int((pow(2, 16) - 1) * (val *scaling/ 2 + 500) / 1000)
+    if doswap: val= -val
+    dacval = int((pow(2, 16) - 1) * (-val *scaling/ 2 + 500) / 1000)
     # print("dacval is", dacval)
-    if chan == 0: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    if chan == 1: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    if doswap: chan = (chan + 1) % 2
+    if chan == 1: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    if chan == 0: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(usb, 0)
 
 def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
@@ -172,35 +184,29 @@ def clockswitch(usb, board, quiet):
     else:
         print("Board", board, "locked to internal clock")
 
-def setchanimpedance(usb, chan, onemeg):
-    if chan == 1:
-        controlbit = 0
-    elif chan == 0:
-        controlbit = 4
-    else:
-        return
+def setchanimpedance(usb, chan, onemeg, doswap):
+    if doswap: chan = (chan + 1) % 2
+    if chan == 0: controlbit = 0
+    elif chan == 1: controlbit = 4
+    else: return
     usb.send(bytes([10, controlbit, onemeg, 0, 0, 0, 0, 0]))
     usb.recv(4)
     #print("1M for chan", chan, onemeg)
 
-def setchanacdc(usb, chan, ac):
-    if chan == 1:
-        controlbit = 1
-    elif chan == 0:
-        controlbit = 5
-    else:
-        return
+def setchanacdc(usb, chan, ac, doswap):
+    if doswap: chan = (chan + 1) % 2
+    if chan == 0: controlbit = 1
+    elif chan == 1: controlbit = 5
+    else: return
     usb.send(bytes([10, controlbit, not ac, 0, 0, 0, 0, 0]))
     usb.recv(4)
     #print("AC for chan", chan, ac)
 
-def setchanatt(usb, chan, att):
-    if chan == 1:
-        controlbit = 2
-    elif chan == 0:
-        controlbit = 6
-    else:
-        return
+def setchanatt(usb, chan, att, doswap):
+    if doswap: chan = (chan + 1) % 2
+    if chan == 0: controlbit = 2
+    elif chan == 1: controlbit = 6
+    else: return
     usb.send(bytes([10, controlbit, att, 0, 0, 0, 0, 0]))
     usb.recv(4)
     print("Att for chan", chan, att)
