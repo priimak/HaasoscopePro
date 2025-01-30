@@ -118,7 +118,7 @@ class MainWindow(TemplateBaseClass):
     lastrate = 0
     lastsize = 0
     VperD = [0.08]*(num_board*2)
-    plljustreset = False
+    plljustreset = [False] * num_board
     dooversample = False
 
     def __init__(self):
@@ -162,7 +162,6 @@ class MainWindow(TemplateBaseClass):
         self.ui.interleavedCheck.stateChanged.connect(self.interleave)
         self.ui.attCheck.stateChanged.connect(self.setatt)
         self.ui.tenxCheck.stateChanged.connect(self.settenx)
-        self.ui.actionOutput_clk_left.triggered.connect(self.actionOutput_clk_left)
         self.ui.chanonCheck.stateChanged.connect(self.chanon)
         self.ui.drawingCheck.clicked.connect(self.drawing)
         self.ui.fwfBox.valueChanged.connect(self.fwf)
@@ -195,8 +194,16 @@ class MainWindow(TemplateBaseClass):
         self.selectchannel()
 
     def selectchannel(self):
-        if self.activeboard%2==0: self.ui.exttrigCheck.setEnabled(False)
-        else: self.ui.exttrigCheck.setEnabled(True)
+        if self.activeboard%2==0:
+            self.ui.exttrigCheck.setEnabled(False)
+            self.ui.oversampCheck.setEnabled(True)
+            if self.dooversample: self.ui.interleavedCheck.setEnabled(True)
+        else:
+            self.ui.exttrigCheck.setEnabled(True)
+            self.ui.oversampCheck.setEnabled(False)
+            self.ui.interleavedCheck.setEnabled(False)
+        if self.doexttrig[self.activeboard]: self.ui.exttrigCheck.setChecked(True)
+        else: self.ui.exttrigCheck.setChecked(False)
         self.selectedchannel = self.ui.chanBox.value()
         self.activexychannel = self.activeboard*self.num_chan_per_board + self.selectedchannel
         p = self.ui.chanColor.palette()
@@ -238,11 +245,15 @@ class MainWindow(TemplateBaseClass):
     def changeoffset(self):
         scaling = 1000*self.VperD[self.activeboard*2+self.selectedchannel]/160 # compare to 0 dB gain
         dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
+        if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
+            dooffset(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
         v2 = scaling*750.0/1000*self.ui.offsetBox.value()
         self.ui.Voff.setText(str(int(v2))+" mV")
 
     def changegain(self):
         setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value(),self.dooversample)
+        if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
+            setgain(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.gainBox.value(),self.dooversample)
         db = self.ui.gainBox.value()
         v2 = 0.1605*self.tenx/pow(10, db / 20.) # 0.16 V at 0 dB gain
         oldvperd = self.VperD[self.activeboard*2+self.selectedchannel]
@@ -302,9 +313,23 @@ class MainWindow(TemplateBaseClass):
         self.dooversample = self.ui.oversampCheck.checkState() == QtCore.Qt.Checked # will be True for oversampling, False otherwise
         setsplit(self.activeusb,self.dooversample)
         for usb in usbs: swapinputs(usb,self.dooversample)
+        if self.dooversample:
+            self.ui.interleavedCheck.setEnabled(True)
+            self.ui.twochanCheck.setEnabled(False)
+        else:
+            self.ui.interleavedCheck.setEnabled(False)
+            self.ui.twochanCheck.setEnabled(True)
 
     def interleave(self):
         self.dointerleaved = self.ui.interleavedCheck.checkState() == QtCore.Qt.Checked
+        c = (self.activeboard+1) * self.num_chan_per_board
+        if self.dointerleaved:
+            self.lines[c].setVisible(False)
+            self.ui.boardBox.setMaximum(int(self.num_board/2)-1)
+        else:
+            self.lines[c].setVisible(True)
+            self.ui.boardBox.setMaximum(self.num_board-1)
+        self.selectchannel()
         self.timechanged()
 
     def dophase(self, board, plloutnum, updown, pllnum=None, quiet=False):
@@ -362,14 +387,15 @@ class MainWindow(TemplateBaseClass):
         for i in range(abs(n)): self.dophase(board, 3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
         n = 0  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
-        self.plljustreset = True
+        self.plljustreset[board] = True
+        switchclock(usbs,board)
 
     def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr):
-        if (nbadclkA+nbadclkB+nbadclkC+nbadclkD+nbadstr>4) and self.phasecs[board][0][2] < 12:  # adjust phase by 90 deg
+        if (nbadclkA+nbadclkB+nbadclkC+nbadclkD+nbadstr>4) and self.phasecs[board][0][2] < 20:  # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
-        if self.plljustreset: # adjust back down to a good range after detecting that it needs to be shifted by 90 deg or not
-            self.plljustreset = False
+        if self.plljustreset[board]: # adjust back down to a good range after detecting that it needs to be shifted by 90 deg or not
+            self.plljustreset[board] = False
             n = 2  # amount to adjust clkout (negative)
             for i in range(n): self.dophase(board, 2, 0, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
@@ -392,17 +418,11 @@ class MainWindow(TemplateBaseClass):
         if event.key() == QtCore.Qt.Key_Right: self.timeslow()
         # modifiers = QtWidgets.QApplication.keyboardModifiers()
 
-    @staticmethod
-    def actionOutput_clk_left():
-        for board in range(len(usbs)):
-            usb = usbs[board]
-            clockswitch(usb, board, True)
-            clockswitch(usb, board, False)
-
     def exttrig(self, value):
         board = self.ui.boardBox.value()
         self.doexttrig[board] = value
-        print("doexttrig", self.doexttrig[board], "for board", board)
+        self.ui.exttrigCheck.setChecked(value)
+        #print("doexttrig", self.doexttrig[board], "for board", board)
 
     def grid(self):
         if self.ui.gridCheck.isChecked():
@@ -481,9 +501,11 @@ class MainWindow(TemplateBaseClass):
     def rolling(self):
         self.isrolling = not self.isrolling
         self.ui.rollingButton.setChecked(self.isrolling)
-        for usb in usbs:
-            usb.send(bytes([2, 8, self.isrolling, 0, 100, 100, 100, 100]))
-            usb.recv(4)
+        for board in range(len(usbs)):
+            r = self.isrolling
+            if self.doexttrig[board]: r = False
+            usbs[board].send(bytes([2, 8, r, 0, 100, 100, 100, 100]))
+            usbs[board].recv(4)
         if not self.isrolling:
             self.ui.rollingButton.setText("Normal")
         else:
@@ -682,8 +704,8 @@ class MainWindow(TemplateBaseClass):
                     rx_len = rx_len + len(data)
                     if self.dofft and board==self.activeboard: self.plot_fft()
                     self.drawchannels(data, board, downsamplemergingcounter)
-                if not self.dotwochannel and self.doexttrig[self.activeboard] and self.num_board>1:
-                    self.calculatethings()
+                if not self.dotwochannel and self.dooversample and self.num_board>1:
+                    self.calcoversample()
                 if self.getone and rx_len > 0:
                     self.dostartstop()
                     self.drawtext()
@@ -903,27 +925,27 @@ class MainWindow(TemplateBaseClass):
                         warnings.simplefilter("ignore")
                         popt, pcov = curve_fit(fit_rise, xc, yc, p0)
                         perr = np.sqrt(np.diag(pcov))
-                        risetime = 0.8 * 0.7 * popt[2] # calibrated
+                        risetime = 0.8 * popt[2]
                         risetimeerr = perr[2]
                         # print(popt)
                         thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
                     except RuntimeError:
                         pass
 
-            if not self.dotwochannel and self.doexttrig[self.activeboard] and self.num_board>1:
+            if not self.dotwochannel and self.dooversample and self.num_board>1:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1
                 else: c1 = self.activeboard+1
                 thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(self.activeboard)+": " + str(round(self.exttrigstdavg,2))
 
         self.ui.textBrowser.setText(thestr)
 
-    def calculatethings(self):
-        if self.activeboard % 2 == 1:
-            c1 = self.activeboard - 1
-        else:
-            c1 = self.activeboard + 1 # other board we are merging with
-        c = self.activeboard * self.num_chan_per_board # the exttrig board data
-        fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
+    def calcoversample(self):
+        c1 = self.activeboard # board data we are merging with
+        if c1>=self.num_board-1: return
+        c = (self.activeboard+1) * self.num_chan_per_board # the exttrig board data
+        #fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
+        bare_max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+        fitwidth = bare_max_x * self.fitwidthfraction
         yc = self.xydata[c][1][
             (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
         yc1 = self.xydata[c1][1][
@@ -934,7 +956,7 @@ class MainWindow(TemplateBaseClass):
         self.xydata[c1][1] += extrigboardmean - otherboardmean
         extrigboardstd = np.std(yc)
         otherboardstd = np.std(yc1)
-        self.xydata[c1][1] *= extrigboardstd/otherboardstd
+        if otherboardstd>0: self.xydata[c1][1] *= extrigboardstd/otherboardstd
 
     def plot_fft(self):
         y = self.xydata[self.activeboard * self.num_chan_per_board + self.selectedchannel][1]  # channel signal to take fft of
@@ -966,11 +988,17 @@ class MainWindow(TemplateBaseClass):
                 # print "selected curve", li
                 self.ui.chanBox.setValue(li % self.num_chan_per_board)
                 self.ui.boardBox.setValue(int(li / self.num_chan_per_board))
-                modifiers = app.keyboardModifiers()
-                if modifiers == QtCore.Qt.ShiftModifier:
-                    self.ui.trigchanonCheck.toggle()
-                elif modifiers == QtCore.Qt.ControlModifier:
-                    self.ui.chanonCheck.toggle()
+                # modifiers = app.keyboardModifiers()
+                # if modifiers == QtCore.Qt.ShiftModifier:
+                #     self.ui.trigchanonCheck.toggle()
+                # elif modifiers == QtCore.Qt.ControlModifier:
+                #     self.ui.chanonCheck.toggle()
+
+    def use_ext_trigs(self):
+        for board in range(1,self.num_board):
+            self.ui.boardBox.setValue(board)
+            self.exttrig(True)
+        self.ui.boardBox.setValue(0)
 
     def init(self):
         self.tot()
@@ -979,6 +1007,7 @@ class MainWindow(TemplateBaseClass):
         self.rolling()
         self.selectchannel()
         self.timechanged()
+        self.use_ext_trigs()
         self.dostartstop()
         return 1
 
@@ -1056,7 +1085,7 @@ class MainWindow(TemplateBaseClass):
         self.adfreset(board)
         self.pllreset(board)
         setupboard(usbs[board], self.dopattern, self.dotwochannel, self.dooverrange)
-        for c in range(2): setchanacdc(usbs[board], c, 0, self.dooversample)
+        for c in range(self.num_chan_per_board): setchanacdc(usbs[board], c, 0, self.dooversample)
         return 1
 
     def closeEvent(self, event):

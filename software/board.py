@@ -184,6 +184,11 @@ def clockswitch(usb, board, quiet):
     else:
         print("Board", board, "locked to internal clock")
 
+def switchclock(usbs, board):
+    usb = usbs[board]
+    clockswitch(usb, board, True)
+    clockswitch(usb, board, False)
+
 def setchanimpedance(usb, chan, onemeg, doswap):
     if doswap: chan = (chan + 1) % 2
     if chan == 0: controlbit = 0

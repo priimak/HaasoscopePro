@@ -1214,6 +1214,9 @@
         </property>
        </widget>
        <widget class="QCheckBox" name="interleavedCheck">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1727,9 +1730,7 @@
     <property name="title">
      <string>Other</string>
     </property>
-    <addaction name="actionOutput_clk_left"/>
     <addaction name="separator"/>
-    <addaction name="actionAllow_same_chan_coin"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuCalibration"/>
