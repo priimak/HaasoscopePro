@@ -885,8 +885,8 @@ class MainWindow(TemplateBaseClass):
                                 if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                             else:
-                                if samp + self.toff >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
-                                self.xydata[board * self.num_chan_per_board + chan % 2][1][samp + self.toff] = val
+                                if samp + self.toff/self.downsamplefactor >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
+                                self.xydata[board * self.num_chan_per_board + chan % 2][1][samp + int(self.toff/self.downsamplefactor)] = val
                         else:
                             samp = s * 40 + 39 - n
                             samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
@@ -894,8 +894,8 @@ class MainWindow(TemplateBaseClass):
                                 if samp >= self.xydata[board][1].size: continue
                                 self.xydata[board*self.num_chan_per_board][1][samp] = val
                             else:
-                                if samp + self.toff >= self.xydata[board][1].size: continue
-                                self.xydata[board*self.num_chan_per_board][1][(samp + self.toff)] = val
+                                if samp + self.toff/self.downsamplefactor >= self.xydata[board][1].size: continue
+                                self.xydata[board*self.num_chan_per_board][1][samp + int(self.toff/self.downsamplefactor)] = val
 
         self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr)
         if board == self.activeboard:
