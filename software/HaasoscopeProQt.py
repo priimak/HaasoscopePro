@@ -807,11 +807,12 @@ class MainWindow(TemplateBaseClass):
         nbadstr = 0
         for s in range(0, self.expect_samples+self.expect_samples_extra):
             chan = -1
-            for n in range(self.nsubsamples):  # the subsample to get
-                pbyte = self.nsubsamples * 2 * s + 2 * n
-                lowbits = data[pbyte + 0]
-                highbits = data[pbyte + 1]
-                if n < 40 and getbit(highbits, 3):
+            subsamples = data[self.nsubsamples*2*s: self.nsubsamples*2*(s+1)]
+            for n in range(self.nsubsamples): # the subsample to get
+                pbyte = 2 * n
+                lowbits = subsamples[pbyte + 0]
+                highbits = subsamples[pbyte + 1]
+                if n < 40 and highbits>=8: # getbit(highbits, 3):
                     highbits = (highbits - 16) * 256
                 else:
                     highbits = highbits * 256
@@ -820,19 +821,19 @@ class MainWindow(TemplateBaseClass):
 
                 if n == 40 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
                     nbadclkA = nbadclkA + 1
-                if n == 41 and val & 0x5555 != 1 and val & 0x5555 != 4:
+                elif n == 41 and val & 0x5555 != 1 and val & 0x5555 != 4:
                     nbadclkA = nbadclkA + 1
-                if n == 42 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
+                elif n == 42 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
                     nbadclkB = nbadclkB + 1
-                if n == 43 and val & 0x5555 != 1 and val & 0x5555 != 4:
+                elif n == 43 and val & 0x5555 != 1 and val & 0x5555 != 4:
                     nbadclkB = nbadclkB + 1
-                if n == 44 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
+                elif n == 44 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
                     nbadclkC = nbadclkC + 1
-                if n == 45 and val & 0x5555 != 1 and val & 0x5555 != 4:
+                elif n == 45 and val & 0x5555 != 1 and val & 0x5555 != 4:
                     nbadclkC = nbadclkC + 1
-                if n == 46 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
+                elif n == 46 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
                     nbadclkD = nbadclkD + 1
-                if n == 47 and val & 0x5555 != 1 and val & 0x5555 != 4:
+                elif n == 47 and val & 0x5555 != 1 and val & 0x5555 != 4:
                     nbadclkD = nbadclkD + 1
                 # if 40<=n<48 and nbadclkD:
                 #    print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, binprint(data[pbyte + 1]), binprint(data[pbyte + 0]), val)
@@ -916,6 +917,7 @@ class MainWindow(TemplateBaseClass):
             self.nbadstr = nbadstr
 
     def drawtext(self):  # happens once per second
+        if not self.dodrawing: return
         thestr = "Nbadclks A B C D " + str(self.nbadclkA) + " " + str(self.nbadclkB) + " " + str(
             self.nbadclkC) + " " + str(self.nbadclkD)
         thestr += "\n" + "Nbadstrobes " + str(self.nbadstr)
