@@ -298,6 +298,9 @@ class MainWindow(TemplateBaseClass):
     def setacdc(self):
         setchanacdc(self.activeusb, self.selectedchannel,
                     self.ui.acdcCheck.checkState() == QtCore.Qt.Checked, self.dooversample)  # will be True for AC, False for DC
+        if self.dooversample and self.ui.boardBox.value() % 2 == 0:  # also adjust other board we're oversampling with
+            setchanacdc(usbs[self.ui.boardBox.value()+1], self.selectedchannel,
+                    self.ui.acdcCheck.checkState() == QtCore.Qt.Checked, self.dooversample)
 
     def setohm(self):
         setchanimpedance(self.activeusb, self.selectedchannel,
@@ -317,6 +320,7 @@ class MainWindow(TemplateBaseClass):
     def setoversamp(self):
         self.dooversample = self.ui.oversampCheck.checkState() == QtCore.Qt.Checked # will be True for oversampling, False otherwise
         setsplit(self.activeusb,self.dooversample)
+        setsplit(usbs[self.activeboard+1], False)
         for usb in usbs: swapinputs(usb,self.dooversample)
         if self.dooversample:
             self.ui.interleavedCheck.setEnabled(True)
