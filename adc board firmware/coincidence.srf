@@ -15,18 +15,12 @@
 { "" "" "" "Node: reset was determined to be a clock but was found without an associated clock assignment." {  } {  } 0 332060 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the \"User-Specified and Inferred Latches\" table in the Analysis & Synthesis report." {  } {  } 0 335093 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state." {  } {  } 0 13004 "" 0 0 "Design Software" 0 -1 0 ""}
-{ "" "" "" "Verilog HDL information at command_processor.v(721): always construct contains both blocking and non-blocking assignments" {  } {  } 0 10268 "" 0 0 "Design Software" 0 -1 0 ""}
-{ "" "" "" "Following 62 pins are differential I/O pins but do not have their complement pins. Hence, the Fitter automatically created the complement pins." {  } {  } 0 176674 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "The input ports of the PLL pll1:plla\|altpll:altpll_component\|pll1_altpll2:auto_generated\|pll1 and the PLL pll2:inst6\|altpll:altpll_component\|pll2_altpll1:auto_generated\|pll1 are mismatched, preventing the PLLs to be merged" {  } {  } 0 176125 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "Node: command_processor:inst1\|spireset_L was determined to be a clock but was found without an associated clock assignment." {  } {  } 0 332060 "" 0 0 "Design Software" 0 -1 0 ""}
-{ "" "" "" "Ignored filter at coincidence.sdc(19): *pll1\|clk\[4\] could not be matched with a clock" {  } {  } 0 332174 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "Assignment set_output_delay is accepted but has some problems at coincidence.sdc(33): Positional argument <targets> with value \[get_ports \{ftdi_*\}\]: Port ftdi_rxf_n is not an output port." {  } {  } 0 332054 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "Assignment set_output_delay is accepted but has some problems at coincidence.sdc(33): Positional argument <targets> with value \[get_ports \{ftdi_*\}\]: Port ftdi_txe_n is not an output port." {  } {  } 0 332054 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "Assignment set_output_delay is accepted but has some problems at coincidence.sdc(33): Positional argument <targets> with value \[get_ports \{ftdi_*\}\]: Port ftdi_clk is not an output port." {  } {  } 0 332054 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "No exact pin location assignment(s) for 18 pins of 150 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report." {  } {  } 0 169085 "" 0 0 "Design Software" 0 -1 0 ""}
-{ "" "" "" "Verilog HDL information at command_processor.v(962): always construct contains both blocking and non-blocking assignments" {  } {  } 0 10268 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "*" {  } {  } 0 10268 "" 0 0 "Design Software" 0 -1 0 ""}
-{ "" "" "" "*" {  } {  } 0 15706 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "*" {  } {  } 0 15705 "" 0 0 "Design Software" 0 -1 0 ""}
-{ "" "" "" "*" {  } {  } 0 13024 "" 0 0 "Design Software" 0 -1 0 ""}
 { "" "" "" "*" {  } {  } 0 176674 "" 0 0 "Design Software" 0 -1 0 ""}

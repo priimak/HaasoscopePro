@@ -68,8 +68,8 @@ assign debugout[5] = lockinfo[1]; //activeclock
 assign debugout[6] = lockinfo[2]; //clkbad0
 assign debugout[7] = lockinfo[3]; //clkbad1
 
-assign debugout[8] = 0;
-assign debugout[9] = 0;
+assign debugout[8] = boardin[0]; // inputs on PCB
+assign debugout[9] = boardin[1];
 assign debugout[10] = boardout[3]; //1kHz out 50 Ohm
 
 reg fanon=0;
@@ -77,9 +77,7 @@ assign debugout[11] = fanon;
 
 wire exttrigin;
 assign exttrigin = boardin[4];
-
-assign lvdsout_trig_b = exttrigin; // just temporary since we're not using them yet
-assign leds[0] = 1; // LED2
+assign leds[0] = exttrigin; // LED2
 
 //variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter=1;
@@ -158,6 +156,7 @@ else begin
 		if (rollingtriggercounter==40000000) begin
 			rollingtriggercounter<=0;
 			lvdsout_trig <= 1'b1; // tell the others (maybe want to do rolling trigger on just the first board?)
+			//lvdsout_trig_b <= 1'b1; // no need, just going forwards?
 			acqstate <= 8'd250; // trigger
 		end
 		else rollingtriggercounter<=rollingtriggercounter+1;
@@ -171,6 +170,7 @@ else begin
 		sample_triggered<=0;
 		downsamplemergingcounter_triggered <= -8'd1;
 		lvdsout_trig <= 0;
+		lvdsout_trig_b <= 0;
 		
 		//wait for pre-aquisition
 		if (triggercounter<prelengthtotake_sync) begin
@@ -189,6 +189,7 @@ else begin
 				else begin
 					ram_address_triggered <= ram_wr_address; // remember where the trigger happened
 					//lvdsout_trig <= 1'b1; // tell the others
+					//lvdsout_trig_b <= 1'b1; // tell the others
 					acqstate <= 8'd250; // go straight to taking more data, no trigger, triggertype==0
 				end
 			end
@@ -199,6 +200,7 @@ else begin
 	// rising edge trigger (1)
 	1 : begin // ready for first part of trigger condition to be met
 	lvdsout_trig <= 0;
+	lvdsout_trig_b <= 0;
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
@@ -232,6 +234,7 @@ else begin
 			if (tot_counter>=triggerToT_sync && (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) ) begin
 				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 				lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
+				lvdsout_trig_b <= 1'b1; // and backwards
 				acqstate <= 8'd250;
 			end
 		end
@@ -250,6 +253,7 @@ else begin
 	//falling edge trigger (2)
 	3 : begin // ready for first part of trigger condition to be met
 	lvdsout_trig <= 0;
+	lvdsout_trig_b <= 0;
 	if (triggertype_sync!=2) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
@@ -283,6 +287,7 @@ else begin
 			if (tot_counter>=triggerToT_sync && (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) ) begin
 				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 				lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
+				lvdsout_trig_b <= 1'b1; // and backwards
 				acqstate <= 8'd250;
 			end
 		end
@@ -303,7 +308,14 @@ else begin
 	else begin
 	if (lvdsin_trig) begin
 		ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
-		lvdsout_trig <= 1'b1; // tell the others
+		lvdsout_trig <= 1'b1; // tell the others forwards
+		sample_triggered <= 0; // not used, since we didn't measure the trigger edge - will take it from the board that caused the trigger
+		downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that we were on when we got this trigger
+		acqstate <= 8'd250;
+	end
+	if (lvdsin_trig_b) begin
+		ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
+		lvdsout_trig_b <= 1'b1; // tell the others backwards
 		sample_triggered <= 0; // not used, since we didn't measure the trigger edge - will take it from the board that caused the trigger
 		downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that we were on when we got this trigger
 		acqstate <= 8'd250;
@@ -312,7 +324,8 @@ else begin
 	end
 	
 	250 : begin // triggered, now taking more data
-		lvdsout_trig <= 0; // stop telling the others
+		lvdsout_trig <= 0; // stop telling the others forwards
+		lvdsout_trig_b <= 0; // and backwards
 		if (triggercounter<lengthtotake_sync) begin
 			if (downsamplecounter[downsample_sync]) begin
 				if (downsamplemergingcounter==downsamplemerging_sync) begin
@@ -328,6 +341,7 @@ else begin
 	
 	251 : begin // ready to be read out, not writing into RAM
 		lvdsout_trig <= 0;
+		lvdsout_trig_b <= 0;
 		triggercounter<= 0;
 		if (didreadout_sync) acqstate <= 8'd0;
 	end
