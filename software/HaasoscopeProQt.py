@@ -135,6 +135,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.risingedgeCheck.stateChanged.connect(self.risingfalling)
         self.ui.exttrigCheck.stateChanged.connect(self.exttrig)
         self.ui.totBox.valueChanged.connect(self.tot)
+        self.ui.depthBox.valueChanged.connect(self.depth)
         self.ui.boardBox.valueChanged.connect(self.boardchanged)
         self.ui.triggerChanBox.valueChanged.connect(self.triggerchanchanged)
         self.ui.gridCheck.stateChanged.connect(self.grid)
@@ -501,6 +502,13 @@ class MainWindow(TemplateBaseClass):
     def tot(self):
         self.triggertimethresh = self.ui.totBox.value()
         for usb in usbs: self.sendtriggerinfo(usb)
+
+    def depth(self):
+        self.expect_samples = self.ui.depthBox.value()
+        self.setupchannels()
+        self.triggerposchanged(self.ui.thresholdPos.value())
+        self.tot()
+        self.timechanged()
 
     def rolling(self):
         self.isrolling = not self.isrolling
@@ -886,7 +894,7 @@ class MainWindow(TemplateBaseClass):
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                             else:
                                 samp = samp + int((self.toff+(self.downsamplefactor-1)*40)/self.downsamplefactor)
-                                if samp  >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
+                                if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                         else:
                             samp = s * 40 + 39 - n
