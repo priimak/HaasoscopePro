@@ -90,7 +90,6 @@ class MainWindow(TemplateBaseClass):
     hline = 0
     vline = 0
     getone = False
-    exttriggainscaling = 1.0
     downsamplemerging = 1
     units = "ns"
     dodrawing = True
@@ -872,10 +871,8 @@ class MainWindow(TemplateBaseClass):
                             if samp >= self.xydata[chan][1].size: continue
                             self.xydata[chan][1][samp] = val
                         elif self.dotwochannel:
-                            if chan % 2 == 0:
-                                chani = int(chan / 2)
-                            else:
-                                chani = int((chan - 1) / 2)
+                            if chan % 2 == 0: chani = int(chan / 2)
+                            else: chani = int((chan - 1) / 2)
                             if not self.doexttrig[board]:
                                 if chani+ 2*samp >= self.xydata[board*self.num_chan_per_board + chan%2][1].size: continue
                                 self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
@@ -888,29 +885,21 @@ class MainWindow(TemplateBaseClass):
                                 self.xydata[board*self.num_chan_per_board][1][chan + 4 * samp] = val
                             else:
                                 if chan + 4 * samp + self.toff >= self.xydata[board][1].size: continue
-                                self.xydata[board*self.num_chan_per_board][1][chan + 4 * samp + self.toff] = val * self.exttriggainscaling
+                                self.xydata[board*self.num_chan_per_board][1][chan + 4 * samp + self.toff] = val
                     else:
                         if self.dotwochannel:
                             samp = s * 20 + chan * 10 + 9 - n
                             if n < 20: samp = samp + 10
                             samp = samp - int(2 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
-                            if not self.doexttrig[board]:
-                                if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
-                                self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
-                            else:
-                                samp = samp + int((self.toff+(self.downsamplefactor-1)*40)/self.downsamplefactor)
-                                if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
-                                self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
+                            if self.doexttrig[board]: samp = samp + int(self.toff/self.downsamplefactor)
+                            if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
+                            self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                         else:
                             samp = s * 40 + 39 - n
                             samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
-                            if not self.doexttrig[board]:
-                                if samp >= self.xydata[board][1].size: continue
-                                self.xydata[board*self.num_chan_per_board][1][samp] = val
-                            else:
-                                samp = samp + int((self.toff+(self.downsamplefactor-1)*40)/self.downsamplefactor)
-                                if samp >= self.xydata[board][1].size: continue
-                                self.xydata[board*self.num_chan_per_board][1][samp] = val
+                            if self.doexttrig[board]: samp = samp + int(self.toff/self.downsamplefactor)
+                            if samp >= self.xydata[board][1].size: continue
+                            self.xydata[board*self.num_chan_per_board][1][samp] = val
 
         self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr)
         if board == self.activeboard:
@@ -980,7 +969,8 @@ class MainWindow(TemplateBaseClass):
                 minrms = therms
                 minshift = nshift
             cdata[1] = np.roll(cdata[1], 1)
-        print("minrms found for toff =", minshift)
+        #print("minrms found for toff =", minshift)
+        minshift = minshift - 1 #better for interleaving
         self.toff = minshift + self.toff
         self.ui.ToffBox.setValue(self.toff)
         cdata[1] = np.roll(cdata[1], -20*self.expect_samples)
