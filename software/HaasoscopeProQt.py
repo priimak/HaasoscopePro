@@ -963,10 +963,12 @@ class MainWindow(TemplateBaseClass):
         if otherboardstd>0: self.xydata[c1][1] *= extrigboardstd/otherboardstd
 
     def plot_fft(self):
-        y = self.xydata[self.activeboard * self.num_chan_per_board + self.selectedchannel][1]  # channel signal to take fft of
+        if self.dointerleaved: y = self.xydatainterleaved[int(self.activeboard/2)][1]
+        else: y = self.xydata[self.activeboard * self.num_chan_per_board + self.selectedchannel][1]  # channel signal to take fft of
         n = len(y)  # length of the signal
         k = np.arange(n)
         uspersample = self.downsamplefactor / self.samplerate / 1000.
+        if self.dointerleaved: uspersample = uspersample/2
         # t = np.arange(0,1,1.0/n) * (n*uspersample) # time vector in us
         frq = (k / uspersample)[list(range(int(n / 2)))] / n  # one side frequency range up to Nyquist
         Y = np.fft.fft(y)[list(range(int(n / 2)))] / n  # fft computing and normalization
