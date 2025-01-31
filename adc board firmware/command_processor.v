@@ -229,9 +229,9 @@ else begin
 					tot_counter <= tot_counter+8'd1;
 				end
 			end
-			if (tot_counter>=triggerToT_sync) begin
+			if (tot_counter>=triggerToT_sync && (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) ) begin
 				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
-				lvdsout_trig <= 1'b1; // tell the others
+				lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
 				acqstate <= 8'd250;
 			end
 		end
@@ -280,9 +280,9 @@ else begin
 					tot_counter <= tot_counter+8'd1;
 				end
 			end
-			if (tot_counter>=triggerToT_sync) begin
+			if (tot_counter>=triggerToT_sync && (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) ) begin
 				ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
-				lvdsout_trig <= 1'b1; // tell the others
+				lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
 				acqstate <= 8'd250;
 			end
 		end
@@ -302,7 +302,7 @@ else begin
 	if (triggertype_sync!=3) acqstate<=0;
 	else begin
 	if (lvdsin_trig) begin
-		ram_address_triggered <= ram_wr_address; // remember where the trigger happened
+		ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 		lvdsout_trig <= 1'b1; // tell the others
 		sample_triggered <= 0; // not used, since we didn't measure the trigger edge - will take it from the board that caused the trigger
 		downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that we were on when we got this trigger

@@ -110,7 +110,6 @@ class MainWindow(TemplateBaseClass):
     eventcounter = [0] * num_board
     nsubsamples = 10 * 4 + 8 + 2  # extra 4 for clk+str, and 2 dead beef
     sample_triggered = [0] * num_board
-    downsamplemergingcounter = 0
     doeventcounter = False
     fitwidthfraction = 0.2
     exttrigstd = 0
@@ -936,7 +935,7 @@ class MainWindow(TemplateBaseClass):
                     except RuntimeError:
                         pass
 
-            if not self.dotwochannel and self.dooversample and self.num_board>1:
+            if self.dooversample and self.num_board>1:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1
                 else: c1 = self.activeboard+1
                 thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(self.activeboard)+": " + str(round(self.exttrigstdavg,2))
