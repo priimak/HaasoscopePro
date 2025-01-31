@@ -651,7 +651,7 @@
          <string/>
         </property>
         <property name="minimum">
-         <number>-1000</number>
+         <number>0</number>
         </property>
         <property name="maximum">
          <number>1000</number>
@@ -1722,8 +1722,6 @@
     <property name="title">
      <string>Calibration</string>
     </property>
-    <addaction name="actionRead_from_file"/>
-    <addaction name="actionStore_to_file"/>
     <addaction name="actionDo_autocalibration"/>
    </widget>
    <widget class="QMenu" name="menuOther">

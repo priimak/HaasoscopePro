@@ -168,6 +168,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.twochanCheck.clicked.connect(self.twochan)
         self.ui.ToffBox.valueChanged.connect(self.setToff)
         self.ui.fftCheck.clicked.connect(self.fft)
+        self.ui.actionDo_autocalibration.triggered.connect(self.actionDo_autocalibration)
         self.dofft = False
         self.db = False
         self.lastTime = time.time()
@@ -884,8 +885,9 @@ class MainWindow(TemplateBaseClass):
                                 if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
                                 self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                             else:
-                                if samp + self.toff/self.downsamplefactor >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
-                                self.xydata[board * self.num_chan_per_board + chan % 2][1][samp + int(self.toff/self.downsamplefactor)] = val
+                                samp = samp + int((self.toff+(self.downsamplefactor-1)*40)/self.downsamplefactor)
+                                if samp  >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
+                                self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                         else:
                             samp = s * 40 + 39 - n
                             samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
@@ -893,8 +895,9 @@ class MainWindow(TemplateBaseClass):
                                 if samp >= self.xydata[board][1].size: continue
                                 self.xydata[board*self.num_chan_per_board][1][samp] = val
                             else:
-                                if samp + self.toff/self.downsamplefactor >= self.xydata[board][1].size: continue
-                                self.xydata[board*self.num_chan_per_board][1][samp + int(self.toff/self.downsamplefactor)] = val
+                                samp = samp + int((self.toff+(self.downsamplefactor-1)*40)/self.downsamplefactor)
+                                if samp >= self.xydata[board][1].size: continue
+                                self.xydata[board*self.num_chan_per_board][1][samp] = val
 
         self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr)
         if board == self.activeboard:
@@ -938,9 +941,35 @@ class MainWindow(TemplateBaseClass):
             if self.dooversample and self.num_board>1:
                 if self.activeboard % 2 == 1: c1 = self.activeboard-1
                 else: c1 = self.activeboard+1
-                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(self.activeboard)+": " + str(round(self.exttrigstdavg,2))
+                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(self.activeboard)+": " + str(round(self.exttrigstdavg,5))
 
         self.ui.textBrowser.setText(thestr)
+
+    def actionDo_autocalibration(self):
+        c1 = self.activeboard  # board data we are merging with
+        if c1 >= self.num_board - 1: return
+        c = (self.activeboard + 1) * self.num_chan_per_board  # the exttrig board data
+        # fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
+        bare_max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
+        fitwidth = bare_max_x * self.fitwidthfraction
+        cdata = self.xydata[c]
+        cdata[1] = np.roll(cdata[1], -self.toff)
+        minrms = 1e9
+        minshift = 1000000
+        for nshift in range(-self.toff, 20*self.expect_samples):
+            yc = cdata[1][(cdata[0] > self.vline - fitwidth) & (cdata[0] < self.vline + fitwidth)]
+            yc1 = self.xydata[c1][1][
+                (self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
+            therms = np.std(yc1 - yc)
+            # print("nshift",nshift,"std",therms)
+            if therms < minrms:
+                minrms = therms
+                minshift = nshift
+            cdata[1] = np.roll(cdata[1], 1)
+        print("minrms found for toff =", minshift)
+        self.toff = minshift + self.toff
+        self.ui.ToffBox.setValue(self.toff)
+        cdata[1] = np.roll(cdata[1], -20*self.expect_samples)
 
     def calcoversample(self):
         c1 = self.activeboard # board data we are merging with
@@ -951,15 +980,14 @@ class MainWindow(TemplateBaseClass):
         fitwidth = bare_max_x * self.fitwidthfraction
         yc = self.xydata[c][1][
             (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
-        yc1 = self.xydata[c1][1][
-            (self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
+        yc1 = self.xydata[c1][1][(self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
         self.exttrigstd = self.exttrigstd + np.std(yc1 - yc)
         extrigboardmean = np.mean(yc)
         otherboardmean = np.mean(yc1)
         self.xydata[c1][1] += extrigboardmean - otherboardmean
         extrigboardstd = np.std(yc)
         otherboardstd = np.std(yc1)
-        if otherboardstd>0: self.xydata[c1][1] *= extrigboardstd/otherboardstd
+        if otherboardstd > 0: self.xydata[c1][1] *= extrigboardstd / otherboardstd
 
     def plot_fft(self):
         if self.dointerleaved: y = self.xydatainterleaved[int(self.activeboard/2)][1]
