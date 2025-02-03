@@ -326,6 +326,7 @@ class MainWindow(TemplateBaseClass):
             self.ui.twochanCheck.setEnabled(False)
         else:
             self.ui.interleavedCheck.setEnabled(False)
+            self.ui.interleavedCheck.setChecked(False)
             self.ui.twochanCheck.setEnabled(True)
 
     def interleave(self):
