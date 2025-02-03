@@ -115,7 +115,7 @@ class MainWindow(TemplateBaseClass):
     extrigboardmeancorrection = 0
     lastrate = 0
     lastsize = 0
-    VperD = [0.08]*(num_board*2)
+    VperD = [0.16]*(num_board*2)
     plljustreset = [False] * num_board
     dooversample = False
 
@@ -251,7 +251,7 @@ class MainWindow(TemplateBaseClass):
         if dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample):
             if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
                 dooffset(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
-            v2 = scaling*750.0/1000*self.ui.offsetBox.value()
+            v2 = scaling*1.0*self.ui.offsetBox.value()
             self.ui.Voff.setText(str(int(v2))+" mV")
 
     def changegain(self):
