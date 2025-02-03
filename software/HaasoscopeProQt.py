@@ -111,8 +111,8 @@ class MainWindow(TemplateBaseClass):
     sample_triggered = [0] * num_board
     doeventcounter = False
     fitwidthfraction = 0.2
-    exttrigstd = 0
-    exttrigstdavg = 0
+    extrigboardstdcorrection = 1
+    extrigboardmeancorrection = 0
     lastrate = 0
     lastsize = 0
     VperD = [0.08]*(num_board*2)
@@ -724,8 +724,6 @@ class MainWindow(TemplateBaseClass):
                     rx_len = rx_len + len(data)
                     if self.dofft and board==self.activeboard: self.plot_fft()
                     self.drawchannels(data, board, downsamplemergingcounter)
-                if not self.dotwochannel and self.dooversample and self.num_board>1:
-                    self.calcoversample()
                 if self.getone and rx_len > 0:
                     self.dostartstop()
                     self.drawtext()
@@ -735,10 +733,6 @@ class MainWindow(TemplateBaseClass):
             if self.db: print(time.time() - self.oldtime, "done with evt", self.nevents)
             if rx_len > 0: self.nevents += 1
             if self.nevents - self.oldnevents >= self.tinterval:
-
-                self.exttrigstdavg = self.exttrigstd / self.tinterval
-                self.exttrigstd =0
-
                 now = time.time()
                 elapsedtime = now - self.oldtime
                 self.oldtime = now
@@ -867,8 +861,10 @@ class MainWindow(TemplateBaseClass):
                             print("s=", s, "n=", n, "pbyte=", pbyte, "chan=", chan, hex(data[pbyte + 1]),
                                   hex(data[pbyte + 0]))
                 if n < 40:
-                    # val = -val # if we're swapping inputs
                     val = val * self.yscale
+                    if self.dooversample and board%2==0:
+                        val += self.extrigboardmeancorrection
+                        val *= self.extrigboardstdcorrection
                     if self.downsamplemerging == 1:
                         samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
                         samp = samp - self.sample_triggered[board]
@@ -946,11 +942,6 @@ class MainWindow(TemplateBaseClass):
                     except RuntimeError:
                         pass
 
-            if self.dooversample and self.num_board>1:
-                if self.activeboard % 2 == 1: c1 = self.activeboard-1
-                else: c1 = self.activeboard+1
-                thestr += "\n" + "RMS of board "+str(c1)+" vs board "+str(self.activeboard)+": " + str(round(self.exttrigstdavg,5))
-
         self.ui.textBrowser.setText(thestr)
 
     def actionDo_autocalibration(self):
@@ -978,25 +969,22 @@ class MainWindow(TemplateBaseClass):
         minshift = minshift - 1 #better for interleaving
         self.toff = minshift + self.toff
         self.ui.ToffBox.setValue(self.toff)
-        cdata[1] = np.roll(cdata[1], -20*self.expect_samples)
+        cdata[1] = np.roll(cdata[1], -20*self.expect_samples + minshift)
 
-    def calcoversample(self):
-        c1 = self.activeboard # board data we are merging with
-        if c1>=self.num_board-1: return
-        c = (self.activeboard+1) * self.num_chan_per_board # the exttrig board data
-        #fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
-        bare_max_x = 4 * 10 * self.expect_samples * self.downsamplefactor / self.nsunits / self.samplerate
-        fitwidth = bare_max_x * self.fitwidthfraction
         yc = self.xydata[c][1][
             (self.xydata[c][0] > self.vline - fitwidth) & (self.xydata[c][0] < self.vline + fitwidth)]
-        yc1 = self.xydata[c1][1][(self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
-        self.exttrigstd = self.exttrigstd + np.std(yc1 - yc)
+        yc1 = self.xydata[c1][1][
+            (self.xydata[c1][0] > self.vline - fitwidth) & (self.xydata[c1][0] < self.vline + fitwidth)]
         extrigboardmean = np.mean(yc)
         otherboardmean = np.mean(yc1)
-        self.xydata[c1][1] += extrigboardmean - otherboardmean
+        self.extrigboardmeancorrection = self.extrigboardmeancorrection + extrigboardmean - otherboardmean
         extrigboardstd = np.std(yc)
         otherboardstd = np.std(yc1)
-        if otherboardstd > 0: self.xydata[c1][1] *= extrigboardstd / otherboardstd
+        if otherboardstd > 0:
+            self.extrigboardstdcorrection = self.extrigboardstdcorrection * extrigboardstd / otherboardstd
+        else:
+            self.extrigboardstdcorrection = self.extrigboardstdcorrection
+        print("calculated mean and std corrections", self.extrigboardmeancorrection, self.extrigboardstdcorrection)
 
     def plot_fft(self):
         if self.dointerleaved: y = self.xydatainterleaved[int(self.activeboard/2)][1]
