@@ -248,11 +248,11 @@ class MainWindow(TemplateBaseClass):
 
     def changeoffset(self):
         scaling = 1000*self.VperD[self.activeboard*2+self.selectedchannel]/160 # compare to 0 dB gain
-        dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
-        if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
-            dooffset(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
-        v2 = scaling*750.0/1000*self.ui.offsetBox.value()
-        self.ui.Voff.setText(str(int(v2))+" mV")
+        if dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample):
+            if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
+                dooffset(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
+            v2 = scaling*750.0/1000*self.ui.offsetBox.value()
+            self.ui.Voff.setText(str(int(v2))+" mV")
 
     def changegain(self):
         setgain(self.activeusb, self.selectedchannel, self.ui.gainBox.value(),self.dooversample)

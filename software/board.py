@@ -156,15 +156,19 @@ def setgain(usb, chan, value, doswap):
     if chan == 0: spicommand(usb, "Amp Gain 0", 0x02, 0x00, 26 - value, False, cs=2, nbyte=2, quiet=True)
     if chan == 1: spicommand(usb, "Amp Gain 1", 0x02, 0x00, 26 - value, False, cs=1, nbyte=2, quiet=True)
 
-def dooffset(usb, chan, val, scaling, doswap):  # val goes from -100% to 100%
+def dooffset(usb, chan, val, scaling, doswap):
     spimode(usb, 1)
-    if doswap: val= -val
-    dacval = int((pow(2, 16) - 1) * (-val *scaling/ 2 + 500) / 1000)
-    # print("dacval is", dacval)
-    if doswap: chan = (chan + 1) % 2
-    if chan == 1: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
-    if chan == 0: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+    #if doswap: val= -val
+    dacval = int((pow(2, 16) - 1) * (val *scaling/ 2 + 500) / 1000)
+    #print("dacval is", dacval,"and doswap is",doswap,"and val is",val)
+    ret = False
+    if 0 < dacval < pow(2, 16):
+        ret = True
+        if doswap: chan = (chan + 1) % 2
+        if chan == 1: spicommand(usb, "DAC 1 value", 0x18, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
+        if chan == 0: spicommand(usb, "DAC 2 value", 0x19, dacval >> 8, dacval % 256, False, cs=4, quiet=True)
     spimode(usb, 0)
+    return ret
 
 def fit_rise(x, top, left, leftplus, bot):  # a function for fitting to find risetime
     val = bot + (x - left) * (top - bot) / leftplus
