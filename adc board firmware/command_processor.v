@@ -199,8 +199,6 @@ else begin
 	
 	// rising edge trigger (1)
 	1 : begin // ready for first part of trigger condition to be met
-	lvdsout_trig <= 0;
-	lvdsout_trig_b <= 0;
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
@@ -239,8 +237,6 @@ else begin
 	
 	//falling edge trigger (2)
 	3 : begin // ready for first part of trigger condition to be met
-	lvdsout_trig <= 0;
-	lvdsout_trig_b <= 0;
 	if (triggertype_sync!=2) acqstate<=0;
 	else begin
 	for (i=0;i<10;i=i+1) begin
