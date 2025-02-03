@@ -431,6 +431,11 @@ class MainWindow(TemplateBaseClass):
         self.doexttrig[board] = value
         self.ui.exttrigCheck.setChecked(value)
         #print("doexttrig", self.doexttrig[board], "for board", board)
+        r = self.ui.rollingButton.isChecked()
+        if self.doexttrig[board]: r = False
+        print("setting rolling",r,"for board",board)
+        usbs[board].send(bytes([2, 8, r, 0, 100, 100, 100, 100]))
+        usbs[board].recv(4)
 
     def grid(self):
         if self.ui.gridCheck.isChecked():
