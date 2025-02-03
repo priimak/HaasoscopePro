@@ -87,7 +87,7 @@ reg signed [11:0] samplevalue[40], samplevaluereg[40];
 reg signed [47:0]	highressamplevalueavg0=0, highressamplevalueavgtemp0=0;
 reg signed [47:0]	highressamplevalueavg1=0, highressamplevalueavgtemp1=0;
 reg [1:0] 	sampleclkstr[40];
-reg [7:0]	tot_counter=0, triggersamplecounter=0;
+reg [7:0]	tot_counter=0;
 reg [7:0]	downsamplemergingcounter=1;
 reg [15:0]	triggercounter=0;
 integer		rollingtriggercounter=0;
@@ -154,7 +154,9 @@ else begin
 	// rolling trigger
 	if (dorolling_sync && acqstate>0 && acqstate<250) begin
 		if (rollingtriggercounter==40000000) begin
-			rollingtriggercounter<=0;
+			sample_triggered<=0;
+			downsamplemergingcounter_triggered <= downsamplemergingcounter;
+			ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
 			lvdsout_trig <= 1'b1; // tell the others (maybe want to do rolling trigger on just the first board?)
 			//lvdsout_trig_b <= 1'b1; // no need, just going forwards?
 			acqstate <= 8'd250; // trigger
@@ -164,9 +166,7 @@ else begin
 	
 	case (acqstate)
 	0 : begin // ready
-		//triggercounter<=0;
 		tot_counter<=0;
-		triggersamplecounter<=0;
 		sample_triggered<=0;
 		downsamplemergingcounter_triggered <= -8'd1;
 		lvdsout_trig <= 0;
@@ -215,11 +215,6 @@ else begin
 	2 : begin // ready for second part of trigger condition to be met
 	if (triggertype_sync!=1) acqstate<=0;
 	else begin
-	if (downsamplecounter[downsample_sync]) begin
-		if (downsamplemergingcounter==downsamplemerging_sync) begin
-			triggersamplecounter<=triggersamplecounter+8'd1;
-		end
-	end
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
 			if (downsamplemergingcounter_triggered == -8'd1) begin // just the first time
@@ -236,14 +231,6 @@ else begin
 				lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
 				lvdsout_trig_b <= 1'b1; // and backwards
 				acqstate <= 8'd250;
-			end
-		end
-		else begin
-			if (triggersamplecounter>200) begin // reset trigger if we've been waiting too long to stay over threshold
-				tot_counter<=8'd0;
-				triggersamplecounter<=0;
-				sample_triggered<=0;
-				acqstate <= 8'd1;
 			end
 		end
 	end
@@ -268,11 +255,6 @@ else begin
 	4 : begin // ready for second part of trigger condition to be met
 	if (triggertype_sync!=2) acqstate<=0;
 	else begin
-	if (downsamplecounter[downsample_sync]) begin
-		if (downsamplemergingcounter==downsamplemerging_sync) begin
-			triggersamplecounter<=triggersamplecounter+8'd1;
-		end
-	end
 	for (i=0;i<10;i=i+1) begin
 		if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
 			if (downsamplemergingcounter_triggered == -8'd1) begin // just the first time
@@ -289,14 +271,6 @@ else begin
 				lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
 				lvdsout_trig_b <= 1'b1; // and backwards
 				acqstate <= 8'd250;
-			end
-		end
-		else begin
-			if (triggersamplecounter>200) begin // reset trigger if we've been waiting too long to stay over threshold
-				tot_counter<=8'd0;
-				triggersamplecounter<=0;
-				sample_triggered<=0;
-				acqstate <= 8'd3;
 			end
 		end
 	end
@@ -326,6 +300,7 @@ else begin
 	250 : begin // triggered, now taking more data
 		lvdsout_trig <= 0; // stop telling the others forwards
 		lvdsout_trig_b <= 0; // and backwards
+		rollingtriggercounter<=0; // reset after getting an event
 		if (triggercounter<lengthtotake_sync) begin
 			if (downsamplecounter[downsample_sync]) begin
 				if (downsamplemergingcounter==downsamplemerging_sync) begin

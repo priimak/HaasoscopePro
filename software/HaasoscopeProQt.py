@@ -710,7 +710,7 @@ class MainWindow(TemplateBaseClass):
             rx_len = 0
             try:
                 readyevent = [0]*self.num_board
-                for board in reversed(range(self.num_board)): # go backwards through the boards to get the triggerinfo for the right events
+                for board in reversed(range(self.num_board)): # go backwards through the boards to make sure the ext triggers are active before the lower number board fires
                     readyevent[board] = self.getchannels(board)
                 for board in range(self.num_board):
                     if not readyevent[board]: continue
