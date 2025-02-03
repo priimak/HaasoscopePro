@@ -252,6 +252,7 @@ class MainWindow(TemplateBaseClass):
             if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
                 dooffset(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
             v2 = scaling*1.0*self.ui.offsetBox.value()
+            if self.dooversample: v2 *= 2.0
             self.ui.Voff.setText(str(int(v2))+" mV")
 
     def changegain(self):
@@ -260,6 +261,7 @@ class MainWindow(TemplateBaseClass):
             setgain(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.gainBox.value(),self.dooversample)
         db = self.ui.gainBox.value()
         v2 = 0.1605*self.tenx/pow(10, db / 20.) # 0.16 V at 0 dB gain
+        if self.dooversample: v2 *= 2.0
         oldvperd = self.VperD[self.activeboard*2+self.selectedchannel]
         self.VperD[self.activeboard*2+self.selectedchannel] = v2
         self.ui.offsetBox.setValue(int(self.ui.offsetBox.value()*oldvperd/v2))
@@ -328,6 +330,8 @@ class MainWindow(TemplateBaseClass):
             self.ui.interleavedCheck.setEnabled(False)
             self.ui.interleavedCheck.setChecked(False)
             self.ui.twochanCheck.setEnabled(True)
+        self.changegain()
+        self.changeoffset()
 
     def interleave(self):
         self.dointerleaved = self.ui.interleavedCheck.checkState() == QtCore.Qt.Checked
