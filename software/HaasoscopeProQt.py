@@ -270,6 +270,8 @@ class MainWindow(TemplateBaseClass):
         if self.dooversample: v2 *= 2.0
         oldvperd = self.VperD[self.activeboard*2+self.selectedchannel]
         self.VperD[self.activeboard*2+self.selectedchannel] = v2
+        if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
+            self.VperD[(self.activeboard+1)*2+self.selectedchannel] = v2
         self.ui.offsetBox.setValue(int(self.ui.offsetBox.value()*oldvperd/v2))
         v2 = round(1000*v2,0)
         self.ui.VperD.setText(str(int(v2))+" mV/div")
