@@ -47,9 +47,9 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>520</y>
+         <y>560</y>
          <width>400</width>
-         <height>221</height>
+         <height>181</height>
         </rect>
        </property>
        <property name="font">
@@ -538,7 +538,7 @@
          <x>190</x>
          <y>380</y>
          <width>121</width>
-         <height>131</height>
+         <height>171</height>
         </rect>
        </property>
        <property name="font">
@@ -693,7 +693,7 @@
        <widget class="QLabel" name="label_20">
         <property name="geometry">
          <rect>
-          <x>77</x>
+          <x>80</x>
           <y>104</y>
           <width>41</width>
           <height>16</height>
@@ -708,6 +708,54 @@
          <string>Depth</string>
         </property>
        </widget>
+       <widget class="QSpinBox" name="resampBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>130</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="suffix">
+         <string/>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>16</number>
+        </property>
+        <property name="singleStep">
+         <number>2</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_21">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>130</y>
+          <width>51</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>Upsamp</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QGroupBox" name="viewgroupBox">
        <property name="geometry">
@@ -715,7 +763,7 @@
          <x>320</x>
          <y>380</y>
          <width>81</width>
-         <height>131</height>
+         <height>171</height>
         </rect>
        </property>
        <property name="font">

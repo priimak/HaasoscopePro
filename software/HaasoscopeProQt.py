@@ -5,6 +5,7 @@ import PyQt5
 from pyqtgraph.Qt import QtCore, QtWidgets, loadUiType
 from PyQt5.QtGui import QPalette, QColor
 from scipy.optimize import curve_fit
+from scipy.signal import resample
 from usbs import *
 from board import *
 
@@ -118,6 +119,7 @@ class MainWindow(TemplateBaseClass):
     VperD = [0.16]*(num_board*2)
     plljustreset = [False] * num_board
     dooversample = False
+    doresamp = 0
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
@@ -165,6 +167,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.drawingCheck.clicked.connect(self.drawing)
         self.ui.fwfBox.valueChanged.connect(self.fwf)
         self.ui.tadBox.valueChanged.connect(self.setTAD)
+        self.ui.resampBox.valueChanged.connect(self.resamp)
         self.ui.twochanCheck.clicked.connect(self.twochan)
         self.ui.ToffBox.valueChanged.connect(self.setToff)
         self.ui.fftCheck.clicked.connect(self.fft)
@@ -228,6 +231,9 @@ class MainWindow(TemplateBaseClass):
         else:
             self.fftui.close()
             self.dofft = False
+
+    def resamp(self, value):
+        self.doresamp = value
 
     def twochan(self):
         self.dotwochannel = self.ui.twochanCheck.checkState() == QtCore.Qt.Checked
@@ -690,12 +696,21 @@ class MainWindow(TemplateBaseClass):
         # self.ui.plot.setTitle("%0.2f fps, %d events, %0.2f Hz, %0.2f MB/s"%(self.fps,self.nevents,self.lastrate,self.lastrate*self.lastsize/1e6))
         for li in range(self.nlines):
             if not self.dointerleaved:
-                self.lines[li].setData(self.xydata[li][0], self.xydata[li][1])
+                if self.doresamp:
+                    ydatanew, xdatanew = resample(self.xydata[li][1], len(self.xydata[li][0]) * self.doresamp, t=self.xydata[li][0])
+                    self.lines[li].setData(xdatanew,ydatanew)
+                else:
+                    self.lines[li].setData(self.xydata[li][0], self.xydata[li][1])
             else:
-                if li==0:
+                if li%4 == 0:
                     self.xydatainterleaved[int(li/2)][1][0::2] = self.xydata[li][1]
                     self.xydatainterleaved[int(li/2)][1][1::2] = self.xydata[li+self.num_chan_per_board][1]
-                    self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
+                    if self.doresamp:
+                        ydatanew, xdatanew = resample(self.xydatainterleaved[int(li/2)][1], len(self.xydatainterleaved[int(li/2)][0]) * self.doresamp, t=self.xydatainterleaved[int(li/2)][0])
+                        self.lines[li].setData(xdatanew,ydatanew)
+                    else:
+                        self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
+
         if self.dofft and hasattr(self,"fftfreqplot_xdata"):
             self.fftui.fftline.setPen(self.linepens[self.activeboard * self.num_chan_per_board + self.selectedchannel])
             self.fftui.fftline.setData(self.fftfreqplot_xdata,self.fftfreqplot_ydata)
