@@ -713,18 +713,18 @@ class MainWindow(TemplateBaseClass):
                     else:
                         self.lines[li].setData(self.xydatainterleaved[int(li/2)][0],self.xydatainterleaved[int(li/2)][1])
 
-        if self.dofft and hasattr(self,"fftfreqplot_xdata"):
+        if self.dofft and hasattr(self.fftui,"fftfreqplot_xdata"):
             self.fftui.fftline.setPen(self.linepens[self.activeboard * self.num_chan_per_board + self.selectedchannel])
-            self.fftui.fftline.setData(self.fftfreqplot_xdata,self.fftfreqplot_ydata)
+            self.fftui.fftline.setData(self.fftui.fftfreqplot_xdata,self.fftui.fftfreqplot_ydata)
             self.fftui.ui.plot.setTitle('Haasoscope Pro FFT of board '+str(self.activeboard)+' channel ' + str(self.selectedchannel))
-            self.fftui.ui.plot.setLabel('bottom', self.fftax_xlabel)
-            self.fftui.ui.plot.setRange(xRange=(0.0, self.fftax_xlim))
+            self.fftui.ui.plot.setLabel('bottom', self.fftui.fftax_xlabel)
+            self.fftui.ui.plot.setRange(xRange=(0.0, self.fftui.fftax_xlim))
             now = time.time()
             dt = now - self.fftui.fftlastTime
-            if dt>3.0 or self.fftyrange<self.fftfreqplot_ydatamax*1.1:
+            if dt>3.0 or self.fftui.fftyrange<self.fftui.fftfreqplot_ydatamax*1.1:
                 self.fftui.fftlastTime = now
-                self.fftui.ui.plot.setRange(yRange=(0.0, self.fftfreqplot_ydatamax*1.1))
-                self.fftyrange = self.fftfreqplot_ydatamax * 1.1
+                self.fftui.ui.plot.setRange(yRange=(0.0, self.fftui.fftfreqplot_ydatamax*1.1))
+                self.fftui.fftyrange = self.fftui.fftfreqplot_ydatamax * 1.1
             if not self.fftui.isVisible(): # closed the fft window
                 self.dofft = False
                 self.ui.fftCheck.setCheckState(QtCore.Qt.Unchecked)
@@ -1020,19 +1020,19 @@ class MainWindow(TemplateBaseClass):
         Y = np.fft.fft(y)[list(range(int(n / 2)))] / n  # fft computing and normalization
         Y[0] = 0  # to suppress DC
         if np.max(frq) < .001:
-            self.fftfreqplot_xdata = frq * 1000000.0
-            self.fftax_xlabel = 'Frequency (Hz)'
-            self.fftax_xlim = 1000000.0 * frq[int(n / 2) - 1]
+            self.fftui.fftfreqplot_xdata = frq * 1000000.0
+            self.fftui.fftax_xlabel = 'Frequency (Hz)'
+            self.fftui.fftax_xlim = 1000000.0 * frq[int(n / 2) - 1]
         elif np.max(frq) < 1.0:
-            self.fftfreqplot_xdata = frq * 1000.0
-            self.fftax_xlabel = 'Frequency (kHz)'
-            self.fftax_xlim = 1000.0 * frq[int(n / 2) - 1]
+            self.fftui.fftfreqplot_xdata = frq * 1000.0
+            self.fftui.fftax_xlabel = 'Frequency (kHz)'
+            self.fftui.fftax_xlim = 1000.0 * frq[int(n / 2) - 1]
         else:
-            self.fftfreqplot_xdata = frq
-            self.fftax_xlabel = 'Frequency (MHz)'
-            self.fftax_xlim = frq[int(n / 2) - 1]
-        self.fftfreqplot_ydata = abs(Y)
-        self.fftfreqplot_ydatamax = np.max(abs(Y))
+            self.fftui.fftfreqplot_xdata = frq
+            self.fftui.fftax_xlabel = 'Frequency (MHz)'
+            self.fftui.fftax_xlim = frq[int(n / 2) - 1]
+        self.fftui.fftfreqplot_ydata = abs(Y)
+        self.fftui.fftfreqplot_ydatamax = np.max(abs(Y))
 
     def fastadclineclick(self, curve):
         for li in range(self.nlines):
