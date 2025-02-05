@@ -82,6 +82,9 @@ class MainWindow(TemplateBaseClass):
     max_y = 5 # pow(2, 11) * yscale
     min_x = 0
     max_x = 4 * 10 * expect_samples * downsamplefactor / nsunits / samplerate
+    xydata = 0
+    xydatainterleaved = 0
+    fftui = 0
     downsamplezoom = 1
     triggerlevel = 127
     triggerdelta = 1
@@ -1144,7 +1147,7 @@ class MainWindow(TemplateBaseClass):
         print("Handling closeEvent", event)
         self.timer.stop()
         self.timer2.stop()
-        if hasattr(self,"fftui"): self.fftui.close()
+        if self.fftui != 0: self.fftui.close()
         for usb in usbs: cleanup(usb)
 
 if __name__ == '__main__': # calls setup_connection for each board, then init
