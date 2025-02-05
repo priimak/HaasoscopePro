@@ -285,8 +285,12 @@ class MainWindow(TemplateBaseClass):
         self.fitwidthfraction = self.ui.fwfBox.value() / 100.
 
     def setTAD(self):
+        if self.tad<0 and self.ui.tadBox.value()>=0:
+            spicommand(self.activeusb, "TAD", 0x02, 0xB7, 0, False, quiet=False)
+        if self.tad>=0 and self.ui.tadBox.value()<0:
+            spicommand(self.activeusb, "TAD", 0x02, 0xB7, 1, False, quiet=False)
         self.tad = self.ui.tadBox.value()
-        spicommand(self.activeusb, "TAD", 0x02, 0xB6, self.tad, False, quiet=True)
+        spicommand(self.activeusb, "TAD", 0x02, 0xB6, abs(self.tad), False, quiet=True)
 
     def setToff(self):
         self.toff = self.ui.ToffBox.value()
