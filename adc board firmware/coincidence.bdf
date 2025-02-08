@@ -20,6 +20,9 @@ refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
+(properties
+	(page_setup "orientation\n1\npaper_size\n0\npaper_source\n6\nmargin\n0.000:0.000:0.000:0.000\n")
+)
 (pin
 	(input)
 	(rect -536 352 -360 368)
@@ -107,7 +110,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect -424 1064 -248 1080)
+	(rect -424 992 -248 1008)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "lvds4in[13..0]" (rect 9 0 76 12)(font "Arial" ))
 	(pt 176 8)
@@ -120,11 +123,11 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -496 1064 -432 1312))
+	(annotation_block (location)(rect -496 992 -432 1240))
 )
 (pin
 	(input)
-	(rect -424 936 -248 952)
+	(rect -424 888 -248 904)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "lvds3in[13..0]" (rect 9 0 76 12)(font "Arial" ))
 	(pt 176 8)
@@ -137,11 +140,11 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -568 936 -504 1184))
+	(annotation_block (location)(rect -568 888 -504 1136))
 )
 (pin
 	(input)
-	(rect -424 808 -248 824)
+	(rect -424 784 -248 800)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "lvds2in[13..0]" (rect 9 0 76 12)(font "Arial" ))
 	(pt 176 8)
@@ -154,7 +157,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -640 808 -576 1096))
+	(annotation_block (location)(rect -640 784 -576 1072))
 )
 (pin
 	(input)
@@ -260,7 +263,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect -440 1496 -272 1512)
+	(rect -440 1320 -272 1336)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "lvdsEin[6..0]" (rect 5 0 67 12)(font "Arial" ))
 	(pt 168 8)
@@ -273,11 +276,11 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -512 1496 -448 1576))
+	(annotation_block (location)(rect -512 1320 -448 1400))
 )
 (pin
 	(input)
-	(rect -440 1616 -272 1632)
+	(rect -440 1440 -272 1456)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "lvdsLin[6..0]" (rect 5 0 66 12)(font "Arial" ))
 	(pt 168 8)
@@ -290,7 +293,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -512 1616 -448 1656))
+	(annotation_block (location)(rect -512 1440 -448 1480))
 )
 (pin
 	(input)
@@ -769,7 +772,7 @@ https://fpgasoftware.intel.com/eula.
 	(annotation_block (parameter)(rect 784 152 1010 190))
 )
 (symbol
-	(rect -240 1216 16 1368)
+	(rect -248 1112 8 1264)
 	(text "rambuffer" (rect 102 0 164 16)(font "Arial" (font_size 10)))
 	(text "inst6" (rect 8 136 30 153)(font "Intel Clear" ))
 	(port
@@ -883,7 +886,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -176 1456 32 1552)
+	(rect -176 1280 32 1376)
 	(text "lvds2" (rect 90 0 124 16)(font "Arial" (font_size 10)))
 	(text "lvdsE" (rect 8 80 36 92)(font "Arial" ))
 	(port
@@ -955,7 +958,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -176 768 32 864)
+	(rect -176 744 32 840)
 	(text "lvds1" (rect 90 -1 124 15)(font "Arial" (font_size 10)))
 	(text "lvds2" (rect 8 80 35 92)(font "Arial" ))
 	(port
@@ -991,7 +994,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -176 896 32 992)
+	(rect -176 848 32 944)
 	(text "lvds1" (rect 90 -1 124 15)(font "Arial" (font_size 10)))
 	(text "lvds3" (rect 8 80 35 92)(font "Arial" ))
 	(port
@@ -1027,7 +1030,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -176 1024 32 1120)
+	(rect -176 952 32 1048)
 	(text "lvds1" (rect 90 -1 124 15)(font "Arial" (font_size 10)))
 	(text "lvds4" (rect 8 80 35 92)(font "Arial" ))
 	(port
@@ -1063,7 +1066,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -176 1576 32 1672)
+	(rect -176 1400 32 1496)
 	(text "lvds2" (rect 90 0 124 16)(font "Arial" (font_size 10)))
 	(text "lvdsL" (rect 8 80 33 97)(font "Intel Clear" ))
 	(port
@@ -2402,78 +2405,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 320 424)
 )
 (connector
-	(text "lvdsbitsout[559..0]" (rect 30 1288 117 1305)(font "Intel Clear" ))
-	(pt 16 1304)
-	(pt 128 1304)
-	(bus)
-)
-(connector
-	(text "lvdsbitsin[559..0]" (rect -321 1232 -241 1249)(font "Intel Clear" ))
-	(pt -336 1248)
-	(pt -240 1248)
-	(bus)
-)
-(connector
-	(text "ram_wr_address[9..0]" (rect -336 1248 -234 1265)(font "Intel Clear" ))
-	(pt -360 1264)
-	(pt -240 1264)
-	(bus)
-)
-(connector
-	(text "ram_wr" (rect -296 1264 -260 1281)(font "Intel Clear" ))
-	(pt -320 1280)
-	(pt -240 1280)
-)
-(connector
-	(text "ram_rd_address[9..0]" (rect -338 1288 -238 1305)(font "Intel Clear" ))
-	(pt -360 1304)
-	(pt -240 1304)
-	(bus)
-)
-(connector
-	(text "clklvdsout" (rect -295 1312 -246 1329)(font "Intel Clear" ))
-	(pt -320 1328)
-	(pt -240 1328)
-)
-(connector
-	(text "clkout" (rect -295 1328 -266 1345)(font "Intel Clear" ))
-	(pt -320 1344)
-	(pt -240 1344)
-)
-(connector
-	(text "lvds4bits[139..0]" (rect 50 1056 127 1073)(font "Intel Clear" ))
-	(pt 32 1072)
-	(pt 128 1072)
-	(bus)
-)
-(connector
-	(text "clklvds" (rect -232 1072 -198 1089)(font "Intel Clear" ))
-	(pt -248 1088)
-	(pt -176 1088)
-)
-(connector
-	(text "lvds3bits[139..0]" (rect 50 928 127 945)(font "Intel Clear" ))
-	(pt 32 944)
-	(pt 128 944)
-	(bus)
-)
-(connector
-	(text "clklvds" (rect -232 944 -198 961)(font "Intel Clear" ))
-	(pt -248 960)
-	(pt -176 960)
-)
-(connector
-	(text "lvds2bits[139..0]" (rect 50 800 127 817)(font "Intel Clear" ))
-	(pt 32 816)
-	(pt 128 816)
-	(bus)
-)
-(connector
-	(text "clklvds" (rect -232 816 -198 833)(font "Intel Clear" ))
-	(pt -248 832)
-	(pt -176 832)
-)
-(connector
 	(text "lvds1bits[139..0]" (rect 50 672 127 689)(font "Intel Clear" ))
 	(pt 32 688)
 	(pt 128 688)
@@ -2485,60 +2416,132 @@ https://fpgasoftware.intel.com/eula.
 	(pt -176 704)
 )
 (connector
-	(text "lvds4in[13..0]" (rect -239 1056 -176 1073)(font "Intel Clear" ))
-	(pt -176 1072)
-	(pt -248 1072)
-	(bus)
-)
-(connector
-	(text "lvds3in[13..0]" (rect -239 928 -176 945)(font "Intel Clear" ))
-	(pt -176 944)
-	(pt -248 944)
-	(bus)
-)
-(connector
-	(text "lvds2in[13..0]" (rect -239 800 -176 817)(font "Intel Clear" ))
-	(pt -176 816)
-	(pt -248 816)
-	(bus)
-)
-(connector
 	(text "lvds1in[13..0]" (rect -239 672 -176 689)(font "Intel Clear" ))
 	(pt -176 688)
 	(pt -248 688)
 	(bus)
 )
 (connector
-	(text "lvdsEbits[69..0]" (rect 53 1488 124 1505)(font "Intel Clear" ))
-	(pt 32 1504)
-	(pt 128 1504)
+	(text "lvds2bits[139..0]" (rect 50 776 127 793)(font "Intel Clear" ))
+	(pt 32 792)
+	(pt 128 792)
 	(bus)
 )
 (connector
-	(text "lvdsLbits[69..0]" (rect 52 1608 123 1625)(font "Intel Clear" ))
-	(pt 32 1624)
-	(pt 128 1624)
+	(text "clklvds" (rect -232 792 -198 809)(font "Intel Clear" ))
+	(pt -248 808)
+	(pt -176 808)
+)
+(connector
+	(text "lvds2in[13..0]" (rect -239 776 -176 793)(font "Intel Clear" ))
+	(pt -176 792)
+	(pt -248 792)
 	(bus)
 )
 (connector
-	(pt -272 1504)
-	(pt -176 1504)
+	(text "lvds3bits[139..0]" (rect 50 880 127 897)(font "Intel Clear" ))
+	(pt 32 896)
+	(pt 128 896)
 	(bus)
 )
 (connector
-	(text "clkElvds" (rect -257 1504 -217 1521)(font "Intel Clear" ))
-	(pt -280 1520)
-	(pt -176 1520)
+	(text "clklvds" (rect -232 896 -198 913)(font "Intel Clear" ))
+	(pt -248 912)
+	(pt -176 912)
 )
 (connector
-	(pt -272 1624)
-	(pt -176 1624)
+	(text "lvds3in[13..0]" (rect -239 880 -176 897)(font "Intel Clear" ))
+	(pt -176 896)
+	(pt -248 896)
 	(bus)
 )
 (connector
-	(text "clkLlvds" (rect -255 1624 -215 1641)(font "Intel Clear" ))
-	(pt -280 1640)
-	(pt -176 1640)
+	(text "lvds4bits[139..0]" (rect 50 984 127 1001)(font "Intel Clear" ))
+	(pt 32 1000)
+	(pt 128 1000)
+	(bus)
+)
+(connector
+	(text "clklvds" (rect -232 1000 -198 1017)(font "Intel Clear" ))
+	(pt -248 1016)
+	(pt -176 1016)
+)
+(connector
+	(text "lvds4in[13..0]" (rect -239 984 -176 1001)(font "Intel Clear" ))
+	(pt -176 1000)
+	(pt -248 1000)
+	(bus)
+)
+(connector
+	(text "lvdsbitsin[559..0]" (rect -329 1128 -249 1145)(font "Intel Clear" ))
+	(pt -344 1144)
+	(pt -248 1144)
+	(bus)
+)
+(connector
+	(text "ram_wr_address[9..0]" (rect -344 1144 -242 1161)(font "Intel Clear" ))
+	(pt -368 1160)
+	(pt -248 1160)
+	(bus)
+)
+(connector
+	(text "ram_wr" (rect -304 1160 -268 1177)(font "Intel Clear" ))
+	(pt -328 1176)
+	(pt -248 1176)
+)
+(connector
+	(text "ram_rd_address[9..0]" (rect -346 1184 -246 1201)(font "Intel Clear" ))
+	(pt -368 1200)
+	(pt -248 1200)
+	(bus)
+)
+(connector
+	(text "clklvdsout" (rect -303 1208 -254 1225)(font "Intel Clear" ))
+	(pt -328 1224)
+	(pt -248 1224)
+)
+(connector
+	(text "clkout" (rect -303 1224 -274 1241)(font "Intel Clear" ))
+	(pt -328 1240)
+	(pt -248 1240)
+)
+(connector
+	(text "lvdsbitsout[559..0]" (rect 22 1184 109 1201)(font "Intel Clear" ))
+	(pt 8 1200)
+	(pt 120 1200)
+	(bus)
+)
+(connector
+	(text "lvdsEbits[69..0]" (rect 53 1312 124 1329)(font "Intel Clear" ))
+	(pt 32 1328)
+	(pt 128 1328)
+	(bus)
+)
+(connector
+	(text "lvdsLbits[69..0]" (rect 52 1432 123 1449)(font "Intel Clear" ))
+	(pt 32 1448)
+	(pt 128 1448)
+	(bus)
+)
+(connector
+	(pt -272 1328)
+	(pt -176 1328)
+	(bus)
+)
+(connector
+	(text "clkElvds" (rect -257 1328 -217 1345)(font "Intel Clear" ))
+	(pt -280 1344)
+	(pt -176 1344)
+)
+(connector
+	(pt -272 1448)
+	(pt -176 1448)
+	(bus)
+)
+(connector
+	(text "clkLlvds" (rect -255 1448 -215 1465)(font "Intel Clear" ))
+	(pt -280 1464)
+	(pt -176 1464)
 )
 (junction (pt 320 408))
 (junction (pt 320 392))
@@ -2547,8 +2550,8 @@ https://fpgasoftware.intel.com/eula.
 (text "50 MHz oscillator" (rect -496 320 -394 339)(font "Intel Clear" (font_size 8)))
 (text "Output clocks to ADF4350," (rect 352 456 511 475)(font "Intel Clear" (font_size 8)))
 (text "SMA, and LVDS" (rect 352 472 444 491)(font "Intel Clear" (font_size 8)))
-(text "Buffer where samples are held" (rect -208 1176 -28 1195)(font "Intel Clear" (font_size 8)))
-(text "Extras for early/late bits" (rect -144 1424 -3 1443)(font "Intel Clear" (font_size 8)))
+(text "Buffer where samples are held" (rect -208 1080 -28 1099)(font "Intel Clear" (font_size 8)))
+(text "Extras for early/late bits" (rect -680 1392 -539 1411)(font "Intel Clear" (font_size 8)))
 (text "SPI master" (rect 1176 160 1240 179)(font "Intel Clear" (font_size 8)))
 (text "MUX to select SPI input" (rect 840 408 979 427)(font "Intel Clear" (font_size 8)))
 (text "USB data I/O block" (rect 352 616 465 635)(font "Intel Clear" (font_size 8)))
@@ -2559,5 +2562,5 @@ https://fpgasoftware.intel.com/eula.
 (text "For making 50 MHz from a 10 MHz external SMA ref clock" (rect 168 144 510 163)(font "Intel Clear" (font_size 8)))
 (rectangle (rect 640 120 1392 560))
 (rectangle (rect -720 120 624 560))
-(rectangle (rect -720 576 136 1712))
-(rectangle (rect 152 576 1392 1712))
+(rectangle (rect -720 576 136 1512))
+(rectangle (rect 152 576 1392 1512))
