@@ -21,7 +21,7 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (properties
-	(page_setup "orientation\n1\npaper_size\n0\npaper_source\n6\nmargin\n0.000:0.000:0.000:0.000\n")
+	(page_setup "orientation\n1\npaper_size\n0\npaper_source\n6\nmargin\n0.200:0.000:0.200:0.000\n")
 )
 (pin
 	(input)
@@ -772,7 +772,7 @@ https://fpgasoftware.intel.com/eula.
 	(annotation_block (parameter)(rect 784 152 1010 190))
 )
 (symbol
-	(rect -248 1112 8 1264)
+	(rect -240 1104 16 1256)
 	(text "rambuffer" (rect 102 0 164 16)(font "Arial" (font_size 10)))
 	(text "inst6" (rect 8 136 30 153)(font "Intel Clear" ))
 	(port
@@ -2299,11 +2299,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt -176 456)
 )
 (connector
-	(text "clkswitch" (rect -275 456 -232 473)(font "Intel Clear" ))
-	(pt -304 472)
-	(pt -176 472)
-)
-(connector
 	(pt 320 408)
 	(pt 344 408)
 )
@@ -2473,45 +2468,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "lvdsbitsin[559..0]" (rect -329 1128 -249 1145)(font "Intel Clear" ))
-	(pt -344 1144)
-	(pt -248 1144)
-	(bus)
-)
-(connector
-	(text "ram_wr_address[9..0]" (rect -344 1144 -242 1161)(font "Intel Clear" ))
-	(pt -368 1160)
-	(pt -248 1160)
-	(bus)
-)
-(connector
-	(text "ram_wr" (rect -304 1160 -268 1177)(font "Intel Clear" ))
-	(pt -328 1176)
-	(pt -248 1176)
-)
-(connector
-	(text "ram_rd_address[9..0]" (rect -346 1184 -246 1201)(font "Intel Clear" ))
-	(pt -368 1200)
-	(pt -248 1200)
-	(bus)
-)
-(connector
-	(text "clklvdsout" (rect -303 1208 -254 1225)(font "Intel Clear" ))
-	(pt -328 1224)
-	(pt -248 1224)
-)
-(connector
-	(text "clkout" (rect -303 1224 -274 1241)(font "Intel Clear" ))
-	(pt -328 1240)
-	(pt -248 1240)
-)
-(connector
-	(text "lvdsbitsout[559..0]" (rect 22 1184 109 1201)(font "Intel Clear" ))
-	(pt 8 1200)
-	(pt 120 1200)
-	(bus)
-)
-(connector
 	(text "lvdsEbits[69..0]" (rect 53 1312 124 1329)(font "Intel Clear" ))
 	(pt 32 1328)
 	(pt 128 1328)
@@ -2543,6 +2499,50 @@ https://fpgasoftware.intel.com/eula.
 	(pt -280 1464)
 	(pt -176 1464)
 )
+(connector
+	(text "lvdsbitsout[559..0]" (rect 30 1176 117 1193)(font "Intel Clear" ))
+	(pt 16 1192)
+	(pt 128 1192)
+	(bus)
+)
+(connector
+	(text "lvdsbitsin[559..0]" (rect -321 1120 -241 1137)(font "Intel Clear" ))
+	(pt -360 1136)
+	(pt -240 1136)
+	(bus)
+)
+(connector
+	(text "ram_wr_address[9..0]" (rect -336 1136 -234 1153)(font "Intel Clear" ))
+	(pt -360 1152)
+	(pt -240 1152)
+	(bus)
+)
+(connector
+	(text "ram_wr" (rect -296 1152 -260 1169)(font "Intel Clear" ))
+	(pt -320 1168)
+	(pt -240 1168)
+)
+(connector
+	(text "ram_rd_address[9..0]" (rect -338 1176 -238 1193)(font "Intel Clear" ))
+	(pt -360 1192)
+	(pt -240 1192)
+	(bus)
+)
+(connector
+	(text "clklvdsout" (rect -295 1200 -246 1217)(font "Intel Clear" ))
+	(pt -320 1216)
+	(pt -240 1216)
+)
+(connector
+	(text "clkout" (rect -295 1216 -266 1233)(font "Intel Clear" ))
+	(pt -320 1232)
+	(pt -240 1232)
+)
+(connector
+	(text "clkswitch" (rect -275 456 -232 473)(font "Intel Clear" ))
+	(pt -296 472)
+	(pt -176 472)
+)
 (junction (pt 320 408))
 (junction (pt 320 392))
 (text "Can switch here whether we use sma or lvds" (rect -608 448 -350 467)(font "Intel Clear" (font_size 8)))
@@ -2550,7 +2550,7 @@ https://fpgasoftware.intel.com/eula.
 (text "50 MHz oscillator" (rect -496 320 -394 339)(font "Intel Clear" (font_size 8)))
 (text "Output clocks to ADF4350," (rect 352 456 511 475)(font "Intel Clear" (font_size 8)))
 (text "SMA, and LVDS" (rect 352 472 444 491)(font "Intel Clear" (font_size 8)))
-(text "Buffer where samples are held" (rect -208 1080 -28 1099)(font "Intel Clear" (font_size 8)))
+(text "Buffer where samples are held" (rect -200 1072 -20 1091)(font "Intel Clear" (font_size 8)))
 (text "Extras for early/late bits" (rect -680 1392 -539 1411)(font "Intel Clear" (font_size 8)))
 (text "SPI master" (rect 1176 160 1240 179)(font "Intel Clear" (font_size 8)))
 (text "MUX to select SPI input" (rect 840 408 979 427)(font "Intel Clear" (font_size 8)))
