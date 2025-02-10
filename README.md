@@ -12,6 +12,8 @@
 
 #### Routing image: [haasoscope_pro_adc_fpga_board_routing.png](adc%20board%2Fhaasoscope_pro_adc_fpga_board_routing.png)
 
+#### Firmware overview: [firmware schematic.pdf](adc%20board%20firmware/schematic.pdf)
+
 ### Quick start (Windows/Mac/Linux)
 
 1) Plug Haasoscope Pro into your computer via USB C
