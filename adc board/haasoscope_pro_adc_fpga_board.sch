@@ -27314,7 +27314,7 @@ Source: &lt;a href="https://www.te.com/commerce/DocumentDelivery/DDEController?A
 <part name="Q2" library="Seeed-Transistor" library_urn="urn:adsk.eagle:library:477" deviceset="SMD-MOSFET-P-CH-20V-2A-FDN340P(SOT-23)" device="" package3d_urn="urn:adsk.eagle:package:33015/1" value="FDN340P">
 <attribute name="MPN" value="P-MOS AO3401A"/>
 </part>
-<part name="R237" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
+<part name="R237" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R238" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="1k"/>
 <part name="R239" library="FlashPCB_Resistors" deviceset="RES-0402" device="" value="10k"/>
 <part name="R240" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="120"/>
@@ -38208,7 +38208,7 @@ If 12VConnected is low (0V), then switch is on</text>
 </instance>
 <instance part="R237" gate="G$1" x="124.46" y="160.02" smashed="yes" rot="R90">
 <attribute name="NAME" x="122.9614" y="156.21" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="127.762" y="156.21" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="127.762" y="158.75" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="Q2" gate="G$1" x="228.6" y="175.26" smashed="yes" rot="R90">
 <attribute name="NAME" x="227.33" y="180.34" size="1.778" layer="95" ratio="10" rot="MR180"/>
