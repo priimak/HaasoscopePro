@@ -927,7 +927,7 @@
        <widget class="QSpinBox" name="chanBox">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>50</x>
           <y>31</y>
           <width>51</width>
           <height>21</height>
@@ -957,7 +957,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Channel</string>
+         <string>Chan</string>
         </property>
        </widget>
        <widget class="QCheckBox" name="acdcCheck">
@@ -1104,7 +1104,7 @@
        <widget class="QSpinBox" name="offsetBox">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>50</x>
           <y>55</y>
           <width>51</width>
           <height>20</height>
@@ -1146,7 +1146,7 @@
        <widget class="QSpinBox" name="gainBox">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>50</x>
           <y>78</y>
           <width>51</width>
           <height>20</height>
@@ -1197,7 +1197,7 @@
        <widget class="QSpinBox" name="boardBox">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>50</x>
           <y>7</y>
           <width>51</width>
           <height>21</height>
@@ -1260,9 +1260,9 @@
        <widget class="QTextBrowser" name="chanColor">
         <property name="geometry">
          <rect>
-          <x>118</x>
-          <y>7</y>
-          <width>31</width>
+          <x>107</x>
+          <y>8</y>
+          <width>30</width>
           <height>41</height>
          </rect>
         </property>
@@ -1339,9 +1339,9 @@
        <widget class="QLineEdit" name="VperD">
         <property name="geometry">
          <rect>
-          <x>117</x>
+          <x>107</x>
           <y>78</y>
-          <width>61</width>
+          <width>71</width>
           <height>20</height>
          </rect>
         </property>
@@ -1367,9 +1367,9 @@
        <widget class="QLineEdit" name="Voff">
         <property name="geometry">
          <rect>
-          <x>117</x>
+          <x>107</x>
           <y>53</y>
-          <width>61</width>
+          <width>71</width>
           <height>20</height>
          </rect>
         </property>

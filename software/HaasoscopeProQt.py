@@ -348,6 +348,7 @@ class MainWindow(TemplateBaseClass):
             self.ui.twochanCheck.setEnabled(True)
         self.changegain()
         self.changeoffset()
+        self.doleds()
 
     def interleave(self):
         self.dointerleaved = self.ui.interleavedCheck.checkState() == QtCore.Qt.Checked
@@ -360,6 +361,7 @@ class MainWindow(TemplateBaseClass):
             self.ui.boardBox.setMaximum(self.num_board-1)
         self.selectchannel()
         self.timechanged()
+        self.doleds()
 
     def dophase(self, board, plloutnum, updown, pllnum=None, quiet=False):
         # for 3rd byte, 000:all 001:M 010=2:C0 011=3:C1 100=4:C2 101=5:C3 110=6:C4
@@ -1075,6 +1077,7 @@ class MainWindow(TemplateBaseClass):
     def doleds(self):
         if self.num_board==1:
             for board in range(self.num_board):
+                # board==0
                 r1 = 0x0f
                 g1 = 0x00
                 b1 = 0x00
@@ -1092,33 +1095,57 @@ class MainWindow(TemplateBaseClass):
                 send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
         elif self.num_board==2:
             for board in range(self.num_board):
+                # board==0
                 r1 = 0x0f
                 g1 = 0x00
                 b1 = 0x00
                 r2 = 0x00
                 g2 = 0x00
                 b2 = 0x00
-                if board==2:
+                if board==1:
                     r1 = 0x00
-                    g1 = 0x0f
-                    b1 = 0x00
+                    g1 = 0x00
+                    b1 = 0x0f
                     r2 = 0x00
                     g2 = 0x00
                     b2 = 0x00
                 if self.dotwochannel:
+                    # board==0
                     r1 = 0x0f
                     g1 = 0x00
                     b1 = 0x00
                     r2 = 0x00
                     g2 = 0x0f
                     b2 = 0x00
-                    if board==2:
+                    if board==1:
                         r1 = 0x00
                         g1 = 0x00
                         b1 = 0x0f
                         r2 = 0x0f
                         g2 = 0x00
                         b2 = 0x0f
+                if self.dooversample:
+                    # board==0
+                    r1 = 0x00
+                    g1 = 0x00
+                    b1 = 0x00
+                    r2 = 0x0f
+                    g2 = 0x00
+                    b2 = 0x00
+                    if board == 1:
+                        r1 = 0x00
+                        g1 = 0x00
+                        b1 = 0x00
+                        r2 = 0x00
+                        g2 = 0x00
+                        b2 = 0x0f
+                        if self.dointerleaved:
+                            r1 = 0x00
+                            g1 = 0x00
+                            b1 = 0x00
+                            r2 = 0x0f
+                            g2 = 0x0f
+                            b2 = 0x0f
                 send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
                 send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
         else:
