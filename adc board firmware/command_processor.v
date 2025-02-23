@@ -690,8 +690,8 @@ always @ (posedge clk or negedge rstn)
 	BOOTUP : begin // runs once at startup
 		didbootup <= 1'b1;
 		
-		neo_color[0] <= 24'h000009; // B R G
-		neo_color[1] <= 24'h000900;
+		neo_color[0] <= 24'h0f0f0f; // B R G
+		neo_color[1] <= 24'h0f0f0f;
 		send_color <= 1'b1;
 		
 		rx_data[0]<=8'd3;//SPI command

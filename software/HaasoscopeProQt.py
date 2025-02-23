@@ -241,6 +241,7 @@ class MainWindow(TemplateBaseClass):
     def twochan(self):
         self.dotwochannel = self.ui.twochanCheck.checkState() == QtCore.Qt.Checked
         self.setupchannels()
+        self.doleds()
         for usb in usbs: setupboard(usb,self.dopattern,self.dotwochannel,self.dooverrange)
         for usb in usbs: self.telldownsample(usb, self.downsample)
         self.timechanged()
@@ -1063,12 +1064,65 @@ class MainWindow(TemplateBaseClass):
         self.tot()
         self.setupchannels()
         self.launch()
+        self.doleds()
         self.rolling()
         self.selectchannel()
         self.timechanged()
         self.use_ext_trigs()
         self.dostartstop()
         return 1
+
+    def doleds(self):
+        if self.num_board==1:
+            for board in range(self.num_board):
+                r1 = 0x0f
+                g1 = 0x00
+                b1 = 0x00
+                r2 = 0x00
+                g2 = 0x00
+                b2 = 0x00
+                if self.dotwochannel:
+                    r1 = 0x0f
+                    g1 = 0x00
+                    b1 = 0x00
+                    r2 = 0x00
+                    g2 = 0x0f
+                    b2 = 0x00
+                send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
+                send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
+        elif self.num_board==2:
+            for board in range(self.num_board):
+                r1 = 0x0f
+                g1 = 0x00
+                b1 = 0x00
+                r2 = 0x00
+                g2 = 0x00
+                b2 = 0x00
+                if board==2:
+                    r1 = 0x00
+                    g1 = 0x0f
+                    b1 = 0x00
+                    r2 = 0x00
+                    g2 = 0x00
+                    b2 = 0x00
+                if self.dotwochannel:
+                    r1 = 0x0f
+                    g1 = 0x00
+                    b1 = 0x00
+                    r2 = 0x00
+                    g2 = 0x0f
+                    b2 = 0x00
+                    if board==2:
+                        r1 = 0x00
+                        g1 = 0x00
+                        b1 = 0x0f
+                        r2 = 0x0f
+                        g2 = 0x00
+                        b2 = 0x0f
+                send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
+                send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
+        else:
+            print("Don't know how to set lights for",self.num_board,"boards yet!")
 
     def setupchannels(self):
         if self.dooverlapped:
@@ -1100,14 +1154,6 @@ class MainWindow(TemplateBaseClass):
                 self.lines.append(line)
                 self.linepens.append(pen)
                 chan += 1
-
-            r1 = 0
-            g1 = 0x80
-            b1 = 0
-            r2 = 0x80
-            g2 = 0
-            b2 = 0
-            send_leds(usbs[board], r1, g1, b1, r2, g2, b2)
 
         for c in range(self.num_board*self.num_chan_per_board):
             if c%2==1:
