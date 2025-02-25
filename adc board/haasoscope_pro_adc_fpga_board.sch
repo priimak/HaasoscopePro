@@ -27463,6 +27463,10 @@ Source: &lt;a href="https://www.te.com/commerce/DocumentDelivery/DDEController?A
 <part name="SUPPLY112" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="U4" library="725996-2" deviceset="725996-2" device=""/>
 <part name="U5" library="725996-2" deviceset="725996-2" device=""/>
+<part name="C101" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
+<part name="C102" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF"/>
+<part name="SUPPLY88" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY90" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -34930,7 +34934,7 @@ the vias under the FPGA for each LVDS input pair</text>
 <text x="231.14" y="76.2" size="1.778" layer="90">Flash for FPGA programming</text>
 <text x="208.28" y="-5.08" size="2.54" layer="90">Other FPGA IO</text>
 <text x="-96.52" y="83.82" size="1.778" layer="90">5V signal, divide to 2.5V out for FPGA</text>
-<text x="-104.14" y="172.72" size="1.778" layer="90">Light pipes</text>
+<text x="-106.68" y="185.42" size="1.778" layer="90">Light pipes</text>
 </plain>
 <instances>
 <instance part="C59" gate="C$1" x="-91.44" y="-10.16" smashed="yes" rot="R180">
@@ -35432,16 +35436,16 @@ the vias under the FPGA for each LVDS input pair</text>
 <attribute name="VALUE" x="-72.39" y="59.69" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="SUPPLY106" gate="GND" x="-71.12" y="53.34" smashed="yes" rot="MR0"/>
-<instance part="H1" gate="G$1" x="-104.14" y="167.64" smashed="yes">
-<attribute name="NAME" x="-87.63" y="167.64" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="-87.63" y="165.1" size="1.778" layer="96" align="center-left"/>
+<instance part="H1" gate="G$1" x="-106.68" y="180.34" smashed="yes">
+<attribute name="NAME" x="-90.17" y="180.34" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="-90.17" y="177.8" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="H2" gate="G$1" x="-104.14" y="157.48" smashed="yes">
-<attribute name="NAME" x="-87.63" y="157.48" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="-87.63" y="154.94" size="1.778" layer="96" align="center-left"/>
+<instance part="H2" gate="G$1" x="-106.68" y="170.18" smashed="yes">
+<attribute name="NAME" x="-90.17" y="170.18" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="-90.17" y="167.64" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="SUPPLY110" gate="GND" x="-104.14" y="162.56" smashed="yes" rot="MR0"/>
-<instance part="SUPPLY111" gate="GND" x="-104.14" y="152.4" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY110" gate="GND" x="-106.68" y="175.26" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY111" gate="GND" x="-106.68" y="165.1" smashed="yes" rot="MR0"/>
 <instance part="U1" gate="G$1" x="-76.2" y="127" smashed="yes">
 <attribute name="NAME" x="-86.36" y="134.62" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-86.36" y="116.84" size="1.778" layer="96"/>
@@ -35460,6 +35464,16 @@ the vias under the FPGA for each LVDS input pair</text>
 <attribute name="NAME" x="100.33" y="144.78" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="100.33" y="142.24" size="1.778" layer="96" align="center-left"/>
 </instance>
+<instance part="C101" gate="C$1" x="-48.26" y="144.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="-49.784" y="149.479" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-49.784" y="146.939" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C102" gate="C$1" x="-33.02" y="144.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="-34.544" y="149.479" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-34.544" y="146.939" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SUPPLY88" gate="GND" x="-48.26" y="139.7" smashed="yes" rot="MR0"/>
+<instance part="SUPPLY90" gate="GND" x="-33.02" y="139.7" smashed="yes" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -35632,15 +35646,15 @@ the vias under the FPGA for each LVDS input pair</text>
 <pinref part="H1" gate="G$1" pin="2"/>
 <pinref part="SUPPLY110" gate="GND" pin="GND"/>
 <pinref part="H1" gate="G$1" pin="1"/>
-<wire x1="-104.14" y1="165.1" x2="-104.14" y2="167.64" width="0.1524" layer="91"/>
-<junction x="-104.14" y="165.1"/>
+<wire x1="-106.68" y1="177.8" x2="-106.68" y2="180.34" width="0.1524" layer="91"/>
+<junction x="-106.68" y="177.8"/>
 </segment>
 <segment>
 <pinref part="H2" gate="G$1" pin="2"/>
 <pinref part="SUPPLY111" gate="GND" pin="GND"/>
 <pinref part="H2" gate="G$1" pin="1"/>
-<wire x1="-104.14" y1="154.94" x2="-104.14" y2="157.48" width="0.1524" layer="91"/>
-<junction x="-104.14" y="154.94"/>
+<wire x1="-106.68" y1="167.64" x2="-106.68" y2="170.18" width="0.1524" layer="91"/>
+<junction x="-106.68" y="167.64"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
@@ -35656,6 +35670,14 @@ the vias under the FPGA for each LVDS input pair</text>
 <pinref part="U5" gate="G$1" pin="1"/>
 <wire x1="83.82" y1="144.78" x2="83.82" y2="142.24" width="0.1524" layer="91"/>
 <junction x="83.82" y="142.24"/>
+</segment>
+<segment>
+<pinref part="C101" gate="C$1" pin="1"/>
+<pinref part="SUPPLY88" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C102" gate="C$1" pin="1"/>
+<pinref part="SUPPLY90" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -36350,14 +36372,20 @@ the vias under the FPGA for each LVDS input pair</text>
 </net>
 <net name="5V" class="1">
 <segment>
-<wire x1="-25.4" y1="142.24" x2="-60.96" y2="142.24" width="0.1524" layer="91"/>
-<label x="-68.58" y="142.24" size="1.778" layer="95"/>
+<wire x1="-25.4" y1="149.86" x2="-33.02" y2="149.86" width="0.1524" layer="91"/>
+<label x="-68.58" y="149.86" size="1.778" layer="95"/>
 <pinref part="U3" gate="G$1" pin="VDD"/>
-<wire x1="-25.4" y1="142.24" x2="-25.4" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="149.86" x2="-48.26" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="149.86" x2="-60.96" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="149.86" x2="-25.4" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="VDD"/>
-<wire x1="-60.96" y1="132.08" x2="-60.96" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="-60.96" y1="142.24" x2="-68.58" y2="142.24" width="0.1524" layer="91"/>
-<junction x="-60.96" y="142.24"/>
+<wire x1="-60.96" y1="132.08" x2="-60.96" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="149.86" x2="-68.58" y2="149.86" width="0.1524" layer="91"/>
+<junction x="-60.96" y="149.86"/>
+<pinref part="C101" gate="C$1" pin="2"/>
+<junction x="-48.26" y="149.86"/>
+<pinref part="C102" gate="C$1" pin="2"/>
+<junction x="-33.02" y="149.86"/>
 </segment>
 </net>
 <net name="RESET_IN" class="0">
