@@ -261,7 +261,7 @@ class MainWindow(TemplateBaseClass):
         if dooffset(self.activeusb, self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample):
             if self.dooversample and self.ui.boardBox.value()%2==0: # also adjust other board we're oversampling with
                 dooffset(usbs[self.ui.boardBox.value()+1], self.selectedchannel, self.ui.offsetBox.value(),scaling/self.tenx,self.dooversample)
-            v2 = scaling*1.0*self.ui.offsetBox.value()
+            v2 = scaling*1.5*self.ui.offsetBox.value()
             if self.dooversample: v2 *= 2.0
             self.ui.Voff.setText(str(int(v2))+" mV")
 
