@@ -22,9 +22,8 @@
 
 ### Tips
 
-- If not enough power is supplied, or issues happen later during readout, use a USB A to C cable
-- If still not enough power is supplied, plug in the external 12V power adapter
-- If board not found on Linux, try: <code>sudo rmmod usbserial ftdi_sio</code>
+- If not enough power is supplied or issues happen during readout, plug in via a powered USB hub or use a 12V power adapter
+- If the board is not found on Linux, try: <code>sudo rmmod usbserial ftdi_sio</code>
 
 ### Fuller way of running
 
@@ -55,3 +54,11 @@
 ### 2 GHz Active Probe
 
 All designs for the accompanying active probe are in a separate [repository](https://github.com/drandyhaas/oshw-active-probe)
+
+### Editing the GUI
+
+The Haasoscope Pro GUI can be edited using [Qt Designer](https://www.pythonguis.com/installation/install-qt-designer-standalone/), started with:
+<br><code>pip install pyqt5-tools</code>
+<br><code>pyqt5-tools designer</code>
+<br>Then open software/HaasoscopePro.ui or HaasoscopeProFFT.ui etc.
+
