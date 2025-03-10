@@ -10,7 +10,7 @@ If you've made changes to the code, recompile
 
 To upload firmware to board:
  - Attach power to board
- - Attach USB Blaster to board via JTAG
+ - Attach USB Blaster to board via JTAG (to set up the usb blaster [these hints](https://docs.google.com/document/d/1CwERi99UN8asUvkfyjQFWtYEEusfU2QxoBewEEcmuAA/edit?usp=drivesdk) may help)
  - Tools... Programmer
    - Hardware Setup... select USB blaster by double clicking, then close
    - (If you need permanent writing to the board flash, and have recompiled, remake the jic file by doing File... Convert Programming Files, then Open Conversion Setup Data..., select **adc_board_firmware/coincidence.cof**, then Generate button at bottom)
