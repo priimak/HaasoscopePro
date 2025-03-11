@@ -261,9 +261,9 @@ GND</text>
 <text x="208.228" y="43.211" size="0.8128" layer="21">LVDS IN</text>
 <text x="149.388" y="154.305" size="0.8128" layer="21" rot="R180">3.3V</text>
 <text x="148.888" y="106.305" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.26
+<text x="20.5" y="4.5" size="1.27" layer="21">Haasoscope Pro, v1.27
 by DrAndyHaas
-January 2025</text>
+March 2025</text>
 <wire x1="65" y1="50" x2="105" y2="50" width="0.1524" layer="21"/>
 <wire x1="105" y1="50" x2="105" y2="10" width="0.1524" layer="21"/>
 <wire x1="105" y1="10" x2="65" y2="10" width="0.1524" layer="21"/>
@@ -10350,7 +10350,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="C124" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="152.1395" y="70.447" smashed="yes" rot="R90"/>
 <element name="C125" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="0.1uF" x="152.0995" y="67.553" smashed="yes" rot="R270"/>
 <element name="FB2" library="SparkFun-Coils" library_urn="urn:adsk.eagle:library:512" package="0603" package3d_urn="urn:adsk.eagle:package:37574/1" value="50mΩ 220Ω@100MHz 0603" x="207.4545" y="82.8915" smashed="yes" rot="R180">
-<attribute name="LCSC" value="C710364" x="207.4545" y="82.8915" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C14709" x="207.4545" y="82.8915" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="PROD_ID" value="NDUC-07859" x="207.4545" y="82.8915" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="207.4445" y="81.0735" size="0.8128" layer="21" rot="R180" align="top-center"/>
 </element>
@@ -11803,6 +11803,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="C105" library="MF_Passives" package="C0402" value="1.0pF" x="14.3" y="33.9" smashed="yes" rot="R180">
 <attribute name="DIELECTRIC" value="" x="14.3" y="33.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="14.3" y="33.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C72134" x="14.3" y="33.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="14.3" y="33.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="12.6" y="34.4" size="0.8128" layer="21" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="14.3" y="33.9" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11811,16 +11812,19 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VOLTAGE" value="" x="14.3" y="33.9" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="L4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH" x="14.8" y="31.9" smashed="yes" rot="R270">
+<attribute name="LCSC" value="C162542" x="14.8" y="31.9" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="13" y="32.6" size="0.8128" layer="21" rot="R270"/>
 <attribute name="VALUE" x="15.8" y="33.5" size="0.8128" layer="21" rot="R270"/>
 </element>
 <element name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH" x="14.9" y="27.9" smashed="yes" rot="R270">
+<attribute name="LCSC" value="C162542" x="14.9" y="27.9" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="13.1" y="28.7" size="0.8128" layer="21" rot="R270"/>
 <attribute name="VALUE" x="15.8" y="29.6" size="0.8128" layer="21" rot="R270"/>
 </element>
-<element name="C106" library="MF_Passives" package="C0402" value="0.75pF" x="14.3" y="29.9" smashed="yes" rot="R180">
+<element name="C106" library="MF_Passives" package="C0402" value="1.3pF" x="14.3" y="29.9" smashed="yes" rot="R180">
 <attribute name="DIELECTRIC" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C88880" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="12.6" y="30.4" size="0.8128" layer="21" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11828,9 +11832,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="URL" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VOLTAGE" value="" x="14.3" y="29.9" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C136" library="MF_Passives" package="C0402" value="0.5pF" x="14.3" y="25.9" smashed="yes" rot="R180">
+<element name="C136" library="MF_Passives" package="C0402" value="0.75pF" x="14.3" y="25.9" smashed="yes" rot="R180">
 <attribute name="DIELECTRIC" value="" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HOUSEPART" value="" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LCSC" value="C76914" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="12.6" y="26.3" size="0.8128" layer="21" font="vector" rot="R180"/>
 <attribute name="POPULATE" value="1" x="14.3" y="25.9" size="1.778" layer="27" rot="R180" display="off"/>
@@ -11869,10 +11874,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VOLTAGE" value="" x="48.1" y="26.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="L8" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH" x="50.1" y="27.3" smashed="yes">
+<attribute name="LCSC" value="C521066" x="50.1" y="27.3" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="49.4" y="25.5" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="48.5" y="28.3" size="0.8128" layer="21"/>
 </element>
 <element name="L15" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH" x="54.1" y="27.4" smashed="yes">
+<attribute name="LCSC" value="C521066" x="54.1" y="27.4" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="53.3" y="25.6" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="52.4" y="28.3" size="0.8128" layer="21"/>
 </element>
@@ -11927,10 +11934,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VOLTAGE" value="" x="38.6" y="144.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="L16" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH" x="40.6" y="145.3" smashed="yes">
+<attribute name="LCSC" value="C77110" x="40.6" y="145.3" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="39.9" y="143.5" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="38.86" y="146.34" size="0.8128" layer="21"/>
 </element>
 <element name="L17" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH" x="44.6" y="145.4" smashed="yes">
+<attribute name="LCSC" value="C77110" x="44.6" y="145.4" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="43.8" y="143.6" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="43.08" y="146.34" size="0.8128" layer="21"/>
 </element>
@@ -11985,10 +11994,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VOLTAGE" value="" x="38.6" y="124.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="L18" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH" x="40.6" y="125.3" smashed="yes">
+<attribute name="LCSC" value="C521066" x="40.6" y="125.3" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="39.9" y="123.5" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="39" y="126.3" size="0.8128" layer="21"/>
 </element>
 <element name="L19" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH" x="44.6" y="125.4" smashed="yes">
+<attribute name="LCSC" value="C521066" x="44.6" y="125.4" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="43.8" y="123.6" size="0.8128" layer="21"/>
 <attribute name="VALUE" x="42.9" y="126.3" size="0.8128" layer="21"/>
 </element>

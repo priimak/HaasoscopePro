@@ -27341,10 +27341,14 @@ Source: &lt;a href="https://www.te.com/commerce/DocumentDelivery/DDEController?A
 <part name="SUPPLY76" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY77" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C105" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.0pF"/>
-<part name="L4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH"/>
-<part name="C106" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.75pF"/>
-<part name="C136" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.5pF"/>
+<part name="L4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH">
+<attribute name="LCSC" value="C162542"/>
+</part>
+<part name="L7" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="3.3nH">
+<attribute name="LCSC" value="C162542"/>
+</part>
+<part name="C106" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1.3pF"/>
+<part name="C136" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.75pF"/>
 <part name="C137" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
 <part name="R247" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="0"/>
 <part name="SUPPLY78" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -27352,8 +27356,12 @@ Source: &lt;a href="https://www.te.com/commerce/DocumentDelivery/DDEController?A
 <part name="SUPPLY80" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C138" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
-<part name="L8" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
-<part name="L15" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
+<part name="L8" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH">
+<attribute name="LCSC" value="C521066"/>
+</part>
+<part name="L15" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH">
+<attribute name="LCSC" value="C521066"/>
+</part>
 <part name="C139" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF"/>
 <part name="C140" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="6.8pF"/>
 <part name="C141" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
@@ -27363,8 +27371,12 @@ Source: &lt;a href="https://www.te.com/commerce/DocumentDelivery/DDEController?A
 <part name="SUPPLY96" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY97" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C153" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.0pF"/>
-<part name="L16" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH"/>
-<part name="L17" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH"/>
+<part name="L16" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH">
+<attribute name="LCSC" value="C77110"/>
+</part>
+<part name="L17" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="6.8nH">
+<attribute name="LCSC" value="C77110"/>
+</part>
 <part name="C158" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="3.9pF"/>
 <part name="C159" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="2.4pF"/>
 <part name="C160" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
@@ -27374,8 +27386,12 @@ Source: &lt;a href="https://www.te.com/commerce/DocumentDelivery/DDEController?A
 <part name="SUPPLY98" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY100" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C161" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="7.5pF"/>
-<part name="L18" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
-<part name="L19" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH"/>
+<part name="L18" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH">
+<attribute name="LCSC" value="C521066"/>
+</part>
+<part name="L19" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="INDUCTOR" device="_0402_N" package3d_urn="urn:adsk.eagle:package:2593732/1" value="15nH">
+<attribute name="LCSC" value="C521066"/>
+</part>
 <part name="C162" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="11pF"/>
 <part name="C163" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="6.8pF"/>
 <part name="C164" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="?0?"/>
@@ -27650,10 +27666,12 @@ to account for losses in connectors and extra PCB traces</text>
 <instance part="L4" gate="L$1" x="-71.12" y="223.52" smashed="yes" rot="R90">
 <attribute name="NAME" x="-68.58" y="222.25" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-68.58" y="227.33" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="-71.12" y="223.52" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="L7" gate="L$1" x="-55.88" y="223.52" smashed="yes" rot="R90">
 <attribute name="NAME" x="-53.34" y="222.25" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-53.34" y="227.33" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="-55.88" y="223.52" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C106" gate="G$1" x="-63.5" y="215.9" smashed="yes">
 <attribute name="NAME" x="-59.436" y="218.44" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
@@ -27686,10 +27704,12 @@ to account for losses in connectors and extra PCB traces</text>
 <instance part="L8" gate="L$1" x="172.72" y="226.06" smashed="yes" rot="R90">
 <attribute name="NAME" x="175.26" y="224.79" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="175.26" y="229.87" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="172.72" y="226.06" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="L15" gate="L$1" x="187.96" y="226.06" smashed="yes" rot="R90">
 <attribute name="NAME" x="190.5" y="224.79" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="190.5" y="229.87" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="187.96" y="226.06" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C139" gate="G$1" x="180.34" y="218.44" smashed="yes">
 <attribute name="NAME" x="184.404" y="220.98" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
@@ -29378,10 +29398,12 @@ See comments on sheet 1 for details</text>
 <instance part="L16" gate="L$1" x="170.18" y="180.34" smashed="yes" rot="R90">
 <attribute name="NAME" x="172.72" y="179.07" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="172.72" y="184.15" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="170.18" y="180.34" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="L17" gate="L$1" x="185.42" y="180.34" smashed="yes" rot="R90">
 <attribute name="NAME" x="187.96" y="179.07" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="187.96" y="184.15" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="185.42" y="180.34" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C158" gate="G$1" x="177.8" y="172.72" smashed="yes">
 <attribute name="NAME" x="181.864" y="175.26" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
@@ -29414,10 +29436,12 @@ See comments on sheet 1 for details</text>
 <instance part="L18" gate="L$1" x="170.18" y="88.9" smashed="yes" rot="R90">
 <attribute name="NAME" x="172.72" y="87.63" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="172.72" y="92.71" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="170.18" y="88.9" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="L19" gate="L$1" x="185.42" y="88.9" smashed="yes" rot="R90">
 <attribute name="NAME" x="187.96" y="87.63" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="187.96" y="92.71" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="185.42" y="88.9" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C162" gate="G$1" x="177.8" y="81.28" smashed="yes">
 <attribute name="NAME" x="181.864" y="83.82" size="1.778" layer="95" font="vector" rot="R270" align="top-left"/>
