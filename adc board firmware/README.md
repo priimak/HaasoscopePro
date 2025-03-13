@@ -18,6 +18,9 @@ To upload firmware to board:
    - Select checkbox Program/Configure
    - Start
 
+Tips in case of problems:
+ - Maybe the USB-blaster must first be powered from the board and then connected to the PC. So the procedure step by step: connect the USB-Blaster to your board, power-on the board, plug the USB cable in the PC.
+
 Screenshots for temporary (sof) or permanent flash (jic) programming:
 
 ![Screenshot 2025-03-10 155821](https://github.com/user-attachments/assets/a48c5c72-e71a-4d7f-8bfe-ed48cdbfaf09)
