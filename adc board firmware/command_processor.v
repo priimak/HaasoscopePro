@@ -1000,11 +1000,11 @@ reg [23:0] neo_color[neo_led_num_max];
 reg clk_over_4 = 0;
 reg clk_over_4_counter = 0;
 
-always@(posedge clk50) begin // Make 12.5 MHz clock
+always @ (posedge clk50) begin // Make 12.5 MHz clock
 	if (clk_over_4_counter) clk_over_4 <= ~clk_over_4;
 	clk_over_4_counter <= clk_over_4_counter + 1'b1;
 end
-always@(posedge clk_over_4) begin // Process the state machine at each 12.5 MHz clock edge
+always @ (posedge clk_over_4) begin // Process the state machine at each 12.5 MHz clock edge
 	// Process the state machine; states 0-3 are the four WS2812B 'ticks',
 	// each consisting of 80 * 4 = 320 nanoseconds. Four of those
 	// periods are then 1280 nanoseconds long, and we can get close to
