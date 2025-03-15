@@ -220,10 +220,10 @@ always @ (posedge clklvds or negedge rstn) begin
                         end
 
                         if (downsamplecounter[downsample_sync] && downsamplemergingcounter==downsamplemerging_sync)
-                            tot_counter <= tot_counter+8'd1;
+                            tot_counter <= tot_counter + 8'd1;
 
                         if (tot_counter>=triggerToT_sync && (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) ) begin
-                            ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
+                            ram_address_triggered <= ram_wr_address - triggerToT_sync; // remember where the trigger happened
                             lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
                             lvdsout_trig_b <= 1'b1; // and backwards
                             acqstate <= 8'd250;
@@ -273,14 +273,14 @@ always @ (posedge clklvds or negedge rstn) begin
             if (triggertype_sync!=3) acqstate <= 0;
             else begin
                 if (lvdsin_trig) begin
-                    ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
+                    ram_address_triggered <= ram_wr_address - triggerToT_sync; // remember where the trigger happened
                     lvdsout_trig <= 1'b1; // tell the others forwards
                     sample_triggered <= 0; // not used, since we didn't measure the trigger edge - will take it from the board that caused the trigger
                     downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that we were on when we got this trigger
                     acqstate <= 8'd250;
                 end
                 if (lvdsin_trig_b) begin
-                    ram_address_triggered <= ram_wr_address-triggerToT_sync; // remember where the trigger happened
+                    ram_address_triggered <= ram_wr_address - triggerToT_sync; // remember where the trigger happened
                     lvdsout_trig_b <= 1'b1; // tell the others backwards
                     sample_triggered <= 0; // not used, since we didn't measure the trigger edge - will take it from the board that caused the trigger
                     downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that we were on when we got this trigger
@@ -349,7 +349,7 @@ always @ (posedge clk) begin
 	if (overrange[3]) overrange_counter[3] <= overrange_counter[3] + 1;
 end
 
-always @ (posedge clk or negedge rstn)
+always @ (posedge clk or negedge rstn) begin
     if (~rstn) begin
         didbootup <= 1'b0;
         state  <= INIT;
@@ -705,6 +705,7 @@ always @ (posedge clk or negedge rstn)
 
         endcase
     end
+end
 
 // this is all for downsample merging, since 40 samples come in each clklvds tick 
 integer i, j;
