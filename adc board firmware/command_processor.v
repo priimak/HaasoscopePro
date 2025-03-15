@@ -137,7 +137,6 @@ always @ (posedge clklvds or negedge rstn) begin
 			downsamplemergingcounter <= 1;
 		end
 		else begin // always writing while waiting for a trigger, to see what happened before
-			ram_wr <= 1'b0;
 			if (downsamplecounter[downsample_sync]) begin
 				downsamplecounter <= 1;
 				if (downsamplemergingcounter==downsamplemerging_sync) begin
@@ -145,9 +144,15 @@ always @ (posedge clklvds or negedge rstn) begin
 					ram_wr_address <= ram_wr_address + 10'd1;
 					ram_wr <= 1'b1;
 				end
-				else downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
+				else begin
+				    downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
+				    ram_wr <= 1'b0;
+				end
 			end
-			else downsamplecounter <= downsamplecounter  +1;
+			else begin
+			    downsamplecounter <= downsamplecounter  +1;
+			    ram_wr <= 1'b0;
+			end
 		end
 		
 		// rolling trigger
@@ -200,11 +205,17 @@ always @ (posedge clklvds or negedge rstn) begin
 			if (triggertype_sync!=1) acqstate <= 0;
 			else begin
 				for (i=0;i<10;i=i+1) begin
-					if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) acqstate <= 8'd2;
-					if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
-						sample_triggered[9-i] <= 1'b1; // remember the samples that caused the trigger
-					end
-					else sample_triggered[9-i] <= 1'b0;
+					if (
+					    (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) ||
+					    (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync)
+					) acqstate <= 8'd2;
+					if (
+					    (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) ||
+					    (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync)
+					)
+					    sample_triggered[9-i] <= 1'b1; // remember the samples that caused the trigger
+					else
+					    sample_triggered[9-i] <= 1'b0;
 				end
 			end
 		end
@@ -213,7 +224,10 @@ always @ (posedge clklvds or negedge rstn) begin
 			if (triggertype_sync!=1) acqstate <= 0;
 			else begin
                 for (i=0;i<10;i=i+1) begin
-                    if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) begin
+                    if (
+                        (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) ||
+                        (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync)
+                    ) begin
                         if (downsamplemergingcounter_triggered == -8'd1) begin // just the first time
                             sample_triggered[10+9-i] <= 1'b1; // remember the samples that caused the trigger
                             downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
@@ -222,7 +236,9 @@ always @ (posedge clklvds or negedge rstn) begin
                         if (downsamplecounter[downsample_sync] && downsamplemergingcounter==downsamplemerging_sync)
                             tot_counter <= tot_counter + 8'd1;
 
-                        if (tot_counter>=triggerToT_sync && (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) ) begin
+                        if (tot_counter>=triggerToT_sync &&
+                            (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) )
+                        begin
                             ram_address_triggered <= ram_wr_address - triggerToT_sync; // remember where the trigger happened
                             lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
                             lvdsout_trig_b <= 1'b1; // and backwards
@@ -238,11 +254,19 @@ always @ (posedge clklvds or negedge rstn) begin
             if (triggertype_sync!=2) acqstate <= 0;
             else begin
                 for (i=0;i<10;i=i+1) begin
-                    if ( (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync) ) acqstate <= 8'd4;
-                    if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
+                    if (
+                        (triggerchan_sync==1'b0 && samplevalue[i]>upperthresh_sync) ||
+                        (triggerchan_sync==1'b1 && samplevalue[10+i]>upperthresh_sync)
+                    )
+                        acqstate <= 8'd4;
+
+                    if (
+                        (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) ||
+                        (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync)
+                    )
                         sample_triggered[9-i] <= 1'b1; // remember the samples that caused the trigger
-                    end
-                    else sample_triggered[9-i] <= 1'b0;
+                    else
+                        sample_triggered[9-i] <= 1'b0;
                 end
             end
 		end
@@ -250,15 +274,22 @@ always @ (posedge clklvds or negedge rstn) begin
             if (triggertype_sync!=2) acqstate <= 0;
             else begin
                 for (i=0;i<10;i=i+1) begin
-                    if ( (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) || (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync) ) begin
+                    if (
+                        (triggerchan_sync==1'b0 && samplevalue[i]<lowerthresh_sync) ||
+                        (triggerchan_sync==1'b1 && samplevalue[10+i]<lowerthresh_sync)
+                    ) begin
                         if (downsamplemergingcounter_triggered == -8'd1) begin // just the first time
                             sample_triggered[10+9-i] <= 1'b1; // remember the samples that caused the trigger
                             downsamplemergingcounter_triggered <= downsamplemergingcounter; // remember the downsample that caused this trigger
                         end
+
                         if (downsamplecounter[downsample_sync] && downsamplemergingcounter==downsamplemerging_sync) begin
                             tot_counter <= tot_counter + 8'd1;
                         end
-                        if (tot_counter>=triggerToT_sync && (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) ) begin
+
+                        if (tot_counter>=triggerToT_sync &&
+                            (triggerToT_sync==0 || downsamplemergingcounter==downsamplemergingcounter_triggered) )
+                        begin
                             ram_address_triggered <= ram_wr_address - triggerToT_sync; // remember where the trigger happened
                             lvdsout_trig <= 1'b1; // tell the others, important to do this on the right downsamplemergingcounter
                             lvdsout_trig_b <= 1'b1; // and backwards
@@ -320,7 +351,9 @@ end
 	 
 
 //variables in clk domain, reading out of the RAM buffer
-localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=4'd4, TX_DATA2=4'd5, TX_DATA3=4'd6, TX_DATA4=4'd7, PLLCLOCK=4'd8, BOOTUP=4'd9;
+localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=4'd4, TX_DATA2=4'd5, TX_DATA3=4'd6;
+localparam [3:0] TX_DATA4=4'd7, PLLCLOCK=4'd8, BOOTUP=4'd9;
+
 reg [ 3:0]	state = INIT;
 reg			didbootup = 0;
 reg [ 3:0]	rx_counter = 0;
@@ -342,11 +375,9 @@ always @ (posedge clk) begin
 	ram_address_triggered_sync <= ram_address_triggered;
 	sample_triggered_sync <= sample_triggered;
 	downsamplemergingcounter_triggered_sync <= downsamplemergingcounter_triggered;
-	
-	if (overrange[0]) overrange_counter[0] <= overrange_counter[0] + 1;
-	if (overrange[1]) overrange_counter[1] <= overrange_counter[1] + 1;
-	if (overrange[2]) overrange_counter[2] <= overrange_counter[2] + 1;
-	if (overrange[3]) overrange_counter[3] <= overrange_counter[3] + 1;
+
+	for (i=0;i<4;i=i+1)
+	    if (overrange[i]) overrange_counter[i] <= overrange_counter[i] + 1;
 end
 
 always @ (posedge clk or negedge rstn) begin
@@ -952,21 +983,21 @@ always @ (posedge clklvds) begin
 
         if (downsamplemerging_sync==20) begin
             if (highres_sync) begin
-                highressamplevalue[0] <= samplevalue[0] +  samplevalue[1] +  samplevalue[3] +  samplevalue[4] +  samplevalue[5] +  samplevalue[6] +  samplevalue[8] +  samplevalue[9] +
+                highressamplevalue[0] <= samplevalue[0] + samplevalue[1] + samplevalue[3] + samplevalue[4] + samplevalue[5] + samplevalue[6] + samplevalue[8] + samplevalue[9] +
                                                 samplevalue[20] + samplevalue[21] + samplevalue[23] + samplevalue[24] + samplevalue[25] + samplevalue[26] + samplevalue[28] + samplevalue[29]; // 10 bits of chan 0 and 2, into bit 0 (but skip every 5th bit)
                 highressamplevalue[1] <= samplevalue[10] + samplevalue[11] + samplevalue[13] + samplevalue[14] + samplevalue[15] + samplevalue[16] + samplevalue[18] + samplevalue[19] +
                                                 samplevalue[30] + samplevalue[31] + samplevalue[33] + samplevalue[34] + samplevalue[35] + samplevalue[36] + samplevalue[38] + samplevalue[39]; // 10 bits of chan 1 and 3, into bit 10 (but skip every 5th bit)
                 if (downsamplecounter[downsample_sync]) begin
-                    highressamplevalueavgtemp0 = highressamplevalueavg0+highressamplevalue[0];
-                    highressamplevalueavgtemp1 = highressamplevalueavg1+highressamplevalue[1];
+                    highressamplevalueavgtemp0 = highressamplevalueavg0 + highressamplevalue[0];
+                    highressamplevalueavgtemp1 = highressamplevalueavg1 + highressamplevalue[1];
                     lvdsbitsout[14*0  +:12] <= highressamplevalueavgtemp0[(4+downsample_sync)+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
                     lvdsbitsout[14*10 +:12] <= highressamplevalueavgtemp1[(4+downsample_sync)+:12]; // would like to have divided by 20, but instead skip every 5th bit, and divide by 16
                     highressamplevalueavg0 <= 0;
                     highressamplevalueavg1 <= 0;
                 end
                 else begin
-                    highressamplevalueavg0 <= highressamplevalueavg0+highressamplevalue[0];
-                    highressamplevalueavg1 <= highressamplevalueavg1+highressamplevalue[1];
+                    highressamplevalueavg0 <= highressamplevalueavg0 + highressamplevalue[0];
+                    highressamplevalueavg1 <= highressamplevalueavg1 + highressamplevalue[1];
                 end
             end
             else begin
@@ -1013,27 +1044,27 @@ always @ (posedge clk_over_4) begin // Process the state machine at each 12.5 MH
 	// A '1' is 3 high periods followed by 1 low period (960/320 ns)
 	// A '0' is 1 high period followed by 3 low periods (320/960 ns)
 	if (neostate == 0 || neostate == 1 || neostate == 2 || neostate == 3) begin
-		 npxc = npxc + 2'b1;
-		 if (npxc == 0) neostate = neostate + 3'b1;
+		 npxc = npxc + 1;
+		 if (npxc == 0) neostate = neostate + 1;
 	end
 	if (neostate == 4) begin
-		 neobits = neobits + 8'b1;
+		 neobits = neobits + 1;
 		 if (neobits == 24) begin
 			  neobits = 0;
-			  neostate = neostate + 3'b1;
+			  neostate = neostate + 1;
 		 end
 		 else neostate = 0;
 	end
 	if (neostate == 5) begin
-		 neo_led_num = neo_led_num + 2'b1;
+		 neo_led_num = neo_led_num + 1;
 		 if (neo_led_num == neo_led_num_max) begin
 			  neo_led_num = 0;
-			  neostate = neostate + 3'b1;
+			  neostate = neostate + 1;
 		 end
 		 else neostate = 0;
 	end
 	if (neostate == 6) begin
-		 lpxc = lpxc + 13'b1;
+		 lpxc = lpxc + 1;
 		 if (lpxc == 0 && send_color) neostate = 0;
 	end
 	
