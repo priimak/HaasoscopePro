@@ -131,7 +131,12 @@ always @ (posedge clklvds or negedge rstn) begin
 		triggerchan_sync       <= triggerchan;
 		dorolling_sync         <= dorolling;
 
-		if (acqstate<251) begin // always writing while waiting for a trigger, to see what happened before
+		if (acqstate==251) begin // not writing, while waiting to be read out
+			ram_wr <= 1'b0;
+			downsamplecounter <= 1;
+			downsamplemergingcounter <= 1;
+		end
+		else begin // always writing while waiting for a trigger, to see what happened before
 			ram_wr <= 1'b0;
 			if (downsamplecounter[downsample_sync]) begin
 				downsamplecounter <= 1;
@@ -143,11 +148,6 @@ always @ (posedge clklvds or negedge rstn) begin
 				else downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
 			end
 			else downsamplecounter <= downsamplecounter  +1;
-		end
-		else begin // not writing, while waiting to be read out
-			ram_wr <= 1'b0;
-			downsamplecounter <= 1;
-			downsamplemergingcounter <= 1;
 		end
 		
 		// rolling trigger
