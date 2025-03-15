@@ -1044,27 +1044,27 @@ always @ (posedge clk_over_4) begin // Process the state machine at each 12.5 MH
 	// A '1' is 3 high periods followed by 1 low period (960/320 ns)
 	// A '0' is 1 high period followed by 3 low periods (320/960 ns)
 	if (neostate == 0 || neostate == 1 || neostate == 2 || neostate == 3) begin
-		 npxc = npxc + 1;
-		 if (npxc == 0) neostate = neostate + 1;
+		 npxc = npxc + 2'd1;
+		 if (npxc == 0) neostate = neostate + 3'd1;
 	end
 	if (neostate == 4) begin
-		 neobits = neobits + 1;
+		 neobits = neobits + 8'd1;
 		 if (neobits == 24) begin
 			  neobits = 0;
-			  neostate = neostate + 1;
+			  neostate = neostate + 3'd1;
 		 end
 		 else neostate = 0;
 	end
 	if (neostate == 5) begin
-		 neo_led_num = neo_led_num + 1;
+		 neo_led_num = neo_led_num + 2'd1;
 		 if (neo_led_num == neo_led_num_max) begin
 			  neo_led_num = 0;
-			  neostate = neostate + 1;
+			  neostate = neostate + 3'd1;
 		 end
 		 else neostate = 0;
 	end
 	if (neostate == 6) begin
-		 lpxc = lpxc + 1;
+		 lpxc = lpxc + 13'd1;
 		 if (lpxc == 0 && send_color) neostate = 0;
 	end
 	
