@@ -131,6 +131,9 @@ always @ (posedge clklvds or negedge rstn) begin
 		triggerchan_sync       <= triggerchan;
 		dorolling_sync         <= dorolling;
 
+		if (ram_wr)
+			ram_wr <= 1'b0;
+
 		if (acqstate==251) begin // not writing, while waiting to be read out
 			ram_wr <= 1'b0;
 			downsamplecounter <= 1;
@@ -146,12 +149,10 @@ always @ (posedge clklvds or negedge rstn) begin
 				end
 				else begin
 				    downsamplemergingcounter <= downsamplemergingcounter + 8'd1;
-				    ram_wr <= 1'b0;
 				end
 			end
 			else begin
-			    downsamplecounter <= downsamplecounter  +1;
-			    ram_wr <= 1'b0;
+			    downsamplecounter <= downsamplecounter + 1;
 			end
 		end
 		
