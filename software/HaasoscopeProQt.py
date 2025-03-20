@@ -48,7 +48,7 @@ class MainWindow(TemplateBaseClass):
     num_logic_inputs = 0
     tenx = 1
     debug = False
-    dopattern = 0
+    dopattern = 0 # set to 4 to do max varying test pattern
     debugprint = True
     showbinarydata = True
     debugstrobe = False
@@ -119,7 +119,7 @@ class MainWindow(TemplateBaseClass):
     lastrate = 0
     lastsize = 0
     VperD = [0.16]*(num_board*2)
-    plljustreset = [False] * num_board
+    plljustreset = [0] * num_board
     dooversample = False
     doresamp = 0
 
@@ -417,15 +417,15 @@ class MainWindow(TemplateBaseClass):
         for i in range(abs(n)): self.dophase(board, 3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
         n = 0  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 4, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c4
-        self.plljustreset[board] = True
+        self.plljustreset[board] = 3 # get a few events
         switchclock(usbs,board)
 
     def adjustclocks(self, board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr):
         if (nbadclkA+nbadclkB+nbadclkC+nbadclkD+nbadstr>4) and self.phasecs[board][0][2] < 20:  # adjust phase by 90 deg
             n = 6  # amount to adjust clkout (positive)
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
-        if self.plljustreset[board]: # adjust back down to a good range after detecting that it needs to be shifted by 90 deg or not
-            self.plljustreset[board] = False
+        if self.plljustreset[board]>0: self.plljustreset[board] -= 1 # count down while collecting events
+        if self.plljustreset[board]==1: # adjust back down to a good range after detecting that it needs to be shifted by 90 deg or not
             n = 2  # amount to adjust clkout (negative)
             for i in range(n): self.dophase(board, 2, 0, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
