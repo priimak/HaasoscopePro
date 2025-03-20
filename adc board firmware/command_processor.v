@@ -798,22 +798,19 @@ always @ (posedge clklvds) begin
 
 	for (i=0;i<40;i=i+1) begin
 		lvdsbitsout[14*i+12 +:2] <= sampleclkstr[i]; // always use the same clk and str bits
-	end
-	
-	if (downsamplemerging_sync==1) begin // this is highest rate, works the same in single and two channel mode
-	for (i=0;i<40;i=i+1) begin
 		samplevalue2[i] <= samplevalue[i]; // pipeline just so the delay is the same for this and higher downsample rates - also helps with timing closure
-		lvdsbitsout[14*i +:12] <= samplevalue2[i]; // no downsampling, so no dividing
-	end
-//	for (i=0;i<10;i=i+1) begin // could straighten the samples out, but makes showing separate lvds channels more complicated on the python side
-//		lvdsbitsout[14*(i*4+0) +:12] <= samplevalue[30+1*i]; // every bit from chan 3 into bit 0,4...16
-//		lvdsbitsout[14*(i*4+1) +:12] <= samplevalue[20+1*i]; // every bit from chan 2 into bit 1,5...17
-//		lvdsbitsout[14*(i*4+2) +:12] <= samplevalue[10+1*i]; // every bit from chan 1 into bit 2,6...18
-//		lvdsbitsout[14*(i*4+3) +:12] <= samplevalue[ 0+1*i]; // every bit from chan 0 into bit 3,7...19
-//	end
 	end
 	
 	if (channeltype_sync[0]==1'b0) begin // single channel mode
+	
+			if (downsamplemerging_sync==1) begin // this is highest rate
+				for (i=0;i<10;i=i+1) begin // straighten the samples out
+					lvdsbitsout[14*(i*4+0) +:12] <= samplevalue2[30+1*i];
+					lvdsbitsout[14*(i*4+1) +:12] <= samplevalue2[20+1*i];
+					lvdsbitsout[14*(i*4+2) +:12] <= samplevalue2[10+1*i];
+					lvdsbitsout[14*(i*4+3) +:12] <= samplevalue2[ 0+1*i];
+				end
+			end
 	
         if (downsamplemerging_sync==2) begin
         for (i=0;i<10;i=i+1) begin
@@ -906,6 +903,19 @@ always @ (posedge clklvds) begin
         end
 	end
 	else begin // two channel mode
+	
+			if (downsamplemerging_sync==1) begin // this is highest rate
+				for (i=0;i<5;i=i+1) begin // straighten the samples out
+					lvdsbitsout[14*(i*2+0 ) +:12] <= samplevalue2[20+1*i];
+					lvdsbitsout[14*(i*2+1 ) +:12] <= samplevalue2[ 0+1*i];
+					lvdsbitsout[14*(i*2+10) +:12] <= samplevalue2[30+1*i];
+					lvdsbitsout[14*(i*2+11) +:12] <= samplevalue2[10+1*i];
+					lvdsbitsout[14*(i*2+20) +:12] <= samplevalue2[25+1*i];
+					lvdsbitsout[14*(i*2+21) +:12] <= samplevalue2[ 5+1*i];
+					lvdsbitsout[14*(i*2+30) +:12] <= samplevalue2[35+1*i];
+					lvdsbitsout[14*(i*2+31) +:12] <= samplevalue2[15+1*i];
+				end
+			end
 
         if (downsamplemerging_sync==2) begin
             for (i=0;i<10;i=i+1) begin

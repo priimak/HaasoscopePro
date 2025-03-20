@@ -53,7 +53,6 @@ class MainWindow(TemplateBaseClass):
     showbinarydata = True
     debugstrobe = False
     dofast = False
-    dooverlapped = False
     dotwochannel = False
     dointerleaved = False
     dooverrange = False
@@ -656,11 +655,7 @@ class MainWindow(TemplateBaseClass):
             self.max_x = tp + (1-tpfrac) * self.max_x/self.downsamplezoom
         else:
             self.min_x = 0
-        if self.dooverlapped:
-            for c in range(4):
-                self.xydata[c][0] = np.array([range(0, 10 * self.expect_samples)]) * (
-                            4 * self.downsamplefactor / self.nsunits / self.samplerate)
-        elif self.dotwochannel:
+        if self.dotwochannel:
             for c in range(self.num_chan_per_board * self.num_board):
                 self.xydata[c][0] = np.array([range(0, 2 * 10 * self.expect_samples)]) * (
                             2 * self.downsamplefactor / self.nsunits / self.samplerate)
@@ -840,7 +835,6 @@ class MainWindow(TemplateBaseClass):
         nbadclkD = 0
         nbadstr = 0
         for s in range(0, self.expect_samples+self.expect_samples_extra):
-            chan = -1
             subsamples = data[self.nsubsamples*2*s: self.nsubsamples*2*(s+1)]
             for n in range(self.nsubsamples): # the subsample to get
                 pbyte = 2 * n
@@ -851,7 +845,7 @@ class MainWindow(TemplateBaseClass):
                 else:
                     highbits = highbits * 256
                 val = highbits + lowbits
-                if n % 10 == 0: chan = chan + 1
+                chan = int(n/10)
 
                 if n == 40 and val & 0x5555 != 4369 and val & 0x5555 != 17476:
                     nbadclkA = nbadclkA + 1
@@ -897,42 +891,18 @@ class MainWindow(TemplateBaseClass):
                     if self.dooversample and board%2==0:
                         val += self.extrigboardmeancorrection
                         val *= self.extrigboardstdcorrection
-                    if self.downsamplemerging == 1:
-                        samp = s * 10 + (9 - (n % 10))  # bits come out last to first in lvds receiver group of 10
-                        samp = samp - self.sample_triggered[board]
-                        if self.dooverlapped:
-                            if samp >= self.xydata[chan][1].size: continue
-                            self.xydata[chan][1][samp] = val
-                        elif self.dotwochannel:
-                            if chan % 2 == 0: chani = int(chan / 2)
-                            else: chani = int((chan - 1) / 2)
-                            if not self.doexttrig[board]:
-                                if chani+ 2*samp >= self.xydata[board*self.num_chan_per_board + chan%2][1].size: continue
-                                self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp] = val
-                            else:
-                                if chani+ 2*samp+ self.toff >= self.xydata[board*self.num_chan_per_board + chan%2][1].size: continue
-                                self.xydata[board*self.num_chan_per_board + chan%2][1][chani+ 2*samp+ self.toff] = val
-                        else:
-                            if not self.doexttrig[board]:
-                                if chan + 4 * samp >= self.xydata[board][1].size: continue
-                                self.xydata[board*self.num_chan_per_board][1][chan + 4 * samp] = val
-                            else:
-                                if chan + 4 * samp + self.toff >= self.xydata[board][1].size: continue
-                                self.xydata[board*self.num_chan_per_board][1][chan + 4 * samp + self.toff] = val
+                    if self.dotwochannel:
+                        samp = s * 20 + 19 - n%10 - int(chan/2)*10
+                        samp = samp - int(2 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
+                        if self.doexttrig[board]: samp = samp + int(self.toff/self.downsamplefactor)
+                        if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
+                        self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
                     else:
-                        if self.dotwochannel:
-                            samp = s * 20 + chan * 10 + 9 - n
-                            if n < 20: samp = samp + 10
-                            samp = samp - int(2 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
-                            if self.doexttrig[board]: samp = samp + int(self.toff/self.downsamplefactor)
-                            if samp >= self.xydata[board * self.num_chan_per_board + chan % 2][1].size: continue
-                            self.xydata[board * self.num_chan_per_board + chan % 2][1][samp] = val
-                        else:
-                            samp = s * 40 + 39 - n
-                            samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
-                            if self.doexttrig[board]: samp = samp + int(self.toff/self.downsamplefactor)
-                            if samp >= self.xydata[board][1].size: continue
-                            self.xydata[board*self.num_chan_per_board][1][samp] = val
+                        samp = s * 40 + 39 - n
+                        samp = samp - int(4 * (self.sample_triggered[board] + (downsamplemergingcounter-1)%self.downsamplemerging * 10) / self.downsamplemerging)
+                        if self.doexttrig[board]: samp = samp + int(self.toff/self.downsamplefactor)
+                        if samp >= self.xydata[board][1].size: continue
+                        self.xydata[board*self.num_chan_per_board][1][samp] = val
 
         self.adjustclocks(board, nbadclkA, nbadclkB, nbadclkC, nbadclkD, nbadstr)
         if board == self.activeboard:
@@ -952,27 +922,26 @@ class MainWindow(TemplateBaseClass):
         thestr += "\n" + "Mean " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.mean(self.xydata[self.activexychannel][1]), 3) ) + " mV"
         thestr += "\n" + "RMS " + str( round( 1000* self.VperD[self.activeboard*2+self.selectedchannel] * np.std(self.xydata[self.activexychannel][1]), 3) ) + " mV"
 
-        if not self.dooverlapped:
-            if not self.dointerleaved:
-                targety = self.xydata[self.activexychannel]
-            else:
-                targety = self.xydatainterleaved[int(self.activeboard/2)]
-            p0 = [max(targety[1]), self.vline - 10, 20, min(targety[1])]  # this is an initial guess
-            fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
-            xc = targety[0][(targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]  # only fit in range
-            yc = targety[1][(targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]
-            if xc.size > 10: # require at least something to fit, otherwise we'll through an area
-                with warnings.catch_warnings():
-                    try:
-                        warnings.simplefilter("ignore")
-                        popt, pcov = curve_fit(fit_rise, xc, yc, p0)
-                        perr = np.sqrt(np.diag(pcov))
-                        risetime = 0.8 * popt[2]
-                        risetimeerr = perr[2]
-                        # print(popt)
-                        thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
-                    except RuntimeError:
-                        pass
+        if not self.dointerleaved:
+            targety = self.xydata[self.activexychannel]
+        else:
+            targety = self.xydatainterleaved[int(self.activeboard/2)]
+        p0 = [max(targety[1]), self.vline - 10, 20, min(targety[1])]  # this is an initial guess
+        fitwidth = (self.max_x - self.min_x) * self.fitwidthfraction
+        xc = targety[0][(targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]  # only fit in range
+        yc = targety[1][(targety[0] > self.vline - fitwidth) & (targety[0] < self.vline + fitwidth)]
+        if xc.size > 10: # require at least something to fit, otherwise we'll through an area
+            with warnings.catch_warnings():
+                try:
+                    warnings.simplefilter("ignore")
+                    popt, pcov = curve_fit(fit_rise, xc, yc, p0)
+                    perr = np.sqrt(np.diag(pcov))
+                    risetime = 0.8 * popt[2]
+                    risetimeerr = perr[2]
+                    # print(popt)
+                    thestr += "\n" + "Rise time " + str(risetime.round(2)) + "+-" + str(risetimeerr.round(2)) + " " + self.units
+                except RuntimeError:
+                    pass
 
         self.ui.textBrowser.setText(thestr)
 
@@ -1152,9 +1121,7 @@ class MainWindow(TemplateBaseClass):
             print("Don't know how to set lights for",self.num_board,"boards yet!")
 
     def setupchannels(self):
-        if self.dooverlapped:
-            self.xydata = np.empty([int(self.num_chan_per_board * self.num_board), 2, 10 * self.expect_samples], dtype=float)
-        elif self.dotwochannel:
+        if self.dotwochannel:
             self.xydata = np.empty([int(self.num_chan_per_board * self.num_board), 2, 2 * 10 * self.expect_samples], dtype=float)
         else:
             self.xydata = np.empty([int(self.num_chan_per_board * self.num_board), 2, 4 * 10 * self.expect_samples], dtype=float)
