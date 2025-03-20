@@ -69,6 +69,8 @@ class MainWindow(TemplateBaseClass):
     themuxoutV = True
     phasecs = []
     for ph in range(len(usbs)): phasecs.append([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
+    pll_test_c2phase = 5
+    pll_test_c2phase_down = 2
     doexttrig = [0] * num_board
     paused = True # will unpause with dostartstop at startup
     downsample = 0
@@ -411,7 +413,7 @@ class MainWindow(TemplateBaseClass):
         print("pllreset sent to board",board,"- got back:", tres[3], tres[2], tres[1], tres[0])
         self.phasecs[board] = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]  # reset counters
         # adjust phases (intentionally put to a place where the clockstr may be bad, it'll get adjusted by 90 deg later, and then dropped to a good range)
-        n = 4  # amount to adjust (+ or -)
+        n = self.pll_test_c2phase  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 2, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c2, clkout
         n = -1  # amount to adjust (+ or -)
         for i in range(abs(n)): self.dophase(board, 3, n > 0, pllnum=0, quiet=(i != abs(n) - 1))  # adjust phase of c3
@@ -426,7 +428,7 @@ class MainWindow(TemplateBaseClass):
             for i in range(n): self.dophase(board, 2, 1, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
         if self.plljustreset[board]>0: self.plljustreset[board] -= 1 # count down while collecting events
         if self.plljustreset[board]==1: # adjust back down to a good range after detecting that it needs to be shifted by 90 deg or not
-            n = 2  # amount to adjust clkout (negative)
+            n = self.pll_test_c2phase_down  # amount to adjust clkout (negative)
             for i in range(n): self.dophase(board, 2, 0, pllnum=0, quiet=(i != n - 1))  # adjust phase of clkout
 
     def wheelEvent(self, event):  # QWheelEvent
