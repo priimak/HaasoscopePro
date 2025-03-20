@@ -78,7 +78,7 @@ wire exttrigin;
 assign exttrigin = boardin[4];
 assign leds[0] = exttrigin; // LED2
 
-//variables in clklvds domain, writing into the RAM buffer
+// variables in clklvds domain, writing into the RAM buffer
 integer		downsamplecounter = 1;
 reg signed [5+11:0] highressamplevalue[20];
 reg signed [11:0] samplevalue2[40];
@@ -91,7 +91,7 @@ reg [7:0]	downsamplemergingcounter = 1;
 reg [15:0]	triggercounter = 0;
 integer		rollingtriggercounter = 0;
 
-//variables synced between domains
+// variables synced between domains
 reg [ 7:0]	acqstate = 0, acqstate_sync = 0;
 reg signed [11:0]  lowerthresh = 0, lowerthresh_sync = 0;
 reg signed [11:0]  upperthresh = 0, upperthresh_sync = 0;
@@ -176,7 +176,7 @@ always @ (posedge clklvds or negedge rstn) begin
 			lvdsout_trig <= 0;
 			lvdsout_trig_b <= 0;
 			
-			//wait for pre-aquisition
+			// wait for pre-aquisition
 			if (triggercounter<prelengthtotake_sync) begin
 				if (downsamplecounter[downsample_sync] && downsamplemergingcounter==downsamplemerging_sync) begin
 					triggercounter <= triggercounter + 16'd1;
@@ -249,7 +249,7 @@ always @ (posedge clklvds or negedge rstn) begin
 			end
 		end
 		
-		//falling edge trigger (2)
+		// falling edge trigger (2)
 		3 : begin // ready for first part of trigger condition to be met
             if (triggertype_sync!=2) acqstate <= 0;
             else begin
@@ -350,7 +350,7 @@ always @ (posedge clklvds or negedge rstn) begin
 end
 	 
 
-//variables in clk domain, reading out of the RAM buffer
+// variables in clk domain, reading out of the RAM buffer
 localparam [3:0] INIT=4'd0, RX=4'd1, PROCESS=4'd2, TX_DATA_CONST=4'd3, TX_DATA1=4'd4, TX_DATA2=4'd5, TX_DATA3=4'd6;
 localparam [3:0] TX_DATA4=4'd7, PLLCLOCK=4'd8, BOOTUP=4'd9;
 
@@ -813,35 +813,35 @@ always @ (posedge clklvds) begin
 			end
 	
         if (downsamplemerging_sync==2) begin
-        for (i=0;i<10;i=i+1) begin
-            if (highres_sync) begin
-                highressamplevalue[0*10+i] <= samplevalue[20+1*i] + samplevalue[30+1*i]; // every bit from chan 2 into bit 0,2,4...18, and add in the other bits
-                lvdsbitsout[14*(i*2+0) +:12] <= highressamplevalue[0*10+i][1+:12]; // shift left 1 bit, thus dividing by 2
-                highressamplevalue[1*10+i] <= samplevalue[0+1*i] + samplevalue[10+1*i]; // every bit from chan 0 into bit 1,3,5...19, add in the other bits
-                lvdsbitsout[14*(i*2+1) +:12] <= highressamplevalue[1*10+i][1+:12]; // shift left 1 bit, thus dividing by 2
+            for (i=0;i<10;i=i+1) begin
+                if (highres_sync) begin
+                    highressamplevalue[0*10+i] <= samplevalue[20+1*i] + samplevalue[30+1*i]; // every bit from chan 2 into bit 0,2,4...18, and add in the other bits
+                    lvdsbitsout[14*(i*2+0) +:12] <= highressamplevalue[0*10+i][1+:12]; // shift left 1 bit, thus dividing by 2
+                    highressamplevalue[1*10+i] <= samplevalue[0+1*i] + samplevalue[10+1*i]; // every bit from chan 0 into bit 1,3,5...19, add in the other bits
+                    lvdsbitsout[14*(i*2+1) +:12] <= highressamplevalue[1*10+i][1+:12]; // shift left 1 bit, thus dividing by 2
+                end
+                else begin
+                    lvdsbitsout[14*(i*2+0) +:12] <= samplevalue[20+1*i]; // every bit from chan 2 into bit 0,2,4...18
+                    lvdsbitsout[14*(i*2+1) +:12] <= samplevalue[0+1*i]; // every bit from chan 0 into bit 1,3,5...19
+                end
+                lvdsbitsout[14*(i*2+20) +:12] <= lvdsbitsout[14*(i*2+0) +:12]; // move what was in first 20 into second 20
+                lvdsbitsout[14*(i*2+21) +:12] <= lvdsbitsout[14*(i*2+1) +:12];
             end
-            else begin
-                lvdsbitsout[14*(i*2+0) +:12] <= samplevalue[20+1*i]; // every bit from chan 2 into bit 0,2,4...18
-                lvdsbitsout[14*(i*2+1) +:12] <= samplevalue[0+1*i]; // every bit from chan 0 into bit 1,3,5...19
-            end
-            lvdsbitsout[14*(i*2+20) +:12] <= lvdsbitsout[14*(i*2+0) +:12]; // move what was in first 20 into second 20
-            lvdsbitsout[14*(i*2+21) +:12] <= lvdsbitsout[14*(i*2+1) +:12];
-        end
         end
 
         if (downsamplemerging_sync==4) begin
-        for (i=0;i<10;i=i+1) begin
-            if (highres_sync) begin
-                highressamplevalue[i] <= samplevalue[0+1*i] + samplevalue[10+1*i] + samplevalue[20+1*i] + samplevalue[30+1*i]; // every bit of chan 0, and add in the other bits
-                lvdsbitsout[14*i +:12] <= highressamplevalue[i][2+:12]; // shift left 2 bits, thus dividing by 4
+            for (i=0;i<10;i=i+1) begin
+                if (highres_sync) begin
+                    highressamplevalue[i] <= samplevalue[0+1*i] + samplevalue[10+1*i] + samplevalue[20+1*i] + samplevalue[30+1*i]; // every bit of chan 0, and add in the other bits
+                    lvdsbitsout[14*i +:12] <= highressamplevalue[i][2+:12]; // shift left 2 bits, thus dividing by 4
+                end
+                else begin
+                    lvdsbitsout[14*i +:12] <= samplevalue[0+1*i]; // every bit of chan 0
+                end
+                for (j=0;j<30;j=j+10) begin
+                    lvdsbitsout[14*(i+10+j) +:12] <= lvdsbitsout[14*(i+j) +:12]; // move what was in first 10 into second 10
+                end
             end
-            else begin
-                lvdsbitsout[14*i +:12] <= samplevalue[0+1*i]; // every bit of chan 0
-            end
-            for (j=0;j<30;j=j+10) begin
-                lvdsbitsout[14*(i+10+j) +:12] <= lvdsbitsout[14*(i+j) +:12]; // move what was in first 10 into second 10
-            end
-        end
         end
 
         if (downsamplemerging_sync==8) begin
@@ -1106,7 +1106,7 @@ always @ (posedge clk50) begin
 	endcase
 end
 
-//for FT232H
+// for FT232H
 assign i_tready = (state == RX);
 assign o_tkeep  = (length>=4) ? 4'b1111 :
                   (length==3) ? 4'b0111 :
