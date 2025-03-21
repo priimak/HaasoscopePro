@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6001", ATTRS{product}=="USB-Blaster", GROUP="plugdev", MODE="0660"
